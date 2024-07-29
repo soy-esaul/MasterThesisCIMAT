@@ -1,0 +1,144 @@
+\ProvidesPackage{CIMATpreamble}
+
+%-----------------------------------------------------------------------------
+% Mandatory libraries
+
+\usepackage[width=152.6mm, top=1in, bottom=1in, bindingoffset=6mm]{geometry}
+%\usepackage[a4paper,total={170mm,257mm},left=20mm,top=20mm]{geometry}
+\usepackage[T1]{fontenc}  % to be able to copy and paste accented characters from pdf
+\usepackage{tikz}  % required for banner definition
+\usepackage{fancyhdr}  % required custom headers and footers
+
+% Line skip
+% \usepackage{setspace}
+% \singlespace
+% \setlength{\parskip}{8pt}
+% \setlength\parindent{0pt}
+\linespread{1}
+
+
+
+%------------------------------------------------------------------------------%
+% Institutional colors
+% details: these colors were obtained from the "Manual básico de Imagen CIMAT"
+
+\definecolor{grisCIMAT}{RGB}{137,136,139}  % HTML: #89888b
+\definecolor{rojoCIMAT}{RGB}{100,41,62}  % HTML: #64293e
+
+%-----------------------------------------------------------------------------%
+% Banner and Logo definition
+
+% This image banner was reproduced by Cristal E. Méndez Ramírez
+% It was built according to the institutional colors of CIMAT
+% E-mail: sktmeri25@gmail.com
+
+\setlength{\headheight}{15pt}  % \headheight fix
+
+\fancypagestyle{firststyle}
+{
+    \renewcommand{\headrulewidth}{0pt}
+   \fancyhf{}
+   \fancyhead[L]{}
+   \fancyfoot[C]{\begin{tikzpicture}[remember picture,overlay] \node[anchor=south east, yshift=-1.5mm, xshift=1.5mm]
+     at (current page.south east) {\includegraphics[width=215.9mm]{logos/banner}};
+\end{tikzpicture}
+}
+}
+% Official logos: https://www.cimat.mx/en/plantillas-documentos-electr%C3%B3nicos
+
+%-----------------------------------------------------------------------------%
+% Coverpage
+
+% 28.4pt == 1cm
+% \the\textwidth == 433.62001 pt == 15.26831 cm
+% Definition
+
+\@ifpackageloaded{geometry}{}{\RequirePackage[pass]{geometry}}
+
+\newcommand*{\documentType}[1]{\gdef\@documentType{#1}}
+
+\newcommand*{\faculty}[1]{\gdef\@faculty{#1}}
+\newcommand*{\@faculty}{\texttt{\string\faculty} Faculty or Institute. Please fix this.} % default text
+\newcommand*{\degree}[1]{\gdef\@degree{#1}}
+\newcommand*{\@degree}{\texttt{\string\degree}degree currently not set. Please fix this.} % default text
+
+\newcommand*{\supervisor}[1]{\gdef\@supervisor{#1 \vspace{1.2cm}}}
+\newcommand*{\@supervisor}{\texttt{\string\supervisor} supervisor currently not set. Please fix this.} % default text
+
+% Second Supervisor
+\newcommand*{\supervisorSecond}[1]{\gdef\@supervisorSecond{ { \vspace{-1.2cm} {\bfseries Co-director de Tesis:}\\[0.2cm] {\large #1} } }}
+\newcommand*{\@supervisorSecond}{} % default text: empty field
+
+\newcommand*{\cityandyear}[1]{\gdef\@cityandyear{#1}}
+\newcommand*{\@cityandyear}{\texttt{\string\cityandyear} city and year currently not set. Please fix this.} % default text
+\newcommand*{\logouni}[1]{\gdef\@logouni{#1}}
+\newcommand*{\@logouni}{example-image-a}
+\newcommand*{\logofac}[1]{\gdef\@logofac{#1}}
+\newcommand*{\@logofac}{example-image-b}
+
+% Title page
+\renewcommand*{\maketitle}{%
+	\begin{titlepage}
+		\newgeometry{left=1.2cm,right=1.2cm,bottom=1.0cm,top=0.9cm}
+		\thispagestyle{firststyle}
+
+        \noindent
+        \begin{minipage}[c]{0.18\textwidth}
+            \begin{flushleft}
+                \includegraphics[height=3.2cm]{logos/logo}  % 3cm as minimum height
+            \end{flushleft}
+        \end{minipage}
+        \begin{minipage}[t]{0.8\textwidth}
+            \vspace{0.63cm}
+            \begin{flushleft}
+                {\Large {\color{rojoCIMAT} {\bfseries Centro de Investigación en Matemáticas, A.C.}}}
+            \end{flushleft}
+        \end{minipage}
+        \vspace{0.1cm}
+        {\color{rojoCIMAT} \hrule height1.3pt} % height2pt
+        \vspace{2.2cm}  % 0.7cm
+
+    	\begin{center}
+    	    {\bfseries \LARGE \scshape\@title\par}
+    	    \vspace{2.1cm}
+    	    \makebox[8cm][s]{\Large\bfseries \@documentType }\\[0.2cm]
+    	    \makebox[7cm][c]{Que para obtener el grado de}\\[0.2cm]
+    	   {\bfseries \large \@degree}\\[0.9cm]
+    
+    	    \makebox[7cm][c]{\bfseries Presenta}\\[0.2cm]
+    	    {\large \@author}\par
+    	    \vspace{0.7cm}
+    	    {{\bfseries Director de Tesis:}\\[0.2cm] % 0.8 cm
+    	    {\large \@supervisor}} \par
+    	     \vspace{0.7cm}
+    	   % {{\bfseries Co-director de Tesis:}\\[0.2cm] % 0.8 cm
+    	   % {\large \@supervisorSecond}}\\[2.1cm]
+    	    \@supervisorSecond
+    	    \vspace{2.5cm}
+    	    \vfill
+    	    
+    	    \rule{7cm}{0.8pt}\\
+    	    {\small \bfseries Autorización de la versión final}
+    	    
+    	\end{center}
+	
+	    \vfill
+	
+        \begin{flushright}
+            {\small \@cityandyear}
+        \end{flushright}
+        %\vspace{.99cm}
+    \end{titlepage}
+}
+
+%-----------------------------------------------------------------------------%
+% Customize header and footer
+
+\pagestyle{fancy}
+
+\fancyhead{}  % clear header settings
+\fancyhead[LE]{{ \thepage \qquad  \textit{\leftmark}}}
+\fancyhead[RO]{{ \textit{\rightmark} \qquad \thepage}}
+\renewcommand{\headrulewidth}{0pt}  % remove head rule
+
+\fancyfoot{}  % reset page numbering on the footer

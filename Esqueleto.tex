@@ -1,0 +1,267 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[default]{lato}
+\usepackage[black]{PlayfairDisplay}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{translator}
+\usepackage{pgfgantt}
+\usepackage{booktabs}
+\usepackage{fancyhdr}
+\usepackage{tikz}
+\usepackage{svg}
+\usepackage{stackengine}
+\usepackage[explicit]{titlesec}
+\usepackage{todonotes}
+
+\usepackage[sans]{dsfont}
+\usepackage{sansmathfonts}
+
+\newcommand{\sgn}{\mathrm{sgn}}
+
+\input{../Protocolo/preamble.tex}
+
+% Para Portada
+\usepackage{eso-pic}
+\usepackage[pages=some]{background}
+\backgroundsetup{
+scale=1.7,
+angle=0,
+opacity=0.1,
+hshift=100,
+vshift=-10,
+contents={%
+  \includegraphics{../Protocolo/img/logo_cimat.pdf}
+  }%
+}%
+
+% Colores CIMAT
+\definecolor{cimatrojo}{HTML}{64293E}
+\definecolor{cimatgris}{HTML}{89888b}
+\definecolor{gristexto}{HTML}{505050}
+\definecolor{cimatnegro}{HTML}{252525}
+
+% Set page size and margins
+% Replace `letterpaper' with`a4paper' for UK/EU standard size
+\usepackage[letterpaper,top=2.5cm,bottom=2.5cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+% Useful packages
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{graphicx}
+\usepackage{hyperref}
+
+% Header
+\usetikzlibrary{calc}
+\makeatletter\renewcommand{\headrulewidth}{0pt}
+\pagestyle{fancy}\fancyhf{}
+\fancyhead[C]{\begin{tikzpicture}[overlay, remember picture]
+    \fill[cimatnegro] (current page.north west) rectangle ($(current page.north east)+(0,-0.5in)$);
+    \node[anchor=north west, text=white, font=\footnotesize, minimum size=0.5in, inner xsep=5mm, align=left] at (current page.north west) {\bf{\MakeUppercase{Avance de tesis: Procesos estocásticos matriciales con espectro determinista}}};
+    \end{tikzpicture}}
+% Foot
+\fancyfoot{\begin{tikzpicture}[overlay, remember picture]%
+    \fill[cimatrojo] (current page.south west) rectangle ($(current page.south east)+(0,.5in)$);
+    \node[anchor=south west, text=white, font=\scriptsize, minimum size=.5in, inner xsep=5mm] at (current page.south west) {13 de marzo de 2024};
+    \node[anchor=south east, text=white, font=\scriptsize, minimum size=.5in] at (current page.south east) {\thepage};\end{tikzpicture}}
+
+% Fancy section
+\titleformat
+{\section} % command
+[hang] % shape
+{\Large\bfseries\playfair} %format
+{\rlap{\color{cimatrojo}\rule[-6pt]{\textwidth}{1.2pt}}\colorbox{cimatrojo}{%
+           \raisebox{0pt}[13pt][3pt]{ \makebox[60pt]{% height, width
+                \playfair\selectfont\color{white}{\thesection}}
+            }}} % label
+{15pt} % sep
+{ \color{cimatrojo}#1
+%
+} % before code
+
+
+\titleformat
+{\subsection} % command
+[hang] % shape
+{\large\bfseries\playfair\color{cimatrojo}} % format
+{\thesubsection} % label
+{0.5cm} % sep
+{#1} % before-code
+ % after-code
+
+% Para cronograma
+\newcounter{myWeekNum}
+\stepcounter{myWeekNum}
+%
+\newcommand{\myWeek}{\themyWeekNum
+    \stepcounter{myWeekNum}
+    \ifnum\themyWeekNum=53
+         \setcounter{myWeekNum}{1}
+    \else\fi
+}
+
+\title{Esqueleto de tesis}
+\author{Juan Esaul González Rangel}
+\date{10 de abril de 2024}
+
+% 30 de abril - lo que salió
+% Aclarar para qué se quiere el resultado
+
+\input{../Protocolo/portada_esqueleto}
+
+\begin{document}
+
+
+\color{gristexto}
+
+\maketitle
+
+\clearpage
+\setcounter{page}{1}
+
+\tableofcontents
+
+\newpage
+
+
+\section{Preliminaries}
+
+\todo[inline]{En este capítulo se presentan resultados necesarios para entender los artículos que se revisan en la tesis, y también se da una introducción a grandes rasgos del estudio de matrices aleatorias.}
+
+
+\subsection{Introduction to main concepts in Random Matrix Theory}
+
+\todo[inline]{Esta sección será una presentación corta del estudio de las matrices aleatorias (qué es un ensamble, ensambles comunes, qué se hace, el nombre de algunas técnicas) y un breve repaso  de los eventos históricos más importantes. Adicionalmente, se usará para definir la notación e incluir algunos resultados de álgebra matricial que se necesiten después.}
+
+\subsubsection{Matrix algebra}
+
+\todo[inline]{Un compendio muy breve de resultados de álegbra matricial y propiedades de la descomposición espectral que se estarán usando constantemente a lo largo del trabajo.}
+
+\subsubsection{Random matrix ensembles}
+
+\todo[inline]{Se presentará primero el concepto de ensamble matricial, después se darán ejemplos de ensambles en distintos espacios de entradas (unitarios, Wigner, GUE, GOE, GSE), y propiedades que satisfacen. Se expondrá más exhaustivamente el ensamble Gaussiano ortogonal, pero se hablará también de la relevancia de los otros para el estudio de las matrices aleatorias.}
+
+\subsubsection{Asymptotic results for random matrices}
+
+\todo[inline]{Como una introducción sencilla a lo que se hace en el estudio de matrices aleatorias, se definirán primero las medidas espectral empírica y espectral promedio, se mencionarán resultados importantes, como la identidad de traza y propiedades de convergencia de las medidas espectrales. Finalmente se probarán la ley de grandes números para medidas espectrales y la ley del semicírculo de Wigner.}
+
+
+\subsection{Stochastic calculus}
+
+\todo[inline]{En esta sección se incluirán primero resultados clásicos y muy importantes de cálculo estocástico (por ejemplo, fórmula de Itô o fórmula de Tanaka), así como resultados no tan centrales pero que se usan para algunas pruebas pruebas en los siguientes capítulos (criterio de McKean, lema de Gronwall). Después, en una subsección se hablará de la generalización de estos reusltados a procesos matriciales.}
+
+\subsubsection{Stochastic calculus for $\R^n$-valued processes}
+
+\todo[inline]{Los resultados clásicos de cálculo de Itô y Stratonovich para procesos multivariados}
+
+\subsubsection{Stochastic calculus for matrix-valued processes}
+
+\todo[inline]{Generalización de varios resultados clásicos de cálculo de Itô y Stratonovich para procesos a valores en matrices.}
+
+\subsection{Non-commutative probability}
+
+\todo[inline]{Nociones básicas de la probabilidad no conmutativa, desde la definición de un espacio de probabilidad no conmutativa, hasta el análisis armónico libre (transformadas que linealizan convolución). Se cubrirán exclusivamente los conceptos indispensables para que el capítulo de probabilidad libre finita pueda ser entendido.}
+
+\subsubsection{Non-commutative probability space}
+
+\todo[inline]{Definición básica de un EPNC y de un *-EPNC, así como ejemplos y clases de variables aleatorias no conmutaivas (unitaria, proyección, normal, autoadjunta, etc.) y propiedades de los funcionales (fiel, positivo, tracial). En cada concepto, se usarán ejemplos de espacios abstractos, pero también de espacios de matrices y vairables aleatorias para mostrar como es que la probabilidad no conmutativa generaliza propiedades de espacios de probabilidad y espacios de matrices.}
+
+\subsubsection{Notions of independence}
+
+\todo[inline]{Se mencionarán las cuatro nociones de independencia y cuando sea posible se darán ejemplos de conjuntos matrices aleatorias que satisfagan esta noción de independencia. Se hará especial énfasis en que la noción de independencia tensorial pierde sentido cuando las variables aleatorias no conmutan y por esto se necesitan nuevas nociones en el estudio de matrices aleatorias.}
+
+\subsubsection{Convolution}
+
+\todo[inline]{Se define la convolución como la suma de variables aleatorias que son independientes en algún sentido y se muestra que no necesariamente coincide con la idea intuitiva de convolución tensorial. Se presentan los cumulantes para cada noción de independencia y se dan las fórmulas de momentos-cumulantes y se hace una muy breve introducción a las transformadas que linealizan las convoluciones.}
+
+\subsubsection{Classical and non-commutative central limit theorems}
+
+\todo[inline]{Una vez que se tienen las nociones de independencia y convolución, se prueba el Teorema del Límite Central para cada caso. Como un preludio para la siguiente sección, se hace énfasis en que el límite central libre coincide con el límite del Teorema de Wigner.}
+
+\subsubsection{Asymptotic freeness for random matrices}
+
+\todo[inline]{Como una última fomra de relacionar la probabilidad libre con las matrices aleatorias, se muestra que en el límite, ciertas matrices aleatorias se comportan como variables aleatorias libres. Se mencionarán varios casos, pero la prueba se dará únicamente para algunos, tal vez el caso Haar unitario y el caso Gaussiano.}
+
+
+
+
+
+\section{Eigenvalue processes for matrix-valued processes}
+
+\todo[inline]{Aquí se hablará del proceso de Dyson y más en genral de los  eigenvalores de procesos matriciales. Al principio de este capítulo se escribirá una breve introducción sobre el proceso de Dyson, en qué contexto surge y la intuición de la forma de la ecuación (repulsión couloumbica) y los ensambles que lo satisfacen (GOE, GUE, GSE y tridiagonales). Todo esto para motivar los teoremas que vienen a continuación.}
+
+\subsection{Dyson Brownian motion}
+
+\todo[inline]{Después de motivar el estudio del proceso vendrían adaptaciones particulares de los teoremas que de Graczyk y Małecki para una construcción del proceso de Dyson.}
+
+\subsubsection{Real case}
+
+\todo[inline]{Se obtienen los resultados sobre el proceso de Dyson que son exclusivos de la versión real hasta el tiempo de colisión.}
+
+\subsubsection{Complex case}
+
+\todo[inline]{Se obtienen los resultados sobre el proceso de Dyson que son exclusivos de la versión compleja hasta el tiempo de colisión.}
+
+\subsubsection{Non-collision of the eigenvalues}
+
+\todo[inline]{Se prueba que el tiempo de colisión es infinito para el proceso de Dyson, pero también para cualquier proceso de eigenvalores de una difusión matricial. Para esto, antes de introducir este teorema de menciona que el proceso de Dyson satisface una ecuación que es un caso particular de una clase más general, y se prueba la no colisión para procesos que satisfacen esta ecuación en general. 
+
+A continuación, antes de mencionar los otros procesos de interés (Wishart o Jacobi) se dan las pruebas de Graczyk y Małecki en general, como una extensión de los resultados de Dyson.}
+
+\subsection{Wishart processes}
+
+\todo[inline]{Tanto en la parte de proceso Wishart como Jacobi, se citan los resultados de Graczyk y Małecki, y prácticemente como un corolario se mencionan la existencia y propiedades de estos procesos.}
+
+\subsection{Jacobi processes}
+
+
+
+
+
+\section{Finite Free Probability}
+
+\todo[inline]{Aquí se mencionan los principales resultados sobre probabilidad libre finita. En la introducción se habla sobre que las convoluciones de polinomios ya habían sido estudiadas tiempo antes, pero que gracias a la probabilidad libre se pueden obtener más propiedades y relacionarlas con matrices aleatorias.}
+
+\subsection{Convolution of polynomials}
+
+\todo[inline]{Se mencionan los dos tipos de convoluciones que se habían estudiado tiempo antes y se dan las principales propiedades. Se hace énfasis en que algunos de estos resultados no se puedieron obtener hasta que se usó probabilidad libre.}
+
+\subsubsection{Symmetric additive convolution}
+
+\subsubsection{Symmetric multiplicative convolution}
+
+\subsubsection{Linearizartion of convolutions}
+
+\todo[inline]{Se menciona la existencia de cumulantes libres $m$-finitos y de transformadas que linealizan la convolución de los polinomios.}
+
+\subsection{Finite free convolutions and random matrices}
+
+\todo[inline]{Se menciona la relación que tiene la convolución de los polinomios con las matrices aleatorias. Particularmente sobre cómo la convolución de polinomios puede ser vista como el polinomio característico de sumas y productos de matrices aleatorias, así como mostrar que el polinomio característico de un ensamble unitario gaussiano satisface la ecuación del proceso de Dyson, pero sin la parte de martingala.}
+
+
+
+
+
+
+\section{Deterministic eigenvalue processes for matrix-valued processes}
+
+\subsection{Deterministic Dyson Brownian motion}
+
+\todo[inline]{Se introduce un modelo de proceso matriz-valuado cuyo espectro es determinista y satisface la ecuación del proceso de Dyson, pero sin la parte de martingala. Se menciona que este proceso puede ser usado para modelar el descenso del gradiente de entropía de Boltzmann de acuerdo con las notas de Govind Menon. En la subsección siguiente se muestra que este proceso es un movimiento browniano en el espacio de matrices simétricas, pero con ceros en la diagonal.}
+
+\subsubsection{Symmetric matrix-valued Brownian motion with zeros on the diagonal}
+% Hollow matrix-valued brownian motion?
+
+\subsection{Deterministic eigenvalue processes for matrix-valued diffusions}
+
+\todo[inline]{Se generaliza el resultado anterior a proceso matriciales que satisfacen una ecuación de difusión en general con respecto a un movimiento brownian en el espacio de matrices simétricas con ceros en la diagonal.}
+
+\subsection{Connections with finite free probability}
+
+\todo[inline]{La última parte del trabajo de tesis consistirá en establecer una relación entre los procesos matriciales que permiten observar los procesos de eigenvalores deterministas y polinomios característicos esperado de ensambles matriciales.}
+
+
+
+
+
+
+
+\end{document}

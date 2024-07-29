@@ -1,0 +1,135 @@
+\documentclass[letterpaper,10pt,twoside]{book}  % book class
+%\usepackage[spanish,es-nodecimaldot,es-tabla]{babel} % language/hyphenation
+\usepackage[utf8]{inputenc}  % input encoding
+\usepackage{graphicx} % graphics library (REQUIRED by CIMATpreamble)
+\usepackage[svgnames,table]{xcolor}  % color library (REQUIRED by CIMATpreamble)
+\usepackage{CIMATpreamble}  % definition of the CIMAT cover page
+\graphicspath{{img/}}  % set path for images folder
+
+%\usepackage[default]{lato}
+%\usepackage[libertine,cmintegrals,cmbraces,vvarbb]{newtxmath}
+%\usepackage[sc]{mathpazo}
+
+\usepackage{mypreamble} % custom preamble
+
+
+\usepackage{todonotes}
+%[disable]{todonotes}
+\usepackage{mathrsfs}
+
+\usepackage[activate={true,nocompatibility},final,tracking=true,kerning=true,spacing=true,factor=1100,stretch=10,shrink=10]{microtype}
+
+\usepackage{mathtools}
+
+%-----------------------------------------------------------------------------%
+% Coverpage template requested by CIMAT for the master thesis in LaTeX version 
+
+%-----------------------------------------------------------------------------%
+% README: Instructions & Comments
+%
+% > The package 'CIMATpreamble' is required for the CIMAT cover page and 
+%   it depends on the declared libraries above
+% > To use the COVER template only fill the Cover/Titlepage block 
+%   with your information and make sure the '\maketitle' command is enabled
+%
+% > The rest of the LaTeX code was built according to the guideline provided by 
+%   the ShareLatex/Overleaf team:
+%   "How to Write a Thesis in LaTeX (Part 1): Basic Structure"; you will find  
+%   the custom settings (link colors, caption specs., etc.) in the 
+%   'mypreamble.sty' file, so you are free to use or modify that code 
+% > Much of the code for the cover page is based on the Overleaf template    
+%   created by Salvador Pedraza Espitia: 
+%   https://www.overleaf.com/latex/templates/unam-dissert/mypjkyrmhgns
+% > The essential idea of this code is to provide a minimal and functional  
+%   LaTeX document, allowing us to focus on the content of our thesis work;
+%   I hope it be useful for you :) !
+% 
+% > Credits: Kenny Yahir Mendez Ramirez, Cristal E. Mendez Ramirez
+% > For comments and suggestions please send a e-mail to kenny.yahir.mz@gmail.com
+
+%-----------------------------------------------------------------------------%
+% Cover/Title page: fill out with your personal information
+
+\author{Juan Esaul González Rangel}
+\documentType{T E S I S}  % change to "T E S I N A" if it is the case
+\title{El proceso de Dyson determinista}
+\degree{Maestro en Ciencias con Especialidad en Probabilidad y Estadística}
+\supervisor{Dr. Octavio Arizmendi Echegaray}
+\supervisorSecond{Dr. José Luis Ángel Pérez Garmendia}  % optional command
+\cityandyear{Guanajuato, Guanajuato, Junio de 2024}
+
+%-----------------------------------------------------------------------------%
+% Document body
+
+\begin{document}
+
+% Coverpage
+\maketitle  % this enable the CIMAT title page!
+
+\thispagestyle{empty}  % blank page after title page
+
+\frontmatter
+
+% Dedication
+\chapter*{}
+\begin{flushright}%
+  \emph{Dedicatoria \ldots}
+  \thispagestyle{empty}
+\end{flushright}
+
+% Abstract
+\chapter*{Abstract}
+\addcontentsline{toc}{chapter}{Abstract}
+
+
+
+% Keywords
+\paragraph{Palabras clave:} 
+
+% Acknowledgements
+\chapter*{Agradecimientos}
+\addcontentsline{toc}{chapter}{Agradecimientos}
+
+A mis padres \ldots
+
+% Table of contents and list of figures
+\tableofcontents
+
+%\listoffigures
+
+% Chapters
+\mainmatter
+
+\spacing{1}  % interline  (double) space
+
+% put the content of your chapters in the .tex files located in the 'chapters/' folder; 
+% the use of '\include' instead of '\input' command could enhance the  compilation process, see the reference below
+
+%\input{partes/Borradores.tex}
+
+\input{partes/Preliminares.tex}
+
+\input{partes/CH2.tex}
+
+\input{partes/CH3.tex}
+
+\input{partes/CH4.tex}
+
+
+% Bibliography
+\bibliographystyle{apacite}  % APA style according to apacite package: see mypreamble.sty line 21
+\bibliography{ref_tesis.bib}
+
+% Appendix
+% \appendix
+
+\backmatter
+
+\end{document}
+
+% LaTeX references (technical issues, workarounds)
+
+% https://www.overleaf.com/learn/latex/Management_in_a_large_project ('including files' section)
+% https://tex.stackexchange.com/questions/64839/how-to-change-listing-caption
+% https://stackoverflow.com/questions/2709898/change-list-of-listings-text
+% https://tex.stackexchange.com/questions/664/why-should-i-use-usepackaget1fontenc

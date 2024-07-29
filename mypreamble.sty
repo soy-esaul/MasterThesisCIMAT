@@ -1,0 +1,103 @@
+\ProvidesPackage{mypreamble}
+
+%-----------------------------------------------------------------------------%
+% Useful libraries
+
+\usepackage{amsmath,amsfonts,amsthm} % math packages
+\usepackage{amsbsy}  % bold symbols
+\usepackage{amssymb}  % math symbols
+\usepackage{verbatim} % typewriter font enviroment
+\usepackage{hyperref}  % for links
+\usepackage{subcaption}  % Subfigures
+\usepackage{float}  % to position figures
+\usepackage{url}  % for url's
+\usepackage{enumerate}  % listing items
+\usepackage{listing}  % must be load before minted
+% \usepackage{minted}  % highlighting code
+\usepackage{caption}  % custom caption
+\usepackage{setspace}
+\usepackage{dsfont}
+
+% bibliography
+\usepackage[natbibapa]{apacite}  % APA Style Bibliography with natbib
+\usepackage[nottoc]{tocbibind}  % bibliography is indexed but not numbered
+
+% heavier lines in tables: bottom-rule
+\usepackage{booktabs}
+
+%-----------------------------------------------------------------------------%
+% Customized colors (xcolor library is needed)
+
+\definecolor{orangeK}{RGB}{220,220,220}  % #ffb732
+\definecolor{customColorLink}{RGB}{0,0,128}
+
+%-----------------------------------------------------------------------------%
+% Settings for hyperlinks
+
+% \hypersetup{
+%   colorlinks   = true,  % Colours links instead of ugly boxes
+%   urlcolor     = ForestGreen,  % Colour for external hyperlinks
+%   linkcolor    = customColorLink,  % Colour of internal links
+%   citecolor = FireBrick  % Colour for citations
+% }  % colors specified by their svgnames
+
+% see: http://www.latextemplates.com/svgnames-colors
+
+%------------------------------------------------------------------------------%
+% Other settings
+
+\DeclareCaptionFont{grisCIMAT}{\color{grisCIMAT}}
+\DeclareCaptionFont{Purple}{\color{Purple}}
+
+\captionsetup{labelfont={Purple, bf}}  % caption label color
+\captionsetup{font={small}}  % caption size
+%\setlength\intextsep{0pt}  % space above and below of figure
+
+%-----------------------------------------------------------------------------%
+% Alias for commands
+
+%\renewcommand{\listingscaption}{Código}  % Listing -> Algorithm (minted)
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+\newtheorem{example}{Example}[section]
+
+% \item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+% \newenvironment{definition}[1][Definition]{\begin{trivlist}
+% \item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+% \newenvironment{example}[1][Example]{\begin{trivlist}
+% \item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+% \newenvironment{remark}[1][Remark]{\begin{trivlist}
+% \item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+
+\newcommand{\R}{\mathbb R}
+\newcommand{\N}{\mathbb N}
+\newcommand{\C}{\mathbb C}
+\renewcommand{\H}{\mathbb H}
+\newcommand{\trans}[1]{#1^T}
+\newcommand{\hermit}[1]{#1^*}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\abs}[1]{\lvert #1 \rvert}
+\newcommand{\E}[1]{\mathbb E \left[ #1 \right]}
+\newcommand{\F}{\mathscr F}
+\renewcommand{\P}[1]{P\left( #1 \right)}
+\newcommand{\A}{\mathcal A}
+\renewcommand{\phi}{\varphi}
+\newcommand{\M}{\mathcal M}
+\newcommand{\tr}{\mathrm{tr}}
+\newcommand{\sgn}{\mathrm{sgn}}
+
+
+
+\renewcommand{\d}{\mathrm d}
+
+
+\newcommand{\aac}{
+  \mathrel{\begin{tikzpicture}[baseline=0-0.25em]
+    \node[draw, minimum width=0.5em, minimum height=0.5em, inner sep=0pt] {$++$};
+  \end{tikzpicture}}}

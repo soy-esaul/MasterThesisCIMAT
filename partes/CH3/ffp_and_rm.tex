@@ -1,0 +1,356 @@
+%\section{Finite free probability and random matrices}
+
+
+\section{Minor orthogonality}
+
+
+\begin{definition}[Minor orthogonality]
+    Let $R$ be an $m \times n$ random matrix. We say $R$ is minor orthogonal if for every $k,l \in \mathbb Z$ such that $k,l \le \max\{m.n\}$ and all sets $S,T,U,V$ with $\abs{S} = \abs{T} = k$ and $\abs{U} = \abs{V} = l$, it satisfies
+    
+    \begin{equation*}
+        E_R\left[ [R]_{S,T} [R^*]_{U,V} \right] = \frac{\delta_{S,V}\delta_{T,U}}{\binom{\max\{m,n\}}{k}}.
+    \end{equation*}
+\end{definition}
+
+\begin{lemma} \label{lemma:orth_trans_is_minorth}
+    If $R$ is minor orthogonal and $Q$ is a constant matrix such that $Q\hermit{Q} = I$, then $Q$ is minor orthogonal. If $\hermit{Q}Q = I$, then $RQ$ is minor orthogonal.
+\end{lemma}
+
+\begin{proof}
+    Recall that by the Cauchy-Binet formula, for $|S|=|T| = k$ we have
+
+    \begin{equation*}
+        [QR]_{S,T} = \sum_{\abs{W} = k} [Q]_{S,W}[R]_{W,T},
+    \end{equation*}
+
+    \noindent so with $\abs{S} = \abs{T} = k, \abs{U}=\abs{V} = l$,
+
+    \begin{align*}
+        E_R \left[ [QR]_{S,T}[\hermit{R}\hermit{Q}]_{U,V} \right] &= E_R \left[  \sum_{\abs{W}=k} \sum_{\abs{Z} = l} [Q]_{S,W}[R]_{W,T} [\hermit{R}]_{U,Z}[\hermit{Q}]_{Z,V} \right],\\
+        &= \sum_{\abs{W}=k} \sum_{\abs{Z} = l} [Q]_{S,W}[\hermit{Q}]_{Z,V} E_R \left[ [R]_{W,T}[\hermit{R}]_{U,Z}\right],\\
+        &= \sum_{\abs{W}=k} \sum_{\abs{Z} = l} [Q]_{S,W}[\hermit{Q}]_{Z,V} E_R \frac{\delta_{W,Z}\delta_{T,U}}{\binom{\max\{m,n\}}{k}},\\
+        &= \sum_{\abs{W}=k} [Q]_{S,W}[\hermit{Q}]_{W,V}\frac{\delta_{T,U}}{\binom{\max\{m,n\}}{k}}
+        = [Q\hermit{Q}]_{S,V} \frac{\delta_{T,U}}{\binom{\max\{m,n\}}{k}},\\
+        &= [I]_{S,V} \frac{\delta_{T,U}}{\binom{\max\{m,n\}}{k}},
+        \intertext{Notice that $[I]_{S,V} = 1$ if and only if $S=V$, so we conclude that}
+        E_R \left[ [QR]_{S,T}[\hermit{R}\hermit{Q}]_{U,V} \right] &= \frac{\delta_{S,V}\delta_{T,U}}{\binom{\max\{m,n\}}{k}}.
+    \end{align*}
+
+    The case $\hermit{Q}Q =I$ is proven in the same way.
+\end{proof}
+
+\begin{definition}[Signed permutation matrix]
+    A signed permutation matrix is a matrix that can be written $EP$ where $E$ is a diagonal matrix with entries $\pm 1$ and $P$ is a permutation matrix.
+\end{definition}
+
+\begin{lemma} \label{lemma:singed_per_is_minorth}
+    A random matrix sampled uniformly from the set of signed permutation matrices is minor-orthogonal.
+\end{lemma}
+
+\begin{proof}
+    Let $Q$ be a signed permutation matrix, we can write $Q = E P$, where $E$ is a diagonal random matrix with entries $\pm 1$ taken uniformly and $P$ is a matrix chosen uniformly from the permutation matrices, and both are independent. Then for $\abs{S} = \abs{T} = k$ and $\abs{U} = \abs{U} = l$,
+
+    \begin{align*}
+        E_Q\left[ [Q]_{S,T}[\hermit{Q}]_{U,V} \right] &= E_{E,P}\left[ [E P]_{S,T}[\hermit{P}E]_{U,V} \right],\\
+        &= \sum_{\abs{W} = k} \sum_{\abs{Z} = l} E_{E,P} \left[ [E]_{S,W} [P]_{W,T} [\hermit{P}]_{U,Z} [E]_{Z,V} \right],
+        \intertext{every $[E]_{S,W}$ is diagonal and the determinant would be zero if $S\neq W$, so}
+        &= E_{E,P} \left[ [E]_{S,S} [P]_{W,T} [\hermit{P}]_{U,Z} [E]_{V,V} \right],\\
+        \intertext{Let $\left\{\chi_i\right\}_{1\le i \le n}$ be the diagonal entries of $E$, then}
+        &= E_{E}\left[ \prod_{i\in S} \chi_i \prod_{j\in V} \chi_j \right] E_{P}\left[  [P]_{S,T}[\hermit{P}]_{U,V} \right].
+    \end{align*}
+
+    Now we use that the variables $chi_i$ are independent and uniform in $\{-1,1\}$, so that $E[\chi_i] = 0$, but $E[\chi_i^2] = 1$ for all $i$, and this means 
+
+    \begin{equation*}
+        E_E \left[ \prod_{i\in S} \chi_i \prod_{j\in V} \chi_j \right] = \delta_{S,V}.
+    \end{equation*}
+
+    This last equality leads to
+
+    \begin{align*}
+        E_R \left[ [QR]_{S,T}[\hermit{R}\hermit{Q}]_{U,V} \right] &= \delta_{S,V} E_{P}\left[  [P]_{S,T}[\hermit{P}]_{U,V} \right],\\
+        &=  \delta_{S,V} E_{P}\left[  [P]_{S,T}[\hermit{P}]_{U,S} \right],\\ 
+        &= \delta_{S,V} E_{P}\left[  [P]_{S,T}[P]_{S,U} \right].
+    \end{align*}
+
+    The submatrix $P_{S,T}$ can be transformed in a diagonal matrix by a permutation matrix because it has at most a non zero entry for each row and each column. If the diagonal matrix has a zero entry in the diagonal, then the determinant $[P]_{S,T}$ is zero, in other case, it is different that zero. The only case when all of the diagonal entries of the diagonal matrix are not zero is when $T = \pi(S)$ with $\pi$ the permutation function corresponding to $P$. This means that in order to have a non-zero determinant we need $T = \pi(S) = U$, and $[P]_{S,U} = \in \{-1,1\}$, so
+
+    \begin{align*}
+        E_R \left[ [QR]_{S,T}[\hermit{R}\hermit{Q}]_{U,V} \right] &= \delta_{S,V} \delta_{T,U} E_{P}\left[  [P]_{S,T}[P]_{S,T} \right],\\ 
+        &= \delta_{S,V} \delta_{T,U} E_{P}\left[  [P]_{S,T}^2 \right],\\ 
+        &= \delta_{S,V} \delta_{T,U} E_{P}\left[  \delta_{T=\pi(S)} \right], \\ 
+        &= \delta_{S,V} \delta_{T,U} \P{T = \pi(S)}.
+    \end{align*}
+
+    We are supposing that we are sampling uniformly from the permutation matrices of size $n \times n$, so the probability that $T = \pi(S)$ when $\pi$ is a permutation of $n$ elements and $\abs{S} = \abs{T} = k$ is $1/\binom{n}{k}$. So, we can conclude
+
+    \begin{align*}
+        E_R \left[ [QR]_{S,T}[\hermit{R}\hermit{Q}]_{U,V} \right] &= \frac{\delta_{S,V} \delta_{T,U}}{\binom{n}{k}}.
+    \end{align*}
+
+    This is the definition of being minor-orthogonal. \todo{En el paper no lo prueban, pero el resultado se tiene también para una matriz de permutación con signos rectangular. En la siguiente prueba se usa esto, así que falta completar eso. La prueba es igual, simplemente tomando que $E$ es de tamaño $m\times m$ y $P$ de tamaño $m\times n$, todos los resultados se siguen.}
+
+\end{proof}
+
+
+\begin{corollary}
+    An $m\times n$ random matrix sampled from the Haar measure on $\mathbb C_{n}^m$ is minor-orthogonal.
+\end{corollary}
+
+\begin{proof}
+    Let $R$ be a Haar distributed random $m\times n$ matrix with $m \le n$ and $Q$ a random permutation matrix. Any random permutation matrix is unitary, so $RQ$ is Haar distributed for fixed $Q$, and by Lemmas \ref{lemma:orth_trans_is_minorth} and \ref{lemma:singed_per_is_minorth} we have that it is also minor-orthogonal. Then, if $Q$ is uniformly sampled from the signed permutation matrices,
+
+    \begin{align*}
+        E_R\left[ [R]_{S,T}[\hermit{R}]_{U,V} \right] = E_{R,Q}\left[ [RQ]_{S,T} [\hermit{(RQ)}]_{U,V}\right]. 
+    \end{align*}
+
+    Since $Q$ is minor orthogonal, $RQ$ is also minor orthogonal for fixed $R$ and 
+
+    \begin{align*}
+        E_R\left[ E_Q \left[ [RQ]_{S,T}[\hermit{(RQ)}]_{U,V} \right] \right] = E_R\left[ \frac{\delta_{S,V}\delta_{T=U}}{\binom{n}{k}}\right] = \frac{\delta_{S,V}\delta_{T=U}}{\binom{n}{k}},
+    \end{align*}
+
+    \noindent where $k = \abs{S} = \abs{T}$. 
+\end{proof}
+
+
+% Formulas
+
+
+We denote by $\sigma_k(A)$ the coeficient of of $(-1)^{k}x^{d-k}$ in the characteristic polynomial of a $d$-dimensional matrix $A$. We will use the fact that \todo{Tal vez esto debería ir en preliminares}
+
+\begin{equation*}
+    \sigma_k(A) = \sum_{\abs{S} = k} [A]_{S,S}.
+\end{equation*}
+
+\begin{lemma} \label{lemma:conjugate_minorth}
+    Let $m \le n$, $B$ an $n\times n$ random matrix and $R$ an $m\times n$ minor-orthogonal matrix independent from $B$. For all sets $S,T \subset \binom{[m]}{k}$ we have
+
+    \begin{equation*}
+        E_{B,R} \left[ [RB\hermit R]_{S,T} \right] = E_B \left[\delta_{S,T} \frac{\sigma_k(B)}{\binom{n}k}\right].
+    \end{equation*}
+\end{lemma}
+
+\begin{proof}
+    Using the Cauchy-Binet formula we have
+
+    \begin{align*}
+        E_{B,R} \left[ [RB\hermit{R}]_{S,T} \right] &= E_B \left[\sum_{X,Y \in \binom{[n]}{k}} E_R \left[ [R]_{S,X} [B]_{X,Y} [\hermit{R}]_{Y,T} \right] \right],\\ 
+        &= E_B \left[\sum_{X,Y \in \binom{[n]}{k}} [B]_{X,Y} E_R \left[ [R]_{S,X} [\hermit{R}]_{Y,T} \right] \right],\\ 
+        &=  E_B \left[\sum_{X,Y \in \binom{[n]}{k}} [B]_{X,Y} \frac{\delta_{S,T} \delta_{X,Y}}{\binom{n}{k}} \right],\\ 
+        &= E_B \left[\sum_{X \in \binom{[n]}{k}} [B]_{X,X} \frac{\delta_{S,T}}{\binom{n}{k}} \right],\\
+        &= E_B \left[\delta_{S,T} \frac{\sigma_k(B)}{\binom{n}k}\right].
+    \end{align*}
+\end{proof}
+
+
+\begin{lemma}
+    Let $a > d$, $A$ an $a \times a$ random matrix and $Q$ a random $a \times d$ matrix sampled from the Haar measure on $\mathbb C_a^d$, then
+
+    \begin{equation*}
+        E_A \left[E_Q\left[ \chi_x \left( Q A \hermit{Q} \right) \right]\right] = E_A \left[\frac{d!}{a!} \frac{\d^{(a-d)}}{\d x} \chi_x(Q) \right].
+    \end{equation*}
+\end{lemma}
+
+\begin{proof}
+    Let $A$ be a fixed matrix and $Q$ a Haar unitary matrix on $\mathbb C_{a}^d$, the $k$th coefficient of the expected characterictic polynomial of $QA\hermit Q$ is 
+
+    \begin{align*}
+        E_Q \left[ \sigma_k(QA\hermit{Q}) \right] &= \sum_{\abs{S} = k} E_Q\left[ [QA\hermit Q]_{S,S} \right],\\ 
+        &= \sum_{\abs{S} = k} \frac{\sigma_k(A)}{\binom ak},\\ 
+        &= \frac{\binom{d}{k} \sigma_k(A)}{\binom{a}{k}}.
+    \end{align*}
+
+    Taking expectaton on the last expression we find
+
+    \begin{align*}
+        E_A \left[E_Q\left[ \chi_x \left( Q A \hermit{Q} \right) \right]\right] &= E_A \left[ \frac{\binom{d}{k} \sigma_k(A)}{\binom{a}{k}} \right] = \frac{\binom{d}{k} \sigma_k(A)}{\binom{a}{k}},
+    \end{align*}
+
+    \noindent which is the $k$th coefficient of $\frac{d!}{a!} \frac{\d^{(a-d)}}{\d x} E_A \left[\chi_x(A) \right]$.
+\end{proof}
+
+
+\begin{theorem} \label{thm:implies_symmad}
+    Let $A, B$ be $d\times d$ random matrices and $R$ a $d\times d$ minor-orthogonal matrix, such that $A, B, R$ are jointly independent, then we have
+
+    \begin{equation*}
+        E_{A,B,R}\left[ \sigma_k(A + RB\hermit R) \right] =  \sum_{i=0}^k \frac{\binom{d-i}{k-i}}{\binom{d}{k-i}}E_{A} \left[\sigma_i(A)\right] E_{A}\left[\sigma_{k-i}(B)\right].
+    \end{equation*}
+\end{theorem}
+
+\begin{proof}
+    We use 
+
+    \begin{equation*}
+        \sigma_k(A) = \sum_{\abs{S}=k} [A]_{S,S},
+    \end{equation*}
+
+    \noindent together with Theorem \ref{thm:marcus_binet} and Lemma \ref{lemma:conjugate_minorth} to get \todo{Hay que aclarar las normas de matrices.}
+
+    \begin{align*}
+        E_{A,B,R}\left[ \sigma_k(A + RB\hermit{R}) \right] &= \sum_{S \in \binom{[d]}{k}} E_{A,B,R} \left[ [A + RB\hermit{R}]_{S,S} \right],\\ 
+        &= \sum_{S\in\binom{[d]}{k}} \sum_{i=0}^k \sum_{U,V\in \binom{[k]}{i}} (-1)^{\norm{U}_1 + \norm{V}_1} E_A\left[ [A]_{U(S),V(S)} \right] E_{B,R}\left[ [RB\hermit R]_{\overline{U}(S),\overline{V}(S)} \right],\\ 
+        &= \sum_{S\in\binom{[d]}{k}} \sum_{i=0}^k \sum_{U,V\in \binom{[k]}{i}} (-1)^{\norm{U}_1 + \norm{V}_1} E_A\left[ [A]_{U(S),V(S)} \right] \delta_{\overline{U}(S),\overline{V}(S)} \frac{E_{B}\left[ \sigma_{k-i}(B)\right]}{\binom{d}{k-i}},\\ 
+        \intertext{using that $U(S)=V(S)$ if and only if $\overline{U}(S) = \overline{V}(S)$,}
+        &= \sum_{i=0}^k \frac{E_{B}\left[ \sigma_{k-i}(B)\right]}{\binom{d}{k-i}} \sum_{S\in\binom{[d]}{k}} \sum_{U,V\in \binom{[k]}{i}}  E_A\left[ [A]_{U(S),U(S)} \right].
+    \end{align*}
+
+    To finish the proof we need to find
+
+    \begin{equation} \label{eq:suma_rara} \sum_{S\in\binom{[d]}{k}} \sum_{U\in \binom{[k]}{i}}  E_A\left[ [A]_{U(S),U(S)} \right]. \end{equation}
+
+    Clearly, we are summing over all of the sets $V \in \binom{[d]}{i}$, but they appear more than once in the sum. To find the number of times every element $V\in \binom{[d]}{i}$ appears in the sum, we can count the total number of terms we are summing in \eqref{eq:suma_rara} and divide by the total number of elements in $\binom{[d]}{i}$. We have that $\abs{\binom{[d]}i} = \binom{d}{i}$ and the number of summands is $\binom{d}{k}\binom{k}{i}$, so
+
+    \begin{align*}
+        \frac{\binom{d}{k}\binom{k}{i}}{\binom{d}{i}} &= \frac{\frac{d!}{k!(d-k)!}\frac{k!}{i!(k-i)!}}{\frac{d!}{i!(d-i)!}} = \frac{(d-i)!}{(d-k)!(k-i)!} = \binom{d-i}{k-i}.
+    \end{align*}
+
+    So, we have
+
+    \begin{equation*}
+        \sum_{S\in\binom{[d]}{k}} \sum_{U\in \binom{[k]}{i}}  E_A\left[ [A]_{U(S),U(S)} \right] = \binom{d-i}{k-i} \sum_{V\in \binom{[d]}{i}}  E_A\left[ [A]_{V,V} \right] = \binom{d-i}{k-i}E_A\left[\sigma_{i}(A)\right].
+    \end{equation*}
+
+    Thus we can conclude
+
+    \begin{equation*}
+        E_{A,B,R}\left[ \sigma_k(A + RB\hermit R) \right] =  \sum_{i=0}^k \frac{\binom{d-i}{k-i}}{\binom{d}{k-i}}E_{A} \left[\sigma_i(A)\right] E_{A}\left[\sigma_{k-i}(B)\right].
+    \end{equation*}
+
+    \todo{Hay que aclarar qué signofica $U(S)$.}
+\end{proof}
+
+
+\begin{theorem} \label{thm:symmad}
+    If $p(x)$ is the characteristic polynomial of $A$ and $q(x)$ is the characteristic polynomial of $B$, where $A$ and $B$ are $d\times d$ normal matrices with complex entries, then 
+
+    \begin{equation*}
+        p(x) \boxplus_d q(x) = E_Q\left[\chi_x(A + Q B Q^*)\right],
+    \end{equation*}
+
+    \noindent where $\chi_x(\cdot)$ denotes the characteristic polynomial of $\cdot$ with $x$ as a variable and $E_Q$ denotes taking expectation over $Q$ where $Q$ is sampled from the Haar measure on the unitary complex $d\times d$ matrices.
+\end{theorem}
+
+\begin{proof}
+    It follows directly from Theorem \ref{thm:implies_symmad} and definition of the symmetric additive convolution.
+\end{proof}
+
+
+
+\begin{theorem} \label{thm:implies_symm_mult}
+    Let $A$ and $B$ be $d\times d$ random matrices and $R$ a minor-orthogonal $d\times d$ matrix, such that $A,B,R$ are jointly independent, then
+
+    \begin{equation*}
+        E_{A,B,R} \left[\sigma_k(ARB\hermit{R})\right] = \frac{E_A[\sigma_k(A)]E_B[\sigma_k(B)]}{\binom{d}{k}}.
+    \end{equation*}
+\end{theorem}
+
+\begin{proof}
+    \begin{align*}
+        E_{A,B,R} \left[\sigma_k(ARB\hermit{R})\right] &= \sum_{S \in \binom{[d]}{k}} E_{A,B,R} \left[[ARB\hermit{R}]_{S,S}\right],\\ 
+        \intertext{By the Cauchy-Binet formula and independence}
+        &= \sum_{S,T \in \binom{[d]}{k}} E_A\left[ [A]_{S,T} \right] E_{B,R} \left[ [RB\hermit{R}]_{T,S} \right],\\ 
+        \intertext{By Lemma \ref{lemma:conjugate_minorth}}
+        &= \sum_{S,T \in \binom{[d]}{k}} E_A\left[[A]_{S,T} \right] \delta_{T,S}\frac{E_B\left[ \sigma_k(B)\right]}{\binom{d}{k}},\\
+        &= \frac{E_A[\sigma_k(A)]E_B[\sigma_k(B)]}{\binom{d}{k}}.
+    \end{align*}
+\end{proof}
+
+
+\begin{theorem}
+    Let $p(x)$ be the characteristic polynomial of $A$ and $q(x)$ be the characteristic polynomial of $B$ where $A$ and $B$ are $d\times d$ normal matrices with complex entries, then 
+
+    \begin{equation*}
+        p(x) \boxtimes_d q(x) = E_Q \left[ \chi_x (AQBQ^*) \right],
+    \end{equation*}
+
+    \noindent with $\chi_x$ and $E_Q$ as in Theorem \ref{thm:symmad}.
+\end{theorem}
+
+\begin{proof}
+    It follows directly from Theorem \ref{thm:implies_symm_mult} and definition of the symmetric multiplicative convolution.
+\end{proof}
+
+\section{The $\mathcal R_d$ transform} 
+
+Given any polynomial $p(z)$ with order $p$ we can associate an empirical measure $\mu_p$ to its roots $z_i$ given by
+
+\begin{equation*}
+    \mu_p(\{x\}) = \frac1n\sum_{j=1}^p \delta_{x,z_j}.
+\end{equation*}
+
+This measure is similar to the spectral empirical measure of a random matrix. We can find its Cauchy transform in terms of the polynomial with the following lemma.
+
+\begin{lemma} \label{lemma:cauchy_empirical_polynomial}
+    Let $p$ be a monic polynomial of order $p$ with roots $\{z_i\}_{i=1}^n$, then the Cauchy transform of the empirical measure associated to the roots $z_i$ is given by 
+
+    \begin{equation*}
+        G_{\mu_p}(z) \coloneqq \frac1n \sum_{j=1}^n \frac1{z - z_j} = \frac{\partial_z p }{n p}(z).
+    \end{equation*}
+
+\end{lemma}
+
+\begin{proof}
+    $p(z)$ is a monic polynomial with roots $\left\{ z_j \right\}_{j \in [n]}$, then we can write,
+
+    \begin{equation*}
+        p(z) = \prod_{j=1}^n (z-z_j).
+    \end{equation*}
+
+    By the Leibnitz rule we find
+
+    \begin{equation*}
+        \partial_z p(z) = \sum_{j=1}^n \prod_{k\neq j} (z-z_k).
+    \end{equation*}
+
+    Using the last equation we have
+
+    \begin{align*}
+        \frac{\partial_z p}{n p}(z) &= \frac1n\sum_{j=1}^n \frac{\prod_{k\neq j} (z-z_k) }{ \prod_{l=1}^n (z-z_l) } = \frac1n\sum_{j=1}^n \frac{1}{z - z_j} \eqqcolon G_{\mu_p}(z).
+    \end{align*}
+\end{proof}
+
+\begin{definition}[The $\mathcal K_d$ transform \cite{anaya2016cumulantes}]
+    Let $A$ be a $d\times d$ symmetric matrix with real entries. We define the $\mathcal K_d$ transform of its empirical spectral measure $\mu_A$ as 
+
+    \begin{equation*}
+        \mathcal K_d^{\mu_A} (s) \coloneqq - \frac{\partial}{\partial s} \ln \norm{ e^{xs} [x I - A] }_d,
+    \end{equation*}
+
+    \noindent where $[x I - A]$ represents the determinant of $xI - A$ and the integration domain for the norm is $(\rho_A, \infty)$.
+\end{definition}
+
+
+\begin{definition}[The $\mathcal R_d$ transform]
+    Let $A$ be a $d\times d$ symmetric matrix with real entries. We define the $\mathcal R_d$ transform of its empirical spectral measure $\mu_A$ as 
+
+    \begin{equation*}
+        \mathcal R_d^{\mu_A} (s) = \mathcal K_d^{\mu_A} - \left( 1 + \frac1d \right) \frac1s.
+    \end{equation*}
+\end{definition}
+
+\begin{theorem} Let $A$ be a self-adjoint $d \times d$ matrix with empirical spectral distribution $\mu_A$, then
+
+    \begin{equation*}
+        \lim_{d\to\infty} \mathcal K_d^{\mu_A} (s) = G_{\mu_A}^{-1}(s),
+    \end{equation*}
+\noindent with $s \in (\rho_A, \infty)$ and where $G_{\mu_A}^{-1}(s)$ is the inverse under composition of $G_{\mu_A}(s)$.
+\end{theorem}
+
+
+\begin{theorem}[Finite central Limit Theorem \cite{marcus2021polynomial}]
+    Let $p_1, p_2, \dots$ be a sequence of degree $d$ real rooted polynomials with $p_i = \prod_j (x - r_{i,j})$ such that
+
+    \begin{equation*}
+        \sum_{j} r_{i,j} = 0, \qquad \frac1d \sum_j r^2_{i,j} = \sigma^2,
+    \end{equation*}
+
+    \noindent for all $i$. Define $q_i(x) = n^{-m/2}p_i(\sqrt{n}x)$, then 
+
+    \begin{equation*}
+        \lim_{n\to\infty} \left( q_1 \boxplus_d \cdots \boxplus_d q_n \right) = \left( \frac{d-1}{\sigma^2} \right)^{-d/2} H_d\left( x \sqrt{\frac{d-1}{\sigma^2}} \right),
+    \end{equation*}
+
+    \noindent with $H_d$ represents the $d$th Hermite polynomial and the constants work to make it monic.
+\end{theorem}

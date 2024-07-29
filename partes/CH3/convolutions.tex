@@ -1,0 +1,136 @@
+\section{Convolution of polynomials}
+
+In this section, we present two notions of polynomial convolution, both introduced around a century ago \cite{walsh1922location} \cite{szeg1939orthogonal}. Their study began using tools outside of probability theory, but we do not include any of those results here, instead, we are merely interested in introducing them to relate them to expected characteristic polynomials of random matrices. In the next subsection we introduce three ensembles of orthogonal polynomials, namely the Hermite, Laguerre and Jacobi polynomials. We prove some nice properties these polynomials, especially related to the notions of convolution introduced previously. 
+
+Both notions of convolution are defined for monic complex polynomials. Under this conditions, we can express a polynomial $p(z)$ as
+
+\begin{equation*}
+    p(z) = \sum_{j=0}^d z^{d-j}(-1)^{j}a_j.
+\end{equation*}
+
+Both convolutions are defined in function of the polynomial degree, but the polynomials need not to have the same degree. In the case the degree is different, we take the convolution with the highest degree. 
+
+\subsection{Symmetric additive convolution}
+
+\begin{definition}[Symmetric additive convolution]\label{def:symadconv}
+    Let $p(z), q(z)$ be two complex polynomials of $z$, with degree less or equal to $d$,
+
+    \begin{align*}
+        p(z) &= \sum_{j=0}^d z^{d-j}(-1)^{j}a_j,\\
+        q(z) &= \sum_{j=0}^d z^{d-j}(-1)^{j}b_j.
+    \end{align*}
+
+    The $d$th symmetric additive convolution of $p$ and $q$ is
+
+    \begin{align*}
+        p(z) \boxplus_d q(z) &\coloneqq \sum_{k=0}^d z^{d-k}(-1)^k \sum_{i+j = k} \frac{(d-i)!(d-j)!}{d!(d-k)!}a_i b_j, \\
+        &= \frac{1}{d!}\sum_{k=0}^d \partial_z^k p(z)\partial_z^{d-k}q(0),\\
+        &= \frac{1}{d!}\sum_{k=0}^d \partial_z^k q(z)\partial_z^{d-k}p(0),
+    \end{align*}
+
+    \noindent with $\partial_z$ denoting the differentiation with respect to $z$.
+\end{definition}
+
+
+\subsection{Symmetric multiplicative convolution}
+
+\begin{definition}[Symmetric multiplicative convolutions]
+    Let $p$ and $q$ be as in Definition \ref{def:symadconv} with degree at most $d$, the $d$th symmetric multiplicative convolution of $p$ and $q$ is 
+
+    \begin{align*}
+        p(z) \boxtimes_d q(z) \coloneqq \sum_{i=0}^d z^{d-i}(-1)^i\frac{a_ib_i}{\binom di}.
+    \end{align*}
+\end{definition}
+
+%\subsection{Linearization of convolutions}
+
+\subsection{Orthogonal polynomials}
+
+\subsubsection{Hermite polynomials}
+
+The Hermite polynomials are defined by a linear operator
+
+\begin{equation}
+    H_n(z) \coloneqq e^{-\frac{\partial_z^2}{2}}(z^n) \coloneqq \sum_{k=0}^\infty \frac{(-1)^k}{2^k k!} \frac{\partial^{2k} z^n}{\partial z^{2k}}.
+\end{equation}
+
+The generalized Hermite polynomials also known as time dependent Hermite polynomials, or Hermite polynomials with variance are polynomials on $z$ and $t$ defined by the analogous linear operator
+
+\begin{equation}
+    H_n(z,t) \coloneqq e^{-\frac{t\partial_z^2}{2}}(z^n) \coloneqq \sum_{k=0}^\infty \frac{(-1)^kt^k}{2^k k!} \frac{\partial^{2k} z^n}{\partial z^{2k}}.
+\end{equation}
+
+Note that $H_n(z,1)=H_n(z)$. Using the former definitions we can find explicit expressions for both $H_n(z)$ and $H_n(z,t)$,
+
+\begin{align*}
+    H_n(z) &= \sum_{k=0}^\infty \frac{(-1)^k}{2^k k!} \frac{\partial^{2k} z^n}{\partial z^{2k}} = \sum_{k=0}^{\lfloor \frac n2 \rfloor} \frac{(-1)^k}{2^k k!} \frac{n! }{(n-2k)!}z^{n-2k} = n! \sum_{k=0}^{\lfloor \frac n2\rfloor} \frac{(-1)^k z^{n-2k}}{2^k k! (n-2k)!}, \\
+    H_n(z,t) &= \sum_{k=0}^\infty \frac{(-t)^k}{2^k k!} \frac{\partial^{2k} z^n}{\partial z^{2k}} = \sum_{k=0}^{\lfloor \frac n2 \rfloor} \frac{(-t)^k}{2^k k!} \frac{n! }{(n-2k)!}z^{n-2k} = n! \sum_{k=0}^{\lfloor \frac n2\rfloor} \frac{(-t)^k z^{n-2k}}{2^k k! (n-2k)!}.
+\end{align*}
+
+An easy substitution allows to see that the coefficient of $x^m$ in $H_n(z,t)$ is 
+
+\begin{equation}
+    a_m = \left\{ \begin{array}{cc}
+        \frac{n!(-t)^{\frac{n-m}2}}{2^{\frac{n-m}{2}}\left( \frac{n-m}{2}\right)!m!}, &  \text{if $m$ and $n$ have the same parity,} \\
+        0, & \text{otherwise}.
+    \end{array} \right.
+\end{equation}
+
+
+The last expression gives us a way to find the first few Hermite polynomials,
+
+\begin{align*}
+    H_1(z,t) &= z,\\
+    H_2(z,t) &= z^2 - t, \\
+    H_3(z,t) &= z^3 - 3tz,\\ 
+    H_4(z,t) &= z^4 - 6tz^2 + 3t^2,\\ 
+    H_5(z,t) &= z^5 - 10tz^3 + 15t^2z,\\ 
+    H_6(z,t) &= z^6 - 15tz^4 + 45 t^2 z^2 - 15t^3,\\ 
+    H_7(z,t) &= z^7 - 21tz^5 + 105t^2z^3 -105t^3z,\\ 
+    H_8(z,t) &= z^8 - 28tz^6 + 210t^2z^4 - 420t^3z^2 + 105t^4,\\ 
+    H_9(z,t) &= z^9 - 36tz^7 + 378t^2z^5 - 1260t^3z^3 + 945t^4z,\\ 
+    H_{10}(z,t) &= z^{10} - 45tz^8 + 630t^2z^6 - 3150t^3z^4 + 4725t^4z^2 - 945t^5.
+\end{align*}
+
+By replacing $t=1$, we can find the corresponding standard Hermite polynomials.
+
+The Hermite polynomials are characterized by the following recursion together with the initial conditions $H_1(x,t)$ and $H_2(x,t)$.
+
+\begin{equation} \label{eq:recursion_hermite}
+    H_n(x,t) = x H_{n-1}(x,t) - t(n-1)H_{n-2}(x,t).
+\end{equation}
+
+
+% Convolución aditiva simétrica de dos polinomios de Hermite
+
+\begin{proposition}
+The symmetric additive convolution between two Hermite polynomials with the same order $H_d(z,t_1), H_d(z,t_2)$ is another Hermite polynomial with variance $t_1 + t_2$.
+\end{proposition}
+
+\begin{proof}
+    \begin{align*}
+        &H_d(z,t_1) \boxplus_d H_d(z,t_2) = \\ 
+        &= \sum_{k=0}^d z^{d-k}(-1)^k \sum_{i=0}^k \frac{(d-i)!(d-k+i)!}{d!(d-k)!} b_i a_{k-i}, \\ 
+        % &= \sum_{k=0}^d z^{d-k}(-1)^k \sum_{i=0}^k \frac{(d-i)!(d-k+i)!}{d!(d-k)!} \left(\frac{d!(-t_1)^{i/2}}{2^{i/2}(i/2)!(d-i)!}\right)\left(\frac{d!(-t_2)^{k-i/2}}{2^{k-i/2}(k-i/2)!(d-2k+i)!}\right),\\ 
+        % &= \sum_{k=0}^d z^{d-k}(-1)^k \sum_{i=0}^k \frac{(d-i)!(d-k+i)!}{(d-2k+i)!(d-k)!} \left(\frac{d!(-t_1)^{i/2}}{2^{i/2}(i/2)!(d-i)!}\right), \\ 
+        % &= \sum_{k=0}^d z^{d-k}(-1)^k \sum_{i=0}^k \frac{(d-i)!(d-k+i)!}{d!(d-k)!}\frac{d!(-t_1)^{i/2}}{2^{i/2} (i/2)! (d-i)!}\frac{d!(-t_2)^{k-i/2}}{2^{k-i/2} (k-i/2)! (d-k+i)!},\\ 
+        &= \sum_{k=0}^{\lfloor \frac d2 \rfloor} z^{d-2k}(-1)^{2k} \sum_{i=0}^{2k} \frac{(d-i)!(d-2k+i)!}{d!(d-2k)!}d! \frac{(-t_1)^{i/2}}{2^{i/2} (i/2)! (d-i)!}d! \frac{(-t_2)^{2k-i}}{2^{k-i/2} (k-i/2)! (d-2k+i)!},\\ 
+        &= \sum_{k=0}^{\lfloor \frac d2 \rfloor} z^{d-2k}(-1)^{2k} \frac{d!}{2^k} \sum_{i=0}^{2k} \frac{(-t_1)^{i/2}(-t_2)^{k-i/2}}{(i/2)!(k-i/2)!} = \sum_{k=0}^{\lfloor \frac d2 \rfloor} z^{d-2k}(-1)^{2k} \frac{d!}{k!2^k} \sum_{i=0}^{2k} \frac{k!(-t_1)^{i/2}(-t_2)^{k-i/2}}{(i/2)!(k-i/2)!}, \\ 
+        &= \sum_{k=0}^{\lfloor \frac d2 \rfloor} z^{d-2k}(-1)^{2k} \frac{d!}{k!2^k} \sum_{i=0}^{k} \binom{k}{i}(-t_1)^{i/2}(-t_2)^{k-i/2} = \sum_{k=0}^{\lfloor \frac d2 \rfloor} z^{d-2k}(-1)^{k} \frac{d!(t_1 + t_2)^k }{k!2^k}\\ 
+        &= H_d(z,t_1+t_2).
+        % &= \sum_{k=0}^{\lfloor \frac d2 \rfloor} z^{d-2k}(-1)^k \sum_{i=0}^{2k} \frac{d!(-t_1)^{i/2}(-t_2)^{k-i/2}}{2^{2k}(2k-i)!i!} = \sum_{k=0}^{\lfloor \frac d2 \rfloor} z^{d-2k}(-1)^k \frac{d!}{(2k)!2^k}\sum_{i=0}^{2k} \binom{2k}{i}\frac{(-t_1)^i(-t_2)^{2k-i}}{2^k},\\ 
+        % &= \sum_{k=0}^{\lfloor \frac d2 \rfloor} z^{d-2k}(-1)^k \frac{d!}{(2k)!2^k}\frac{(-t_1 - t_2)^{2k}}{2^k}, \\ 
+        % &= 
+    \end{align*}
+\end{proof}
+
+
+
+
+\subsubsection{Laguerre polynomials}
+
+
+
+
+
+\subsubsection{Jacobi polynomials}

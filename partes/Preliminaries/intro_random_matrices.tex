@@ -1,0 +1,172 @@
+The purpose of this chapter is (1) to introduce the concepts and results that are used along the thesis and (2) to standardize the notation coming from different areas, so it is easier to read the text. In the first section it is given a brief introduction to the objects of study of random matrix theory and a few matrix algebra results that are recalled later in the proofs. The second section introduces stochastic calculus first for $\R$-valued processes and then for processes taking values in spaces of matrices. The theory developed here will be used for the dynamics of eigenvalues in Chapters \ref{ch:eigen_processes} and \ref{ch:determinist}.The last section covers the essential definition and theorems coming from non-commutative probability theory that constitute a precedent for Chapter \ref{ch:finite_free}.
+
+In order to be consistent along the text, we introduce here the notation we will be using. However, the use of several kinds of object commonly denoted with the same symbols, makes it necessary to specify every time what kind of object we are dealing with. The time parameter of a stochastic process will always be shown in parentheses (i.e. $W(t)$). Subindexes will represent the entry of a matrix or vector. An integer interval of length $k$ will be represented by the symbol $[k]$, i.e.
+
+\begin{equation*}
+    [k] \coloneqq \{1,2,\dots, k-1, k\}.
+\end{equation*}
+
+When we place a set $S$ in the combinations symbol $\binom{S}{k}$, we denote the collection of all of the subsets of $S$ that have exactly $k$ elements. 
+
+The determinant of a matrix $A$ will be denoted by $[A]$ and if $S,T$ are sets of integers, $[A]_{S,T}$ represents the determinant of the submatrix $A_{S,T}$. The transpose of $A$ is denoted as $\trans{A}$ and if it has complex entries, its adjoint element is $\hermit{A}$. The space of $n\times m$ matrices with entries in a field $\mathbb F$ is denoted by $\mathcal M_{n,m}(\mathbb F)$. The space of $n\times n$ symmetric matrices is denoted by $\mathcal H_{n,n}(\R)$ and the space of $n\times n$ hermitian by $\mathcal H_{n,n}(\C)$.
+
+The symbol $\langle X,Y \rangle(t)$ denotes the quadratic covariation between $X$ and $Y$ and sometimes it will also be represented by $\d X\d Y$. The derivative with respect to a given variable $x$ will be represented either using $\frac{\d}{\d x}, \frac{\partial}{\partial x}$ or $\partial_x$ and following the convention in the literature we will sometimes denote $\frac{\d}{\d t} f = g$ as $\d f = g\d t$.
+
+In the next section we introduce the basic concepts in the study of random matrices.
+
+\section{Introduction to main concepts in Random Matrix Theory}
+
+This section is meant to present the essential objects we study in random matrix theory and illustrate a few techniques that can be used to derive results. Most of the relevant results, however, are presented later with the tools introduced in the following sections.
+
+% Emprirical spectral measures
+
+% Mi idea es usar esta sección para hacer algo así como una presentación a grandes rasgos del estudio de las matrices aleatorias (qué es un ensamble, ensambles comunes, qué se hace, el nombre de algunas técnicas) y tal vez un repaso histórico. También lo quiero usar para aclarar la notación que voy a usar a lo largo del texto y tal vez incluir algún resultado de álgebra matricial que necesite después.
+
+\subsection{Matrix algebra}
+
+Before stating the most specific concepts and results related to random matrices, it is important to mention a few purely algebraic results of matrices as they will be useful along the thesis.
+
+The Cauchy-Binet formula allows us to find the minor of a product of matrices in terms of the minors of the individual matrices.
+
+\begin{theorem}[Cauchy-Binet formula] 
+    Let $m,n,p,k$ be integers, $A$ an $m\times n$ matrix, and $B$ an $n\times p$ matrix, then
+
+    \begin{equation*}
+        [AB]_{S,T} = \sum_{|U|\subset \binom{[n]}{k}} [A]_{S,U} [B]_{U,T},
+    \end{equation*}
+
+    \noindent where $S\in \binom{[m]}{k}, T \in \binom{[p]}{k}$.
+\end{theorem}
+
+The following Theorem taken from \cite{article:finitefree} can be seen as an equivalent to the Cauchy-Binet formula for sums of matrices.
+
+\begin{theorem} \label{thm:marcus_binet}
+    Let $k,n$ be integers such that $k\le n$, $A,B$ two $n\times n$ matrices, and $S,T \in \binom{[n]}{k}$. Then
+    
+    \begin{equation*}
+        [A+B]_{S,T} = \sum_{i=0}^k \sum_{V \in \binom{[k]}{i}} (-1)^{\norm{U}_1 + \norm{V}_1} [A]_{U(S),V(T)}[B]_{\bar{U}(S),\bar{V}(T)},
+    \end{equation*}
+
+    \noindent with $\overline U = [k] \setminus U$.
+\end{theorem}
+
+A basic linear algebra theorem that has major relevance is the Spectral Theorem.
+
+\begin{theorem}[Spectral Theorem]
+    Let $A$ by an $n\times n$ self adjoint matrix. Then there exists an orthonormal basis $v_1, \dots, v_n \in \R^n$ and real eigenvalues $\lambda_1, \dots, \lambda_n$ such that, for every $1 \le i \le n$. 
+
+    \begin{equation*}
+        A v_i = \lambda_i v_i.
+    \end{equation*}
+\end{theorem}
+
+
+\subsection{Random matrix ensembles}
+
+A random matrix $R$ is simply a measurable function from a probability space to a space of matrices.
+
+\begin{equation*}
+    R: (\Omega,\F, \mathbb P) \to \M_{n,m}(\mathbb F).
+\end{equation*}
+
+In general Random Matrix Theory, the field for the entries $\mathbb F$ can be quite general but for the goals of this work it is enough to consider $\mathbb F \in \{\R, \C\}$. 
+
+Given any self adjoint $n\times n$ matrix $A$, we can associate an empirical probability measure $\hat\mu$ to its set of eigenvalues $\lambda_1, \dots, \lambda_n$ given by
+
+\begin{equation*}
+    \hat\mu( B ) \coloneqq \frac1n \sum_{j=1}^n \mathds 1_B(\lambda_j).
+\end{equation*}
+
+We call $\hat\mu$ the empirical spectral measure. 
+
+If $A$ is random (i.e. its entries are random variables), $\hat\mu:\Omega \times \F \to [0,1]$ is a random measure, which means that for every $\omega$, $\hat\mu(\omega, \cdot)$ is a probability measure and for every measurable set $B\in\F$, $\hat\mu(\cdot,B)$ is a real random variable. In this case, it is possible to define a deterministic empirical measure associated to $A$ by simply taking the expectation of $\hat\mu$ on the measure of $A$.
+
+\begin{equation*}
+    \hat\nu(B) \coloneqq \E{ \frac1n \sum_{j=1}^n \mathds 1_B(\lambda_j) } = \frac1n \sum_{j=1}^n \P{\lambda_j \in B}.
+\end{equation*}
+
+We call $\hat\nu$ the mean spectral measure. 
+
+We are usually interested on knowing if $\hat\mu$ and $\hat \nu$ converge to a given law when $n\to\infty$. The following examples show that this happens in some cases.
+
+\begin{example} \todo{Agregar ejemplos}
+% distribuciones espectrales con límite.
+\end{example}
+
+Using that the trace equals the sum of eigenvalues, we have that the expectation over  $\hat\nu$ is equal to
+
+\begin{equation*}
+    \int_\C z \hat\nu(\d z) = \E{ \frac1n Tr(A) }.
+\end{equation*}
+
+The next identity allows us to compute similar moments of $A$.
+
+\begin{theorem}[Trace identity]
+    Let $A$ be a normal $n\times n$ matrix ($\hermit{A}A = A\hermit{A}$), then 
+
+    \begin{equation*}
+        \frac1n Tr(A^k A^{*j}) = \frac1n \sum_{i=1}^n \lambda_i^k \overline{\lambda}_i^j = \int_\C z^k \bar{z}^j \hat\mu(\d x),
+    \end{equation*}
+
+    \noindent where $\hat\mu$ is the empirical spectral measure associated to $A$. If $A$ is random and we take expectation over its probability law, we have
+
+    \begin{equation*}
+        \int_\C x^k \bar{z}^j \hat\nu(\d z) = \frac1n \E{ Tr(A^k A^{*j}) }.
+    \end{equation*}
+\end{theorem}
+
+In random matrix theory it is common to work with matrix ensembles. An ensemble is a set of matrices with a probability measure associated to them.
+
+\begin{example}[Independent identically distributed entries ensemble]
+    If $A$ is an $n\times n$ matrix whose entries $A_{ij}, 1 \le i \le n, 1\le j \le n$ are all independent identically distributed random variables, we say that $A$ is an i.i.d. ensemble.
+\end{example}
+
+\begin{example}[Diagonal i.i.d. ensemble]
+    If $D$ is a diagonal $n\times n$ matrix whose every entry is an i.i.d. random variable, then we say that $D$ is a diagonal i.i.d. ensemble.
+\end{example}
+
+\begin{example}[Gaussian invariant ensembles]
+    Let $\mathbb H$ denote the field of quaternions and $\mathbb F \in \{ \R, \C, \mathbb H \}$. If $R$ is an hermitian matrix whose entries are standard normal random variables in $\mathbb F$ independent except for symmetries, then we say that $R$ is a Gaussian invariant ensemble. Depending on $\mathbb F$ we have particular names for each ensemble.
+
+    \begin{itemize}
+        \item If $\mathbb F = \R$, we call $R$ the Gaussian orthogonal ensemble.
+        \item If $\mathbb F = \C$, we call $R$ the Gaussian unitary ensemble.
+        \item If $\mathbb F = \mathbb H$, we call $R$ the Gaussian symplectic ensemble.
+    \end{itemize}
+
+    The specific names are given because the distribution of the eigenvalues of $R$ remains unchanged under a conjugation by an orthogonal (respectively unitary, symplectic) matrix. This property is analogous to the property of vector of independent normal variables that preserve their distribution after being transformed by an orthogonal matrix.
+\end{example}
+
+\begin{example}[Haar unitary ensemble]
+    If we consider $\mathcal U_{n,n}(\C)$ the group of complex unitary matrices ($\hermit{U}U = I_n = U\hermit{U}$). We can define in $\mathbb U_{n,n}(\C)$ a Haar measure that is unique up to a constant. If we normalize this measure we have the only Haar probability measure $\mu_U$ in $\mathbb U_{n,n}(\C)$. A Haar unitary ensemble is a matrix sampled from $\mu_U$.
+\end{example}
+
+\begin{example}[Wigner example]
+    Let $W$ be a random self-adjoint matrix whose every entry is a i.i.d. random variable except for the symmetries. Then we say that $W$ is a Wigner ensemble. Notice in particular that the Gaussian invariant ensembles are Wigner ensembles. This is one of the first studied ensembles.
+\end{example}
+
+\begin{example}[Wishart ensemble]
+    Let $R$ be an $n\times n$ i.i.d. standard Gaussian ensemble and define $E \coloneqq R^T R$, then we say $E$ is a Wishart ensemble. This ensemble is used to model covariance matrices. 
+\end{example}
+
+\subsection{Asymptotic results for random matrices}
+
+% Laws of large numbers, Wigner's semicircle law.
+
+The next results gives the convergence of an empirical spectral measure to a continuous probability measure in $\R$ when the matrix dimension $n$ tends to infinity. The limit only depends on the first two moments of the variables involved and not on the whole distribution, so it can be seen as a matrix analogous of the Central Limit Theorem.
+
+\begin{theorem}[Wigner's semicircle law \cite{book:mingo_speicher}]
+    For each $n\in \N$, let $W^{(n)}$ be a Wigner ensemble  and its entries $W_{ij}^{(n)}$ satisfy the following conditions.
+
+    \begin{enumerate}
+        \item $\E{\abs{W_{ij}^{(n)}}^k}<\infty$ for all $k\in \N$.
+        \item $\E{W_{ij}} = 0$ for every $1 \le i \le n, 1 \le j \le n$.
+        \item $\E{ W_{ij}^{(n) 2} } = 1/\sqrt{n}$.
+    \end{enumerate}
+
+    Then both $\hat\mu$ and $\hat\nu$ converge in distribution to the semicircle distribution, i.e. the absolutely continuous distribution with density
+
+    \begin{equation*}
+        f(x) = \frac{\sqrt{4 - x^2}}{2\pi}
+    \end{equation*}
+\end{theorem}

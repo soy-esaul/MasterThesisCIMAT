@@ -1,0 +1,364 @@
+\section{Dyson Brownian Motion}
+
+This section is mainly used to show the results for the Dyson Brownian motion, but some of the general results will be used also to prove the analogous equations for the spectrum of more general matrix diffusions in later sections. In the first subsection we derive the stochastic differential equations for the eigenvalues of a symmetric real Brownian matrix up to the collison time. In the second subsection we do the same for a self adjoint complex Brownian matrix. In the third section we prove that the collision time is almost surely infinite. No proof of the existence and uniqueness of a solution for the equations is given in this section, but it is later given in a more general case in section \ref{sec:matrix_difusions}.
+
+The first description of the Dyson Brownian motion was given in \cite{article:dyson} as a model for a Couloumb gass executing each one a Brownian motion and the repuslive forces between them. In generality, the Dyson Brownian motion is the process that models the spectrum of a Brownian motion in $\mathcal H_{n,n}(\mathbb F)$ and it is described by the system of stochastic differential equations
+
+\begin{equation*}
+    \d \lambda_i = \sqrt{\frac{2}{\beta}}\d W_i + \sum_{k\neq i} \frac{\d t}{\lambda_i - \lambda_k},
+\end{equation*}
+
+\noindent where the $W_i, 1 \le i \le n$ are independent standard Brownian motions and $\beta$ parametrizes the field in which the entries of the matrix take values. If $\beta = 1$, then $\mathbb F = \R$, if $\beta = 2$, then $\mathbb F = \C$ and if $\beta = 4$, $\mathbb F = \H$. Other matrix models for different values of $\beta$ have been proposed in \cite{article:allez_guionnet_beta} and \cite{article:holcomb_paquette}. In the first one for $\beta \in [0,2]$ and for $\beta \in (0,\infty)$ in the second one. 
+
+In this section, we only prove the result for $\beta \in \{1,2\}$ and we will notice that the difference is essentially the covariance between entries of the matrix, so the extension to $\beta = 4$ would be quite similar. 
+
+\subsection{Real case}
+
+The properties of the one dimensional Brownian motion allow to easily extend the definition to Brownian motions in different spaces, such as $\R^n$ or $\M_{n,n}(\F)$. In the particular case that $B$ is a Brownian motion in the space of symmetric matrices with real entries, for every $t$, the process is a multiple of a GOE, i.e. $B(t) = \sqrt{t}R$ with $R$ a GOE. This means the law of $B$ keeps invariant under orthogonal transformations and this property is essential for the results in this case. For the sake of clearness, we give a precise definition of a Brownian motion in the space of symmetric matrices.
+
+\begin{definition}[Brownian motion in $\mathcal H_{n,n}(\R)$] \label{def:sym_bm}
+    Let $B = (B(t), t \ge 0)$ be a stochastic process taking values in $\mathcal M_{n,n}(\R)$ whose entries are standard Brownian motions $\{B_{ij}(t)\}_{1 \le i \le n, 1 \le j \le n}$ such that,
+
+    \begin{equation*}
+        \d \langle B_{ij}, B_{kl} \rangle(t) = \left(\delta_{ik}\delta_{jl} + \delta_{il}\delta_{jk}\right) \d t.
+    \end{equation*}
+
+    Then we say that $B$ is a Brownian motion in $\mathcal H_{n,n}(\R)$.
+\end{definition}
+
+A process $B$ as defined above clearly has real eigenvalues, so we can order them. Let $\lambda_1(t) > \lambda_2(t) > \dots > \lambda_n(t)$ be the eigenvalues. Notice they are also time-dependent functions, we are interested in knowing if for some $t_0$ the order of some of them is changed. Due to the continuity of the paths, this happens only if at some point the eigenvalues changing the order are equal. The next stopping time gives us the first time of collision of the eigenvalues.
+
+\begin{definition}[First time of collision]
+    Let $\lambda_1(t) > \lambda_2(t) > \dots > \lambda_n(t)$ be the  ordered eigenvalues of a matrix-valued stochastic process. We define the first collision time $\tau$ as 
+
+    \begin{equation}
+        \tau \coloneqq \inf\{ t: \lambda_i(t) = \lambda_j(t) \text{ for some } i\neq j \}. \label{eq:collision_time_dyson}
+    \end{equation} 
+\end{definition}
+
+In the following Theorem, we derive a stochastic differential equation for the behaviour of a Brownian symmetric matrix's spectrum on $[0,\tau)$.
+
+\begin{theorem} \label{thm:dyson_real}
+    Let $B = (B(t), t \ge 0)$ be a symmetric $n\times n$ matrix-valued Brownian motion in $\M_{n,n}(\R)$ with diagonalization $B = H \Lambda \trans{H}$ and eigenvalues $\lambda_1, \dots, \lambda_n$. Define $\tau$ the first time of collision of the eigenvalues as in \eqref{eq:collision_time_dyson}.
+    
+    Then, for $t < \tau$ the eigenvalue process $\Lambda = (\Lambda(t), t\ge 0)$ verifies the following stochastic differential equations:
+
+    \begin{equation}
+        \d \lambda_i = \sqrt{2}\d W_i + \sum_{k\neq i} \frac{\d t}{\lambda_i - \lambda_k}
+    \end{equation}
+
+    \noindent where $(W_i)_{i\in[n]}$ are independent Brownian motions on $\R$.
+\end{theorem}
+
+\begin{proof}
+    For a fixed $t\ge 0$ the matrix $B(t)$ is equal in law to $\sqrt tR$ with $R$ a Gaussian orthogonal ensemble. Using that $R$ is invariant under orthogonal transformations this implies that for every orthogonal matrix $O$, we have
+
+    \begin{equation*}
+        O B(t) O^T \overset{d}{=} O \sqrt{t} R O^T \overset{d}= \sqrt{t} O R O^T \overset{d}{=} \sqrt{t} R \overset{d}{=} B(t).
+    \end{equation*}
+
+    In particular, $B(t)$ is also invariant under orthogonal transformations.
+
+    We have that $H^{-1} = H^T$, its stochastic logarithm $L$ is defined by a stochastic differential equation as
+
+    \begin{equation*}
+        \d L \coloneqq H^{-1} \partial H = H^T \partial H = H^T \d H + \frac12 (\d H^T) \d H.
+    \end{equation*}
+
+    We use the matrix Itô formula on $I = H^T H$,
+
+    \begin{equation*}
+        0 = \d I = \d(H^T H) = H^T \d H + (\d H)^T H + (\d H)^T \d H = H^T \partial H + (\partial H)^T H = \d L + \d L^T.
+    \end{equation*}
+
+    This implies that $\d L^T = - \d L$ and the stochastic logarithm of $H$ is skew-symmetric. Now we use that $\Lambda = H^T B H$ and the matrix Itô formula again to get
+
+    \begin{align*}
+        \d \Lambda &= \d (H^T B H) = (\partial H^T B)H + H^TB\partial H = (\partial H)^T B H + H^T (\partial B) H + H^T B \partial H, \\ 
+        &= (\partial H)^T H \Lambda + H^T (\partial B) H + \lambda H^T \partial H = (\partial L)^T \Lambda + H^T (\partial B) H + \Lambda \partial L, \\ 
+        &= H^T (\partial B) H - (\partial L) \Lambda + \Lambda \partial L. 
+    \end{align*}
+
+    The diagonals of $(\partial L)\Lambda$ and $\Lambda \partial L$ coincide, so $\d \Lambda_{ii} = \left(H^T(\partial B)H\right)_{ii}$. Let $\d N \coloneqq H^T(\partial B)H$,. Now, for $i\neq j$, we use that $\Lambda$ is diagonal to get
+
+    \begin{equation*}
+        0 = \d N_{ij} + (\lambda_i - \lambda_j) \d L_{ij}.
+    \end{equation*}
+
+    We can then conclude that $\d L_{ij} = \d N_{ij}/(\lambda_j - \lambda_i)$ whenever $i\neq j$. Now we need to find a more explicit representation for $\d N$. We see that $\d N$ and $H^T(\d B)H$ differ only in a finite variation part, so the martingale term must coincide and it is characterized by the quadratic covariation that we can find using the covariation of $B$.
+
+    \begin{align*}
+        \d N_{ij} \d N_{kl} &= \d \langle (H^T(\partial B) H)_{ij}, (H^T(\partial B) H)_{kl}  \rangle (t) = \d \langle (H^T(\d B) H)_{ij}, (H^T(\d B) H)_{kl}  \rangle (t), \\ 
+        &= \sum_{p,q,r,s} \d\langle H_{pi} \d B_{pq} H_{qj}, H_{rk} \d B_{rs} H_{sl} \rangle(t) = \sum_{p,q,r,s} H_{pi}H_{qj}H_{rk}H_{sl}\d B_{pq}\d B_{rs},
+        \intertext{Recall that $\d \langle B_{ij}, B_{kl} \rangle(t) = \left(\delta_{ik}\delta_{jl} + \delta_{il}\delta_{jk} \right) \d t$,}
+        &= \sum_{p,q,r,s} H_{pi}H_{qj}H_{rk}H_{sl}(\delta_{rp}\delta_{sq} + \delta_{rq}\delta_{sp})\d t, \\ 
+        &= \left(\sum_p H^T_{ip}\delta_{rp}H_{rk}\right)\left(\sum_q H^T_{jq}\delta_{qs}H_{sl}\right)\d t + \left(\sum_p H^T_{ip}\delta_{sp}H_{sl}\right)\left(\sum_q H^T_{jq}\delta_{rq}H_{rk}\right)\d t\\ 
+        %& \phantom{un espacio aquí} - \left(\sum_{p,q,r,s} H_{pi}H_{qj}H_{rk}H_{sl}\delta_{rs}\delta_{pq}\delta_{rp}\right)\d t,\\ 
+        &= (\delta_{ik}\delta_{jl} + \delta_{il}\delta_{jk})\d t.% - \left(\sum_{p,q,r,s} H_{pi}H_{qj}H_{rk}H_{sl}\delta_{rs}\delta_{pq}\delta_{rp}\right)\d t.
+    \end{align*}
+
+    %For computing the last term, we use that $B$ is invariant under orthogonal transformations. This means that we can take $H$ to be an arbitrary change of basis matrix. In particular, if we take $H$ to be the identity matrix $I$, we get
+
+    % \begin{align*}
+    %     \d N_{ij} \d N_{kl} &= \left(\delta_{ik}\delta_{jl} + \delta_{il}\delta_{jk} - \delta_{ij}\delta_{kl}\delta_{ik}\right) \d t.
+    % \end{align*}
+
+    We had previously got that $\d \Lambda_{ii} = \d N_{ii}$, and thus using the covariation of $N$ we can find the martingale term of $\lambda_{i}$,
+
+    \begin{align*}
+        \d \lambda_i\d \lambda_j &= \d \Lambda_{ii} \d\Lambda_{jj} = \d N_{ii}\d N_{jj} = 2\delta_{ij}\d t.
+    \end{align*}
+
+    Then the martingale term of every eigenvalue is $\sqrt2$ times a Brownian motion that is independent of the martingale term of any other eigenvalue. Now we need to find the finite variation part of $\lambda_i$. Let us call $F$ the finite variation part of $N$, then
+
+    \begin{align*}
+        \d F &= \frac12\left( \d H^T \d B H + H^T \d B \d H \right) = \frac12\left( (\d H^T H)(H^T\d B H) + (H^T \d B h)(H^T \d H) \right),\\ 
+        &= \frac12\left( (\d N \d L)^T + \d N \d L  \right).
+    \end{align*}
+
+    The last equality is because $\d N$ and $H^T (\d B) H$ only differ in a finite variation term. Using the previous results we find
+
+    \begin{equation*}
+        (\d N \d L)_{ij} = \sum_{k} \d N_{ik}\d L_{kj} = \sum_{k\neq j} \frac{\d N_{ik}\d N_{kj}}{\lambda_j - \lambda_k} = \delta_{ij} \sum_{k\neq j} \frac{\d t}{\lambda_j - \lambda_k}.
+    \end{equation*}
+
+    We can conclude that
+
+    \begin{equation*}
+        \d F_{ii} = \frac12\left( (\d N \d L)_{ii}^T + (\d N \d L)_{ii}  \right) = (\d N \d L)_{ii} = \sum_{k\neq i} \frac{\d t}{\lambda_i - \lambda_k}.
+    \end{equation*}
+
+    Now we know the martingale and finite variation terms of $\lambda_i$ and we can write the explicit expression for it.
+
+    \begin{equation*}
+        \d \lambda_i = \sqrt2\d W_i + \sum_{k\neq i} \frac{\d t }{\lambda_i - \lambda_k}
+    \end{equation*}
+
+    \noindent where $W_1, \dots, W_n$ are independent standard Brownian motions.
+\end{proof}
+
+
+
+
+
+
+
+\subsection{Complex case}
+
+Before proceeeding with the result, we define a Brownian motion in $\mathcal H_{n,n}(\C)$, which is totally analogous to the Brownian motion in $\mathcal H_{n,n}(\R)$.
+
+\begin{definition}[Brownian motion in $\mathcal H_{n,n}(\C)$] \label{def:herm_bm}
+    Let $B = (B(t), t \ge 0)$ be a stochastic process taking values in $\mathcal M_{n,n}(\C)$ whose off-diagonal entries are complex Brownian motions $\{B_{ij}(t)\}_{1 \le i \le n, 1 \le j \le n}$ such that,
+
+    \begin{equation}
+        \d \langle B_{ij}, B_{kl} \rangle(t) = 2\delta_{ik}\delta_{jl} \d t, \label{eq:cov_complex_brownian_motion}
+    \end{equation}
+
+    \noindent and the diagonal entries are $n$ independient real-valued Brownian motions with variance $2$, which means
+
+    \begin{equation}
+        \d \langle B_{ii}, B_{jj} \rangle(t) = 2\delta_{ij} \d t.\label{eq:cov_complex_brownian_motion2}
+    \end{equation}
+    
+    Then we say that $B$ is a Brownian motion in $\mathcal H_{n,n}(\C)$.
+\end{definition}
+
+Notice that \eqref{eq:cov_complex_brownian_motion} implies that $B_{ij}(t) = \overline{B_{ji}}$ and together with \eqref{eq:cov_complex_brownian_motion2} this means that $B$ is effectively a process taking values in $\mathcal H_{n,n}(\C)$.
+
+For the case of a Brownian motion in $\mathcal H_{n,n}(\C)$ there are basically two equivalent formulations of the Dyson Brownian motion. If we take the eigenvalue process defined as in \ref{def:herm_bm}, then the eigenvalues satisfy the system of SDE
+
+\begin{equation*}
+        \d \lambda_i = \d W_i + 2\sum_{k\neq i} \frac{\d t}{\lambda_i - \lambda_k},
+\end{equation*}
+
+\noindent if instead we consider the process $B' = \sqrt{\frac12}B$, then the eigenvalues obey the system
+
+\begin{equation*}
+        \d \lambda_i = \d W_i + \sum_{k\neq i} \frac{\d t}{\lambda_i - \lambda_k}.
+\end{equation*}
+
+We are more interested in the latter re-scaled process since it generalizes the $\mathcal H_{n,n}(\R)$ case in the following sense. If we take $\beta \in \{1,2\}$, and study the eigenvalues of the process $\sqrt{\frac{1}{\beta}}B(t)$ with $B$ a Brownian motion in $\mathcal H_{n,n}(\R)$ (resp. $\mathcal H_{n,n}(\C)$), then before the time of first collision they satisfy
+
+\begin{equation}
+        \d \lambda_i = \sqrt{\frac{2}{\beta}}\d W_i + \sum_{k\neq i} \frac{\d t}{\lambda_i - \lambda_k}. \label{eq:dyson_beta}
+\end{equation}
+
+Although we do not prove it here, it is a well known fact that equation \eqref{eq:dyson_beta} holds also in the case $\beta = 4$ which is for a self-adjoint random matrix whose entries are quaternionic Brownian motions \cite{article:dyson}.
+
+\begin{theorem} \label{thm:dyson_complejo}
+    Let $B' = (B(t), t \ge 0)$ be a matrix-valued Brownian motion in $\mathcal H_{n,n}(\C)$ and $B\coloneqq \frac{1}{2}B'$ have diagonalization $B = H \Lambda \hermit{H}$ and eigenvalues $\lambda_1, \dots, \lambda_n$. Define $\tau$ the first time of collision of the eigenvalues as in \eqref{eq:collision_time_dyson}
+
+    Then, for $t < \tau$ the eigenvalue process $\Lambda = (\Lambda(t), t\ge 0)$ verifies the following system of stochastic differential equations:
+
+    \begin{equation}
+        \d \lambda_i = \d W_i + \sum_{k\neq i} \frac{\d t}{\lambda_i - \lambda_k},
+    \end{equation}
+
+    \noindent where $(W_i)_{i\in[n]}$ are independent Brownian motions.
+\end{theorem}
+
+
+\begin{proof}
+    The proof is the same as the real case, but in this case, the entries are complex Brownian motions outside the diagonal and real Brownian motions in the diagonal. Recalling the covariation for a Brownian motion in $\mathcal H_{n,n}(\C)$ and the re-scaling, we have
+
+    \begin{equation*}
+        \d\langle B_{ij}, B_{kl}\rangle (t) = \frac12\d\langle B'_{ij}, B'_{kl}\rangle = \delta_{il}\delta_{jk}\d t.
+    \end{equation*}
+    
+    
+    Similarly to the real case, for a fixed $t\ge 0$ the matrix $B(t)$ is equal in law to $\sqrt tR$ with $R$ a Gaussian unitary ensemble. Using that $R$ is invariant under unitary transformations this implies that for every unitary matrix $U$, we have
+
+    \begin{equation*}
+        U B(t) \hermit{U} \overset{d}{=} U \sqrt{t} R \hermit U \overset{d}= \sqrt{t} U R \hermit U \overset{d}{=} \sqrt{t} R \overset{d}{=} B(t).
+    \end{equation*}
+
+    We have that $H^{-1} = \hermit{H}$, so repeating the procedure in the real case we define equally the stochastic logarithm as $\d L \coloneqq \hermit H \partial H$ and use Itô's formula for $I = \hermit HH$,
+
+    \begin{equation*}
+        0 = \d I = \d(\hermit H H) = \hermit H \d H + \hermit{(\d H)} H + \hermit{(\d H)} \d H = \hermit H \partial H + \hermit{(\partial H)} H = \d L + \d \hermit{L}.
+    \end{equation*}
+
+    We have that $\d \hermit L = - \d L$ and $L$ is skew-hermitian. Now we use Itô fomrula for $\Lambda = \hermit H B H$,
+
+    \begin{align*}
+        \d \Lambda &= \d (\hermit H B H) = (\partial \hermit H B)H + \hermit H B\partial H = \hermit{(\partial H)} B H + \hermit H (\partial B) H + \hermit H B \partial H, \\ 
+        &= \hermit{(\partial H)} H \Lambda + \hermit{H} (\partial B) H + \Lambda \hermit{H} \partial H = \hermit{(\d L)} \Lambda + \hermit H (\partial B) H + \Lambda \d L, \\ 
+        &= \hermit H (\partial B) H - \d L \Lambda + \Lambda \d L. 
+    \end{align*}
+
+    The processes $\d L \Lambda$ and $\Lambda \d L$ have the same diagonal entries, so the diagonal of $\Lambda$ coincides with the one of $\hermit H(\partial B)H$. Define $\d N \coloneqq \hermit H(\partial B)H$. Outside the diagonal, $\Lambda$ has zero entries, so we can equate this to the corresponding entries of $\d N$ and $\d L \Lambda, \Lambda \d L$ to get for every $i\neq j$,
+
+    \begin{align*}
+        0 = \d N_{ij} + (\lambda_i - \lambda_j) \d L_{ij}&,\\
+        \intertext{which in turn implies}
+        \d L_{ij} = \frac{\d N_{ij}}{\lambda_j - \lambda_i}&, \qquad i \neq j.
+    \end{align*}
+
+    Now, repeating the real case, we find the quadratic covariation of $\d N$ using that $\d N$ and $\hermit H \d B H$ coincide up to a finite variation term, but using $\d \langle B_{ij}, \overline{B_{kl}} \rangle(t) = 2\delta_{il}\delta_{jk} \d t$.
+
+    \begin{align*}
+        \d N_{ij} \d N_{kl} &= \d \langle (\hermit H(\partial B) H)_{ij}, (\hermit H(\partial B) H)_{kl}  \rangle (t) = \d \langle (\hermit H(\d B) H)_{ij}, (\hermit H(\d B) H)_{kl}  \rangle (t), \\ 
+        &= \sum_{p,q,r,s} \d\langle \hermit H_{ip} \d B_{pq} H_{qj}, \hermit H_{kr} \d B_{rs} H_{sl} \rangle(t) = \sum_{p,q,r,s} \hermit H_{ip}H_{qj}\hermit H_{kr}H_{sl}\d B_{pq}\d B_{rs},\\
+        &= \sum_{p,q,r,s} \hermit H_{ip}H_{qj}\hermit H_{kr}H_{sl} \delta_{rq}\delta_{sp} \d t = \left( \sum_p \hermit H_{ip}\delta_{sp} H_{sl} \right)\left( \sum_q \hermit H_{kr}\delta_{rq} H_{qj} \right)\d t, \\
+        &= \delta_{il}\delta_{kj}\d t. % - \sum_{p,q,r,s} \hermit H_{ip}H_{qj}\hermit H_{kr}H_{sl}\delta_{rs}\delta_{pq}\delta_{rp}\d t 
+        %&= \left(\sum_p \hermit H_{ip}\delta_{rp}H_{rk}\right)\left(\sum_q H^T_{jq}\delta_{qs}H_{sl}\right)\d t + \left(\sum_p H^T_{ip}\delta_{sp}H_{sl}\right)\left(\sum_q H^T_{jq}\delta_{rq}H_{rk}\right)\d t\\ 
+        %& \phantom{un espacio aquí} - \left(\sum_{p,q,r,s} H_{pi}H_{qj}H_{rk}H_{sl}\delta_{rs}\delta_{pq}\delta_{rp}\right)\d t,\\ 
+        %&= (\delta_{ik}\delta_{jl} + \delta_{il}\delta_{jk})\d t - \left(\sum_{p,q,r,s} H_{pi}H_{qj}H_{rk}H_{sl}\delta_{rs}\delta_{pq}\delta_{rp}\right)\d t.
+    \end{align*}
+
+    %We need to use the invariance under conjugation of $B$ again, in this case, we can take $H$ to be any arbitrary unitary matrix. Taking $H = I$ allows us to conclude that $N$ has the same covariance as $B$,    $\d N_{ij} \d N_{kl} = \left(2\delta_{il}\delta_{jk} - \delta_{ij}\delta_{kl}\delta_{ik}\right) \d t$. 
+    
+    We can use this and the previous result that $\d \Lambda$ and $\d N$ coincide in the diagonal to find the covariation of the eigenvalues and this way we find their martingale term
+    
+    \begin{align*}
+        \d \lambda_i\d \lambda_j &= \d \Lambda_{ii} \d\Lambda_{jj} = \d N_{ii}\d N_{jj} = \delta_{ij}\d t.
+    \end{align*}
+
+    Just as in the real case, the martingale term of every eigenvalue is a (real) Brownian motion independent of any other eigenvalue. Again, call $F$ the finite variation part of $N$ and use that $\d N$ and $H^T (\d B) H$ only differ in a finite variation term to find,
+
+    \begin{align*}
+        \d F &= \frac12\left( \d \hermit H \d B H + \hermit H \d B \d H \right) = \frac12\left( (\d \hermit H H)(\hermit H\d B H) + (\hermit H \d B H)(\hermit H \d H) \right),\\ 
+        &= \frac12\left( \hermit{(\d N \d L)} + \d N \d L  \right).
+    \end{align*}
+
+    We have an expression for $L$ in terms of $N$. We recall it to find the covariation $\d \langle N, L\rangle(t)$, 
+
+    \begin{equation*}
+        (\d N \d L)_{ij} = \sum_{k} \d N_{ik}\d L_{kj} = \sum_{k\neq j} \frac{\d N_{ik}\d N_{kj}}{\lambda_j - \lambda_k} = \delta_{ij} \sum_{k\neq j} \frac{\d t}{\lambda_j - \lambda_k}.
+    \end{equation*}
+
+    Thus $F$ is a diagonal matrix, and the $i$th diagonal term is given by
+
+    \begin{equation*}
+        \d F_{ii} = \frac12\left( \hermit{(\d N \d L)}_{ii} + (\d N \d L)_{ii}  \right) = (\d N \d L)_{ii} = \sum_{k\neq i} \frac{\d t}{\lambda_i - \lambda_k}.
+    \end{equation*}
+
+    With the martingale and finite variation terms of $\lambda_i$, we conclude the stated result.
+
+    \begin{equation*}
+        \d \lambda_i = \d W_i + \sum_{k\neq i} \frac{\d t }{\lambda_i - \lambda_k}
+    \end{equation*}
+
+    \noindent where $W_1, \dots, W_n$ are independent standard Brownian motions.
+\end{proof}
+
+
+
+
+
+
+
+
+
+
+\subsection{Non-collision of the eigenvalues}
+
+We have found that the eigenvalues of a Brownian motion in $\M_{n,n}(\R)$ and $\M_{n,n}(\C)$ satisfy Dyson's equation until the first time of collision. Now we prove that this time $\tau$ is infinite a.s. 
+
+The proof we give is taken from \cite{article:multiyamada} and makes use of the so called McKean's argument appearing first in \cite{book:mckean} and used in \cite{bru1989diffusions} and \cite{thesis_trujillo}. The result is rather general because it is used for the generalization to matrix-valued diffusion processes.
+
+\begin{theorem} \label{thm:collision}
+    Let $\Lambda = (\lambda_i)_{i=1,\dots,p}$ be a process starting at the open Weyl chamber $\Delta_p$ and satisfying \eqref{eq:gen_dyson} with functions $g,h,b:\R \to \R$ such that $g^2, h^2, b$ are Lipschitz continuous and $g^2h^2$ is convex or is continuously differentiable with derivative uniformly Lipschitz on $\R$. Then the first collision time $\tau$ defined as in \eqref{eq:collision_time} is infinite a.s.
+\end{theorem}
+
+\begin{proof}
+
+    
+    
+    Define $U \coloneqq -\sum_{i<j} \log(\lambda_j - \lambda_i)$ for $t\in [0,\tau]$. By Itô's formula and the fact that $\d \lambda_i\d\lambda_j = 4\delta_{ij}g^2(\lambda_i)h^2(\lambda_i)$ we find
+
+    \begin{align*}
+        \d U &= \sum_{i < j} \left[\frac{\d \lambda_i - \d \lambda_j}{\lambda_j - \lambda_i} + \frac12\frac{\d\langle \lambda_i, \lambda_i \rangle + \d\langle \lambda_j, \lambda_j \rangle}{(\lambda_j - \lambda_i)^2}\right],\\
+        &= \sum_{i<j} \left[\frac{\d \lambda_i - \d \lambda_j}{\lambda_j - \lambda_i} + 2\frac{g^2(\lambda_i)h^2(\lambda_i)-g^2(\lambda_j)h^2(\lambda_j)}{(\lambda_j - \lambda_i)^2}\d t\right].
+    \end{align*}
+
+    Now we define the following processes
+
+    \begin{align*}
+        \d M &= 2 \sum_{i<j} \frac{g(\lambda_i)h(\lambda_i)\d \nu_i - g(\lambda_)h(\lambda_j)\d \nu_j}{\lambda_j - \lambda_i},\\
+        \d A_1 &= \sum_{i<j} \frac{b(\lambda_i) - b(\lambda_j)}{\lambda_j - \lambda_i}\d t,\\
+        \d A_2 &= 2\sum_{i<j} \frac{\left( g^2(\lambda_j) - g^2(\lambda_i) \right)\left(h^2(\lambda_j) - h^2(\lambda_i)\right)}{(\lambda_j - \lambda_i)}\d t,\\
+        \d A_3 &= \sum_{i<j}\frac{1}{\lambda_j-\lambda_i}\sum_{k\neq i, k \neq j}\left( \frac{G(\lambda_i,\lambda_k)}{\lambda_i-\lambda_k} - \frac{G(\lambda_j,\lambda_k)}{\lambda_j - \lambda_k} \right) \d t,\\
+        &= \sum_{i<j<k} \frac{G(\lambda_j,\lambda_k)(\lambda_k-\lambda_j)-G(\lambda_i,\lambda_k)(\lambda_k-\lambda_i)+G(\lambda_i,\lambda_j)(\lambda_j-\lambda_i)}{(\lambda_j-\lambda_i)(\lambda_k-\lambda_i)(\lambda_k-\lambda_j)}\d t.
+    \end{align*}
+
+    Using \eqref{eq:gen_dyson} we find that $\d U = \d M + \d A_1 + \d A_2 + \d A_3$. Our goal is to use the McKean argument by proving that $U$ is bounded over any bounded interval $[0,t]$. Let us start by showing that the finite variation part of $U$ ($\d A_1, \d A_2$, and $\d A_3$) is bounded. Lipschitz continuity of $b,g^2$ and $h^2$ implies that $\abs{A_1(t)}\le Kp(p-1)t/2$ and $\abs{A_2(t)}\le K^2p(p-1)t$ with $K$ a constant appearing in the Lipschitz condition. Later, we define a function $H$ as
+
+    \begin{equation*}
+        H(x,yz) \coloneqq \left[ (g^2(x) - g^2(z))(h^2(y) - h^2(z)) + (g^2(y) - g^2(z))(h^2(x) - h^2(z))\right](y-x),
+    \end{equation*}
+
+    \noindent then
+
+    \begin{equation*}
+        H(x,y,z) = \left( G(x,y) - G(x,z) - G(y,z) + G(z,z)\right)(y-x),
+    \end{equation*}
+
+    \noindent and
+
+    \begin{align*}
+        H(x,y,z) + H(y,z,x) - H(x,z,y) &= 2(z-y)G(y,z) - 2(z-x)G(x,z) + 2(y-x)G(x,y)\\
+         &+ G(x,x)(z-y) - G(y,y)(z-x) + G(z,z)(y-x).
+    \end{align*}
+
+    By the Lipschitz conditions on $g^2$ and $h^2$ we find that $\abs{H(x,y,z)} \le 2K^2\abs{(y-x)(z-y)(z-x)}$. Using the last equality, \todo{Escribir detalles de esta cuenta} we can write $2\d A_3 = \d A_4 + \d A_5$, with $0 \le A_4(t) \le K^2 p(p-1)(p-2)t/6$ and
+
+    \begin{align}%Escribir detalles de esta cuenta
+        \d A_5(t) &= \sum_{i<j<k} \frac{ G(\lambda_j,\lambda_j)(\lambda_k - \lambda_i) - G(\lambda_i,\lambda_i)(\lambda_k - \lambda_j) - G(\lambda_k,\lambda_k)(\lambda_j-\lambda_i)}{(\lambda_j-\lambda_i)(\lambda_k-\lambda_i)(\lambda_k-\lambda_j)}\d t,\\
+        &= \sum_{i<j<k} \left( \frac{G(\lambda_j,\lambda_j) - G(\lambda_i,\lambda_i) }{\lambda_j - \lambda_i} - \frac{G(\lambda_k,\lambda_k) - G(\lambda_j,\lambda_j)}{\lambda_k - \lambda_j} \right)\frac{1}{\lambda_k - \lambda_i}\d t. \label{eq:dA5}
+    \end{align}
+
+    If $G(x,x)$ is convex, then $A_5$ is non positive. If $G(x,x)$ is continuously differentiable with derivative uniformly Lipschitz, then
+
+    \[ \abs{G'(x,x) - G'(y,y)} \le C\abs{x-y}, \]
+
+    \noindent and the \eqref{eq:dA5} is bounded by $C$, which means $\abs{A_5(t)}\le Ct$.
+
+    We have found that the finite variation part of $U$ is bounded for finite $t$, then we can apply McKean's argument \ref{lemma:mckean} to conclude that $U$ can not explode in finite time and thus $\tau = \infty$ a.s.
+
+\end{proof}
+
+
+
+
+

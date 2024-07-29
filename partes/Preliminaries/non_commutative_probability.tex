@@ -1,0 +1,435 @@
+\section{Non-commutative probability}
+
+Although random matrices are constructed based on classical definitions of random variables as measurable functions in a given probability space, they differ fundamentally from classical random variables in their basic algebraic properties. Namely, the product of random matrices does not need to commute, whereas the product of real-valued random variables always commutes. This simple fact complicates the use of classical analytical tools in probability to study random matrices. Recently, the emerging field of non-commutative probability has developed several techniques for the algebraic study of non-commutative random variables. These techniques have significantly impacted random matrices theory.
+
+In this section we give a brief introduction to the fundamental concepts and ideas of non-commutative probability and its application to the study of random matrices. These concepts will be later used in Chapter \ref{ch:finite_free}.
+
+\subsection{Non-commutative probability spaces}
+
+A classical probability space is defined based on its analytical structure. When we work in non-commutative probability probability spaces, we are mainly concerned about the algebraic relationship between random variables. Before introducing the concept of a non-commutative probability space, we define an unital algebra.
+
+\begin{definition}[Unital algebra]
+    Let $\mathcal A$ be a vector space over the field $\mathbb F$ equipped with the additional binary operation $\cdot$. We say that $\mathcal A$ is a unital algebra if it satisfies the following properties for $a,b,c \in \mathcal A$ and $\alpha, \beta \in K$,
+
+    \begin{enumerate}
+        \item Right distributivity. $(a + b) \cdot c = a\cdot c + b \cdot c$.
+        \item Left distributivity. $a\cdot(b + c) = a\cdot b + a \cdot c$.
+        \item Compatibility with scalars. $(\alpha a)\cdot(\beta b) = (\alpha \beta)(a\cdot b)$.
+        \item Identity. There is an element $1_{\mathcal A}$ such that $a 1_{\mathcal A} = a = 1_{\mathcal A} a$. We call $1_{\mathcal A}$ the identity element in $\mathcal A$.
+    \end{enumerate}
+
+\end{definition}
+
+Usually we denote $a\cdot b = ab$ to simplify notation. Now we give the definition of non-commutative probability space found in \cite{book:nica_speicher}.
+
+\begin{definition}[Non-commutative probability space] \label{def:non_commutative_probability_space}
+    A non-commutative probability space $(\A,\phi)$ consists of a unital algebra $\A$ over $\C$ and a unital linear functional $\phi$, i.e.
+
+    \begin{equation*}
+        \phi : \A \to \C, \qquad \phi(1_\A) = 1.
+    \end{equation*}
+\end{definition}
+
+    An element $a$ in $\A$ is called a non-commutative random variable in $(\A, \phi)$ or simply a random variable in $(\A,\phi)$.
+
+    A concept related to non-commutative probability is that of $*$-probability space (star probability space). We introduce the definition of a $*$-algebra.
+
+    \begin{definition}[$*$-Algebra]
+        We say that a unital algebra $\A$ is a $*$-algebra if it is equipped with an antilinear operation $*$, $\A \ni a \mapsto a^* \in \A$ that satisfies $(a^*)^* = a$ and $(ab)^* = b^* a^*$ for all $a,b \in \A$.
+    \end{definition}
+
+    We call $a^*$ the adjoint of $a$. If we replace ``unital algebra'' by ``$*$-algebra'' in Definition \ref{def:non_commutative_probability_space} we get the definition of a $*$-probability space.
+
+    There are some additional properties we can have for the functional $\phi$ in a non-commutative probability space $(\A,\phi)$. If $\phi(ab) = \phi(ba)$ for every $a,b \in \A$ we say that $\phi$ is tracial. If $(\A, \phi)$ is a $*$-probability space and $\phi(a^*a)\ge 0$ for every $a\in \A$, we say that $\phi$ is positive. If $\phi(a^*a)=0$ only when $a=0$, then we say that $\phi$ is faithful.
+
+    Depending on its algebraic properties, we can distinguish different kinds of non-commutative random variables. 
+    
+    We say that $a \in \A$ is self-adjoint if $a^* = a$, unitary if $a^*a = 1_\A = a^*a$ and normal if it commutes with its adjoint $a^*a = aa^*$.
+
+    The notion of a non-commutative probability space generalizes the idea of some spaces of random variables, including spaces of random matrices.
+
+    \begin{example}
+        Let $(\Omega, \F, \mathbb P)$ be a classical probability space and $\A = L^\infty(\Omega, \mathbb P, \R)$ the set of bounded measurable functions from $\Omega$ taking values in $\R$. Equip $\A$ with the linear operator $\phi$ given by 
+
+        \begin{equation*}
+            \phi(a) = \int_\Omega a(\omega) \d \P{\omega} = \E{a},
+        \end{equation*}
+
+        \noindent for $a \in \A$. Then $(\A,\phi)$ is a non commutative probability space. 
+
+        If we take the space $\A' = L^\infty(\Omega, \mathbb P, \C)$ of bounded measurable functions taking complex values, then we can have a $*$-operation given by the complex conjugate and $(\A', \phi)$ is a $*$-probability space.
+    \end{example}
+
+    The hypothesis of the variables being bounded is for them to form an algebra. If we can not guarantee $a^n$ is in $\A$ for every $n$, then $\A$ is not an algebra. This condition causes our non-commutative probability space not to include all of the classical random variables we can define in a classical probability space. However, we can relax hypotheses to enlarge the class of classical random variables that form an algebra.
+
+    \begin{example}
+        Let $(\Omega, \F, \mathbb P)$ be a classical probability space and 
+        
+        \begin{equation*}
+            \A = L^{\infty-}(\Omega, \mathbb P, \mathbb F) \coloneqq \bigcap_{1\le p < \infty} L^p(\Omega, \mathbb P, \mathbb F)
+        \end{equation*}
+        
+        \noindent with $\mathbb F \in \{\R, \C\}$. 
+
+        Clearly $ L^{\infty}(\Omega, \mathbb P, \mathbb F) \subset  L^{\infty-}(\Omega, \mathbb P, \mathbb F)$, and since we are asking every variable in $ L^{\infty-}(\Omega, \mathbb P, \mathbb F)$ to have all the positive moments, we can assure it is an algebra. With this, we have that the space of the classical random variables with finite moments of every order is a non-commutative probability space. 
+        
+      
+    \end{example}
+
+    A definition of a non-commutative probability space that includes random variables which do not necessarily have finite moments of every order can be done, but it is not needed for the purposes of this work. 
+
+    \begin{example}
+        Let $\mathbb F \in \{\R,\C\}$ and $\M_{n,n}(\mathbb F)$ be the algebra of $n\times n$ matrices with entries in $\mathbb F$, where the operations are $+$ the sum of matrices and $\cdot$ the usual matrix product. Denote by $\tr$ the normalized trace, i.e.
+
+        \begin{equation*}
+            \tr(A) \coloneqq \frac1n Tr(A) = \frac1n \sum_{j=1}^n A_{jj},
+        \end{equation*}
+
+        \noindent for $A \in \M_{n,n}(\mathbb F)$.
+
+        Define a $*$-operation by
+
+        \begin{equation*}
+            (A^*)_{ij} \coloneqq \overline{A_{ji}}.
+        \end{equation*}
+
+        Then $(\M_{n,n}(\mathbb F),\tr)$ is a $*$-probability space. In the case $\mathbb F = \R$, the $*$-operation is simply taking the transpose.
+    \end{example}
+
+    The entries of a matrix need not to be random for the space of matrices to be a non-commutative probability space, but we can indeed ask every entry to be a random variable and thus we recover the definition of a space of random variables is indeed a non-commutative probability space.
+
+    \begin{example}
+        Let  $\mathbb F \in \{\R,\C\}$ and $\A = \M_{n,n}(L^{\infty-}(\Omega,\mathbb P,\mathbb F))$ the space of $n\times n$ matrices with entries in $L^{\infty-}(\Omega,\mathbb P,\mathbb F)$. Equip $\A$ with the functional $\phi(\cdot)$ given by
+
+        \begin{equation*}
+            \phi(A) = \E{ \tr(A) } = \frac1n\sum_{j=1}^n \int_{\Omega} A_{jj}(\omega) \d \mathbb P(\omega).
+        \end{equation*}
+
+        Then $(\A, \phi)$ is a $*$-probability space with the $*$-operation being the conjugate transpose or simply the transpose if $\mathbb F = \R$.
+    \end{example}
+
+    One of the central concepts in classical probability theory is the distribution of a random variable. In a non-commutative probability space $(\A,\phi)$ we can define the distribution of a random variable $a$ as the way in which $\phi$ acts on $a$, in analogy to classical probability, we define the moments of a non-commutative random variable.
+
+    \begin{definition} \label{def:star_moment}
+        Let $a$ be a random variable in a $*$-probability space $(\A,\phi)$. A $*$-moment of $a$ is any expression of the form
+
+        \begin{equation*}
+            \phi(a^{e_0}\cdots a^{e_k}),
+        \end{equation*}
+
+        \noindent with $k \in \mathbb{N}$ and $e_0, \dots, e_k \in \{1,*\}$.
+    \end{definition}
+
+    Denote by $\C\langle x, x^*\rangle$ the unital algebra freely generated by the indeterminates $x$ and $x^*$, i.e. $\C\langle x,x^*\rangle$ is the algebra over $\C$ generated by all of the monomials of the form
+
+    \begin{equation*}
+        x^{e_0}\cdots x^{e_k},
+    \end{equation*}
+
+    \noindent with $k$ and $e_1, \dots, e_k$ as in Definition \ref{def:star_moment}. Now we present the definition of a $*$-distribution.
+
+    \begin{definition}
+        Let $a$ be a random variable in a $*$-probability space $(\A,\phi)$. A $*$-distribution is a linear functional
+
+        \begin{equation*}
+            \mu : \C\langle x, x^*\rangle \to \C,
+        \end{equation*}
+
+        \noindent that satisfies
+
+        \begin{equation*}
+            \mu(x^{e_0}\cdots x^{e_k}) = \phi(a^{e_0}\cdots a^{e_k}).
+        \end{equation*}
+
+        \noindent with $k \in \mathbb{N}$ and $e_0, \dots, e_k \in \{1,*\}$.
+    \end{definition}
+
+    In the particular case in which $a$ is normal, the distribution is determined by the moments of the form $\phi(a^k(a^*)^l)$ for $k,l \ge 0$, and moreover, if $a$ is self-adjoint it is enough to consider the moments $\phi(a^k)$ for $k\ge 0$. 
+    
+    For the normal case, it is possible to link the concept of distribution in classical probability with the definition in the non-commutative case.
+
+    \begin{definition}
+        Let $a$ be a random variable in a non-commutative probability space $(\A,\phi)$. If there exists a compactly supported probability measure $\mu$ on $\C$ such that for every $k,l\in \N$,
+
+        \begin{equation*}
+            \int_\C z^k \bar{z}^l \d \mu(z) = \phi(a^k(a^*)^l),
+        \end{equation*}
+
+        then the distribution of $a$ is uniquely determined by $\mu$ and we call $\mu$ the analytic distribution of $a$.
+    \end{definition}
+
+    In the case $\A = L^{\infty}(\Omega,\mathbb P, \mathbb F)$ and $\phi(\cdot) = \E{\cdot}$, the analytical distribution of $a \in \A$ is the measure on the Borel sets of $\mathbb F$ induced by $a$, i.e.
+
+    \begin{equation*}
+        \mu(B) = \P{ \{ \omega \in \Omega : a(\omega) \in B \} },
+    \end{equation*}
+
+    \noindent for $B$ a Borel set of $\mathbb F$.
+
+    \begin{example}[Haar unitary random variable]
+        Let $u$ be a random variable in a non-commutative probability space $(\A,\phi)$. We say that $u$ is a Haar unitary element if it is unitary ($u^*u = 1_\A = uu^*$) and for every $k\in \mathbb Z \setminus \{0\}$ we have
+
+        \begin{equation*}
+            \phi(u^k) = 0.
+        \end{equation*}
+    \end{example}
+
+    This definition generalizes the one of Haar unitary ensemble for random matrices.
+
+\subsection{Notions of independence}
+
+    The definition of independence in classical probability assumes that the product of random variables is commutative. This property does not hold in general for non-commutative probability spaces and particularly in the case of random matrix spaces. Instead, we have four different notions of independence defined in terms of the moments.
+
+    Formally, a notion of independence is a rule that allows to compute mixed moments of the form
+
+    \begin{equation*}
+        \phi(a^{m_1}b^{n_1} \cdots a^{m_{k}}b^{n_k}), \qquad k \in \N, \quad m_i, n_j \in \{1,*\},
+    \end{equation*}
+
+    \noindent in terms of the individual moments of $a$ and $b$.
+
+    The classical notion of independence corresponds to what we call tensor independence in non-commutative probability.
+
+    \begin{definition}[Tensor independence]
+        Let $(\A, \phi)$ be a non-commutative probability space and $I$ a set of indexes. A set of unital subalgebras $(\A_{i})_{i\in I}$ is called tensor independent if
+
+        \begin{enumerate}
+            \item For every $a\in \A_i$ and $b\in \A_j$, $a$ and $b$ commute.
+            \item For all the finite subsets $J\subset I$ and all $a_j \in \A_j$ we can compute $\phi\left( \prod_{j\in J} a_j \right)$ as
+            
+            \begin{equation*}
+                \phi\left( \prod_{j\in J} a_j \right) = \prod_{j\in J}  \phi\left( a_j \right)
+            \end{equation*}
+        \end{enumerate}
+
+        When we say that two random variables $a,b$ are tensor independent, we mean that the unitary subalgebras $\A_1, \A_2$ generated by $a$ and $b$, respectively are tensor independent.
+    \end{definition}
+
+    Tensor independence is a symmetric relationship. If $a$ is tensor independent of $b$, then $b$ is tensor independent of $a$, this is not the case for every notion of independence. We can distinguish three additional notions of independence, for the purposes of this work, we introduce only the notion of ``Free independence'', the definition of the other notions of independence can be found in \cite{anaya2016cumulantes}.
+
+    % \begin{definition}[Boolean independence]
+    %     Let $(\A, \phi)$ be a non-commutative probability space. Two random variables $a,b$  are called boolean independent if for every $k \in \N$, and every $m_i, n_j \in \N \cup *\N$ we have that
+
+    %     \begin{equation*}
+    %         \phi(a^{m_1}b^{n_1} \cdots a^{m_{k}}b^{n_k}) = \phi(a^{m_1})\phi(b^{n_1}) \cdots \phi(a^{m_{k}})\phi(b^{n_k}).
+    %     \end{equation*}
+
+    % \end{definition}
+
+    % \begin{definition}[Monotone independence]
+    %     Let $(\A, \phi)$ be a non-commutative probability space. A random variable $a$ is said to be monotone independent with respect to another random variable $b$ if for every $k \in \N$, and every $m_i, n_j \in \N \cup *\N$ we have that
+
+    %     \begin{equation*}
+    %         \phi(a^{m_1}b^{n_1} \cdots a^{m_{k}}b^{n_k}) = \phi\left(a^{\sum_{j=1}^k m_j}\right)\phi(b^{n_1}) \cdots \phi(b^{n_k}).
+    %     \end{equation*}
+
+    %     If $b$ is monotonely independent with respect to $a$ we say that $a$ is anti-monotonely independent with respect to $b$. This notion of independence is non-symmetric.
+    % \end{definition}
+
+    \begin{definition}[Free independence]
+        Let $(\A, \phi)$ be a non-commutative probability space and $I$ a set of indexes. A set of unital subalgebras $(\A_{i})_{i\in I}$ is called tensor independent if $\phi(a_1 \cdots a_k) = 0$ whenever we have that
+
+        \begin{enumerate}
+            \item $k \in \mathbb Z^+$,
+            \item $a_j \in \A_{i(j)}$ with $i(j) \in I$ for every $j \in [k]$,
+            \item $\phi(a_j) = 0$ for every $j \in [k]$,
+            \item Consecutive elements in $a_1 \cdots a_k$ come from different algebras, i.e.
+            \begin{equation*}
+                i(1) \neq i(2), i(2) \neq i(3), \dots, i(k-1) \neq i(k).
+            \end{equation*}
+        \end{enumerate}
+
+        When we say that two random variables $a,b$ are freely independent, we mean that the unitary subalgebras $\A_1, \A_2$ generated by $a$ and $b$, respectively are freely independent.
+
+    \end{definition}
+
+
+\subsection{Convolution}
+
+    In classical probability, when we need to compute the distribution of a sum of (tensor) independent random variables, we use a convolution. In non-commutative probability spaces, adding two independent random variables in any notion of independence gives place to a different kind of convolution.
+
+    \begin{definition}[Non-commutative convolution]
+        Let $(\A,\phi)$ be a non-commutative probability space and $a,b\in\A$ be independent (in some notion), then the convolution (in some notion) of $a$ and $b$ is the algebraic distribution of $a+b$, i.e. the linear operator characterizing the moments
+
+        \begin{equation*}
+            \phi\left((a+b)^{m}\right),
+        \end{equation*}
+
+        \noindent with $m$ a sequence of the form $m = e_1 e_2 \cdots e_k$, $k\in \N$ and $e_j \in \{1,*\}$, for all $j \in [k]$.
+    \end{definition}
+
+    If $a$ is a classical random variable and its moment generating function $\E{e^{ta}}$ exists, we can define $K_a(t)$ the cumulant generating function of $a$ as
+
+    \begin{equation*}
+        K_a(t) \coloneqq \log \E{ e^{ta} }.
+    \end{equation*}
+
+    This function is analytic (at least in a neighborhood of zero) and has a Taylor expansion given by
+
+    \begin{equation*}
+        K_a(t) =  \sum_{n=1}^\infty \frac{t^n}{n!} \kappa_n(a),
+    \end{equation*}
+
+    \noindent with $\kappa_n(a)$ being the $n$th cumulant of $a$. This function linearizes the (tensor) convolution in the sense that if $a,b$ are (tensor) independent, then
+
+    \begin{equation*}
+        K_{a+b}(t) = K_a(t)+K_b(t).
+    \end{equation*}
+
+    This ultimately implies that the cumulants $\kappa_a(n)$ linearize the (tensor) convolution if $a,b$ are (tensor) independent, i.e.
+
+    \begin{equation*}
+        \kappa_{a+b}(n) = \kappa_a(n) + \kappa_b(n).
+    \end{equation*}
+
+    Analogous coefficients can be defined for the other notions of independence. The main tool to study them is the Cauchy-Stieltjes transform sometimes called just ``Cauchy transform''.
+
+    \begin{definition}[Cauchy-Stieltjes transform]
+        Let $\mu$ be a probability measure on $\R$, its Cauchy-Stieltjes transform, $G_\mu(t)$ is
+
+        \begin{equation*}
+            G_\mu(z) \coloneqq \int_\R \frac{1}{z-t} \mu(\d t),
+        \end{equation*}
+
+        \noindent for $z \in \C^+ \coloneqq \{ z \in\C : Im(z) >0 \}$. The Cauchy transform takes values in $\C^- \coloneqq \{ z \in\C : Im(z) >0 \}$.
+    \end{definition}
+
+    When $\mu$ is characterized by its moments $m_k(\mu)$, there is a relationship between them and the Cauchy-Stieltjes transform $\mu$ given by 
+
+    \begin{align*}
+        G_\mu(z) &= z^{-1} \int_\R \frac{1}{1 - \frac tz} \mu(\d t) = z^{-1} \int_\R \sum_{k=0}^\infty \left( \frac tz \right)^k \mu(\d t),\\  
+        &= \sum_{k=0}^\infty z^{-(k+1)} \int_\R t^k \mu(\d t) = \sum_{k=0}^\infty \frac{m_k(\mu)}{z^{k+1}},
+    \end{align*}
+
+    \noindent with $m_k(\mu)$ being the $k$th moment of $\mu$ and for $\abs{z} \ge \sup \left\{ t : t \in \mathrm{supp} (\mu) \right\}$.
+
+    The collection of functions $f_z(t) = 1/(z-t)$ parametrized by $z\in \C^+$ forms a separating test family for the space of probability measures. This implies that the Cauchy-Stieltjes transform characterizes uniquely the probability measure. Due to the relevance of this proposition we state it in the next Theorem.
+
+    \begin{theorem}
+        Given $\mu$ and $\nu$ two probability measures on $\C$ with Cauchy-Stieltjes transforms $G_\mu$ and $G_\nu$ respectively. Then
+
+        \begin{equation*}
+            \mu = \nu \Leftrightarrow G_\mu = G_\nu.
+        \end{equation*}
+    \end{theorem}
+
+    Now we compute a few examples of Cauchy-Stieltjes transforms
+
+    \begin{example} \todo{Hacer ejemplos} 
+        % Semicírculo, arcoseno, medida empírica.
+    \end{example}
+
+    If $\mu$ is absolutely continuous with respect to the Lebesgue measure and has density $f_\mu$, then it is possible to recover $f_\mu$ from the Cauchy transform $G_\mu$ by using the Stieltjes inversion formula.
+
+    \begin{theorem}
+        Let $\mu$ be an absolutely continuous probability measure in $\R$ with density $h_\mu$ and Cauchy transform $G_\mu$. Then
+
+        \begin{equation*}
+            f_\mu(x) = \lim_{y \to 0} - \frac1\pi Im[G_\mu(x + iy)].
+        \end{equation*}
+    \end{theorem}
+
+    Using the Cauchy-Stieltjes transform it is possible to define other transforms that linearize convolution in different notions of independence. We include here the ones that are useful for this work
+
+    \begin{definition}[Non-commutative linearizing transforms]
+        Let $\mu$ be a probability measure on $\R$ with Cauchy-Stieltjes transform $G_\mu$. We can define the following transforms for $\mu$.
+
+        \begin{enumerate}
+            \item The $\mathcal K$ transform $\mathcal K_\mu$ is the compositional inverse of $G_\mu$,
+            
+                \[ \mathcal K_\mu (z) \coloneqq G_\mu^{-1}(z). \]
+
+            % \item The $F$ transform $F_\mu$ is the multiplicative reciprocal of $G_\mu$.
+            
+            %     \[ F_\mu(z) \coloneqq \frac1{G_\mu(z)}.\]
+            
+            \item The $\mathcal R$ transform $\mathcal R_\mu$ is defined in terms of the $\mathcal K$ transform
+
+                \[ \mathcal R_\mu(z) \coloneqq \mathcal K_\mu(z) - \frac1z. \]
+
+            % \item The $\mathcal B$ transform is defined in terms of the $F$ transform
+            
+            % \[ \mathcal B_\mu \coloneqq \frac1z - F_\mu(\frac1z). \]
+
+            \item The $S$ transform $S_\mu$ is defined in terms of the inverse under composition of the $\mathcal R$ transform,
+            
+            \[ S_\mu(z) \coloneqq \frac1z\mathcal R_{\mu}^{-1}(z).\] 
+        \end{enumerate}
+    \end{definition}
+
+    Let $a$ and $b$ be non-commutative random variables with real support and analytic distributions $\mu$ and $\nu$, respectively. The distribution of the sum $a+b$ is said to be the convolution in a notion of independence if $a$ and $b$ satisfy a notion of independence.
+
+    \begin{enumerate}
+        \item If $a$ and $b$ are tensor independent, the distribution of $a+b$ is the classical (or tensor) convolution of $\mu$ and $\nu$ denoted by $\mu*\nu$.
+        
+        %\item If $a$ and $b$ are boolean independent, the distribution of $a+b$ is the boolean convolution of $\mu$ and $\nu$ denoted by $\mu \uplus \nu$.
+        
+        %\item If $a$ is monotone independent with respect to $b$, the distribution of $a+b$ is the monotone convolution of $\mu$ and $\nu$ denoted by $\mu \triangleright \nu$.
+        
+        \item If $a$ and $b$ are freely independent, the distribution of $a+b$ is the free convolution of $\mu$ and $\nu$ denoted by $\mu \boxplus \nu$.
+    \end{enumerate}
+
+    We say that $\mu$ and $\nu$ satisfy an independence relationship if the associated random variables satisfy it. 
+    
+    The relationship between the transforms defined above and the convolution of non-commutative random variables is stated in the following theorem.
+
+    \begin{theorem}
+        Let $\mu,\nu$ be two compactly supported probability measures on $\R$. If they are freely independent, then
+            
+            \[ \mathcal R_{\mu \boxplus \nu}(z) = \mathcal R_{\mu}(z) + \mathcal R_{\nu} (z).\]
+    \end{theorem}
+
+    The fact that the notion of non-commutative convolution generalizes the sum of independent random variables allows us to get results that are similar to the Central Limit Theorem. In the next section we state this result for the classical and free independence cases.
+
+\subsection{Classical and free central limit theorems}
+
+    Each notion of independence and convolution gives in turn a new limit for sums of the form
+
+    \[ S_n = \frac{X_1 + X_2 + \cdots + X_n}{\sqrt{n}}, \]
+
+    \noindent for $X_i$ independent (in some sense) and identically distributed random variables with mean 0 and variance 1.
+
+    In classical probability, the variables are tensor independent and the limit is the Gaussian distribution. The next Theorem gives us the generalization for the case of free independence. A proof can be found in \cite{book:nica_speicher}.
+
+    \begin{theorem}
+        Let $(\A,\phi)$ be a non-commutative probability space and $(a_i)_{i\in \N}$ be a sequence of random variables in $\A$ with common distribution and that have zero mean ($\phi(a_1)=0$) and variance 1 ($\phi(a_1^2)=1$). 
+        
+        Denote by $\xrightarrow[]{D}$ the convergence in distribution and define $S_n$ as
+
+        \[ S_n \coloneqq \frac{\sum_{j=1}^n a_j}{\sqrt{n}}.\]
+        \begin{enumerate}
+            \item If the random variables are tensor independent, then 
+                
+            \begin{equation*}
+            S_n \xrightarrow[n\to\infty]{D} N,        
+            \end{equation*}
+
+            \noindent with $N$ a standard normal random variable.
+            
+            % \item If the random variables are boolean independent, then
+            
+            % \begin{equation*}
+            %     S_n \xrightarrow[n\to\infty]{D} b,        
+            % \end{equation*}
+            
+            % \noindent with $b$ a symmetric Bernoulli random variable with support in $\{-1,1\}$.
+
+            % \item If $a_i$ is monotone independent with respect to $a_{i+1}$ for all $i \in \N$, then
+            
+            % \begin{equation*}
+            %     S_n \xrightarrow[n\to\infty]{D} a,        
+            % \end{equation*}
+
+            % \noindent with $a$ a standard arcsine random variable.
+            
+            \item If the random variables are freely independent, then 
+                
+            \begin{equation*}
+            S_n \xrightarrow[n\to\infty]{D} s,        
+            \end{equation*}
+
+            \noindent with $s$ a standard semicircular random variable.
+        \end{enumerate}
+    \end{theorem}
+
+%\subsection{Asymptotic freeness for random matrices} \todo[inline]{Hablar sobre libertad asintótica y mencionar el resultado para los ensambles GUE y Haar unitarios.}

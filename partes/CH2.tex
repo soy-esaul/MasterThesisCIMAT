@@ -1,0 +1,36 @@
+\chapter{Eigenvalue processes for matrix-valued processes}  \label{ch:eigen_processes}
+
+In this chapter we prove the form of the dynamic equation for the Dyson Brownian motion in the real and complex cases. We then show an extension of the result to matrix-valued diffusion processes. Most of the material in the chapter is taken from \cite{article:multiyamada} which in turn uses techniques appearing in \cite{bru1989diffusions} for the study of Wishart processes. In the first section, the essential tools are introduced and then the result is proven for the Dyson Brownian motion. In the second section, the results are generalized for matrix-valued Itô processes and the particular cases of the Wishart and Jacobi processes are given.
+
+At the end of the chapter we will prove that if $B=(B(t), t\ge 0)$ is a Brownian motion in $\M_{n,n}(\R)$ and $X$ is a matrix-valued process satisfying the following system of stochastic differential equations
+
+\begin{equation}
+        \d X(t) = g(X(t)) \d B(t) h(X(t)) + h(X(t)) \d \trans{B(t)} g(X(t)) + b(X(t))\d t, \label{eq:matrix_diffusion_ch}
+\end{equation}
+
+\noindent then its eigenvalues are semimartingales that satisfy the system of stochastic differential equations given by
+
+    \begin{equation}
+        \d \lambda_i = 2g(\lambda_i)h(\lambda_i)\d W_i + \biggl( b(\lambda_i) + \sum_{k\neq i} \frac{G(\lambda_i,\lambda_k)}{\lambda_i - \lambda_k} \biggr)\d t, \label{eq:gen_dyson_ch}
+    \end{equation}
+
+\noindent until the time of first collision, which means whenever $\lambda_i = \lambda_j$ for any $i\neq j$. We will show, however that the first collision is impossible in finite time a. s.  The analogous result holds when $B$ is a Brownian motion in $\M_{n,n}(\C)$ and we take $\hermit{B(t)}$ instead of $\trans{B(t)}$ in \eqref{eq:matrix_diffusion_ch}.
+
+In order to illustrate the techniques and introduce the most basic process of this kind, we will first prove the particular cases of the real and complex Dyson Brownian motion, which are simply the eigenvalue processes of Brownian motion in $\mathcal H_{n,n}(\R)$ and $\mathcal H_{n,n}(\C)$, respectively. In both cases, the processes are particular cases of \eqref{eq:gen_dyson_ch} with $b\equiv 0$ and $g \equiv h \equiv 1/\sqrt[4]{2}$. Notice that this implies that $X$ is a process in $\mathcal H_{n,n}(\R)$  ($\mathcal H_{n,n}(\C)$) whose off-diagonal entries are standard real-valued (complex-valued) Brownian motions and the diagonal entries would are real-valued (complex-valued) Brownian motions with variance $2$. In the later case \eqref{eq:gen_dyson_ch} would turn into
+
+\begin{equation*}
+    \d \lambda_i = \sqrt{2}\d W_i + \sum_{k\neq i} \frac{\d t}{\lambda_i - \lambda_k},
+\end{equation*}
+
+\noindent which exactly the system of stochastic differential equations we expect to have for the Dyson Brownian motion.
+
+
+\input{partes/CH2/dyson_brownian_motion.tex}
+
+
+
+
+\input{partes/CH2/diffusions.tex}
+
+
+

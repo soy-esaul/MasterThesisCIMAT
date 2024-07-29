@@ -1,0 +1,116 @@
+
+
+\subsection{Introduction to main concepts in Random Matrix Theory}
+
+\todo[inline]{Mi idea es usar esta sección para hacer algo así como una presentación a grandes rasgos del estudio de las matrices aleatorias (qué es un ensamble, ensambles comunes, qué se hace, el nombre de algunas técnicas) y tal vez un repaso histórico. También lo quiero usar para aclarar la notación que voy a usar a lo largo del texto y tal vez incluir algún resultado de álgebra matricial que necesite después.}
+
+\subsubsection{Matrix algebra}
+
+\subsubsection{Random matrix ensembles}
+
+\subsubsection{Asymptotic results for random matrices}
+
+Laws of large numbers, Wigner's semicircle law.
+
+\subsection{Stochastic calculus}
+
+\todo[inline]{En esta sección quiero primero incluir resultados clásicos y muy importantes de cálculo estocástico (por ejemplo, fórmula de Itô o fórmula de Tanaka), así como resultados particualres que se usan en las pruebas en los siguientes capítulos (criterio de McKean, lema de Gronwall). Después, en una subsección hablar de la generalización de estos reusltados a procesos matriciales.}
+
+\subsubsection{Stochastic calculus for $\R^n$-valued processes}
+
+\todo[inline]{Agregar definición de integral de Itô y Strata- novich, fórmula de Itô para matrices}
+% Itô integral for stochastic matrices
+% Stratanovich integral for stochastic matrices
+% Product formula for Itô and Stratanovich integral
+\todo[inline]{Agregar demostración de que los resultados son generalizables a semimartingalas matriciales}
+\begin{theorem}[Integration by parts for Itô and Stratanovich integral] \label{thm:partes} \todo[inline]{Tomado de Revuz-Yor}
+    Let $X, Y$ be two continuous semimartingales, then
+
+    \begin{align*}
+        \d(XY) &= X \d Y + Y \d X + \langle X, Y \rangle,\\
+        &= X \d Y + \frac12\langle X, Y \rangle + Y \d X + \frac12\langle X, Y \rangle = X \circ \d Y + Y \circ \d X.
+    \end{align*}
+\end{theorem}
+
+% Sacado de Revuz-Yor
+
+\todo{Incluir pruebas para todos estos resultados}
+
+
+% Sacado de Revuz-Yor
+
+\begin{theorem}[Tanaka's formula] \todo[inline]{Tomado de Revuz-Yor}
+    Let $X$ be a continuous semimartingale. For any real number $a$, there exists an increasing continuous process $L^a$ called the local time of $X$ in $a$ such that,
+
+
+    \begin{align*}
+        \abs{X(t) - a} &= \abs{X(0) - a} + \int_0^t \mathrm{sgn}(X(s) - a)~\d X(s) + L^a(t),\\
+        (X(t) - a)^+ &= (X(0) - a)^+ + \int_0^t \mathds 1_{\{X(s) > a\}}~\d X(s) + \frac12 L^a(t),\\
+        (X(t) - a)^- &= (X(0) - a)^- - \int_0^t \mathds 1_{\{X(s) \le a\}}~\d X(s) + \frac12 L^a(t).
+    \end{align*}
+
+\end{theorem}
+
+
+% Sacado de Revuz-Yor ¿Qué es $\rho$?
+\begin{theorem} \label{thm:local_zero} 
+    \todo[inline]{Tomado de Revuz-Yor. Completar hipótesis.}
+    If $X$ is a continuous semimartingale such that , for some $\epsilon > 0$ and every $t$, the process
+
+    \begin{equation*}
+        A_t = \int_0^t \mathds 1_{\{0 < X(s) \le \epsilon\}} \rho(X(s))^{-1} ~\d \langle X, X \rangle (s) < \infty \qquad a.s.,
+    \end{equation*}
+
+    \noindent then $L^0(X) = 0$.
+\end{theorem}
+
+
+% Sacado de Le Gall, pág 213
+
+\begin{lemma}[Gronwall's lemma] 
+    \label{lemma:gronwall} \todo{Tomado de Le Gall, pág 213}
+    Let $T >0$ and let $g$ be any nonnegative bounded measurable function on $[0,T]$. Assume that there exists two constants $a\ge 0$ and $b\ge 0$ such that for every $t\in [0,T]$,
+
+    \[ g(t) \le a + b\int_0^t g(s)~\d s. \]
+
+    Then we also have, for every $t \in [0,T]$,
+
+    \[ g(t) \le a \exp(bt). \]
+\end{lemma}
+
+\begin{lemma}[McKean's argument] \label{lemma:mckean}% Tomado de https://sci-hub.se/https://www.sciencedirect.com/science/article/pii/S0304414911001153
+    \todo{Tomado de Mayerhofer (2011)}
+    Let $Z = (Z_s)_{s\in \R_+}$ be an adapted \textit{càdlàg} $\R^+\setminus \{0\}$-valued stochastic process on a stochastic interval $[0,\tau_0)$ such that $Z_0 > 0$ a.s. and $\tau_0 = \inf\{0 < s \le \tau_0 : Z_{s-} = 0\}$. Suppose that $h:\R_+\setminus\{0\}\to\R$ is continuous and satisfies the following:
+
+    \begin{enumerate}
+
+        \item For all $t\in[0,\tau_0)$, we have $h(Z_t) = h(Z_0) + M_t + P_t$, where 
+        
+        \begin{enumerate}
+            \item  $P$ is an adapted càdlàg process on $[0,\tau_0)$ such that $\inf_{t\in[0,\tau_0\wedge T]} P_t > - \infty$ a.s. for each $T\in \R_+\setminus \{0\}$,
+            
+            \item  $M$ is a continuous local martingale on $[0,\tau_0)$ with $M_0=0$,
+        \end{enumerate}
+        
+        \item $\lim_{z\to 0}h(z) = -\infty$.
+    \end{enumerate}
+
+    Then $\tau_0 = \infty$ a.s.
+\end{lemma}
+
+\subsubsection{Stochastic calculus for matrix-valued processes}
+
+\subsection{Non-commutative probability}
+
+\todo[inline]{Como aún no leo la parte de probabilidad libre finita, no sé qué preliminares sea conveniente incluir aquí, pero me imagino que lo impresindible serían la definición de un espacio de probabilidad no conmutativo, tipos de independencia, las convoluciones asociadas a ellas y las transformadas y cumulantes que linealizan cada convolución.}
+
+\subsubsection{Non-commutative probability space}
+
+\subsubsection{Notions of independence}
+
+\subsubsection{Convolution}
+
+\subsubsection{Classical and non-commutative central limit theorems}
+
+\subsubsection{Asymptotic freeness for random matrices}
+

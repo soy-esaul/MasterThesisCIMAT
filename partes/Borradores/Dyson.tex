@@ -1,0 +1,501 @@
+
+\subsection{Dyson Brownian motion}
+
+
+\todo[inline]{Unificar notación}
+
+\todo[inline]{Al principio de este capítulo (en el borrador es una sección) escribiría una breve introducción sobre el proceso de Dyson, en qué contexto surge y tal vez explicar un poco la intuición de la forma de la ecuación (esto de repulsión couloumbica) y los casos GUE y GOE. Todo esto para motivar los teoremas.  
+
+Después de eso vendrían los teoremas que tomé de Graczyk y Małecki para aplicarlos a mostrar los resultados de Dyson y de otros proecesos matriciales. También está pendiente incluir algo de texto entre cada teorema, explicando para que se usa cada uno en la tesis.}
+
+\begin{theorem}[First part of Multidimensional Yamada-Watanabe] \label{thm:mult_yamada_watanabe}
+    Let $p\in \N$ and %,q,r\in \N$ and 
+
+    \begin{align*}
+        b_i&: \R^p \to \R, \qquad i = 1, \dots, p,%\\
+        %c_k&: \R^{p+r} \to \R, \qquad k = p+1, \dots, p + q,\\
+        %d_j&: \R^{p+r} \to \R, \qquad j = p+1, \dots, p + r, 
+    \end{align*}
+
+    \noindent be real-valued continuous functions satisfying the following Lipschitz conditions for $C>0$,
+
+    \begin{align*}
+        \abs{b_i(y_1) - b_i(y_2)} &\le C \norm{y_1 - y_2}, \quad i = 1, \dots, p,%\\
+        %\abs{c_k(y_1,z_1) - c_k(y_2,z_2)} &\le C\norm{(y_1,z_1) - (y_2,z_2)}, \quad k = p+1, \dots, p + q,\\
+        %\abs{d_j(y_1,z_1) - d_j(y_2,z_2)} &\le C\norm{(y_1,z_1) - (y_2,z_2)}, \quad j = p+1, \dots, p + r,
+    \end{align*}
+
+    \noindent for every $y_1, y_2 \in \R^p$. %and $z_1,z_2\in \R^r$. 
+
+    Further, let $\sigma_i:\R \to \R, i =1, \dots, p$ be a set of measurable functions such that
+
+    \[ \abs{\sigma_i(x) - \sigma_i(y)}^2 \le \rho_i(\abs{x-y}), \quad x,y \in \R, \]
+
+    where $\rho_i:(0,\infty)\to(0,\infty)$ are measurable functions such that 
+
+    \[ \int_{0^+} \rho_i^{-1}(x)~\d x = \infty.\]
+
+    Then the pathwise uniqueness holds for the following system of stochastic differential equations
+
+    \begin{align}
+        \d Y_i &= \sigma_i(Y_i)\d B_i + b_i(Y)\d t, \qquad i = 1, \dots, p,%\\
+        %\d Z_j &= \sum_{k=p+1}^{p+q} c_k(Y,Z) \d B_k + d_j(Y,Z)\d t, \quad j = p + 1, \dots, p+r,
+    \end{align}
+
+    \noindent where $B_1, \dots, B_{p}$ are independent Brownian motions.
+\end{theorem}
+
+\begin{proof}
+    Let $Y$ and $\hat Y$ be two solutions with respect to the same multidimensional Brownian motion $B = (B_i)_{i \le p}$ such that $Y(0) = \hat Y(0)$ %and $Z(0) = \hat Z(0)$ 
+    a.s., for $i\le p$ we have
+
+    \begin{equation}
+        Y_i(t) - \hat Y_i(t) = \int_0^t \sigma_i(Y_i) - \sigma_i(\hat Y_i) ~\d B_i(s) + \int_0^t b_i(Y_i) - b_i(\hat Y_i) ~\d s.
+    \end{equation}
+
+    We can then see that
+
+    \begin{equation*}
+        \int_0^t \frac{\mathds{1}_{\{Y_i(s) > \hat Y_i(s)\}}}{\rho_i(Y_i(s)- \hat Y_i(s))} \d \langle Y_i - \hat Y_i, Y_i - \hat Y_i \rangle = \int_0^t \frac{( \sigma_i (Y_i(s)) - \sigma_i (\hat Y_i(s)) )^2}{\rho_i(Y_i(s) - \hat Y_i(s))} \mathds 1_{\{Y_i(s) > \hat Y_i(s)\}} ~\d s \le t.
+    \end{equation*}
+    
+    Applying Theorem \ref{thm:local_zero} we have that the local time of $Y_i - \hat Y_i$ at 0 is 0. Then, we can use the Tanaka's formula to find
+
+    \begin{align*}
+        \abs{ Y_i(t) - \hat Y_i(t) } &= \int_0^t \mathrm{sgn}(Y_i - \hat Y_i) ~\d( Y_i(s) - \hat Y_i(s) ),\\
+        &= \int_0^t \mathrm{sgn}(Y_i(t) - \hat Y_i(t))(\sigma_i(Y_i) - \sigma_i(\hat Y_i)) ~\d B_i(s)\\
+        &\phantom{espacioteeeee}+ \int_0^t \mathrm{sgn}(Y_i(t) - \hat Y_i(t))(b_i(Y_i(t)) - b_i(\hat Y_i(t))) ~ \d t.
+    \end{align*}
+
+    Since $\sigma_i$ is bounded, we have that $\sgn(Y_i(t) - \hat Y_i(t))(\sigma_i(Y_i(t)) - \sigma_i(\hat Y_i(t)))$ is bounded and therefore the first integral in the last expression is a martingale with mean 0, which in turns implies that
+
+    \begin{equation*}
+        \abs{ Y_i(t) - \hat Y_i(t) } - \int_0^t \sgn(Y_i(s) - \hat Y_i(s))(b_i(Y_i(s)) - b_i(\hat Y_i(s)))~\d t,
+    \end{equation*}
+
+    \noindent is a zero-mean martingale. Then, by using the Lipschitz properties of $b_i$ we have
+
+    \begin{align*}
+        \E{\abs{Y_i(t) - \hat Y_i(t)}} &= \E{  \int_0^t \sgn(Y_i(s) - \hat Y_i(s))(b_i(Y_i(s)) - b_i(\hat Y_i(s)))~\d s },\\
+        &\le \E{ \int_0^t \abs{b_i(Y_i(s)) - b_i(\hat Y_i(s))}~\d s},\\
+        &= \int_0^t \E{ \abs{ b_i(Y_i(s)) - b_i(\hat Y_i(t)) } }~\d s 
+        \le  C\int_0^t \E{\abs{Y_i(t) - \hat Y_i(s)}}~\d s.
+    \end{align*}
+
+    Summing for every $i$ we get
+
+    \begin{equation*}
+        \E{\abs{Y(t) - \hat Y(t)}} \le  Cp\int_0^t \E{\abs{Y(t) - \hat Y(s)}}~\d s.
+    \end{equation*}
+
+    Using Gronwall's lemma (\ref{lemma:gronwall}) we get that
+
+    \begin{equation*}
+        \E{\abs{Y(t) - \hat Y(t)}} = 0, 
+    \end{equation*}
+
+    \noindent which implies $Y(t) = \hat Y(t)$ a.s. for every $t>0$, ending the proof.
+\end{proof}
+
+\subsubsection{Real case}
+
+\subsubsection{Complex case}
+
+\subsubsection{Non-collision of the eigenvalues}
+
+\subsection{Wishart processes}
+
+\subsection{Jacobi processes}
+
+\begin{theorem} \label{thm:dyson_real}
+    Let $X_t$ be a symmetric $p\times p$ matrix-valued stochastic process satisfying the stochastic differential equation
+
+    \begin{equation}
+        \d X_t = g(X_t) \d B_t h(X_t) + h(X_t) \d B_t^T g(X_t) + b(X_t)\d t, \label{eq:matrix_diffusion}
+    \end{equation}
+
+    where $g,h,b$ are real functions acting spectrally, and $X_0$ is a symmetric $p\times p$ matrix with $p$ different eigenvalues. 
+
+    Let $G(x,y) = g^2(x)h^2(y) + g^2(y)h^2(x)$, and
+    
+    \begin{equation}
+        \tau = \inf\{ t: \lambda_i(t) = \lambda_j(t) \text{ for some } i\neq j \}. \label{eq:collision_time}
+    \end{equation} 
+    
+    Then, for $t < \tau$ the eigenvalue process $\Lambda_t$ verifies the following stochastic differential equations:
+
+    \begin{equation}
+        \d \lambda_i = 2g(\lambda_i)h(\lambda_i)\d W_i + \biggl( b(\lambda_i) + \sum_{k\neq i} \frac{G(\lambda_i,\lambda_k)}{\lambda_i - \lambda_k} \biggr)\d t, \label{eq:gen_dyson}
+    \end{equation}
+
+    \noindent where $(W_i)_{i}$ are independent Brownian motions.
+\end{theorem}
+
+\begin{proof}
+    Recall that for every $t$, the process $X(t)$ admits a decomposition of the form 
+
+    \[ X(t) = H \Lambda H^T, \]
+
+    \noindent where both $\Lambda$ and $H$ are matrix-valued stochastic processes, $\Lambda = \mathrm{diag}(\lambda_1, \dots, \lambda_p)$ is the diagonal matrix of ordered eigenvalues of $X(t)$ and $H$ is the corresponding matrix of eigenvectors.
+
+    Let us define the stochastic logarith of $H$ as
+
+    \begin{equation*}
+        \d A \coloneqq H^{-1} \partial H = H^T \partial H = H^T \d H + \frac12(\d H^T)\d H.
+    \end{equation*}
+
+    By using Itô's formula on $I = H^T H$ we find
+
+    \begin{align*}
+        0 = \d I = \d(H^T H) = H^T\d H + (\d H)^T H + (\d H)^T \d H = H^T\partial H + (\partial H)^T H = A + A^T.
+    \end{align*}
+
+    Which means $A$ is skew symmetric. Using that $H^T H = I$, we have $\Lambda = H^T H \Lambda H^T H = H^T X H$, by the matrix Itô formula, we find \todo{Revisar bien esta cuenta}
+
+
+    \begin{align*} 
+        \d \Lambda & = \d(H^TXH) = (\partial H^TX)H + H^TX\partial H,\\ 
+        & = (\partial H)^T XH + H^T(\partial X)H + H^T X \partial H,\\
+        & = (\partial H)^T H\Lambda + H^T(\partial X) H + \Lambda H^T \partial H,\\
+        & = (\partial A)^T \Lambda + H^T(\partial X) H + \Lambda \partial A,\\
+        & = H^T(\partial X) H -  (\partial A)\Lambda + \Lambda \partial A.
+    \end{align*}
+    The entries in the diagonals of $(\partial A)\Lambda$ and $\Lambda\partial A$ coincide, and thus the diagonal of $\Lambda\partial A-(\partial A)\Lambda$ is zero. Let us denote $\d N = H^T(\partial X) H$, then
+
+    \[ \d \lambda_j = \d N_{jj}, \]
+
+    \noindent and, using that $\Lambda$ is a diagonal matrix, if $i\neq j$,
+
+    \[ 0 = \d N_{i,j} + (\lambda_i - \lambda_j)\d A_{ij}. \]
+
+    This leads to the following representation for $A_{ij}$,
+
+    \begin{equation} \label{eq:eigenAN}
+        \d A_{i,j} = \frac{\d N_{i,j}}{\lambda_j - \lambda_i}, \qquad i \neq j.
+    \end{equation}
+
+    From \eqref{eq:matrix_diffusion} we compute the quadratic covariation $\d X_{ij}\d X_{km}$,
+
+    \begin{align*}
+        \d X_{ij}\d X_{km} &= \d \bigl< (g(X(t))\d B(t)h(X(t)))_{ij} + (h(X_t)\d \trans{B}(t)(g(X(t))))_{ij},\\
+        &(g(X(t))\d B(t)h(X(t)))_{km} + (h(X_t)\d \trans{B}(t)(g(X(t))))_{km} \bigr>,\\
+        &= \d \bigl< (g(X(t))\d B(t)h(X(t)))_{ij}, (g(X(t))\d B(t)h(X(t)))_{km} \bigr> \\
+        & + \d \bigl< (g(X(t))\d B(t)h(X(t)))_{ij}, (h(X_t)\d \trans{B}(t)(g(X(t))))_{km} \bigr> \\
+        & + \d \bigl< (h(X_t)\d \trans{B}(t)(g(X(t))))_{ij} , (h(X_t)\d \trans{B}(t)(g(X(t))))_{km} \bigr> \\
+        & + \d \bigl< (h(X_t)\d \trans{B}(t)(g(X(t))))_{ij}, (g(X(t))\d B(t)h(X(t)))_{km} \bigr>
+    \end{align*}
+
+        Let us first find $\d \bigl< (g(X(t))\d B(t)h(X(t)))_{ij}, (g(X(t))\d B(t)h(X(t)))_{km} \bigr>$, the other summands are analogous,
+
+    \begin{align*}
+        \d \bigl< (g(X(t))&\d B(t)h(X(t)))_{ij}, (g(X(t))\d B(t)h(X(t)))_{km} \bigr>, \\
+        &=\d \biggl< \sum_{p,q} g(X(t))_{ip}\d B(t)_{pq}h(X(t))_{qj}, \sum_{r,s} g(X(t))_{kr}\d B(t)_{rs}h(X(t))_{sm} \biggr> 
+        \intertext{using the independence between the entries in the brownian matrix,}
+        &= \sum_{p,q} \d\bigl< g(X(t))_{ip}\d B(t)_{pq}h(X(t))_{qj} , g(X(t))_{kp}\d B(t)_{pq}h(X(t))_{qm} \bigr> \\
+        &= \sum_{pq} g(X(t))_{ip}h(X(t))_{qj}, g(X(t))_{kp}h(X(t))_{qm}\d t,\\
+        &= \biggl( \sum_p g(X(t))_{ip}g(X(t))_{kp}\biggr)\biggl(\sum_q h(X(t))_{qj}h(X(t))_{qm}\biggr) \d t, \\
+        &= \bigl(g(X(t))\trans{g(X(t))}\bigr)_{ik}\bigl( \trans{h(X(t))}h(X(t))\bigr)_{jm}\d t, \\
+        &= \left( Hg(\Lambda)\trans H Hg(\Lambda)\trans H \right)_{ik}\left( Hh(\Lambda)\trans H Hh(\Lambda)\trans H \right)_{jm} \d t,\\
+        &= \left( Hg^2(\Lambda)\trans H \right)_{ik}\left( Hh^2(\Lambda)\trans H \right)_{jm} \d t = g^2(X)_{ik} h^2(X)_{jm} \d t.
+    \end{align*}
+
+    Proceeding similarly with the other four summands we find
+
+    \begin{align*}
+        \d X_{ij} \d X_{km} = (g^2(X)_{ik}h^2(X)_{jm} + g^2(X)_{im}h^2(X)_{jk} + g^2(X)_{jk}h^2(X)_{im} + g^2(X)_{jm}h^2(X)_{ik})\d t.
+    \end{align*}
+
+    Since $\d N = H^T(\partial X)H$ only differs in a finite variation part of $H^T(\d X) H$, the martingale part of both processes coincide and then the quadratic covariation of the entries of $N$ is
+
+    \begin{align*}
+        \d N_{ij}\d N_{km} &= \d \bigl< (\trans H\d X H)_{ij},(\trans H \d X H)_{km} \bigr> = \sum_{pqrs} \d\bigl< \trans{H}_{ip}\d X_{pq} H_{qj}, \trans{H}_{kr}\d X_{rs} H_{sm} \bigr>, \\
+        &= \sum_{pqrs} \trans{H}_{ip}H_{qj}\trans{H}_{kr}H_{sm}\d X_{pq} \d X_{rs},\\ 
+        &= \sum_{pqrs} \trans{H}_{ip}H_{qj}\trans{H}_{kr}H_{sm}\bigl(g^2(X)_{pr}h^2(X)_{qs} + g^2(X)_{ps}h^2(X)_{qr} + g^2(X)_{qs}h^2(X)_{pr} + g^2(X)_{qr}h^2(X)_{ps}\bigr)\d t.
+    \end{align*}
+
+    We find first $\sum_{pqrs} \trans{H}_{ip}H_{qj}\trans{H}_{kr}H_{sm}g^2(X)_{pr}h^2(X)_{qs}$ and the other terms are similar,
+
+    \begin{align*}
+        \sum_{pqrs} \trans{H}_{ip}H_{qj}\trans{H}_{kr}H_{sm}g^2(X)_{pr}h^2(X)_{qs} &= \biggl(\sum_{pr}\trans{H}_{ip}g^2(X)_{pr}H_{rk}\biggr)\biggl(\sum_{qs}\trans{H}_{jq}h^2(X)_{qs}H_{sm}\biggr),\\
+        &= \bigl( \trans{H}Hg^2(\Lambda)\trans{H}H\bigr)_{ik}\bigl(\trans{H}Hh^2(\Lambda)\trans{H}H\bigr)_{jm} = g^2(\Lambda)_{ik}h^2(\Lambda)_{jm}.
+    \end{align*}
+
+    Repeating the analogous procedure with all of the terms we find that the covariation is
+
+    \begin{equation*} \label{eq:quadvarN}
+        \d N_{ij}\d N_{km} = (g^2(\Lambda)_{ik}h^2(\Lambda)_{jm} + g^2(\Lambda)_{im}h^2(\Lambda)_{jk} + g^2(\Lambda)_{jk}h^2(\Lambda)_{im} + g^2(\Lambda)_{jm}h^2(\Lambda)_{ik})\d t.
+    \end{equation*}
+
+    It follows that the quadratic variation in the diagonal is
+
+    \begin{equation*}
+        \d N_{ii} \d N_{jj} = 4\delta_{ij}g^2(\lambda_i)h^2(\lambda_j)\d t.
+    \end{equation*}
+
+    Now, in order to compute $F$, the finite variation part of $N$, we use \eqref{eq:matrix_diffusion},
+
+    \begin{align*}
+        \d F &= H^Tb(X)H\d t + \frac12(\d H^T \d X H + H^T \d X \d H),\\
+        &= b(\Lambda)\d t + \frac12 \left( (\d H^T H)(H^T\d X H) + (H^T \d X H)(H^T \d H) \right),\\
+        \intertext{using that the martingale part of $H^T\d H$ and $H^T\partial H$ coincide and the same with $H^T(\partial X)H$ and $H^T (\d X) H$,}
+        &= b(\Lambda)\d t + \frac12( (\d N \d A)^T + \d N \d A).
+    \end{align*}
+
+    Now we can use \eqref{eq:eigenAN} and \eqref{eq:quadvarN} to find $\d N \d A$,
+
+    \begin{align*}
+        (\d N \d A)_{ij} &= \sum_{k \neq j} \d N_{ik}\d A_{kj} = \sum_{k\neq j} \frac{\d N_{ik}\d N_{kj}}{\lambda_j - \lambda_k} = \delta_{ij}\sum_{k\neq j} \frac{ g^2(\lambda_i)h^2(\lambda_k) + g^2(\lambda_k)h^2(\lambda_i) }{\lambda_i - \lambda_k} \d t.
+    \end{align*}
+
+    Recalling that $G(x,y) = g^2(x)h^2(x) + g^2(y)h^2(y)$, we have that
+
+    \begin{equation*}
+        (\d N \d A)_{ij} = \delta_{ij}\sum_{k\neq j} \frac{ G(\lambda_i,\lambda_k) }{\lambda_i - \lambda_k} \d t.
+    \end{equation*}
+
+    From \eqref{eq:quadvarN} we have that the martingale part of $N_{ii}$ has the form
+    $2g(\lambda_i)h(\lambda_i)\d W_i$ for some Brownian motion $W_i$. Putting together the martingale and finite variation parts of $N$ we have that
+
+    \begin{equation*}
+        \d N_{ii} = 2g(\lambda_i)h(\lambda_i)\d W_i + \delta_{ij}\sum_{k\neq j} \frac{ G(\lambda_i,\lambda_k) }{\lambda_i - \lambda_k} \d t.
+    \end{equation*}
+
+    Since $\d \lambda_i = \d N_{ii}$, this finishes the proof.
+\end{proof}
+
+
+
+
+
+\begin{theorem}
+    Let $W_t$ be a complex $p\times p$ Brownian matrix. Suppose that an $\mathcal H_p$ valued stochastic process $X_t$ satisfies the following matrix stochastic differential equation:
+
+    \begin{equation}\label{eq:complex_diff}
+        \d X_t = g(X_t)\d  W_t h(X_t) + h(X_t)\d W^*_t g(X_t) + b(X_t)\d t,
+    \end{equation}
+
+    \noindent with $g,h,b: \R \to \R$ and $X_0$ is a hermitian $p\times p$ random matrix with $p$ different eigenvalues.
+
+    Let $G(x,y) = g^2(x)h^2(y) + g^2(y)h^2(x)$, and
+    
+    \[ \tau = \inf\{ t: \lambda_i(t) = \lambda_j(t) \text{ for some } i\neq j \}. \]
+    
+    Then, for $t < \tau$ the eigenvalue process $\Lambda_t$ verifies the following stochastic differential equations:
+
+    \begin{equation}
+        \d \lambda_i = 2g(\lambda_i)h(\lambda_i)\d W_i + \biggl( b(\lambda_i) + 2\sum_{k\neq i} \frac{G(\lambda_i,\lambda_k)}{\lambda_i - \lambda_k} \biggr)\d t,
+    \end{equation}
+
+    \noindent where $(W_i)_{i}$ are independent Brownian motions.
+\end{theorem}
+
+\begin{proof} 
+    Recall that for a complex Brownian motion $Z$ we have that
+
+    \todo{No sé si debo incluir esto en los preliminares.}
+
+    \[\d Z \d Z = 0, \qquad \d Z \d \overline Z = 2\d t.\]
+
+    
+    Then we can compute the quadratic covariation $\d X_{ij}\d X_{kl}$ using \eqref{eq:complex_diff},
+
+    \begin{align}
+        \d X_{ij}\d X_{kl} &=  \d\langle X_{ij},X_{kl} \rangle, \\
+        &= \d\langle \left( g(X_t)\d  W_t h(X_t) + h(X_t)\d W^*_t g(X_t) \right)_{ij}, \left(g(X_t)\d W_t h(X_t) + h(X_t)\d W^*_t g(X_t)\right)_{kl} \rangle,\\
+        &= \d\langle \left(g(X_t)\d  W_t h(X_t)\right)_{ij}, \left(h(X_t)\d W^*_t g(X_t)\right)_{kl}\rangle + \d\langle \left(g(X_t)\d  W_t h(X_t)\right)_{kl}, \left(h(X_t)\d W^*_t g(X_t)\right)_{ij}\rangle,\\
+        &= 2g^2(X_t)_{il}h^2(X_t)_{jk}\d t + 2g^2(X_t)_{kj}h^2(X_t)_{li}\d t,\\
+        &= 2\left( g^2(X_t)_{il}h^2(X_t)_{kj} + g^2(X_t)_{jk}h^2(X_t)_{il} \right)\d t.
+    \end{align}
+
+
+    Analogously to the real case, we define $A$, the stochastic logarithm of $H$, as
+
+    \begin{equation*}
+        A \coloneqq H^{-1}\partial H = H^* \partial H.
+    \end{equation*}
+
+    By using Itô's formula we find,
+
+    \begin{equation*}
+        0 = \d I = \d(H^*H) = H \partial H^* + (\partial H) H^* = A^* + A,
+    \end{equation*}
+
+    \noindent which means $A$ is skew-Hermitian. This implies that the real parto of the terms in the diagonal of $A$ is zero. Let us now apply Itô's formula to $\Lambda = H^* X H$,
+
+    \begin{align*} % Mejorar esto.
+        \d \Lambda &= \d(H^* X H) = H^*(\d(XH)) + (\d H^*) XH + \d(H^*)\d (XH),\\
+        &= H^*(\d X) H + H^* X \d H + H^*(\d X\d H) + (\d H^*)X H + \d(H^*)(\d X)H + \d(H^*)X\d H + \d H^*\d X\d H,\\
+        &= H^*(\partial X)H + H^*X\partial H + (\partial H^*)XH = H^*(\partial X)H + \Lambda H^* \partial H + (\partial H^*)H\Lambda,\\
+        &= H^*(\partial X)H + \Lambda \partial A + \trans{\partial A}\Lambda = H^*(\partial X)H + \Lambda \partial A - \partial A \Lambda.
+    \end{align*}
+
+    By the relationship between Itô's and Stratanovich's integrals,
+
+    \begin{equation*}
+        H^*(\partial X)H = H^*(\d X)H + \frac12(\d H^*(\d X)H + H^*\d X\d H),
+    \end{equation*}
+
+    \noindent so using that $X$ is hermitian, we have that $H^*(\partial X)H$ is also hermitian and its diagonal elements are real. The process $\Lambda \partial A - (\partial A)\Lambda$ is zero in the diagonal and thus $\d \lambda_i = (H^*(\partial X)H)_{ii}$.  If $i \neq j$, we have
+
+    \[ 0 = (H^*(\partial X)H)_{ij} + \lambda_i\partial A_{ij} - \lambda_j \partial A_{ji} = (H^*(\partial X)H)_{ij} + (\lambda_i - \lambda_j)\partial A_{ij}. \]
+
+    The last part implies $\partial A_{ij} = \frac{(H^*(\partial X)H)_{ij}}{\lambda_j - \lambda_i}$, whenever $i\neq j$.
+
+    Define $\d N = \d H^*(\partial X)H$. The martingale part of $N$ and $H^*(\d X)H$ is the same, since they differ only in a finite variation term. We can find $\d N_{ij}\d N_{kl}$ using $\d X_{ij} \d X_{kl}$,
+
+    \begin{equation*}
+        \d N_{ij}\d N{kl} = 2(g^2(\Lambda)_{il}h^2(\Lambda)_{jk} + g^2(\Lambda)_{jk}h^2(\Lambda)_{il})\d t.
+    \end{equation*}
+
+    Then, for the elements in the diagonal we have
+
+    \begin{equation}
+        \d N_{ii}\d N_{jj} = 4\delta_{ij}(g^2(\lambda_i)h^2(\lambda_i))\d t.
+    \end{equation}
+
+    Now we compute the finite variation part of $\d N$ from \eqref{eq:complex_diff}. Let us denote it as $\d F$.
+
+    \begin{align*}
+        \d F &= H^*b(X)H\d t + \frac12(\d H^*(\d X)H + H^*\d X\d H),\\
+             &= b(\Lambda)\d t + \frac12 \bigl((\d H^*H) (H^*\d XH) + (H^*\d X H)(H^*\d H)\bigr),\\
+             &= b(\Lambda)\d t + \frac12\bigl((\d N \d A)^* + \d N \d A \bigr).
+    \end{align*}
+
+    Using the quadratic variation of $\d N$ and $\d A$ we find their covariation,
+
+    \begin{align*}
+        (\d N\d A)_{ij} &= \sum_{k} (\d N)_{ik}(\d A)_{kj} = \sum_k \frac{(\d N)_{ik}(\d N)_{kj}}{\lambda_j - \lambda_i}, \\
+        &= 2\delta_{ij}\sum_{k\neq j} \frac{ g^2(\lambda_i)h^2(\lambda_k) + g^2(\lambda_k)h^2(\lambda_j)}{\lambda_j - \lambda_k} + \d N_{ij}\d A_{jj}.
+    \end{align*}
+
+    By the properties shown above for $\d N$ and $\d A$, if$i=j$, $\d N_{jj}$ is real and $\d A_{jj}$ is purely imaginary. By independence of the real and imaginary parts of the complex Brownian motion, this implies that $\d N_{jj}\d A_{jj}=0$. We have
+
+    \begin{equation*}
+        \d F_{ii} = \left(b(\lambda_i) + 2 \sum_{k\neq i} \frac{G(\lambda_i,\lambda_k)}{\lambda_i - \lambda_j}\right)\d t,
+    \end{equation*}
+
+    \noindent where $G(x,y)=g^2(x)h^2(y) + g^2(y)h^2(x)$.
+
+    Using the quadratic variation of $\d N$, we find that the martingale part of $\d N_{ii}$ is 
+
+    \begin{equation*}
+        \d M_{ii} = 2g(\lambda_i)h(\lambda_i)\d W_i,
+    \end{equation*}
+
+    \noindent for some Brownian motion. Recall that $\d \lambda_i = \d N_{ii}$, then we have that there exist $W_1,\dots,W_p$ independent Brownian motions such that
+
+    \begin{equation*}
+        \d \lambda_i = \d N_{ii} = 2g(\lambda_i)h(\lambda_i)\d W_i + \left(b(\lambda_i) + 2 \sum_{k\neq i} \frac{G(\lambda_i,\lambda_k)}{\lambda_i - \lambda_j}\right)\d t.
+    \end{equation*}
+
+    This ends the proof.
+\end{proof}
+
+
+
+
+\begin{theorem} \label{thm:collision}
+    Let $\Lambda = (\lambda_i)_{i=1,\dots,p}$ be a process starting at the open simplex $\Delta_p$ and satisfying \eqref{eq:gen_dyson} with functions $g,h,b:\R \to \R$ such that $g^2, h^2, b$ are Lipschitz continuous and $g^2h^2$ is convex or is continuously differentiable with derivative uniformly Lipschitz on $\R$. Then the first collision time $\tau$ defined as in \eqref{eq:collision_time} is infinite a.s.
+\end{theorem}
+
+\begin{proof}
+    Define $U \coloneqq -\sum_{i<j} \log(\lambda_j - \lambda_i)$ for $t\in [0,\tau]$. By Itô's formula and the fact that $\d \lambda_i\d\lambda_j = 4\delta_{ij}g^2(\lambda_i)h^2(\lambda_i)$ we find
+
+    \begin{align*}
+        \d U &= \sum_{i < j} \left[\frac{\d \lambda_i - \d \lambda_j}{\lambda_j - \lambda_i} + \frac12\frac{\d\langle \lambda_i, \lambda_i \rangle + \d\langle \lambda_j, \lambda_j \rangle}{(\lambda_j - \lambda_i)^2}\right],\\
+        &= \sum_{i<j} \left[\frac{\d \lambda_i - \d \lambda_j}{\lambda_j - \lambda_i} + 2\frac{g^2(\lambda_i)h^2(\lambda_i)-g^2(\lambda_j)h^2(\lambda_j)}{(\lambda_j - \lambda_i)^2}\d t\right].
+    \end{align*}
+
+    Now we define the following processes
+
+    \begin{align*}
+        \d M &= 2 \sum_{i<j} \frac{g(\lambda_i)h(\lambda_i)\d \nu_i - g(\lambda_)h(\lambda_j)\d \nu_j}{\lambda_j - \lambda_i},\\
+        \d A_1 &= \sum_{i<j} \frac{b(\lambda_i) - b(\lambda_j)}{\lambda_j - \lambda_i}\d t,\\
+        \d A_2 &= 2\sum_{i<j} \frac{\left( g^2(\lambda_j) - g^2(\lambda_i) \right)\left(h^2(\lambda_j) - h^2(\lambda_i)\right)}{(\lambda_j - \lambda_i)}\d t,\\
+        \d A_3 &= \sum_{i<j}\frac{1}{\lambda_j-\lambda_i}\sum_{k\neq i, k \neq j}\left( \frac{G(\lambda_i,\lambda_k)}{\lambda_i-\lambda_k} - \frac{G(\lambda_j,\lambda_k)}{\lambda_j - \lambda_k} \right) \d t,\\
+        &= \sum_{i<j<k} \frac{G(\lambda_j,\lambda_k)(\lambda_k-\lambda_j)-G(\lambda_i,\lambda_k)(\lambda_k-\lambda_i)+G(\lambda_i,\lambda_j)(\lambda_j-\lambda_i)}{(\lambda_j-\lambda_i)(\lambda_k-\lambda_i)(\lambda_k-\lambda_j)}\d t.
+    \end{align*}
+
+    Using \eqref{eq:gen_dyson} we find that $\d U = \d M + \d A_1 + \d A_2 + \d A_3$. Our goal is to use the McKean argument by proving that $U$ is bounded over any bounded interval $[0,t]$. Let us start by showing that the finite variation part of $U$ ($\d A_1, \d A_2$, and $\d A_3$) is bounded. Lipschitz continuity of $b,g^2$ and $h^2$ implies that $\abs{A_1(t)}\le Kp(p-1)t/2$ and $\abs{A_2(t)}\le K^2p(p-1)t$ with $K$ a constant appearing in the Lipschitz condition. Later, we define a function $H$ as
+
+    \begin{equation*}
+        H(x,yz) \coloneqq \left[ (g^2(x) - g^2(z))(h^2(y) - h^2(z)) + (g^2(y) - g^2(z))(h^2(x) - h^2(z))\right](y-x),
+    \end{equation*}
+
+    \noindent then
+
+    \begin{equation*}
+        H(x,y,z) = \left( G(x,y) - G(x,z) - G(y,z) + G(z,z)\right)(y-x),
+    \end{equation*}
+
+    \noindent and
+
+    \begin{align*}
+        H(x,y,z) + H(y,z,x) - H(x,z,y) &= 2(z-y)G(y,z) - 2(z-x)G(x,z) + 2(y-x)G(x,y)\\
+         &+ G(x,x)(z-y) - G(y,y)(z-x) + G(z,z)(y-x).
+    \end{align*}
+
+    By the Lipschitz conditions on $g^2$ and $h^2$ we find that $\abs{H(x,y,z)} \le 2K^2\abs{(y-x)(z-y)(z-x)}$. Using the last equality, \todo{Escribir detalles de esta cuenta} we can write $2\d A_3 = \d A_4 + \d A_5$, with $0 \le A_4(t) \le K^2 p(p-1)(p-2)t/6$ and
+
+    \begin{align}%Escribir detalles de esta cuenta
+        \d A_5(t) &= \sum_{i<j<k} \frac{ G(\lambda_j,\lambda_j)(\lambda_k - \lambda_i) - G(\lambda_i,\lambda_i)(\lambda_k - \lambda_j) - G(\lambda_k,\lambda_k)(\lambda_j-\lambda_i)}{(\lambda_j-\lambda_i)(\lambda_k-\lambda_i)(\lambda_k-\lambda_j)}\d t,\\
+        &= \sum_{i<j<k} \left( \frac{G(\lambda_j,\lambda_j) - G(\lambda_i,\lambda_i) }{\lambda_j - \lambda_i} - \frac{G(\lambda_k,\lambda_k) - G(\lambda_j,\lambda_j)}{\lambda_k - \lambda_j} \right)\frac{1}{\lambda_k - \lambda_i}\d t. \label{eq:dA5}
+    \end{align}
+
+    If $G(x,x)$ is convex, then $A_5$ is non positive. If $G(x,x)$ is continuously differentiable with derivative uniformly Lipschitz, then
+
+    \[ \abs{G'(x,x) - G'(y,y)} \le C\abs{x-y}, \]
+
+    \noindent and the \eqref{eq:dA5} is bounded by $C$, which means $\abs{A_5(t)}\le Ct$.
+
+    We have found that the finite variation part of $U$ is bounded for finite $t$, then we can apply McKean's argument \ref{lemma:mckean} to conclude that $U$ can not explode in finite time and thus $\tau = \infty$ a.s.
+
+\end{proof}
+
+\begin{theorem}[Spectral matrix Yamada-Watanabe theorem] \label{thm:spectral_yamadawatanabe}
+    Let $X(t)$ be a $p\times p$ symmetric matrix-valued process satisfying the equation \eqref{eq:matrix_diffusion} with initial condition $X(0)$ that is a symmetric $p\times p$ matrix with $p$ different eigenvalues. Suppose further that
+
+    \begin{equation}
+        \abs{ g(x)h(x) - g(y)h(y) }^2 \le \rho(\abs{x-y}), \qquad x,y \in \R,
+    \end{equation}
+
+    \noindent with $\rho:(0,\infty)\to(0,\infty)$ a measurable function satisfying
+
+    \[ \int_{0^+} \rho^{-1}, \]
+
+    \noindent that $G(x,y) \coloneqq g^2(x)h^2(y) + g^2(y)h^2(x)$ is locally Lipschitz and strictly positive on the set $\{ x \neq y\}$ and that $b$ is locally Lipschitz. Then if $\tau$ is defined as in \eqref{eq:collision_time}, for $t < \tau$, the process of eigenvalues satisfying \eqref{eq:gen_dyson} has a pathwise unique solution.
+\end{theorem}
+
+\begin{proof}
+    Let $PN \trans{P}$ be a diagonalization for $X(0)$. We need to show that a unique strong solution exists for \eqref{eq:gen_dyson} when $\Lambda(0)=N$. The functions
+    
+    \[ b_i(\lambda_1, \dots,\lambda_p) = b(\lambda_i) + \sum_{k \neq i} \frac{G(\lambda_i,\lambda_k)}{\lambda_i - \lambda_k}, \]
+
+    \noindent are locally Lipschitz continuous on $\Delta_p$ so they can be extended from the compact sets 
+
+    \[ D_m = \{ 0 \le \lambda_1 < \lambda_2 < \cdots < \lambda_p < m, \lambda_{i+1} - \lambda_i \ge 1/m \}, \]
+
+    \noindent to bounded Lipschitz functions on $\R^p$. Let $b_i^m$ denote such extension for $m \in \N \setminus \{0\}$. For $i = 1, \dots, p$, we consider the system of SDEs,
+
+    \[ \d \lambda_i = 2g(\lambda_i^m)h(\lambda_i^m)\d W_i + b_i^m(\Lambda^m) \d t. \]
+
+    We have that $\abs{g(x)h(x) - g(y)h(y)}^2 \le \rho(\abs{x-y})$ and $\int_{0^+} \rho(x)^{-1}\d x=\infty$, and using Theorem \ref{thm:mult_yamada_watanabe} we get that there is a unique strong solution for the system of SDEs. Since $D_m \subset D_{m+1}$, we have that $\lim_{m\to\infty} D_m = \Delta_p$, so there exists a unique strong solution $\Lambda(t)$ for the SDEs system up to the first exit time from $\Delta_p$. This time is $\tau$, the first collision time of the eigenvalues.
+
+\end{proof}
+
+\begin{corollary}
+    Suppose that $b, g^2, h^2$ are Lipschitz continuous, $g^2h^2$ is convex or or continuously differentiable with derivative uniformly Lipschitz on $\R$ and that $G(x,y) \coloneqq g^2(x)h^2(y) + g^2(y)h^2(x)$ is strictly positive on $\{x \neq y\}$. Then the system of SDEs \eqref{eq:gen_dyson} for the eigenvalue process satisfying \eqref{eq:matrix_diffusion} has a unique strong solution on $[0,\infty)$.
+\end{corollary}
+
+\begin{proof}
+    Recall that if $f$ is a non-negative Lipschitz continuous function, then $\sqrt f$ is $1/2$-Hölder continuous. Since $g^2$ and $h^2$ are Lipschitz continuous, then $g^2h^2$ is locally Lipschitz continuous and $gh$ is $1/2$-Hölder continuous. Then
+
+    \begin{align*}
+        \abs{g(x)h(x) - g(y)h(y)}^2 &\le \left( K\abs{x-y}^{\frac12} \right)^2 = K^2 \abs{x-y}.
+    \end{align*}
+
+    Taking $\rho(|x-y|) = K^2\abs{x-y}$ we see that the conditions of Theorem \ref{thm:spectral_yamadawatanabe} are satisfied and then the uniqueness and existence of the strong solution applies on $[0,\tau)$. By Theorem \ref{thm:collision} we have that $\tau=\infty$ a.s., and thus the existence and uniqueness is satisfied on $[0,\infty)$.
+\end{proof}
+
+\todo[inline]{Después de exponer estos teoremas, restaría aplicarlos para exponer primero los resultados de Dyson sobre el proceso de eigenvalores de un movimiento Browniano en el espacio de matrices ortogonales y autoadjuntas, y después aplicarlos para encontrar ecuaciones de procesos de eigenvalores más generales (Wishart, Jacobi, Laguerre). Estos ejemplos vienen en Graczyk y Małecki, así que incluirlos no debería ser tan difícil.}
+

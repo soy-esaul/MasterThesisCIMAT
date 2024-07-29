@@ -1,0 +1,43 @@
+\usepackage{amsmath,amsthm,amsfonts,amssymb,mathtools,dsfont,mathrsfs}
+\usepackage[activate={true,nocompatibility},final,tracking=true,kerning=true,spacing=true,factor=1100,stretch=10,shrink=10]{microtype}
+\usepackage{hyperref}
+
+
+
+% Numbering equations
+\numberwithin{equation}{section}
+
+% Useful symbols
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb R}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Rbar}{\overline{\mathbb R}}
+\newcommand{\F}{\mathscr F}
+\newcommand{\A}{\mathscr A}
+\newcommand{\To}{\Rightarrow}
+\newcommand{\C}{\mathscr C}
+\newcommand{\La}{\mathscr L_A}
+\newcommand{\B}{\mathcal B}
+\newcommand{\Q}{\mathbb Q}
+\renewcommand{\epsilon}{\varepsilon}
+\renewcommand{\L}{\mathcal L}
+\renewcommand{\d}{\mathsf d}
+\newcommand{\abs}[1]{\lvert #1 \rvert}
+\newcommand{\pts}[1]{\left( #1 \right)}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\renewcommand{\P}[1]{\mathbb P\left( #1 \right)}
+\newcommand{\E}[1]{\mathbb E \left( #1 \right)}
+
+% For matrices
+\newcommand{\compconj}[1]{ \overline{#1} }
+\newcommand{\trans}[1]{#1^{\intercal}}
+\newcommand{\hermit}[1]{#1^*}
+
+
+
+% Theorem-like environments
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}

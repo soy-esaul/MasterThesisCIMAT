@@ -1,0 +1,352 @@
+\subsection{Model construction}
+
+\todo[inline]{Se ha estado trabajando en la construcción del modelo que permita obtener el proceso de Dyson determinista a partir de la ecuación de Huang y coautores.
+
+En las publicaciones con que contamos no se hace una construcción explícita del modelo, por lo que el trabajo en esta parte es más lento.}
+
+In this chapter we study a process $M$ in the space of orthogonal $p\times p$ matrices which satisfies the following stochastic differential equation
+
+\begin{align*}
+    \d M = [\d K , M] \coloneqq (\d K)M - M \d K,
+\end{align*}
+
+with $K$ a Brownian matrix in the space of anti-symmetric $p\times p$ matrices.\\
+
+\todo[linecolor=blue,backgroundcolor=blue!25,bordercolor=blue,inline]{Aquí empieza la parte de las cuentas que he hecho. En estas primeras, no se usa el supuesto de independencia de las entradas de $K$.}
+
+We proceed in a similar way to the proof of Theorem \ref{thm:dyson_real}. Let $M=H\Lambda H^T$ and define $\d A \coloneqq \trans H\partial H$, by the same argument shown previously, $A$ is an anti-symmetric matrix. Applying the Itô formula to $\d \Lambda = \d(\trans H M H)$ and defining $\d N = \trans{H} \partial M H$, we get
+
+\begin{align*}
+    \d \Lambda &= \d N + \Lambda \partial A - (\partial A) \Lambda.
+\end{align*}
+
+The diagonal of $\Lambda \partial A - (\partial A) \Lambda$ is zero, so $\d \lambda_{i} = \d N_{ii}$. If $i\neq j$, then 
+
+\begin{align*}
+    0 &= \d N_{ij} + \lambda_{i}\d A_{ij} - \d A_{ij} \lambda_j,\\
+\Rightarrow \d A_{ij} &= \frac{\d N_{ij}}{\lambda_j - \lambda_i}.
+\end{align*}
+
+
+
+\todo[inline]{Estas son las cuentas que aparecen de considerar que $K$ es una matriz anti-hermitiana cuyas entradas son brownianos independientes, excepto por las simetrías.}
+
+Let us find the covariation $\d M_{ij}\d M_{kl}$,
+
+\begin{align*}
+    \d M_{ij}\d M_{kl} =& \d \bigl<((\d K)M - M \d K)_{ij}, ((\d K)M - M \d K)_{kl}\bigr>,\\
+    =& \d \bigl<((\d K)M)_{ij}, ((\d K)M)_{kl}\bigr> - \d \bigl<((\d K)M)_{ij}, (M \d K)_{kl}\bigr> \\
+    &+ \d \bigl<(M \d K)_{ij}, (M \d K)_{kl}\bigr> - \d \bigl<(M \d K)_{ij}, ((\d K)M)_{kl}\bigr>.
+\end{align*}
+
+For each of the summands we have
+
+\begin{align*}
+    \d \bigl<((\d K)M)_{ij}, ((\d K)M)_{kl}\bigr> &= \sum_{pq} \d \bigl< \d K_{ip} M_{pj}, \d K_{kq} M_{ql} \bigr>,\\
+    &= \sum_{pq} M_{pj}M_{ql}\d K_{ip}\d K_{kq},
+    \intertext{The entries in $K$ are independent, except for $\d K_{ij} = - \d K_{ji}$, so}
+    &= \delta_{ik}\delta_{pq}\sum_p M_{pj}M_{pl}\d t - \delta_{iq}\delta_{pk} M_{kj}M_{il} \d t,\\
+    &= \bigl(\delta_{ik}(MM)_{jl} - M_{kj}M_{il}\bigr)\d t.
+\end{align*}
+
+
+\begin{align*}
+    \d \bigl<(M \d K)_{ij}, (M \d K)_{kl}\bigr> &= \sum_{pq} \d \bigl< M_{ip}\d K_{pj}, M_{kq}\d K_{ql} \bigr>,\\
+    &= \sum_{pq} M_{ip}M_{kq}\d K_{pj}\d K_{ql},\\
+    &= \delta_{pq}\delta_{jl}\sum_p M_{ip}M_{kp}\d t - \delta_{pl}\delta_{jq} M_{il}M_{kj} \d t,\\
+    &= \bigl(\delta_{jl}(MM)_{ik} - M_{il}M_{kp}\bigr)\d t.
+\end{align*}
+
+
+\begin{align*}
+    \d \bigl<(M \d K)_{ij}, (\d K M)_{kl}\bigr> &= \sum_{pq} \d \bigl< M_{ip}\d K_{pj}, \d K_{kq} M_{ql} \bigr>,\\
+    &= \sum_{pq} M_{ip}M_{ql}\d K_{pj}\d K_{kq},\\
+    &= \delta_{pk}\delta_{jq}M_{ki}M_{jl}\d t - \delta_{jk}\delta_{pq} \sum_p M_{ip}M_{pl} \d t,\\
+    &= \bigl(M_{ik}M_{jl}\d t - \delta_{jk}(MM)_{il}\bigr)\d t.
+\end{align*}
+
+\begin{align*}
+    \d \bigl<(\d K M)_{ij}, (M \d K)_{kl}\bigr> &= \sum_{pq} \d \bigl< \d K_{ip}M_{pj}, M_{kq}\d K_{ql} \bigr>,\\
+    &= \sum_{pq} M_{pj}M_{kq}\d K_{ip}\d K_{ql},\\
+    &= \delta_{iq}\delta_{pl} M_{lj}M_{ki} \d t - \delta_{pq}\delta_{il}\sum_p M_{pj}M_{kp}\d t,\\
+    &= \bigl( M_{lj}M_{ki} - \delta_{il}(MM)_{kj} \bigr)\d t.
+\end{align*}
+
+With these expressions we find
+
+\begin{align}\label{eq:covar_MM}
+    \d M_{ij}\d M_{kl} &= \Bigl( \delta_{ik}(MM)_{jl} + \delta_{jl}(MM)_{ik} + \delta_{jk}(MM)_{il} + \delta_{il}(MM)_{kj} - \bigl( 2M_{il}M_{kj} + M_{ik}M_{jl} + M_{lj}M_{ki} \bigr) \Bigr)\d t.
+\end{align}
+
+Now we can use this to find $\d N_{ij}\d N_{kl}$
+
+\begin{align*}
+    \d N_{ij}\d N_{kl} &= \d \bigl< (\trans{H}\d M H)_{ij},(\trans{H}\d M H)_{kl}\bigr> = \sum_{pqrs} \d \bigl< \trans{H}_{ip} \d M_{pq} H_{qj}, \trans{H}_{kr} \d M_{rs} H_{sl} \bigr>, \\
+    &= \sum_{pqrs} \trans{H}_{ip} H_{qj} \trans{H}_{kr} H_{sl} \d M_{rs} \d M_{pq}.
+\end{align*}
+
+By substituting each of the terms in \eqref{eq:covar_MM} we have
+
+\begin{align*}
+    \sum_{pqrs} \trans{H}_{ip} H_{qj} \trans{H}_{kr} H_{sl}\delta_{pr}(MM)_{qs}\d t &= \Bigl(\sum_{p} \trans{H}_{ip}H_{pk}\Bigr)\Bigl(\sum_{qs} \trans{H}_{jq}(MM)_{qs}H_{sl}\Bigr)\d t,\\
+    \intertext{using that $\trans H H = I$, }
+    &= \delta_{ik}\bigl( \trans{H}(H\Lambda \trans{H}H\Lambda\trans{H})H \bigr)_{jl} \d t = \delta_{ik}\Lambda^2_{jl} \d t.
+\end{align*}
+
+\begin{align*}
+    \sum_{pqrs} \trans{H}_{ip} H_{qj} \trans{H}_{kr} H_{sl}\delta_{sq}(MM)_{pr}\d t &= \Bigl(\sum_{q} \trans{H}_{jq}H_{ql}\Bigr)\Bigl(\sum_{pr} \trans{H}_{ip}(MM)_{pr}H_{rk}\Bigr)\d t,\\
+    &= \delta_{jl}\bigl( \trans{H}(H\Lambda \trans{H}H\Lambda\trans{H})H \bigr)_{ik} \d t = \delta_{jl}\Lambda^2_{ik} \d t.
+\end{align*}
+
+\begin{align*}
+    \sum_{pqrs} \trans{H}_{ip} H_{qj} \trans{H}_{kr} H_{sl}\delta_{ps}(MM)_{qr}\d t &= \Bigl(\sum_{p} \trans{H}_{ip}H_{pl}\Bigr)\Bigl(\sum_{qr} \trans{H}_{jq}(MM)_{qr}H_{rk}\Bigr)\d t,\\
+    &= \delta_{il}\bigl( \trans{H}(H\Lambda \trans{H}H\Lambda\trans{H})H \bigr)_{jk} \d t = \delta_{il}\Lambda^2_{jk} \d t.
+\end{align*}
+
+\begin{align*}
+    \sum_{pqrs} \trans{H}_{ip} H_{qj} \trans{H}_{kr} H_{sl}\delta_{rq}(MM)_{sp}\d t &= \Bigl(\sum_{q} \trans{H}_{kq}H_{qj}\Bigr)\Bigl(\sum_{sp} \trans{H}_{ls}(MM)_{sp}H_{pi}\Bigr)\d t,\\
+    &= \delta_{kj}\bigl( \trans{H}(H\Lambda \trans{H}H\Lambda\trans{H})H \bigr)_{li} \d t = \delta_{kj}\Lambda^2_{li} \d t.
+\end{align*}
+
+\begin{align*}
+    -2\sum_{pqrs} \trans{H}_{ip} H_{qj} \trans{H}_{kr} H_{sl}M_{ps}M_{rq}\d t &= -2\Bigl(\sum_{ps} \trans{H}_{ip}M_{ps}H_{sl}\Bigr)\Bigl(\sum_{rq} \trans{H}_{kr}M_{rq}H_{qj}\Bigr)\d t,\\
+    &= -2 \bigl(\trans{H}MH\bigr)_{il}\bigl(\trans{H}MH\bigr)_{kj} \d t = -2\Lambda_{il}\Lambda_{kj} \d t.
+\end{align*}
+
+\begin{align*}
+    -\sum_{pqrs} \trans{H}_{ip} H_{qj} \trans{H}_{kr} H_{sl}M_{pr}M_{qs}\d t &= -\Bigl(\sum_{pr} \trans{H}_{ip}M_{pr}H_{rk}\Bigr)\Bigl(\sum_{qs} \trans{H}_{ls}M_{sq}H_{qj}\Bigr)\d t,\\
+    &= -\bigl(\trans{H}MH\bigr)_{ik}\bigl(\trans{H}MH\bigr)_{lj} \d t = -\Lambda_{ik}\Lambda_{lj} \d t.
+\end{align*}
+
+\begin{align*}
+    -\sum_{pqrs} \trans{H}_{ip} H_{qj} \trans{H}_{kr} H_{sl}M_{sq}M_{rp}\d t &= -\Bigl(\sum_{pr} \trans{H}_{ip}M_{pr}H_{rk}\Bigr)\Bigl(\sum_{qs} \trans{H}_{ls}M_{sq}H_{qj}\Bigr)\d t,\\
+    &= -\bigl(\trans{H}MH\bigr)_{ik}\bigl(\trans{H}MH\bigr)_{lj} \d t = -\Lambda_{ik}\Lambda_{lj} \d t.
+\end{align*}
+
+Once we know the seven terms, we can write $\d N_{ij}\d N_{kl}$ as
+
+\begin{align*}
+    \d N_{ij}\d N_{kl} &= \Bigl( \delta_{ik}\Lambda^2_{jl} + \delta_{jl}\Lambda^2_{ik} + \delta_{il}\Lambda^2_{jk} + \delta_{kj}\Lambda^2_{li} -2\Lambda_{il}\Lambda_{kj} -2\Lambda_{ik}\Lambda_{lj}\Bigr)\d t.
+\end{align*}
+
+With this, we find $\d N_{ii}\d N_{jj}$
+
+\begin{align*}
+    \d N_{ii}\d N_{jj} &= \Bigl( \delta_{ij}\Lambda^2_{ij} + \delta_{ij}\Lambda^2_{ij} + \delta_{ij}\Lambda^2_{ij} + \delta_{ij}\Lambda^2_{ij} -2\Lambda_{ij}\Lambda_{ij} -2\Lambda_{ij}\Lambda_{ij}\Bigr)\d t,\\
+    &= \bigl( 4\delta_{ij}\Lambda^2_{ii} - 4\Lambda^2_{ij}\bigr)\d t
+    \intertext{Evidently, if $j\neq i$, all of the terms are zero. If $j=l$}
+    &= \bigl(4\lambda^2_i - 4\lambda^2_i\bigr)\d t = 0.
+\end{align*}
+
+So $\d N_{ii} \d N_{jj} = 0$ for every choice of $i$ and $j$, which means the diagonal of $\d N$ has no martingale part.
+
+Finally, let us compute $\d F$, the finite variation part of $\d N$. We use that $\d N = \trans{H} (\partial M) H = \trans H\d M H + \frac12\left(\trans{(\d H)}\d M H + \trans{H}\d M \d H\right)$, so
+
+\begin{align*}
+    \d F &= \frac12\left(\trans{(\d H)}\d M H + \trans{H}\d M \d H\right) = \frac12\left(\trans{(\d H)}H\trans H\d M H + \trans{H}\d M H\trans H \d H\right),\\
+    &=  \frac12\left[(\trans{(\d H)}H)(\trans H\d M H) + (\trans{H}\d M H)(\trans H \d H)\right] = \frac12\left[\trans{\d A}\d N + \d N\d A \right].\\
+\end{align*}
+
+Now we use $\d N_{ij}\d N_{kl}$ to find $(\d N\d A)_{ij}$,
+
+\begin{align*}
+    (\d N\d A)_{ij} &= \sum_{k\neq j} \d N_{ik} \d A_{kj} = \sum_{k\neq j} \frac{\d N_{ik} \d N_{kj}}{\lambda_j - \lambda_k} = \sum_{k\neq j} \frac{\delta_{ik}\Lambda^2_{kj} + \delta_{kj}\Lambda^2_{ik} + \delta_{ij}\Lambda^2_{kk} + \delta_{kk}\Lambda^2_{ij} -2\Lambda_{ij}\Lambda_{kk}-2\Lambda_{ik}\Lambda_{jk}}{\lambda_j - \lambda_k}\d t,\\
+    &= \sum_{k\neq j} \frac{ \delta_{ij}\lambda_k^2 + \lambda^2_{ij} - 2\delta_{ij}\lambda_k}{\lambda_j - \lambda_k}\d t = \delta_{ij}\sum_{k \neq j} \frac{(\lambda_j - \lambda_k)^2}{\lambda_j - \lambda_k} = \delta_{ij}\sum_{k\neq j} \lambda_j - \lambda_k.
+\end{align*}
+
+So in this case the eigenvalues satisfy the equation:
+
+\begin{equation*}
+    \d \lambda_i = \sum_{k\neq i} \lambda_i - \lambda_k.
+\end{equation*}
+
+\todo[inline]{Entonces, aunque este proceso si tiene espectro determinista, no satisface la ecuación que queremos.
+
+En la siguiente parte voy a intentar atacarlo de manera más general, usando únicamente que $K$ es anti-hermitiana, y  a partir de eso deducir cómo deberían ser las covariaciones para cumplir lo que buscamos.}
+
+We know that $\d \lambda_i = \d N_{ii}$. In order to satisfy the desired equation, we need that 
+
+    \begin{equation} \label{eq:dyson_det}
+        \d F_{ii} = \sum_{k\neq i} \frac{\d t}{\lambda_i - \lambda_k}.
+    \end{equation} 
+
+Due to the previous steps, which are unrelated with the covariation of $K$, we have that $\d F = \frac12\left[\trans{\d A}\d N + \d N\d A \right]$, so the idea is to find a general form for $(\d A\d N)_{ii}$ and set it equal to \eqref{eq:dyson_det}. 
+
+Let us only assume that $\d K_{ij}\d K_{ij} = c\d t$ and $\d K_{ij}\d K_{ji} = - c\d t$. Recall that $\d N = \trans H \d M H$ and $\d A_{ij} = \mathds{1}_{i\neq j} \d N_{ij}/(\lambda_j - \lambda_i)$.
+
+\todo{La condición sobre $\d L_{ij}\d L_{jk}$ que da Menon es equivalente a pedir que $(\d N\d A)_{ii}$ tenga esta forma.}
+
+\begin{align*} 
+     (\d N \d A)_{ii} =& \sum_{k\neq i} \frac{\d N_{ik} \d N_{ki}}{\lambda_i - \lambda_k} \quad \Rightarrow \text{(We need that)}\quad  \d N_{ik} \d N_{ki} = \d t. \\
+     \d t =& \d N_{ik} \d N_{ki} = (\trans H \d M H)_{ik}(\trans H\d M H)_{ki} = \sum_{pqrs} \trans H_{ip} \d M_{pq} H_{qk} \trans H_{kr} \d M_{rs} H_{si},\\
+     =& \sum_{pqrs} \trans H_{ip} (\d K M - M\d K)_{pq} H_{qk} \trans H_{kr} (\d K M - M\d K)_{rs} H_{si},\\
+     =& \sum_{nmpqrs} \trans H_{ip}\d K_{pm} M_{mq} H_{qk} \trans H_{kr} \d K_{rn} M_{ns} H_{si} - \sum_{nmpqrs} \trans H_{ip}\d K_{pm} M_{mq} H_{qk} \trans H_{kr} M_{rn} \d K_{ns} H_{si}\\
+     & - \sum_{nmpqrs} \trans H_{ip} M_{pm} \d K_{mq} H_{qk} \trans H_{kr} \d K_{rn} M_{ns} H_{si} + 
+     \sum_{nmpqrs} \trans H_{ip} M_{pm} \d K_{mq} H_{qk} \trans H_{kr} M_{rn} \d K_{ns} H_{si}.
+\end{align*}
+
+For each of the summands, we will find the cases we already know and a remainder, so that the sum of the four terms equals $\d t$. Let us call the summands \textcircled{1}, \textcircled{2}, \textcircled{3} and \textcircled{4}. 
+
+\begin{align*}
+    \textcircled{1} &= \delta_{pr}\delta_{mn}c\sum_{mpqs} \trans H_{ip} M_{mq} H_{qk} \trans H_{kp} M_{ms} H_{si} \d t - \delta_{mr}\delta_{pn} c \sum_{mpqs} \trans H_{ip} M_{mq} H_{qk} \trans H_{km} M_{ps} H_{si} \d t + R_1\d t,\\
+    &= c(\trans H H)_{ik}(\trans H M^2 H)_{ki}\d t - c(\trans{H}MH)_{ii}(\trans{H}MH)_{kk}\d t + R_1\d t,\\
+    &= c\bigl(\delta_{ik}\Lambda^2_{ii} - \Lambda_{ii}\Lambda_{kk}\bigr)\d t + R_1 \d t.\\
+    \textcircled{2} &= \delta_{pn}\delta_{ms}c\sum_{mpqr} \trans H_{ip} M_{mq} H_{qk} \trans H_{kr} M_{rp} H_{mi} \d t - \delta_{ps}\delta_{mn} c \sum_{mpqr} \trans H_{ip} M_{mq} H_{qk} \trans H_{kr} M_{rm} H_{pi} \d t + R_2\d t,\\
+    &= c(\trans H H)_{ik}(\trans H M^2 H)_{ki}\d t - c(\trans{H}H)_{ii}(\trans{H}M^2H)_{kk}\d t + R_2\d t,\\
+    &= c\bigl(\delta_{ik}\Lambda^2_{ii} - \Lambda^2_{kk}\bigr)\d t + R_2 \d t.\\
+    \textcircled{3} &= \delta_{mr}\delta_{qn}c\sum_{npqs} \trans H_{ip} M_{pr} H_{nk} \trans H_{kr} M_{ns} H_{si} \d t - \delta_{mn}\delta_{qr} c \sum_{mpqs} \trans H_{ip} M_{pm} H_{qk} \trans H_{kq} M_{ms} H_{si} \d t + R_3\d t,\\
+    &= c(\trans HMH)_{ik}(\trans H M H)_{ki}\d t - c(\trans{H}M^2H)_{ii}(\trans{H}H)_{kk}\d t + R_3\d t,\\
+    &= c\bigl(\Lambda^2_{ik} - \Lambda^2_{ii}\bigr)\d t + R_3 \d t.\\
+    \textcircled{4} &= \delta_{mn}\delta_{qs}c\sum_{npqr} \trans H_{ip} M_{pn} H_{qk} \trans H_{kr} M_{rn} H_{qi} \d t - \delta_{ms}\delta_{qn} c \sum_{mpqr} \trans H_{ip} M_{pm} H_{qk} \trans H_{kr} M_{rq} H_{mi} \d t + R_4\d t,\\
+    &= c(\trans HM^2H)_{ik}(\trans HH)_{ki}\d t - c(\trans{H}MH)_{ii}(\trans{H}MH)_{kk}\d t + R_4\d t,\\
+    &= c\bigl(\delta_{ik}\Lambda^2_{ik} - \Lambda_{ii}\Lambda_{kk}\bigr)\d t + R_4 \d t.
+\end{align*}
+
+Equating what we know to what we have, we find that
+
+\begin{align*}
+    \d t &= \textcircled{1} - \textcircled{2} - \textcircled{3} + \textcircled{4},\\
+    &= \Bigl[c\bigl(\delta_{ik}\Lambda^2_{ii} - \Lambda_{ii}\Lambda_{kk} - \delta_{ik}\Lambda^2_{ii} + \Lambda^2_{kk} - \Lambda^2_{ik} + \Lambda^2_{ii} + \delta_{ik}\Lambda^2_{ik} - \Lambda_{ii}\Lambda_{kk}\bigr) + R_1 - R_2 - R_3 + R_4\Bigr]\d t.
+\end{align*}
+
+We conclude that, in order to satisfy the desired equation,
+
+\begin{align*}
+    1 &= c\bigl( \lambda_k^2 + \lambda_i^2 - 2\lambda_i\lambda_k\bigr) + R_1 - R_2 - R_3 + R_4,\\
+    \Rightarrow (\lambda_i - \lambda_k)^2 &= \frac{1 + R_2 + R_3 - R_1 - R_4}c.
+\end{align*}
+
+The form of the elements $R_i$ is
+
+\begin{align*}
+    R_1 &= \sum_{\substack{mnpqrs\\
+                           p \neq r \text{ or } m \neq n\\
+                           m \neq r \text{ or } p \neq n}
+                           } \trans H_{ip}\d K_{pm} M_{mq} H_{qk} \trans H_{kr} \d K_{rn} M_{ns} H_{si}, \\
+    R_2 &= \sum_{\substack{mnpqrs\\
+                           p \neq n \text{ or } m \neq s\\
+                           p \neq s \text{ or } m \neq n}
+                           } \trans H_{ip}\d K_{pm} M_{mq} H_{qk} \trans H_{kr} M_{rn} \d K_{ns} H_{si}, \\
+    R_3 &= \sum_{\substack{mnpqrs\\
+                           m \neq r \text{ or } q \neq n\\
+                           m \neq n \text{ or } q \neq r}
+                           } \trans H_{ip}M_{pm}\d K_{mq} H_{qk} \trans H_{kr}\d K_{rn}M_{ns}H_{si}, \\     
+    R_4 &= \sum_{\substack{mnpqrs\\
+                           m \neq n \text{ or } q \neq s\\
+                           m \neq s \text{ or } q \neq n
+                           }} \trans H_{ip} M_{pm} \d K_{mq} H_{qk} \trans H_{kr} M_{rn} \d K_{ns} H_{si}
+\end{align*}
+
+\todo[linecolor=blue,backgroundcolor=blue!25,bordercolor=blue,inline]{El problema que encuentro es que estos términos son muy grandes y no veo cómo manejarlos para poder encontrar condiciones sobre $K$. 
+
+Las otras ideas que tengo son 1) suponer que $K = GXH - H\trans{X}H$ para $G, H$ simétricas y $X$ una matriz que todas sus entradas sean brownianos independientes. Así tal vez se puede encontrar la covariación en términos de $G$ y $H$ para cualquier matriz browniana antisimétrica, y 2) intentar con matrices pequeñas y ver cómo deben ser sus entradas para que satisfagan lo que queremos (en ese caso los términos $R_i$ son más manejables). }
+
+The easiest case is when $M$ and $K$ are $2\times2$ matrices. In this case, the only matrix that satisfies the hypotheses on $K$ is
+
+\begin{align*}
+    \d K &= \begin{bmatrix}
+        0 & \d B(t),\\
+        - \d B(t) & 0
+    \end{bmatrix},
+\end{align*}
+
+\noindent with $B(t)$ a Brownian motion with variance $c$ which means ($\E{B(t)B(t)} = ct$). Then $R_1 = R_2 = R_3 = R_4 = 0$, and we have that, in order to satisfy the equation, we need that $(\lambda_1 - \lambda_2)^2 = \frac1c$. Without loss of generality, we can suppose $c=1$ and thus we have $\lambda_1 - \lambda_2 \in \{-1,1\}$. 
+
+Now, the equations found for $\lambda_1$ and $\lambda_2$ are
+
+\begin{align*}
+    \d \lambda_1 &= (\lambda_1 - \lambda_2)\d t,\\
+    \d \lambda_2 &= (\lambda_2 - \lambda_1)\d t.
+\end{align*}
+
+Taking $\lambda_1 > \lambda_2$ leads to 
+
+\begin{align*}
+    \d \lambda_1 &= \d t,\\
+    \d \lambda_2 &= -\d t.
+\end{align*}
+
+But this contradicts that $\lambda_1 - \lambda_2 = 1$.
+
+\begin{align*}
+    \lambda_1(0) + \lambda_2(0) &= \lambda_1(t) + 1 - \lambda_1(t) = 1.
+\end{align*}
+
+\subsection*{Hadamard variation formulae}
+
+\todo[inline]{Aquí intenté usar las fórmulas de variación de Hadamard viendo los eigenvalores como función de las entadas para deducir la forma del proceso, pero la verdad es que las partes que dependían de la matriz de eigenvectores se me complicaron (en el Dyson funciona bien por invarianza bajo transformaciones unitarias del GUE). Entonces dejé de hacer esto e intenté volver a usar las técnicas de Graczyk (siguiente subsección).}
+
+\begin{align*}
+    \frac{\d \lambda_i}{\d M_{jk}} &= \left(\trans{U} \frac{\d M}{\d M_{jk}}U\right)_{ii},\\
+    \frac{\d^2 \lambda_i}{\d M_{jk}^2} &= 2 \sum_{m\neq i} \frac{\abs{ \bigl( \trans{U}\frac{\d M}{\d M_{jk}}U \bigr)_{im} }^2}{\lambda_i - \lambda_m},\\
+    \d \lambda_i &= \sum_{jk} \frac{\d \lambda_i}{\d M_{jk}}\d M_{jk}(t) + \frac12 \sum_{jk}\sum_{ab} \frac{\d^2 \lambda_i}{\d M_{ij} \d M_{ab}} \d \bigl< M_{jk},M_{ab}\bigr>(t),\\
+    &= \sum_{jk} \left(\trans{U} \frac{\d M}{\d M_{jk}}U\right)_{ii} \d M_{jk}(t) + \sum_{jk}\sum_{ab}  \sum_{m\neq i} \frac{\abs{ \bigl( \trans{U}\frac{\d M}{\d M_{jk}}U \bigr)_{im} }^2}{\lambda_i - \lambda_m} \d \bigl< M_{jk},M_{ab}\bigr>(t).
+\end{align*}
+
+In the case of a $2\times 2$ matrix we have for $\lambda_1$,
+
+\begin{align*}
+    \d \lambda_1 =& \left(\trans{U} \frac{\d M}{\d M_{11}}U\right)_{11}\d M_{11} + 2 \left(\trans{U} \frac{\d M}{\d M_{12}}U\right)_{11} \d M_{12} + \left(\trans{U} \frac{\d M}{\d M_{22}}U\right)_{11} \d M_{22}\\
+    &+ \sum_{m\neq 1} \frac{\abs{ \bigl( \trans{U}\frac{\d M}{\d M_{11}}U \bigr)_{1m} }^2}{\lambda_1 - \lambda_m} \d \bigl< M_{11},M_{11}\bigr>(t) +  \sum_{m\neq 1} \frac{\abs{ \bigl( \trans{U}\frac{\d M}{\d M_{22}}U \bigr)_{1m} }^2}{\lambda_1 - \lambda_m} \d \bigl< M_{22},M_{22}\bigr>(t)\\
+    &+ 4\sum_{m\neq 1} \frac{\abs{ \bigl( \trans{U}\frac{\d M}{\d M_{12}}U \bigr)_{1m} }^2}{\lambda_1 - \lambda_m} \d \bigl< M_{12},M_{12}\bigr>(t),\\
+    =& (U_{11})^2 \d M_{11} + 4(U_{11}U_{21})\d M_{12} + (U_{21})^2 \d M_{22} + \frac{(U_{11}U_{12})^2}{\lambda_1 - \lambda_2}\d \bigl< M_{11},M_{11}\bigr>(t) \\
+    &+ \frac{(U_{21}U_{22})^2}{\lambda_1 - \lambda_2}\d\bigl< M_{22},M_{22}\bigr>(t) + 4\frac{(U_{12}^2 + U_{11}U_{22})^2}{\lambda_1 - \lambda_2}\d\bigl< M_{12},M_{12}\bigr>(t)
+\end{align*}
+
+\subsubsection{Symmetric matrix-valued Brownian motion with zeros on the diagonal}
+% Hollow matrix-valued brownian motion?
+
+\todo[inline]{Esto es lo último que intenté y creo que con esto ya se tiene una construcción de un proceso como el que queremos. Es una matriz simétrica con todas sus entradas brownianas independientes (salvo simetría), excepto que tiene ceros en la diagonal, esto hace que la parte de martingala sea cero, pero se mantiene la ecuación del Dyson en la parte de variación finita, si no hay algún error en mis cuentas. }
+
+Let $X$ be a process with covariation $\d X_{ij}\d X_{kl} = (\delta_{ik}\delta_{jl} + \delta_{il}\delta_{jk} - 2\delta_{ij}\delta_{kl}\delta_{ik} )\d t$, which means it is a symmetric matrix with independent brownian entries, except for the diagonal. We assume $X_{ii} = 0$. Write $X = \trans H \Lambda H$ and define $\d A = \trans{H}\partial H$ and $\d N = \trans{H} \partial X H$. The same procedure as in former steps leads to 
+
+\begin{equation*}
+    \d \Lambda = \d N + \Lambda \d A - \d A \Lambda.
+\end{equation*}
+
+We conclude that $\d \lambda_i = \d N_{ii}$ and for $i\neq j$, 
+
+\begin{align*}
+    0 &= \d N_{ij} + \lambda_i \d A_{ij} - \lambda_j \d A_{ij},\\
+    \Rightarrow \d A_{ij} &= \frac{\d N_{ij}}{\lambda_j - \lambda_i}.
+\end{align*}
+
+The quadratic covariation of $N$ is
+
+\begin{align*}
+    \d N_{ij}\d N_{kl} &= \d \bigl< (\trans{H} \d X H)_{ij}, (\trans{H}\d X H)_{kl} \bigr> = \sum_{pqrs} \d \bigl< \trans{H}_{ip} \d X_{pq} H_{qj}, \trans{H}_{kr}\d X_{rs} H_{sl} \bigr>,\\
+    &= \sum_{pqrs} \trans{H}_{ip}  H_{qj}\trans{H}_{kr} H_{sl} \d X_{pq}\d X_{rs} = \sum_{pqrs} \trans{H}_{ip}  H_{qj}\trans{H}_{kr} H_{sl}\bigl( \delta_{pr}\delta_{qs} + \delta_{ps}\delta_{qr} - 2 \delta_{pq}\delta_{rs}\delta_{pr} \bigr)\d t,\\
+    &= \Biggl(\sum_{pqrs}\trans{H}_{ip}  H_{qj}\trans{H}_{kr} H_{sl}\delta_{pr}\delta_{qs} + \sum_{pqrs}\trans{H}_{ip}  H_{qj}\trans{H}_{kr} H_{sl}\delta_{ps}\delta_{qr} - 2 \sum_{pqrs}\trans{H}_{ip}  H_{qj}\trans{H}_{kr} H_{sl}\delta_{pq}\delta_{rs}\delta_{pr}\Biggr) \d t,\\
+    &= \sum_{pq} \trans{H}_{ip}H_{rk}\trans{H}_{jq}H_{ql}\d t + \sum_{pq}\trans{H}_{ip}H_{pl}\trans{H}_{kq}H_{qj} \d t - 2 \sum_{p} \trans{H}_{ip}H_{pj}\trans{H}_{kp}H_{pl} \d t,\\
+    &= \bigl(\delta_{ik}\delta_{jl} + \delta_{il}\delta_{kj} - 2\delta_{ij}\delta_{kl}\delta_{ik} \bigr)\d t.
+\end{align*}
+
+Particularly, we have that $\d N_{ii}\d N_{jj} = 0$ for every choice of $j$ and $i$. Thus every entry in the diagonal of $N$ is a finite variation process and so it is $\lambda_i$. Let us finally compute the finite variation part $F$ of $N$.
+
+\begin{align*}
+    \d F &= \frac12 \bigl( \trans{H}\d X \d H + \d \trans{H}\d X H \bigr),\\
+         &= \frac12 \bigl( \trans{H}\d X H \trans{H} \d H + \d \trans{H}H\trans{H}\d X H \bigr),\\
+         &= \frac12 \bigl( \d N \d A + \trans{(\d N \d A)} \bigr).
+\end{align*}
+
+For $\d N \d A$ we have
+
+\begin{align*}
+    (\d N \d A)_{ij} &= \sum_{k\neq j} \d N_{ik}\d A_{kj} = \sum_{k\neq j} \frac{\d N_{ik}\d A_{kj}}{\lambda_j - \lambda_k},\\
+    &= \sum_{k\neq j} \frac{ \delta_{ik}\delta_{kj} + \delta_{ij}\delta_{kk} - 2\delta_{ik}\delta_{kj}\delta_{ij} }{\lambda_j - \lambda_k}\d t = \delta_{ij}\sum_{k\neq j} \frac{ \d t }{\lambda_j - \lambda_k}.
+\end{align*}
+
+Then $F$ is diagonal with $\d F_{ii} = \sum_{k\neq i} \frac{\d t}{\lambda_i - \lambda_k}$. We conclude that
+
+\begin{equation*}
+    \d \lambda_i = \sum_{k\neq i} \frac{\d t}{\lambda_i - \lambda_k}.
+\end{equation*}
+
+\subsection{Deterministic eigenvalue processes for matrix-valued diffusions}
+
+\todo[inline]{Aquí planeo escribir un resultado sobre cómo obtener una versión determinista del proceso de eignevalores para cualquier proceso de difusión matricial. Estoy trabajando en ello, pero creo que se puede hacer usando las mismas técnicas de Grackyz y Malecki, pero cambiando el proceso por uno de diagonal cero.}
+
+\subsection{Connections with finite free probability}
+
+\todo[inline]{La última parte del trabajo de tesis consistirá en establecer una relación entre los procesos matriciales que permiten observar el proceso de Dyson determinista y el polinomio característico esperado de un ensamble G. U.}
+
