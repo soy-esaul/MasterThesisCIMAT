@@ -1,0 +1,60 @@
+This is BibTeX, Version 0.99d
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: main.aux
+Reallocating 'name_of_file' (item size: 1) to 8 items.
+The style file: apacite.bst
+Reallocating 'name_of_file' (item size: 1) to 14 items.
+Reallocating 'glb_str_end' (item size: 4) to 20 items.
+Reallocating 'glb_str_ptr' (item size: 4) to 20 items.
+Reallocating 'global_strs' (item size: 1) to 4000000 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'wiz_functions' (item size: 4) to 6000 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'wiz_functions' (item size: 4) to 9000 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Database file #1: ref_tesis.bib
+apacite.bst [2013/07/21 v6.03 APA bibliography style]
+Warning--No journal in article:dyson
+You've used 21 entries,
+            6951 wiz_defined-function locations,
+            1395 strings with 13606 characters,
+and the built_in function-call counts, 35358 in all, are:
+= -- 4485
+> -- 269
+< -- 1529
++ -- 1485
+- -- 42
+* -- 2117
+:= -- 6244
+add.period$ -- 87
+call.type$ -- 21
+change.case$ -- 359
+chr.to.int$ -- 0
+cite$ -- 43
+duplicate$ -- 878
+empty$ -- 1526
+format.name$ -- 400
+if$ -- 7012
+int.to.chr$ -- 0
+int.to.str$ -- 63
+missing$ -- 0
+newline$ -- 510
+num.names$ -- 168
+pop$ -- 649
+preamble$ -- 1
+purify$ -- 86
+quote$ -- 0
+skip$ -- 2526
+stack$ -- 0
+substring$ -- 1654
+swap$ -- 535
+text.length$ -- 62
+text.prefix$ -- 0
+top$ -- 1
+type$ -- 1872
+warning$ -- 1
+while$ -- 140
+width$ -- 0
+write$ -- 593
+(There was 1 warning)

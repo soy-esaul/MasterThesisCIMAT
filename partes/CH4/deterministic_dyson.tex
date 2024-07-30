@@ -37,14 +37,15 @@ We conclude that $\d \lambda_i = \d N_{ii}$ and for $i\neq j$,
     \Rightarrow \d A_{ij} &= \frac{\d N_{ij}}{\lambda_j - \lambda_i}.
 \end{align*}
 
-The quadratic covariation of $N$ is
+The quadratic covariation of $N$ is the same as the one for $Z$ because they only differ in a finite variation term, so
 
 \begin{align*}
-    \d N_{ij}\d N_{kl} &= \d \bigl< (\trans{H} \d X H)_{ij}, (\trans{H}\d X H)_{kl} \bigr> = \sum_{pqrs} \d \bigl< \trans{H}_{ip} \d X_{pq} H_{qj}, \trans{H}_{kr}\d X_{rs} H_{sl} \bigr>,\\
-    &= \sum_{pqrs} \trans{H}_{ip}  H_{qj}\trans{H}_{kr} H_{sl} \d X_{pq}\d X_{rs} = \sum_{pqrs} \trans{H}_{ip}  H_{qj}\trans{H}_{kr} H_{sl}\bigl( \delta_{pr}\delta_{qs} + \delta_{ps}\delta_{qr} - 2 \delta_{pq}\delta_{rs}\delta_{pr} \bigr)\d t,\\
-    &= \Biggl(\sum_{pqrs}\trans{H}_{ip}  H_{qj}\trans{H}_{kr} H_{sl}\delta_{pr}\delta_{qs} + \sum_{pqrs}\trans{H}_{ip}  H_{qj}\trans{H}_{kr} H_{sl}\delta_{ps}\delta_{qr} - 2 \sum_{pqrs}\trans{H}_{ip}  H_{qj}\trans{H}_{kr} H_{sl}\delta_{pq}\delta_{rs}\delta_{pr}\Biggr) \d t,\\
-    &= \sum_{pq} \trans{H}_{ip}H_{rk}\trans{H}_{jq}H_{ql}\d t + \sum_{pq}\trans{H}_{ip}H_{pl}\trans{H}_{kq}H_{qj} \d t - 2 \sum_{p} \trans{H}_{ip}H_{pj}\trans{H}_{kp}H_{pl} \d t,\\
-    &= \bigl(\delta_{ik}\delta_{jl} + \delta_{il}\delta_{kj} - 2\delta_{ij}\delta_{kl}\delta_{ik} \bigr)\d t.
+    \d N_{ij}\d N_{kl} &= \d \bigl< (\trans{H} \d X H)_{ij}, (\trans{H}\d X H)_{kl} \bigr>(t) %= \sum_{pqrs} \d \bigl< \trans{H}_{ip} \d X_{pq} H_{qj}, \trans{H}_{kr}\d X_{rs} H_{sl} \bigr>,\\
+    % &= \sum_{pqrs} \trans{H}_{ip}  H_{qj}\trans{H}_{kr} H_{sl} \d X_{pq}\d X_{rs} = \sum_{pqrs} \trans{H}_{ip}  H_{qj}\trans{H}_{kr} H_{sl}\bigl( \delta_{pr}\delta_{qs} + \delta_{ps}\delta_{qr} - 2 \delta_{pq}\delta_{rs}\delta_{pr} \bigr)\d t,\\
+    % &= \Biggl(\sum_{pqrs}\trans{H}_{ip}  H_{qj}\trans{H}_{kr} H_{sl}\delta_{pr}\delta_{qs} + \sum_{pqrs}\trans{H}_{ip}  H_{qj}\trans{H}_{kr} H_{sl}\delta_{ps}\delta_{qr} - 2 \sum_{pqrs}\trans{H}_{ip}  H_{qj}\trans{H}_{kr} H_{sl}\delta_{pq}\delta_{rs}\delta_{pr}\Biggr) \d t,\\
+    % &= \sum_{pq} \trans{H}_{ip}H_{rk}\trans{H}_{jq}H_{ql}\d t + \sum_{pq}\trans{H}_{ip}H_{pl}\trans{H}_{kq}H_{qj} \d t - 2 \sum_{p} \trans{H}_{ip}H_{pj}\trans{H}_{kp}H_{pl} \d t,\\
+    % &= \bigl(\delta_{ik}\delta_{jl} + \delta_{il}\delta_{kj} - 2\delta_{ij}\delta_{kl}\delta_{ik} \bigr)\d t.
+    = \d \bigl< Z_{ij},Z_{kl} \bigr> = \bigl(\delta_{ik}\delta_{jl} + \delta_{il}\delta_{kj} - 2\delta_{ij}\delta_{kl}\delta_{ik} \bigr)\d t.
 \end{align*}
 
 Particularly, we have that $\d N_{ii}\d N_{jj} = 0$ for every choice of $j$ and $i$. Thus every entry in the diagonal of $N$ is a finite variation process and so it is $\lambda_i$. Let us finally compute the finite variation part $F$ of $N$.

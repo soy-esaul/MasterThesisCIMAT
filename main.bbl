@@ -1,0 +1,542 @@
+\begin{thebibliography}{}
+
+\bibitem [\protect \citeauthoryear {%
+Allez%
+\ \BBA {} Guionnet%
+}{%
+Allez%
+\ \BBA {} Guionnet%
+}{%
+{\protect \APACyear {2013}}%
+}]{%
+article:allez_guionnet_beta}
+\APACinsertmetastar {%
+article:allez_guionnet_beta}%
+\begin{APACrefauthors}%
+Allez, R.%
+\BCBT {}\ \BBA {} Guionnet, A.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2013}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {{A diffusive matrix model for invariant
+  $\beta$-ensembles}} {{A diffusive matrix model for invariant
+  $\beta$-ensembles}}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Electronic Journal of Probability}{18}{none}{1 -- 30}.
+\newblock
+\begin{APACrefURL} \url{https://doi.org/10.1214/EJP.v18-2073} \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{10.1214/EJP.v18-2073} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Bru%
+}{%
+Bru%
+}{%
+{\protect \APACyear {1989}}%
+}]{%
+bru1989diffusions}
+\APACinsertmetastar {%
+bru1989diffusions}%
+\begin{APACrefauthors}%
+Bru, M\BHBI F.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1989}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Diffusions of perturbed principal component analysis}
+  {Diffusions of perturbed principal component analysis}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Journal of multivariate analysis}{29}{1}{127--136}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Doumerc%
+}{%
+Doumerc%
+}{%
+{\protect \APACyear {2005}}%
+}]{%
+doumerc2005matrices}
+\APACinsertmetastar {%
+doumerc2005matrices}%
+\begin{APACrefauthors}%
+Doumerc, Y.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYear{2005}.
+\unskip\
+\newblock
+\APACrefbtitle {Matrices al{\'e}atoires, processus stochastiques et groupes de
+  r{\'e}flexions} {Matrices al{\'e}atoires, processus stochastiques et groupes
+  de r{\'e}flexions}\ \APACtypeAddressSchool {\BUPhD}{}{}.
+\unskip\
+\newblock
+\APACaddressSchool {}{Toulouse 3}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Dyson%
+}{%
+Dyson%
+}{%
+{\protect \APACyear {2013}}%
+}]{%
+article:dyson}
+\APACinsertmetastar {%
+article:dyson}%
+\begin{APACrefauthors}%
+Dyson, F\BPBI J.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2013}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {A Brownian-Motion Model for the Eigenvalues of a Random
+  Matrix} {A brownian-motion model for the eigenvalues of a random
+  matrix}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{}{3}{6}{1191-1198}.
+\newblock
+\begin{APACrefURL} \url{{https://doi.org/10.1063/1.1703862}} \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{{10.1063/1.1703862}} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Edelman%
+}{%
+Edelman%
+}{%
+{\protect \APACyear {1988}}%
+}]{%
+edelman1988eigenvalues}
+\APACinsertmetastar {%
+edelman1988eigenvalues}%
+\begin{APACrefauthors}%
+Edelman, A.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1988}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Eigenvalues and condition numbers of random matrices}
+  {Eigenvalues and condition numbers of random matrices}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{SIAM journal on matrix analysis and
+  applications}{9}{4}{543--560}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Graczyk%
+\ \BBA {} Małecki%
+}{%
+Graczyk%
+\ \BBA {} Małecki%
+}{%
+{\protect \APACyear {2011}}%
+}]{%
+article:multiyamada}
+\APACinsertmetastar {%
+article:multiyamada}%
+\begin{APACrefauthors}%
+Graczyk, P.%
+\BCBT {}\ \BBA {} Małecki, J.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2011}{08}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Multidimensional Yamada-Watanabe theorem and its
+  applications} {Multidimensional yamada-watanabe theorem and its
+  applications}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Journal of Mathematical Physics}{54}{}{}.
+\newblock
+\begin{APACrefDOI} \doi{10.1063/1.4790507} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Holcomb%
+\ \BBA {} Paquette%
+}{%
+Holcomb%
+\ \BBA {} Paquette%
+}{%
+{\protect \APACyear {2017}}%
+}]{%
+article:holcomb_paquette}
+\APACinsertmetastar {%
+article:holcomb_paquette}%
+\begin{APACrefauthors}%
+Holcomb, D.%
+\BCBT {}\ \BBA {} Paquette, E.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2017}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Tridiagonal models for Dyson Brownian motion}
+  {Tridiagonal models for dyson brownian motion}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{arXiv preprint arXiv:1707.02700}{}{}{}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Karatzas%
+\ \BBA {} Shreve%
+}{%
+Karatzas%
+\ \BBA {} Shreve%
+}{%
+{\protect \APACyear {2014}}%
+}]{%
+book:karatzas}
+\APACinsertmetastar {%
+book:karatzas}%
+\begin{APACrefauthors}%
+Karatzas, I.%
+\BCBT {}\ \BBA {} Shreve, S.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYear{2014}.
+\newblock
+\APACrefbtitle {Brownian motion and stochastic calculus} {Brownian motion and
+  stochastic calculus}\ (\BVOL~113).
+\newblock
+\APACaddressPublisher{}{springer}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Klebaner%
+}{%
+Klebaner%
+}{%
+{\protect \APACyear {2012}}%
+}]{%
+book:klebaner}
+\APACinsertmetastar {%
+book:klebaner}%
+\begin{APACrefauthors}%
+Klebaner, F\BPBI C.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYear{2012}.
+\newblock
+\APACrefbtitle {Introduction to stochastic calculus with applications}
+  {Introduction to stochastic calculus with applications}.
+\newblock
+\APACaddressPublisher{}{World Scientific Publishing Company}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Le~Gall%
+}{%
+Le~Gall%
+}{%
+{\protect \APACyear {2016}}%
+}]{%
+book:legall}
+\APACinsertmetastar {%
+book:legall}%
+\begin{APACrefauthors}%
+Le~Gall, J\BHBI F.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYear{2016}.
+\newblock
+\APACrefbtitle {Brownian motion, martingales, and stochastic calculus}
+  {Brownian motion, martingales, and stochastic calculus}.
+\newblock
+\APACaddressPublisher{}{Springer}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Marcus%
+}{%
+Marcus%
+}{%
+{\protect \APACyear {2021}}%
+}]{%
+marcus2021polynomial}
+\APACinsertmetastar {%
+marcus2021polynomial}%
+\begin{APACrefauthors}%
+Marcus, A\BPBI W.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2021}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Polynomial convolutions and (finite) free probability}
+  {Polynomial convolutions and (finite) free probability}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{arXiv preprint arXiv:2108.07054}{}{}{}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Marcus%
+, Spielman%
+\BCBL {}\ \BBA {} Srivastava%
+}{%
+Marcus%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2022}}%
+}]{%
+article:finitefree}
+\APACinsertmetastar {%
+article:finitefree}%
+\begin{APACrefauthors}%
+Marcus, A\BPBI W.%
+, Spielman, D\BPBI A.%
+\BCBL {}\ \BBA {} Srivastava, N.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2022}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Finite free convolutions of polynomials} {Finite free
+  convolutions of polynomials}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Probability Theory and Related
+  Fields}{182}{3-4}{807--848}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Mayerhofer%
+, Pfaffel%
+\BCBL {}\ \BBA {} Stelzer%
+}{%
+Mayerhofer%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2011}}%
+}]{%
+mayerhofer2011strong}
+\APACinsertmetastar {%
+mayerhofer2011strong}%
+\begin{APACrefauthors}%
+Mayerhofer, E.%
+, Pfaffel, O.%
+\BCBL {}\ \BBA {} Stelzer, R.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2011}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {On strong solutions for positive definite jump
+  diffusions} {On strong solutions for positive definite jump
+  diffusions}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Stochastic processes and their
+  applications}{121}{9}{2072--2086}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+McKean%
+}{%
+McKean%
+}{%
+{\protect \APACyear {1969}}%
+}]{%
+book:mckean}
+\APACinsertmetastar {%
+book:mckean}%
+\begin{APACrefauthors}%
+McKean, H\BPBI P.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYear{1969}.
+\newblock
+\APACrefbtitle {Stochastic integrals} {Stochastic integrals}\ (\BVOL~353).
+\newblock
+\APACaddressPublisher{}{American Mathematical Soc.}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Mingo%
+\ \BBA {} Speicher%
+}{%
+Mingo%
+\ \BBA {} Speicher%
+}{%
+{\protect \APACyear {2017}}%
+}]{%
+book:mingo_speicher}
+\APACinsertmetastar {%
+book:mingo_speicher}%
+\begin{APACrefauthors}%
+Mingo, J\BPBI A.%
+\BCBT {}\ \BBA {} Speicher, R.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYear{2017}.
+\newblock
+\APACrefbtitle {Free probability and random matrices} {Free probability and
+  random matrices}\ (\BVOL~35).
+\newblock
+\APACaddressPublisher{}{Springer}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Nica%
+\ \BBA {} Speicher%
+}{%
+Nica%
+\ \BBA {} Speicher%
+}{%
+{\protect \APACyear {2006}}%
+}]{%
+book:nica_speicher}
+\APACinsertmetastar {%
+book:nica_speicher}%
+\begin{APACrefauthors}%
+Nica, A.%
+\BCBT {}\ \BBA {} Speicher, R.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYear{2006}.
+\newblock
+\APACrefbtitle {Lectures on the Combinatorics of Free Probability} {Lectures on
+  the combinatorics of free probability}.
+\newblock
+\APACaddressPublisher{}{Cambridge University Press}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Perales~Anaya%
+}{%
+Perales~Anaya%
+}{%
+{\protect \APACyear {2016}}%
+}]{%
+anaya2016cumulantes}
+\APACinsertmetastar {%
+anaya2016cumulantes}%
+\begin{APACrefauthors}%
+Perales~Anaya, D.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYear{2016}.
+\unskip\
+\newblock
+\APACrefbtitle {Cumulantes en probabilidad libre finita} {Cumulantes en
+  probabilidad libre finita}\ \APACtypeAddressSchool {\BUMTh}{}{}.
+\unskip\
+\newblock
+\APACaddressSchool {}{{Universidad Nacional Autónoma de México}}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Revuz%
+\ \BBA {} Yor%
+}{%
+Revuz%
+\ \BBA {} Yor%
+}{%
+{\protect \APACyear {2013}}%
+}]{%
+book:revuzyor}
+\APACinsertmetastar {%
+book:revuzyor}%
+\begin{APACrefauthors}%
+Revuz, D.%
+\BCBT {}\ \BBA {} Yor, M.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYear{2013}.
+\newblock
+\APACrefbtitle {Continuous martingales and Brownian motion} {Continuous
+  martingales and brownian motion}\ (\BVOL~293).
+\newblock
+\APACaddressPublisher{}{Springer Science \& Business Media}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Szegö%
+}{%
+Szegö%
+}{%
+{\protect \APACyear {1939}}%
+}]{%
+szeg1939orthogonal}
+\APACinsertmetastar {%
+szeg1939orthogonal}%
+\begin{APACrefauthors}%
+Szegö, G.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYear{1939}.
+\newblock
+\APACrefbtitle {Orthogonal polynomials} {Orthogonal polynomials}\ (\BVOL~23).
+\newblock
+\APACaddressPublisher{}{American Mathematical Soc.}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Trujillo~Rivera%
+}{%
+Trujillo~Rivera%
+}{%
+{\protect \APACyear {2011}}%
+}]{%
+thesis_trujillo}
+\APACinsertmetastar {%
+thesis_trujillo}%
+\begin{APACrefauthors}%
+Trujillo~Rivera, E\BPBI A.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYear{2011}.
+\unskip\
+\newblock
+\APACrefbtitle {{El proceso de Wishart y la din{\'a}mica de sus eigenvalores y
+  propiedades distribucionales v{\'\i}a c{\'a}lculo estoc{\'a}stico}} {{El
+  proceso de Wishart y la din{\'a}mica de sus eigenvalores y propiedades
+  distribucionales v{\'\i}a c{\'a}lculo estoc{\'a}stico}}\
+  \APACtypeAddressSchool {\BUMTh}{}{}.
+\unskip\
+\newblock
+\APACaddressSchool {}{CIMAT}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Walsh%
+}{%
+Walsh%
+}{%
+{\protect \APACyear {1922}}%
+}]{%
+walsh1922location}
+\APACinsertmetastar {%
+walsh1922location}%
+\begin{APACrefauthors}%
+Walsh, J\BPBI L.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1922}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {On the location of the roots of certain types of
+  polynomials} {On the location of the roots of certain types of
+  polynomials}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Transactions of the American Mathematical
+  Society}{24}{3}{163--180}.
+\PrintBackRefs{\CurrentBib}
+
+\end{thebibliography}
