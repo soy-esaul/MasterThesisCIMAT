@@ -797,20 +797,48 @@ In order to find the associated process, we will first generalize the results of
         And summing up these two expressions leads to
 
         \begin{align*}
-            y^2\partial_y\partial_x r + z^\partial_z\partial_x r &= (y+z)(k-1)\partial_x r - yz (\partial_z\partial_x r + \partial_y\partial_x r) - (y+z)x\partial_{xx} r.
+            y^2\partial_y\partial_x r + z^2\partial_z\partial_x r &= (y+z)(k-1)\partial_x r - yz (\partial_z\partial_x r + \partial_y\partial_x r) - (y+z)x\partial_{xx} r.
         \end{align*}
     \end{proof}
 
     Then we have for $\hat p$
 
     \begin{align*}
-        (\partial_t x)(\partial_x \hat p) &+ (\partial_t y)(\partial_y \hat p) + (\partial_t y)(\partial_y \hat p)|_{t=0} \\ 
+        (\partial_t x)(\partial_x \hat p) &+ (\partial_t y)(\partial_y \hat p) + (\partial_t z)(\partial_z \hat p)|_{t=0} \\ 
         &= -(n_1y + n_2 z)\partial_x \hat p + (y+z)(k-1)\partial_x \hat p - yz (\partial_z\partial_x \hat p + \partial_y\partial_x \hat p) - (y+z)x\partial_{xx} \hat p|_{t=0}.
     \end{align*}
 
-    Now we can substitute $x=0, $
-    
-    %Notice that by definition, $p(x,y,z)$ is a homogeneus polynomial, and this allows us to 
+    Now we can substitute $y = w, z = (w-1)$ and define the polynomial $j(x,w,t)$ as
+
+    \begin{equation*}
+        j(x,w,t) = \hat p(x(t), w(t), w(t)-1, t).
+    \end{equation*}
+
+    Using the above results, we have for $j(w,t)$
+
+    \begin{align*}
+        (\partial_t x)(\partial_x j) &+ (\partial_t w)(\partial_w j)|_{t=0} \\
+        &= -(n_1w + n_2w-n_2))\partial_x j + (2w-1)(k-1)\partial_x j - w(w-1)(\partial_x\partial_w j) - (2w-1)x\partial_{xx} j|_{t=0}.
+    \end{align*}
+
+    Letting $x=0$, we find the evolution equation for the matrix Jacobi process \todo{Agregar referencia}
+
+    \begin{align*}
+        \left.(\partial_t w)\frac{\partial_w j}{\partial_x j}\right|_{t=0} &= \left.-(n_1w + n_2w) + (2w-1)(k-1) - w(w-1)\frac{\partial_x\partial_w j}{\partial_x j}\right|_{t=0},\\
+        \Rightarrow \partial_t w &= -[n_1w + n_2 (w-1) +(2w-1)(k-1)]\frac{\partial_x j}{\partial_w j} - w(w-1)\frac{\partial_x\partial_w j}{\partial_w j},\\ 
+        &= [-(n_1-k+1)w - (n_2 -k+1)(w-1)]\frac{\partial_x j}{\partial_w j} - w(w-1)\frac{\partial_x\partial_w j}{\partial_w j}.
+    \end{align*}
+
+    \begin{align*}
+        \partial_t w_i &= -(n_1-k+1)w_i - (n_2 -k+1)(w_i-1) - w_i(w_i-1)\sum_{j \neq i} \frac{2}{w_i - w_j},\\ 
+        &= n_2 - (n_1 + n_2)w_i + (w_i + w_i -1)(k-1) - \sum_{j\neq i} \frac{2w_i(w_i -1)}{w_i - w_j},\\
+        &= n_2 - (n_1 + n_2)w_i + (w_i + w_i -1)\sum_{j \neq i}\frac{w_i - w_j}{w_i - w_j} - \sum_{j\neq i} \frac{2w_i(w_i -1)}{w_i - w_j},\\ 
+        &= n_2 - (n_1 + n_2)w_i + \sum_{j \neq i}\frac{ (w_i + w_i -1)(w_i - w_j) - 2 w_i(w_i-1) }{w_i - w_j},\\ 
+        &= n_2 - (n_1 + n_2)w_i + \sum_{j \neq i}\frac{ w_i^2 + w_i(w_i-1) - w_iw_j -w_j(w_i-1) -2w_i(w_i-1) }{w_i - w_j},\\
+        &=  n_2 - (n_1 + n_2)w_i + \sum_{j \neq i}\frac{ - w_iw_j - w_j(w_i-1) +w_i }{w_i - w_j},\\
+        &= n_2 - (n_1 + n_2)w_i + \sum_{j \neq i}\frac{w_j(1-w_i) +w_i(1-w_j)}{w_i - w_j}.
+    \end{align*}
+    %Notice that by definition, $p(x,y,z)$ is a homogeneous polynomial, and this allows us to 
     
     % Poner casos estáticos junto al Hermite
     % Determinar dinámica de las raíces
