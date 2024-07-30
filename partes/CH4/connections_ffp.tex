@@ -829,8 +829,18 @@ In order to find the associated process, we will first generalize the results of
         &= [-(n_1-k+1)w - (n_2 -k+1)(w-1)]\frac{\partial_x j}{\partial_w j} - w(w-1)\frac{\partial_x\partial_w j}{\partial_w j}.
     \end{align*}
 
+    To further simplify the last expression we need some hypothesis about the relationship between $\partial_x j$ and $\partial_w j$. We recover this from the definition as the generalized characteristic polynomial.
+
     \begin{align*}
-        \partial_t w_i &= -(n_1-k+1)w_i - (n_2 -k+1)(w_i-1) - w_i(w_i-1)\sum_{j \neq i} \frac{2}{w_i - w_j},\\ 
+        j(x,w,t) &= \E{ \det[ xI + (u-1)\trans A_1(t) A_1(t) + u \trans A_2(t) A_2(t) ] } = \E{ \det[ xI + (u-1)\trans A_1(t) A_1(t) + u (I - \trans A_1(t) A_1(t)) ] }, \\
+        &= \E{ \det[ (x+u)I - \trans A_1(t) A_1(t) +(u-u)\trans A_1(t) A_1(t) ] } = \E{ \det[ (x+u)I - \trans A_1(t) A_1(t)] }.
+    \end{align*}
+
+    So this means that the derivatives of $j$ with respect to $x$ are the same as its derivatives with respect to $w$ and then we can equate $\partial_w j$ to $\partial_x j$ to get
+
+    \begin{align*}
+        \partial_t w_i &= -(n_1-k+1)w_i - (n_2 -k+1)(w_i-1) - w_i(w_i-1)\frac{\partial_{xx} j}{\partial_x j},\\ 
+        &=-(n_1-k+1)w_i - (n_2 -k+1)(w_i-1) - w_i(w_i-1)\sum_{j \neq i} \frac{2}{w_i - w_j},\\ 
         &= n_2 - (n_1 + n_2)w_i + (w_i + w_i -1)(k-1) - \sum_{j\neq i} \frac{2w_i(w_i -1)}{w_i - w_j},\\
         &= n_2 - (n_1 + n_2)w_i + (w_i + w_i -1)\sum_{j \neq i}\frac{w_i - w_j}{w_i - w_j} - \sum_{j\neq i} \frac{2w_i(w_i -1)}{w_i - w_j},\\ 
         &= n_2 - (n_1 + n_2)w_i + \sum_{j \neq i}\frac{ (w_i + w_i -1)(w_i - w_j) - 2 w_i(w_i-1) }{w_i - w_j},\\ 
