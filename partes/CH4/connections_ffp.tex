@@ -37,7 +37,7 @@ In this section we relate finite free probability to eigenvalue processes. To do
 
     \noindent with $N_1$ a normal random variable, $\vec x$ an $n-1$-dimensional gaussian vector with independent entries in $\R, \C$ or $\H$, depending on $\beta$, and $B_{\beta}$ an $(n-1)\times(n-1)$ matrix from the GOE, GUE or GSE, respectively. All of the elements are independent from each other.
 
-    Now we take $C$ to be any $(n-1)\times(n-1)$ orthogonal (or unitary, symplectic, according to $\beta$) matrix such that $C \trans{\vec x} = \norm{\vec x}_2 e_1$, where $e_1 = (1,0,\cdots,0)$ is the first element in the canonical basis of $\R^{n-1}$. Then we have
+    Now we take $H$ to be any $(n-1)\times(n-1)$ orthogonal (or unitary, symplectic, according to $\beta$) matrix such that $H \trans{\vec x} = \norm{\vec x}_2 e_1$, where $e_1 = (1,0,\cdots,0)$ is the first element in the canonical basis of $\R^{n-1}$. Then we have
 
     \begin{align*}
         \begin{bmatrix}
@@ -72,6 +72,29 @@ In this section we relate finite free probability to eigenvalue processes. To do
         1 & \trans{\vec0} \\ 
         \vec0 & H
     \end{bmatrix}$ is orthogonal (unitary, symplectic), so the eigenvalue distribution of $A_\beta$ remains unchanged under this transformation. By repeating the procedure with $B_\beta$, we find the tridiagonal matrix \eqref{eq:tridiag_hermite}, which finishes the proof.
+\end{proof}
+
+
+\begin{lemma}
+    Let $W_\beta$ be an $n\times n$ matrix from the  $\beta$-Wishart ensemble. The eigenvalues of $W_\beta$ has the same joint law as those of the tridiagonal matrix $L_\beta = B_\beta \trans B_\beta$ with $B_\beta$ is an $m\times n$ bidiagonal matrix defined as 
+
+    \begin{align} \label{eq:tridiag_laguerre}
+        L_\beta &= \begin{bmatrix}
+            \xi_{n\beta}   & 0 & 0     & \cdots & 0 \\ 
+            \xi_{\beta(m-1)} & \xi_{n\beta - \beta}   & 0 & \cdots & 0 \\
+            0     & \ddots & \ddots  & \cdots & 0 \\
+            \vdots & \vdots & \vdots & \ddots & \vdots \\ 
+            0      & \cdots & 0      & \xi_{\beta} & \xi_{n\beta - \beta(m-1)} 
+        \end{bmatrix}.
+    \end{align}
+
+    The variables $\xi_j$ being independent random variables with distribution $ \xi_j \sim \chi_j$.
+
+    We call $L_\beta$ the tridiagonal $\beta$-Laguerre ensemble.
+\end{lemma}
+
+\begin{proof}
+    
 \end{proof}
 
 

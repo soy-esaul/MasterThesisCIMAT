@@ -28,18 +28,56 @@ Now that we have shown the construction of a matrix-valued process whose eigenva
 
     where $g,h,b$ are real functions acting spectrally, and $Y(0)$ is a symmetric $p\times p$ matrix with $p$ different eigenvalues.
 
-    Let $G(x,y) = g^2(x)h^2(y) + g^2(y)h^2(x)$, $\tau$ be defined as in \eqref{eq:collision_time}, and take a process $X = (X(t), t\ge 0)$ with diagonalization $X = H \Lambda \trans{H}$ such that $\trans H \circ \d \circ \Lambda H$ has the same off-diagonal entries as $\trans Q \circ \d M \circ Q$ and has diagonal entries equal to zero.
+    Let $G(x,y) = g^2(x)h^2(y) + g^2(y)h^2(x)$, $\tau$ be defined as in \eqref{eq:collision_time}, and take a process $X = (X(t), t\ge 0)$ with diagonalization $X = H \Lambda \trans{H}$ such that $\trans H (\d \Lambda) H$ has the same off-diagonal entries as $\trans Q ( \d M) \circ Q$ and has diagonal entries equal to zero.
     
     Then, for $t < \tau$ the eigenvalue process $\Lambda(t)$ verifies the following system of stochastic differential equations:
 
     \begin{equation}
-        \d \lambda_i = \biggl( b(\lambda_i) + \sum_{k\neq i} \frac{G(\lambda_i,\lambda_k)}{\lambda_i - \lambda_k} \biggr)\d t, \label{eq:gen_dyson}
+        \d \lambda_i = \biggl( b(\lambda_i) + \sum_{k\neq i} \frac{G(\lambda_i,\lambda_k)}{\lambda_i - \lambda_k} \biggr)\d t.
     \end{equation}
 \end{theorem}
 
 
 \begin{proof}
-    
+    We define again $L$ to be the stochastic logarithm of $H$, $L \coloneqq \trans H \circ \d H$ and using the same techniques as in Theorem \ref{thm:diffusion_real} we have that,
+
+    \begin{equation*}
+        \d \Lambda = \trans H \circ(\partial X) \circ H - (\partial L)\circ \Lambda + \Lambda \circ \partial L.
+    \end{equation*}
+
+    Using that $\Lambda \circ \partial L -  (\partial L)\circ \Lambda $ has zero diagonal, we get that $\d lambda_i = (\trans H \circ(\partial X) \circ H)_{ii}$ and by hypothesis, we know that the martingale part of this diagonal is zero. 
+
+    Define $\d N \coloneqq \trans H \circ(\partial X) \circ H$. For $i\neq j$ we have that $\d L_{ij} = \d N_{ij}/(\lambda_j - \lambda_i)$.
+
+    Finally, we compute the finite variation $\d F$ part of $\d N$,
+
+    \begin{align*}
+        \d F &= \trans H b(X) H \d t + \frac12 (\d \trans H \d X H + \trans H \d X H), \\ 
+        &= b(\Lambda) \d t + \frac12( \trans{(\d N\d A)} + \d N \d A ).
+    \end{align*}
+
+    For $\d N \d A$ we find
+
+    \begin{align*}
+        (\d N \d A)_{ij} &= \sum_{k\neq j} \d N_{ik}\d A_{kj} = \sum_{k\neq j} \frac{\d N_{ik}\d N_{kj}}{\lambda_j - \lambda_k}.
+    \end{align*}
+
+    Now we use that the martingale part of  $\d N$ has the same entries as $\trans{Q} M Q$ and by the results in Theorem \ref{thm:diffusion_real} we know that 
+
+    \begin{equation*}
+        (\trans{Q} M Q)_{ik}(\trans{Q} M Q)_{kj} = \delta_{ij}G(\lambda_i,\lambda_k)\d t,
+    \end{equation*}
+
+    \noindent so substituting the last result we get
+
+    \begin{equation*}
+        \d \lambda_i = \d F_{ii} = b(\lambda_i)\d t + sum_{k\neq j} \frac{G(\lambda_i,\lambda_k)\d t}{\lambda_j - \lambda_k},
+    \end{equation*}
+
+    \noindent which is the desired result.
+
+
+
 \end{proof}
 
 
