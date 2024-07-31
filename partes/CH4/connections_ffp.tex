@@ -79,7 +79,7 @@ In this section we relate finite free probability to eigenvalue processes. To do
     Let $W_\beta$ be an $n\times n$ matrix from the  $\beta$-Wishart ensemble. The eigenvalues of $W_\beta$ has the same joint law as those of the tridiagonal matrix $L_\beta = B_\beta \trans B_\beta$ with $B_\beta$ is an $m\times n$ bidiagonal matrix defined as 
 
     \begin{align} \label{eq:tridiag_laguerre}
-        L_\beta &= \begin{bmatrix}
+        B_\beta &= \begin{bmatrix}
             \xi_{n\beta}   & 0 & 0     & \cdots & 0 \\ 
             \xi_{\beta(m-1)} & \xi_{n\beta - \beta}   & 0 & \cdots & 0 \\
             % 0     & \ddots & \ddots  & \cdots & 0 \\
@@ -119,7 +119,7 @@ In this section we relate finite free probability to eigenvalue processes. To do
         \end{bmatrix}.
     \end{equation*}
 
-    We proceed with this procedure now for $LG_2$. The product by an orthogonal (unitary, simplectic) matrix does not affect the singular values of a matrix, so the singular values of the bidiagonal matrix $B_\beta$ and the original matrix $G$ are the same. The eigenvalues of $W = \trans{G}G$ are the squares of the singular values of $G$ and the same happens with the eigenvalues of $L_\beta = \trans{B_\beta}B_\beta$ which is a tridiagonal matrix.
+    We proceed with this procedure now for $LG_2$. The product by an orthogonal (unitary, simplectic) matrix does not affect the singular values of a matrix, so the singular values of the bidiagonal matrix $B_\beta$ and the original matrix $G$ are the same. The eigenvalues of $W = G\trans{G}$ are the squares of the singular values of $G$ and the same happens with the eigenvalues of $L_\beta = B_\beta\trans{B_\beta}$ which is a tridiagonal matrix.
 
     The distribution of the entries follows from the definition of the complex and simplectic normal distributions as sums of real normal random variables.
 \end{proof}
@@ -445,7 +445,24 @@ In this section we relate finite free probability to eigenvalue processes. To do
 \end{theorem}
 
 \begin{proof}
-    
+    We use the tridiagonal model defined before together with Lemma \ref{lemma:chpol_tridiag}. Let $P_n(z)$ be the characteristic polynomial of $L_\beta$ with $L_\beta$ being a tridiagonal $\beta$-Laguerre ensemble, then
+
+    \begin{equation*}
+        P_n(z) = (z - (L_\beta)_{11})P_{n-1}(z) - (L_\beta)_{12}^2 P_{n-2}(z).
+    \end{equation*}
+
+    The corresponding entries are
+
+    \begin{equation*}
+        (L_\beta)_{11} = \xi^2_{n\beta}, \qquad (L_\beta)_{12} = \xi_{n\beta}(\xi_{\beta(m-1)} + \xi_{n\beta - \beta}),
+    \end{equation*}
+
+    \noindent with this the expected characteristic polynomial satisfies the recursion
+
+    \begin{align*}
+        \E{P_n(z)} &= \E{ (z - \xi^2_{n\beta})P_{n-1}(z) - \xi^2_{n\beta}(\xi_{\beta(m-1)} + \xi_{n\beta - \beta})^2 P_{n-2}(z) }, \\ 
+        &= (z - n\beta)\E{P_{n-1}(z)} - n\beta(\beta(m-1) + n\beta- \beta)2\E{ \xi_{\beta(m-1)} \xi_{n\beta - \beta} })\E{P_{n-2}(z)}
+    \end{align*}
 \end{proof}
 
 \begin{theorem}
