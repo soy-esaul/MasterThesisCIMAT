@@ -82,19 +82,46 @@ In this section we relate finite free probability to eigenvalue processes. To do
         L_\beta &= \begin{bmatrix}
             \xi_{n\beta}   & 0 & 0     & \cdots & 0 \\ 
             \xi_{\beta(m-1)} & \xi_{n\beta - \beta}   & 0 & \cdots & 0 \\
-            0     & \ddots & \ddots  & \cdots & 0 \\
+            % 0     & \ddots & \ddots  & \cdots & 0 \\
             \vdots & \vdots & \vdots & \ddots & \vdots \\ 
             0      & \cdots & 0      & \xi_{\beta} & \xi_{n\beta - \beta(m-1)} 
         \end{bmatrix}.
     \end{align}
 
-    The variables $\xi_j$ being independent random variables with distribution $ \xi_j \sim \chi_j$.
+    The variables $\xi_j$ being independent random variables with distribution $\xi_j \sim \chi_j$.
 
     We call $L_\beta$ the tridiagonal $\beta$-Laguerre ensemble.
 \end{lemma}
 
 \begin{proof}
-    
+    Take $G$ to be an $m\times n$ matrix with independent standard $\beta$-Gaussian random variables as entries (real if $\beta=1$, complex if $\beta=2$ and quaternions if $\beta=4$). Write $G$ as 
+
+    \begin{equation*}
+        \begin{bmatrix}
+            \trans{\vec x}\\
+            G_1
+        \end{bmatrix}.
+    \end{equation*}
+
+    We have that $\vec x$ is a vector distributed as a multivariate $\beta$-normal variable with mean $\vec 0$ and covariance matrix $\Sigma = I$, while $G_1$ is an $(m-1)\times n$ matrix of independent standard $\beta$-Gaussian random variables. 
+
+    Take $R$ to be a ``right reflector'' corresponding to $\vec x$ independent of $G_1$, which means $\trans{\vec x}R = \norm{\vec x}_2 e_1$. Due to being a reflector, $R$ is orthogonal (unitary, simplectic) and this means that $G_1 R$ is an $(m-1)\times n$ matrix with independent standard $\beta$-Gaussian matrices as entries.
+
+    Now take $G_1R = [\vec y, G_2]$ with $\vec y$ being a $\beta$-Gaussian vector with mean $\vec 0$ and covariance matrix $\Sigma = I$. Then $G_2$ is an $(m-1)\times (n_1)$ matrix of independent standard $\beta$-Gaussian random variables. Let $L$ be a left reflector corresponding to $\vec y$ ($Ly = \norm{\vec y}_2 e_1$) independent of $G_2$. Again by the orthogonality (unitarity, simplecticity) of $L$, $LG_2$ is still an $(m-1)\times(n-1)$ matrix of independent standard $\beta$-Gaussian random variables. This means that
+
+    \begin{equation*}
+        \begin{bmatrix}
+            1 & 0 \\
+            0 & L
+        \end{bmatrix} G R = \begin{bmatrix}
+            \norm{\vec x}_2 & 0 \\
+            \norm{\vec y}_2 e_1 & LG_2
+        \end{bmatrix}.
+    \end{equation*}
+
+    We proceed with this procedure now for $LG_2$. The product by an orthogonal (unitary, simplectic) matrix does not affect the singular values of a matrix, so the singular values of the bidiagonal matrix $B_\beta$ and the original matrix $G$ are the same. The eigenvalues of $W = \trans{G}G$ are the squares of the singular values of $G$ and the same happens with the eigenvalues of $L_\beta = \trans{B_\beta}B_\beta$ which is a tridiagonal matrix.
+
+    The distribution of the entries follows from the definition of the complex and simplectic normal distributions as sums of real normal random variables.
 \end{proof}
 
 
