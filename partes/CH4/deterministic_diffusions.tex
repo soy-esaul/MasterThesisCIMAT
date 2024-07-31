@@ -2,25 +2,44 @@
 
 Now that we have shown the construction of a matrix-valued process whose eigenvalue is the deterministic Dyson Brownian motion, we generaliza the result to get processes with a deterministic spectrum that can follow the dynamics of any eigenvalue process with the form \eqref{eq:gen_dyson}.
 
-\begin{theorem}
+% \begin{theorem}
 
-    Let $Z$ be a process with covariation $\d Z_{ij}\d Z_{kl} = (\delta_{ik}\delta_{jl} + \delta_{il}\delta_{jk} - 2\delta_{ij}\delta_{kl}\delta_{ik} )\d t$ and no finite variation part, which means $Z$ is a symmetric matrix with independent Brownian motions in its entries, except for the diagonal, where $Z_{ii} = 0$. Let $X$ be a matrix valued process such that  $X = \trans H \Lambda H$ and it satisfies the stochastic differential equation
+%     Let $Z$ be a process with covariation $\d Z_{ij}\d Z_{kl} = (\delta_{ik}\delta_{jl} + \delta_{il}\delta_{jk} - 2\delta_{ij}\delta_{kl}\delta_{ik} )\d t$ and no finite variation part, which means $Z$ is a symmetric matrix with independent Brownian motions in its entries, except for the diagonal, where $Z_{ii} = 0$. Let $X$ be a matrix valued process such that  $X = \trans H \Lambda H$ and it satisfies the stochastic differential equation
     
     
+%     \begin{equation}
+%         \trans{H}\d X(t)H = g(X(t)) \d Z(t) h(X(t)) + h(X(t)) \d \trans{Z(t)} g(X(t)) + b(X(t))\d t, \label{eq:deterministic_matrix_diffusion}
+%     \end{equation}
+
+%     Then the eigenvalue process $\Lambda$ satisfies
+
+%     \begin{equation}
+%         \d \lambda_i = \biggl( b(\lambda_i) + \sum_{k\neq i} \frac{G(\lambda_i,\lambda_k)}{\lambda_i - \lambda_k} \biggr)\d t.
+%     \end{equation}
+
+% \end{theorem}
+
+\begin{theorem} \label{thm:deterministic_diffusion}
+    Let $B = (B(t), t\ge 0)$ be a Brownian motion in $\M_{p,p}(\R)$ and $Y(t) = QM\trans{Q}$ be a symmetric $p\times p$ matrix-valued stochastic process satisfying the stochastic differential equation
+
     \begin{equation}
-        \trans{H}\d X(t)H = g(X(t)) \d Z(t) h(X(t)) + h(X(t)) \d \trans{Z(t)} g(X(t)) + b(X(t))\d t, \label{eq:deterministic_matrix_diffusion}
+        \d Y(t) = g(Y(t)) \d B(t) h(Y(t)) + h(Y(t)) \d \trans{B(t)} g(Y(t)) + b(Y(t))\d t, \label{eq:matrix_diffusion}
     \end{equation}
 
-    Then the eigenvalue process $\Lambda$ satisfies
+    where $g,h,b$ are real functions acting spectrally, and $Y(0)$ is a symmetric $p\times p$ matrix with $p$ different eigenvalues.
+
+    Let $G(x,y) = g^2(x)h^2(y) + g^2(y)h^2(x)$, $\tau$ be defined as in \eqref{eq:collision_time}, and take a process $X = (X(t), t\ge 0)$ with diagonalization $X = H \Lambda \trans{H}$ such that $\trans H \circ \d \circ \Lambda H$ has the same off-diagonal entries as $\trans Q \circ \d M \circ Q$ and has diagonal entries equal to zero.
+    
+    Then, for $t < \tau$ the eigenvalue process $\Lambda(t)$ verifies the following system of stochastic differential equations:
 
     \begin{equation}
-        \d \lambda_i = \biggl( b(\lambda_i) + \sum_{k\neq i} \frac{G(\lambda_i,\lambda_k)}{\lambda_i - \lambda_k} \biggr)\d t.
+        \d \lambda_i = \biggl( b(\lambda_i) + \sum_{k\neq i} \frac{G(\lambda_i,\lambda_k)}{\lambda_i - \lambda_k} \biggr)\d t, \label{eq:gen_dyson}
     \end{equation}
-
 \end{theorem}
 
-\begin{proof}
 
+\begin{proof}
+    
 \end{proof}
 
 
