@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.7.30)  31 JUL 2024 11:32
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.7.30)  31 JUL 2024 18:11
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1165,31 +1165,24 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-7.48724pt}.
 
 [56]
-Overfull \hbox (4.9103pt too wide) detected at line 482
-[]
- []
-
-
-Overfull \hbox (78.63954pt too wide) detected at line 499
+Overfull \hbox (4.9103pt too wide) detected at line 517
 []
  []
 
 
 
 [57]
-Overfull \hbox (12.84845pt too wide) detected at line 526
+Overfull \hbox (78.63954pt too wide) detected at line 534
 []
  []
 
 
-Overfull \hbox (12.67249pt too wide) detected at line 539
+Overfull \hbox (12.84845pt too wide) detected at line 561
 []
  []
 
 
-Overfull \hbox (31.40332pt too wide) detected at line 563
-[]
- []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
@@ -1201,24 +1194,32 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-7.48724pt}.
 
 [58]
-Overfull \hbox (41.11465pt too wide) detected at line 570
+Overfull \hbox (12.67249pt too wide) detected at line 574
 []
  []
 
 
-Overfull \hbox (27.9977pt too wide) detected at line 588
+Overfull \hbox (31.40332pt too wide) detected at line 598
+[]
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[59]
+Overfull \hbox (41.11465pt too wide) detected at line 605
+[]
+ []
+
+
+Overfull \hbox (27.9977pt too wide) detected at line 623
 []
  []
 
 
 Underfull \vbox (badness 2245) has occurred while \output is active []
-
-
-
-[59]
-Overfull \hbox (30.96109pt too wide) in paragraph at lines 601--602
-[]\T1/cmr/m/n/10 (-10) Similarly, we de-fine the re-cip-ro-cal gen-er-al-ized re-cip-ro-cal poly-no-mial as $\OML/cmm/m/it/10 q[]\OT1/cmr/m/n/10 (-10) (\OML/cmm/m/it/10 x; y; z\OT1/cmr/m/n/10 (-10) ) [][]= \OML/cmm/m/it/10 y[]z[]P[]\OT1/cmr/m/n/10 (-10) (\OML/cmm/m/it/10 x; y; z\OT1/cmr/m/n/10 (-10) )$\T1/cmr/m/n/10 (-10) . 
- []
 
 
 
@@ -1230,13 +1231,18 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-7.48724pt}.
 
 [60]
-Overfull \hbox (27.8937pt too wide) detected at line 654
-[]
+Overfull \hbox (30.96109pt too wide) in paragraph at lines 636--637
+[]\T1/cmr/m/n/10 (-10) Similarly, we de-fine the re-cip-ro-cal gen-er-al-ized re-cip-ro-cal poly-no-mial as $\OML/cmm/m/it/10 q[]\OT1/cmr/m/n/10 (-10) (\OML/cmm/m/it/10 x; y; z\OT1/cmr/m/n/10 (-10) ) [][]= \OML/cmm/m/it/10 y[]z[]P[]\OT1/cmr/m/n/10 (-10) (\OML/cmm/m/it/10 x; y; z\OT1/cmr/m/n/10 (-10) )$\T1/cmr/m/n/10 (-10) . 
  []
 
 
 
 [61]
+Overfull \hbox (27.8937pt too wide) detected at line 689
+[]
+ []
+
+
 
 
 Package fancyhdr Warning: \headheight is too small (15.0pt): 
@@ -1247,22 +1253,17 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 
 [62]
 
-LaTeX Warning: Reference `eq:stochastic_jacobi' on page 63 undefined on input line 773.
+[63]
+
+LaTeX Warning: Reference `eq:stochastic_jacobi' on page 64 undefined on input line 808.
 
 
-Overfull \hbox (35.70587pt too wide) detected at line 785
+Overfull \hbox (35.70587pt too wide) detected at line 820
 []
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-
-[63]
-Overfull \hbox (10.8289pt too wide) detected at line 817
-[]
- []
 
 
 
@@ -1274,12 +1275,19 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-7.48724pt}.
 
 [64]
-Overfull \hbox (5.53873pt too wide) detected at line 889
+Overfull \hbox (10.8289pt too wide) detected at line 852
 []
  []
 
 
-Overfull \hbox (70.26935pt too wide) detected at line 904
+
+[65]
+Overfull \hbox (5.53873pt too wide) detected at line 924
+[]
+ []
+
+
+Overfull \hbox (70.26935pt too wide) detected at line 939
 []
  []
 
@@ -1288,7 +1296,16 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-[65])) (main.bbl
+
+Package fancyhdr Warning: \headheight is too small (15.0pt): 
+(fancyhdr)                Make it at least 22.48724pt, for example:
+(fancyhdr)                \setlength{\headheight}{22.48724pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-7.48724pt}.
+
+[66])) (main.bbl
+
+[67]
 
 
 Package fancyhdr Warning: \headheight is too small (15.0pt): 
@@ -1297,7 +1314,9 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-7.48724pt}.
 
-[66]
+[68
+
+]
 LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 29.
  (C:\Program Files\MiKTeX\tex/latex/base\t1cmtt.fd
 File: t1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
@@ -1308,11 +1327,9 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             See the microtype manual for details.
 )
 
-[67
+[69]
 
-]
-
-[68
+[70
 
 ] (main.aux)
  ***********
@@ -1327,24 +1344,24 @@ LaTeX Warning: There were undefined references.
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 8E881CE0A7A6E902047693A6C5717022;7172.
+(rerunfilecheck)             Checksum: A400B3EE80B53E51FF31ACD36713A807;7172.
  )
 (\end occurred inside a group at level 1)
 
 ### semi simple group (level 1) entered at line 107 (\begingroup)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 28613 strings out of 473904
- 523631 string characters out of 5736415
- 1970908 words of memory out of 5000000
- 50341 multiletter control sequences out of 15000+600000
+ 28628 strings out of 473904
+ 523912 string characters out of 5736415
+ 1967908 words of memory out of 5000000
+ 50350 multiletter control sequences out of 15000+600000
  591760 words of font info for 223 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,17n,101p,1137b,1343s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files/MiKTeX/fonts/type1/public/doublestroke/dsrom10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/symbols/msam7.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm7.pfb><C:/Program Files/MiKTeX/fonts/type1/public/rsfs/rsfs10.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfbx0900.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfbx1000.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfbx1200.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfbx1440.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfbx2074.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfbx2488.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfrm0900.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfrm1000.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfrm1200.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfti1000.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sftt1000.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfxc1728.pfb>
-Output written on main.pdf (78 pages, 889037 bytes).
+Output written on main.pdf (80 pages, 895713 bytes).
 PDF statistics:
- 1127 PDF objects out of 1200 (max. 8388607)
- 350 named destinations out of 1000 (max. 500000)
+ 1142 PDF objects out of 1200 (max. 8388607)
+ 356 named destinations out of 1000 (max. 500000)
  58159 words of extra memory for PDF output out of 61914 (max. 10000000)
 

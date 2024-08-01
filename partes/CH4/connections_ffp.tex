@@ -435,13 +435,13 @@ In this section we relate finite free probability to eigenvalue processes. To do
 
 
 \begin{theorem}
-    Let $R$ be a $d\times d$ matrix and $R_{ij}$ be independent Gaussian random variables with mean 0 and variance 1, then
+    Let $R$ be an $n\times n$ matrix and $R_{ij}$ be independent Gaussian random variables with mean 0 and variance 1, then
 
     \begin{equation*}
-        E\left[ \chi_x\left(R\trans{R}\right) \right] = L_d(x),
+        E\left[ \chi_x\left(\trans{R}R\right) \right] = L_n(z),
     \end{equation*}
 
-    \noindent where $L_d(x) = \left( 1 - \frac{\d}{\d x} \right)^d x^d$ is the $d$th Laguerre polynomial.
+    \noindent where $L_n(x) = \left( 1 - \frac{\d}{\d z} \right)^n z^n$ is the $n$th Laguerre polynomial.
 \end{theorem}
 
 \begin{proof}
@@ -454,16 +454,51 @@ In this section we relate finite free probability to eigenvalue processes. To do
     The corresponding entries are
 
     \begin{equation*}
-        (L_\beta)_{11} = \xi^2_{n\beta}, \qquad (L_\beta)_{12} = \xi_{n\beta}(\xi_{\beta(m-1)} + \xi_{n\beta - \beta}),
+        (L_\beta)_{11} = \xi^2_{n\beta} + \xi^2_{\beta(m-1)}, \qquad (L_\beta)_{12} = \xi_{\beta(n-1)}\xi_{\beta(m-1)},
     \end{equation*}
 
     \noindent with this the expected characteristic polynomial satisfies the recursion
 
+    \begin{align} \label{eq:laguerre_recursion}
+        \E{P_n(z)} &= \E{ (z - \xi^2_{n\beta} - \xi^2_{\beta(m-1)})P_{n-1}(z) - \xi^2_{\beta(n-1)}\xi_{\beta(m-1)}^2 P_{n-2}(z) },\\ 
+        &= (z - \beta(n - m + 1))\E{P_{n-1}(z)} - \beta^2(n-1)(m-1)P_{n-2}(z).
+    \end{align}
+
+    Which is satisfied by the Laguerre polynomials.\todo{Mostrar que los polinomios de Laguerre satisfacen ests recursión cuando los introduzca} By finding the cases $n=2$ and $n=3$, then using a recursive argument, we finish the proof.
+
+    The case $n=1$ is trivial because in this case $G$ is an univariate Gaussian random variable, so $\trans{G}G = G^2$ is a chi-squared random variable and $P_1(z) = z - 1$. For the case $n=2$ we have
+
     \begin{align*}
-        \E{P_n(z)} &= \E{ (z - \xi^2_{n\beta})P_{n-1}(z) - \xi^2_{n\beta}(\xi_{\beta(m-1)} + \xi_{n\beta - \beta})^2 P_{n-2}(z) }, \\ 
-        &= (z - n\beta)\E{P_{n-1}(z)} - n\beta(\beta(m-1) + n\beta- \beta)2\E{ \xi_{\beta(m-1)} \xi_{n\beta - \beta} })\E{P_{n-2}(z)}
+        P_2(z) &= \det[zI - \trans{G}G] = \det\begin{bmatrix}
+            z- g_1^2 - g_2^2 & -g_1g_3 - g_2 g_4 \\
+            - g_1g_3 - g_2 g_4 & z - g_3^2 - g_4^2
+        \end{bmatrix}, \\
+        &= z^2 - z(g_1^2 + g_2^2 + g_3^2 + g_4^2) +g_1^2 g_3^2 + g_2^2g_4^2 -2g_1g_2g_3g_4.
+    \end{align*}
+
+    Taking expectation leads to $P_z(z) = z^2 - 4z + 2$. The rest of the polynomials are found using recursion \eqref{eq:laguerre_recursion}.
+\end{proof}
+
+\begin{theorem}
+    Let $B$ be an $n\times n$ matrix and $R_{ij}$ be independent standard Brownian motions, then 
+
+    \begin{equation*}
+        E\left[ \chi_z\left( \trans{B}B\right) \right] = L_n(z,t),
+    \end{equation*}
+
+    \noindent where $L_n(z,t) = \left( 1 - t\frac{\d}{\d z} \right)^n z^n$ is the $n$th Laguerre polynomial with variance $t$.
+\end{theorem}
+
+\begin{proof}
+    Let $G$ be an $n\times n$ matrix of independent standard Gaussian random variables, so $B \overset{d}{=} \sqrt{t}G$ and this means $\trans{B}B \overset{d}{=} t \trans G G$, it follows that
+
+    \begin{align*}
+        \E{\det[zI - \trans B B]} &= \E{\det[zI - t \trans G G]} = t^n \E{\frac zt I - \trans GG]}, \\
+        &= t^n \left(1 - \frac{\d }{\d (z/t)}\right)^n\left[ \frac{z}{t}^n\right] = t^n\sum_{k=0}^n (-1)^k \binom nk \frac{n!}{(n-k)!} \left(\frac zt\right)^{n-k},\\
+        &= \sum_{k=0}^n (-t)^k \binom nk \frac{n!}{(n-k)!} z^{n-k} = \left( 1 - t\frac{\d}{\d z} \right)^n z^n.
     \end{align*}
 \end{proof}
+
 
 \begin{theorem}
     Let $c>0$ and $P(t,z) \coloneqq \left( 1 - ct\partial_z \right)^n [z^n]$, with $t\ge 0, z \in \C$, then $P(t,z)$ satisfies the following differential equation
