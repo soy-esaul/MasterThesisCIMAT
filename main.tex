@@ -1,4 +1,4 @@
-\documentclass[letterpaper,10pt,twoside]{book}  % book class
+\documentclass[a4paper,10pt,twoside]{book}  % book class
 %\usepackage[spanish,es-nodecimaldot,es-tabla]{babel} % language/hyphenation
 \usepackage[utf8]{inputenc}  % input encoding
 \usepackage{graphicx} % graphics library (REQUIRED by CIMATpreamble)
@@ -6,20 +6,20 @@
 \usepackage{CIMATpreamble}  % definition of the CIMAT cover page
 \graphicspath{{img/}}  % set path for images folder
 
-% Tipografía 
-
-%\usepackage[default]{lato}
-%\usepackage[libertine,cmintegrals,cmbraces,vvarbb]{newtxmath}
-%\usepackage[sc]{mathpazo}
 
 % \let\Bbbk\relax
 % \let\openbox\relax
 \usepackage{mypreamble} % custom preamble
 
+% Fuente para bibliografía con biblatex
+\addbibresource{ref_tesis.bib} 
+
 
 \usepackage{todonotes}
 %[disable]{todonotes}
 \usepackage{mathrsfs}
+
+%\input{formato}
 
 \usepackage[activate={true,nocompatibility},final,tracking=true,kerning=true,spacing=true,factor=1100,stretch=10,shrink=10]{microtype}
 
@@ -81,9 +81,11 @@
   \thispagestyle{empty}
 \end{flushright}
 
+
+
 % Abstract
 \chapter*{Abstract}
-\addcontentsline{toc}{chapter}{Abstract}
+\addcontentsline{toc}{chapter}{Abstract} 
 
 
 
@@ -109,23 +111,24 @@ A mis padres \ldots
 % put the content of your chapters in the .tex files located in the 'chapters/' folder; 
 % the use of '\include' instead of '\input' command could enhance the  compilation process, see the reference below
 
-%\input{partes/Borradores.tex}
+\include{partes/Preliminares.tex}
 
-\input{partes/Preliminares.tex}
+\include{partes/CH2.tex}
 
-\input{partes/CH2.tex}
+\include{partes/CH3.tex}
 
-\input{partes/CH3.tex}
-
-\input{partes/CH4.tex}
+\include{partes/CH4.tex}
 
 
-% Bibliography
-\bibliographystyle{apacite}  % APA style according to apacite package: see mypreamble.sty line 21
-\bibliography{ref_tesis.bib}
+% Bibliography with Natbib
+%\bibliographystyle{apacite}  % APA style according to apacite package: see mypreamble.sty line 21
+%\bibliography{ref_tesis.bib}
+
+% Bibliography with Biblatex
+\printbibliography[heading=bibintoc]
 
 % Appendix
-% \appendix
+%\appendix
 
 \backmatter
 

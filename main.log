@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.7.30)  31 JUL 2024 18:11
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.7.30)  31 JUL 2024 20:08
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -530,30 +530,263 @@ Package `listing', V1.2, <1999/05/25>
 Package: setspace 2022/12/04 v6.7b set line spacing
 ) (C:\Program Files\MiKTeX\tex/latex/doublestroke\dsfont.sty
 Package: dsfont 1995/08/01 v0.1 Double stroke roman fonts
-) (C:\Program Files\MiKTeX\tex/latex/apacite\apacite.sty
-Package: apacite 2013/07/21 v6.03 APA citation
-\c@BibCnt=\count324
-\bibleftmargin=\skip70
-\bibindent=\skip71
-\bibparsep=\skip72
-\bibitemsep=\skip73
-\biblabelsep=\skip74
-) (C:\Users\Esaul\AppData\Roaming\MiKTeX\tex/latex/natbib\natbib.sty
-Package: natbib 2010/09/13 8.31b (PWD, AO)
-\bibhang=\skip75
-\bibsep=\skip76
-LaTeX Info: Redefining \cite on input line 694.
-\c@NAT@ctr=\count325
+) (C:\Program Files\MiKTeX\tex/latex/biblatex\biblatex.sty
+Package: biblatex 2024/03/21 v3.20 programmable bibliographies (PK/MW)
+ (C:\Program Files\MiKTeX\tex/latex/logreq\logreq.sty
+Package: logreq 2010/08/04 v1.0 xml request logger
+\lrq@indent=\count324
+ (C:\Program Files\MiKTeX\tex/latex/logreq\logreq.def
+File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
+)) (C:\Program Files\MiKTeX\tex/latex/base\ifthen.sty
+Package: ifthen 2024/03/16 v1.1e Standard LaTeX ifthen package (DPC)
 )
-LaTeX Info: Redefining \BBA on input line 23.
- (C:\Program Files\MiKTeX\tex/latex/tocbibind\tocbibind.sty
-Package: tocbibind 2010/10/13 v1.5k extra ToC listings
-Package tocbibind Info: The document has chapter divisions on input line 50.
+\c@tabx@nest=\count325
+\c@listtotal=\count326
+\c@listcount=\count327
+\c@liststart=\count328
+\c@liststop=\count329
+\c@citecount=\count330
+\c@citetotal=\count331
+\c@multicitecount=\count332
+\c@multicitetotal=\count333
+\c@instcount=\count334
+\c@maxnames=\count335
+\c@minnames=\count336
+\c@maxitems=\count337
+\c@minitems=\count338
+\c@citecounter=\count339
+\c@maxcitecounter=\count340
+\c@savedcitecounter=\count341
+\c@uniquelist=\count342
+\c@uniquename=\count343
+\c@refsection=\count344
+\c@refsegment=\count345
+\c@maxextratitle=\count346
+\c@maxextratitleyear=\count347
+\c@maxextraname=\count348
+\c@maxextradate=\count349
+\c@maxextraalpha=\count350
+\c@abbrvpenalty=\count351
+\c@highnamepenalty=\count352
+\c@lownamepenalty=\count353
+\c@maxparens=\count354
+\c@parenlevel=\count355
+\blx@tempcnta=\count356
+\blx@tempcntb=\count357
+\blx@tempcntc=\count358
+\c@blx@maxsection=\count359
+\blx@maxsegment@0=\count360
+\blx@notetype=\count361
+\blx@parenlevel@text=\count362
+\blx@parenlevel@foot=\count363
+\blx@sectionciteorder@0=\count364
+\blx@sectionciteorderinternal@0=\count365
+\blx@entrysetcounter=\count366
+\blx@biblioinstance=\count367
+\labelnumberwidth=\skip70
+\labelalphawidth=\skip71
+\biblabelsep=\skip72
+\bibitemsep=\skip73
+\bibnamesep=\skip74
+\bibinitsep=\skip75
+\bibparsep=\skip76
+\bibhang=\skip77
+\blx@bcfin=\read4
+\blx@bcfout=\write4
+\blx@langwohyphens=\language79
+\c@mincomprange=\count368
+\c@maxcomprange=\count369
+\c@mincompwidth=\count370
+Package biblatex Info: Trying to load biblatex default data model...
+Package biblatex Info: ... file 'blx-dm.def' found.
+ (C:\Program Files\MiKTeX\tex/latex/biblatex\blx-dm.def
+File: blx-dm.def 2024/03/21 v3.20 biblatex datamodel (PK/MW)
+)
+Package biblatex Info: Trying to load biblatex style data model...
+Package biblatex Info: ... file 'nature.dbx' not found.
+Package biblatex Info: Trying to load biblatex custom data model...
+Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
+\c@afterword=\count371
+\c@savedafterword=\count372
+\c@annotator=\count373
+\c@savedannotator=\count374
+\c@author=\count375
+\c@savedauthor=\count376
+\c@bookauthor=\count377
+\c@savedbookauthor=\count378
+\c@commentator=\count379
+\c@savedcommentator=\count380
+\c@editor=\count381
+\c@savededitor=\count382
+\c@editora=\count383
+\c@savededitora=\count384
+\c@editorb=\count385
+\c@savededitorb=\count386
+\c@editorc=\count387
+\c@savededitorc=\count388
+\c@foreword=\count389
+\c@savedforeword=\count390
+\c@holder=\count391
+\c@savedholder=\count392
+\c@introduction=\count393
+\c@savedintroduction=\count394
+\c@namea=\count395
+\c@savednamea=\count396
+\c@nameb=\count397
+\c@savednameb=\count398
+\c@namec=\count399
+\c@savednamec=\count400
+\c@translator=\count401
+\c@savedtranslator=\count402
+\c@shortauthor=\count403
+\c@savedshortauthor=\count404
+\c@shorteditor=\count405
+\c@savedshorteditor=\count406
+\c@labelname=\count407
+\c@savedlabelname=\count408
+\c@institution=\count409
+\c@savedinstitution=\count410
+\c@lista=\count411
+\c@savedlista=\count412
+\c@listb=\count413
+\c@savedlistb=\count414
+\c@listc=\count415
+\c@savedlistc=\count416
+\c@listd=\count417
+\c@savedlistd=\count418
+\c@liste=\count419
+\c@savedliste=\count420
+\c@listf=\count421
+\c@savedlistf=\count422
+\c@location=\count423
+\c@savedlocation=\count424
+\c@organization=\count425
+\c@savedorganization=\count426
+\c@origlocation=\count427
+\c@savedoriglocation=\count428
+\c@origpublisher=\count429
+\c@savedorigpublisher=\count430
+\c@publisher=\count431
+\c@savedpublisher=\count432
+\c@language=\count433
+\c@savedlanguage=\count434
+\c@origlanguage=\count435
+\c@savedoriglanguage=\count436
+\c@pageref=\count437
+\c@savedpageref=\count438
+\shorthandwidth=\skip78
+\shortjournalwidth=\skip79
+\shortserieswidth=\skip80
+\shorttitlewidth=\skip81
+\shortauthorwidth=\skip82
+\shorteditorwidth=\skip83
+\locallabelnumberwidth=\skip84
+\locallabelalphawidth=\skip85
+\localshorthandwidth=\skip86
+\localshortjournalwidth=\skip87
+\localshortserieswidth=\skip88
+\localshorttitlewidth=\skip89
+\localshortauthorwidth=\skip90
+\localshorteditorwidth=\skip91
+Package biblatex Info: Trying to load compatibility code...
+Package biblatex Info: ... file 'blx-compat.def' found.
+ (C:\Program Files\MiKTeX\tex/latex/biblatex\blx-compat.def
+File: blx-compat.def 2024/03/21 v3.20 biblatex compatibility (PK/MW)
+)
+Package biblatex Info: Trying to load BibTeX backend compatibility...
+Package biblatex Info: ... file 'blx-bibtex.def' found.
+ (C:\Program Files\MiKTeX\tex/latex/biblatex\blx-bibtex.def
+File: blx-bibtex.def 2024/03/21 v3.20 biblatex compatibility (PK/MW)
 
 
-Package tocbibind Note: Using chapter style headings, unless overridden.
+Package biblatex Warning: Using fall-back bibtex backend:
+(biblatex)                functionality may be reduced/unavailable.
 
-) (C:\Program Files\MiKTeX\tex/latex/booktabs\booktabs.sty
+)
+Package biblatex Info: Trying to load generic definitions...
+Package biblatex Info: ... file 'biblatex.def' found.
+ (C:\Program Files\MiKTeX\tex/latex/biblatex\biblatex.def
+File: biblatex.def 2024/03/21 v3.20 biblatex compatibility (PK/MW)
+\c@textcitecount=\count439
+\c@textcitetotal=\count440
+\c@textcitemaxnames=\count441
+\c@biburlbigbreakpenalty=\count442
+\c@biburlbreakpenalty=\count443
+\c@biburlnumpenalty=\count444
+\c@biburlucpenalty=\count445
+\c@biburllcpenalty=\count446
+\biburlbigskip=\muskip19
+\biburlnumskip=\muskip20
+\biburlucskip=\muskip21
+\biburllcskip=\muskip22
+\c@smartand=\count447
+)
+Package biblatex Info: Trying to load bibliography style 'nature'...
+Package biblatex Info: ... file 'nature.bbx' found.
+ (C:\Program Files\MiKTeX\tex/latex/biblatex-nature\nature.bbx
+File: nature.bbx 2020/12/30 v1.3d biblatex bibliography style
+Package biblatex Info: Trying to load bibliography style 'numeric-comp'...
+Package biblatex Info: ... file 'numeric-comp.bbx' found.
+ (C:\Program Files\MiKTeX\tex/latex/biblatex/bbx\numeric-comp.bbx
+File: numeric-comp.bbx 2024/03/21 v3.20 biblatex bibliography style (PK/MW)
+Package biblatex Info: Trying to load bibliography style 'numeric'...
+Package biblatex Info: ... file 'numeric.bbx' found.
+ (C:\Program Files\MiKTeX\tex/latex/biblatex/bbx\numeric.bbx
+File: numeric.bbx 2024/03/21 v3.20 biblatex bibliography style (PK/MW)
+Package biblatex Info: Trying to load bibliography style 'standard'...
+Package biblatex Info: ... file 'standard.bbx' found.
+ (C:\Program Files\MiKTeX\tex/latex/biblatex/bbx\standard.bbx
+File: standard.bbx 2024/03/21 v3.20 biblatex bibliography style (PK/MW)
+\c@bbx:relatedcount=\count448
+\c@bbx:relatedtotal=\count449
+))))
+Package biblatex Info: Trying to load citation style 'nature'...
+Package biblatex Info: ... file 'nature.cbx' found.
+ (C:\Program Files\MiKTeX\tex/latex/biblatex-nature\nature.cbx
+File: nature.cbx 2020/12/30 v1.3d biblatex citation style
+Package biblatex Info: Trying to load citation style 'numeric-comp'...
+Package biblatex Info: ... file 'numeric-comp.cbx' found.
+ (C:\Program Files\MiKTeX\tex/latex/biblatex/cbx\numeric-comp.cbx
+File: numeric-comp.cbx 2024/03/21 v3.20 biblatex citation style (PK/MW)
+\c@cbx@tempcnta=\count450
+\c@cbx@tempcntb=\count451
+\c@cbx@tempcntc=\count452
+\c@cbx@tempcntd=\count453
+Package biblatex Info: Redefining '\cite'.
+Package biblatex Info: Redefining '\parencite'.
+Package biblatex Info: Redefining '\footcite'.
+Package biblatex Info: Redefining '\footcitetext'.
+Package biblatex Info: Redefining '\smartcite'.
+Package biblatex Info: Redefining '\supercite'.
+Package biblatex Info: Redefining '\textcite'.
+Package biblatex Info: Redefining '\textcites'.
+Package biblatex Info: Redefining '\cites'.
+Package biblatex Info: Redefining '\parencites'.
+Package biblatex Info: Redefining '\smartcites'.
+))
+Package biblatex Info: Trying to load configuration file...
+Package biblatex Info: ... file 'biblatex.cfg' found.
+ (C:\Program Files\MiKTeX\tex/latex/biblatex\biblatex.cfg
+File: biblatex.cfg 
+)
+Package biblatex Info: Input encoding 'utf8' detected.
+Package biblatex Info: Document encoding is UTF8 ....
+ (C:\Program Files\MiKTeX\tex/latex/l3kernel\expl3.sty
+Package: expl3 2024-05-27 L3 programming layer (loader) 
+ (C:\Program Files\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
+File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count454
+\l__pdf_internal_box=\box69
+))
+Package biblatex Info: ... and expl3
+(biblatex)             2024-05-27 L3 programming layer (loader) 
+(biblatex)             is new enough (at least 2020/04/06),
+(biblatex)             setting 'casechanger=expl3'.
+ (C:\Program Files\MiKTeX\tex/latex/biblatex\blx-case-expl3.sty (C:\Program Files\MiKTeX\tex/latex/l3packages/xparse\xparse.sty
+Package: xparse 2024-05-08 L3 Experimental document command parser
+)
+Package: blx-case-expl3 2024/03/21 v3.20 expl3 case changing code for biblatex
+)) (C:\Program Files\MiKTeX\tex/latex/booktabs\booktabs.sty
 Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \heavyrulewidth=\dimen281
 \lightrulewidth=\dimen282
@@ -565,54 +798,52 @@ Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \cmidrulesep=\dimen288
 \cmidrulekern=\dimen289
 \defaultaddspace=\dimen290
-\@cmidla=\count326
-\@cmidlb=\count327
+\@cmidla=\count455
+\@cmidlb=\count456
 \@aboverulesep=\dimen291
 \@belowrulesep=\dimen292
-\@thisruleclass=\count328
-\@lastruleclass=\count329
+\@thisruleclass=\count457
+\@lastruleclass=\count458
 \@thisrulewidth=\dimen293
 )
-\c@theorem=\count330
-\c@definition=\count331
-\c@example=\count332
+\c@theorem=\count459
+\c@definition=\count460
+\c@example=\count461
 ) (C:\Program Files\MiKTeX\tex/latex/todonotes\todonotes.sty
 Package: todonotes 2024/01/05 v1.1.7 Todonotes source and documentation.
 Package: todonotes 2024/01/05
- (C:\Program Files\MiKTeX\tex/latex/base\ifthen.sty
-Package: ifthen 2024/03/16 v1.1e Standard LaTeX ifthen package (DPC)
-) (C:\Program Files\MiKTeX\tex/latex/xkeyval\xkeyval.sty
+ (C:\Program Files\MiKTeX\tex/latex/xkeyval\xkeyval.sty
 Package: xkeyval 2022/06/16 v2.9 package option processing (HA)
  (C:\Program Files\MiKTeX\tex/generic/xkeyval\xkeyval.tex (C:\Program Files\MiKTeX\tex/generic/xkeyval\xkvutils.tex
 \XKV@toks=\toks51
 \XKV@tempa@toks=\toks52
 )
-\XKV@depth=\count333
+\XKV@depth=\count462
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 )) (C:\Program Files\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarypositioning.code.tex
 File: tikzlibrarypositioning.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ) (C:\Program Files\MiKTeX\tex/latex/tools\calc.sty
 Package: calc 2023/07/08 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count334
-\calc@Bcount=\count335
+\calc@Acount=\count463
+\calc@Bcount=\count464
 \calc@Adimen=\dimen294
 \calc@Bdimen=\dimen295
-\calc@Askip=\skip77
-\calc@Bskip=\skip78
+\calc@Askip=\skip92
+\calc@Bskip=\skip93
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count336
-\calc@Cskip=\skip79
+\calc@Ccount=\count465
+\calc@Cskip=\skip94
 )
-\c@@todonotes@numberoftodonotes=\count337
+\c@@todonotes@numberoftodonotes=\count466
 ) (C:\Users\Esaul\AppData\Roaming\MiKTeX\tex/latex/jknappen\mathrsfs.sty
 Package: mathrsfs 1996/01/01 Math RSFS package v1.0 (jk)
 \symrsfs=\mathgroup6
 ) (C:\Users\Esaul\AppData\Roaming\MiKTeX\tex/latex/microtype\microtype.sty
 Package: microtype 2023/03/13 v3.1a Micro-typographical refinements (RS)
 \MT@toks=\toks53
-\MT@tempbox=\box69
-\MT@count=\count338
+\MT@tempbox=\box70
+\MT@count=\count467
 LaTeX Info: Redefining \noprotrusionifhmode on input line 1059.
 LaTeX Info: Redefining \leftprotrusion on input line 1060.
 \MT@prot@toks=\toks54
@@ -620,12 +851,12 @@ LaTeX Info: Redefining \rightprotrusion on input line 1078.
 LaTeX Info: Redefining \textls on input line 1368.
 \MT@outer@kern=\dimen296
 LaTeX Info: Redefining \textmicrotypecontext on input line 1988.
-\MT@listname@count=\count339
+\MT@listname@count=\count468
  (C:\Users\Esaul\AppData\Roaming\MiKTeX\tex/latex/microtype\microtype-pdftex.def
 File: microtype-pdftex.def 2023/03/13 v3.1a Definitions specific to pdftex (RS)
 LaTeX Info: Redefining \lsstyle on input line 902.
 LaTeX Info: Redefining \lslig on input line 902.
-\MT@outer@space=\skip80
+\MT@outer@space=\skip95
 )
 Package microtype Info: Loading configuration file microtype.cfg.
  (C:\Users\Esaul\AppData\Roaming\MiKTeX\tex/latex/microtype\microtype.cfg
@@ -635,26 +866,25 @@ Package: mathtools 2024/03/11 v1.30 mathematical typesetting tools
  (C:\Program Files\MiKTeX\tex/latex/mathtools\mhsetup.sty
 Package: mhsetup 2021/03/18 v1.4 programming setup (MH)
 )
-\g_MT_multlinerow_int=\count340
+\g_MT_multlinerow_int=\count469
 \l_MT_multwidth_dim=\dimen297
-\origjot=\skip81
+\origjot=\skip96
 \l_MT_shortvdotswithinadjustabove_dim=\dimen298
 \l_MT_shortvdotswithinadjustbelow_dim=\dimen299
 \l_MT_above_intertext_sep=\dimen300
 \l_MT_below_intertext_sep=\dimen301
 \l_MT_above_shortintertext_sep=\dimen302
 \l_MT_below_shortintertext_sep=\dimen303
-\xmathstrut@box=\box70
+\xmathstrut@box=\box71
 \xmathstrut@dim=\dimen304
-) (C:\Program Files\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
-File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count341
-\l__pdf_internal_box=\box71
-) (main.aux
+)
+\@quotelevel=\count470
+\@quotereset=\count471
+ (main.aux (partes/Preliminares.aux) (partes/CH2.aux) (partes/CH3.aux) (partes/CH4.aux
 
 LaTeX Warning: Label `eq:matrix_diffusion' multiply defined.
 
-)
+))
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 68.
@@ -677,16 +907,16 @@ LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 68.
 LaTeX Font Info:    ... okay on input line 68.
  (C:\Program Files\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count342
+\scratchcounter=\count472
 \scratchdimen=\dimen305
 \scratchbox=\box72
-\nofMPsegments=\count343
-\nofMParguments=\count344
+\nofMPsegments=\count473
+\nofMParguments=\count474
 \everyMPshowfont=\toks55
-\MPscratchCnt=\count345
+\MPscratchCnt=\count475
 \MPscratchDim=\dimen306
-\MPnumerator=\count346
-\makeMPintoPDFobject=\count347
+\MPnumerator=\count476
+\makeMPintoPDFobject=\count477
 \everyMPtoPDFconversion=\toks56
 ) (C:\Program Files\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -698,25 +928,25 @@ File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
 * driver: pdftex
-* paper: letterpaper
+* paper: a4paper
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * bindingoffset: 17.07164pt
 * modes: twoside 
-* h-part:(L,W,R)=(65.21371pt, 434.18907pt, 97.82057pt)
-* v-part:(T,H,B)=(72.26999pt, 650.43001pt, 72.26999pt)
-* \paperwidth=614.295pt
-* \paperheight=794.96999pt
+* h-part:(L,W,R)=(58.49884pt, 434.18907pt, 87.74832pt)
+* v-part:(T,H,B)=(72.26999pt, 700.50687pt, 72.26999pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
 * \textwidth=434.18907pt
-* \textheight=650.43001pt
-* \oddsidemargin=10.01537pt
-* \evensidemargin=25.55058pt
+* \textheight=700.50687pt
+* \oddsidemargin=3.30049pt
+* \evensidemargin=15.47833pt
 * \topmargin=-30.06749pt
 * \headheight=15.0pt
 * \headsep=18.06749pt
 * \topskip=10.0pt
 * \footskip=25.29494pt
-* \marginparwidth=125.0pt
+* \marginparwidth=115.0pt
 * \marginparsep=7.0pt
 * \columnsep=10.0pt
 * \skip\footins=9.0pt plus 4.0pt minus 2.0pt
@@ -731,18 +961,41 @@ File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 
 Package hyperref Info: Link coloring OFF on input line 68.
 (main.out) (main.out)
-\@outlinefile=\write4
-\openout4 = `main.out'.
+\@outlinefile=\write5
+\openout5 = `main.out'.
 
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: End \AtBeginDocument code.
-\c@maskedRefs=\count348
- (C:\Program Files\MiKTeX\tex/latex/apacite\english.apc
-File: english.apc 2013/07/21 v6.03 apacite language file
-LaTeX Info: Redefining \BPBI on input line 129.
-LaTeX Info: Redefining \BHBI on input line 130.
+Package biblatex Info: Trying to load language 'english'...
+Package biblatex Info: ... file 'english.lbx' found.
+ (C:\Program Files\MiKTeX\tex/latex/biblatex/lbx\english.lbx
+File: english.lbx 2024/03/21 v3.20 biblatex localization (PK/MW)
 )
+Package biblatex Info: Input encoding 'utf8' detected.
+Package biblatex Info: Automatic encoding selection.
+(biblatex)             Assuming data encoding 'utf8'.
+Package biblatex Info: Input encoding 'utf8' detected.
+Package biblatex Info: Data encoding 'utf8' specified.
+(biblatex)             No need to reencode data.
+\openout4 = `main-blx.bib'.
+
+Package biblatex Info: Trying to load bibliographic data...
+Package biblatex Info: ... file 'main.bbl' found.
+ (main.bbl
+
+Package biblatex Warning: BibTeX reported the following issues
+(biblatex)                with 'book:revuzyor':
+(biblatex)                - Can't use 'date' + 'year'.
+
+
+Package biblatex Warning: BibTeX reported the following issues
+(biblatex)                with 'article:dyson':
+(biblatex)                - Can't use 'date' + 'year'.
+
+)
+Package biblatex Info: Reference section=0 on input line 68.
+Package biblatex Info: Reference segment=0 on input line 68.
 LaTeX Info: Redefining \microtypecontext on input line 68.
 Package microtype Info: Applying patch `item' on input line 68.
 Package microtype Info: Applying patch `toc' on input line 68.
@@ -777,16 +1030,16 @@ Package microtype Warning: \nonfrenchspacing is active. Adjustment of
 
 *geometry* verbose mode - [ newgeometry ] result:
 * driver: pdftex
-* paper: letterpaper
+* paper: a4paper
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: twoside 
-* h-part:(L,W,R)=(34.14322pt, 546.00856pt, 34.14322pt)
-* v-part:(T,H,B)=(25.6073pt, 740.90994pt, 28.45274pt)
-* \paperwidth=614.295pt
-* \paperheight=794.96999pt
-* \textwidth=546.00856pt
-* \textheight=740.90994pt
+* h-part:(L,W,R)=(34.14322pt, 529.22144pt, 34.14322pt)
+* v-part:(T,H,B)=(25.6073pt, 790.9868pt, 28.45274pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=529.22144pt
+* \textheight=790.9868pt
 * \oddsidemargin=-38.12677pt
 * \evensidemargin=-38.12677pt
 * \topmargin=-79.73018pt
@@ -794,7 +1047,7 @@ Package microtype Warning: \nonfrenchspacing is active. Adjustment of
 * \headsep=18.06749pt
 * \topskip=10.0pt
 * \footskip=25.29494pt
-* \marginparwidth=125.0pt
+* \marginparwidth=115.0pt
 * \marginparsep=7.0pt
 * \columnsep=10.0pt
 * \skip\footins=9.0pt plus 4.0pt minus 2.0pt
@@ -868,8 +1121,8 @@ Package pdftex.def Info: logos/banner.png  used on input line 72.
 [6
 
 ] (main.toc)
-\tf@toc=\write5
-\openout5 = `main.toc'.
+\tf@toc=\write6
+\openout6 = `main.toc'.
 
 
 
@@ -877,7 +1130,10 @@ Package pdftex.def Info: logos/banner.png  used on input line 72.
 
 [8
 
-] (partes/Preliminares.tex
+]
+\openout2 = `partes/Preliminares.aux'.
+
+ (partes/Preliminares.tex
 Chapter 1.
 (partes/Preliminaries/intro_random_matrices.tex
 
@@ -885,8 +1141,9 @@ Chapter 1.
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.30 
-      [1
+l.36     \end{equation*}
+                         [1
+
 
 ]
 LaTeX Font Info:    Trying to load font information for U+dsrom on input line 77.
@@ -906,8 +1163,8 @@ Package hyperref Info: bookmark level for unknown todo defaults to 0 on input li
 pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.98 \begin{equation*}
-                       [2]
+l.109     \end{equation*}
+                          [2]
 
 [3{C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]) (partes/Preliminaries/stochastic_calculus.tex
 Package microtype Info: Fixing zero \fontdimen 6 for font `U/dsrom/m/n/12'
@@ -945,9 +1202,9 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 [10]
 
-[11]
+[11]) (partes/Preliminaries/non_commutative_probability.tex
 
-[12]) (partes/Preliminaries/non_commutative_probability.tex
+[12]
 
 [13]
 
@@ -957,96 +1214,98 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 [16]
 
-[17]
+[17]))
 
 [18]
+\openout2 = `partes/CH2.aux'.
 
-[19])) (partes/CH2.tex
-
-[20]
+ (partes/CH2.tex
 Chapter 2.
 (partes/CH2/dyson_brownian_motion.tex
-Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[19
 
 
 
-[21
 
 ]
 
+[20]
+Underfull \vbox (badness 5652) has occurred while \output is active []
+
+
+
+[21]
+
 [22]
-Underfull \vbox (badness 4229) has occurred while \output is active []
-
-
 
 [23]
 
 [24]
 
-[25]
+[25]) (partes/CH2/diffusions.tex
 
 [26]
-
-[27]) (partes/CH2/diffusions.tex
-
-[28]
-Underfull \vbox (badness 3417) has occurred while \output is active []
-
-
-
-[29]
 Overfull \hbox (5.27509pt too wide) detected at line 115
 []
  []
 
 
+Underfull \vbox (badness 4699) has occurred while \output is active []
 
-[30]
 
-[31]
+
+[27]
+
+[28]
 Overfull \hbox (3.94907pt too wide) detected at line 224
 []
  []
 
 
 
+[29]
+
+[30]
+
+[31]))
+
 [32]
+\openout2 = `partes/CH3.aux'.
 
-[33]
+ (partes/CH3.tex
+Chapter 3.
+(partes/CH3/convolutions.tex
+Underfull \vbox (badness 1168) has occurred while \output is active []
 
-[34])) (partes/CH3.tex
+
+
+[33
+
+
+
+
+]
+Underfull \vbox (badness 1210) has occurred while \output is active []
+
+
+
+[34]) (partes/CH3/ffp_and_rm.tex
 
 [35]
 
-[36
-
-]
-Chapter 3.
-(partes/CH3/convolutions.tex
+[36]
 
 [37]
 
-[38]) (partes/CH3/ffp_and_rm.tex
-
-[39]
-
-[40]
-
-[41]
-Underfull \vbox (badness 1194) has occurred while \output is active []
-
-
-
-[42]
+[38]
 Overfull \hbox (14.49344pt too wide) detected at line 197
 []
  []
 
 
 
-[43]
-
-[44]
+[39]
 Package microtype Info: Fixing zero \fontdimen 6 for font `U/dsrom/m/n/14.4'
 (microtype)             (new value: 14.4pt) on input line 275.
 
@@ -1064,15 +1323,23 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 
 
-[45])) (partes/CH4.tex
+[40]))
 
-[46]
+[41]
+\openout2 = `partes/CH4.aux'.
+
+ (partes/CH4.tex
+
+[42
+
+
+
+
+]
 Chapter 4.
 (partes/CH4/deterministic_dyson.tex
 
-[47
-
-]) (partes/CH4/deterministic_diffusions.tex
+[43]) (partes/CH4/deterministic_diffusions.tex
 
 
 Package fancyhdr Warning: \headheight is too small (15.0pt): 
@@ -1081,7 +1348,62 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-7.48724pt}.
 
-[48]) (partes/CH4/connections_ffp.tex
+[44]) (partes/CH4/connections_ffp.tex
+
+[45]
+
+
+Package fancyhdr Warning: \headheight is too small (15.0pt): 
+(fancyhdr)                Make it at least 22.48724pt, for example:
+(fancyhdr)                \setlength{\headheight}{22.48724pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-7.48724pt}.
+
+[46]
+
+[47]
+
+
+Package fancyhdr Warning: \headheight is too small (15.0pt): 
+(fancyhdr)                Make it at least 22.48724pt, for example:
+(fancyhdr)                \setlength{\headheight}{22.48724pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-7.48724pt}.
+
+[48]
+
+LaTeX Warning: Command \' invalid in math mode on input line 293.
+
+Missing character: There is no í in font cmr10!
+
+LaTeX Warning: Command \' invalid in math mode on input line 293.
+
+Missing character: There is no í in font cmr10!
+
+LaTeX Warning: Command \' invalid in math mode on input line 293.
+
+Missing character: There is no í in font cmr7!
+
+LaTeX Warning: Command \' invalid in math mode on input line 293.
+
+Missing character: There is no í in font cmr5!
+
+LaTeX Warning: Command \' invalid in math mode on input line 293.
+
+Missing character: There is no í in font cmr10!
+
+LaTeX Warning: Command \' invalid in math mode on input line 293.
+
+Missing character: There is no í in font cmr10!
+
+LaTeX Warning: Command \' invalid in math mode on input line 293.
+
+Missing character: There is no í in font cmr7!
+
+LaTeX Warning: Command \' invalid in math mode on input line 293.
+
+Missing character: There is no í in font cmr5!
+
 
 [49]
 
@@ -1095,6 +1417,11 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 [50]
 
 [51]
+Overfull \hbox (4.9103pt too wide) detected at line 517
+[]
+ []
+
+
 
 
 Package fancyhdr Warning: \headheight is too small (15.0pt): 
@@ -1104,42 +1431,31 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-7.48724pt}.
 
 [52]
+Overfull \hbox (78.63954pt too wide) detected at line 534
+[]
+ []
+
+
+Overfull \hbox (12.84845pt too wide) detected at line 561
+[]
+ []
+
+
 
 [53]
+Overfull \hbox (12.67249pt too wide) detected at line 574
+[]
+ []
 
-LaTeX Warning: Command \' invalid in math mode on input line 293.
 
-Missing character: There is no í in font cmr10!
+Overfull \hbox (31.40332pt too wide) detected at line 598
+[]
+ []
 
-LaTeX Warning: Command \' invalid in math mode on input line 293.
 
-Missing character: There is no í in font cmr10!
-
-LaTeX Warning: Command \' invalid in math mode on input line 293.
-
-Missing character: There is no í in font cmr7!
-
-LaTeX Warning: Command \' invalid in math mode on input line 293.
-
-Missing character: There is no í in font cmr5!
-
-LaTeX Warning: Command \' invalid in math mode on input line 293.
-
-Missing character: There is no í in font cmr10!
-
-LaTeX Warning: Command \' invalid in math mode on input line 293.
-
-Missing character: There is no í in font cmr10!
-
-LaTeX Warning: Command \' invalid in math mode on input line 293.
-
-Missing character: There is no í in font cmr7!
-
-LaTeX Warning: Command \' invalid in math mode on input line 293.
-
-Missing character: There is no í in font cmr5!
-
-Underfull \vbox (badness 2318) has occurred while \output is active []
+Overfull \hbox (41.11465pt too wide) detected at line 605
+[]
+ []
 
 
 
@@ -1151,93 +1467,18 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-7.48724pt}.
 
 [54]
-Underfull \vbox (badness 3954) has occurred while \output is active []
-
-
-
-[55]
-
-
-Package fancyhdr Warning: \headheight is too small (15.0pt): 
-(fancyhdr)                Make it at least 22.48724pt, for example:
-(fancyhdr)                \setlength{\headheight}{22.48724pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-7.48724pt}.
-
-[56]
-Overfull \hbox (4.9103pt too wide) detected at line 517
-[]
- []
-
-
-
-[57]
-Overfull \hbox (78.63954pt too wide) detected at line 534
-[]
- []
-
-
-Overfull \hbox (12.84845pt too wide) detected at line 561
-[]
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-
-
-Package fancyhdr Warning: \headheight is too small (15.0pt): 
-(fancyhdr)                Make it at least 22.48724pt, for example:
-(fancyhdr)                \setlength{\headheight}{22.48724pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-7.48724pt}.
-
-[58]
-Overfull \hbox (12.67249pt too wide) detected at line 574
-[]
- []
-
-
-Overfull \hbox (31.40332pt too wide) detected at line 598
-[]
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-
-[59]
-Overfull \hbox (41.11465pt too wide) detected at line 605
-[]
- []
-
-
 Overfull \hbox (27.9977pt too wide) detected at line 623
 []
  []
 
 
-Underfull \vbox (badness 2245) has occurred while \output is active []
-
-
-
-
-Package fancyhdr Warning: \headheight is too small (15.0pt): 
-(fancyhdr)                Make it at least 22.48724pt, for example:
-(fancyhdr)                \setlength{\headheight}{22.48724pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-7.48724pt}.
-
-[60]
 Overfull \hbox (30.96109pt too wide) in paragraph at lines 636--637
 []\T1/cmr/m/n/10 (-10) Similarly, we de-fine the re-cip-ro-cal gen-er-al-ized re-cip-ro-cal poly-no-mial as $\OML/cmm/m/it/10 q[]\OT1/cmr/m/n/10 (-10) (\OML/cmm/m/it/10 x; y; z\OT1/cmr/m/n/10 (-10) ) [][]= \OML/cmm/m/it/10 y[]z[]P[]\OT1/cmr/m/n/10 (-10) (\OML/cmm/m/it/10 x; y; z\OT1/cmr/m/n/10 (-10) )$\T1/cmr/m/n/10 (-10) . 
  []
 
 
 
-[61]
+[55]
 Overfull \hbox (27.8937pt too wide) detected at line 689
 []
  []
@@ -1251,11 +1492,11 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-7.48724pt}.
 
-[62]
+[56]
 
-[63]
+[57]
 
-LaTeX Warning: Reference `eq:stochastic_jacobi' on page 64 undefined on input line 808.
+LaTeX Warning: Reference `eq:stochastic_jacobi' on page 58 undefined on input line 808.
 
 
 Overfull \hbox (35.70587pt too wide) detected at line 820
@@ -1263,7 +1504,7 @@ Overfull \hbox (35.70587pt too wide) detected at line 820
  []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 2460) has occurred while \output is active []
 
 
 
@@ -1274,14 +1515,14 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-7.48724pt}.
 
-[64]
+[58]
 Overfull \hbox (10.8289pt too wide) detected at line 852
 []
  []
 
 
 
-[65]
+[59]
 Overfull \hbox (5.53873pt too wide) detected at line 924
 []
  []
@@ -1303,9 +1544,9 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-7.48724pt}.
 
-[66])) (main.bbl
+[60]))
 
-[67]
+[61]
 
 
 Package fancyhdr Warning: \headheight is too small (15.0pt): 
@@ -1314,10 +1555,12 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-7.48724pt}.
 
-[68
+[62
+
+
 
 ]
-LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 29.
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 128.
  (C:\Program Files\MiKTeX\tex/latex/base\t1cmtt.fd
 File: t1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
 )
@@ -1325,13 +1568,18 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmtt' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-)
 
-[69]
+Overfull \hbox (17.69778pt too wide) in paragraph at lines 128--128
+[]\T1/cmr/m/n/10 (-10) Marcus, A. W. Poly-no-mial con-vo-lu-tions and (fi-nite) free prob-a-bil-ity. \T1/cmr/m/it/10 (-10) arXiv preprint arXiv:2108.07054
+ []
 
-[70
 
-] (main.aux)
+
+[63]
+
+[64
+
+] (main.aux (partes/Preliminares.aux) (partes/CH2.aux) (partes/CH3.aux) (partes/CH4.aux))
  ***********
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-05-27>
@@ -1344,24 +1592,32 @@ LaTeX Warning: There were undefined references.
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: A400B3EE80B53E51FF31ACD36713A807;7172.
+(rerunfilecheck)             Checksum: 96CF8D7C4650A4D2D4E7F7BDEF6204F6;7182.
+
+Package biblatex Warning: Please (re)run BibTeX on the file(s):
+(biblatex)                main
+(biblatex)                and rerun LaTeX afterwards.
+
+Package logreq Info: Writing requests to 'main.run.xml'.
+\openout1 = `main.run.xml'.
+
  )
 (\end occurred inside a group at level 1)
 
-### semi simple group (level 1) entered at line 107 (\begingroup)
+### semi simple group (level 1) entered at line 109 (\begingroup)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 28628 strings out of 473904
- 523912 string characters out of 5736415
- 1967908 words of memory out of 5000000
- 50350 multiletter control sequences out of 15000+600000
- 591760 words of font info for 223 fonts, out of 8000000 for 9000
+ 35262 strings out of 473904
+ 667813 string characters out of 5736415
+ 1975908 words of memory out of 5000000
+ 56919 multiletter control sequences out of 15000+600000
+ 593420 words of font info for 229 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,17n,101p,1137b,1343s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files/MiKTeX/fonts/type1/public/doublestroke/dsrom10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/symbols/msam7.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm7.pfb><C:/Program Files/MiKTeX/fonts/type1/public/rsfs/rsfs10.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfbx0900.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfbx1000.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfbx1200.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfbx1440.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfbx2074.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfbx2488.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfrm0900.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfrm1000.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfrm1200.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfti1000.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sftt1000.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfxc1728.pfb>
-Output written on main.pdf (80 pages, 895713 bytes).
+ 99i,17n,101p,1970b,1581s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files/MiKTeX/fonts/type1/public/doublestroke/dsrom10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/symbols/msam7.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm7.pfb><C:/Program Files/MiKTeX/fonts/type1/public/rsfs/rsfs10.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfbx0900.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfbx1000.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfbx1200.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfbx1440.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfbx2074.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfbx2488.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfcc1000.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfrm0900.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfrm1000.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfrm1200.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfti1000.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sftt1000.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfxc1728.pfb>
+Output written on main.pdf (74 pages, 893897 bytes).
 PDF statistics:
- 1142 PDF objects out of 1200 (max. 8388607)
- 356 named destinations out of 1000 (max. 500000)
- 58159 words of extra memory for PDF output out of 61914 (max. 10000000)
+ 1091 PDF objects out of 1200 (max. 8388607)
+ 350 named destinations out of 1000 (max. 500000)
+ 62255 words of extra memory for PDF output out of 74296 (max. 10000000)
 

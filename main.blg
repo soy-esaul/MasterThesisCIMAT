@@ -1,60 +1,76 @@
 This is BibTeX, Version 0.99d
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: main.aux
-Reallocating 'name_of_file' (item size: 1) to 8 items.
-The style file: apacite.bst
-Reallocating 'name_of_file' (item size: 1) to 14 items.
+Reallocating 'name_of_file' (item size: 1) to 9 items.
+The style file: biblatex.bst
+Reallocating 'name_of_file' (item size: 1) to 9 items.
+Reallocating 'name_of_file' (item size: 1) to 10 items.
+Reallocating 'name_of_file' (item size: 1) to 24 items.
+A level-1 auxiliary file: partes/Preliminares.aux
+Reallocating 'name_of_file' (item size: 1) to 15 items.
+A level-1 auxiliary file: partes/CH2.aux
+Reallocating 'name_of_file' (item size: 1) to 15 items.
+A level-1 auxiliary file: partes/CH3.aux
+Reallocating 'name_of_file' (item size: 1) to 15 items.
+A level-1 auxiliary file: partes/CH4.aux
 Reallocating 'glb_str_end' (item size: 4) to 20 items.
 Reallocating 'glb_str_ptr' (item size: 4) to 20 items.
 Reallocating 'global_strs' (item size: 1) to 4000000 items.
 Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
 Reallocating 'wiz_functions' (item size: 4) to 6000 items.
 Reallocating 'singl_function' (item size: 4) to 100 items.
 Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Database file #1: main-blx.bib
+Database file #2: ref_tesis.bib
+Biblatex version: 3.20
 Reallocating 'wiz_functions' (item size: 4) to 9000 items.
 Reallocating 'singl_function' (item size: 4) to 100 items.
-Database file #1: ref_tesis.bib
-apacite.bst [2013/07/21 v6.03 APA bibliography style]
-Warning--No journal in article:dyson
-You've used 21 entries,
-            6951 wiz_defined-function locations,
-            1395 strings with 13606 characters,
-and the built_in function-call counts, 35358 in all, are:
-= -- 4485
-> -- 269
-< -- 1529
-+ -- 1485
-- -- 42
-* -- 2117
-:= -- 6244
-add.period$ -- 87
-call.type$ -- 21
-change.case$ -- 359
-chr.to.int$ -- 0
-cite$ -- 43
-duplicate$ -- 878
-empty$ -- 1526
-format.name$ -- 400
-if$ -- 7012
+You've used 22 entries,
+            6402 wiz_defined-function locations,
+            1345 strings with 14588 characters,
+and the built_in function-call counts, 139090 in all, are:
+= -- 10417
+> -- 3167
+< -- 738
++ -- 4164
+- -- 1605
+* -- 8690
+:= -- 14581
+add.period$ -- 0
+call.type$ -- 22
+change.case$ -- 468
+chr.to.int$ -- 120
+cite$ -- 42
+duplicate$ -- 13868
+empty$ -- 12556
+format.name$ -- 1253
+if$ -- 28390
 int.to.chr$ -- 0
-int.to.str$ -- 63
+int.to.str$ -- 58
 missing$ -- 0
-newline$ -- 510
-num.names$ -- 168
-pop$ -- 649
+newline$ -- 601
+num.names$ -- 1151
+pop$ -- 7400
 preamble$ -- 1
-purify$ -- 86
+purify$ -- 560
 quote$ -- 0
-skip$ -- 2526
+skip$ -- 4272
 stack$ -- 0
-substring$ -- 1654
-swap$ -- 535
-text.length$ -- 62
+substring$ -- 18649
+swap$ -- 2918
+text.length$ -- 471
 text.prefix$ -- 0
 top$ -- 1
-type$ -- 1872
-warning$ -- 1
-while$ -- 140
+type$ -- 733
+warning$ -- 0
+while$ -- 1614
 width$ -- 0
-write$ -- 593
-(There was 1 warning)
+write$ -- 580
