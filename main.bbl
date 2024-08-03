@@ -546,24 +546,6 @@
     \field{year}{1939}
   \endentry
 
-  \entry{marcus2021polynomial}{article}{}{}
-    \name{author}{1}{}{%
-      {{hash=MAW}{%
-         family={Marcus},
-         familyi={M\bibinitperiod},
-         given={Adam\bibnamedelima W},
-         giveni={A\bibinitperiod\bibinitdelim W\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{MAW1}
-    \strng{fullhash}{MAW1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{title}{Polynomial convolutions and (finite) free probability}
-    \field{journaltitle}{arXiv preprint arXiv:2108.07054}
-    \field{year}{2021}
-  \endentry
-
   \entry{doumerc2005matrices}{thesis}{}{}
     \name{author}{1}{}{%
       {{hash=DY}{%

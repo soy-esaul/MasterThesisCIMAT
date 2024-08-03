@@ -272,7 +272,9 @@ We denote by $\sigma_k(A)$ the coeficient of of $(-1)^{k}x^{d-k}$ in the charact
     It follows directly from Theorem \ref{thm:implies_symm_mult} and definition of the symmetric multiplicative convolution.
 \end{proof}
 
-\section{The $\mathcal R_d$ transform} 
+\section{The $\mathcal R_n$ finite transform} 
+
+\todo{Introducir la notación de $p(x) \equiv q(x) \mod x^n$.}
 
 Given any polynomial $p(z)$ with order $p$ we can associate an empirical measure $\mu_p$ to its roots $z_i$ given by
 
@@ -286,7 +288,7 @@ This measure is similar to the spectral empirical measure of a random matrix. We
     Let $p$ be a monic polynomial of order $p$ with roots $\{z_i\}_{i=1}^n$, then the Cauchy transform of the empirical measure associated to the roots $z_i$ is given by 
 
     \begin{equation*}
-        G_{\mu_p}(z) \coloneqq \frac1n \sum_{j=1}^n \frac1{z - z_j} = \frac{\partial_z p }{n p}(z).
+        G_{\mu_p}(z) \coloneqq \frac1n \sum_{j=1}^n \frac1{z - z_j} = \frac{\partial_z p }{n p}(z) = \frac1n \partial_z \ln p(z).
     \end{equation*}
 
 \end{lemma}
@@ -311,46 +313,328 @@ This measure is similar to the spectral empirical measure of a random matrix. We
     \end{align*}
 \end{proof}
 
-\begin{definition}[The $\mathcal K_d$ transform \cite{anaya2016cumulantes}]
-    Let $A$ be a $d\times d$ symmetric matrix with real entries. We define the $\mathcal K_d$ transform of its empirical spectral measure $\mu_A$ as 
+\begin{definition}[Legendre's transform]
+    Let $f$ a convex function in a domain $D\subset \R$ and define
+
+    \begin{equation} \label{eq:legendre_set}
+        D^* \coloneqq \left\{ x^* \in \R \mathrel{:} \sup_{x \in D} \{xx^* - f(x)\} < \infty \right\}.
+    \end{equation}
+
+    We define $f^*$ the Legendre transform of $f$ as the function
+
+    \begin{align*}
+        f^* : D^* &\to \R.\\
+        s \mapsto &\sup_{x \in D} \{ xs - f(x) \}.
+    \end{align*}
+\end{definition}
+
+\begin{lemma} \label{lemma:strictly_convex}
+    Let $f$ be a strictly convex function in a domain $D \subset \R$ and such that its derivative exists in a point $x_0 \in D$. Then $\left.\partial_x [f(x)]\right|_{x=x_0} \in D^*$ and 
 
     \begin{equation*}
-        \mathcal K_d^{\mu_A} (s) \coloneqq - \frac{\partial}{\partial s} \ln \norm{ e^{xs} [x I - A] }_d,
+        f^*(f'(x_0)) = x_0 f'(x_0) - f(x_0).
     \end{equation*}
 
-    \noindent where $[x I - A]$ represents the determinant of $xI - A$ and the integration domain for the norm is $(\rho_A, \infty)$.
+    If additionally, $f$ has a second derivative, then the following two results are satisfied
+
+    \begin{align*}
+        (f')^{-1}(x_0) &= (f^*)'(x_0), \\
+        f''((f^*)'(x_0)) &= \frac{1}{(f^*)''(x_0)}.
+    \end{align*}
+\end{lemma}
+
+
+\begin{proof}
+    Since $f$ is strictly convex and differentiable at $x_0$ we have for $x\in D, x\neq x_0$ that 
+    
+    \begin{align*}
+        f(x) &> f(x_0) + (x-x_0)f'(x_0), \\
+        \Rightarrow f(x) -xf'(x_0) &> f(x_0) - x_0 f'(x_0),\\
+        \Rightarrow xf'(x_0) - f(x) &< x_0 f'(x_0) - f(x_0).
+    \end{align*}
+
+    This means that 
+
+    \begin{equation*}
+        \sup_{x\in D}\{ xf'(x_0) - f(x) \} = x_0f'(x_0) - f(x_0) < \infty.
+    \end{equation*}
+
+    Then, by the definition of $D^*$, we have that $f'(x_0) \in D^*$ and the Legendre transform in this point is $f^*(f'(x_0)) = x_0f'(x_0) - f(x_0)$.
+
+    For the second part, if $f$ has a second derivative at $x_0$, differentiate the last equation to find
+
+    \begin{equation*}
+        (f^*)'(f'(x_0))f''(x_0) = x_0 f''(x_0) + f'(x_0) - f'(x_0) = x_0 f''(x_0). 
+    \end{equation*}
+
+    The second derivative $f''(x_0)$ can not be zero because $f$ is strictly convex, so $(f^*)'(f'(x_0)) = z$, which means $f^*$ and $f'$ are inverse under composition (in any point where $f$ is twice differentiable). For the second equation we use the fact that these functions are inverse and derive,
+
+    \begin{align*}
+        f'((f^*)'(z)) &= z,\\
+        \Rightarrow f''((f^*)(x_0))(f^*)''(x_0) &= 1,\\
+        \Rightarrow f''((f^*)(x_0)) &= \frac1{(f^*)''(x_0)}.
+    \end{align*}
+\end{proof}
+
+\begin{lemma} \label{lemma:legendre_transform_norm}
+    Let $D \subset \R$ and $\mu$ a measure that is absolutely continuous with respect to the Lebesgue measure, then for any continuous function $f: D \to \R$ we have that
+
+    \begin{equation*}
+        f^*(s) = \ln \norm{ e^{xs - f(x)} }_{\infty},
+    \end{equation*}
+
+    \noindent for all $s \in D^*$ where the Legendre transform and the norm are taken over $D$.
+\end{lemma}
+
+\begin{proof}
+    We can write $f^*$ as $f^*(s) = \ln(\exp(f^*(s)))$, then
+
+    \begin{align*}
+        f^*(s) &= \ln(\exp(f^*(s))) = \ln \left(\exp\left\{ \sup_{x\in D} \{xs-f(x)\} \right\}\right), \\
+        \intertext{using that $\exp(x)$ is monotone increasing,}
+        &= \ln \left( \sup_{x \in D} \exp(xs - f(x))\right) = \ln \norm{ e^{xs-f(x)} }_{\infty}.
+    \end{align*}
+\end{proof}
+
+\begin{definition}[The $\mathcal K_n$ transform \cite{anaya2016cumulantes}]
+    Let $A$ be an $n\times n$ symmetric matrix with real entries. We define the $\mathcal K_n$ transform of its empirical spectral measure $\mu_A$ as 
+
+    \begin{equation*}
+        \mathcal K_n^{\mu_A} (s) \coloneqq - \frac{\partial}{\partial s} \ln \norm{ e^{xs} \Delta^+ [x I - A]^{\frac1n} }_n,
+    \end{equation*}
+
+    \noindent where $\Delta^+$ represents the normalized determinant
+    
+    \begin{equation*}
+        \Delta^+[A] = \left\{ \begin{array}{cc}
+            \det[A]^{\frac1n} & \text{if $A$ is positive definite,}\\
+            0 & \text{otherwise.}
+        \end{array} \right.
+    \end{equation*}
+    
+    \noindent and the integration domain for the norm is $(\rho_A, \infty)$ with $\rho_A$ the spectral radius of $A$.
 \end{definition}
 
 
-\begin{definition}[The $\mathcal R_d$ transform]
-    Let $A$ be a $d\times d$ symmetric matrix with real entries. We define the $\mathcal R_d$ transform of its empirical spectral measure $\mu_A$ as 
+\begin{definition}[The $\mathcal R_n$ transform]
+    Let $A$ be an $n\times n$ symmetric matrix with real entries. We define the $\mathcal R_n$ transform of its empirical spectral measure $\mu_A$ as 
 
     \begin{equation*}
-        \mathcal R_d^{\mu_A} (s) = \mathcal K_d^{\mu_A} - \left( 1 + \frac1d \right) \frac1s.
+        \mathcal R_n^{\mu_A} (s) = \mathcal K_n^{\mu_A} - \left( 1 + \frac1n \right) \frac1s.
     \end{equation*}
 \end{definition}
 
-\begin{theorem} Let $A$ be a self-adjoint $d \times d$ matrix with empirical spectral distribution $\mu_A$, then
+\begin{theorem} Let $A$ be a self-adjoint $n \times n$ matrix with empirical spectral distribution $\mu_A$, then
 
     \begin{equation*}
-        \lim_{d\to\infty} \mathcal K_d^{\mu_A} (s) = G_{\mu_A}^{-1}(s),
+        \lim_{n\to\infty} \mathcal K_n^{\mu_A} (s) = G_{\mu_A}^{-1}(s),
     \end{equation*}
 \noindent with $s \in (\rho_A, \infty)$ and where $G_{\mu_A}^{-1}(s)$ is the inverse under composition of $G_{\mu_A}(s)$.
 \end{theorem}
 
+\begin{proof}
+    
+    We begin defining the function $g(x) \coloneqq -\ln \Delta^+[xI - A]$ and let $\lambda_1, \dots, \lambda_n$ be the ordered eigenvalues of $A$. When we differentiate $g$ with respect to $x$, we find 
 
-\begin{theorem}[Finite central Limit Theorem \cite{marcus2021polynomial}]
-    Let $p_1, p_2, \dots$ be a sequence of degree $d$ real rooted polynomials with $p_i = \prod_j (x - r_{i,j})$ such that
+    \begin{align*}
+        \partial_x g(x) &= \partial_x \left[-\ln \Delta^+[xI - A]\right] = -\partial_x \ln\left[ \left(\prod_{j=1}^n (x - \lambda_j) \right)^{\frac1n}\right], \\
+        &= -\partial_x \ln \left[ \prod_{j=1}^n (x-\lambda_j)^{\frac1n} \right] = - \partial_x \sum_{j=1}^n \frac1n \ln (x-\lambda_j) = -\frac1n \sum_{j=1}^n  \frac1{x-\lambda_j} = - G_{\mu_A}(x).
+    \end{align*}
+
+    For the second derivative we have
+
+    \begin{align*}
+        \partial_{xx} g(x) = \partial_x \left[ -\frac1n \sum_{j=1}^n  \frac1{x-\lambda_j} \right] = \frac1n \sum_{j=1}^n \frac{1}{(x-\lambda_j)^2} > 0.
+    \end{align*}
+
+    So $g(x)$ is strictly convex and has a second derivative. Using Lemma \ref{lemma:strictly_convex} we find that 
+
+    \begin{equation} \label{eq:inverse_cauchy}
+        (g^*)'(x) = (g')^{-1}(x) = (-G_{\mu_A})^{-1}(x) = G_{\mu_A}^{-1}(-x).
+    \end{equation}
+
+    Now we find $(g^*)'(x)$ with the aide of Lemma \ref{lemma:legendre_transform_norm}.
+
+    \begin{align*}
+        (g^*)'(s) &= \frac{\partial}{\partial s} \ln \norm{ e^{xs} - g(x) }_\infty = \frac{\partial}{\partial s} \ln \norm{ e^{xs} \Delta^+(xI - A) }_\infty.
+    \end{align*}
+
+    Substituting the last in \eqref{eq:inverse_cauchy} we get 
 
     \begin{equation*}
-        \sum_{j} r_{i,j} = 0, \qquad \frac1d \sum_j r^2_{i,j} = \sigma^2,
+        G_{\mu_A}^{-1}(s) = (g^*)'(-s) = -\frac{\partial}{\partial s} \ln \norm{ e^{-xs} \Delta^+(xI - A) }_\infty.
     \end{equation*}
 
-    \noindent for all $i$. Define $q_i(x) = n^{-m/2}p_i(\sqrt{n}x)$, then 
+    On the other hand, the limit of $\mathcal K_n^{\mu_A}$ is 
 
     \begin{equation*}
-        \lim_{n\to\infty} \left( q_1 \boxplus_d \cdots \boxplus_d q_n \right) = \left( \frac{d-1}{\sigma^2} \right)^{-d/2} H_d\left( x \sqrt{\frac{d-1}{\sigma^2}} \right),
+        \lim_{n\to\infty}  \mathcal K_n^{\mu_A}(s) = - \lim_{n\to\infty} \frac{\partial}{\partial s} \ln \norm{ e^{xs}\Delta^+(xI - A) }_n =  -\frac{\partial}{\partial s} \ln \norm{ e^{-xs} \Delta^+(xI - A) }_\infty.
     \end{equation*}
 
-    \noindent with $H_d$ represents the $d$th Hermite polynomial and the constants work to make it monic.
-\end{theorem}
+    This gives the desired result.
+\end{proof}
+
+
+We state without proof the following result. The proof  can be found in \cite{anaya2016cumulantes}.
+
+\begin{lemma}
+    Let $S$ be a multiset of complex numbers and denote by $\abs S=n$ its number of elements with multiplicity. Then exists an unique multiset of complex numbers $T$ such that $\abs{T}=n$ and 
+
+    \begin{equation*}
+        \prod_{s_i \in S} (x-s_i) = \frac 1n \sum_{t_i \in T} (x-t_i)^n.
+    \end{equation*}
+
+    We call such multiset the $U$ transform of $S$.
+\end{lemma}
+
+% \begin{proof}
+%     Expanding the term $(x-t_i)^n$ we get,
+
+%     \begin{equation*}
+%         \frac 1m \sum_{t_i \in T} (x-t_i)^n = \frac 1m \sum_{t_i \in T} \sum_{k=0}^n \binom nk x^{n-k} (-1)^k t_i^k = \sum_{k=0}^n \binom nk x^{n-k} (-1)^k \E{T^k}. 
+%     \end{equation*}
+
+%     Where we use $\E{f(T)}$ to denote the expectation with respect to the empirical distribution associated to the multiset $T$, $\E{f(T)} = \frac1{\abs T} \sum_{t_i \in T} f(t_i)$.
+% \end{proof}
+
+\begin{lemma} \ref{lemma:Utrans_convolution}
+    Let $p,q$ be polynomials with degree $n$ and $U_p,U_q$ be the $U$ transforms of its sets of roots, then
+
+    \begin{equation*}
+        [p \boxplus_n q](x) = \frac1n \sum_{u_j \in U_p, u_k \in U_q} (x - u_j -u_k)^n.
+    \end{equation*}
+\end{lemma}
+
+\begin{proof}
+    Let $p(x) = \sum_{j=0}^n x^{n-j}(-1)^j p_j$. Let $x_i$ be its roots, by definition of the $U$ transform we have,
+
+    \begin{equation*}
+        p(x) = \prod_{j=0}^n (x - x_j) = \frac1n \sum_{u_j \in U_p} (x-u_j)^n = \sum_{j=0}^n x^{n-j} (-1)^j \binom n j \E{U_p^j}.
+    \end{equation*}
+
+    Equating coefficients we find that $p_j = \binom nj\E{U_p^j}$ and the analogous happens for $q_k$. Finally, we find the convolution
+
+    \begin{align*}
+        [p\boxplus_n q](x) &= \sum_{k=0}^n x^{n-k}(-1)^k \sum_{i+j=k} \frac{(n-i)!(n-j)!}{(n-k)!n!} \binom{n}{i}\binom{n}{j} \E{U_p^i} \E{U_q^j},\\
+        &= \sum_{k=0}^n x^{n-k}(-1)^k \sum_{i+j=k} \frac{n!}{i!j!(n-k)!} \E{U_p^i U_q^j}, \\
+        &= \sum_{k=0}^n \binom nk x^{n-k}(-1)^k \sum_{j=0}^k \binom{k}{j}\E{U_p^{k-j} U_q^j}, \\
+        &= \sum_{k=0}^n \binom nk x^{n-k}(-1)^k \E{(U_p + U_q)^k},\\
+        &= \E{ (x - U_p - U_q)^n }. 
+    \end{align*}
+\end{proof}
+
+\begin{lemma}  \label{lemma:quotient_norms}
+    Let $A$ be an $n\times n$ real symmetric matrix. Denote by $\lambda(A)$ its spectrum and by $U_A$ the $U$ transform of $\lambda(A)$, then 
+\todo{Encontrar $R_0^n$}
+    \begin{equation*}
+        \frac{\norm{e^{-xs}\Delta^+(xI - A)}_n^n}{\norm{e^{-xs}\Delta^+(xI)}_n^n} \equiv \frac1n\sum_{u_i \in U_A} e^{-ns u_i} \qquad \mod [s^{n+1}]. 
+    \end{equation*} 
+\end{lemma}
+
+\begin{proof}
+    By definition of the $U$ transform, for any $n\times n$ symmetric matrix $A$ we have
+
+    \begin{equation*}
+        \Delta^+(xI - A)^n = \det[xI - A] = \prod_{j=1}^n (x - \lambda_j) = \frac1n \sum_{u_i \in U_A} (x-u_i)^n.
+    \end{equation*}
+
+    Using this and the previously found result for $\norm{e^{-xs}\Delta^+(xI)}_n^n$ we find
+
+    \begin{align*}
+        \frac{\norm{e^{-xs}\Delta^+(xI - A)}_n^n}{\norm{e^{-xs}\Delta^+(xI)}_n^n} &= \frac{(ns)^{n+1}}{n!}\norm{e^{-xs}\Delta^+(xI - A)}_n^n,\\
+        &= \frac{(ns)^{n+1}}{n!}\int_{\rho_A}^\infty e^{-nxs} \Delta^+(xI - A)^n \d x,\\
+        &= \frac{(ns)^{n+1}}{n!}\int_{\rho_A}^\infty e^{-nxs} \frac1n \sum_{u_i \in U_A} (x-u_i)^n \d x,\\
+        &= \frac{(ns)^{n+1}}{n!}e^{-ns\rho_A}\int_{0}^\infty e^{-nsy} \frac1n \sum_{u_i \in U_A} (y + \rho_A-u_i)^n \d x, \\
+        &= \frac1n \sum_{u_i\in U_A} \frac{(ns)^{n+1}}{n!}e^{-ns\rho_A} \mathcal L\{(y + \rho_A - U_A)^n\}(ns), \\
+        &=  \frac1n \sum_{u_i\in U_A} \frac{(ns)^{n+1}}{n!}e^{-ns\rho_A} \sum_{k=0}^n \binom nk  (\rho_A - u_i)^{n-k}\mathcal L\{y^k\}(ns), \\
+        &= \frac1n \sum_{u_i\in U_A} \frac{(ns)^{n+1}}{n!}e^{-ns\rho_A} \sum_{k=0}^n \frac{n!}{k!(n-k)!}  (\rho_A - u_i)^{n-k}\frac{k!}{(ns)^{k+1}}, \\
+        &= \frac1n \sum_{u_i \in U_A} e^{-ns\rho_A} \sum_{k=0}^n \frac{(ns)^{n-k}(\rho_A - u_i)^{n-k}}{(n-k)!}, \\
+        &\equiv \frac1n \sum_{u_i\in U_A} e^{-ns\rho_A} e^{ns(\rho_A - u_i)}, \quad \mod [s^{n+1}],\\
+        &\equiv \frac1n \sum_{u_i\in U_A} e^{-nsu_i}, \quad \mod [s^{n+1}].
+    \end{align*}
+\end{proof}
+
+\begin{corollary} \label{corollary:R_n_as_a_logarithm}
+    Let $A$ be a an $n\times n$ symmetric matrix with real entries, with spectrum $\lambda(A)$ and $U_A$ be the $U$ transform of $\lambda(A)$, then 
+
+    \begin{equation*}
+        \mathcal R_{n}^{\mu_A}(s) \equiv - \frac1n \frac{\partial}{\partial s} \ln \left(\frac1n \sum_{u_i \in U_A} e^{-nsu_i} \right) \qquad \mod [s^n].
+    \end{equation*}
+\end{corollary}
+
+\begin{proof}
+    Taking logarithm in both sides of Lemma \ref{lemma:quotient_norms} we get 
+
+    \begin{equation*}
+        \ln \left( \frac{\norm{e^{-xs}\Delta^+(xI - A)}_n^n}{\norm{e^{-xs}\Delta^+(xI)}_n^n} \right) \equiv \ln\left( \frac1n\sum_{u_i \in U_A} e^{-ns u_i} \right) \qquad \mod [s^{n+1}].
+    \end{equation*}
+
+    The first $n+1$ coeficientes of the power series coincide, so the first $k$ coefficients of the derivatives also coincide. Now we use the definition of the $\mathcal R_n$ transform
+
+    \begin{align*}
+        \mathcal R_{n}^{\mu_A}(s) &= \mathcal K_{n}^{\mu_A}(s) - \mathcal K_n^{\mu_0}(s), \\
+        &= - \frac{\partial}{\partial s} \ln \norm{ e^{-xs}\Delta^+(xI -A) }_n + \frac{\partial}{\partial s} \ln \norm{ e^{-xs}\Delta^+(xI) }_n,\\
+        &= - \frac1n \frac{\partial}{\partial s} \ln \left( \frac{\norm{e^{-xs}\Delta^+(xI -A)}_n^n}{ \norm{e^{-xs}\Delta^+(xI)}_n^n } \right), \\
+        &\equiv -\frac1n \frac{\partial}{\partial s} \ln \left( \frac1n \sum_{u_i \in U_A} e^{-nsu_i} \right), \qquad \mod[s^n].
+    \end{align*}
+\end{proof}
+
+\begin{lemma}
+    Let $A$ and $B$ be two $n\times n$ real symmetric matrices. The following are equivalents:
+
+    \begin{enumerate}
+        \item \[ \mathcal R_n^{\mu_A}(s) + \mathcal R_n^{\mu_B}(s) = \mathcal R_n^{\mu_{A+B}}(s) \qquad \mod[s^n]. \]
+        \item \[ \det[xI - A] \boxplus_n \det[xI-B] = \det[xI - A - B]. \]
+    \end{enumerate}
+\end{lemma}
+
+\begin{proof}
+    Let us denote by $U_A, U_B$ and $U_{A+B}$ the $U$ transforms of the $\lambda(A), \lambda(B)$ and $\lambda(A+B)$, respectively. By Lemma \ref{lemma:Utrans_convolution}, the second statement is equivalent to 
+
+    \begin{equation*}
+        \E{ (x - U_A - U_B)^n } = \E{ (x - U_{A+B})^n }.
+    \end{equation*}
+
+    Expanding the power and equating terms, the last happens if and only if the first $m$ moments of $U_A + U_B$ and $U_{A+B}$ coincide. This is in turn equivalent to 
+
+    \begin{equation*}
+        \E{e^{-ms(U_A + U_B)}} = \E{e^{-ms(U_A + U_B)}} = \E{ e^{-msU_{A+B}} } \qquad \mod [s^{n+1}].
+    \end{equation*}
+
+    Define the function $f_A(s) \coloneqq - \frac1n \ln \E{ e^{-msU_A} }$ and similarly for $B$ and $A+B$. Using this function, the second statement is equivalent to 
+
+    \begin{equation} \label{eq:f_matrix_module}
+        f_A(s) + f_B(s) \equiv f_{A+B}(s) \qquad \mod [s^{n+1}].
+    \end{equation}
+
+    Using Corollary \ref{corollary:R_n_as_a_logarithm}, the first statement is equivalent to 
+
+    \begin{equation} \label{eq:differential_matrix_module}
+        \frac{\partial}{\partial_s} f_A(s) + \frac{\partial}{\partial_s} f_B(s) \equiv \frac{\partial}{\partial_s} f_{A+B}(s) \qquad \mod[s^n].
+    \end{equation}
+
+    So proving the equivalence of the two statements reduces to prove the equivalence between \eqref{eq:f_matrix_module} and \eqref{eq:differential_matrix_module}. Because the formal series in \eqref{eq:f_matrix_module} coincide up to the $n+1$th term, the derivatives coincide up to the $n$th term, so one implication is trivial. For the second implication, it suffices to prove that $f_A(0) + f_B(0) = f_{A+B}(0)$, but we have that $f_A(0)=f_B(0)=f_{A+B}(0)$, so the result follows.
+\end{proof} \todo{Mencionar caso multiplicativo.}
+
+
+
+
+
+
+
+
+% \begin{theorem}[Finite central Limit Theorem \cite{marcus2021polynomial}]
+%     Let $p_1, p_2, \dots$ be a sequence of degree $d$ real rooted polynomials with $p_i = \prod_j (x - r_{i,j})$ such that
+
+%     \begin{equation*}
+%         \sum_{j} r_{i,j} = 0, \qquad \frac1d \sum_j r^2_{i,j} = \sigma^2,
+%     \end{equation*}
+
+%     \noindent for all $i$. Define $q_i(x) = n^{-m/2}p_i(\sqrt{n}x)$, then 
+
+%     \begin{equation*}
+%         \lim_{n\to\infty} \left( q_1 \boxplus_d \cdots \boxplus_d q_n \right) = \left( \frac{d-1}{\sigma^2} \right)^{-d/2} H_d\left( x \sqrt{\frac{d-1}{\sigma^2}} \right),
+%     \end{equation*}
+
+%     \noindent with $H_d$ represents the $d$th Hermite polynomial and the constants work to make it monic.
+% \end{theorem}

@@ -32,11 +32,11 @@
 \contentsline {subsubsection}{Laguerre polynomials}{35}{section*.22}%
 \contentsline {subsubsection}{Jacobi polynomials}{35}{section*.23}%
 \contentsline {section}{\numberline {3.2}Minor orthogonality}{35}{section.3.2}%
-\contentsline {section}{\numberline {3.3}The $\mathcal R_d$ transform}{40}{section.3.3}%
-\contentsline {chapter}{\numberline {4}Deterministic eigenvalue processes for matrix valued processes}{43}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Deterministic Dyson Brownian motion}{43}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Deterministic eigenvalue processes for matrix-valued diffusions}{44}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}Wishart process}{45}{subsection.4.2.1}%
-\contentsline {subsection}{\numberline {4.2.2}Jacobi process}{45}{subsection.4.2.2}%
-\contentsline {section}{\numberline {4.3}Connections with finite free probability}{45}{section.4.3}%
-\contentsline {chapter}{Bibliography}{63}{chapter*.34}%
+\contentsline {section}{\numberline {3.3}The $\mathcal R_n$ finite transform}{40}{section.3.3}%
+\contentsline {chapter}{\numberline {4}Deterministic eigenvalue processes for matrix valued processes}{47}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Deterministic Dyson Brownian motion}{47}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Deterministic eigenvalue processes for matrix-valued diffusions}{48}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Wishart process}{49}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Jacobi process}{49}{subsection.4.2.2}%
+\contentsline {section}{\numberline {4.3}Connections with finite free probability}{49}{section.4.3}%
+\contentsline {chapter}{Bibliography}{67}{chapter*.37}%
