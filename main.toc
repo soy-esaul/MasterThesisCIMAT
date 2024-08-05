@@ -23,20 +23,22 @@
 \contentsline {subsection}{\numberline {2.1.2}Complex case}{22}{subsection.2.1.2}%
 \contentsline {subsection}{\numberline {2.1.3}Non-collision of the eigenvalues}{24}{subsection.2.1.3}%
 \contentsline {section}{\numberline {2.2}Generalization for matrix-valued diffusion processes}{26}{section.2.2}%
-\contentsline {chapter}{\numberline {3}Finite Free Probability}{33}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Convolution of polynomials}{33}{section.3.1}%
-\contentsline {subsection}{\numberline {3.1.1}Symmetric additive convolution}{33}{subsection.3.1.1}%
-\contentsline {subsection}{\numberline {3.1.2}Symmetric multiplicative convolution}{34}{subsection.3.1.2}%
-\contentsline {subsection}{\numberline {3.1.3}Orthogonal polynomials}{34}{subsection.3.1.3}%
-\contentsline {subsubsection}{Hermite polynomials}{34}{section*.21}%
-\contentsline {subsubsection}{Laguerre polynomials}{35}{section*.22}%
-\contentsline {subsubsection}{Jacobi polynomials}{36}{section*.23}%
-\contentsline {section}{\numberline {3.2}Minor orthogonality}{36}{section.3.2}%
-\contentsline {section}{\numberline {3.3}The $\mathcal R_n$ finite transform}{41}{section.3.3}%
-\contentsline {chapter}{\numberline {4}Deterministic eigenvalue processes for matrix valued processes}{47}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Deterministic Dyson Brownian motion}{47}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Deterministic eigenvalue processes for matrix-valued diffusions}{48}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}Wishart process}{49}{subsection.4.2.1}%
-\contentsline {subsection}{\numberline {4.2.2}Jacobi process}{49}{subsection.4.2.2}%
-\contentsline {section}{\numberline {4.3}Connections with finite free probability}{49}{section.4.3}%
-\contentsline {chapter}{Bibliography}{67}{chapter*.37}%
+\contentsline {subsection}{\numberline {2.2.1}Wishart process}{32}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Jacobi process}{33}{subsection.2.2.2}%
+\contentsline {chapter}{\numberline {3}Finite Free Probability}{35}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Convolution of polynomials}{35}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Symmetric additive convolution}{35}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}Symmetric multiplicative convolution}{36}{subsection.3.1.2}%
+\contentsline {subsection}{\numberline {3.1.3}Orthogonal polynomials}{36}{subsection.3.1.3}%
+\contentsline {subsubsection}{Hermite polynomials}{36}{section*.22}%
+\contentsline {subsubsection}{Laguerre polynomials}{37}{section*.23}%
+\contentsline {subsubsection}{Jacobi polynomials}{38}{section*.25}%
+\contentsline {section}{\numberline {3.2}Minor orthogonality}{39}{section.3.2}%
+\contentsline {section}{\numberline {3.3}The $\mathcal R_n$ finite transform}{43}{section.3.3}%
+\contentsline {chapter}{\numberline {4}Deterministic eigenvalue processes for matrix valued processes}{49}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Deterministic Dyson Brownian motion}{49}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Deterministic eigenvalue processes for matrix-valued diffusions}{50}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Wishart process}{51}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Jacobi process}{51}{subsection.4.2.2}%
+\contentsline {section}{\numberline {4.3}Connections with finite free probability}{51}{section.4.3}%
+\contentsline {chapter}{Bibliography}{69}{chapter*.39}%

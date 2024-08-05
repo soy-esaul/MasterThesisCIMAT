@@ -426,6 +426,102 @@
 
 
 
-%\subsection{Wishart process}
+\subsection{Wishart process}
 
-%\subsection{Jacobi process}
+
+
+
+
+\begin{corollary}
+    Let $\tilde B = (\tilde B(t), t\ge 0)$ be a Brownian motion in $\mathcal M_{n,m}(\R)$ with $n\ge m$ and define $X = \trans{\tilde B}\tilde B$. Then the eigenvalues of $X$, $\lambda_1 > \lambda_2 > ... > \lambda_n$ are given by the unique strong solution to the following system of stochastic differential equations
+
+    \begin{equation*}
+        \d \lambda_i = 2 \sqrt{\lambda_i} \d W_i + \left(m + \sum_{k\neq i} \frac{\abs{\lambda_i} + \abs{\lambda_k}}{ \lambda_i - \lambda_k} \right) \d t.
+    \end{equation*}
+
+    Morover, if $Y$ is any matrix-valued stochastic process satisfying the stochastic differential equation
+
+    \begin{equation*}
+        \d Y(t) = \sqrt{Y(t)} \d B(t) + \d \trans{B}(t) \sqrt{Y(t)} + \alpha I \d t,
+    \end{equation*}
+
+    with respect to $B = (B(t), t \ge 0)$ a Brownian motion in $\M_{n\times n}(\R)$ and $n\ge p-1$, then its eigenvalues are the unique strong solution to the system of stochastic differential equations
+
+    \begin{equation} \label{eq:wishart}
+        \d \lambda_i = 2 \sqrt{\lambda_i} \d W_i + \left(\alpha + \sum_{k\neq i} \frac{\abs{\lambda_i} + \abs{\lambda_k}}{ \lambda_i - \lambda_k} \right) \d t.
+    \end{equation}
+
+\end{corollary}
+
+\begin{proof}
+
+    We prove first that $X$ satisfies
+
+    \begin{equation*}
+        \d X(t) = \sqrt{X(t)} \d B(t) + \d \trans{B}(t) \sqrt{X(t)} + \alpha I \d t,
+    \end{equation*}
+
+    for an $n\times n$ matrix-valued Brownian motion, and then use Theorem \ref{thm:diffusion_real}. 
+
+    By the matrix Itô formula we have for $X$,
+
+    \begin{equation*}
+        \d X(t) = (\d \trans{\tilde B}(t)) \tilde B(t) + (\trans{\tilde B}(t)) \d B(t) + \d \langle \trans{\tilde B}, \tilde B \rangle(t).
+    \end{equation*}
+
+    For the covariation term we can find
+
+    \begin{align*}
+        \d \langle \trans{\tilde B}, \tilde B \rangle(t)_{ij} &= \sum_{k=1}^m \d \langle \tilde B_{ki}, B_{kj} \rangle(t) = m\delta_{ij} \d t.
+    \end{align*}
+
+    This means $\d \langle \trans{\tilde B}, \tilde B \rangle(t) = m I \d t$.
+
+    For the remaining terms, we find the covariation,
+
+    \begin{equation*}
+        (\trans {\tilde B} \d B)_{ij} (\trans{(\d \tilde B)}B)_{kl} = X_{il}\delta_{jk} \d t,
+    \end{equation*}
+
+    \noindent which in total accounts for 
+
+    \begin{equation*}
+        \d \langle X_{ij}, X_{kl} \rangle(t) = ( X_{ik}\delta_{jl} + X_{il}\delta_{jk} + X_{jk}\delta_{il} + X_{jl}\delta_{ik} )\d t.
+    \end{equation*}
+
+    With this, we can find the quadratic variation for the diagonal and off-diagonal entries of $X$.
+
+    \begin{align*}
+        \d \langle X_{ij}, X_{ij} \rangle (t) &= \left\{ \begin{array}{cc}
+            (X_{ii} + X_{jj})\d t & \text{if $i\neq j$},\\
+            4 X_{ii} \d t & \text{if $i=j$}.
+        \end{array} \right.
+    \end{align*}
+
+    With this covariations, we find that the entries of $\d X$ coincide with those of $\sqrt{X(t)} \d B(t) + \d \trans{B}(t) \sqrt{X(t)} + \alpha I \d t$. Now, in Theorem \ref{thm:diffusion_real} substitute $g(x) = \sqrt{x}, h(x) \equiv 1$ and $b(x) \equiv \alpha$ to find that \eqref{eq:wishart} is satisfied.
+\end{proof}
+
+Using Brownian motions in $\M_{n,m}(\C)$ instead and repeating all the steps we find the corresponding equation for the complex Wishart process. Also, the matrix can be rescaled as in the Dyson Brownian motion case to find a version where the $\beta$ parameter affects the martingale part.
+
+\subsection{Jacobi process}
+
+
+\begin{corollary}
+    Let $X$ be an $n\times n$ matrix valued process satisfying the following stochastic differential equation
+
+    \begin{equation*}
+        \d X (t) = \sqrt{X(t)} \d B(t) \sqrt{I_n - X(t)} + \sqrt{I_n - X(t)} \d B(t) \sqrt{X(t)} + (n_2 I_n - (n_1 + n_2) X(t) ) \d t.
+    \end{equation*}
+
+    Then its eigenvalues are the unique strong solution to the system of stochastic differential equations
+
+    \begin{equation} \label{eq:jacobi}
+        \d \lambda_i = 2 \sqrt{\lambda_i(1-\lambda_i)} \d W_i + \left( n_2 -(n_1 + n_2)\lambda_i + \sum_{k\neq i} \frac{\lambda_i(1-\lambda_k) + \lambda_k(1-\lambda_i)}{\lambda_i - \lambda_k} \right) \d t,
+    \end{equation}
+
+    \noindent where $\left\{ W_{i} \right\}_{i=1}^n$ are $n$ independent standard Brownian motions.
+\end{corollary}
+
+\begin{proof}
+    Let $g(x) = \sqrt{\abs{x}}, h(x) = \sqrt{\abs{1-x}}$ and $b(x) = n_2 - (n_1 + n_2)x$ in \ref{thm:diffusion_real}. \todo{Mencionar en estas pruebas también cómo se da la existencia y unicidad de las soluciones fuertes (por los teoremas probados anteriormente.)}
+\end{proof}
