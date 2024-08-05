@@ -129,6 +129,36 @@ The symmetric additive convolution between two Hermite polynomials with the same
 
 \subsubsection{Laguerre polynomials}
 
+    The Laguerre polynomials are defined by the linear differential operator 
+
+    \begin{equation*}
+        L_n(z) \coloneqq (1 - \partial_z)^n [z^n] \coloneqq \sum_{k=0}^n \binom{n}{k} (-1)^k\partial_z^k[z^n] = \sum_{k=0}^n \binom{n}{k} (-1)^k \frac{n!}{(n-k)!} z^{n-k}. 
+    \end{equation*}
+
+    The generalized Laguerre polynomials also known as time dependent Laguerre polynomials, or Laguerre polynomials with variance are polynomials on $z$ and $t$ defined by the analogous linear operator
+
+    \begin{equation*}
+        L_n(z,t) \coloneqq (1 - t\partial_z)^n [z^n] \coloneqq \sum_{k=0}^n \binom{n}{k} (-t)^k\partial_z^k[z^n] = \sum_{k=0}^n \binom{n}{k} (-t)^k \frac{n!}{(n-k)!} z^{n-k}.
+    \end{equation*}
+
+    We can list the first few time-dependent Laguerre polynomials,
+
+    \begin{align*}
+        L_1(z,t) &= z - t, \\
+        L_2(z,t) &= z^2 - 4tz + 2t^2,\\
+        L_3(z,t) &= z^3 - 9tz^2 - 18t^2z + 6t^3, \\
+        L_4(z,t) &= z^4 - 16tz^3 + 72t^2z^2 - 96t^3z + 24t^4,\\
+        L_5(z,t) &= z^5 - 25tz^4 + 200t^2z^3 - 600t^3z^2 + 600t^4z - 120t^5,\\
+        L_6(z,t) &= z^6 - 36tz^5 + 450t^2z^4 - 2400t^3z^3 + 5400t^4z^2 - 4320t^5z + 720t^6, \\
+        L_7(z,t) &= z^7 - 49tz^6 + 882t^2z^5 -7350t^3z^4 + 29400t^4z^3 - 52920t^5z^2 + 35280t^6z - 5040t^7,\\
+        L_8(z,t) &= z^8 - 64tz^7 + 1568t^2z^6 - 18816t^3z^5 + 117600t^4z^4 - 376320t^5z^3 + 564480t^6z^2 - 322560t^7z + 40320t^8,\\
+        L_9(z,t) &= z^{9}-81tz^{8}+18144t^2z^{7}-42336t^3z^{6}+381024t^4z^{5}-1905120t^5z^{4}+5080320t^6z^{3}-6531840t^7z^{2}\\
+        \phantom{espacioooooooooooo}&+3265920t^8z-362880t^9.
+        %L_{10}(z,t) &= z^{10}-100z^{9}+4050z^{8}-86400z^{7}+1058400z^{6}-7620480z^{5}+31752000z^{4}-72576000z^{3}+81648000z^{2}-36288000z+3628800
+    \end{align*}
+
+
+
 
 
 

@@ -30,9 +30,9 @@
 \contentsline {subsection}{\numberline {3.1.3}Orthogonal polynomials}{34}{subsection.3.1.3}%
 \contentsline {subsubsection}{Hermite polynomials}{34}{section*.21}%
 \contentsline {subsubsection}{Laguerre polynomials}{35}{section*.22}%
-\contentsline {subsubsection}{Jacobi polynomials}{35}{section*.23}%
-\contentsline {section}{\numberline {3.2}Minor orthogonality}{35}{section.3.2}%
-\contentsline {section}{\numberline {3.3}The $\mathcal R_n$ finite transform}{40}{section.3.3}%
+\contentsline {subsubsection}{Jacobi polynomials}{36}{section*.23}%
+\contentsline {section}{\numberline {3.2}Minor orthogonality}{36}{section.3.2}%
+\contentsline {section}{\numberline {3.3}The $\mathcal R_n$ finite transform}{41}{section.3.3}%
 \contentsline {chapter}{\numberline {4}Deterministic eigenvalue processes for matrix valued processes}{47}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Deterministic Dyson Brownian motion}{47}{section.4.1}%
 \contentsline {section}{\numberline {4.2}Deterministic eigenvalue processes for matrix-valued diffusions}{48}{section.4.2}%
