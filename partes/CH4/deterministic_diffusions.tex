@@ -86,7 +86,7 @@ These results can be particularized for any matrix-valued diffusions. Especially
 \subsection{Wishart process}
 
 \begin{corollary}
-    Let $Y = (Y(t), t \ge 0)$ be an $n\times n$ Wishart process with diagonalization $Y = QM\trans{Q}$ and let $X$ be an $n\times n$ self adjoint matrix process with diagonalization $X = H \Lambda \trans{H}$, such that the off-diagonal part of $\trans H \d X H $ is coincides with the the off-diagonal part of $\overset{d}$${=} \trans Q \d Y Q$ and $(\trans H \d X H)_{ii} = 0$ for every $i \in [n]$. Then the eigenvalues of $X$, $\lambda_1 \ge \lambda_2 \ge \cdots \ge \lambda_n$ satisfy the following system of stochastic differential equations
+    Let $Y = (Y(t), t \ge 0)$ be an $n\times n$ Wishart process with parameter $m$ and diagonalization $Y = QM\trans{Q}$. Let $X$ be an $n\times n$ self adjoint matrix process with diagonalization $X = H \Lambda \trans{H}$, such that the off-diagonal part of $\trans{H} \d X H $ and $\overset{d}{=} \trans{Q} \d Y Q$ coincide, and $(\trans{H} \d X H)_{ii} = 0$ for every $i \in [n]$. Then the eigenvalues of $X$, $\lambda_1 \ge \lambda_2 \ge \cdots \ge \lambda_n$ satisfy the following system of stochastic differential equations
 
     \begin{equation*}
         \d \lambda_i = \left( m +\sum_{k\neq i} \frac{ \abs{\lambda_i} + \abs{\lambda_k} }{\lambda_i - \lambda_k}\right)\d t.
@@ -101,5 +101,10 @@ These results can be particularized for any matrix-valued diffusions. Especially
 \subsection{Jacobi process}
 
 \begin{corollary}
+    Let $Y = (Y(t), t \ge 0)$ be an $n\times n$ matrix Jacobi process with parameters $n_1,n_2$ and diagonalization $Y = QM\trans{Q}$. Let $X$ be an $n\times n$ self adjoint matrix process with diagonalization $X = H \Lambda \trans{H}$, such that the off-diagonal part of $\trans{H} \d X H $ and $\overset{d}{=} \trans{Q} \d Y Q$ coincide, and $(\trans{H} \d X H)_{ii} = 0$ for every $i \in [n]$. Then the eigenvalues of $X$, $\lambda_1 \ge \lambda_2 \ge \cdots \ge \lambda_n$ satisfy the following system of stochastic differential equations
+
+    \begin{equation*}
+        \d \lambda_i = \left( n_2 - (n_1 + n_2)\lambda_i + \sum_{k\neq i} \frac{\lambda_k(1-\lambda_i) + \lambda_i(1-\lambda_k)}{\lambda_i - \lambda_k} \right)\d t.
+    \end{equation*}
 
 \end{corollary}
