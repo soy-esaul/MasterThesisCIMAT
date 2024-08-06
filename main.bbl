@@ -504,6 +504,210 @@
     \field{year}{1969}
   \endentry
 
+  \entry{article:wishart}{article}{}{}
+    \name{author}{1}{}{%
+      {{hash=WJ}{%
+         family={WISHART},
+         familyi={W\bibinitperiod},
+         given={JOHN},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{WJ1}
+    \strng{fullhash}{WJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.1093/biomet/20A.1-2.32
+    \endverb
+    \verb{eprint}
+    \verb https://academic.oup.com/biomet/article-pdf/20A/1-2/32/530655/20A-1-2
+    \verb -32.pdf
+    \endverb
+    \field{issn}{0006-3444}
+    \field{number}{1-2}
+    \field{pages}{32\bibrangedash 52}
+    \field{title}{{THE GENERALISED PRODUCT MOMENT DISTRIBUTION IN SAMPLES FROM
+  A NORMAL MULTIVARIATE POPULATION}}
+    \verb{url}
+    \verb https://doi.org/10.1093/biomet/20A.1-2.32
+    \endverb
+    \field{volume}{20A}
+    \field{journaltitle}{Biometrika}
+    \field{month}{12}
+    \field{year}{1928}
+  \endentry
+
+  \entry{book:hastie_tibshirani}{book}{}{}
+    \name{author}{3}{}{%
+      {{hash=HT}{%
+         family={Hastie},
+         familyi={H\bibinitperiod},
+         given={Trevor},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=TR}{%
+         family={Tibshirani},
+         familyi={T\bibinitperiod},
+         given={Robert},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=FJ}{%
+         family={Friedman},
+         familyi={F\bibinitperiod},
+         given={Jerome},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer New York Inc.}%
+    }
+    \keyw{ml statistics}
+    \strng{namehash}{HT+1}
+    \strng{fullhash}{HTTRFJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{series}{Springer Series in Statistics}
+    \field{title}{The Elements of Statistical Learning}
+    \list{location}{1}{%
+      {New York, NY, USA}%
+    }
+    \field{year}{2001}
+  \endentry
+
+  \entry{book:multivariate_statistics}{book}{}{}
+    \name{author}{1}{}{%
+      {{hash=MRJ}{%
+         family={Muirhead},
+         familyi={M\bibinitperiod},
+         given={Robb\bibnamedelima J.},
+         giveni={R\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Wiley-Interscience}%
+    }
+    \keyw{multivariate statistics textbook}
+    \strng{namehash}{MRJ1}
+    \strng{fullhash}{MRJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Aspects of Multivariate Statistical Theory}
+    \field{year}{2005}
+  \endentry
+
+  \entry{article:GSVD_van_loan}{article}{}{}
+    \name{author}{1}{}{%
+      {{hash=VLCF}{%
+         family={Van\bibnamedelima Loan},
+         familyi={V\bibinitperiod\bibinitdelim L\bibinitperiod},
+         given={Charles\bibnamedelima F.},
+         giveni={C\bibinitperiod\bibinitdelim F\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{VLCF1}
+    \strng{fullhash}{VLCF1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{abstract}{%
+    Two generalizations of the singular value decomposition are given. These
+  generalizations provided a unified way of regarding certain matrix problems
+  and the numerical techniques which are used to solve them.%
+    }
+    \verb{doi}
+    \verb 10.1137/0713009
+    \endverb
+    \verb{eprint}
+    \verb https://doi.org/10.1137/0713009
+    \endverb
+    \field{number}{1}
+    \field{pages}{76\bibrangedash 83}
+    \field{title}{Generalizing the Singular Value Decomposition}
+    \verb{url}
+    \verb https://doi.org/10.1137/0713009
+    \endverb
+    \field{volume}{13}
+    \field{journaltitle}{SIAM Journal on Numerical Analysis}
+    \field{year}{1976}
+  \endentry
+
+  \entry{article:marcus_finite_free_point_processes}{article}{}{}
+    \name{author}{1}{}{%
+      {{hash=MAW}{%
+         family={Marcus},
+         familyi={M\bibinitperiod},
+         given={Adam\bibnamedelima W},
+         giveni={A\bibinitperiod\bibinitdelim W\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{MAW1}
+    \strng{fullhash}{MAW1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Finite free point processes}
+    \field{journaltitle}{arXiv preprint arXiv:2205.00495}
+    \field{year}{2022}
+  \endentry
+
+  \entry{doumerc2005matrices}{thesis}{}{}
+    \name{author}{1}{}{%
+      {{hash=DY}{%
+         family={Doumerc},
+         familyi={D\bibinitperiod},
+         given={Yan},
+         giveni={Y\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{DY1}
+    \strng{fullhash}{DY1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Matrices al{\'e}atoires, processus stochastiques et groupes
+  de r{\'e}flexions}
+    \list{institution}{1}{%
+      {Toulouse 3}%
+    }
+    \verb{file}
+    \verb :C\:/Users/Esaul/Documents/Maestría en Probabilidad y Estadística/4
+    \verb  Cuarto semestre/Seminario de investigación/Referencias/Tesis/Yan Do
+    \verb umerc - Matrices aléatoires, processus stochastiques et groupes de r
+    \verb éflexions.pdf:PDF
+    \endverb
+    \field{type}{phdthesis}
+    \field{year}{2005}
+  \endentry
+
+  \entry{thesis:collins}{thesis}{}{}
+    \name{author}{1}{}{%
+      {{hash=CB}{%
+         family={Collins},
+         familyi={C\bibinitperiod},
+         given={Benoit},
+         giveni={B\bibinitperiod},
+      }}%
+    }
+    \keyw{probabilites quantiques ; Matrices aleatoires ; probabilites libres ;
+  frontiere de martin ; probabilites quantiques.}
+    \strng{namehash}{CB1}
+    \strng{fullhash}{CB1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{{Int{\'e}grales matricielles et Probabilit{\'e}s
+  Non-Commutatives}}
+    \verb{url}
+    \verb https://theses.hal.science/tel-00004306
+    \endverb
+    \list{institution}{1}{%
+      {{Universit{\'e} Pierre et Marie Curie - Paris VI}}%
+    }
+    \verb{file}
+    \verb https://theses.hal.science/tel-00004306/file/tel-00004306.pdf
+    \endverb
+    \field{type}{Theses}
+    \field{month}{01}
+    \field{year}{2003}
+  \endentry
+
   \entry{walsh1922location}{article}{}{}
     \name{author}{1}{}{%
       {{hash=WJL}{%
@@ -544,34 +748,6 @@
     \field{title}{Orthogonal polynomials}
     \field{volume}{23}
     \field{year}{1939}
-  \endentry
-
-  \entry{doumerc2005matrices}{thesis}{}{}
-    \name{author}{1}{}{%
-      {{hash=DY}{%
-         family={Doumerc},
-         familyi={D\bibinitperiod},
-         given={Yan},
-         giveni={Y\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{DY1}
-    \strng{fullhash}{DY1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{title}{Matrices al{\'e}atoires, processus stochastiques et groupes
-  de r{\'e}flexions}
-    \list{institution}{1}{%
-      {Toulouse 3}%
-    }
-    \verb{file}
-    \verb :C\:/Users/Esaul/Documents/Maestría en Probabilidad y Estadística/4
-    \verb  Cuarto semestre/Seminario de investigación/Referencias/Tesis/Yan Do
-    \verb umerc - Matrices aléatoires, processus stochastiques et groupes de r
-    \verb éflexions.pdf:PDF
-    \endverb
-    \field{type}{phdthesis}
-    \field{year}{2005}
   \endentry
 
   \entry{edelman1988eigenvalues}{article}{}{}
