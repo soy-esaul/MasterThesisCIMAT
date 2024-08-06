@@ -1,0 +1,33 @@
+\contentsline {section}{\numberline {1}Preliminaries}{2}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Introduction to main concepts in Random Matrix Theory}{2}{subsection.1.1}%
+\contentsline {subsubsection}{\numberline {1.1.1}Matrix algebra}{2}{subsubsection.1.1.1}%
+\contentsline {subsubsection}{\numberline {1.1.2}Random matrix ensembles}{2}{subsubsection.1.1.2}%
+\contentsline {subsubsection}{\numberline {1.1.3}Asymptotic results for random matrices}{2}{subsubsection.1.1.3}%
+\contentsline {subsection}{\numberline {1.2}Stochastic calculus}{2}{subsection.1.2}%
+\contentsline {subsubsection}{\numberline {1.2.1}Stochastic calculus for $\mathbb R^n$-valued processes}{2}{subsubsection.1.2.1}%
+\contentsline {subsubsection}{\numberline {1.2.2}Stochastic calculus for matrix-valued processes}{3}{subsubsection.1.2.2}%
+\contentsline {subsection}{\numberline {1.3}Non-commutative probability}{3}{subsection.1.3}%
+\contentsline {subsubsection}{\numberline {1.3.1}Non-commutative probability space}{4}{subsubsection.1.3.1}%
+\contentsline {subsubsection}{\numberline {1.3.2}Notions of independence}{4}{subsubsection.1.3.2}%
+\contentsline {subsubsection}{\numberline {1.3.3}Convolution}{4}{subsubsection.1.3.3}%
+\contentsline {subsubsection}{\numberline {1.3.4}Classical and non-commutative central limit theorems}{4}{subsubsection.1.3.4}%
+\contentsline {subsubsection}{\numberline {1.3.5}Asymptotic freeness for random matrices}{4}{subsubsection.1.3.5}%
+\contentsline {section}{\numberline {2}Eigenvalue processes for matrix-valued processes}{4}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Dyson Brownian motion}{4}{subsection.2.1}%
+\contentsline {subsubsection}{\numberline {2.1.1}Real case}{6}{subsubsection.2.1.1}%
+\contentsline {subsubsection}{\numberline {2.1.2}Complex case}{6}{subsubsection.2.1.2}%
+\contentsline {subsubsection}{\numberline {2.1.3}Non-collision of the eigenvalues}{6}{subsubsection.2.1.3}%
+\contentsline {subsection}{\numberline {2.2}Wishart processes}{6}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Jacobi processes}{6}{subsection.2.3}%
+\contentsline {section}{\numberline {3}Finite Free Probability}{13}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Convolution of polynomials}{14}{subsection.3.1}%
+\contentsline {subsubsection}{\numberline {3.1.1}Symmetric additive convolution}{14}{subsubsection.3.1.1}%
+\contentsline {subsubsection}{\numberline {3.1.2}Symmetric multiplicative convolution}{14}{subsubsection.3.1.2}%
+\contentsline {subsubsection}{\numberline {3.1.3}Linearization of convolutions}{14}{subsubsection.3.1.3}%
+\contentsline {subsection}{\numberline {3.2}Finite free convolutions and random matrices}{14}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}Minor orthogonality}{15}{subsubsection.3.2.1}%
+\contentsline {section}{\numberline {4}Deterministic eigenvalue processes for matrix-valued processes}{21}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Model construction}{21}{subsection.4.1}%
+\contentsline {subsubsection}{\numberline {4.1.1}Symmetric matrix-valued Brownian motion with zeros on the diagonal}{28}{subsubsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.2}Deterministic eigenvalue processes for matrix-valued diffusions}{30}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Connections with finite free probability}{30}{subsection.4.3}%

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.7.30)  5 AUG 2024 18:07
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.7.30)  5 AUG 2024 18:30
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -839,72 +839,24 @@ LaTeX Info: Redefining \addtolength on input line 81.
 ) (C:\Users\Esaul\AppData\Roaming\MiKTeX\tex/latex/jknappen\mathrsfs.sty
 Package: mathrsfs 1996/01/01 Math RSFS package v1.0 (jk)
 \symrsfs=\mathgroup6
-) (formato.tex (C:\Users\Esaul\AppData\Roaming\MiKTeX\tex/latex/lato\lato.sty
-Package: lato 2019/06/20 Style file for Lato.
- (C:\Program Files\MiKTeX\tex/latex/fontaxes\fontaxes.sty
-Package: fontaxes 2020/07/21 v1.0e Font selection axes
-LaTeX Info: Redefining \upshape on input line 29.
-LaTeX Info: Redefining \itshape on input line 31.
-LaTeX Info: Redefining \slshape on input line 33.
-LaTeX Info: Redefining \swshape on input line 35.
-LaTeX Info: Redefining \scshape on input line 37.
-LaTeX Info: Redefining \sscshape on input line 39.
-LaTeX Info: Redefining \ulcshape on input line 41.
-LaTeX Info: Redefining \textsw on input line 47.
-LaTeX Info: Redefining \textssc on input line 48.
-LaTeX Info: Redefining \textulc on input line 49.
-) (C:\Program Files\MiKTeX\tex/generic/iftex\ifluatex.sty
-Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
-) (C:\Program Files\MiKTeX\tex/generic/iftex\ifxetex.sty
-Package: ifxetex 2019/10/25 v0.7 ifxetex legacy package. Use iftex instead.
-)) (C:\Users\Esaul\AppData\Roaming\MiKTeX\tex/latex/psnfss\mathpazo.sty
-Package: mathpazo 2020/03/25 PSNFSS-v9.3 Palatino w/ Pazo Math (D.Puga, WaS) 
-\symupright=\mathgroup7
-) (C:\Users\Esaul\AppData\Roaming\MiKTeX\tex/latex/playfair\PlayfairDisplay.sty
-Package: PlayfairDisplay 2022/09/28 (Bob Tennent) Supports PlayfairDisplay fonts for all LaTeX engines. 
- (C:\Program Files\MiKTeX\tex/latex/base\textcomp.sty
-Package: textcomp 2024/04/24 v2.1b Standard LaTeX package
-) (C:\Program Files\MiKTeX\tex/latex/base\fontenc.sty
-Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
-LaTeX Font Info:    Trying to load font information for T1+lato-TLF on input line 116.
- (C:\Users\Esaul\AppData\Roaming\MiKTeX\tex/latex/lato\t1lato-tlf.fd
-File: T1lato-TLF.fd 2019/06/24 Font definitions for T1/lato-TLF.
-)
-LaTeX Font Info:    Font shape `T1/lato-TLF/m/n' will be
-(Font)              scaled to size 10.95pt on input line 116.
-)) (C:\Program Files\MiKTeX\tex/latex/titlesec\titlesec.sty
-Package: titlesec 2023/10/27 v2.16 Sectioning titles
-\ttl@box=\box70
-\beforetitleunit=\skip95
-\aftertitleunit=\skip96
-\ttl@plus=\dimen296
-\ttl@minus=\dimen297
-\ttl@toksa=\toks53
-\titlewidth=\dimen298
-\titlewidthlast=\dimen299
-\titlewidthfirst=\dimen300
-) (C:\Program Files\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarycalc.code.tex
-File: tikzlibrarycalc.code.tex 2023-01-15 v3.1.10 (3.1.10)
-)
-\c@myWeekNum=\count467
 ) (C:\Users\Esaul\AppData\Roaming\MiKTeX\tex/latex/microtype\microtype.sty
 Package: microtype 2023/03/13 v3.1a Micro-typographical refinements (RS)
-\MT@toks=\toks54
-\MT@tempbox=\box71
-\MT@count=\count468
+\MT@toks=\toks53
+\MT@tempbox=\box70
+\MT@count=\count467
 LaTeX Info: Redefining \noprotrusionifhmode on input line 1059.
 LaTeX Info: Redefining \leftprotrusion on input line 1060.
-\MT@prot@toks=\toks55
+\MT@prot@toks=\toks54
 LaTeX Info: Redefining \rightprotrusion on input line 1078.
 LaTeX Info: Redefining \textls on input line 1368.
-\MT@outer@kern=\dimen301
+\MT@outer@kern=\dimen296
 LaTeX Info: Redefining \textmicrotypecontext on input line 1988.
-\MT@listname@count=\count469
+\MT@listname@count=\count468
  (C:\Users\Esaul\AppData\Roaming\MiKTeX\tex/latex/microtype\microtype-pdftex.def
 File: microtype-pdftex.def 2023/03/13 v3.1a Definitions specific to pdftex (RS)
 LaTeX Info: Redefining \lsstyle on input line 902.
 LaTeX Info: Redefining \lslig on input line 902.
-\MT@outer@space=\skip97
+\MT@outer@space=\skip95
 )
 Package microtype Info: Loading configuration file microtype.cfg.
  (C:\Users\Esaul\AppData\Roaming\MiKTeX\tex/latex/microtype\microtype.cfg
@@ -914,20 +866,20 @@ Package: mathtools 2024/03/11 v1.30 mathematical typesetting tools
  (C:\Program Files\MiKTeX\tex/latex/mathtools\mhsetup.sty
 Package: mhsetup 2021/03/18 v1.4 programming setup (MH)
 )
-\g_MT_multlinerow_int=\count470
-\l_MT_multwidth_dim=\dimen302
-\origjot=\skip98
-\l_MT_shortvdotswithinadjustabove_dim=\dimen303
-\l_MT_shortvdotswithinadjustbelow_dim=\dimen304
-\l_MT_above_intertext_sep=\dimen305
-\l_MT_below_intertext_sep=\dimen306
-\l_MT_above_shortintertext_sep=\dimen307
-\l_MT_below_shortintertext_sep=\dimen308
-\xmathstrut@box=\box72
-\xmathstrut@dim=\dimen309
+\g_MT_multlinerow_int=\count469
+\l_MT_multwidth_dim=\dimen297
+\origjot=\skip96
+\l_MT_shortvdotswithinadjustabove_dim=\dimen298
+\l_MT_shortvdotswithinadjustbelow_dim=\dimen299
+\l_MT_above_intertext_sep=\dimen300
+\l_MT_below_intertext_sep=\dimen301
+\l_MT_above_shortintertext_sep=\dimen302
+\l_MT_below_shortintertext_sep=\dimen303
+\xmathstrut@box=\box71
+\xmathstrut@dim=\dimen304
 )
-\@quotelevel=\count471
-\@quotereset=\count472
+\@quotelevel=\count470
+\@quotereset=\count471
  (main.aux (partes/Preliminares.aux) (partes/CH2.aux) (partes/CH3.aux) (partes/CH4.aux
 
 LaTeX Warning: Label `eq:matrix_diffusion' multiply defined.
@@ -955,17 +907,17 @@ LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 68.
 LaTeX Font Info:    ... okay on input line 68.
  (C:\Program Files\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count473
-\scratchdimen=\dimen310
-\scratchbox=\box73
-\nofMPsegments=\count474
-\nofMParguments=\count475
-\everyMPshowfont=\toks56
-\MPscratchCnt=\count476
-\MPscratchDim=\dimen311
-\MPnumerator=\count477
-\makeMPintoPDFobject=\count478
-\everyMPtoPDFconversion=\toks57
+\scratchcounter=\count472
+\scratchdimen=\dimen305
+\scratchbox=\box72
+\nofMPsegments=\count473
+\nofMParguments=\count474
+\everyMPshowfont=\toks55
+\MPscratchCnt=\count475
+\MPscratchDim=\dimen306
+\MPnumerator=\count476
+\makeMPintoPDFobject=\count477
+\everyMPtoPDFconversion=\toks56
 ) (C:\Program Files\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
@@ -976,25 +928,25 @@ File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
 * driver: pdftex
-* paper: a4paper
+* paper: letterpaper
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * bindingoffset: 17.07164pt
 * modes: twoside 
-* h-part:(L,W,R)=(58.49884pt, 434.18907pt, 87.74832pt)
-* v-part:(T,H,B)=(72.26999pt, 700.50687pt, 72.26999pt)
-* \paperwidth=597.50787pt
-* \paperheight=845.04684pt
+* h-part:(L,W,R)=(65.21371pt, 434.18907pt, 97.82057pt)
+* v-part:(T,H,B)=(72.26999pt, 650.43001pt, 72.26999pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
 * \textwidth=434.18907pt
-* \textheight=700.50687pt
-* \oddsidemargin=3.30049pt
-* \evensidemargin=15.47833pt
+* \textheight=650.43001pt
+* \oddsidemargin=10.01537pt
+* \evensidemargin=25.55058pt
 * \topmargin=-31.8738pt
 * \headheight=15.0pt
 * \headsep=19.8738pt
 * \topskip=11.0pt
 * \footskip=27.46295pt
-* \marginparwidth=106.0pt
+* \marginparwidth=116.0pt
 * \marginparsep=7.0pt
 * \columnsep=10.0pt
 * \skip\footins=10.0pt plus 4.0pt minus 2.0pt
@@ -1044,8 +996,6 @@ Package biblatex Warning: BibTeX reported the following issues
 )
 Package biblatex Info: Reference section=0 on input line 68.
 Package biblatex Info: Reference segment=0 on input line 68.
-\c@mv@tabular=\count479
-\c@mv@boldtabular=\count480
 LaTeX Info: Redefining \microtypecontext on input line 68.
 Package microtype Info: Applying patch `item' on input line 68.
 Package microtype Info: Applying patch `toc' on input line 68.
@@ -1069,10 +1019,9 @@ Package microtype Info: Adjustment of interword spacing enabled.
 Package microtype Info: Using default spacing set `alltext-nott'.
 Package microtype Info: Adjustment of character kerning enabled.
 Package microtype Info: Using default kerning set `alltext'.
-Package microtype Info: Loading generic protrusion settings for font family
-(microtype)             `lato-TLF' (encoding: T1).
-(microtype)             For optimal results, create family-specific settings.
-(microtype)             See the microtype manual for details.
+(C:\Users\Esaul\AppData\Roaming\MiKTeX\tex/latex/microtype\mt-cmr.cfg
+File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman (RS)
+)
 
 Package microtype Warning: \nonfrenchspacing is active. Adjustment of
 (microtype)                interword spacing will disable it. You might want
@@ -1081,16 +1030,16 @@ Package microtype Warning: \nonfrenchspacing is active. Adjustment of
 
 *geometry* verbose mode - [ newgeometry ] result:
 * driver: pdftex
-* paper: a4paper
+* paper: letterpaper
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: twoside 
-* h-part:(L,W,R)=(34.14322pt, 529.22144pt, 34.14322pt)
-* v-part:(T,H,B)=(25.6073pt, 790.9868pt, 28.45274pt)
-* \paperwidth=597.50787pt
-* \paperheight=845.04684pt
-* \textwidth=529.22144pt
-* \textheight=790.9868pt
+* h-part:(L,W,R)=(34.14322pt, 546.00856pt, 34.14322pt)
+* v-part:(T,H,B)=(25.6073pt, 740.90994pt, 28.45274pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=546.00856pt
+* \textheight=740.90994pt
 * \oddsidemargin=-38.12677pt
 * \evensidemargin=-38.12677pt
 * \topmargin=-81.53648pt
@@ -1098,7 +1047,7 @@ Package microtype Warning: \nonfrenchspacing is active. Adjustment of
 * \headsep=19.8738pt
 * \topskip=11.0pt
 * \footskip=27.46295pt
-* \marginparwidth=106.0pt
+* \marginparwidth=116.0pt
 * \marginparsep=7.0pt
 * \columnsep=10.0pt
 * \skip\footins=10.0pt plus 4.0pt minus 2.0pt
@@ -1116,82 +1065,26 @@ File: logos/logo.png Graphic file (type png)
 <use logos/logo.png>
 Package pdftex.def Info: logos/logo.png  used on input line 72.
 (pdftex.def)             Requested size: 70.95331pt x 91.04872pt.
-LaTeX Font Info:    Trying to load font information for OT1+pplx on input line 72.
-(C:\Users\Esaul\AppData\Roaming\MiKTeX\tex/latex/psnfss\ot1pplx.fd
-File: ot1pplx.fd 2004/09/06 font definitions for OT1/pplx.
-) (C:\Users\Esaul\AppData\Roaming\MiKTeX\tex/latex/microtype\mt-ppl.cfg
-File: mt-ppl.cfg 2005/11/16 v1.6 microtype config. file: Palatino (RS)
-)
-LaTeX Font Info:    Trying to load font information for OML+zplm on input line 72.
- (C:\Users\Esaul\AppData\Roaming\MiKTeX\tex/latex/psnfss\omlzplm.fd
-File: omlzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OML/zplm.
-)
-LaTeX Font Info:    Trying to load font information for OMS+zplm on input line 72.
- (C:\Users\Esaul\AppData\Roaming\MiKTeX\tex/latex/psnfss\omszplm.fd
-File: omszplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMS/zplm.
-)
-LaTeX Font Info:    Trying to load font information for OMX+zplm on input line 72.
- (C:\Users\Esaul\AppData\Roaming\MiKTeX\tex/latex/psnfss\omxzplm.fd
-File: omxzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMX/zplm.
-)
-LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 11.40997pt on input line 72.
- (C:\Users\Esaul\AppData\Roaming\MiKTeX\tex/latex/microtype\mt-msa.cfg
+LaTeX Font Info:    Trying to load font information for U+msa on input line 72.
+(C:\Program Files\MiKTeX\tex/latex/amsfonts\umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+) (C:\Users\Esaul\AppData\Roaming\MiKTeX\tex/latex/microtype\mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 8.33606pt on input line 72.
-LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 6.25204pt on input line 72.
-LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 11.40997pt on input line 72.
- (C:\Users\Esaul\AppData\Roaming\MiKTeX\tex/latex/microtype\mt-msb.cfg
+LaTeX Font Info:    Trying to load font information for U+msb on input line 72.
+ (C:\Program Files\MiKTeX\tex/latex/amsfonts\umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) (C:\Users\Esaul\AppData\Roaming\MiKTeX\tex/latex/microtype\mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
-LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 8.33606pt on input line 72.
-LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 6.25204pt on input line 72.
 LaTeX Font Info:    Trying to load font information for U+rsfs on input line 72.
  (C:\Users\Esaul\AppData\Roaming\MiKTeX\tex/latex/jknappen\ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
-LaTeX Font Info:    Trying to load font information for OT1+zplm on input line 72.
- (C:\Users\Esaul\AppData\Roaming\MiKTeX\tex/latex/psnfss\ot1zplm.fd
-File: ot1zplm.fd 2002/09/08 Fontinst v1.914 font definitions for OT1/zplm.
-)
-Package microtype Info: Loading generic protrusion settings for font family
-(microtype)             `zplm' (encoding: OT1).
-(microtype)             For optimal results, create family-specific settings.
-(microtype)             See the microtype manual for details.
-LaTeX Font Info:    Font shape `T1/lato-TLF/m/n' will be
-(Font)              scaled to size 14.4pt on input line 72.
-LaTeX Font Info:    Font shape `T1/lato-TLF/b/n' will be
-(Font)              scaled to size 14.4pt on input line 72.
-LaTeX Font Info:    Font shape `T1/lato-TLF/b/n' will be
-(Font)              scaled to size 10.95pt on input line 72.
-LaTeX Font Info:    Font shape `T1/lato-TLF/b/n' will be
-(Font)              scaled to size 17.28pt on input line 72.
-
-
-LaTeX Font Warning: Font shape `T1/lato-TLF/b/sc' undefined
-(Font)              using `T1/lato-TLF/b/n' instead on input line 72.
-
-LaTeX Font Info:    Font shape `T1/lato-TLF/b/sc' will be
-(Font)              scaled to size 17.28pt on input line 72.
-
 Underfull \hbox (badness 10000) detected at line 72
-\T1/lato-TLF/b/n/14.4 T E S I S
+\T1/cmr/bx/n/14.4 T E S I S
  []
 
-LaTeX Font Info:    Font shape `T1/lato-TLF/b/n' will be
-(Font)              scaled to size 12.0pt on input line 72.
-LaTeX Font Info:    Font shape `T1/lato-TLF/m/n' will be
-(Font)              scaled to size 12.0pt on input line 72.
-LaTeX Font Info:    Font shape `T1/lato-TLF/m/n' will be
-(Font)              scaled to size 10.0pt on input line 72.
-LaTeX Font Info:    Font shape `T1/lato-TLF/b/n' will be
-(Font)              scaled to size 10.0pt on input line 72.
 
 
 <logos/banner.png, id=156, 820.06375pt x 248.93pt>
@@ -1203,46 +1096,21 @@ Package pdftex.def Info: logos/banner.png  used on input line 72.
 
 
 
-{C:/Users/Esaul/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/enc/dvips/lato/a_cl4kdn.enc} <./logos/logo.png> <./logos/banner.png>]
+{C:/Users/Esaul/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/enc/dvips/cm-super/cm-super-t1.enc} <./logos/logo.png> <./logos/banner.png>]
 
 [2
 
 ]
-LaTeX Font Info:    Font shape `T1/lato-TLF/m/n' will be
-(Font)              scaled to size 24.88pt on input line 78.
-LaTeX Font Info:    Font shape `T1/lato-TLF/b/n' will be
-(Font)              scaled to size 24.88pt on input line 78.
-LaTeX Font Info:    Trying to load font information for T1+PlyfrDisplay-LF on input line 78.
- (C:\Users\Esaul\AppData\Roaming\MiKTeX\tex/latex/playfair\t1plyfrdisplay-lf.fd
-File: T1PlyfrDisplay-LF.fd 2020/07/30 (autoinst) Font definitions for T1/PlyfrDisplay-LF.
-)
-LaTeX Font Info:    Font shape `T1/PlyfrDisplay-LF/b/n' aliased to
-(Font)              `T1/PlyfrDisplay-LF/bold/n' on input line 78.
-LaTeX Font Info:    Font shape `T1/PlyfrDisplay-LF/bold/n' will be
-(Font)              scaled to size 24.88pt on input line 78.
-Package microtype Info: Loading generic protrusion settings for font family
-(microtype)             `PlyfrDisplay-LF' (encoding: T1).
-(microtype)             For optimal results, create family-specific settings.
-(microtype)             See the microtype manual for details.
-LaTeX Font Info:    Font shape `T1/lato-TLF/m/it' will be
-(Font)              scaled to size 10.95pt on input line 80.
-
 
 [1
 
 ]
 
-LaTeX Font Info:    Font shape `T1/lato-TLF/m/n' will be
-(Font)              scaled to size 9.0pt on input line 87.
-LaTeX Font Info:    Font shape `T1/lato-TLF/b/n' will be
-(Font)              scaled to size 9.0pt on input line 87.
-LaTeX Font Info:    Font shape `T1/lato-TLF/m/n' will be
-(Font)              scaled to size 8.0pt on input line 87.
 [2
 
 ]
 
-[3{C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/enc/dvips/playfair/plyfr_fmyrgi.enc}]
+[3]
 
 [4
 
@@ -1253,12 +1121,8 @@ LaTeX Font Info:    Font shape `T1/lato-TLF/m/n' will be
 [6
 
 ] (main.toc
-LaTeX Font Info:    Trying to load font information for U+fplmbb on input line 10.
- (C:\Users\Esaul\AppData\Roaming\MiKTeX\tex/latex/psnfss\ufplmbb.fd
-File: ufplmbb.fd 2003/10/30 Fontinst v1.914 font definitions for U/fplmbb.
-)
 
-[7{C:/Program Files/MiKTeX/fonts/enc/dvips/base/8r.enc}])
+[7])
 \tf@toc=\write6
 \openout6 = `main.toc'.
 
@@ -1270,42 +1134,24 @@ File: ufplmbb.fd 2003/10/30 Fontinst v1.914 font definitions for U/fplmbb.
  (partes/Preliminares.tex
 Chapter 1.
 (partes/Preliminaries/intro_random_matrices.tex
-LaTeX Font Info:    Font shape `T1/PlyfrDisplay-LF/b/n' aliased to
-(Font)              `T1/PlyfrDisplay-LF/bold/n' on input line 17.
-LaTeX Font Info:    Font shape `T1/PlyfrDisplay-LF/bold/n' will be
-(Font)              scaled to size 14.4pt on input line 17.
-
-Overfull \hbox (1.88272pt too wide) in paragraph at lines 17--17
-|[] []\T1/PlyfrDisplay-LF/bold/n/14.4 (-10) In-tro-duc-tion to main con-cepts in Ran-dom Ma-trix The-
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
 
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.20 
+l.14 
       [1
 
 
 
 ]
-LaTeX Font Info:    Font shape `T1/PlyfrDisplay-LF/b/n' aliased to
-(Font)              `T1/PlyfrDisplay-LF/bold/n' on input line 25.
-LaTeX Font Info:    Font shape `T1/PlyfrDisplay-LF/bold/n' will be
-(Font)              scaled to size 12.0pt on input line 25.
-
 
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.70 \end{equation*}
-                     [2]
+l.60     \end{equation*}
+                         [2]
 LaTeX Font Info:    Trying to load font information for U+dsrom on input line 77.
  (C:\Program Files\MiKTeX\tex/latex/doublestroke\udsrom.fd
 File: Udsrom.fd 1995/08/01 v0.1 Double stroke roman font definitions
@@ -1320,37 +1166,10 @@ Package hyperref Info: bookmark level for unknown todo defaults to 0 on input li
 
 
 [3]
-LaTeX Font Info:    Trying to load font information for TS1+lato-TLF on input line 132.
- (C:\Users\Esaul\AppData\Roaming\MiKTeX\tex/latex/lato\ts1lato-tlf.fd
-File: TS1lato-TLF.fd 2019/06/24 Font definitions for TS1/lato-TLF.
-)
-LaTeX Font Info:    Font shape `TS1/lato-TLF/m/n' will be
-(Font)              scaled to size 10.95pt on input line 132.
-Package microtype Info: Loading generic protrusion settings for font family
-(microtype)             `lato-TLF' (encoding: TS1).
-(microtype)             For optimal results, create family-specific settings.
-(microtype)             See the microtype manual for details.
 
-
-[4{C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/enc/dvips/lato/a_rt66h3.enc}]) (partes/Preliminaries/stochastic_calculus.tex
-LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 12.50409pt on input line 5.
-LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 9.37807pt on input line 5.
-LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 7.29405pt on input line 5.
-LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 12.50409pt on input line 5.
-LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 9.37807pt on input line 5.
-LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 7.29405pt on input line 5.
+[4{C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]) (partes/Preliminaries/stochastic_calculus.tex
 Package microtype Info: Fixing zero \fontdimen 6 for font `U/dsrom/m/n/12'
 (microtype)             (new value: 12.0pt) on input line 5.
-Package microtype Info: Fixing zero \fontdimen 6 for font `U/dsrom/m/n/9'
-(microtype)             (new value: 9.0pt) on input line 5.
-Package microtype Info: Fixing zero \fontdimen 6 for font `U/dsrom/m/n/7'
-(microtype)             (new value: 7.0pt) on input line 5.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
@@ -1367,11 +1186,6 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 
 [5]
-Overfull \hbox (18.79762pt too wide) in paragraph at lines 34--35
-\T1/lato-TLF/m/n/10.95 prob-a-bil-ity to $\OML/zplm/m/it/10.95 X\OT1/zplm/m/n/10.95 (\OML/zplm/m/it/10.95 t\OT1/zplm/m/n/10.95 )$\T1/lato-TLF/m/n/10.95 , then un-der cer-tain con-di-tions,[][][] one can prove that the in-te-grals $[][] \OML/zplm/m/it/10.95 X[]\OT1/zplm/m/n/10.95 (\OML/zplm/m/it/10.95 s\OT1/zplm/m/n/10.95 )\OT1/pplx/m/n/10.95 d\OML/zplm/m/it/10.95 B\OT1/zplm/m/n/10.95 (\OML/zplm/m/it/10.95 s\OT1/zplm/m/n/10.95 )$
- []
-
-
 
 [6]
 
@@ -1386,55 +1200,35 @@ Overfull \hbox (18.79762pt too wide) in paragraph at lines 34--35
 [11]
 
 [12]
-Overfull \hbox (16.71806pt too wide) in paragraph at lines 390--391
-[][]\T1/lato-TLF/b/n/10.95 Theorem 1.2.13. []\T1/lato-TLF/m/it/10.95 Let $\OML/zplm/m/it/10.95 Y\OT1/zplm/m/n/10.95 (\OML/zplm/m/it/10.95 t\OT1/zplm/m/n/10.95 )$ \T1/lato-TLF/m/it/10.95 be an Itô pro-cess with dif-fer-en-tial $\OT1/pplx/m/n/10.95 d\OML/zplm/m/it/10.95 Y\OT1/zplm/m/n/10.95 (\OML/zplm/m/it/10.95 t\OT1/zplm/m/n/10.95 ) = \OML/zplm/m/it/10.95 ^^V\OT1/zplm/m/n/10.95 (\OML/zplm/m/it/10.95 Y\OT1/zplm/m/n/10.95 (\OML/zplm/m/it/10.95 t\OT1/zplm/m/n/10.95 )\OT1/pplx/m/n/10.95 , \OML/zplm/m/it/10.95 t\OT1/zplm/m/n/10.95 )\OT1/pplx/m/n/10.95 d\OML/zplm/m/it/10.95 t \OT1/zplm/m/n/10.95 + \OML/zplm/m/it/10.95 ^^[\OT1/zplm/m/n/10.95 (\OML/zplm/m/it/10.95 Y\OT1/zplm/m/n/10.95 (\OML/zplm/m/it/10.95 t\OT1/zplm/m/n/10.95 )\OT1/pplx/m/n/10.95 , \OML/zplm/m/it/10.95 t\OT1/zplm/m/n/10.95 )\OT1/pplx/m/n/10.95 d\OML/zplm/m/it/10.95 B\OT1/zplm/m/n/10.95 (\OML/zplm/m/it/10.95 t\OT1/zplm/m/n/10.95 )$
- []
-
-
 
 [13]
 
 [14]
 
-[15]) (partes/Preliminaries/non_commutative_probability.tex
+[15]
 
 [16]
-Overfull \hbox (0.59953pt too wide) in paragraph at lines 26--27
-[][]\T1/lato-TLF/b/n/10.95 Definition 1.3.2 \T1/lato-TLF/m/n/10.95 (Non--com-mu-ta-tive prob-a-bil-ity space)\T1/lato-TLF/b/n/10.95 . []\T1/lato-TLF/m/n/10.95 A non-commutative prob-a-bil-ity space
- []
 
-
-Overfull \hbox (11.46738pt too wide) in paragraph at lines 43--44
-[]\T1/lato-TLF/m/n/10.95 There are some ad-di-tional prop-er-ties we can have for the func-tional $\OML/zplm/m/it/10.95 ^^^$ \T1/lato-TLF/m/n/10.95 in a non-commutative
- []
-
-
-Overfull \hbox (17.78998pt too wide) in paragraph at lines 45--46
-[]\T1/lato-TLF/m/n/10.95 Depending on its al-ge-braic prop-er-ties, we can dis-tin-guish dif-fer-ent kinds of non-commutative
- []
-
-
-
-[17]
-Overfull \hbox (13.00694pt too wide) in paragraph at lines 74--75
-[]\T1/lato-TLF/m/n/10.95 Clearly $\OML/zplm/m/it/10.95 L[]\OT1/zplm/m/n/10.95 (
-\OT1/pplx/m/n/10.95 , \U/fplmbb/m/n/10.95 P\OT1/pplx/m/n/10.95 , \U/fplmbb/m/n/10.95 F\OT1/zplm/m/n/10.95 ) \OMS/zplm/m/n/10.95 ^^Z \OML/zplm/m/it/10.95 L[]\OT1/zplm/m/n/10.95 (
-\OT1/pplx/m/n/10.95 , \U/fplmbb/m/n/10.95 P\OT1/pplx/m/n/10.95 , \U/fplmbb/m/n/10.95 F\OT1/zplm/m/n/10.95 )$\T1/lato-TLF/m/n/10.95 , and since we are ask-ing ev-ery vari-able in $\OML/zplm/m/it/10.95 L[]\OT1/zplm/m/n/10.95 (
-\OT1/pplx/m/n/10.95 , \U/fplmbb/m/n/10.95 P\OT1/pplx/m/n/10.95 , \U/fplmbb/m/n/10.95 F\OT1/zplm/m/n/10.95 )$
- []
-
-
-Overfull \hbox (1.81404pt too wide) in paragraph at lines 79--80
-[]\T1/lato-TLF/m/n/10.95 A def-i-ni-tion of a non-commutative prob-a-bil-ity space that in-cludes ran-dom vari-ables which
- []
-
-
+[17]) (partes/Preliminaries/non_commutative_probability.tex
 
 [18]
+Overfull \hbox (3.552pt too wide) in paragraph at lines 43--44
+[]\T1/cmr/m/n/10.95 (-10) There are some ad-di-tional prop-er-ties we can have for the func-tional $\OML/cmm/m/it/10.95 '$ \T1/cmr/m/n/10.95 (-10) in a non-commutative
+ []
+
+
+Overfull \hbox (7.12215pt too wide) in paragraph at lines 45--46
+[]\T1/cmr/m/n/10.95 (-10) Depending on its al-ge-braic prop-er-ties, we can dis-tin-guish dif-fer-ent kinds of non-commutative
+ []
+
+
 
 [19]
-Overfull \hbox (11.32166pt too wide) in paragraph at lines 170--171
-[][]\T1/lato-TLF/b/n/10.95 Example 1.3.5 \T1/lato-TLF/m/n/10.95 (Haar uni-tary ran-dom vari-able)\T1/lato-TLF/b/n/10.95 . []\T1/lato-TLF/m/n/10.95 Let $\OML/zplm/m/it/10.95 u$ \T1/lato-TLF/m/n/10.95 be a ran-dom vari-able in a non-commutative
+Overfull \hbox (3.92804pt too wide) in paragraph at lines 74--75
+[]\T1/cmr/m/n/10.95 (-10) Clearly $\OML/cmm/m/it/10.95 L[]\OT1/cmr/m/n/10.95 (-10) (
+\OML/cmm/m/it/10.95 ; \U/msb/m/n/10.95 P\OML/cmm/m/it/10.95 ; \U/msb/m/n/10.95 F\OT1/cmr/m/n/10.95 (-10) ) \OMS/cmsy/m/n/10.95 ^^Z \OML/cmm/m/it/10.95 L[]\OT1/cmr/m/n/10.95 (-10) (
+\OML/cmm/m/it/10.95 ; \U/msb/m/n/10.95 P\OML/cmm/m/it/10.95 ; \U/msb/m/n/10.95 F\OT1/cmr/m/n/10.95 (-10) )$\T1/cmr/m/n/10.95 (-10) , and since we are ask-ing ev-ery vari-able in $\OML/cmm/m/it/10.95 L[]\OT1/cmr/m/n/10.95 (-10) (
+\OML/cmm/m/it/10.95 ; \U/msb/m/n/10.95 P\OML/cmm/m/it/10.95 ; \U/msb/m/n/10.95 F\OT1/cmr/m/n/10.95 (-10) )$
  []
 
 
@@ -1442,24 +1236,23 @@ Overfull \hbox (11.32166pt too wide) in paragraph at lines 170--171
 [20]
 
 [21]
-Overfull \hbox (7.24591pt too wide) in paragraph at lines 288--289
-[][]\T1/lato-TLF/b/n/10.95 Definition 1.3.10 \T1/lato-TLF/m/n/10.95 (Cauchy-Stielt-jes trans-form)\T1/lato-TLF/b/n/10.95 . []\T1/lato-TLF/m/n/10.95 Let $\OML/zplm/m/it/10.95 ^^V$ \T1/lato-TLF/m/n/10.95 be a prob-a-bil-ity mea-sure on $\U/fplmbb/m/n/10.95 R$\T1/lato-TLF/m/n/10.95 , its Cauchy-
- []
-
-
 
 [22]
 
 [23]
 
-[24]))
+[24]
 
 [25]
+
+[26]))
+
+[27]
 \openout2 = `partes/CH2.aux'.
 
  (partes/CH2.tex
 
-[26
+[28
 
 
 
@@ -1467,176 +1260,256 @@ Overfull \hbox (7.24591pt too wide) in paragraph at lines 288--289
 ]
 Chapter 2.
 
-Overfull \hbox (22.38103pt too wide) in paragraph at lines 1--1
-|[] []\T1/PlyfrDisplay-LF/bold/n/24.88 (-10) Eigen-value pro-cesses for matrix-
+
+[29] (partes/CH2/dyson_brownian_motion.tex
+
+
+Package fancyhdr Warning: \headheight is too small (15.0pt): 
+(fancyhdr)                Make it at least 25.22153pt, for example:
+(fancyhdr)                \setlength{\headheight}{25.22153pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-10.22153pt}.
+
+[30]
+Overfull \hbox (11.1728pt too wide) in paragraph at lines 20--21
+\T1/cmr/m/n/10.95 (-10) cess tak-ing val-ues in $\OMS/cmsy/m/n/10.95 M[]\OT1/cmr/m/n/10.95 (-10) (\U/msb/m/n/10.95 R\OT1/cmr/m/n/10.95 (-10) )$ \T1/cmr/m/n/10.95 (-10) whose en-tries are stan-dard Brow-n-ian mo-tions $\OMS/cmsy/m/n/10.95 f\OML/cmm/m/it/10.95 B[]\OT1/cmr/m/n/10.95 (-10) (\OML/cmm/m/it/10.95 t\OT1/cmr/m/n/10.95 (-10) )\OMS/cmsy/m/n/10.95 g[]$
  []
 
 
-Underfull \vbox (badness 1242) has occurred while \output is active []
-
-
-
-[27] (partes/CH2/dyson_brownian_motion.tex
-
-[28]
-LaTeX Font Info:    Font shape `T1/lato-TLF/m/n' will be
-(Font)              scaled to size 6.0pt on input line 35.
-
-
-[29]
-Underfull \vbox (badness 4886) has occurred while \output is active []
-
-
-
-[30]
 
 [31]
+Overfull \hbox (2.17345pt too wide) in paragraph at lines 82--83
+[]\T1/cmr/m/n/10.95 (-10) The di-ag-o-nals of $\OT1/cmr/m/n/10.95 (-10) (\OML/cmm/m/it/10.95 @L\OT1/cmr/m/n/10.95 (-10) )^^C$ \T1/cmr/m/n/10.95 (-10) and $\OT1/cmr/m/n/10.95 (-10) ^^C\OML/cmm/m/it/10.95 @L$ \T1/cmr/m/n/10.95 (-10) co-in-cide, so $\OT1/cmr/m/n/10.95 (-10) d^^C[] = [][]$\T1/cmr/m/n/10.95 (-10) . Let $\OT1/cmr/m/n/10.95 (-10) d\OML/cmm/m/it/10.95 N [][]\OT1/cmr/m/n/10.95 (-10) = \OML/cmm/m/it/10.95 H[]\OT1/cmr/m/n/10.95 (-10) (\OML/cmm/m/it/10.95 @B\OT1/cmr/m/n/10.95 (-10) )\OML/cmm/m/it/10.95 H$\T1/cmr/m/n/10.95 (-10) ,.
+ []
+
+
+
+
+Package fancyhdr Warning: \headheight is too small (15.0pt): 
+(fancyhdr)                Make it at least 25.22153pt, for example:
+(fancyhdr)                \setlength{\headheight}{25.22153pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-10.22153pt}.
 
 [32]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
 
 [33]
 
+
+Package fancyhdr Warning: \headheight is too small (15.0pt): 
+(fancyhdr)                Make it at least 25.22153pt, for example:
+(fancyhdr)                \setlength{\headheight}{25.22153pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-10.22153pt}.
+
 [34]
 
-[35]) (partes/CH2/diffusions.tex
-LaTeX Font Info:    Font shape `T1/lato-TLF/m/it' will be
-(Font)              scaled to size 8.0pt on input line 15.
-LaTeX Font Info:    Font shape `T1/lato-TLF/m/it' will be
-(Font)              scaled to size 6.0pt on input line 15.
+[35]
 
+
+Package fancyhdr Warning: \headheight is too small (15.0pt): 
+(fancyhdr)                Make it at least 25.22153pt, for example:
+(fancyhdr)                \setlength{\headheight}{25.22153pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-10.22153pt}.
 
 [36]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
 
 [37]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[38]
-Overfull \hbox (24.91937pt too wide) detected at line 115
+
+
+
+Package fancyhdr Warning: \headheight is too small (15.0pt): 
+(fancyhdr)                Make it at least 25.22153pt, for example:
+(fancyhdr)                \setlength{\headheight}{25.22153pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-10.22153pt}.
+
+[38]) (partes/CH2/diffusions.tex
+
+[39]
+Underfull \vbox (badness 1314) has occurred while \output is active []
+
+
+
+
+Package fancyhdr Warning: \headheight is too small (15.0pt): 
+(fancyhdr)                Make it at least 25.22153pt, for example:
+(fancyhdr)                \setlength{\headheight}{25.22153pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-10.22153pt}.
+
+[40]
+Overfull \hbox (5.49794pt too wide) detected at line 99
 []
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-
-[39]
-Overfull \hbox (31.70735pt too wide) detected at line 202
-[]
- []
-
-
-
-[40]
-Overfull \hbox (43.55527pt too wide) detected at line 224
-[]
- []
-
-
-Overfull \hbox (3.11314pt too wide) in paragraph at lines 232--233
-\T1/lato-TLF/m/n/10.95 ments are real. The pro-cess $\OT1/zplm/m/n/10.95 ^^C\OML/zplm/m/it/10.95 @A \OMS/zplm/m/n/10.95 ^^@ \OT1/zplm/m/n/10.95 (\OML/zplm/m/it/10.95 @A\OT1/zplm/m/n/10.95 )^^C$ \T1/lato-TLF/m/n/10.95 is zero in the di-ag-o-nal and thus $\OT1/pplx/m/n/10.95 d\OML/zplm/m/it/10.95 ^^U[] \OT1/zplm/m/n/10.95 = (\OML/zplm/m/it/10.95 H[]\OT1/zplm/m/n/10.95 (\OML/zplm/m/it/10.95 @X\OT1/zplm/m/n/10.95 )\OML/zplm/m/it/10.95 H\OT1/zplm/m/n/10.95 )[]$\T1/lato-TLF/m/n/10.95 .
- []
 
 
 
 [41]
+Overfull \hbox (39.40594pt too wide) detected at line 115
+[]
+ []
+
+
+Underfull \vbox (badness 5711) has occurred while \output is active []
+
+
+
+
+Package fancyhdr Warning: \headheight is too small (15.0pt): 
+(fancyhdr)                Make it at least 25.22153pt, for example:
+(fancyhdr)                \setlength{\headheight}{25.22153pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-10.22153pt}.
 
 [42]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-
-[43]
-
-[44]
-
-[45]
-Underfull \vbox (badness 2828) has occurred while \output is active []
-
-
-
-[46]
-Overfull \hbox (2.27342pt too wide) in paragraph at lines 512--513
-[]\T1/lato-TLF/m/n/10.95 With this co-vari-a-tions, we find that the en-tries of $\OT1/pplx/m/n/10.95 d\OML/zplm/m/it/10.95 X$ \T1/lato-TLF/m/n/10.95 co-in-cide with those of $[]\OT1/pplx/m/n/10.95 d\OML/zplm/m/it/10.95 B\OT1/zplm/m/n/10.95 (\OML/zplm/m/it/10.95 t\OT1/zplm/m/n/10.95 ) +
+Overfull \hbox (38.02101pt too wide) detected at line 202
+[]
  []
 
 
 
+[43]
+Overfull \hbox (43.58516pt too wide) detected at line 224
+[]
+ []
+
+
+
+
+Package fancyhdr Warning: \headheight is too small (15.0pt): 
+(fancyhdr)                Make it at least 25.22153pt, for example:
+(fancyhdr)                \setlength{\headheight}{25.22153pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-10.22153pt}.
+
+[44]
+Underfull \vbox (badness 1571) has occurred while \output is active []
+
+
+
+[45]
+
+
+Package fancyhdr Warning: \headheight is too small (15.0pt): 
+(fancyhdr)                Make it at least 25.22153pt, for example:
+(fancyhdr)                \setlength{\headheight}{25.22153pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-10.22153pt}.
+
+[46]
+
 [47]
+
+
+Package fancyhdr Warning: \headheight is too small (15.0pt): 
+(fancyhdr)                Make it at least 25.22153pt, for example:
+(fancyhdr)                \setlength{\headheight}{25.22153pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-10.22153pt}.
 
 [48]
 
-[49]))
+[49]
+
+
+Package fancyhdr Warning: \headheight is too small (15.0pt): 
+(fancyhdr)                Make it at least 25.22153pt, for example:
+(fancyhdr)                \setlength{\headheight}{25.22153pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-10.22153pt}.
 
 [50]
+
+[51]
+
+
+Package fancyhdr Warning: \headheight is too small (15.0pt): 
+(fancyhdr)                Make it at least 25.22153pt, for example:
+(fancyhdr)                \setlength{\headheight}{25.22153pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-10.22153pt}.
+
+[52]))
+
+[53]
 \openout2 = `partes/CH3.aux'.
 
  (partes/CH3.tex
-Chapter 3.
-(partes/CH3/convolutions.tex
 
-[51
+
+Package fancyhdr Warning: \headheight is too small (15.0pt): 
+(fancyhdr)                Make it at least 25.22153pt, for example:
+(fancyhdr)                \setlength{\headheight}{25.22153pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-10.22153pt}.
+
+[54
 
 
 
 
 ]
+Chapter 3.
+(partes/CH3/convolutions.tex
 
-[52]
-Overfull \hbox (8.415pt too wide) detected at line 124
-[]
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-
-[53]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-
-[54]
-
-[55]) (partes/CH3/ffp_and_rm.tex
+[55]
 
 [56]
 
 [57]
-
-[58]
-Underfull \vbox (badness 1546) has occurred while \output is active []
-
-
-
-[59]
-Overfull \hbox (23.39717pt too wide) detected at line 197
+Overfull \hbox (9.98825pt too wide) detected at line 124
 []
  []
 
 
-Underfull \vbox (badness 1430) has occurred while \output is active []
+
+[58]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
+
+[59]) (partes/CH3/ffp_and_rm.tex
 
 [60]
 
 [61]
-LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 15.0049pt on input line 275.
-LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 10.42007pt on input line 275.
-LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 15.0049pt on input line 275.
-LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 10.42007pt on input line 275.
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[62]
+
+[63]
+
+[64]
+Overfull \hbox (47.51097pt too wide) detected at line 197
+[]
+ []
+
+
+Underfull \vbox (badness 2875) has occurred while \output is active []
+
+
+
+[65]
+
+[66]
 Package microtype Info: Fixing zero \fontdimen 6 for font `U/dsrom/m/n/14.4'
 (microtype)             (new value: 14.4pt) on input line 275.
 Package microtype Info: Fixing zero \fontdimen 6 for font `U/dsrom/m/n/10'
 (microtype)             (new value: 10.0pt) on input line 275.
+Package microtype Info: Fixing zero \fontdimen 6 for font `U/dsrom/m/n/7'
+(microtype)             (new value: 7.0pt) on input line 275.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
@@ -1652,39 +1525,47 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 
 
-[62]
+[67]
 
-[63]
-Overfull \hbox (12.22287pt too wide) in paragraph at lines 370--371
-[]\T1/lato-TLF/m/n/10.95 The sec-ond deriva-tive $\OML/zplm/m/it/10.95 f[]\OT1/zplm/m/n/10.95 (\OML/zplm/m/it/10.95 x[]\OT1/zplm/m/n/10.95 )$ \T1/lato-TLF/m/n/10.95 can not be zero be-cause $\OML/zplm/m/it/10.95 f$ \T1/lato-TLF/m/n/10.95 is strictly con-vex, so $\OT1/zplm/m/n/10.95 (\OML/zplm/m/it/10.95 f[]\OT1/zplm/m/n/10.95 )[](\OML/zplm/m/it/10.95 f[]\OT1/zplm/m/n/10.95 (\OML/zplm/m/it/10.95 x[]\OT1/zplm/m/n/10.95 )) =
+[68]
+Overfull \hbox (2.7486pt too wide) in paragraph at lines 370--371
+[]\T1/cmr/m/n/10.95 (-10) The sec-ond deriva-tive $\OML/cmm/m/it/10.95 f[]\OT1/cmr/m/n/10.95 (-10) (\OML/cmm/m/it/10.95 x[]\OT1/cmr/m/n/10.95 (-10) )$ \T1/cmr/m/n/10.95 (-10) can not be zero be-cause $\OML/cmm/m/it/10.95 f$ \T1/cmr/m/n/10.95 (-10) is strictly con-vex, so $\OT1/cmr/m/n/10.95 (-10) (\OML/cmm/m/it/10.95 f[]\OT1/cmr/m/n/10.95 (-10) )[](\OML/cmm/m/it/10.95 f[]\OT1/cmr/m/n/10.95 (-10) (\OML/cmm/m/it/10.95 x[]\OT1/cmr/m/n/10.95 (-10) )) =
  []
 
 
 
-[64]
-
-[65]
-
-LaTeX Warning: Reference `lemma:Utrans_convolution' on page 66 undefined on input line 500.
-
-
-
-[66]
-
-[67]
-
-LaTeX Warning: Reference `lemma:Utrans_convolution' on page 68 undefined on input line 592.
-
-
-
-[68]))
-
 [69]
+Underfull \vbox (badness 5119) has occurred while \output is active []
+
+
+
+[70]
+
+[71]
+
+LaTeX Warning: Reference `lemma:Utrans_convolution' on page 72 undefined on input line 500.
+
+
+
+[72]
+Underfull \vbox (badness 1616) has occurred while \output is active []
+
+
+
+[73]
+
+LaTeX Warning: Reference `lemma:Utrans_convolution' on page 74 undefined on input line 592.
+
+
+
+[74]))
+
+[75]
 \openout2 = `partes/CH4.aux'.
 
  (partes/CH4.tex
 
-[70
+[76
 
 
 
@@ -1693,178 +1574,181 @@ LaTeX Warning: Reference `lemma:Utrans_convolution' on page 68 undefined on inpu
 Chapter 4.
 (partes/CH4/deterministic_dyson.tex
 
-[71]
-
-[72]) (partes/CH4/deterministic_diffusions.tex
-Overfull \hbox (2.07794pt too wide) in paragraph at lines 1--1
-|[] []\T1/PlyfrDisplay-LF/bold/n/14.4 (-10) De-ter-min-is-tic eigen-value pro-cesses for matrix-valued
- []
-
-
-
-[73]) (partes/CH4/connections_ffp.tex
-
-[74]
-
-[75]
-
-[76]
-
 [77]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[78]
 
-[79]
 
-LaTeX Warning: Command \' invalid in math mode on input line 293.
 
-Missing character: There is no í in font pplr9t!
+Package fancyhdr Warning: \headheight is too small (15.0pt): 
+(fancyhdr)                Make it at least 25.22153pt, for example:
+(fancyhdr)                \setlength{\headheight}{25.22153pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-10.22153pt}.
 
-LaTeX Warning: Command \' invalid in math mode on input line 293.
+[78]) (partes/CH4/deterministic_diffusions.tex
 
-Missing character: There is no í in font pplr9t!
 
-LaTeX Warning: Command \' invalid in math mode on input line 293.
+Package fancyhdr Warning: \headheight is too small (15.0pt): 
+(fancyhdr)                Make it at least 25.22153pt, for example:
+(fancyhdr)                \setlength{\headheight}{25.22153pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-10.22153pt}.
 
-Missing character: There is no í in font pplr9t!
+[79]) (partes/CH4/connections_ffp.tex
 
-LaTeX Warning: Command \' invalid in math mode on input line 293.
 
-Missing character: There is no í in font pplr9t!
-
-LaTeX Warning: Command \' invalid in math mode on input line 293.
-
-Missing character: There is no í in font pplr9t!
-
-LaTeX Warning: Command \' invalid in math mode on input line 293.
-
-Missing character: There is no í in font pplr9t!
-
-LaTeX Warning: Command \' invalid in math mode on input line 293.
-
-Missing character: There is no í in font pplr9t!
-
-LaTeX Warning: Command \' invalid in math mode on input line 293.
-
-Missing character: There is no í in font pplr9t!
-
+Package fancyhdr Warning: \headheight is too small (15.0pt): 
+(fancyhdr)                Make it at least 25.22153pt, for example:
+(fancyhdr)                \setlength{\headheight}{25.22153pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-10.22153pt}.
 
 [80]
 
 [81]
 
+
+Package fancyhdr Warning: \headheight is too small (15.0pt): 
+(fancyhdr)                Make it at least 25.22153pt, for example:
+(fancyhdr)                \setlength{\headheight}{25.22153pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-10.22153pt}.
+
 [82]
 
 [83]
-Overfull \hbox (38.26653pt too wide) detected at line 517
-[]
- []
 
 
-Overfull \hbox (114.69373pt too wide) detected at line 534
-[]
- []
-
-
+Package fancyhdr Warning: \headheight is too small (15.0pt): 
+(fancyhdr)                Make it at least 25.22153pt, for example:
+(fancyhdr)                \setlength{\headheight}{25.22153pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-10.22153pt}.
 
 [84]
-Overfull \hbox (18.54045pt too wide) in paragraph at lines 552--553
-[]\T1/lato-TLF/m/n/10.95 Let $\OML/zplm/m/it/10.95 z[]\OT1/zplm/m/n/10.95 (\OML/zplm/m/it/10.95 t\OT1/zplm/m/n/10.95 )$ \T1/lato-TLF/m/n/10.95 be such that $\OML/zplm/m/it/10.95 P\OT1/zplm/m/n/10.95 (\OML/zplm/m/it/10.95 t\OT1/pplx/m/n/10.95 , \OML/zplm/m/it/10.95 z[]\OT1/zplm/m/n/10.95 (\OML/zplm/m/it/10.95 t\OT1/zplm/m/n/10.95 )) = \OT1/pplx/m/n/10.95 0$ \T1/lato-TLF/m/n/10.95 for ev-ery $\OML/zplm/m/it/10.95 t$\T1/lato-TLF/m/n/10.95 , this means in par-tic-u-lar that $\OML/zplm/m/it/10.95 @[]P\OT1/zplm/m/n/10.95 (\OML/zplm/m/it/10.95 t\OT1/pplx/m/n/10.95 , \OML/zplm/m/it/10.95 z[]\OT1/zplm/m/n/10.95 (\OML/zplm/m/it/10.95 t\OT1/zplm/m/n/10.95 )) =
- []
-
-
-Overfull \hbox (31.39537pt too wide) detected at line 561
-[]
- []
-
-
-Overfull \hbox (43.83826pt too wide) detected at line 574
-[]
- []
-
-
-Overfull \hbox (6.75916pt too wide) in paragraph at lines 578--579
-\T1/lato-TLF/m/it/10.95 any monic poly-no-mial. Then the asym-met-ric ad-di-tive con-vo-lu-tion of $\OML/zplm/m/it/10.95 w[]\OT1/zplm/m/n/10.95 (\OML/zplm/m/it/10.95 t\OT1/pplx/m/n/10.95 , \OML/zplm/m/it/10.95 z\OT1/zplm/m/n/10.95 )$ \T1/lato-TLF/m/it/10.95 and $\OML/zplm/m/it/10.95 p\OT1/zplm/m/n/10.95 (\OML/zplm/m/it/10.95 z\OT1/zplm/m/n/10.95 )$\T1/lato-TLF/m/it/10.95 , $\OML/zplm/m/it/10.95 w[]\OT1/zplm/m/n/10.95 (\OML/zplm/m/it/10.95 t\OT1/pplx/m/n/10.95 , \OML/zplm/m/it/10.95 z\OT1/zplm/m/n/10.95 ) []
- []
-
-
 
 [85]
-Overfull \hbox (63.63152pt too wide) detected at line 598
-[]
- []
 
+LaTeX Warning: Command \' invalid in math mode on input line 293.
 
-Overfull \hbox (73.52588pt too wide) detected at line 605
-[]
- []
+Missing character: There is no í in font cmr10!
 
+LaTeX Warning: Command \' invalid in math mode on input line 293.
+
+Missing character: There is no í in font cmr10!
+
+LaTeX Warning: Command \' invalid in math mode on input line 293.
+
+Missing character: There is no í in font cmr8!
+
+LaTeX Warning: Command \' invalid in math mode on input line 293.
+
+Missing character: There is no í in font cmr6!
+
+LaTeX Warning: Command \' invalid in math mode on input line 293.
+
+Missing character: There is no í in font cmr10!
+
+LaTeX Warning: Command \' invalid in math mode on input line 293.
+
+Missing character: There is no í in font cmr10!
+
+LaTeX Warning: Command \' invalid in math mode on input line 293.
+
+Missing character: There is no í in font cmr8!
+
+LaTeX Warning: Command \' invalid in math mode on input line 293.
+
+Missing character: There is no í in font cmr6!
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
+
+
+Package fancyhdr Warning: \headheight is too small (15.0pt): 
+(fancyhdr)                Make it at least 25.22153pt, for example:
+(fancyhdr)                \setlength{\headheight}{25.22153pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-10.22153pt}.
 
 [86]
-Overfull \hbox (63.1214pt too wide) detected at line 623
-[]
- []
-
-
 
 [87]
-Overfull \hbox (54.48418pt too wide) detected at line 689
-[]
- []
-
-
-Underfull \vbox (badness 2229) has occurred while \output is active []
-
-
-
-[88]
-
-[89]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
+
+
+Package fancyhdr Warning: \headheight is too small (15.0pt): 
+(fancyhdr)                Make it at least 25.22153pt, for example:
+(fancyhdr)                \setlength{\headheight}{25.22153pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-10.22153pt}.
+
+[88]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[89]
+Underfull \vbox (badness 2573) has occurred while \output is active []
+
+
+
+
+Package fancyhdr Warning: \headheight is too small (15.0pt): 
+(fancyhdr)                Make it at least 25.22153pt, for example:
+(fancyhdr)                \setlength{\headheight}{25.22153pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-10.22153pt}.
 
 [90]
 
-LaTeX Warning: Reference `eq:stochastic_jacobi' on page 91 undefined on input line 808.
-
-
-
 [91]
-Overfull \hbox (76.51892pt too wide) detected at line 820
+Overfull \hbox (42.67143pt too wide) detected at line 517
 []
  []
 
 
-Overfull \hbox (27.72765pt too wide) detected at line 827
-[][][]\OML/zplm/m/it/10.95 @[]\OT1/zplm/m/n/10.95 [[](\OML/zplm/m/it/10.95 x\OT1/pplx/m/n/10.95 , \OML/zplm/m/it/10.95 y\OT1/pplx/m/n/10.95 , \OML/zplm/m/it/10.95 z\OT1/pplx/m/n/10.95 , \OML/zplm/m/it/10.95 t\OT1/zplm/m/n/10.95 )][] = (\OML/zplm/m/it/10.95 n[]y \OT1/zplm/m/n/10.95 + \OML/zplm/m/it/10.95 n[]z\OT1/zplm/m/n/10.95 )\OML/zplm/m/it/10.95 @[]\OT1/zplm/m/n/10.95 [[](\OML/zplm/m/it/10.95 x\OT1/pplx/m/n/10.95 , \OML/zplm/m/it/10.95 y\OT1/pplx/m/n/10.95 , \OML/zplm/m/it/10.95 z\OT1/pplx/m/n/10.95 , \OML/zplm/m/it/10.95 t\OT1/zplm/m/n/10.95 )][] \OMS/zplm/m/n/10.95 ^^@ \OML/zplm/m/it/10.95 y[]@[]@[]\OT1/zplm/m/n/10.95 [[](\OML/zplm/m/it/10.95 x\OT1/pplx/m/n/10.95 , \OML/zplm/m/it/10.95 y\OT1/pplx/m/n/10.95 , \OML/zplm/m/it/10.95 z\OT1/pplx/m/n/10.95 , \OML/zplm/m/it/10.95 t\OT1/zplm/m/n/10.95 )][] \OMS/zplm/m/n/10.95 ^^@ \OML/zplm/m/it/10.95 z[]@[]@[]\OT1/zplm/m/n/10.95 [[](\OML/zplm/m/it/10.95 x\OT1/pplx/m/n/10.95 , \OML/zplm/m/it/10.95 y\OT1/pplx/m/n/10.95 , \OML/zplm/m/it/10.95 z\OT1/pplx/m/n/10.95 , \OML/zplm/m/it/10.95 t\OT1/zplm/m/n/10.95 )][]\OT1/pplx/m/n/10.95 .
- []
-
-
-Overfull \hbox (34.65932pt too wide) detected at line 852
+Overfull \hbox (4.04227pt too wide) detected at line 526
 []
  []
 
 
+Overfull \hbox (122.60649pt too wide) detected at line 534
+[]
+ []
+
+
+
+
+Package fancyhdr Warning: \headheight is too small (15.0pt): 
+(fancyhdr)                Make it at least 25.22153pt, for example:
+(fancyhdr)                \setlength{\headheight}{25.22153pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-10.22153pt}.
 
 [92]
-Overfull \hbox (6.18153pt too wide) detected at line 911
+Overfull \hbox (49.46053pt too wide) detected at line 561
+[]
+ []
+
+
+Overfull \hbox (52.21417pt too wide) detected at line 574
 []
  []
 
 
 
 [93]
-Overfull \hbox (39.24725pt too wide) detected at line 924
+Overfull \hbox (71.2886pt too wide) detected at line 598
 []
  []
 
 
-Overfull \hbox (130.9673pt too wide) detected at line 939
+Overfull \hbox (82.30072pt too wide) detected at line 605
 []
  []
 
@@ -1873,11 +1757,119 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-[94]))
+
+Package fancyhdr Warning: \headheight is too small (15.0pt): 
+(fancyhdr)                Make it at least 25.22153pt, for example:
+(fancyhdr)                \setlength{\headheight}{25.22153pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-10.22153pt}.
+
+[94]
+Overfull \hbox (67.33533pt too wide) detected at line 623
+[]
+ []
+
+
 
 [95]
 
-[96
+
+Package fancyhdr Warning: \headheight is too small (15.0pt): 
+(fancyhdr)                Make it at least 25.22153pt, for example:
+(fancyhdr)                \setlength{\headheight}{25.22153pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-10.22153pt}.
+
+[96]
+Overfull \hbox (65.57379pt too wide) detected at line 689
+[]
+ []
+
+
+
+[97]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+
+Package fancyhdr Warning: \headheight is too small (15.0pt): 
+(fancyhdr)                Make it at least 25.22153pt, for example:
+(fancyhdr)                \setlength{\headheight}{25.22153pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-10.22153pt}.
+
+[98]
+
+[99]
+
+LaTeX Warning: Reference `eq:stochastic_jacobi' on page 100 undefined on input line 808.
+
+
+Overfull \hbox (74.22287pt too wide) detected at line 820
+[]
+ []
+
+
+Overfull \hbox (19.17017pt too wide) detected at line 827
+[][][]\OML/cmm/m/it/10.95 @[]\OT1/cmr/m/n/10.95 [[](\OML/cmm/m/it/10.95 x; y; z; t\OT1/cmr/m/n/10.95 )][] = (\OML/cmm/m/it/10.95 n[]y \OT1/cmr/m/n/10.95 + \OML/cmm/m/it/10.95 n[]z\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 @[]\OT1/cmr/m/n/10.95 [[](\OML/cmm/m/it/10.95 x; y; z; t\OT1/cmr/m/n/10.95 )][] \OMS/cmsy/m/n/10.95 ^^@ \OML/cmm/m/it/10.95 y[]@[]@[]\OT1/cmr/m/n/10.95 [[](\OML/cmm/m/it/10.95 x; y; z; t\OT1/cmr/m/n/10.95 )][] \OMS/cmsy/m/n/10.95 ^^@ \OML/cmm/m/it/10.95 z[]@[]@[]\OT1/cmr/m/n/10.95 [[](\OML/cmm/m/it/10.95 x; y; z; t\OT1/cmr/m/n/10.95 )][]\OML/cmm/m/it/10.95 :
+ []
+
+
+Underfull \vbox (badness 6125) has occurred while \output is active []
+
+
+
+
+Package fancyhdr Warning: \headheight is too small (15.0pt): 
+(fancyhdr)                Make it at least 25.22153pt, for example:
+(fancyhdr)                \setlength{\headheight}{25.22153pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-10.22153pt}.
+
+[100]
+Overfull \hbox (48.47052pt too wide) detected at line 852
+[]
+ []
+
+
+
+[101]
+Overfull \hbox (3.3668pt too wide) detected at line 911
+[]
+ []
+
+
+Overfull \hbox (44.43343pt too wide) detected at line 924
+[]
+ []
+
+
+
+
+Package fancyhdr Warning: \headheight is too small (15.0pt): 
+(fancyhdr)                Make it at least 25.22153pt, for example:
+(fancyhdr)                \setlength{\headheight}{25.22153pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-10.22153pt}.
+
+[102]
+Overfull \hbox (116.46867pt too wide) detected at line 939
+[]
+ []
+
+))
+
+[103]
+
+
+Package fancyhdr Warning: \headheight is too small (15.0pt): 
+(fancyhdr)                Make it at least 25.22153pt, for example:
+(fancyhdr)                \setlength{\headheight}{25.22153pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-10.22153pt}.
+
+[104
 
 
 
@@ -1891,27 +1883,14 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 
-Overfull \hbox (6.54974pt too wide) in paragraph at lines 128--128
-[]\T1/lato-TLF/m/n/10.95 Holcomb, D. & Pa-que-tte, E. Tridi-ag-o-nal mod-els for Dyson Brow-n-ian mo-tion. \T1/lato-TLF/m/it/10.95 arXiv preprint
- []
 
+[105]
 
-
-[97{C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/enc/dvips/cm-super/cm-super-t1.enc}]
-Overfull \hbox (2.46652pt too wide) in paragraph at lines 128--128
-\T1/lato-TLF/m/n/10.95 FROM A NOR-MAL MUL-TI-VARI-ATE POP-U-LA-TION. \T1/lato-TLF/m/it/10.95 Biometrika \T1/lato-TLF/b/n/10.95 20A, \T1/lato-TLF/m/n/10.95 32^^U52. ISSN: 0006-
- []
-
-
-
-[98] (main.aux (partes/Preliminares.aux) (partes/CH2.aux) (partes/CH3.aux) (partes/CH4.aux))
+[106] (main.aux (partes/Preliminares.aux) (partes/CH2.aux) (partes/CH3.aux) (partes/CH4.aux))
  ***********
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-05-27>
  ***********
-
-
-LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 
 LaTeX Warning: There were undefined references.
@@ -1920,7 +1899,7 @@ LaTeX Warning: There were undefined references.
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: C13E998F4D2E1C9B647830712F278CB2;7495.
+(rerunfilecheck)             Checksum: F0AEA49D75CC2B268CB41A16AC1C28DE;7495.
 
 Package biblatex Warning: Please (re)run BibTeX on the file(s):
 (biblatex)                main
@@ -1935,17 +1914,17 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 ### semi simple group (level 1) entered at line 109 (\begingroup)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 37134 strings out of 473904
- 711214 string characters out of 5736415
- 1967908 words of memory out of 5000000
- 58863 multiletter control sequences out of 15000+600000
- 1074847 words of font info for 220 fonts, out of 8000000 for 9000
+ 35447 strings out of 473904
+ 671913 string characters out of 5736415
+ 1972908 words of memory out of 5000000
+ 57022 multiletter control sequences out of 15000+600000
+ 595938 words of font info for 242 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,20n,101p,1970b,1924s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/typoland/lato/Lato-Bold.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/typoland/lato/Lato-Italic.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/typoland/lato/Lato-Regular.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/playfair/PlyfrDisplay-Bold.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/doublestroke/dsrom10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/mathpazo/fplmbb.pfb><C:/Program Files/MiKTeX/fonts/type1/public/mathpazo/fplmr.pfb><C:/Program Files/MiKTeX/fonts/type1/public/mathpazo/fplmri.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/rsfs/rsfs10.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sftt1095.pfb><C:/Program Files/MiKTeX/fonts/type1/urw/palatino/uplr8a.pfb><C:/Program Files/MiKTeX/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on main.pdf (108 pages, 846971 bytes).
+ 99i,20n,101p,1970b,1753s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/doublestroke/dsrom10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/rsfs/rsfs10.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfbx1000.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfbx1095.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfbx1200.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfbx1440.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfbx2074.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfbx2488.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfcc1095.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfrm1000.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfrm1095.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfrm1200.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfti1095.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sftt1095.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfxc1728.pfb>
+Output written on main.pdf (116 pages, 979893 bytes).
 PDF statistics:
- 1248 PDF objects out of 1440 (max. 8388607)
- 407 named destinations out of 1000 (max. 500000)
- 32575 words of extra memory for PDF output out of 35830 (max. 10000000)
+ 1340 PDF objects out of 1440 (max. 8388607)
+ 422 named destinations out of 1000 (max. 500000)
+ 64319 words of extra memory for PDF output out of 74296 (max. 10000000)
 
