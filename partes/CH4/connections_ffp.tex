@@ -638,16 +638,37 @@ In order to find the associated process, we will first generalize the results of
 
     Notice that this generalizes the characteristic polynomial of the (static and dynamical) Wishart and the static Jacobi cases. 
 
-    \begin{theorem} \label{thm:mult_operators}
+    \begin{theorem} \label{thm:multivariate_operators}
         Let $F$ and $G$ be two-variable polynomials and $A,B \in \mathcal M_{k,n_1}, C,D \in \mathcal M_{k,n_2}$ such that $C$ and $D$ are invariant under product by signed permutation matrices. Suppose that
 
          \begin{align*}
-            q_{A,B}(x,y,z) &= F(\partial_x \partial_y,\partial_x\partial_z)[x^ky^{n_1}z^{n_2}],\\ 
-            q_{C,D}(x,y,z) &= G(\partial_x \partial_y,\partial_x\partial_z)[x^ky^{n_1}z^{n_2}].
+            \E{q_{A,B}(x,y,z)} &= F(\partial_x \partial_y,\partial_x\partial_z)[x^ky^{n_1}z^{n_2}],\\ 
+            \E{q_{C,D}(x,y,z)} &= G(\partial_x \partial_y,\partial_x\partial_z)[x^ky^{n_1}z^{n_2}].
          \end{align*}
 
-         Then $q_{A+C, B+D}(x,y,z) = F(\partial_x \partial_y,\partial_x\partial_z)G(\partial_x \partial_y,\partial_x\partial_z)[x^ky^{n_1}z^{n_2}]$
+         Then $\E{q_{A+C, B+D}(x,y,z)} = F(\partial_x \partial_y,\partial_x\partial_z)G(\partial_x \partial_y,\partial_x\partial_z)[x^ky^{n_1}z^{n_2}]$
     \end{theorem}
+
+    \begin{proof}
+        If $F',G'$ are the linear differential operators (multivariate polynomials on $\partial_x\partial_y, \partial_x\partial_z$) generating $p_{A,B}$ and $p_{C,D}$ and they satisfy the former multiplicative property, then it can be extended to $F,G$ by linearity. Thus we prove for $F', G'$. 
+
+
+        By definition, we have that 
+        
+        \begin{align*}
+            \E{ p_{A, B}(x,y,z) } &= \E{ \det[ x I + y \trans A A + z \trans BB ] } = \E{\chi_{-y\trans AA -z\trans BB}(x)},\\
+            \E{ p_{C, D}(x,y,z) } &= \E{ \det[ x I + y \trans CC + z \trans DD ] } = \E{\chi_{-y\trans CC -z\trans DD}(x)}.
+        \end{align*}
+
+        Notice that by the results in \todo{citar convolución como polinomiso característicos esperados}
+
+        \begin{align*}
+            \E{p_{A+C, B+D}(x,y,z)} &= \E{\chi_{-y\trans AA -z\trans BB}(x)} \boxplus_n \E{\chi_{-y\trans CC -z\trans DD}(x)}.
+        \end{align*}
+
+        Applying Theorem \ref{thm:multiplicative_operators} we get to the desired result by considering the derivatives in $y,z$ as constant coefficients when evaluating in $x$.
+
+    \end{proof}
 
     \begin{theorem} \label{thm:exp_operator}
         Let $\{A_i\}_{i=0}^\infty$ and $\{B_i\}_{i=0}^\infty$ be sequences of matrices invariant under transformation by signed permutation matrices such that
@@ -688,7 +709,7 @@ In order to find the associated process, we will first generalize the results of
             &= \left( 1 + \frac{\sigma_1}{m}\partial_y\partial_x + \frac{\sigma_2}{m}\partial_z\partial_x + O \left(\frac{1}{m^2}\right)\right)[x^k y^{n_1} z^{n_2}]
         \end{align*}
 
-    Once we have found $q_{A_i/\sqrt m, B_i/\sqrt{m}}(x,y,z)$ as a polynomial on the operators $\partial_x \partial_y$ and $\partial_x \partial_z$, we apply Theorem \ref{thm:mult_operators} to get, for $q_{C_m,D_m}(x,y,z)$,
+    Once we have found $q_{A_i/\sqrt m, B_i/\sqrt{m}}(x,y,z)$ as a polynomial on the operators $\partial_x \partial_y$ and $\partial_x \partial_z$, we apply Theorem \ref{thm:multivariate_operators} to get, for $q_{C_m,D_m}(x,y,z)$,
 
     \begin{align*}
         \E{ q_{C_m,D_m}(x,y,z) } &= \left( 1 + \frac{\sigma_1}{m}\partial_y\partial_x + \frac{\sigma_2}{m}\partial_z\partial_x + O \left(\frac{1}{m^2}\right)\right)^m[x^k y^{n_1} z^{n_2}]
@@ -727,7 +748,7 @@ In order to find the associated process, we will first generalize the results of
             \end{equation*}        
         \end{proof}
 
-        With this we have an operator that allows us to compute $q_{A,B}(x,y,z)$ for $A,B$ independent Gaussian matrices with zero mean and variances $\sigma_1,\sigma_2$, respectively. Our goal is to be able to use this to study matrix-valued stochastic processes by letting the variances vary linearly in time. Hence, the entries of the matrices have the same law as a standard Brownian motion starting at zero. An interesting question is how this behavior would be affected if we start our processes at points different than zero. The answer is given by Theorem \ref{thm:mult_operators} and noticing that any polynomial $r(x,y,z)$ of orders $k,n_1,n_2$ can be seen as a polynomial differential operator acting on $x^ky^{n_1}y^{n_2}$, so if $S\in \M_{k,n_1}(\C),T\in \M_{k,n_2}(\C)$ are fixed matrices and $A, B$ are Gaussian independent matrices with variances $\sigma_1$ and $\sigma_2$, respectively, then
+        With this we have an operator that allows us to compute $q_{A,B}(x,y,z)$ for $A,B$ independent Gaussian matrices with zero mean and variances $\sigma_1,\sigma_2$, respectively. Our goal is to be able to use this to study matrix-valued stochastic processes by letting the variances vary linearly in time. Hence, the entries of the matrices have the same law as a standard Brownian motion starting at zero. An interesting question is how this behavior would be affected if we start our processes at points different than zero. The answer is given by Theorem \ref{thm:multivariate_operators} and noticing that any polynomial $r(x,y,z)$ of orders $k,n_1,n_2$ can be seen as a polynomial differential operator acting on $x^ky^{n_1}y^{n_2}$, so if $S\in \M_{k,n_1}(\C),T\in \M_{k,n_2}(\C)$ are fixed matrices and $A, B$ are Gaussian independent matrices with variances $\sigma_1$ and $\sigma_2$, respectively, then
 
         \begin{equation*}
             \E{q_{S+A,T+B}(x,y,z)} = e^{\sigma_1 \partial_x \partial_y + \sigma_2 \partial_x \partial_z}[q_{S,T}(x,y,z)].

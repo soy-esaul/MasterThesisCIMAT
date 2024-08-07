@@ -40,10 +40,10 @@
 \contentsline {subsubsection}{Gaussian distribution}{77}{section*.35}%
 \contentsline {subsubsection}{Poisson distribution}{78}{section*.36}%
 \contentsline {subsection}{\numberline {3.3.2}Finite Free Limit Theorems}{79}{subsection.3.3.2}%
-\contentsline {chapter}{\numberline {4}Deterministic eigenvalue processes for matrix valued processes}{81}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Deterministic Dyson Brownian motion}{81}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Deterministic eigenvalue processes for matrix-valued diffusions}{83}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}Wishart process}{84}{subsection.4.2.1}%
-\contentsline {subsection}{\numberline {4.2.2}Jacobi process}{85}{subsection.4.2.2}%
-\contentsline {section}{\numberline {4.3}Connections with finite free probability}{85}{section.4.3}%
-\contentsline {chapter}{Bibliography}{109}{chapter*.44}%
+\contentsline {chapter}{\numberline {4}Deterministic eigenvalue processes for matrix valued processes}{83}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Deterministic Dyson Brownian motion}{83}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Deterministic eigenvalue processes for matrix-valued diffusions}{85}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Wishart process}{86}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Jacobi process}{87}{subsection.4.2.2}%
+\contentsline {section}{\numberline {4.3}Connections with finite free probability}{87}{section.4.3}%
+\contentsline {chapter}{Bibliography}{111}{chapter*.45}%
