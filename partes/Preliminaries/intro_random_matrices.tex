@@ -1,6 +1,6 @@
-The purpose of this chapter is (1) to introduce the concepts and results that are used throughout the thesis and (2) to standardize the notation coming from different areas, so it is easier to read the text. The first section provides a brief introduction to the objects of study of random matrix theory and a few matrix algebra results that are recalled later in the proofs. The second section introduces stochastic calculus first for $\R$-valued processes and then for processes taking values in spaces of matrices. The theory developed here will be used for the dynamics of eigenvalues in Chapters \ref{ch:eigen_processes} and \ref{ch:determinist}.The last section covers the essential definition and theorems coming from non-commutative probability theory that constitute a precedent for Chapter \ref{ch:finite_free}.
+The purpose of this chapter is (1) to introduce the concepts and results that are used throughout the thesis and (2) to standardize the notation coming from different areas, so it is easier to read the text. The first section briefly introduces the objects of study of random matrix theory and a few matrix algebra results that are recalled later in the proofs. The second section introduces stochastic calculus for $\R$-valued processes and then for processes taking values in spaces of matrices. The theory developed here will be used for the dynamics of eigenvalues in Chapters \ref{ch:eigen_processes} and \ref{ch:determinist}. The last section covers the essential definition and theorems coming from non-commutative probability theory that constitutes a precedent for Chapter \ref{ch:finite_free}.
 
-In order to be consistent along the text, we introduce here the notation we will be using. However, the use of several kinds of object commonly denoted with the same symbols, makes it necessary to specify every time what kind of object we are dealing with. The time parameter of a stochastic process will always be shown in parentheses (i.e. $W(t)$). Subindexes will represent the entry of a matrix or vector. An integer interval of length $k$ will be represented by the symbol $[k]$, i.e.
+To be consistent along the text, we introduce here the notation we will be using. However, the use of several kinds of objects commonly denoted with the same symbols makes it necessary to specify what kind of object we are dealing with every time. The time parameter of a stochastic process will always be shown in parentheses (i.e. $W(t)$). Subindexes will represent the entry of a matrix or vector. An integer interval of length $k$ will be represented by the symbol $[k]$, i.e.
 
 \begin{equation*}
     [k] \coloneqq \{1,2,\dots, k-1, k\}.
@@ -10,13 +10,13 @@ When we place a set $S$ in the combinations symbol $\binom{S}{k}$, we denote the
 
 The determinant of a matrix $A$ will be denoted by $[A]$ and if $S,T$ are sets of integers, $[A]_{S,T}$ represents the determinant of the submatrix $A_{S,T}$. The transpose of $A$ is denoted as $\trans{A}$ and if it has complex entries, its adjoint element is $\hermit{A}$. The space of $n\times m$ matrices with entries in a field $\mathbb F$ is denoted by $\mathcal M_{n,m}(\mathbb F)$. The space of $n\times n$ symmetric matrices is denoted by $\mathcal H_{n,n}(\R)$ and the space of $n\times n$ hermitian by $\mathcal H_{n,n}(\C)$.
 
-The symbol $\langle X,Y \rangle(t)$ denotes the quadratic covariation between $X$ and $Y$ and sometimes it will also be represented by $\d X\d Y$. The derivative with respect to a given variable $x$ will be represented either using $\frac{\d}{\d x}, \frac{\partial}{\partial x}$ or $\partial_x$ and following the convention in the literature we will sometimes denote $\frac{\d}{\d t} f = g$ as $\d f = g\d t$.
+The symbol $\langle X,Y \rangle(t)$ denotes the quadratic covariation between $X$ and $Y$ and sometimes it will also be represented by $\d X\d Y$. The derivative concerning a given variable $x$ will be represented either using $\frac{\d}{\d x}, \frac{\partial}{\partial x}$ or $\partial_x$ and following the convention in the literature we will sometimes denote $\frac{\d}{\d t} f = g$ as $\d f = g\d t$.
 
-In the next section we introduce the basic concepts in the study of random matrices.
+In the next section, we introduce the basic concepts in the study of random matrices.
 
 \section{Introduction to main concepts in Random Matrix Theory}
 
-This section is meant to present the essential objects we study in random matrix theory and illustrate a few techniques that can be used to derive results. Most of the relevant results, however, are presented later with the tools introduced in the following sections.
+This section is meant to present the essential objects we study in random matrix theory and illustrate a few techniques that can be used to derive results. However, most of the relevant results are presented later with the tools introduced in the following sections.
 
 % Emprirical spectral measures
 
@@ -153,7 +153,7 @@ In random matrix theory it is common to work with matrix ensembles. An ensemble 
 
 % Laws of large numbers, Wigner's semicircle law.
 
-The next results gives the convergence of an empirical spectral measure to a continuous probability measure in $\R$ when the matrix dimension $n$ tends to infinity. The limit only depends on the first two moments of the variables involved and not on the whole distribution, so it can be seen as a matrix analogous of the Central Limit Theorem.
+The next results give the convergence of an empirical spectral measure to a continuous probability measure in $\R$ when the matrix dimension $n$ tends to infinity. The limit only depends on the first two moments of the variables involved and not on the whole distribution, so it can be seen as a matrix analogous of the Central Limit Theorem.
 
 \begin{theorem}[Wigner's semicircle law \cite{book:mingo_speicher}]
     For each $n\in \N$, let $W^{(n)}$ be a Wigner ensemble  and its entries $W_{ij}^{(n)}$ satisfy the following conditions.
