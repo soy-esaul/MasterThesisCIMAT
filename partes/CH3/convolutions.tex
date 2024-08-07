@@ -1,31 +1,33 @@
 \section{Convolution of polynomials}
 
-In this section, we present two notions of polynomial convolution, both introduced around a century ago \cite{walsh1922location} \cite{szeg1939orthogonal}. Their study began using tools outside of probability theory, but we do not include any of those results here, instead, we are merely interested in introducing them to relate them to expected characteristic polynomials of random matrices. In the next subsection we introduce three ensembles of orthogonal polynomials, namely the Hermite, Laguerre and Jacobi polynomials. We prove some nice properties these polynomials, especially related to the notions of convolution introduced previously. 
+In this section, we present two notions of polynomial convolution, both introduced around a century ago \cite{walsh1922location} \cite{szeg1939orthogonal}. Their study began using tools outside of probability theory, but we do not include any of those results here, instead, we are merely interested in introducing them to relate them to expected characteristic polynomials of random matrices. In the next subsection we introduce three ensembles of orthogonal polynomials, namely the Hermite, Laguerre and Jacobi polynomials. We prove some nice properties of these polynomials, especially related to the notions of convolution introduced previously. 
 
-Both notions of convolution are defined for monic complex polynomials. Under this conditions, we can express a polynomial $p(z)$ as
+The three notions of convolution are defined for complex polynomials. Although one could get the convolution between any two polynomials, we are interested uniquely in monic polynomials as our main object of interest are the roots and their behavior under convolution. In full generality, we can write a monic complex polynomial $p(z)$ as
 
 \begin{equation*}
-    p(z) = \sum_{j=0}^d z^{d-j}(-1)^{j}a_j.
+    p(z) = \sum_{j=0}^n z^{n-j}(-1)^{j}a_j.
 \end{equation*}
 
-Both convolutions are defined in function of the polynomial degree, but the polynomials need not to have the same degree. In the case the degree is different, we take the convolution with the highest degree. 
+The three notions of convolution are defined in function of the polynomial degree, but the polynomials need not to have the same degree. In the case the degree is different, we can take the convolution with the highest degree, and notice that this equivalent to have zero coefficients for higher powers of the polynomial with the minor degree.
 
 \subsection{Symmetric additive convolution}
+
+This notion of convolution will be the most used along the text. Several of the results we find for the relationship of this convolution with random matrix theory can be extrapolated to the other notions, but the space and time required would be longer than the dedicated to the present work.
 
 \begin{definition}[Symmetric additive convolution]\label{def:symadconv}
     Let $p(z), q(z)$ be two complex polynomials of $z$, with degree less or equal to $d$,
 
     \begin{align*}
-        p(z) &= \sum_{j=0}^d z^{d-j}(-1)^{j}a_j,\\
-        q(z) &= \sum_{j=0}^d z^{d-j}(-1)^{j}b_j.
+        p(z) &= \sum_{j=0}^n z^{n-j}(-1)^{j}a_j,\\
+        q(z) &= \sum_{j=0}^n z^{n-j}(-1)^{j}b_j.
     \end{align*}
 
-    The $d$th symmetric additive convolution of $p$ and $q$ is
+    The $n$th symmetric additive convolution of $p$ and $q$ is
 
     \begin{align*}
-        p(z) \boxplus_d q(z) &\coloneqq \sum_{k=0}^d z^{d-k}(-1)^k \sum_{i+j = k} \frac{(d-i)!(d-j)!}{d!(d-k)!}a_i b_j, \\
-        &= \frac{1}{d!}\sum_{k=0}^d \partial_z^k p(z)\partial_z^{d-k}q(0),\\
-        &= \frac{1}{d!}\sum_{k=0}^d \partial_z^k q(z)\partial_z^{d-k}p(0),
+        p(z) \boxplus_n q(z) &\coloneqq \sum_{k=0}^n z^{n-k}(-1)^k \sum_{i+j = k} \frac{(n-i)!(n-j)!}{n!(n-k)!}a_i b_j, \\
+        &= \frac{1}{n!}\sum_{k=0}^n \partial_z^k p(z)\partial_z^{n-k}q(0),\\
+        &= \frac{1}{n!}\sum_{k=0}^n \partial_z^k q(z)\partial_z^{n-k}p(0),
     \end{align*}
 
     \noindent with $\partial_z$ denoting the differentiation with respect to $z$.
@@ -34,10 +36,13 @@ Both convolutions are defined in function of the polynomial degree, but the poly
 It is straightforward from the definition to prove that the symmetric additive convolution is linear. Let $p,q,r$ be degree $n$ polynomials with $a_i, b_i, c_i$ their respective coefficients and $\alpha \in \R$, then
 
 \begin{align*}
-    p \boxplus (\alpha q + r) &= \sum_{k=0}^d z^{d-k}(-1)^k \sum_{i+j = k} \frac{(d-i)!(d-j)!}{d!(d-k)!}a_i (\alpha b_j + c_j), \\ 
-    &= \alpha \sum_{k=0}^d z^{d-k}(-1)^k \sum_{i+j = k} \frac{(d-i)!(d-j)!}{d!(d-k)!}a_i b_j + \sum_{k=0}^d z^{d-k}(-1)^k \sum_{i+j = k} \frac{(d-i)!(d-j)!}{d!(d-k)!}a_i c_j,\\
+    p \boxplus_n (\alpha q + r) &= \sum_{k=0}^n z^{n-k}(-1)^k \sum_{i+j = k} \frac{(n-i)!(n-j)!}{n!(n-k)!}a_i (\alpha b_j + c_j), \\ 
+    &= \alpha \sum_{k=0}^n z^{n-k}(-1)^k \sum_{i+j = k} \frac{(n-i)!(n-j)!}{n!(n-k)!}a_i b_j\\ 
+    &+ \sum_{k=0}^n z^{n-k}(-1)^k \sum_{i+j = k} \frac{(n-i)!(n-j)!}{n!(n-k)!}a_i c_j,\\
     &= \alpha(p \boxplus_n q) + (p \boxplus_n r).
 \end{align*}
+
+
 
 \begin{theorem} \label{thm:multiplicative_operators}
     Let $P(\partial_z), Q(\partial_z)$ be linear differential operators and $p,q$ be polynomials of degree at most $n$ such that
