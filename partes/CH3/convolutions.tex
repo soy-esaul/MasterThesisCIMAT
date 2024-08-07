@@ -31,6 +31,61 @@ Both convolutions are defined in function of the polynomial degree, but the poly
     \noindent with $\partial_z$ denoting the differentiation with respect to $z$.
 \end{definition}
 
+It is straightforward from the definition to prove that the symmetric additive convolution is linear. Let $p,q,r$ be degree $n$ polynomials with $a_i, b_i, c_i$ their respective coefficients and $\alpha \in \R$, then
+
+\begin{align*}
+    p \boxplus (\alpha q + r) &= \sum_{k=0}^d z^{d-k}(-1)^k \sum_{i+j = k} \frac{(d-i)!(d-j)!}{d!(d-k)!}a_i (\alpha b_j + c_j), \\ 
+    &= \alpha \sum_{k=0}^d z^{d-k}(-1)^k \sum_{i+j = k} \frac{(d-i)!(d-j)!}{d!(d-k)!}a_i b_j + \sum_{k=0}^d z^{d-k}(-1)^k \sum_{i+j = k} \frac{(d-i)!(d-j)!}{d!(d-k)!}a_i c_j,\\
+    &= \alpha(p \boxplus_n q) + (p \boxplus_n r).
+\end{align*}
+
+\begin{theorem} \label{thm:multiplicative_operators}
+    Let $P(\partial_z), Q(\partial_z)$ be linear differential operators and $p,q$ be polynomials of degree at most $n$ such that
+
+    \begin{align*}
+        p(z) = P(\partial_z)[z^n], \qquad q(z) =Q(\partial_z)[z^n].
+    \end{align*}
+
+    Then $p(z) \boxplus_n q(z) = P(\partial_z)Q(\partial_z)[z^n]$.
+\end{theorem}
+
+\begin{proof}
+    We prove first that $z^n \boxplus z^n = z^n$. By definition of the convolution,
+    
+    \begin{align*}
+        z^n \boxplus_n z^n &= \sum_{k=0}^n z^{n-k}(-1)^k \sum_{i+j = k} \frac{(n-i)!(n-j)!}{n!(n-k)!}a_i b_j, \\
+        &= z^{n-0}(-1)^0\left( \frac{(n-0)!(n-0)!}{n!(n-0)!}\right) = z^n.
+    \end{align*}
+
+    Now, we prove the multiplicative property of $P$ and $Q$,
+
+    \begin{equation*}
+        \left( P(\partial_z)[r(z)] \boxplus_n Q(\partial_z)[s(z)] \right) = P(\partial_z) Q(\partial_z)(r(z) \boxplus s(z)).
+    \end{equation*}
+
+    For this proof, let us do it for operators of the form $P(\partial_z)[z^n] = z^{n-k}$ and then use the linearity of the symmetric additive convolution to extend linearly to polynomials of such operators. For $j+k\le n$, take $P(\partial_z) \coloneqq \frac{(n-k)!}{n!}\partial_z^k$ and $Q(\partial_z) \coloneqq \frac{(n-j)!}{n!}\partial_z^j$ and notice
+
+    \begin{align*}
+        P(\partial_z)[z^n] &= \frac{(n-k)!}{n!} \partial_z^k[z^n] = z^{n-k},\\
+        Q(\partial_z)[z^n] &= \frac{(n-j)!}{n!} \partial_z^j[z^n] = z^{n-j}.
+    \end{align*}
+
+    The symmetric additive convolution of these polynomials is 
+
+    \begin{align*}
+        P(\partial_z)[z^n] \boxplus_n Q(\partial_z)[z^n] &= z^{n-k}\boxplus_n z^{n-j},\\
+        &= \frac{(n-k)!(n-j)!}{n!n!}\frac{n!}{(n-k-j)!}z^{n-k-j} = \frac{(n-k)!(n-j)!}{n!(n-k-j)!}z^{n-k-j}.
+    \end{align*}
+
+    On the other hand, the product of the linear operators is 
+
+    \begin{align*}
+        P(\partial_z)Q(\partial_z)[z^n] &= \left(\frac{(n-k)!}{n!}\partial_z^k \frac{(n-j)!}{n!}\partial_z^j\right)[z^n] = \frac{(n-k)!(n-j)!}{n!n!} \partial_z^{j+k}[z^n], \\
+        &= \frac{(n-k)!(n-j)!}{n!n!} \frac{n!}{(n-k-j)!}z^{n-k-j} = \frac{(n-k)!(n-j)!}{n!(n-k-j)!}z^{n-k-j}.
+    \end{align*}
+
+    To conclude, we extend this property linearly to any $P,Q$ polynomials on $\partial_z$. 
+\end{proof}
 
 \subsection{Symmetric multiplicative convolution}
 

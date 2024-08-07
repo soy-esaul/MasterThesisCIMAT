@@ -618,25 +618,203 @@ We state without proof the following result. The proof  can be found in \cite{an
     So proving the equivalence of the two statements reduces to prove the equivalence between \eqref{eq:f_matrix_module} and \eqref{eq:differential_matrix_module}. Because the formal series in \eqref{eq:f_matrix_module} coincide up to the $n+1$th term, the derivatives coincide up to the $n$th term, so one implication is trivial. For the second implication, it suffices to prove that $f_A(0) + f_B(0) = f_{A+B}(0)$, but we have that $f_A(0)=f_B(0)=f_{A+B}(0)$, so the result follows.
 \end{proof} \todo{Mencionar caso multiplicativo.}
 
+\subsection{Finite free distributions}
+
+\begin{theorem} \label{thm:if_and_only_if}
+    Let $P(n^{-1}\partial_z)$ be a polynomial on $n^{-1}\partial_z$ such that the linear differential operator applied to $x^n$, $P(n^{-1}\partial_z)[z^n]$ is a monic polynomial. Then $P(n^{-1}\partial_z) = \det[zI - A]$ for a matrix $A$ if and only if 
+
+    \begin{equation} \label{eq:cauchy_transform_R}
+        \frac1n \frac{\partial_s P(s)}{P(s)} \equiv - \mathcal R_n^{\mu_A}(s) \qquad \mod [s^{n+1}].
+    \end{equation}
+\end{theorem}
+
+\begin{proof}
+    Recall that
+
+    \begin{equation*}
+        \mathcal R_{n}^{\mu_A}(s) \equiv - \frac1n \frac{\partial}{\partial s} \ln \left(\frac1n \sum_{u_i \in U_A} e^{-nsu_i} \right) \qquad \mod [s^n].
+    \end{equation*}
+
+    Also 
+
+    \begin{align*}
+        \frac1n \frac{\partial_s P(s)}{P(s)} &= \frac1n \partial_s[\ln P(s)].
+    \end{align*}
+
+    Then \eqref{eq:cauchy_transform_R} is satisfied if and only if 
+
+    \begin{equation*}
+        P(s) \equiv \frac1n \sum_{u_i \in U_A} e^{-nsu_i} \qquad \mod [s^{n+1}].
+    \end{equation*}
+
+    The last relationship in turn is equivalent to 
+
+    \begin{equation*}
+        P(n^{-1}\partial_z)[z^n] = \left( \frac1n \sum_{u_i \in U_A} e^{-u_i\partial_z} \right)[z^n] = \frac1n \sum_{u_i \in U_A} e^{-u_i\partial_z}[z^n].
+    \end{equation*}
+
+    Expanding the last term and using the definition of $U_A$, we find
+
+    \begin{align*}
+        \frac1n \sum_{u_i \in U_A} e^{-u_i\partial_z}[z^n] &=  \frac1n \sum_{u_i \in U_A} \sum_{j=0}^n \frac{(-u_i)^j}{j!} \partial_z^j[z^n],\\
+        &= \frac1n \sum_{u_i \in U_A} \sum_{j=0}^n (-u_i)^j \frac{n!}{j!(n-j)!}z^{n-j} = \frac1n \sum_{u_i \in U_A} (z - u_i)^n = \det[zI - A].
+    \end{align*}\end{proof}
 
 
+\subsubsection{Constant distribution}
+
+A constant random variable has a first cumulant equal to $c \in \R$ and all the remaining cumulants equal to zero. Then its $\mathcal R_n^{\mu_A}$ transform is the constant formal series
+
+\begin{equation*}
+    \mathcal R_n^{\mu_A}(s) = c.
+\end{equation*}
+
+We can use Theorem \ref{thm:if_and_only_if} to find the polynomial $p$ with this $\mathcal R_n^{\mu_A}$ transform.
+
+\begin{align*}
+    -c &= \frac{1}{n}\partial_s[\ln P(s)],\\
+    \Rightarrow -\int nc\d s &= \ln P(s),\\
+    \Rightarrow \exp\left\{-ncs + c_0\right\} &= P(s),
+\end{align*}
+
+\noindent for some constant $c_0$. Then $p(z)$ is the monic scaling of the polynomial $P(n^{-1}\partial_z)[z^n] = e^{-c\partial_z}[z^n]$. Expanding we find
+
+\begin{align*}
+    p(z) &= e^{-c\partial_z}[z^n] = \sum_{k=0}^n \frac{(-c)^k}{k!}\partial_z^k[z^n],\\
+    &= \sum_{k=0}^n \frac{n!}{k!(n-k)!}(-c)^k z^{n-k} = (z-c)^n.
+\end{align*}
+
+Thus, as we would expect, $p$ is the monic polynomial with all the roots equal to $c$ which is also the expected characteristic polynomial of the deterministic matrix $cI$.
+
+\subsubsection{Gaussian distribution}
+
+In free and classical probability, the central limit random variable is characterized for having the first two cumulants non-zero and the rest of the cumulants equal to zero. We already know what is the polynomial corresponding to a constant distribution in finite free probability. To find the general polynomial corresponding to a Gaussian, we can find the polynomial with the second cumulant non-zero and the rest equal to zero. If the second cumulant is equal to $\sigma^2$, then the formal series expansion of $\mathcal R_n^{\mu_A}$ is
+
+\begin{equation*}
+    \mathcal R_n^{\mu_A}(s) = s\sigma^2.
+\end{equation*}
+
+We can use Theorem \ref{thm:if_and_only_if} again to find
+
+\begin{align*}
+    \frac1n \partial_s[ \ln P(s) ] &= -s\sigma^2,\\ 
+    \Rightarrow \ln P(s) &= -n\sigma^2 \int s \d s,\\
+    \Rightarrow P(s) &= \exp\left\{ -n \sigma^2\frac {s^2}2 + c_0  \right\},
+\end{align*}
+
+\noindent where the constant $c_0$ accounts for making the polynomial monic. Now, evaluating $P$ in $n^{-1}\partial_z$ and applying to $z^n$, we have
+
+\begin{align*}
+    p(z) &= P(n^{-1}\partial_z)[z^n] = e^{-\sigma^2\frac{\partial_z^2}{2n}}[z^n] \eqcolon H_n(z,\sigma^2/n). 
+\end{align*}
+
+The last expression corresponds to the Hermite polynomial wit variance $\sigma^2/n$.
+
+\subsubsection{Poisson distribution}
+
+The Poisson distribution has all of its cumulants equal to a constant $\nu \in \R$, the formal series expansion of its $\mathcal R_n^{\mu_A}$ transform is 
+
+\begin{align*}
+    \mathcal R_n^{\mu_A}(s) &= \sum_{k=0}^\infty \nu s^n = \nu \sum_{k=0}^\infty s^n = \frac{\nu}{1-s}.
+\end{align*}
+
+Where the convergence is taken in $\abs{s} < 1$. Another use of Theorem \ref{thm:if_and_only_if} leads to
+
+\begin{align*}
+    \frac{\nu}{1-s} &= \mathcal R_n^{\mu_A}(s) = -\frac1n\partial_s[\ln P(s)], \\
+    \Rightarrow -\int \frac{n\nu}{s-1} \d s &= \ln P(s),\\
+    \Rightarrow \exp\left\{ n\nu \ln (1-s) \right\} &= P(s).
+\end{align*}
+
+Finally, we evaluate in $n^{-1}\partial_z$ and apply to $z^n$ and find the polynomial that has the given cumulants.
+
+\begin{align*}
+    P(n^{-1}\partial_z)[z^n] &= \left( 1 - \frac{\partial_z}{n} \right)^{n\nu}[z^n] \eqcolon L_n^{(\nu-1)n}(z).
+\end{align*}
+
+So the finite free Poisson distribution corresponds to a generalized Laguerre polynomial. Notice that when $\nu=n=1$, we recover the original definition of the Laguerre polynoamials given in \todo{Citar definición (incluir Laguerre generalizados).}
+
+\subsection{Finite Free Limit Theorems}
+
+\begin{theorem}[Finite Free Law of Large Numbers]
+    Let $(p_i(z))_{i=1}^n$ be a sequence of degree $n$ monic polynomials with real roots $r_{ij}$ such that
+
+    \begin{equation*}
+        p_i(z) = \prod_{j=1}^n (z - r_{ij}).
+    \end{equation*}
+
+    And for every fixed $i$,
+
+    \begin{align*}
+        \frac1n\sum_{j=1}^n r_{ij} &= m,\\
+        \frac1n\sum_{j=1}^n r_{ij}^2 < c,
+    \end{align*}
+
+    \noindent for some positive constant $c$. Define $q_i(k,z) \coloneqq k^{-n}p_i(kz)$. Then
+
+    \begin{equation*}
+        \lim_{k\to \infty} [ q_1(k,z) \boxplus_n q_2(k,z) \boxplus_n \cdots \boxplus_n q_k(k,z) ] = (x-m)^n
+    \end{equation*}
+\end{theorem}
+
+\begin{proof}
+    Write for every $i$ the polynomial $p_i(z)$ as
+
+    \begin{equation*}
+        p_i(z) = z^n + a_{i1} z^{n-1} + \cdots 
+    \end{equation*}
+
+    If $P_i(\partial_z)$ is a linear operator that acts on $z^n$ to generate $p_i(z)$, then 
+
+    \begin{equation*}
+        P_i(\partial_z) = 1 + a_{i1} n \partial_z + \cdots 
+    \end{equation*}
+
+    Since the coefficient $a_{i1}$ is the sum of the roots, by hypothesis we have that $a_{i1} = m$ for every $i$. Now, the last equation implies that if $q_i$ is generated by a linear differential operator $Q_i(\partial_z)$, then
+
+    \begin{equation*}
+        Q_i(\partial_z) = 1 - \frac{m}{k}\partial_z + O(k^{-2}).
+    \end{equation*}
+
+    Using the multiplicative Theorem \ref{thm:multiplicative_operators} we find
+
+    \begin{align*}
+        \lim_{k\to \infty} [ q_1(k,z) \boxplus_n q_2(k,z) \boxplus_n \cdots \boxplus_n q_k(k,z) ] &= \lim_{k\to\infty}\prod_{j=1}^k Q_j(\partial_z)[z^n],\\
+        &= \lim_{k\to\infty} \left( 1 - \frac{m}{k}\partial_z + O(k^{-2}) \right)^k[z^n],\\
+        &= e^{-m\partial_z}[z^n] = (z-m)^n.
+    \end{align*}
+\end{proof}
+
+\begin{theorem}[Finite Free Central Limit Theorem \cite{marcus2021polynomial}]
+    Let $p_1, p_2, \dots$ be a sequence of degree $d$ real rooted polynomials with $p_i = \prod_j (x - r_{i,j})$ such that
+
+    \begin{equation*}
+        \sum_{j} r_{i,j} = 0, \qquad \frac1d \sum_j r^2_{i,j} = \sigma^2,
+    \end{equation*}
+
+    \noindent for all $i$. Define $q_i(x) = n^{-m/2}p_i(\sqrt{n}x)$, then 
+
+    \begin{equation*}
+        \lim_{n\to\infty} \left( q_1 \boxplus_d \cdots \boxplus_d q_n \right) = \left( \frac{d-1}{\sigma^2} \right)^{-d/2} H_d\left( x \sqrt{\frac{d-1}{\sigma^2}} \right),
+    \end{equation*}
+
+    \noindent with $H_d$ represents the $d$th Hermite polynomial and the constants work to make it monic.
+\end{theorem}
 
 
+\begin{proof}
+    
+\end{proof}
 
 
+\begin{theorem}[Finite Free Poisson Limit Theorem]
+    Let $p(z) = x^{n-1}(x-1)$. And for $\nu n \in \N$, the $\nu n$ times symmetric additive convolution of $p(z)$ with itself is a multiple of a generalized Laguerre polynomial
 
-% \begin{theorem}[Finite central Limit Theorem \cite{marcus2021polynomial}]
-%     Let $p_1, p_2, \dots$ be a sequence of degree $d$ real rooted polynomials with $p_i = \prod_j (x - r_{i,j})$ such that
+    \begin{equation*}
+        \underbrace{p(z) \boxplus_n p(z) \boxplus_n \cdots \boxplus_n p(z)}_\text{$\nu n$ times} = (\nu n)!(-n)^{-\nu n}z^{n(1-\nu)}L_{\nu n}^{n(1-\nu)}(zn).
+    \end{equation*}
+\end{theorem}
 
-%     \begin{equation*}
-%         \sum_{j} r_{i,j} = 0, \qquad \frac1d \sum_j r^2_{i,j} = \sigma^2,
-%     \end{equation*}
-
-%     \noindent for all $i$. Define $q_i(x) = n^{-m/2}p_i(\sqrt{n}x)$, then 
-
-%     \begin{equation*}
-%         \lim_{n\to\infty} \left( q_1 \boxplus_d \cdots \boxplus_d q_n \right) = \left( \frac{d-1}{\sigma^2} \right)^{-d/2} H_d\left( x \sqrt{\frac{d-1}{\sigma^2}} \right),
-%     \end{equation*}
-
-%     \noindent with $H_d$ represents the $d$th Hermite polynomial and the constants work to make it monic.
-% \end{theorem}
+\begin{proof}
+    
+\end{proof}
