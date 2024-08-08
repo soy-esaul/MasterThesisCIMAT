@@ -323,7 +323,7 @@ The symmetric additive convolution between two Hermite polynomials with the same
 
 \subsubsection{Jacobi polynomials}
     
-    The Jacobi polynomials depend on two parameters $\alpha,\beta$ and are defined by the following differential operator
+    The Jacobi polynomials depend on two parameters $\alpha,\beta$ and they are orthogonal under the measure $(1-z)^{\alpha}(1+z)^{\beta}\d z$. The standard Jacobi polynomials are defined by the following differential operator
 
     \begin{equation*}
         P_{n}^{(\alpha ,\beta )}(z) = \frac{(-1)^{n}}{2^{n}n!}(1-z)^{-\alpha }(1+z)^{-\beta }\partial_z^n \left\{(1-z)^{\alpha }(1+z)^{\beta }\left(1-z^{2}\right)^{n}\right\}.
@@ -335,10 +335,28 @@ The symmetric additive convolution between two Hermite polynomials with the same
         P_{n}(z) = \frac{1}{2^{n}n!}\partial_z^n [(z^{2}-1)^{n}].
     \end{equation*}
 
-    Once again, we are interested in a monic scaling of these polynomials, but now we also want a ``transaltion of them''. The original Jacobi (and Legendre) polynomials are defined in $[-1,1]$, but we are interested in polynomials that take values in $[0,1]$, they are given by the closed expression
+    Once again, we are interested in a monic scaling of these polynomials, but now we also want a ``transaltion of them''. The original Jacobi (and Legendre) polynomials are defined in $[-1,1]$, but we are interested in polynomials that take values in $[0,1]$. We get these polynmials by evaluating a Jacobi polynomila in $1-2z$, so that they are orthogonal under the measure $\mathds 1_{(0,1)}(z)z^\alpha(1-z)^\beta \d z$, i.e. the measure of a beta distribution. In the particular case when $\alpha = \beta = 0$, they are orthogonal under the measure of an uniform random variable in $(0,1)$. The closed form for the Legendre polynomials evaluated in $1-2z$ and scaled to be monic is
 
     \begin{equation*}
         P_n(z) = \frac{n!}{(2n)!} \sum_{k=0}^n \binom nk (-1)^{n-k} \frac{(n+k)!}{k!} z^k.
     \end{equation*}
 
+    The first few Legendre polynomials are
+
+    \begin{align*}
+        P_1(z) &= z,\\
+        P_2(z) &= z^2 - \frac{z}{2} + \frac{1}{6}, \\
+        P_3(z) &= z^3 - \frac{2z^2}{5} + \frac{z}{2} - \frac{1}{10},\\
+        P_4(z) &= z^4 - \frac{z^3}{2} + \frac{3z^2}{7} - \frac{5z}{28} + \frac{1}{35},\\
+        P_5(z) &= z^5 - \frac{7z^4}{10} + \frac{7z^3}{3} - \frac{14z^2}{15} + \frac{7z}{30} - \frac{1}{42},\\
+        P_6(z) &= z^6 - \frac{z^5}{2} + \frac{2z^4}{3} - \frac{4z^3}{7} + \frac{5z^2}{21} - \frac{z}{42} + \frac{1}{231},\\
+        P_7(z) &= z^7 - \frac{z^6}{2} + \frac{5z^5}{7} - \frac{2z^4}{3} + \frac{10z^3}{21} - \frac{z^2}{14} + \frac{z}{42} - \frac{1}{429},\\
+        P_8(z) &= z^8 - \frac{5z^7}{8} + \frac{5z^6}{4} - \frac{5z^5}{6} + \frac{5z^4}{14} - \frac{z^3}{28} + \frac{z^2}{56} - \frac{z}{56} + \frac{1}{6435},\\
+        P_9(z) &= z^9 - \frac{3z^8}{4} + \frac{z^7}{2} - \frac{z^6}{2} + \frac{3z^5}{7} - \frac{2z^4}{21} + \frac{z^3}{28} - \frac{z^2}{56} + \frac{z}{315} - \frac{1}{12155},\\
+        P_{10}(z) &= z^{10} - \frac{z^9}{2} + \frac{3z^8}{5} - \frac{3z^7}{5} + \frac{7z^6}{15} - \frac{z^5}{15} + \frac{z^4}{35} - \frac{z^3}{70} + \frac{z^2}{231} - \frac{z}{11547} + \frac{1}{46189}.
+    \end{align*}
+
+
     Just as in the previous case, we will use the name ``Legendre polynomials'' or ``Jacobi polynomials'' to talk about these monic scalings.
+
+    The Jacobi polynomials are a generalization of several other polynomial ensembles and they are closely related to several topics in the theory of orthogonal polynomials. To read more about them, revise \cite[Chapter IV]{szeg1939orthogonal}.
