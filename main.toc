@@ -51,4 +51,7 @@
 \contentsline {subsection}{\numberline {4.2.1}Wishart process}{96}{subsection.4.2.1}%
 \contentsline {subsection}{\numberline {4.2.2}Jacobi process}{97}{subsection.4.2.2}%
 \contentsline {section}{\numberline {4.3}Connections with finite free probability}{97}{section.4.3}%
-\contentsline {chapter}{Bibliography}{121}{chapter*.37}%
+\contentsline {subsection}{\numberline {4.3.1}Dyson Brownian motion}{98}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Wishart process}{105}{subsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.3.3}Jacobi process}{112}{subsection.4.3.3}%
+\contentsline {chapter}{Bibliography}{123}{chapter*.37}%

@@ -2,6 +2,56 @@
 
 In this section we relate finite free probability to eigenvalue processes. To do so, we first find the expected characteristic polynomial of the random matrices. We show that in some cases they are well-known polynomials whose convolutions satisfy good properties. We start with the case of a self-adjoint Brownian matrix and then we replicate the results for the Wishart and Jacobi processes.
 
+\begin{lemma} \label{lemma:chpol_tridiag}
+    Let $A$ be an $n\times n$ tridiagonal symmetric matrix with diagonal elements $\{a_i\}_{1\le i \le n}$ and subdiagonal elements $\{ b_j \}_{2 \le j \le n}$, such that
+
+    \begin{equation*}
+        A = \begin{bmatrix}
+            a_n   & b_{n-1} & 0     & \cdots & 0 \\ 
+            b_{n-1} & a_{n-1}   & b_{n-2} & \cdots & 0 \\
+            0     & b_{n-2} & a_{n-2}  & \cdots & 0 \\
+            \vdots & \vdots & \vdots & \ddots & \vdots \\ 
+            0      & \cdots & 0      & b_1 & a_1 
+        \end{bmatrix}.
+    \end{equation*}
+    
+    
+    Then its characteristic polynomial $Q_n(x) = \det(xI_n - A)$ satisfies the following recursion
+
+    \begin{equation*}
+        Q_n(x) = (x-a_n)Q_{n-1}(x) - b_{n-1}^2Q_{n-2}(x). \label{eq:recursion}
+    \end{equation*}
+\end{lemma}
+
+\begin{proof}
+    Let us write
+
+    \begin{equation*}
+        A = \begin{bmatrix}
+            a_n   & b_{n-1} \trans{e_1} \\
+            b_{n-1}e_1 & B 
+        \end{bmatrix},
+    \end{equation*}
+
+    \noindent with $e_1$ the first element in the canonical base of $\R^{n-1}$, and write $B$ as
+
+    \begin{equation*}
+        B = \begin{bmatrix}
+            a_{n-1}   & b_{n-2} \trans{{e_1^{(n-2)}}} \\
+            b_{n-2} e_1^{(n-2)} & C 
+        \end{bmatrix}.
+    \end{equation*}
+
+    The determinant of $xI_n - A$ is 
+
+    \begin{align*}
+        \det \left( xI_n - A \right) &= (xI_n - A)_{11}\det(xI_{n-1}-B) - (xI_n - A)_{12}(xI_n - A)_{21}\det(xI_n - C)\\ 
+        &= (x - a_n)Q_{n-1}(x) - b_{n-1}^2Q_{n-2}(x).
+    \end{align*}
+\end{proof}
+
+\subsection{Dyson Brownian motion}
+
 \begin{lemma} \label{lemma:tridiag}
     Let $A_{\beta}$ denote an $n\times n$ matrix from the GOE, GUE or GSE, for $\beta = 1,2,4$, respectively, then the eigenvalues of the tridiagonal matrix $H_\beta$ have the same joint law as the eigenvalues of $A_\beta$, with $H_\beta$ defined as
 
@@ -75,103 +125,9 @@ In this section we relate finite free probability to eigenvalue processes. To do
 \end{proof}
 
 
-\begin{lemma}
-    Let $W_\beta$ be an $n\times n$ matrix from the  $\beta$-Wishart ensemble. The eigenvalues of $W_\beta$ has the same joint law as those of the tridiagonal matrix $L_\beta = B_\beta \trans B_\beta$ with $B_\beta$ is an $m\times n$ bidiagonal matrix defined as 
-
-    \begin{align} \label{eq:tridiag_laguerre}
-        B_\beta &= \begin{bmatrix}
-            \xi_{n\beta}   & 0 & 0     & \cdots & 0 \\ 
-            \xi_{\beta(m-1)} & \xi_{n\beta - \beta}   & 0 & \cdots & 0 \\
-            % 0     & \ddots & \ddots  & \cdots & 0 \\
-            \vdots & \vdots & \vdots & \ddots & \vdots \\ 
-            0      & \cdots & 0      & \xi_{\beta} & \xi_{n\beta - \beta(m-1)} 
-        \end{bmatrix}.
-    \end{align}
-
-    The variables $\xi_j$ being independent random variables with distribution $\xi_j \sim \chi_j$.
-
-    We call $L_\beta$ the tridiagonal $\beta$-Laguerre ensemble.
-\end{lemma}
-
-\begin{proof}
-    Take $G$ to be an $m\times n$ matrix with independent standard $\beta$-Gaussian random variables as entries (real if $\beta=1$, complex if $\beta=2$ and quaternions if $\beta=4$). Write $G$ as 
-
-    \begin{equation*}
-        \begin{bmatrix}
-            \trans{\vec x}\\
-            G_1
-        \end{bmatrix}.
-    \end{equation*}
-
-    We have that $\vec x$ is a vector distributed as a multivariate $\beta$-normal variable with mean $\vec 0$ and covariance matrix $\Sigma = I$, while $G_1$ is an $(m-1)\times n$ matrix of independent standard $\beta$-Gaussian random variables. 
-
-    Take $R$ to be a ``right reflector'' corresponding to $\vec x$ independent of $G_1$, which means $\trans{\vec x}R = \norm{\vec x}_2 e_1$. Due to being a reflector, $R$ is orthogonal (unitary, simplectic) and this means that $G_1 R$ is an $(m-1)\times n$ matrix with independent standard $\beta$-Gaussian matrices as entries.
-
-    Now take $G_1R = [\vec y, G_2]$ with $\vec y$ being a $\beta$-Gaussian vector with mean $\vec 0$ and covariance matrix $\Sigma = I$. Then $G_2$ is an $(m-1)\times (n_1)$ matrix of independent standard $\beta$-Gaussian random variables. Let $L$ be a left reflector corresponding to $\vec y$ ($Ly = \norm{\vec y}_2 e_1$) independent of $G_2$. Again by the orthogonality (unitarity, simplecticity) of $L$, $LG_2$ is still an $(m-1)\times(n-1)$ matrix of independent standard $\beta$-Gaussian random variables. This means that
-
-    \begin{equation*}
-        \begin{bmatrix}
-            1 & 0 \\
-            0 & L
-        \end{bmatrix} G R = \begin{bmatrix}
-            \norm{\vec x}_2 & 0 \\
-            \norm{\vec y}_2 e_1 & LG_2
-        \end{bmatrix}.
-    \end{equation*}
-
-    We proceed with this procedure now for $LG_2$. The product by an orthogonal (unitary, simplectic) matrix does not affect the singular values of a matrix, so the singular values of the bidiagonal matrix $B_\beta$ and the original matrix $G$ are the same. The eigenvalues of $W = G\trans{G}$ are the squares of the singular values of $G$ and the same happens with the eigenvalues of $L_\beta = B_\beta\trans{B_\beta}$ which is a tridiagonal matrix.
-
-    The distribution of the entries follows from the definition of the complex and simplectic normal distributions as sums of real normal random variables.
-\end{proof}
 
 
-\begin{lemma} \label{lemma:chpol_tridiag}
-    Let $A$ be an $n\times n$ tridiagonal symmetric matrix with diagonal elements $\{a_i\}_{1\le i \le n}$ and subdiagonal elements $\{ b_j \}_{2 \le j \le n}$, such that
 
-    \begin{equation*}
-        A = \begin{bmatrix}
-            a_n   & b_{n-1} & 0     & \cdots & 0 \\ 
-            b_{n-1} & a_{n-1}   & b_{n-2} & \cdots & 0 \\
-            0     & b_{n-2} & a_{n-2}  & \cdots & 0 \\
-            \vdots & \vdots & \vdots & \ddots & \vdots \\ 
-            0      & \cdots & 0      & b_1 & a_1 
-        \end{bmatrix}.
-    \end{equation*}
-    
-    
-    Then its characteristic polynomial $Q_n(x) = \det(xI_n - A)$ satisfies the following recursion
-
-    \begin{equation*}
-        Q_n(x) = (x-a_n)Q_{n-1}(x) - b_{n-1}^2Q_{n-2}(x). \label{eq:recursion}
-    \end{equation*}
-\end{lemma}
-
-\begin{proof}
-    Let us write
-
-    \begin{equation*}
-        A = \begin{bmatrix}
-            a_n   & b_{n-1} \trans{e_1} \\
-            b_{n-1}e_1 & B 
-        \end{bmatrix},
-    \end{equation*}
-
-    \noindent with $e_1$ the first element in the canonical base of $\R^{n-1}$, and write $B$ as
-
-    \begin{equation*}
-        B = \begin{bmatrix}
-            a_{n-1}   & b_{n-2} \trans{{e_1^{(n-2)}}} \\
-            b_{n-2} e_1^{(n-2)} & C 
-        \end{bmatrix}.
-    \end{equation*}
-
-    The determinant of $xI_n - A$ is 
-
-    \begin{align*}
-        \det \left( xI_n - A \right) &= (xI_n - A)_{11}\det(xI_{n-1}-B) - (xI_n - A)_{12}(xI_n - A)_{21}\det(xI_n - C)\\ 
-        &= (x - a_n)Q_{n-1}(x) - b_{n-1}^2Q_{n-2}(x).
-    \end{align*}
-\end{proof}
 
 \begin{theorem}
     Let $X$ be an $n\times n$ GUE, then its expected characteristic polynomial, $P_n(x)$ is the $n$th Hermite polynomial.
@@ -205,7 +161,7 @@ In this section we relate finite free probability to eigenvalue processes. To do
 \end{proof}
 
 \begin{corollary} \label{corollary:brownian_expected}
-    Let $B(t)$ be an $n\times n$ self-adjoint complex Brownian matrix, then its expected characteristic polynomial $P_n(x,t)$ is the $n$th generalized Hermite polynomial with variance $t$, $H^{[t]_n}$, i.e. the Hermite polynomials which are orthogonal with respect to a Gaussian random variable of variance $t$.
+    Let $B(t)$ be an $n\times n$ self-adjoint complex Brownian matrix, then its expected characteristic polynomial $P_n(x,t)$ is the $n$th generalized Hermite polynomial with variance $t$, $H_n(z,t)$, i.e. the Hermite polynomials which are orthogonal with respect to a Gaussian random variable of variance $t$.
 
 \end{corollary}
 
@@ -429,8 +385,56 @@ In this section we relate finite free probability to eigenvalue processes. To do
     
 
 
+\subsection{Wishart process}
 
+\begin{lemma}
+    Let $W_\beta$ be an $n\times n$ matrix from the  $\beta$-Wishart ensemble. The eigenvalues of $W_\beta$ has the same joint law as those of the tridiagonal matrix $L_\beta = B_\beta \trans B_\beta$ with $B_\beta$ is an $m\times n$ bidiagonal matrix defined as 
 
+    \begin{align} \label{eq:tridiag_laguerre}
+        B_\beta &= \begin{bmatrix}
+            \xi_{n\beta}   & 0 & 0     & \cdots & 0 \\ 
+            \xi_{\beta(m-1)} & \xi_{n\beta - \beta}   & 0 & \cdots & 0 \\
+            % 0     & \ddots & \ddots  & \cdots & 0 \\
+            \vdots & \vdots & \vdots & \ddots & \vdots \\ 
+            0      & \cdots & 0      & \xi_{\beta} & \xi_{n\beta - \beta(m-1)} 
+        \end{bmatrix}.
+    \end{align}
+
+    The variables $\xi_j$ being independent random variables with distribution $\xi_j \sim \chi_j$.
+
+    We call $L_\beta$ the tridiagonal $\beta$-Laguerre ensemble.
+\end{lemma}
+
+\begin{proof}
+    Take $G$ to be an $m\times n$ matrix with independent standard $\beta$-Gaussian random variables as entries (real if $\beta=1$, complex if $\beta=2$ and quaternions if $\beta=4$). Write $G$ as 
+
+    \begin{equation*}
+        \begin{bmatrix}
+            \trans{\vec x}\\
+            G_1
+        \end{bmatrix}.
+    \end{equation*}
+
+    We have that $\vec x$ is a vector distributed as a multivariate $\beta$-normal variable with mean $\vec 0$ and covariance matrix $\Sigma = I$, while $G_1$ is an $(m-1)\times n$ matrix of independent standard $\beta$-Gaussian random variables. 
+
+    Take $R$ to be a ``right reflector'' corresponding to $\vec x$ independent of $G_1$, which means $\trans{\vec x}R = \norm{\vec x}_2 e_1$. Due to being a reflector, $R$ is orthogonal (unitary, simplectic) and this means that $G_1 R$ is an $(m-1)\times n$ matrix with independent standard $\beta$-Gaussian matrices as entries.
+
+    Now take $G_1R = [\vec y, G_2]$ with $\vec y$ being a $\beta$-Gaussian vector with mean $\vec 0$ and covariance matrix $\Sigma = I$. Then $G_2$ is an $(m-1)\times (n_1)$ matrix of independent standard $\beta$-Gaussian random variables. Let $L$ be a left reflector corresponding to $\vec y$ ($Ly = \norm{\vec y}_2 e_1$) independent of $G_2$. Again by the orthogonality (unitarity, simplecticity) of $L$, $LG_2$ is still an $(m-1)\times(n-1)$ matrix of independent standard $\beta$-Gaussian random variables. This means that
+
+    \begin{equation*}
+        \begin{bmatrix}
+            1 & 0 \\
+            0 & L
+        \end{bmatrix} G R = \begin{bmatrix}
+            \norm{\vec x}_2 & 0 \\
+            \norm{\vec y}_2 e_1 & LG_2
+        \end{bmatrix}.
+    \end{equation*}
+
+    We proceed with this procedure now for $LG_2$. The product by an orthogonal (unitary, simplectic) matrix does not affect the singular values of a matrix, so the singular values of the bidiagonal matrix $B_\beta$ and the original matrix $G$ are the same. The eigenvalues of $W = G\trans{G}$ are the squares of the singular values of $G$ and the same happens with the eigenvalues of $L_\beta = B_\beta\trans{B_\beta}$ which is a tridiagonal matrix.
+
+    The distribution of the entries follows from the definition of the complex and simplectic normal distributions as sums of real normal random variables.
+\end{proof}
 
 
 
@@ -605,6 +609,7 @@ In this section we relate finite free probability to eigenvalue processes. To do
     \end{align*}
 \end{proof}
 
+\subsection{Jacobi process}
 
 As defined in \cite{doumerc2005matrices} the generalized singular values problem can be expressed by the following matrix
 
