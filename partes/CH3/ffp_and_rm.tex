@@ -497,14 +497,17 @@ Just as in the free case, the finite $\mathcal R_n$ transform can be defined in 
 
 The operator $\Delta^+$ acting on $A$ is a particular case of a much more general object called the Fuglede-Kadison determinant, which acts on a broad set of operators and satisfies many of the properties of determinants. More information about it can be found in \cite{article:fuglede_kadisen_determinant}.
 
+With the finite $\mathcal K_n$ transform it is possible to define the finite $\mathcal R_n$ transform. 
 
 \begin{definition}[The $\mathcal R_n$ transform]
     Let $A$ be an $n\times n$ symmetric matrix with real entries. We define the $\mathcal R_n$ transform of its empirical spectral measure $\mu_A$ as 
 
     \begin{equation*}
-        \mathcal R_n^{\mu_A} (s) = \mathcal K_n^{\mu_A} - \left( 1 + \frac1n \right) \frac1s.
+        \mathcal R_n^{\mu_A} (s) = \mathcal K_n^{\mu_A}(s) - \left( 1 + \frac1n \right) \frac1s.
     \end{equation*}
 \end{definition}
+
+Notice that for bigger $n$, the definition above is more similar to the definition of the $\mathcal R$ transform in terms of the $\mathcal K$ transform given in Chapter \ref{ch:preliminaries}. If we assume that $\mathcal K_n^{\mu_A}(s)$ converges to some $\mathcal K$ transform when $n\to\infty$, then $\mathcal R_n^{\mu_A}(s)$ would converge to the corresponding $\mathcal R$ transform. In the next Theorem we will prove exactly this convergence.
 
 \begin{theorem} Let $A$ be a self-adjoint $n \times n$ matrix with empirical spectral distribution $\mu_A$, then
 
@@ -516,26 +519,26 @@ The operator $\Delta^+$ acting on $A$ is a particular case of a much more genera
 
 \begin{proof}
     
-    We begin defining the function $g(x) \coloneqq -\ln \Delta^+[xI - A]$ and let $\lambda_1, \dots, \lambda_n$ be the ordered eigenvalues of $A$. When we differentiate $g$ with respect to $x$, we find 
+    We begin defining the function $g(x) \coloneqq -\ln \Delta^+[xI - A]$ and let $\lambda_1, \dots, \lambda_n$ be the ordered eigenvalues of $A$. Notice that without loss of generality we can assume $I-A$ to be positive definite. When we differentiate $g$ with respect to $x$, we find 
 
     \begin{align*}
-        \partial_x g(x) &= \partial_x \left[-\ln \Delta^+[xI - A]\right] = -\partial_x \ln\left[ \left(\prod_{j=1}^n (x - \lambda_j) \right)^{\frac1n}\right], \\
-        &= -\partial_x \ln \left[ \prod_{j=1}^n (x-\lambda_j)^{\frac1n} \right] = - \partial_x \sum_{j=1}^n \frac1n \ln (x-\lambda_j) = -\frac1n \sum_{j=1}^n  \frac1{x-\lambda_j} = - G_{\mu_A}(x).
+        \partial_x [g(x)] &= \partial_x \left[-\ln \Delta^+[xI - A]\right] = -\partial_x \left\{ \ln\left[ \left(\prod_{j=1}^n (x - \lambda_j) \right)^{\frac1n}\right] \right\}, \\
+        &= -\partial_x \left\{\ln \left[ \prod_{j=1}^n (x-\lambda_j)^{\frac1n} \right]\right\} = - \partial_x \left[\sum_{j=1}^n \frac1n \ln (x-\lambda_j)\right] = -\frac1n \sum_{j=1}^n  \frac1{x-\lambda_j} = - G_{\mu_A}(x).
     \end{align*}
 
     For the second derivative we have
 
     \begin{align*}
-        \partial_{xx} g(x) = \partial_x \left[ -\frac1n \sum_{j=1}^n  \frac1{x-\lambda_j} \right] = \frac1n \sum_{j=1}^n \frac{1}{(x-\lambda_j)^2} > 0.
+        \partial_{xx} [g(x)] = \partial_x \left\{\left[ -\frac1n \sum_{j=1}^n  \frac1{x-\lambda_j} \right] \right\}= \frac1n \sum_{j=1}^n \frac{1}{(x-\lambda_j)^2} > 0.
     \end{align*}
 
-    So $g(x)$ is strictly convex and has a second derivative. Using Lemma \ref{lemma:strictly_convex} we find that 
+    So $g(x)$ is strictly convex and has a second derivative. Using Lemma \ref{lemma:strictly_convex} we get 
 
     \begin{equation} \label{eq:inverse_cauchy}
         (g^*)'(x) = (g')^{-1}(x) = (-G_{\mu_A})^{-1}(x) = G_{\mu_A}^{-1}(-x).
     \end{equation}
 
-    Now we find $(g^*)'(x)$ with the aide of Lemma \ref{lemma:legendre_transform_norm}.
+    Now we find $(g^*)'(x)$ with the help of Lemma \ref{lemma:legendre_transform_norm}.
 
     \begin{align*}
         (g^*)'(s) &= \frac{\partial}{\partial s} \ln \norm{ e^{xs} - g(x) }_\infty = \frac{\partial}{\partial s} \ln \norm{ e^{xs} \Delta^+(xI - A) }_\infty.
@@ -558,22 +561,13 @@ The operator $\Delta^+$ acting on $A$ is a particular case of a much more genera
 
 
 
+Our next goal is to prove that the finite $\mathcal R_n$ transform linearizes the symmetric additive convolution. In order to do so, we will first prove a couple basic lemmas.
 
-% \begin{proof}
-%     Expanding the term $(x-t_i)^n$ we get,
-
-%     \begin{equation*}
-%         \frac 1m \sum_{t_i \in T} (x-t_i)^n = \frac 1m \sum_{t_i \in T} \sum_{k=0}^n \binom nk x^{n-k} (-1)^k t_i^k = \sum_{k=0}^n \binom nk x^{n-k} (-1)^k \E{T^k}. 
-%     \end{equation*}
-
-%     Where we use $\E{f(T)}$ to denote the expectation with respect to the empirical distribution associated to the multiset $T$, $\E{f(T)} = \frac1{\abs T} \sum_{t_i \in T} f(t_i)$.
-% \end{proof}
-
-\begin{lemma} \ref{lemma:Utrans_convolution}
+\begin{lemma} \label{lemma:Utrans_convolution}
     Let $p,q$ be polynomials with degree $n$ and $U_p,U_q$ be the $U$ transforms of its sets of roots, then
 
     \begin{equation*}
-        [p \boxplus_n q](x) = \frac1n \sum_{u_j \in U_p, u_k \in U_q} (x - u_j -u_k)^n.
+        [p \boxplus_n q](x) = \frac1{n^2} \sum_{u_j \in U_p, u_k \in U_q} (x - u_j -u_k)^n.
     \end{equation*}
 \end{lemma}
 
@@ -581,19 +575,24 @@ The operator $\Delta^+$ acting on $A$ is a particular case of a much more genera
     Let $p(x) = \sum_{j=0}^n x^{n-j}(-1)^j p_j$. Let $x_i$ be its roots, by definition of the $U$ transform we have,
 
     \begin{equation*}
-        p(x) = \prod_{j=0}^n (x - x_j) = \frac1n \sum_{u_j \in U_p} (x-u_j)^n = \sum_{j=0}^n x^{n-j} (-1)^j \binom n j \E{U_p^j}.
+        p(x) = \prod_{j=0}^n (x - x_j) = \frac1n \sum_{u_j \in U_p} (x-u_j)^n = \sum_{j=0}^n x^{n-j} (-1)^j \binom{n}{j} \frac{1}{n} \sum_{u_k \in U_p} u_k^j.
     \end{equation*}
 
-    Equating coefficients we find that $p_j = \binom nj\E{U_p^j}$ and the analogous happens for $q_k$. Finally, we find the convolution
+    Equating coefficients we find that $p_j = \binom{n}{j} \frac{1}{n} \sum_{u_k \in U_p} u_k^j$ and the analogous happens for $q_k$. Finally, we find the convolution
 
     \begin{align*}
-        [p\boxplus_n q](x) &= \sum_{k=0}^n x^{n-k}(-1)^k \sum_{i+j=k} \frac{(n-i)!(n-j)!}{(n-k)!n!} \binom{n}{i}\binom{n}{j} \E{U_p^i} \E{U_q^j},\\
-        &= \sum_{k=0}^n x^{n-k}(-1)^k \sum_{i+j=k} \frac{n!}{i!j!(n-k)!} \E{U_p^i U_q^j}, \\
-        &= \sum_{k=0}^n \binom nk x^{n-k}(-1)^k \sum_{j=0}^k \binom{k}{j}\E{U_p^{k-j} U_q^j}, \\
-        &= \sum_{k=0}^n \binom nk x^{n-k}(-1)^k \E{(U_p + U_q)^k},\\
-        &= \E{ (x - U_p - U_q)^n }. 
+        [p\boxplus_n q](x) &= \sum_{k=0}^n x^{n-k}(-1)^k \sum_{i+j=k} \frac{(n-i)!(n-j)!}{(n-k)!n!} \binom{n}{i}\binom{n}{j} \frac{1}{n} \sum_{u_m \in U_p} u_m^i \frac{1}{n} \sum_{u_l \in U_q} u_l^j ,\\%\E{U_p^i} \E{U_q^j},\\
+        &= \sum_{k=0}^n x^{n-k}(-1)^k \sum_{i+j=k} \frac{n!}{i!j!(n-k)!} \frac1{n^2}  \sum_{u_m \in U_p, u_l \in U_q} u_m^i u_l^j, \\ %\E{U_p^i U_q^j}, \\
+        &= \frac1{n^2}\sum_{u_m \in U_p, u_l \in U_q}\sum_{k=0}^n \binom nk x^{n-k}(-1)^k \sum_{j=0}^k \binom{k}{j}u_m^{k-j} u_l^j, \\
+        &= \frac1{n^2}\sum_{u_m \in U_p, u_l \in U_q} \sum_{k=0}^n \binom nk x^{n-k}(-1)^k (u_m + u_l)^k,\\%\E{(U_p + U_q)^k},\\
+        &= \frac1{n^2}\sum_{u_m \in U_p, u_l \in U_q} (x-u_m-u_l)^n. %&= \E{ (x - U_p - U_q)^n }. 
     \end{align*}
 \end{proof}
+
+The simplest finite $\mathcal R_n$ transform we can find is the one related to the measure $\mu_0 = \delta_0$. Knowing this transform will also be useful for proving the next Theorem. 
+
+
+
 
 \begin{lemma}  \label{lemma:quotient_norms}
     Let $A$ be an $n\times n$ real symmetric matrix. Denote by $\lambda(A)$ its spectrum and by $U_A$ the $U$ transform of $\lambda(A)$, then 

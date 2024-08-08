@@ -42,7 +42,7 @@
 \contentsline {subsection}{\numberline {3.3.1}Definition of the transform}{75}{subsection.3.3.1}%
 \contentsline {subsection}{\numberline {3.3.2}Finite free distributions}{83}{subsection.3.3.2}%
 \contentsline {subsubsection}{Constant distribution}{84}{section*.41}%
-\contentsline {subsubsection}{Gaussian distribution}{84}{section*.42}%
+\contentsline {subsubsection}{Gaussian distribution}{85}{section*.42}%
 \contentsline {subsubsection}{Poisson distribution}{85}{section*.43}%
 \contentsline {subsection}{\numberline {3.3.3}Finite Free Limit Theorems}{86}{subsection.3.3.3}%
 \contentsline {chapter}{\numberline {4}Deterministic eigenvalue processes for matrix valued processes}{91}{chapter.4}%
