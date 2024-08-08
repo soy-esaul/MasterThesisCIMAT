@@ -507,9 +507,9 @@
   \entry{article:wishart}{article}{}{}
     \name{author}{1}{}{%
       {{hash=WJ}{%
-         family={WISHART},
+         family={Wishart},
          familyi={W\bibinitperiod},
-         given={JOHN},
+         given={John},
          giveni={J\bibinitperiod},
       }}%
     }
@@ -527,8 +527,8 @@
     \field{issn}{0006-3444}
     \field{number}{1-2}
     \field{pages}{32\bibrangedash 52}
-    \field{title}{{THE GENERALISED PRODUCT MOMENT DISTRIBUTION IN SAMPLES FROM
-  A NORMAL MULTIVARIATE POPULATION}}
+    \field{title}{The Generalised Product Moment Distribution in Samples from a
+  Normal Multivariate Population}
     \verb{url}
     \verb https://doi.org/10.1093/biomet/20A.1-2.32
     \endverb
@@ -750,6 +750,24 @@
     \field{year}{1939}
   \endentry
 
+  \entry{marcus2021polynomial}{article}{}{}
+    \name{author}{1}{}{%
+      {{hash=MAW}{%
+         family={Marcus},
+         familyi={M\bibinitperiod},
+         given={Adam\bibnamedelima W},
+         giveni={A\bibinitperiod\bibinitdelim W\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{MAW1}
+    \strng{fullhash}{MAW1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Polynomial convolutions and (finite) free probability}
+    \field{journaltitle}{arXiv preprint arXiv:2108.07054}
+    \field{year}{2021}
+  \endentry
+
   \entry{book:orthogonal_polynomials_and_stochastic_processes}{article}{}{}
     \name{author}{1}{}{%
       {{hash=SW}{%
@@ -805,24 +823,6 @@
     \field{labeltitlesource}{title}
     \field{title}{Mathematical methods for physicists}
     \field{year}{2019}
-  \endentry
-
-  \entry{marcus2021polynomial}{article}{}{}
-    \name{author}{1}{}{%
-      {{hash=MAW}{%
-         family={Marcus},
-         familyi={M\bibinitperiod},
-         given={Adam\bibnamedelima W},
-         giveni={A\bibinitperiod\bibinitdelim W\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{MAW1}
-    \strng{fullhash}{MAW1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{title}{Polynomial convolutions and (finite) free probability}
-    \field{journaltitle}{arXiv preprint arXiv:2108.07054}
-    \field{year}{2021}
   \endentry
 
   \entry{article:fuglede_kadisen_determinant}{misc}{}{}

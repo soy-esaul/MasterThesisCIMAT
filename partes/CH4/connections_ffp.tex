@@ -464,7 +464,7 @@ In this section we relate finite free probability to eigenvalue processes. To do
         &= (z - \beta(n - m + 1))\E{P_{n-1}(z)} - \beta^2(n-1)(m-1)P_{n-2}(z).
     \end{align}
 
-    Which is satisfied by the Laguerre polynomials.\todo{Mostrar que los polinomios de Laguerre satisfacen ests recursión cuando los introduzca} By finding the cases $n=2$ and $n=3$, then using a recursive argument, we finish the proof.
+    Which is satisfied by the Laguerre polynomials. By finding the cases $n=2$ and $n=3$, then using a recursive argument, we finish the proof.
 
     The case $n=1$ is trivial because in this case $G$ is an univariate Gaussian random variable, so $\trans{G}G = G^2$ is a chi-squared random variable and $P_1(z) = z - 1$. For the case $n=2$ we have
 
@@ -810,7 +810,7 @@ In order to find the associated process, we will first generalize the results of
         \E{\det[xI - \trans{A}A]} = (1 - \partial_x)^{n_1}[x^k],
     \end{equation}
 
-    \noindent which is exactly the associated Laguerre polynomial previously found in \todo{cita}.
+    \noindent which is exactly the associated Laguerre polynomial previously found in Section \ref{sec:polynomials}.
 
     Keeping the unitary variances and replacing $x=0, y=(x-1), z=x$ we get the static Jacobi matrix, as shown previously, thus 
 
@@ -820,13 +820,13 @@ In order to find the associated process, we will first generalize the results of
 
     This is the Jacobi polynomial of order $k$ with parameters $n_2 - k$ and $n_1-k$ evaluated in $2x-1$. When we normalize to make it monic we get the result appearing in \cite{edelman1988eigenvalues}.
 
-    Now let $\sigma_1= \sigma_2 = t$, then $A,B$ are equal in law to standard Brownian motions in $\M_{n_1,k}(\R)$ and $\M_{n_2,k}(\R)$, respectively. We should recover the expected characteristic polynomial of the Wishart and Jacobi processes. The Wishart case is evident by replacing $-1$ with $-t$ in \eqref{eq:wishart_finite_free} and compare it to equation\todo{referencia}. For the Jacobi process, we have
+    Now let $\sigma_1= \sigma_2 = t$, then $A,B$ are equal in law to standard Brownian motions in $\M_{n_1,k}(\R)$ and $\M_{n_2,k}(\R)$, respectively. We should recover the expected characteristic polynomial of the Wishart and Jacobi processes. The Wishart case is evident by replacing $-1$ with $-t$ in \eqref{eq:wishart_finite_free} and compare it to equation \eqref{eq:laguerre_with_variance}. For the Jacobi process, we have
 
     \begin{equation} \label{eq:dynamic_jacobi}
         \E{\det[(x-1)W_1(t) + xW_2(t)]} = (1+xt\partial_x)^{n_2} \left(1 + (x-1)t\partial_x\right)^{n_1}[x^k].
     \end{equation}
 
-    In analogy to what we found for the Dyson Brownian motion and the Wishart process, we need to verify if the roots of the polynomial defined in \eqref{eq:dynamic_jacobi} satisfy a differential equation given by the finite variation part of \eqref{eq:stochastic_jacobi}\todo{Agregar cita}. Let us work in full generality and define for polynomials of the form $x^i y^j z^l$, the operator
+    In analogy to what we found for the Dyson Brownian motion and the Wishart process, we need to verify if the roots of the polynomial defined in \eqref{eq:dynamic_jacobi} satisfy a differential equation given by the finite variation part of \eqref{eq:jacobi}. Let us work in full generality and define for polynomials of the form $x^i y^j z^l$, the operator
 
     \begin{equation*}
         Q_{n_1,n_2}^t [x^i y^j z^l] = (1+zt\partial_x)^{n_2-l} \left(1 + yt\partial_x\right)^{n_1 - j}[x^i y^j z^l],
@@ -944,7 +944,7 @@ In order to find the associated process, we will first generalize the results of
         &= -(n_1w + n_2w-n_2))\partial_x j + (2w-1)(k-1)\partial_x j - w(w-1)(\partial_x\partial_w j) - (2w-1)x\partial_{xx} j|_{t=0}.
     \end{align*}
 
-    Letting $x=0$, we find the evolution equation for the matrix Jacobi process \todo{Agregar referencia}
+    Letting $x=0$, we find the evolution equation for the matrix Jacobi process
 
     \begin{align*}
         \left.(\partial_t w)\frac{\partial_w j}{\partial_x j}\right|_{t=0} &= \left.-(n_1w + n_2w) + (2w-1)(k-1) - w(w-1)\frac{\partial_x\partial_w j}{\partial_x j}\right|_{t=0},\\
