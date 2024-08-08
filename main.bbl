@@ -825,6 +825,33 @@
     \field{year}{2021}
   \endentry
 
+  \entry{article:fuglede_kadisen_determinant}{misc}{}{}
+    \name{author}{1}{}{%
+      {{hash=dlHP}{%
+         prefix={de\bibnamedelima la},
+         prefixi={d\bibinitperiod\bibinitdelim l\bibinitperiod},
+         family={Harpe},
+         familyi={H\bibinitperiod},
+         given={Pierre},
+         giveni={P\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{dlHP1}
+    \strng{fullhash}{dlHP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{eprint}
+    \verb 1107.1059
+    \endverb
+    \field{title}{The Fuglede-Kadison determinant, theme and variations}
+    \verb{url}
+    \verb https://arxiv.org/abs/1107.1059
+    \endverb
+    \field{eprinttype}{arXiv}
+    \field{eprintclass}{math.OA}
+    \field{year}{2012}
+  \endentry
+
   \entry{edelman1988eigenvalues}{article}{}{}
     \name{author}{1}{}{%
       {{hash=EA}{%

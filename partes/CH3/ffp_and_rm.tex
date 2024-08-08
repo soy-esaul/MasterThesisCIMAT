@@ -322,6 +322,14 @@ In finite probability, the $\mathcal R$ transform linearizes free additive convo
 
 In the first part of this section we introduce some technical definitions and lemmas, then we define the finite $\mathcal R_n$ transform and prove its two main properties, namely that it converges to a $\mathcal R$ transform and that it linearizes symmetric additive convolution of polynomials. In the following two subsections we use the transform to find the polynomials associated to finite free distributions and later to prove the analogous in Finite Free Probability Theory to the most classical limit theorems in Probability Theory.
 
+Before stating the results in this section, it is important to introduce the notation for ``congruent polynomials''. Let $p,q$ be two polynomials on $z$, we say that $p$ is congruent with $q$ modulo $z^{n}$ if the first $n+1$ coefficients of $p$ and $q$ coincide. We will denote this relationship by
+
+\begin{equation*}
+    p(z) \equiv q(z) \qquad \mod [z^n].
+\end{equation*}
+
+If we think of a formal power series as an ``infinite polynomial'', the definition of polynomial congruence can be extended. Notice that if $f(z)$ is a formal power series, then $f(z) \mod [z^n]$ is a polynomial of degree at most $n$.
+
 \subsection{Definition of the transform}
 
 Given any polynomial $p(z)$ with order $p$ we can associate an empirical measure $\mu_p$ to its roots $z_i$ given by
@@ -374,6 +382,10 @@ The existence of the $U$ transform can be stated by the following Lemma that we 
 
     We call such multiset the $U$ transform of $S$.
 \end{lemma}
+
+We will use the $U$ transform of a set of eigenvalues (or roots of a polynomial) in order to find explicit expressions for the $\mathcal R_n$ transform and prove some of its properties. 
+
+The Legendre transform, and the properties that will be proven later, will be useful to prove that the finite $\mathcal R_n$ transform converges to an $\mathcal R$ transform.
 
 \begin{definition}[Legendre's transform]
     Let $f$ a convex function in a domain $D\subset \R$ and define
@@ -438,6 +450,8 @@ The existence of the $U$ transform can be stated by the following Lemma that we 
     \end{align*}
 \end{proof}
 
+    The following Theorem reales the Legendre transform to an $L^\infty$ norm and will be used in the proof of the convergence of the finite $\mathcal R_n$ transform to an $\mathcal R$ transform.
+
 \begin{lemma} \label{lemma:legendre_transform_norm}
     Let $D \subset \R$ and $\mu$ a measure that is absolutely continuous with respect to the Lebesgue measure, then for any continuous function $f: D \to \R$ we have that
 
@@ -458,6 +472,10 @@ The existence of the $U$ transform can be stated by the following Lemma that we 
     \end{align*}
 \end{proof}
 
+
+Just as in the free case, the finite $\mathcal R_n$ transform can be defined in terms of another transform that we will call the finite $\mathcal K_n$ transform.
+
+
 \begin{definition}[The $\mathcal K_n$ transform \cite{anaya2016cumulantes}]
     Let $A$ be an $n\times n$ symmetric matrix with real entries. We define the $\mathcal K_n$ transform of its empirical spectral measure $\mu_A$ as 
 
@@ -476,6 +494,8 @@ The existence of the $U$ transform can be stated by the following Lemma that we 
     
     \noindent and the integration domain for the norm is $(\rho_A, \infty)$ with $\rho_A$ the spectral radius of $A$.
 \end{definition}
+
+The operator $\Delta^+$ acting on $A$ is a particular case of a much more general object called the Fuglede-Kadison determinant, which acts on a broad set of operators and satisfies many of the properties of determinants. More information about it can be found in \cite{article:fuglede_kadisen_determinant}.
 
 
 \begin{definition}[The $\mathcal R_n$ transform]
