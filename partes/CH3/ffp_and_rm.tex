@@ -99,7 +99,7 @@ The former Theorem implies that minor orthogonality is preserved under unitary t
         \mathbb E_R \left[ \det[QR]_{S,T}\det[\hermit{R}\hermit{Q}]_{U,V} \right] &= \frac{\delta_{S,V} \delta_{T,U}}{\binom{n}{k}}.
     \end{align*}
 
-    This is the definition of being minor-orthogonal. \todo{En el paper no lo prueban, pero el resultado se tiene también para una matriz de permutación con signos rectangular. En la siguiente prueba se usa esto, así que falta completar eso. La prueba es igual, simplemente tomando que $E$ es de tamaño $m\times m$ y $P$ de tamaño $m\times n$, todos los resultados se siguen.}
+    This is the definition of being minor-orthogonal. %\todo{En el paper no lo prueban, pero el resultado se tiene también para una matriz de permutación con signos rectangular. En la siguiente prueba se usa esto, así que falta completar eso. La prueba es igual, simplemente tomando que $E$ es de tamaño $m\times m$ y $P$ de tamaño $m\times n$, todos los resultados se siguen.}
 \end{proof}
 
 Repeating the former proof but with $E$ having size $m\times m$ and $P$ being $m\times n$, we have the corollary for rectangular signed permutations.
@@ -216,7 +216,7 @@ For both the additive and multiplicative cases, the results are written in two p
         \sigma_k(A) = \sum_{\abs{S}=k} \det[A]_{S,S},
     \end{equation*}
 
-    \noindent together with Theorem \ref{thm:marcus_binet} and Lemma \ref{lemma:conjugate_minorth} to get \todo{Hay que aclarar las normas de matrices.}
+    \noindent together with Theorem \ref{thm:marcus_binet} and Lemma \ref{lemma:conjugate_minorth} to get %\todo{Hay que aclarar las normas de matrices.}
 
     \begin{align*}
         \mathbb E_{A,B,R}&\left[ \sigma_k(A + RB\hermit{R}) \right]\\ &= \sum_{S \in \binom{[n]}{k}} \mathbb E_{A,B,R} \left[ \det[A + RB\hermit{R}]_{S,S} \right],\\ 
@@ -249,7 +249,7 @@ For both the additive and multiplicative cases, the results are written in two p
         \mathbb E_{A,B,R}\left[ \sigma_k(A + RB\hermit R) \right] =  \sum_{i=0}^k \frac{\binom{n-i}{k-i}}{\binom{n}{k-i}}\mathbb E_{A} \left[\sigma_i(A)\right] \mathbb E_{A}\left[\sigma_{k-i}(B)\right].
     \end{equation*}
 
-    \todo{Hay que aclarar qué significa $U(S)$.}
+    %\todo{Hay que aclarar qué significa $U(S)$.}
 \end{proof}
 
 
@@ -308,9 +308,7 @@ The next two Theorems are the analogous of the previous ones for the symmetric m
 With the results in this section we related polynomial convolutions to expected characteristic polynomials. In the following section we will be able to link the convolutions to Free Probability Theory by assigning an empirical measure to the roots of a polynomial in a similar fashion one can assign a measure to the eigenvalues of a matrix.
 
 
-\section{The finite \texorpdfstring{$\mathcal R_n$}{R} transform} 
-
-\todo{Introducir la notación de $p(x) \equiv q(x) \mod x^n$.}
+\section{The finite \texorpdfstring{$\mathcal R_n$}{R_n} transform} 
 
 In finite probability, the $\mathcal R$ transform linearizes free additive convolution, which means the $\mathcal R$ transform of a free additive convolution of measures is simply the sum of the $\mathcal R$ tranforms of each measure. The $\mathcal R$ transform of a measure $\mu$ is often defined as a formal series
 
@@ -560,6 +558,50 @@ Notice that for bigger $n$, the definition above is more similar to the definiti
 \end{proof}
 
 
+The simplest finite $\mathcal K_n$ transform we can find is the one related to the measure $\mu_0 = \delta_0$. Knowing this transform will also be useful for proving further results. 
+
+\begin{lemma}
+    Let $\mu_0$ be the probability measure corresponding to an atom in $0$ with probability 1, i.e.
+
+    \begin{equation*}
+        \mu_0(\{x\}) = \left\{ \begin{array}{cc}
+            1, & \text{si $x=0$},\\
+            0, & \text{otherwise.}
+        \end{array} \right.
+    \end{equation*}
+
+    Then its finite $\mathcal K_n$ transform is
+
+    \begin{equation*}
+        \mathcal K_n^{\mu_0} (s) = \left( 1 + \frac1n \right)\frac1s.
+    \end{equation*}
+\end{lemma}
+
+\begin{proof}
+    Notice that for every $m$, the measure $\mu_0$ is the empirical spectral measure associated to the matrix $0_{n\times n}$, so we can write
+
+    \begin{align*}
+        \norm{ e^{-xs}\Delta^+ (xI) }_n &= \norm{ e^{-xs}(x^n)^{\frac1n} }_n,
+        \intertext{Remember the integral is taken from $\rho_A$ to $\infty$. In tjis case all the eeigenvalues are 0, so}
+        &= \left( \int_0^\infty (e^{-xs}x)^n \right)^{\frac1n} = (\mathcal L[x^n](ns))^{\frac1n},
+        \intertext{where $\mathcal L[f]$ represents the Laplace transform of the function $f$,}
+        &= \left( \frac{n!}{(ns)^{n+1}} \right)^{\frac1n}.
+    \end{align*}
+
+    The logarithm of the previous expression is
+
+    \begin{equation*}
+        \ln \left( \frac{n!}{(ns)^{n+1}} \right)^{\frac1n} = \frac1n \ln \left( \frac{n!}{(ns)^{n+1}} \right) = \frac1n \log\left( \frac{n!}{(n)^{n+1}}\right) - \frac{n+1}{n} \log s.
+    \end{equation*}
+
+    Finally, we differentiate to find the desired expression.
+
+    \begin{equation*}
+        \ln \left(  \frac1n \log\left( \frac{n!}{(n)^{n+1}}\right) - \frac{n+1}{n} \log s \right) = - \partial_s\left[ - \frac{n+1}{n} \log s \right] = \left(\frac{n+1}{n}\right) \frac1s.
+    \end{equation*}
+\end{proof}
+
+Notice that once we have this, an alternative definition for $\mathcal R_n^{\mu_A}(s)$ would be $\mathcal R_n^{\mu_A}(s) = \mathcal K_n^{\mu_A}(s) - \mathcal K_n^{\mu_0}(s)$.
 
 Our next goal is to prove that the finite $\mathcal R_n$ transform linearizes the symmetric additive convolution. In order to do so, we will first prove a couple basic lemmas.
 
@@ -589,23 +631,21 @@ Our next goal is to prove that the finite $\mathcal R_n$ transform linearizes th
     \end{align*}
 \end{proof}
 
-The simplest finite $\mathcal R_n$ transform we can find is the one related to the measure $\mu_0 = \delta_0$. Knowing this transform will also be useful for proving the next Theorem. 
+
 
 
 
 
 \begin{lemma}  \label{lemma:quotient_norms}
     Let $A$ be an $n\times n$ real symmetric matrix. Denote by $\lambda(A)$ its spectrum and by $U_A$ the $U$ transform of $\lambda(A)$, then 
-\todo{Encontrar $R_0^n$}
+
     \begin{equation*}
         \frac{\norm{e^{-xs}\Delta^+(xI - A)}_n^n}{\norm{e^{-xs}\Delta^+(xI)}_n^n} \equiv \frac1n\sum_{u_i \in U_A} e^{-ns u_i} \qquad \mod [s^{n+1}]. 
     \end{equation*} 
 \end{lemma}
 
 \begin{proof}
-    By definition of the $U$ transform, for any $n\times n$ symmetric matrix $A$ we have
-
-    \todo{Sin pérdida de generalidad, podemos suponer que es positiva definida.}
+    Suppose, without loss of generality that $A$ is positive definite. By definition of the $U$ transform, for any $n\times n$ such symmetric matrix $A$ we have
 
     \begin{equation*}
         \Delta^+(xI - A)^n = \det[xI - A] = \prod_{j=1}^n (x - \lambda_j) = \frac1n \sum_{u_i \in U_A} (x-u_i)^n.
@@ -614,18 +654,27 @@ The simplest finite $\mathcal R_n$ transform we can find is the one related to t
     Using this and the previously found result for $\norm{e^{-xs}\Delta^+(xI)}_n^n$ we find
 
     \begin{align*}
-        \frac{\norm{e^{-xs}\Delta^+(xI - A)}_n^n}{\norm{e^{-xs}\Delta^+(xI)}_n^n} &= \frac{(ns)^{n+1}}{n!}\norm{e^{-xs}\Delta^+(xI - A)}_n^n,\\
-        &= \frac{(ns)^{n+1}}{n!}\int_{\rho_A}^\infty e^{-nxs} \Delta^+(xI - A)^n \d x,\\
-        &= \frac{(ns)^{n+1}}{n!}\int_{\rho_A}^\infty e^{-nxs} \frac1n \sum_{u_i \in U_A} (x-u_i)^n \d x,\\
-        &= \frac{(ns)^{n+1}}{n!}e^{-ns\rho_A}\int_{0}^\infty e^{-nsy} \frac1n \sum_{u_i \in U_A} (y + \rho_A-u_i)^n \d x, \\
-        &= \frac1n \sum_{u_i\in U_A} \frac{(ns)^{n+1}}{n!}e^{-ns\rho_A} \mathcal L\{(y + \rho_A - U_A)^n\}(ns), \\
-        &=  \frac1n \sum_{u_i\in U_A} \frac{(ns)^{n+1}}{n!}e^{-ns\rho_A} \sum_{k=0}^n \binom nk  (\rho_A - u_i)^{n-k}\mathcal L\{y^k\}(ns), \\
+        \frac{\norm{e^{-xs}\Delta^+(xI - A)}_n^n}{\norm{e^{-xs}\Delta^+(xI)}_n^n} &= \frac{(ns)^{n+1}}{n!}\norm{e^{-xs}\Delta^+(xI - A)}_n^n = \frac{(ns)^{n+1}}{n!}\int_{\rho_A}^\infty e^{-nxs} \Delta^+(xI - A)^n \d x,
+        \intertext{by definition of the $U$ transform}
+        &= \frac{(ns)^{n+1}}{n!}\int_{\rho_A}^\infty e^{-nxs} \frac1n \sum_{u_i \in U_A} (x-u_i)^n \d x,
+        \intertext{use the change of variables $y = x + \rho_A$}
+        &= \frac{(ns)^{n+1}e^{-ns\rho_A}}{n!}\int_{0}^\infty e^{-nsy} \frac1n \sum_{u_i \in U_A} (y + \rho_A-u_i)^n \d y, \\
+        \intertext{using linearity and definition of the Laplace transform}
+        &= \frac1n \sum_{u_i\in U_A} \frac{(ns)^{n+1}}{n!}e^{-ns\rho_A} \mathcal L\{(y + \rho_A - U_A)^n\}(ns), 
+        \intertext{by linearity of the Laplace transform}
+        &=  \frac1n \sum_{u_i\in U_A} \frac{(ns)^{n+1}}{n!}e^{-ns\rho_A} \sum_{k=0}^n \binom nk  (\rho_A - u_i)^{n-k}\mathcal L\{y^k\}(ns).
+        \intertext{Finally, we expand and cancel terms to arrive to}
+        \frac{\norm{e^{-xs}\Delta^+(xI - A)}_n^n}{\norm{e^{-xs}\Delta^+(xI)}_n^n}
         &= \frac1n \sum_{u_i\in U_A} \frac{(ns)^{n+1}}{n!}e^{-ns\rho_A} \sum_{k=0}^n \frac{n!}{k!(n-k)!}  (\rho_A - u_i)^{n-k}\frac{k!}{(ns)^{k+1}}, \\
         &= \frac1n \sum_{u_i \in U_A} e^{-ns\rho_A} \sum_{k=0}^n \frac{(ns)^{n-k}(\rho_A - u_i)^{n-k}}{(n-k)!}, \\
+        \intertext{we can use the polynomial congruence relation for the series expansion of the exponential function and the truncated series $\sum_{k=0}^n x^n/n!$.}
         &\equiv \frac1n \sum_{u_i\in U_A} e^{-ns\rho_A} e^{ns(\rho_A - u_i)}, \quad \mod [s^{n+1}],\\
         &\equiv \frac1n \sum_{u_i\in U_A} e^{-nsu_i}, \quad \mod [s^{n+1}].
     \end{align*}
 \end{proof}
+
+With the previous result in hand, it is now easier to find the finite $\mathcal R_n$ transform of a spectral measure in terms of the $U$ transform of its spectrum.
+
 
 \begin{corollary} \label{corollary:R_n_as_a_logarithm}
     Let $A$ be a an $n\times n$ symmetric matrix with real entries, with spectrum $\lambda(A)$ and $U_A$ be the $U$ transform of $\lambda(A)$, then 
@@ -652,14 +701,16 @@ The simplest finite $\mathcal R_n$ transform we can find is the one related to t
     \end{align*}
 \end{proof}
 
-\begin{lemma}
+One of the central results in this section is the equivalence of the symmetric additive convolution of two polynomials and the sum of the finite $\mathcal R_n$ transform of the measures associated to its roots (which is in turn the empirical measure associated to the eigenvalues of some matrix). The following Theorem shows us that the analogy between the finite $\mathcal R_n$ transform and the $\mathcal R$ transform is not only in terms of their convergence, but also in the role of linearizing convolution. 
+
+\begin{theorem}
     Let $A$ and $B$ be two $n\times n$ real symmetric matrices. The following are equivalents:
 
     \begin{enumerate}
         \item \[ \mathcal R_n^{\mu_A}(s) + \mathcal R_n^{\mu_B}(s) = \mathcal R_n^{\mu_{A+B}}(s) \qquad \mod[s^n]. \]
         \item \[ \det[xI - A] \boxplus_n \det[xI-B] = \det[xI - A - B]. \]
     \end{enumerate}
-\end{lemma}
+\end{theorem}
 
 \begin{proof}
     Let us denote by $U_A, U_B$ and $U_{A+B}$ the $U$ transforms of the $\lambda(A), \lambda(B)$ and $\lambda(A+B)$, respectively. By Lemma \ref{lemma:Utrans_convolution}, the second statement is equivalent to 
@@ -687,9 +738,15 @@ The simplest finite $\mathcal R_n$ transform we can find is the one related to t
     \end{equation}
 
     So proving the equivalence of the two statements reduces to prove the equivalence between \eqref{eq:f_matrix_module} and \eqref{eq:differential_matrix_module}. Because the formal series in \eqref{eq:f_matrix_module} coincide up to the $n+1$th term, the derivatives coincide up to the $n$th term, so one implication is trivial. For the second implication, it suffices to prove that $f_A(0) + f_B(0) = f_{A+B}(0)$, but we have that $f_A(0)=f_B(0)=f_{A+B}(0)$, so the result follows.
-\end{proof} \todo{Mencionar caso multiplicativo.}
+\end{proof} 
+
+As it was mentioned several times before in this chapter, the relationship between symmetric additive convolution and free additive convolution shown by these results is not exclusive. Similar results can be given for the symmetric multiplicative convolution and free multiplicative convolution. Although we are not including them here, they can be consulted in \cite{marcus2021polynomial} and \cite{article:finitefree}.
+
+For the last part of this Chapter, we will use the recently exposed tools to find the polynomials corresponding to three classical laws in the finite free setting; namely the constant, Gaussian and Poisson distributions. After that, we will prove the finite free version of the three corresponding limit theorems; the law of large numbers, the central limit theorem and the Poisson limit theorem.
 
 \subsection{Finite free distributions}
+
+We have seen that the finite $\mathcal R_n$ transform is a power series that linearizes finite free convolution. In free probability terms, we can say that the corresponding coefficients in the expansion are the finite free cumulants. Using this and the fact that we know what are the cumulants for several well known distributions, we can find the polynomials corresponding to these laws in Finite Free Probability Theory. As a prerequisite, we prove a Theorem that allows us to recover a polynomial from the finite $\mathcal R_n$ transform of its roots.
 
 \begin{theorem} \label{thm:if_and_only_if}
     Let $P(n^{-1}\partial_z)$ be a polynomial on $n^{-1}\partial_z$ such that the linear differential operator applied to $x^n$, $P(n^{-1}\partial_z)[z^n]$ is a monic polynomial. Then $P(n^{-1}\partial_z) = \det[zI - A]$ for a matrix $A$ if and only if 
@@ -731,6 +788,7 @@ The simplest finite $\mathcal R_n$ transform we can find is the one related to t
         &= \frac1n \sum_{u_i \in U_A} \sum_{j=0}^n (-u_i)^j \frac{n!}{j!(n-j)!}z^{n-j} = \frac1n \sum_{u_i \in U_A} (z - u_i)^n = \det[zI - A].
     \end{align*}\end{proof}
 
+    With this theorem, we are ready to find the polynomials corresponding to the basic finite free distributions.
 
 \subsubsection{Constant distribution}
 
@@ -803,9 +861,11 @@ Finally, we evaluate in $n^{-1}\partial_z$ and apply to $z^n$ and find the polyn
     P(n^{-1}\partial_z)[z^n] &= \left( 1 - \frac{\partial_z}{n} \right)^{n\nu}[z^n] \eqcolon L_n^{(\nu-1)n}(z).
 \end{align}
 
-So the finite free Poisson distribution corresponds to a generalized Laguerre polynomial. Notice that when $\nu=n=1$, we recover the original definition of the Laguerre polynoamials given in \todo{Citar definición (incluir Laguerre generalizados).}
+So the finite free Poisson distribution corresponds to a generalized Laguerre polynomial. Notice that when $\nu=1$, we recover the original definition of the Laguerre polynoamials given in Section \ref{sec:polynomials}.
 
 \subsection{Finite Free Limit Theorems}
+
+One of the central topics in Probability Theory is the convergence of sums of random variables to some laws. In Free Probability we have analogous convergence Theorems for the main distributions. Three of the most famous limit Theorems have the previously shown laws as limits (constant, Gaussian, Poisson). In non-commutative Probability Theory in general, these laws are characterized by their cumulants and happen to be limits of the corresponding sums of random variables. In what follows, we will show that when we re-scale and convolute polynomials under standard assumptions, we also recover our three limit laws.
 
 \begin{theorem}[Finite Free Law of Large Numbers]
     Let $(p_i(z))_{i=1}^n$ be a sequence of degree $n$ monic polynomials with real roots $r_{ij}$ such that
@@ -918,7 +978,7 @@ So the finite free Poisson distribution corresponds to a generalized Laguerre po
         \lim_{k\to\infty} \left(q_1 \boxplus_n \cdots \boxplus_n q_k\right) = e^{ - \frac{\sigma^2}{2(n-1)} }[z^n].
     \end{equation*}
 
-    The last expression is the definition given previously for $H_n(z,\sigma^2/(n-1))$
+    The last expression is the definition given previously for $H_n(z,\sigma^2/(n-1))$.
 \end{proof}
 
 
