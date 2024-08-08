@@ -168,8 +168,10 @@ The following two Lemmas will help us to find explicit coefficients for expected
     Let $a > d$, $A$ an $a \times a$ random matrix and $Q$ a random $a \times d$ matrix sampled from the Haar measure on $\mathcal M_{a,d}(\C)$, then
 
     \begin{equation*}
-        \mathbb E_A \left[ \mathbb E_Q\left[ \chi_x \left( Q A \hermit{Q} \right) \right]\right] = \mathbb E_A \left[\frac{d!}{a!} \partial_x^{(a-d)} \chi_x(A) \right].
+        \mathbb E_A \left[ \mathbb E_Q\left[ \chi_x \left( Q A \hermit{Q} \right) \right]\right] = \mathbb E_A \left[\frac{d!}{a!} \partial_x^{(a-d)} \chi_x(A) \right],
     \end{equation*}
+
+    \noindent where $\chi_z(\cdot)$ denotes the characteristic polynomial of $\cdot$ with $z$ as a variable.
 \end{lemma}
 
 \begin{proof}
@@ -198,64 +200,67 @@ Until now, we have used minor orthogonality properties to find some expressions 
 For both the additive and multiplicative cases, the results are written in two parts; one for the statement of the expected characteristic polynomial coefficients and another stating explicitly the convolution of expected characteristic polynomials. The relationship with Free Probability Theory will be more evident for the additive case in the next section where we introduce the $\mathcal R_n$ finite transform. For the multiplicative case a similar transform can be introduced, but it is not included in this work. 
 
 \begin{theorem} \label{thm:implies_symmad}
-    Let $A, B$ be $d\times d$ random matrices and $R$ a $d\times d$ minor-orthogonal matrix, such that $A, B, R$ are jointly independent, then we have
+    Let $A, B$ be $n\times n$ random matrices and $R$ a $n\times n$ minor-orthogonal matrix, such that $A, B, R$ are jointly independent, then we have
 
     \begin{equation*}
-        E_{A,B,R}\left[ \sigma_k(A + RB\hermit R) \right] =  \sum_{i=0}^k \frac{\binom{d-i}{k-i}}{\binom{d}{k-i}}E_{A} \left[\sigma_i(A)\right] E_{A}\left[\sigma_{k-i}(B)\right].
+        \mathbb E_{A,B,R}\left[ \sigma_k(A + RB\hermit R) \right] =  \sum_{i=0}^k \frac{\binom{n-i}{k-i}}{\binom{n}{k-i}}\mathbb E_{A} \left[\sigma_i(A)\right] \mathbb E_{A}\left[\sigma_{k-i}(B)\right],
     \end{equation*}
+
+    \noindent where $\sigma_j(X)$ represents the $j$th coefficient in the characteristic polynomial of the matrix $X$.
 \end{theorem}
 
 \begin{proof}
-    We use 
+    We use that
 
     \begin{equation*}
-        \sigma_k(A) = \sum_{\abs{S}=k} [A]_{S,S},
+        \sigma_k(A) = \sum_{\abs{S}=k} \det[A]_{S,S},
     \end{equation*}
 
     \noindent together with Theorem \ref{thm:marcus_binet} and Lemma \ref{lemma:conjugate_minorth} to get \todo{Hay que aclarar las normas de matrices.}
 
     \begin{align*}
-        E_{A,B,R}\left[ \sigma_k(A + RB\hermit{R}) \right] &= \sum_{S \in \binom{[d]}{k}} E_{A,B,R} \left[ [A + RB\hermit{R}]_{S,S} \right],\\ 
-        &= \sum_{S\in\binom{[d]}{k}} \sum_{i=0}^k \sum_{U,V\in \binom{[k]}{i}} (-1)^{\norm{U}_1 + \norm{V}_1} E_A\left[ [A]_{U(S),V(S)} \right] E_{B,R}\left[ [RB\hermit R]_{\overline{U}(S),\overline{V}(S)} \right],\\ 
-        &= \sum_{S\in\binom{[d]}{k}} \sum_{i=0}^k \sum_{U,V\in \binom{[k]}{i}} (-1)^{\norm{U}_1 + \norm{V}_1} E_A\left[ [A]_{U(S),V(S)} \right] \delta_{\overline{U}(S),\overline{V}(S)} \frac{E_{B}\left[ \sigma_{k-i}(B)\right]}{\binom{d}{k-i}},\\ 
+        \mathbb E_{A,B,R}&\left[ \sigma_k(A + RB\hermit{R}) \right]\\ &= \sum_{S \in \binom{[n]}{k}} \mathbb E_{A,B,R} \left[ \det[A + RB\hermit{R}]_{S,S} \right],\\ 
+        \intertext{denote by $\overline U$ the complement of $U$, then}
+        &= \sum_{S\in\binom{[n]}{k}} \sum_{i=0}^k \sum_{U,V\in \binom{[k]}{i}} (-1)^{\norm{U}_1 + \norm{V}_1} \mathbb E_A\left[ \det [A]_{U(S),V(S)} \right] \mathbb E_{B,R}\left[ \det[RB\hermit R]_{\overline{U}(S),\overline{V}(S)} \right],\\ 
+        &= \sum_{S\in\binom{[n]}{k}} \sum_{i=0}^k \sum_{U,V\in \binom{[k]}{i}} (-1)^{\norm{U}_1 + \norm{V}_1} \mathbb E_A\left[ \det[A]_{U(S),V(S)} \right] \delta_{\overline{U}(S),\overline{V}(S)} \frac{\mathbb E_{B}\left[ \sigma_{k-i}(B)\right]}{\binom{n}{k-i}},\\ 
         \intertext{using that $U(S)=V(S)$ if and only if $\overline{U}(S) = \overline{V}(S)$,}
-        &= \sum_{i=0}^k \frac{E_{B}\left[ \sigma_{k-i}(B)\right]}{\binom{d}{k-i}} \sum_{S\in\binom{[d]}{k}} \sum_{U,V\in \binom{[k]}{i}}  E_A\left[ [A]_{U(S),U(S)} \right].
+        &= \sum_{i=0}^k \frac{\mathbb E_{B}\left[ \sigma_{k-i}(B)\right]}{\binom{n}{k-i}} \sum_{S\in\binom{[n]}{k}} \sum_{U,V\in \binom{[k]}{i}}  \mathbb E_A\left[\det[A]_{U(S),U(S)} \right].
     \end{align*}
 
     To finish the proof we need to find
 
-    \begin{equation} \label{eq:suma_rara} \sum_{S\in\binom{[d]}{k}} \sum_{U\in \binom{[k]}{i}}  E_A\left[ [A]_{U(S),U(S)} \right]. \end{equation}
+    \begin{equation} \label{eq:suma_rara} \sum_{S\in\binom{[n]}{k}} \sum_{U\in \binom{[k]}{i}}  \mathbb E_A\left[\det[A]_{U(S),U(S)} \right]. \end{equation}
 
-    Clearly, we are summing over all of the sets $V \in \binom{[d]}{i}$, but they appear more than once in the sum. To find the number of times every element $V\in \binom{[d]}{i}$ appears in the sum, we can count the total number of terms we are summing in \eqref{eq:suma_rara} and divide by the total number of elements in $\binom{[d]}{i}$. We have that $\abs{\binom{[d]}i} = \binom{d}{i}$ and the number of summands is $\binom{d}{k}\binom{k}{i}$, so
+    We are summing over all of the sets $V \in \binom{[n]}{i}$, but they appear more than once in the sum. To find the number of times every element $V\in \binom{[n]}{i}$ appears in the sum, we can count the total number of terms we are summing in \eqref{eq:suma_rara} and divide by the total number of elements in $\binom{[n]}{i}$. We have that $\abs{\binom{[n]}i} = \binom{n}{i}$ and the number of summands is $\binom{n}{k}\binom{k}{i}$, so
 
     \begin{align*}
-        \frac{\binom{d}{k}\binom{k}{i}}{\binom{d}{i}} &= \frac{\frac{d!}{k!(d-k)!}\frac{k!}{i!(k-i)!}}{\frac{d!}{i!(d-i)!}} = \frac{(d-i)!}{(d-k)!(k-i)!} = \binom{d-i}{k-i}.
+        \frac{\binom{n}{k}\binom{k}{i}}{\binom{n}{i}} &= \frac{\frac{n!}{k!(n-k)!}\frac{k!}{i!(k-i)!}}{\frac{n!}{i!(n-i)!}} = \frac{(n-i)!}{(n-k)!(k-i)!} = \binom{n-i}{k-i}.
     \end{align*}
 
-    So, we have
+    Thus, we have
 
     \begin{equation*}
-        \sum_{S\in\binom{[d]}{k}} \sum_{U\in \binom{[k]}{i}}  E_A\left[ [A]_{U(S),U(S)} \right] = \binom{d-i}{k-i} \sum_{V\in \binom{[d]}{i}}  E_A\left[ [A]_{V,V} \right] = \binom{d-i}{k-i}E_A\left[\sigma_{i}(A)\right].
+        \sum_{S\in\binom{[n]}{k}} \sum_{U\in \binom{[k]}{i}}  \mathbb E_A\left[ \det[A]_{U(S),U(S)} \right] = \binom{n-i}{k-i} \sum_{V\in \binom{[n]}{i}} \mathbb E_A\left[ \det[A]_{V,V} \right] = \binom{n-i}{k-i}\mathbb E_A\left[\sigma_{i}(A)\right].
     \end{equation*}
 
-    Thus we can conclude
+    With this, we can conclude
 
     \begin{equation*}
-        E_{A,B,R}\left[ \sigma_k(A + RB\hermit R) \right] =  \sum_{i=0}^k \frac{\binom{d-i}{k-i}}{\binom{d}{k-i}}E_{A} \left[\sigma_i(A)\right] E_{A}\left[\sigma_{k-i}(B)\right].
+        \mathbb E_{A,B,R}\left[ \sigma_k(A + RB\hermit R) \right] =  \sum_{i=0}^k \frac{\binom{n-i}{k-i}}{\binom{n}{k-i}}\mathbb E_{A} \left[\sigma_i(A)\right] \mathbb E_{A}\left[\sigma_{k-i}(B)\right].
     \end{equation*}
 
-    \todo{Hay que aclarar qué signofica $U(S)$.}
+    \todo{Hay que aclarar qué significa $U(S)$.}
 \end{proof}
 
 
 \begin{theorem} \label{thm:symmad}
-    If $p(x)$ is the characteristic polynomial of $A$ and $q(x)$ is the characteristic polynomial of $B$, where $A$ and $B$ are $d\times d$ normal matrices with complex entries, then 
+    If $p(z)$ is the characteristic polynomial of $A$ and $q(z)$ is the characteristic polynomial of $B$, where $A$ and $B$ are $n\times n$ normal matrices with complex entries, then 
 
     \begin{equation*}
-        p(x) \boxplus_d q(x) = E_Q\left[\chi_x(A + Q B Q^*)\right],
+        p(z) \boxplus_n q(z) = \mathbb E_Q\left[\chi_z(A + Q B \hermit Q)\right],
     \end{equation*}
 
-    \noindent where $\chi_x(\cdot)$ denotes the characteristic polynomial of $\cdot$ with $x$ as a variable and $E_Q$ denotes taking expectation over $Q$ where $Q$ is sampled from the Haar measure on the unitary complex $d\times d$ matrices.
+    \noindent where $\chi_z(\cdot)$ denotes the characteristic polynomial of $\cdot$ with $z$ as a variable and $\mathbb E_Q$ denotes taking expectation over $Q$ where $Q$ is sampled from the Haar measure on the unitary complex $n\times n$ matrices.
 \end{theorem}
 
 \begin{proof}
@@ -263,44 +268,61 @@ For both the additive and multiplicative cases, the results are written in two p
 \end{proof}
 
 
+The next two Theorems are the analogous of the previous ones for the symmetric multiplicative convolution. As it was stated previously, these convolutions can be seen as ``approximations'' to the Free additive and Free multiplicative convolutions.
+
 
 \begin{theorem} \label{thm:implies_symm_mult}
-    Let $A$ and $B$ be $d\times d$ random matrices and $R$ a minor-orthogonal $d\times d$ matrix, such that $A,B,R$ are jointly independent, then
+    Let $A$ and $B$ be $n\times n$ random matrices and $R$ a minor-orthogonal $n\times n$ matrix, such that $A,B,R$ are jointly independent, then
 
     \begin{equation*}
-        E_{A,B,R} \left[\sigma_k(ARB\hermit{R})\right] = \frac{E_A[\sigma_k(A)]E_B[\sigma_k(B)]}{\binom{d}{k}}.
+        \mathbb E_{A,B,R} \left[\sigma_k(ARB\hermit{R})\right] = \frac{\mathbb E_A[\sigma_k(A)]\mathbb E_B[\sigma_k(B)]}{\binom{n}{k}}.
     \end{equation*}
 \end{theorem}
 
 \begin{proof}
     \begin{align*}
-        E_{A,B,R} \left[\sigma_k(ARB\hermit{R})\right] &= \sum_{S \in \binom{[d]}{k}} E_{A,B,R} \left[[ARB\hermit{R}]_{S,S}\right],\\ 
+        \mathbb E_{A,B,R} \left[\sigma_k(ARB\hermit{R})\right] &= \sum_{S \in \binom{[n]}{k}} \mathbb E_{A,B,R} \left[\det[ARB\hermit{R}]_{S,S}\right],\\ 
         \intertext{By the Cauchy-Binet formula and independence}
-        &= \sum_{S,T \in \binom{[d]}{k}} E_A\left[ [A]_{S,T} \right] E_{B,R} \left[ [RB\hermit{R}]_{T,S} \right],\\ 
+        &= \sum_{S,T \in \binom{[n]}{k}} \mathbb E_A\left[ \det[A]_{S,T} \right] \mathbb E_{B,R} \left[ \det [RB\hermit{R}]_{T,S} \right],\\ 
         \intertext{By Lemma \ref{lemma:conjugate_minorth}}
-        &= \sum_{S,T \in \binom{[d]}{k}} E_A\left[[A]_{S,T} \right] \delta_{T,S}\frac{E_B\left[ \sigma_k(B)\right]}{\binom{d}{k}},\\
-        &= \frac{E_A[\sigma_k(A)]E_B[\sigma_k(B)]}{\binom{d}{k}}.
+        &= \sum_{S,T \in \binom{[n]}{k}} \mathbb E_A\left[\det[A]_{S,T} \right] \delta_{T,S}\frac{\mathbb E_B\left[ \sigma_k(B)\right]}{\binom{n}{k}},\\
+        &= \frac{\mathbb E_A[\sigma_k(A)]\mathbb E_B[\sigma_k(B)]}{\binom{n}{k}}.
     \end{align*}
 \end{proof}
 
 
 \begin{theorem}
-    Let $p(x)$ be the characteristic polynomial of $A$ and $q(x)$ be the characteristic polynomial of $B$ where $A$ and $B$ are $d\times d$ normal matrices with complex entries, then 
+    Let $p(z)$ be the characteristic polynomial of $A$ and $q(z)$ be the characteristic polynomial of $B$ where $A$ and $B$ are $n\times n$ normal matrices with complex entries, then 
 
     \begin{equation*}
-        p(x) \boxtimes_d q(x) = E_Q \left[ \chi_x (AQBQ^*) \right],
+        p(z) \boxtimes_n q(z) = \mathbb E_Q \left[ \chi_z (AQBQ^*) \right],
     \end{equation*}
 
-    \noindent with $\chi_x$ and $E_Q$ as in Theorem \ref{thm:symmad}.
+    \noindent with $\chi_z$ and $\mathbb E_Q$ as in Theorem \ref{thm:symmad}.
 \end{theorem}
 
 \begin{proof}
     It follows directly from Theorem \ref{thm:implies_symm_mult} and definition of the symmetric multiplicative convolution.
 \end{proof}
 
-\section{The $\mathcal R_n$ finite transform} 
+With the results in this section we related polynomial convolutions to expected characteristic polynomials. In the following section we will be able to link the convolutions to Free Probability Theory by assigning an empirical measure to the roots of a polynomial in a similar fashion one can assign a measure to the eigenvalues of a matrix.
+
+
+\section{The finite \texorpdfstring{$\mathcal R_n$}{R} transform} 
 
 \todo{Introducir la notación de $p(x) \equiv q(x) \mod x^n$.}
+
+In finite probability, the $\mathcal R$ transform linearizes free additive convolution, which means the $\mathcal R$ transform of a free additive convolution of measures is simply the sum of the $\mathcal R$ tranforms of each measure. The $\mathcal R$ transform of a measure $\mu$ is often defined as a formal series
+
+\begin{equation*}
+    \mathcal R_\mu(s) = \sum_{k=0}^\infty s^{k} r_k,
+\end{equation*}
+
+\noindent with $r_k$ being the free cumulants of the measure. For the Finite Free case, a similar transform can be defined, and we will prove that it converges to the $\mathcal R$ transform. A similar finite transform converging to the corresponding free one can be dfeined for the multiplicative convolution, we do not include those results here. 
+
+In the first part of this section we introduce some technical definitions and lemmas, then we define the finite $\mathcal R_n$ transform and prove its two main properties, namely that it converges to a $\mathcal R$ transform and that it linearizes symmetric additive convolution of polynomials. In the following two subsections we use the transform to find the polynomials associated to finite free distributions and later to prove the analogous in Finite Free Probability Theory to the most classical limit theorems in Probability Theory.
+
+\subsection{Definition of the transform}
 
 Given any polynomial $p(z)$ with order $p$ we can associate an empirical measure $\mu_p$ to its roots $z_i$ given by
 
@@ -339,7 +361,9 @@ This measure is similar to the spectral empirical measure of a random matrix. We
     \end{align*}
 \end{proof}
 
-We state without proof the following result. The proof  can be found in \cite{anaya2016cumulantes}.
+Now we will define two objects that are auxiliary in the following proofs. Both are named transforms, but it is important to remark that one of them is an operator acting on functions while the other is a multiset which is uniquely related to another multiset in some way.
+
+The existence of the $U$ transform can be stated by the following Lemma that we state without proof. The proof can be found in \cite{anaya2016cumulantes}.
 
 \begin{lemma}[$U$ transform]
     Let $S$ be a multiset of complex numbers and denote by $\abs S=n$ its number of elements with multiplicity. Then exists an unique multiset of complex numbers $T$ such that $\abs{T}=n$ and 
