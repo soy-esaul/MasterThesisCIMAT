@@ -1,7 +1,7 @@
 %\section{Finite free probability and random matrices}
 
 
-\section{Minor orthogonality}
+\section{Minor orthogonality} \label{sec:minor_orthogonality}
 
 
 \begin{definition}[Minor orthogonality]
@@ -313,6 +313,18 @@ This measure is similar to the spectral empirical measure of a random matrix. We
     \end{align*}
 \end{proof}
 
+We state without proof the following result. The proof  can be found in \cite{anaya2016cumulantes}.
+
+\begin{lemma}[$U$ transform]
+    Let $S$ be a multiset of complex numbers and denote by $\abs S=n$ its number of elements with multiplicity. Then exists an unique multiset of complex numbers $T$ such that $\abs{T}=n$ and 
+
+    \begin{equation*}
+        \prod_{s_i \in S} (x-s_i) = \frac 1n \sum_{t_i \in T} (x-t_i)^n.
+    \end{equation*}
+
+    We call such multiset the $U$ transform of $S$.
+\end{lemma}
+
 \begin{definition}[Legendre's transform]
     Let $f$ a convex function in a domain $D\subset \R$ and define
 
@@ -475,17 +487,7 @@ This measure is similar to the spectral empirical measure of a random matrix. We
 \end{proof}
 
 
-We state without proof the following result. The proof  can be found in \cite{anaya2016cumulantes}.
 
-\begin{lemma}
-    Let $S$ be a multiset of complex numbers and denote by $\abs S=n$ its number of elements with multiplicity. Then exists an unique multiset of complex numbers $T$ such that $\abs{T}=n$ and 
-
-    \begin{equation*}
-        \prod_{s_i \in S} (x-s_i) = \frac 1n \sum_{t_i \in T} (x-t_i)^n.
-    \end{equation*}
-
-    We call such multiset the $U$ transform of $S$.
-\end{lemma}
 
 % \begin{proof}
 %     Expanding the term $(x-t_i)^n$ we get,

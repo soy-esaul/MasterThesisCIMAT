@@ -750,6 +750,63 @@
     \field{year}{1939}
   \endentry
 
+  \entry{book:orthogonal_polynomials_and_stochastic_processes}{article}{}{}
+    \name{author}{1}{}{%
+      {{hash=SW}{%
+         family={Schoutens},
+         familyi={S\bibinitperiod},
+         given={W},
+         giveni={W},
+      }}%
+    }
+    \strng{namehash}{SW1}
+    \strng{fullhash}{SW1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Orthogonal Polynomials and Stochastic Processes}
+    \field{volume}{960}
+    \field{journaltitle}{Lecture Notes in Statistics, Springer}
+    \field{year}{2000}
+  \endentry
+
+  \entry{book:mathematical_methods_for_physicists}{book}{}{}
+    \name{author}{4}{}{%
+      {{hash=BD}{%
+         family={Babusci},
+         familyi={B\bibinitperiod},
+         given={Danilo},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=DG}{%
+         family={Dattoli},
+         familyi={D\bibinitperiod},
+         given={Giuseppe},
+         giveni={G\bibinitperiod},
+      }}%
+      {{hash=LS}{%
+         family={Licciardi},
+         familyi={L\bibinitperiod},
+         given={Silvia},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=SE}{%
+         family={Sabia},
+         familyi={S\bibinitperiod},
+         given={Elio},
+         giveni={E\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {World Scientific}%
+    }
+    \strng{namehash}{BD+1}
+    \strng{fullhash}{BDDGLSSE1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Mathematical methods for physicists}
+    \field{year}{2019}
+  \endentry
+
   \entry{marcus2021polynomial}{article}{}{}
     \name{author}{1}{}{%
       {{hash=MAW}{%

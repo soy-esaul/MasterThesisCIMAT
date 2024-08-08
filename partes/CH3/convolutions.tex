@@ -1,6 +1,8 @@
-\section{Convolution of polynomials}
+\section{Polynomials and convolution}
 
-In this section, we present two notions of polynomial convolution, both introduced around a century ago \cite{walsh1922location} \cite{szeg1939orthogonal}. Their study began using tools outside of probability theory, but we do not include any of those results here, instead, we are merely interested in introducing them to relate them to expected characteristic polynomials of random matrices. In the next subsection we introduce three ensembles of orthogonal polynomials, namely the Hermite, Laguerre and Jacobi polynomials. We prove some nice properties of these polynomials, especially related to the notions of convolution introduced previously. 
+\subsection{Convolution of polynomials}
+
+In this subsection, we present three notions of polynomial convolution, the first two were introduced around a century ago \cite{walsh1922location} \cite{szeg1939orthogonal}. Their study began using tools outside of probability theory, but we do not include any of those results here, instead, we are merely interested in introducing them to relate them to expected characteristic polynomials of random matrices. In the next subsection we introduce three ensembles of orthogonal polynomials, namely the Hermite, Laguerre and Jacobi polynomials. We prove some nice properties of these polynomials, especially related to the notions of convolution introduced previously.  The third notion of convolution was presented in the context of Finite Free Probability Theory \cite{article:finitefree} as it was found to share similar properties to the other two, linking it to Random Matrix Theory.
 
 The three notions of convolution are defined for complex polynomials. Although one could get the convolution between any two polynomials, we are interested uniquely in monic polynomials as our main object of interest are the roots and their behavior under convolution. In full generality, we can write a monic complex polynomial $p(z)$ as
 
@@ -10,7 +12,7 @@ The three notions of convolution are defined for complex polynomials. Although o
 
 The three notions of convolution are defined in function of the polynomial degree, but the polynomials need not to have the same degree. In the case the degree is different, we can take the convolution with the highest degree, and notice that this equivalent to have zero coefficients for higher powers of the polynomial with the minor degree.
 
-\subsection{Symmetric additive convolution}
+\subsubsection{Symmetric additive convolution}
 
 This notion of convolution will be the most used along the text. Several of the results we find for the relationship of this convolution with random matrix theory can be extrapolated to the other notions, but the space and time required would be longer than the dedicated to the present work.
 
@@ -92,42 +94,85 @@ It is straightforward from the definition to prove that the symmetric additive c
     To conclude, we extend this property linearly to any $P,Q$ polynomials on $\partial_z$. 
 \end{proof}
 
-\subsection{Symmetric multiplicative convolution}
+\subsubsection{Symmetric multiplicative convolution}
 
-\begin{definition}[Symmetric multiplicative convolutions]
-    Let $p$ and $q$ be as in Definition \ref{def:symadconv} with degree at most $d$, the $d$th symmetric multiplicative convolution of $p$ and $q$ is 
+Later in the thesis it is explained how the symmetric additive convolution is related to the additive convolution in Free Probability, i.e. the convolution of two measures when you add two freely independent random variables. In a similar fashion, when you multiply two freely independent random variables, there is a way to find the law of this product in terms of the laws o the original random variables. This operation between two probability distribution is called ``free multiplicative convolution''. The symmetric multiplicative convolution is analogously related to the free multiplicative convolution. Although most of the results we will show are related to linking the symmetric additive convolution to sums of random variables, we also show a theorem linking products of random matrices to symmetric multiplicative convolution\todo{Agregar ref de teorema multiplicativo} and several of the later additive results can be extended to the multiplicative case \todo{Agregar cita}.
+
+\begin{definition}[Symmetric multiplicative convolution]
+    Let $p$ and $q$ be as in Definition \ref{def:symadconv} with degree at most $n$. The $n$th symmetric multiplicative convolution of $p$ and $q$ is 
 
     \begin{align*}
-        p(z) \boxtimes_d q(z) \coloneqq \sum_{i=0}^d z^{d-i}(-1)^i\frac{a_ib_i}{\binom di}.
+        p(z) \boxtimes_n q(z) \coloneqq \sum_{i=0}^n z^{n-i}(-1)^i\frac{a_ib_i}{\binom ni}.
     \end{align*}
 \end{definition}
 
+\subsubsection{Asymmetric additive convolution}
+
+This notion of convolution was found for the first time by Marcus, Spielman and Srivastava in the seminal paper on Finite Free Probability Theory \cite{article:finitefree}. Although this convolution is not related to a notion of Free convolution of measures, we introduce it because it appears naturally in the results found in Chapter \ref{ch:determinist}.
+
+
+\begin{definition}[Asymetric additive convolution]
+    Let $p$ and $q$ be two polynomials of degree at most $n$ as in Definition \ref{def:symadconv}. The $n$th asymmetric additive convolution of $q$ and $p$ is defined as
+
+    \begin{align*}
+        p(z) \aac q(z) \coloneqq \sum_{k=0}^n z^{n-k}(-1)^{k} \sum_{j=0}^k \left(\frac{(n-j)!(n-k+j)!}{n!(n-k)!}\right)^2 a_jb_{k-j}.
+    \end{align*}
+\end{definition}
+
+
+Although many properties of these convolutions can be found without using Finite Free Probability Theory, we are mainly interested in describing their relationship to random matrices, so we will not include them. In the next subsection we present three ensembles of orthogonal polynomials and find that two of them have good properties related to the convolutions. The polynomials are also associated to Random Matrix Theory, as it is shown in later sections.
 %\subsection{Linearization of convolutions}
 
-\subsection{Orthogonal polynomials}
+\subsection{Classical orthogonal polynomial ensembles}
+
+In order to define a property of ``orthogonality''  between elements of a given space, it is required to have some notion of inner product. If we are specifically working with spaces of square integrable functions with respect to some measure $L^2(\mu)$, the inner product between $f,g \in L^2(\mu)$ is given by
+
+\begin{equation*}
+    \langle f,g\rangle = \int_\Omega f(x)g(x) \d \mu(x),
+\end{equation*}
+
+\noindent where $\Omega$ is the space where the measure $\mu$ is defined. 
+
+It is clear that a set of orthogonal polynomials does not exist for every $L^2(\mu)$ space that we take. For example, if we take $\mu$ to be the Lebesgue measure on $\R$, then polynomic functions are not integrable and thus the class of polynomials in $L^2(\mu)$ is empty. If we restrict only to probability measures associated to random variables in $L^{\infty-}(\Omega,\mathbb P, \mathbb F)$, then every polynomial function is in square integrable.
+
+The following is the precise definition of a set of orthogonal functions.
+
+\begin{definition}
+    Let $\mu$ be a measure in $\R^n$, $I\subseteq \N$ be a set of integer indices and $(f_i(x))_{i\in I}$ be a collection of functions indexed by $I$. We say that the functions $(f_i)_{i\in I}$ are a family of orthogonal functions, if they satisfy the relationship,
+
+    \begin{equation*}
+        \int_{\R^d} f_j(x)f_k(x) \d \mu(x) = \norm{f_j}_2^2 \delta_{jk}.
+    \end{equation*}
+\end{definition}
+
+When the functions $(f_i)_{i\in I}$ are polynomials, we call the set an \emph{ensemble of orthogonal polynomials}.
+
+It is important to notice that if a set of polynomials is orthogonal under any finite measure, then it will be orthogonal under any rescaling of the same measure. This leads to different definitions of famous polynomial ensembles literature. Some definitions are more common than others, however, we will give here the definitions that allow us to reduce our use of notation. What we call here ``Laguerre polynomials'' of ``Jacobi polynomials'' are rescaled versions of the most common definitions. For a classical text on these polynomials, see \cite{szeg1939orthogonal}. For a more thorough study of orthogonal polynomials related to the theory of stochastic processes, see \cite{book:orthogonal_polynomials_and_stochastic_processes}.
 
 \subsubsection{Hermite polynomials}
 
-The Hermite polynomials are defined by a linear operator
+There are essentially two definitions of the Hermite polynomials, the first one is mostly used in Physics \cite{book:mathematical_methods_for_physicists}, and the second one is related to Probability Theory as appearing in \cite{marcus2021polynomial}. The main difference between them is the measure under which they are orthogonal. The ``physicist Hermite polynomials'' are orthogonal under the measure $e^{-x^2}\d x$, the heat kernel. The ``probabilist Hermite polynomials'' are orthogonal under $e^{-\frac{x^2}{2}} \d x$, the Gaussian kernel. We will restrict to the probabilist Hermite polynomials and will use the term ``Hermite polynomials'' to talk about them.
+
+The $n$th Hermite polynomial, denoted by $H_n(z)$ is defined by a linear differential operator applied to $z^n$,
 
 \begin{equation}
-    H_n(z) \coloneqq e^{-\frac{\partial_z^2}{2}}(z^n) \coloneqq \sum_{k=0}^\infty \frac{(-1)^k}{2^k k!} \frac{\partial^{2k} z^n}{\partial z^{2k}}.
+    H_n(z) \coloneqq e^{-\frac{\partial_z^2}{2}}[z^n] \coloneqq \sum_{k=0}^\infty \frac{(-1)^k}{2^k k!} \partial^{2k}[z^n].
 \end{equation}
 
-The generalized Hermite polynomials also known as time dependent Hermite polynomials, or Hermite polynomials with variance are polynomials on $z$ and $t$ defined by the analogous linear operator
+Both the physicist and the probabilist Hermite polynomials have a generalization to bivariate polynomials on $z$ and $t$. In the case of the probabilist Hermite polynomials, this generalization has the nice interpretation as being the polynomials orthogonal under the measure $e^{-t\frac{x^2}{2}}\d x$, i.e. the measure of a Gaussian random variable with variance $t$. Notice that this implies that the physicist Hermite polynomials are the probabilist Hermite polynomials with variance $2$. The generalized Hermite polynomials also known as time dependent Hermite polynomials, or Hermite polynomials with variance are polynomials on $z$ and $t$ generated by the analogous linear operator
 
 \begin{equation}
-    H_n(z,t) \coloneqq e^{-\frac{t\partial_z^2}{2}}(z^n) \coloneqq \sum_{k=0}^\infty \frac{(-1)^kt^k}{2^k k!} \frac{\partial^{2k} z^n}{\partial z^{2k}}.
+    H_n(z,t) \coloneqq e^{-\frac{t\partial_z^2}{2}}(z^n) \coloneqq \sum_{k=0}^\infty \frac{(-1)^kt^k}{2^k k!} \partial^{2k}[z^n].
 \end{equation}
 
-Note that $H_n(z,1)=H_n(z)$. Using the former definitions we can find explicit expressions for both $H_n(z)$ and $H_n(z,t)$,
+Notice that $H_n(z,1)=H_n(z)$. Using the former definitions we can find explicit expressions for both $H_n(z)$ and $H_n(z,t)$,
 
 \begin{align*}
-    H_n(z) &= \sum_{k=0}^\infty \frac{(-1)^k}{2^k k!} \frac{\partial^{2k} z^n}{\partial z^{2k}} = \sum_{k=0}^{\lfloor \frac n2 \rfloor} \frac{(-1)^k}{2^k k!} \frac{n! }{(n-2k)!}z^{n-2k} = n! \sum_{k=0}^{\lfloor \frac n2\rfloor} \frac{(-1)^k z^{n-2k}}{2^k k! (n-2k)!}, \\
-    H_n(z,t) &= \sum_{k=0}^\infty \frac{(-t)^k}{2^k k!} \frac{\partial^{2k} z^n}{\partial z^{2k}} = \sum_{k=0}^{\lfloor \frac n2 \rfloor} \frac{(-t)^k}{2^k k!} \frac{n! }{(n-2k)!}z^{n-2k} = n! \sum_{k=0}^{\lfloor \frac n2\rfloor} \frac{(-t)^k z^{n-2k}}{2^k k! (n-2k)!}.
+    H_n(z) &= \sum_{k=0}^\infty \frac{(-1)^k}{2^k k!} \partial^{2k}[z^n] = \sum_{k=0}^{\lfloor \frac n2 \rfloor} \frac{(-1)^k}{2^k k!} \frac{n! }{(n-2k)!}z^{n-2k} = n! \sum_{k=0}^{\lfloor \frac n2\rfloor} \frac{(-1)^k z^{n-2k}}{2^k k! (n-2k)!}, \\
+    H_n(z,t) &= \sum_{k=0}^\infty \frac{(-t)^k}{2^k k!} \partial^{2k}[z^n] = \sum_{k=0}^{\lfloor \frac n2 \rfloor} \frac{(-t)^k}{2^k k!} \frac{n! }{(n-2k)!}z^{n-2k} = n! \sum_{k=0}^{\lfloor \frac n2\rfloor} \frac{(-t)^k z^{n-2k}}{2^k k! (n-2k)!}.
 \end{align*}
 
-An easy substitution allows to see that the coefficient of $x^m$ in $H_n(z,t)$ is 
+An easy substitution allows to see that the coefficient of $z^m$ in $H_n(z,t)$ is 
 
 \begin{equation}
     a_m = \left\{ \begin{array}{cc}
@@ -152,38 +197,40 @@ The last expression gives us a way to find the first few Hermite polynomials,
     H_{10}(z,t) &= z^{10} - 45tz^8 + 630t^2z^6 - 3150t^3z^4 + 4725t^4z^2 - 945t^5.
 \end{align*}
 
-By replacing $t=1$, we can find the corresponding standard Hermite polynomials.
+Replacing $t=1$, we can find the corresponding standard Hermite polynomials.
 
 The Hermite polynomials are characterized by the following recursion together with the initial conditions $H_1(x,t)$ and $H_2(x,t)$.
 
 \begin{equation} \label{eq:recursion_hermite}
     H_n(x,t) = x H_{n-1}(x,t) - t(n-1)H_{n-2}(x,t).
 \end{equation}
-
+ \todo{¿probar esto?}
 
 % Convolución aditiva simétrica de dos polinomios de Hermite
 
+The next proposition shows us that the Hermite polynomials with variance are well-behaved with respect to the symmetric additive convolution. This result will be more obvious once we have developed the tools of Finite Free Probability Theory and we will be able to give an easier proof after section \ref{sec:minor_orthogonality}.
+
 \begin{proposition}
-The symmetric additive convolution between two Hermite polynomials with the same order $H_d(z,t_1), H_d(z,t_2)$ is another Hermite polynomial with variance $t_1 + t_2$.
+The symmetric additive convolution between two Hermite polynomials with the same order $H_n(z,t_1), H_n(z,t_2)$ is another Hermite polynomial with variance $t_1 + t_2$.
 \end{proposition}
 
 \begin{proof}
     \begin{align*}
-        &H_d(z,t_1) \boxplus_d H_d(z,t_2) = \\ 
-        &= \sum_{k=0}^d z^{d-k}(-1)^k \sum_{i=0}^k \frac{(d-i)!(d-k+i)!}{d!(d-k)!} b_i a_{k-i}, \\ 
+        &H_n(z,t_1) \boxplus_n H_n(z,t_2) = \\ 
+        &= \sum_{k=0}^n z^{n-k}(-1)^k \sum_{i=0}^k \frac{(n-i)!(n-k+i)!}{n!(n-k)!} b_i a_{k-i}, \\ 
         % &= \sum_{k=0}^d z^{d-k}(-1)^k \sum_{i=0}^k \frac{(d-i)!(d-k+i)!}{d!(d-k)!} \left(\frac{d!(-t_1)^{i/2}}{2^{i/2}(i/2)!(d-i)!}\right)\left(\frac{d!(-t_2)^{k-i/2}}{2^{k-i/2}(k-i/2)!(d-2k+i)!}\right),\\ 
         % &= \sum_{k=0}^d z^{d-k}(-1)^k \sum_{i=0}^k \frac{(d-i)!(d-k+i)!}{(d-2k+i)!(d-k)!} \left(\frac{d!(-t_1)^{i/2}}{2^{i/2}(i/2)!(d-i)!}\right), \\ 
         % &= \sum_{k=0}^d z^{d-k}(-1)^k \sum_{i=0}^k \frac{(d-i)!(d-k+i)!}{d!(d-k)!}\frac{d!(-t_1)^{i/2}}{2^{i/2} (i/2)! (d-i)!}\frac{d!(-t_2)^{k-i/2}}{2^{k-i/2} (k-i/2)! (d-k+i)!},\\ 
-        &= \sum_{k=0}^{\lfloor \frac d2 \rfloor} z^{d-2k}(-1)^{2k} \sum_{i=0}^{2k} \frac{(d-i)!(d-2k+i)!}{d!(d-2k)!}d! \frac{(-t_1)^{i/2}}{2^{i/2} (i/2)! (d-i)!}d! \frac{(-t_2)^{2k-i}}{2^{k-i/2} (k-i/2)! (d-2k+i)!},\\ 
-        &= \sum_{k=0}^{\lfloor \frac d2 \rfloor} z^{d-2k}(-1)^{2k} \frac{d!}{2^k} \sum_{i=0}^{2k} \frac{(-t_1)^{i/2}(-t_2)^{k-i/2}}{(i/2)!(k-i/2)!} = \sum_{k=0}^{\lfloor \frac d2 \rfloor} z^{d-2k}(-1)^{2k} \frac{d!}{k!2^k} \sum_{i=0}^{2k} \frac{k!(-t_1)^{i/2}(-t_2)^{k-i/2}}{(i/2)!(k-i/2)!}, \\ 
-        &= \sum_{k=0}^{\lfloor \frac d2 \rfloor} z^{d-2k}(-1)^{2k} \frac{d!}{k!2^k} \sum_{i=0}^{k} \binom{k}{i}(-t_1)^{i/2}(-t_2)^{k-i/2} = \sum_{k=0}^{\lfloor \frac d2 \rfloor} z^{d-2k}(-1)^{k} \frac{d!(t_1 + t_2)^k }{k!2^k}\\ 
-        &= H_d(z,t_1+t_2).
+        &= \sum_{k=0}^{\lfloor \frac n2 \rfloor} z^{n-2k} \sum_{i=0}^{2k} \frac{(n-i)!(n-2k+i)!}{n!(d-2k)!} \frac{n!(-t_1)^{i/2}}{2^{i/2} (i/2)! (n-i)!} \frac{n!(-t_2)^{2k-i}}{2^{k-i/2} (k-i/2)! (n-2k+i)!},\\ 
+        &= \sum_{k=0}^{\lfloor \frac n2 \rfloor} z^{n-2k}\frac{n!}{2^k} \sum_{i=0}^{2k} \frac{(-t_1)^{i/2}(-t_2)^{k-i/2}}{(i/2)!(k-i/2)!} = \sum_{k=0}^{\lfloor \frac n2 \rfloor} z^{n-2k} \frac{n!}{k!2^k} \sum_{i=0}^{2k} \frac{k!(-t_1)^{i/2}(-t_2)^{k-i/2}}{(i/2)!(k-i/2)!}, \\ 
+        &= \sum_{k=0}^{\lfloor \frac n2 \rfloor} z^{n-2k}\frac{n!}{k!2^k} \sum_{i=0}^{k} \binom{k}{i}(-t_1)^{i/2}(-t_2)^{k-i/2} = \sum_{k=0}^{\lfloor \frac n2 \rfloor} z^{n-2k}(-1)^{k} \frac{n!(t_1 + t_2)^k }{k!2^k},\\ 
+        &\eqcolon H_n(z,t_1+t_2).
         % &= \sum_{k=0}^{\lfloor \frac d2 \rfloor} z^{d-2k}(-1)^k \sum_{i=0}^{2k} \frac{d!(-t_1)^{i/2}(-t_2)^{k-i/2}}{2^{2k}(2k-i)!i!} = \sum_{k=0}^{\lfloor \frac d2 \rfloor} z^{d-2k}(-1)^k \frac{d!}{(2k)!2^k}\sum_{i=0}^{2k} \binom{2k}{i}\frac{(-t_1)^i(-t_2)^{2k-i}}{2^k},\\ 
         % &= \sum_{k=0}^{\lfloor \frac d2 \rfloor} z^{d-2k}(-1)^k \frac{d!}{(2k)!2^k}\frac{(-t_1 - t_2)^{2k}}{2^k}, \\ 
         % &= 
-    \end{align*}
-\end{proof}
+    \end{align*}\end{proof}
 
+    
 
 
 
@@ -222,6 +269,8 @@ The symmetric additive convolution between two Hermite polynomials with the same
         &\phantom{=}-6531840t^7z^{2} +3265920t^8z-362880t^9.
         %L_{10}(z,t) &= z^{10}-100z^{9}+4050z^{8}-86400z^{7}+1058400z^{6}-7620480z^{5}+31752000z^{4}-72576000z^{3}+81648000z^{2}-36288000z+3628800
     \end{align*}
+
+    Replacing $t=1$, we get the standard Laguerre polynomials.
 
     The Laguerre polynomials are characterized by the following recursion together with the first two polynomials $L_1(z)=z-1$ and $L_2(z)=z^2-4tz + 2t^2$,
 
