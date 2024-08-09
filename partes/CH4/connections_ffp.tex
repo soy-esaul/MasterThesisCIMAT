@@ -16,10 +16,10 @@ In this section we relate finite free probability to eigenvalue processes. To do
     \end{equation*}
     
     
-    Then its characteristic polynomial $Q_n(x) = \det(xI_n - A)$ satisfies the following recursion
+    Then its characteristic polynomial $\chi^n_z(A) = \det(zI_n - A)$ satisfies the following recursion
 
     \begin{equation*}
-        Q_n(x) = (x-a_n)Q_{n-1}(x) - b_{n-1}^2Q_{n-2}(x). \label{eq:recursion}
+        \chi^n_z(A) = (z-a_n)\chi^{n-1}_z(A) - b_{n-1}^2\chi^{n-2}_z(A). \label{eq:recursion}
     \end{equation*}
 \end{lemma}
 
@@ -42,18 +42,18 @@ In this section we relate finite free probability to eigenvalue processes. To do
         \end{bmatrix}.
     \end{equation*}
 
-    The determinant of $xI_n - A$ is 
+    The determinant of $zI_n - A$ is 
 
     \begin{align*}
-        \det \left( xI_n - A \right) &= (xI_n - A)_{11}\det(xI_{n-1}-B) - (xI_n - A)_{12}(xI_n - A)_{21}\det(xI_n - C)\\ 
-        &= (x - a_n)Q_{n-1}(x) - b_{n-1}^2Q_{n-2}(x).
+        \det \left( zI_n - A \right) &= (zI_n - A)_{11}\det(zI_{n-1}-B) - (zI_n - A)_{12}(xI_n - A)_{21}\det(xI_n - C)\\ 
+        &= (z - a_n)\chi^{n-1}_z(A) - b_{n-1}^2\chi^{n-2}_z(A).
     \end{align*}
 \end{proof}
 
 \subsection{Dyson Brownian motion}
 
 \begin{lemma} \label{lemma:tridiag}
-    Let $A_{\beta}$ denote an $n\times n$ matrix from the GOE, GUE or GSE, for $\beta = 1,2,4$, respectively, then the eigenvalues of the tridiagonal matrix $H_\beta$ have the same joint law as the eigenvalues of $A_\beta$, with $H_\beta$ defined as
+    Let $A_{\beta}$ denote an $n\times n$ matrix from the GOE, GUE or GSE, for $\beta = 1,2,4$, respectively. Then the eigenvalues of the tridiagonal matrix $H_\beta$ have the same joint law as the eigenvalues of $A_\beta$, with $H_\beta$ defined as
 
     \begin{align} \label{eq:tridiag_hermite}
         H_\beta &= \frac1{\sqrt2}\begin{bmatrix}
@@ -130,39 +130,38 @@ In this section we relate finite free probability to eigenvalue processes. To do
 
 
 \begin{theorem}
-    Let $X$ be an $n\times n$ GUE, then its expected characteristic polynomial, $P_n(x)$ is the $n$th Hermite polynomial.
+    Let $X$ be an $n\times n$ GUE, then its expected characteristic polynomial, $P_n(z)$ is the $n$th Hermite polynomial.
 \end{theorem}
 
 \begin{proof}
-    Let $A_2$ be a tridiagonalization of $X$, due to Lemma \ref{lemma:tridiag} we know that the eigenvalues of $A_2$ have the same joint distribution of those of $X$, so the expected characteristic polynomial must coincide. We can use Lemma \ref{lemma:chpol_tridiag} to find the expected characteristic polynomial of $A$. Let $Q_n$ denote its characteristic polynomial, then
+    Let $A_2$ be a tridiagonalization of $X$. Due to Lemma \ref{lemma:tridiag} we know that the eigenvalues of $A_2$ have the same joint distribution of those of $X$, so the expected characteristic polynomial must coincide. We can use Lemma \ref{lemma:chpol_tridiag} to find the expected characteristic polynomial of $A$. Let $Q_n$ denote its characteristic polynomial, then
 
     \begin{align*}
-        P_n(x) &= \mathbb E\left( \left(x - \frac{N_1}{\sqrt2}\right)Q_{n-1}(x) - \frac{\xi_{2(n-1)}^2}{2}Q_{n-2}(x) \right),\\ 
-               &= xP_{n-1}(x) - (n-1)P_{n-2}(x).
+        P_n(z) &= \mathbb E\left( \left(z - \frac{N_1}{\sqrt2}\right)Q_{n-1}(z) - \frac{\xi_{2(n-1)}^2}{2}Q_{n-2}(z) \right),\\ 
+               &= zP_{n-1}(z) - (n-1)P_{n-2}(z).
     \end{align*}
 
-    So $P_n(x)$ satisfies the recursion that determines the Hermite polynomials. We need to check the initial conditions $P_1(x)$ and $P_2(x)$. For $P_1(x)$ the condition is trivial
+    So $P_n(z)$ satisfies the recursion that determines the Hermite polynomials. We need to check the initial conditions $P_1(z)$ and $P_2(z)$. For $P_1(z)$ the condition is trivial
 
     \begin{equation*}
-        P_1(x) = \mathbb E \left( x - \frac{N_1}{\sqrt{2}} \right) = x.
+        P_1(z) = \mathbb E \left( z - \frac{N_1}{\sqrt{2}} \right) = z.
     \end{equation*}
 
-    For $P_2(x)$, we have
+    For $P_2(z)$, we have
 
     \begin{align*}
-        P_2(x) &= \mathbb E \left( \det \begin{bmatrix}
-        x - N_1 & \xi_{2} \\ 
-        \xi_2 & x - N_2
-        \end{bmatrix} \right) = \mathbb E \left[ \left(x - \frac{N_1}{\sqrt{2}}\right)^2 - \frac{\xi_2^2}2 \right],\\ 
-        &= x^2 - 1.
+        P_2(z) &= \mathbb E \left( \det \begin{bmatrix}
+        z - N_1 & \xi_{2} \\ 
+        \xi_2 & z - N_2
+        \end{bmatrix} \right) = \mathbb E \left[ \left(z - \frac{N_1}{\sqrt{2}}\right)^2 - \frac{\xi_2^2}2 \right],\\ 
+        &= z^2 - 1.
     \end{align*}
 
-    So $P_1(x) = H_1(x)$ and $P_2(x) = H_2(x)$. Using the recursion, we can conclude that $P_n(x) = H_n(x)$.
+    So $P_1(z) = H_1(z)$ and $P_2(z) = H_2(z)$. Using the recursion, we can conclude that $P_n(z) = H_n(z)$.
 \end{proof}
 
 \begin{corollary} \label{corollary:brownian_expected}
-    Let $B(t)$ be an $n\times n$ self-adjoint complex Brownian matrix, then its expected characteristic polynomial $P_n(x,t)$ is the $n$th generalized Hermite polynomial with variance $t$, $H_n(z,t)$, i.e. the Hermite polynomials which are orthogonal with respect to a Gaussian random variable of variance $t$.
-
+    Let $B(t)$ be an $n\times n$ self-adjoint complex Brownian matrix, then its expected characteristic polynomial $P_n(z,t)$ is the $n$th generalized Hermite polynomial with variance $t$, $H_n(z,t)$, i.e. the Hermite polynomials which are orthogonal with respect to a Gaussian random variable of variance $t$.
 \end{corollary}
 
 \begin{proof}
@@ -170,10 +169,10 @@ In this section we relate finite free probability to eigenvalue processes. To do
     We will prove the result by showing that $P_n(x,t)$ satisfies the following recursion
     
     \begin{align*}
-        P_n(x,t) &= x P_{n-1}(x,t) - t(n-1)P_{n-2}(x,t),
+        P_n(z,t) &= x P_{n-1}(z,t) - t(n-1)P_{n-2}(z,t),
     \end{align*}
 
-    \noindent with initial conditions $P_1(x,t) = x$ and $P_2(x,t) = x^2-t$.
+    \noindent with initial conditions $P_1(z,t) = z$ and $P_2(z,t) = z^2-t$.
 
     For any given $t$, $B(t)$ has the same law as $\sqrt{t}A_2$ with $A_2$ a GUE. By Lemma \ref{lemma:tridiag}, the expected characteristic polynomial is the same as that of $\sqrt{t}H_2$ with $H_2$ a $2$-Hermite polynomial. Let $Q_n(x,t)$ be the characteristic polyomial of $\sqrt{t}H_2$, applying Lemma \ref{lemma:chpol_tridiag} we have
 
@@ -297,7 +296,7 @@ In this section we relate finite free probability to eigenvalue processes. To do
 
 
 \begin{theorem}
-    Let $A$ be a $d\times d$ fixed matrix and $W$ a $d\times d$ self-adjoint Brownian matrix, then $q_A(z,t)$ defined as
+    Let $A$ be an $n\times n$ fixed matrix and $W$ an $n\times n$ self-adjoint Brownian matrix, then $q_A(z,t)$ defined as
     
     \begin{equation*}
         q_A(z,t) \coloneqq \E{ \chi_z( A + W) },
@@ -312,29 +311,29 @@ In this section we relate finite free probability to eigenvalue processes. To do
     
     \begin{proof}
         
-        Let $p(z) = \E{ \chi_z(A) }$ and $r(z,t) = \E{ \chi_z(W) }$. Corollary \ref{corollary:brownian_expected} tells us that $r(z,t)$ is the $d$th Hermite polynomial $H_d(z,t)$. First suppose that e write these polynomials as
+        Let $p(z) = \E{\chi_z(A)}$ and $r(z,t) = \E{\chi_z(W)}$. Corollary \ref{corollary:brownian_expected} tells us that $r(z,t)$ is the $n$th Hermite polynomial $H_n(z,t)$. Write these polynomials as
 
         \begin{align*}
-            p(z)     &= \sum_{j=0}^d a_j z^j,\\ 
-            H_d(z,t) &= \sum_{j=0}^d b_j t^{j/2} z^{d-j}.
+            p(z)     &= \sum_{j=0}^n a_j z^j,\\ 
+            H_d(z,t) &= \sum_{j=0}^n b_j t^{j/2} z^{d-j}.
         \end{align*}
         
-        Notice that if $d$ is $odd$ all of the $b_j$ are zero for even $j$  and if $d$ is even, all of the $b_j$ are zero for odd $j$. Further, using the explicit expression for the coefficients we have the following recursion for $b_j$
+        Notice that if $n$ is odd all of the $b_j$ are zero for even $j$  and if $n$ is even, all of the $b_j$ are zero for odd $j$. Further, using the explicit expression for the coefficients we have the following recursion for $b_j$
 
         \begin{align}
-            b_{j} &= \frac{d! (-1)^{j/2}}{2^{j/2} (j/2)! (d-j)!},\\ 
-            b_{j-2} &= \frac{d! (-1)^{\frac{j-2}{2}}}{2^{\frac{j-2}{2}} \left(\frac{j-2}{2}\right)! (d-j+2)!},\\ 
-            \Rightarrow b_{j} &= \frac{d! (-1)^{\frac{j-2}{2}}}{2^{\frac{j-2}{2}} \left(\frac{j-2}{2}\right)! (d-j+2)!} \frac{(-1)(d-j+2)(d-j+1)}{j},\\  
-            &= b_{j-2} \frac{(-1)(d-j+2)(d-j+1)}{j}. \label{eq:hermite_coef_recurr}
+            b_{j} &= \frac{n! (-1)^{j/2}}{2^{j/2} (j/2)! (n-j)!},\\ 
+            b_{j-2} &= \frac{n! (-1)^{\frac{j-2}{2}}}{2^{\frac{j-2}{2}} \left(\frac{j-2}{2}\right)! (n-j+2)!},\\ 
+            \Rightarrow b_{j} &= \frac{n! (-1)^{\frac{j-2}{2}}}{2^{\frac{j-2}{2}} \left(\frac{j-2}{2}\right)! (n-j+2)!} \frac{(-1)(n-j+2)(n-j+1)}{j},\\  
+            &= b_{j-2} \frac{(-1)(n-j+2)(n-j+1)}{j}. \label{eq:hermite_coef_recurr}
         \end{align}
 
-        Using the invariance of $W$ under unitary transforms and Theorem \ref{thm:symmad} we have that $q_A(z,t) = H_d(z,t) \boxplus_d p(z)$. By definition, 
+        Using the invariance of $W$ under unitary transforms and Theorem \ref{thm:symmad} we have that $q_A(z,t) = H_n(z,t) \boxplus_n p(z)$. By definition, 
 
         \begin{equation*}
-            q_A(z,t) = H_d(z,t) \boxplus_d p(z) \coloneqq \sum_{k=0}^d z^{d-k}(-1)^k \sum_{i=0}^k c_{k,i,d} b_i a_{k-i} t^{i/2},
+            q_A(z,t) = H_n(z,t) \boxplus_n p(z) \coloneqq \sum_{k=0}^n z^{n-k}(-1)^k \sum_{i=0}^k c_{k,i,n} b_i a_{k-i} t^{i/2},
         \end{equation*} 
 
-        \noindent with $c_{k,i,d} = \frac{(d-i)!(d-k+i)!}{d!(d-k)!}$.
+        \noindent with $c_{k,i,n} = \frac{(n-i)!(n-k+i)!}{n!(n-k)!}$.
 
         % In order to prove the differential equation, we compute the derivatives of each power. The coefficient of $z^{d-k}$ is $e_k = (-1)^k \sum_{i=0}^k c_{k,i,d} b_i a_{k-i} t^{i/2}$, then
 
@@ -354,27 +353,37 @@ In this section we relate finite free probability to eigenvalue processes. To do
         %     \partial_t e_k z^{d-k} &= \partial_t \left((-1)^k \sum_{i=0}^k c_{k,i,d} b_i a_{k-i} t^{i/2} z^{d-k}\right) = (-1)^k \sum_{i=0}^k c_{k,i,d} b_i a_{k-i} \frac{it^{(i-2)/2}}{2}z^{d-k}.
         % \end{align*}
 
-        We compute first $\frac{\partial^2}{\partial z^2}q_A(z,t)$,
+        We compute first $\partial_{zz} [q_A(z,t)]$,
 
         \begin{align*}
             \partial_{zz} q_A(z,t) %&= \partial_{zz} \left[ \sum_{k=0}^d z^{d-k}(-1)^k \sum_{i=0}^k c_{k,i,d} b_i a_{k-i} t^{i/2} \right],\\ 
-            &= \partial_{zz} \left[ \sum_{k=0}^d z^{d-k}(-1)^k \sum_{i=0}^k \frac{(d-i)!(d-k+i)!}{d!(d-k)!} b_i a_{k-i} t^{i/2} \right],\\
-            &= \sum_{k=0}^{d-2} (d-k)(d-k-1)z^{d-k-2}(-1)^k \sum_{i=0}^k \frac{(d-i)!(d-k+i)!}{d!(d-k)!} b_i a_{k-i} t^{i/2}, \\
-            &= \sum_{k=0}^{d-2} z^{d-k-2}(-1)^k \sum_{i=0}^k \frac{(d-i)!(d-k+i)!}{d!(d-k-2)!} b_i a_{k-i} t^{i/2}, \\
-            &= \sum_{k=2}^{d} z^{d-k}(-1)^k \sum_{i=0}^{k-2} \frac{(d-i)!(d-(k-2)+i)!}{d!(d-(k-2)-2)!} b_i a_{k-2-i}t^{i/2},\\ 
-            &= \sum_{k=2}^{d} z^{d-k}(-1)^k \sum_{i=0}^{k-2} \frac{(d-i)!(d-k+i+2)!}{d!(d-k)!} b_i a_{k-2-i}t^{i/2}.
+            &= \partial_{zz} \left[ \sum_{k=0}^n z^{n-k}(-1)^k \sum_{i=0}^k \frac{(n-i)!(n-k+i)!}{n!(n-k)!} b_i a_{k-i} t^{i/2} \right],\\
+            &= \sum_{k=0}^{n-2} (n-k)(n-k-1)z^{n-k-2}(-1)^k \sum_{i=0}^k \frac{(n-i)!(n-k+i)!}{n!(n-k)!} b_i a_{k-i} t^{i/2}, \\
+            &= \sum_{k=0}^{n-2} z^{n-k-2}(-1)^k \sum_{i=0}^k \frac{(n-i)!(n-k+i)!}{n!(n-k-2)!} b_i a_{k-i} t^{i/2}, \\
+            &= \sum_{k=2}^{n} z^{n-k}(-1)^k \sum_{i=0}^{k-2} \frac{(n-i)!(n-(k-2)+i)!}{n!(n-(k-2)-2)!} b_i a_{k-2-i}t^{i/2},\\ 
+            &= \sum_{k=2}^{n} z^{n-k}(-1)^k \sum_{i=0}^{k-2} \frac{(n-i)!(n-k+i+2)!}{n!(n-k)!} b_i a_{k-2-i}t^{i/2}.
         \end{align*}
 
         Now the derivative with respect to $t$ is
 
+        % \begin{align*}
+        %     \partial_t q_A(z,t) &= \partial_t \left[ \sum_{k=0}^d z^{d-k}(-1)^k \sum_{i=0}^k c_{k,i,d} b_i a_{k-i} t^{i/2} \right],\\ 
+        %     &= \sum_{k=0}^d z^{d-k}(-1)^k \sum_{i=0}^k \frac{(d-i)!(d-k+i)!}{d!(d-k)!} b_i a_{k-i} \frac{i}{2}t^{\frac{i-2}{2}},\\ 
+        %     &= \sum_{k=0}^d z^{d-k}(-1)^k \sum_{j=0}^{k-2} \frac{(d-j-2)!(d-k+j+2)!}{d!(d-k)!} b_{j+2}a_{k-j-2}\left( \frac{j+2}{2} \right)t^{j/2},\\ 
+        %     &= \sum_{k=0}^d z^{d-k}(-1)^k \sum_{j=0}^{k-2} \frac{(d-j)!(d-k+j+2)!}{d!(d-k)!} b_ja_{k-j-2}\frac{(j+2)t^{j/2}}2,\\
+        %     \intertext{using \eqref{eq:hermite_coef_recurr} for $b_{j+2}$} 
+        %     &= \frac12 \sum_{k=0}^d z^{d-k}(-1)^{k+1} \sum_{j=0}^{k-2} \frac{(d-j)!(d-k+j+2)!}{d!(d-k)!} b_ja_{k-j-2}t^{j/2}, \\ 
+        %     &= -\frac12 \sum_{k=2}^d z^{d-k}(-1)^{k} \sum_{j=0}^{k-2} \frac{(d-j)!(d-k+j+2)!}{d!(d-k)!} b_ja_{k-j-2}t^{j/2} = -\frac12 \partial_{zz} q_A(z,t).
+        % \end{align*}
+
         \begin{align*}
-            \partial_t q_A(z,t) &= \partial_t \left[ \sum_{k=0}^d z^{d-k}(-1)^k \sum_{i=0}^k c_{k,i,d} b_i a_{k-i} t^{i/2} \right],\\ 
-            &= \sum_{k=0}^d z^{d-k}(-1)^k \sum_{i=0}^k \frac{(d-i)!(d-k+i)!}{d!(d-k)!} b_i a_{k-i} \frac{i}{2}t^{\frac{i-2}{2}},\\ 
-            &= \sum_{k=0}^d z^{d-k}(-1)^k \sum_{j=0}^{k-2} \frac{(d-j-2)!(d-k+j+2)!}{d!(d-k)!} b_{j+2}a_{k-j-2}\left( \frac{j+2}{2} \right)t^{j/2},\\ 
-            &= \sum_{k=0}^d z^{d-k}(-1)^k \sum_{j=0}^{k-2} \frac{(d-j)!(d-k+j+2)!}{d!(d-k)!} b_ja_{k-j-2}\frac{(j+2)t^{j/2}}2,\\
+            \partial_t q_A(z,t) &= \partial_t \left[ \sum_{k=0}^n z^{n-k}(-1)^k \sum_{i=0}^k c_{k,i,n} b_i a_{k-i} t^{i/2} \right],\\ 
+            &= \sum_{k=0}^n z^{n-k}(-1)^k \sum_{i=0}^k \frac{(n-i)!(n-k+i)!}{n!(n-k)!} b_i a_{k-i} \frac{i}{2}t^{\frac{i-2}{2}},\\ 
+            &= \sum_{k=0}^n z^{n-k}(-1)^k \sum_{j=0}^{k-2} \frac{(n-j-2)!(n-k+j+2)!}{n!(n-k)!} b_{j+2}a_{k-j-2}\left( \frac{j+2}{2} \right)t^{j/2},\\ 
+            &= \sum_{k=0}^n z^{n-k}(-1)^k \sum_{j=0}^{k-2} \frac{(n-j)!(n-k+j+2)!}{n!(n-k)!} b_ja_{k-j-2}\frac{(j+2)t^{j/2}}2,\\
             \intertext{using \eqref{eq:hermite_coef_recurr} for $b_{j+2}$} 
-            &= \frac12 \sum_{k=0}^d z^{d-k}(-1)^{k+1} \sum_{j=0}^{k-2} \frac{(d-j)!(d-k+j+2)!}{d!(d-k)!} b_ja_{k-j-2}t^{j/2}, \\ 
-            &= -\frac12 \sum_{k=2}^d z^{d-k}(-1)^{k} \sum_{j=0}^{k-2} \frac{(d-j)!(d-k+j+2)!}{d!(d-k)!} b_ja_{k-j-2}t^{j/2} = -\frac12 \partial_{zz} q_A(z,t).
+            &= \frac12 \sum_{k=0}^n z^{n-k}(-1)^{k+1} \sum_{j=0}^{k-2} \frac{(n-j)!(n-k+j+2)!}{n!(n-k)!} b_ja_{k-j-2}t^{j/2}, \\ 
+            &= -\frac12 \sum_{k=2}^n z^{n-k}(-1)^{k} \sum_{j=0}^{k-2} \frac{(n-j)!(n-k+j+2)!}{n!(n-k)!} b_ja_{k-j-2}t^{j/2} = -\frac12 \partial_{zz} q_A(z,t).
         \end{align*}
 
 
@@ -445,7 +454,7 @@ In this section we relate finite free probability to eigenvalue processes. To do
         E\left[ \chi_x\left(\trans{R}R\right) \right] = L_n(z),
     \end{equation*}
 
-    \noindent where $L_n(x) = \left( 1 - \frac{\d}{\d z} \right)^n z^n$ is the $n$th Laguerre polynomial.
+    \noindent where $L_n(x) = \left( 1 - \partial_z \right)^n [z^n]$ is the $n$th standard Laguerre polynomial.
 \end{theorem}
 
 \begin{proof}
@@ -468,7 +477,7 @@ In this section we relate finite free probability to eigenvalue processes. To do
         &= (z - \beta(n - m + 1))\E{P_{n-1}(z)} - \beta^2(n-1)(m-1)P_{n-2}(z).
     \end{align}
 
-    Which is satisfied by the Laguerre polynomials. By finding the cases $n=2$ and $n=3$, then using a recursive argument, we finish the proof.
+    Which is satisfied by the Laguerre polynomials. By finding the cases $n=1$ and $n=2$, then using a recursive argument, we finish the proof.
 
     The case $n=1$ is trivial because in this case $G$ is an univariate Gaussian random variable, so $\trans{G}G = G^2$ is a chi-squared random variable and $P_1(z) = z - 1$. For the case $n=2$ we have
 
@@ -490,7 +499,7 @@ In this section we relate finite free probability to eigenvalue processes. To do
         E\left[ \chi_z\left( \trans{B}B\right) \right] = L_n(z,t),
     \end{equation*}
 
-    \noindent where $L_n(z,t) = \left( 1 - t\frac{\d}{\d z} \right)^n z^n$ is the $n$th Laguerre polynomial with variance $t$.
+    \noindent where $L_n(z,t) = \left( 1 - t\partial_z \right)^n z^n$ is the $n$th Laguerre polynomial with variance $t$.
 \end{theorem}
 
 \begin{proof}
@@ -499,7 +508,7 @@ In this section we relate finite free probability to eigenvalue processes. To do
     \begin{align*}
         \E{\det[zI - \trans B B]} &= \E{\det[zI - t \trans G G]} = t^n \E{\frac zt I - \trans GG]}, \\
         &= t^n \left(1 - \frac{\d }{\d (z/t)}\right)^n\left[ \frac{z}{t}^n\right] = t^n\sum_{k=0}^n (-1)^k \binom nk \frac{n!}{(n-k)!} \left(\frac zt\right)^{n-k},\\
-        &= \sum_{k=0}^n (-t)^k \binom nk \frac{n!}{(n-k)!} z^{n-k} = \left( 1 - t\frac{\d}{\d z} \right)^n z^n.
+        &= \sum_{k=0}^n (-t)^k \binom nk \frac{n!}{(n-k)!} z^{n-k} = \left( 1 - t\frac{\d}{\d z} \right)^n [z^n].
     \end{align*}
 \end{proof}
 
@@ -532,7 +541,8 @@ In this section we relate finite free probability to eigenvalue processes. To do
     For the sum we have
 
     \begin{align*}
-        c\partial_z P(t,z) + cz\partial_{zz} + \partial_t P(t,z) &= \sum_{k=0}^{n-2} \left[ c\binom{n}{k}\left( -ct \right)^k \frac{n!}{(n-k-1)!}z^{n-k-1} + cz\binom{n}{k}\left( -ct \right)^k \frac{n!}{(n-k-2)!}z^{n-k-2}\right.\\ &\phantom{espac} + \left.\binom{n}{k+1}(k+1)(-c)^{k+1}t^{k} \frac{n!}{(n-k-1)!}z^{n-k-1}\right] + cn(-ct)^{n-1}n!+n(-c)^nt^{n-1}n!,\\ 
+        \left(c\partial_z + cz\partial_{zz} + \partial_t\right) [P] &= \sum_{k=0}^{n-2} \left[ c\binom{n}{k}\left( -ct \right)^k \frac{n!}{(n-k-1)!}z^{n-k-1} + cz\binom{n}{k}\left( -ct \right)^k \frac{n!}{(n-k-2)!}z^{n-k-2}\right.\\ &\phantom{espac} + \left.\binom{n}{k+1}(k+1)(-c)^{k+1}t^{k} \frac{n!}{(n-k-1)!}z^{n-k-1}\right] \\
+        &\phantom{espaciooo}+ cn(-ct)^{n-1}n!+n(-c)^nt^{n-1}n!,\\ 
         &= \sum_{k=0}^{n-2} \binom{n}{k} (-ct)^k n!\left( \frac{cz^{n-k-1}+(n-k-1)cz^{n-k-1}-c(n-k)z^{n-k-1}}{(n-k-1)!} \right), \\ 
         &=\sum_{k=0}^{n-2} \binom{n}{k} \frac{ c^{k+1}(-t)^kn!z^{n-k-1}}{(n-k-1)!}\left( 1 + n-k-1 -n +k \right) = 0.
     \end{align*}
@@ -548,7 +558,7 @@ In this section we relate finite free probability to eigenvalue processes. To do
     Then its roots $\left(z_i(t)\right)_{i=1}^n$ satisfy the equation of motion
 
     \begin{equation*}
-        \frac{\d z_i}{\d t} = c \left( \sum_{k\neq i} \frac{z_i + z_k}{z_i - z_k}  + n\right).
+        \d z_i= c \left( \sum_{k\neq i} \frac{z_i + z_k}{z_i - z_k}  + n\right){\d t}.
     \end{equation*}
 \end{theorem}
 
@@ -559,30 +569,30 @@ In this section we relate finite free probability to eigenvalue processes. To do
         0 &= \partial_t P(t,z_i(t)) = \partial_t z_i(t) \partial_z P(t,z)|_{z=z_i} + \partial_t P(t,z)|_{z=z_i}, \\ 
         &= \partial_t z_i(t) \partial_z P(t,z)|_{z=z_i} - \left[c\partial_z P(t,z)- cz \partial_{zz}P(t,z)\right]_{z=z_i},
         \intertext{now we use that $P(t,z)$ is monic and the Leibnitz rule to get}
-        \partial_t z_i(t) &= c\left[\frac{\partial_z P(t,z) + z  \partial_{zz}P(t,z)}{\partial_z P(t,z)}\right]_{z=z_i} = c\left[ 1 +  \frac{2z_i\sum_{k\neq i}\prod_{j\neq i,j\neq k}(z_i - z_j)}{\prod_{j\neq i}(z_i - z_j)} \right] = c\left[ 1 + \sum_{k\neq i}\frac{2z_i}{z_i - z_k}\right],\\
+        \partial_t [z_i(t)] &= c\left[\frac{\partial_z P(t,z) + z  \partial_{zz}P(t,z)}{\partial_z P(t,z)}\right]_{z=z_i} = c\left[ 1 +  \frac{2z_i\sum_{k\neq i}\prod_{j\neq i,j\neq k}(z_i - z_j)}{\prod_{j\neq i}(z_i - z_j)} \right] = c\left[ 1 + \sum_{k\neq i}\frac{2z_i}{z_i - z_k}\right],\\
         &= c\left[ 1 + \sum_{k\neq i}\frac{2z_i}{z_i - z_k} - \sum_{k\neq i}\frac{z_i-z_k}{z_i - z_k} + \sum_{k\neq i}\frac{z_i-z_k}{z_i - z_k} \right],\\ 
         &= c\left[ 1 + \sum_{k\neq i}\frac{2z_i-z_i + z_k}{z_i - z_k} + n-1 \right] = c\left[\sum_{k\neq i}\frac{z_i + z_k}{z_i - z_k} + n\right].
     \end{align*}
 \end{proof}
 
 \begin{theorem}
-    Let $w_n(t_1,z) = (1-ct_1\partial_z)^n[z^n]$ and $w_n(t_2,z) = (1-ct_2\partial_z)^n[z^n]$ be two Laguerre polynomials of degree $n$, then their asymmetric additive convolution $w_n(t_1,z) \aac w_n(t_2,z)$ is a Laguerre polynomial of degree $n$ with variance $t_1+t_2$, $w_n(t_1+t_2,z)$. 
+    Let $L_n(z,t_1) = (1-ct_1\partial_z)^n[z^n]$ and $L_n(z,t_2) = (1-ct_2\partial_z)^n[z^n]$ be two Laguerre polynomials of degree $n$, then their asymmetric additive convolution $L_n(z,t_1) \aac L_n(z,t_2)$ is a Laguerre polynomial of degree $n$ with variance $t_1+t_2$, $L_n(z,t_1+t_2)$. 
 \end{theorem}
 
 \begin{proof}
     \begin{align*}
-        w_n(t_1,z) \aac w_n(t_2,z) &= \sum_{k=0}^n z^{n-k}(-1)^k \sum_{j=0}^k \left(\frac{(n-j)!(n-k+j)!}{n!(n-k)!}\right)^2\binom{n}{j}\frac{(ct_1)^jn!}{(n-j)!}\binom{n}{k-j}\frac{(ct_1)^{k-j} n!}{(n-k+j)!}\\ 
+        L_n(z,t_1) \aac L_n(z,t_2) &= \sum_{k=0}^n z^{n-k}(-1)^k \sum_{j=0}^k \left(\frac{(n-j)!(n-k+j)!}{n!(n-k)!}\right)^2\binom{n}{j}\frac{(ct_1)^jn!}{(n-j)!}\binom{n}{k-j}\frac{(ct_1)^{k-j} n!}{(n-k+j)!}\\ 
         &= \sum_{k=0}^n z^{n-k}(-1)^k \sum_{j=0}^k \frac{((n-j)!)^2((n-k+j)!)^2(n!)^4(ct_1)^j(ct_2)^{k-j}}{(n!)^2((n-k)!)^2j!(k-j)!((n-j)!)^2((n-k+j)!)^2},\\ 
         &= \sum_{k=0}^n \binom{n}{k} \frac{(-1)^k z^{n-k}n!}{(n-k)!}\sum_{j=0}^k \binom{k}{j}(ct_1)^j(ct_2)^{k-j}, \\  
-        &=  \sum_{k=0}^n \binom{n}{k} \frac{(-1)^k z^{n-k}n!}{(n-k)!}[c(t_1 + t_2)]^k = w_n(t_1 + t_2, z).
+        &=  \sum_{k=0}^n \binom{n}{k} \frac{(-1)^k z^{n-k}n!}{(n-k)!}[c(t_1 + t_2)]^k = L_n(z,t_1 + t_2).
     \end{align*}
 \end{proof}
 
 \begin{theorem}
-    Let $w_n(t,z)$ be a Laguerre polynomial of order $n$ with variance $t$ and let $p(z)$ be any monic polynomial. Then the asymmetric additive convolution of $w_n(t,z)$ and $p(z)$, $w_n(t,z) \aac p(z)$ satisfies the following differential equation
+    Let $L_n(z,t)$ be a Laguerre polynomial of order $n$ with variance $t$ and let $p(z)$ be any monic polynomial. Then the asymmetric additive convolution of $L_n(z,t)$ and $p(z)$, $L_n(z,t) \aac p(z)$ satisfies the following differential equation
 
     \begin{equation*}
-        c\partial_z [w_n(t,z) \aac p(z)] + cz \partial_{zz}[w_n(t,z) \aac p(z)] + \partial_t [w_n(t,z) \aac p(z)] = 0.
+        c\partial_z [L_n(z,t) \aac p(z)] + cz \partial_{zz}[L_n(z,t) \aac p(z)] + \partial_t [L_n(z,t) \aac p(z)] = 0.
     \end{equation*}
 \end{theorem}
 
@@ -590,11 +600,11 @@ In this section we relate finite free probability to eigenvalue processes. To do
     We find the derivatives first
 
     \begin{align*}
-        \partial_z[w_n(t,z) \aac p(z)] &= \partial_z \left[ \sum_{k=0}^n z^{n-k}(-1)^k \sum_{j=0}^k \left(\frac{(n-j)!(n-k+j)!}{n!(n-k)!}\right)^2 \binom{n}{j}\frac{(ct_1)^jn!}{(n-j)!}b_{k-j}\right],\\ 
+        \partial_z[L_n(z,t) \aac p(z)] &= \partial_z \left[ \sum_{k=0}^n z^{n-k}(-1)^k \sum_{j=0}^k \left(\frac{(n-j)!(n-k+j)!}{n!(n-k)!}\right)^2 \binom{n}{j}\frac{(ct_1)^jn!}{(n-j)!}b_{k-j}\right],\\ 
         &= \sum_{k=0}^{n-1} (n-k)z^{n-k-1}(-1)^k \sum_{j=0}^k \left(\frac{(n-j)!(n-k+j)!}{n!(n-k)!}\right)^2 \binom{n}{j}\frac{(ct_1)^jn!}{(n-j)!}b_{k-j},\\
-        \partial_{zz}[w_n(t,z) \aac p(z)] &= \partial_{zz} \left[ \sum_{k=0}^n z^{n-k}(-1)^k \sum_{j=0}^k \left(\frac{(n-j)!(n-k+j)!}{n!(n-k)!}\right)^2 \binom{n}{j}\frac{(ct_1)^jn!}{(n-j)!}b_{k-j}\right],\\ 
+        \partial_{zz}[L_n(z,t) \aac p(z)] &= \partial_{zz} \left[ \sum_{k=0}^n z^{n-k}(-1)^k \sum_{j=0}^k \left(\frac{(n-j)!(n-k+j)!}{n!(n-k)!}\right)^2 \binom{n}{j}\frac{(ct_1)^jn!}{(n-j)!}b_{k-j}\right],\\ 
         &= \sum_{k=0}^{n-2} (n-k)(n-k-1)z^{n-k-2}(-1)^k \sum_{j=0}^k \left(\frac{(n-j)!(n-k+j)!}{n!(n-k)!}\right)^2 \binom{n}{j}\frac{(ct_1)^jn!}{(n-j)!}b_{k-j},\\
-        \partial_t[w_n(t,z) \aac p(z)] &= \partial_t \left[ \sum_{k=0}^n z^{n-k}(-1)^k \sum_{j=0}^k \left(\frac{(n-j)!(n-k+j)!}{n!(n-k)!}\right)^2 \binom{n}{j}\frac{(ct_1)^jn!}{(n-j)!}b_{k-j}\right],\\
+        \partial_t[L_n(z,t) \aac p(z)] &= \partial_t \left[ \sum_{k=0}^n z^{n-k}(-1)^k \sum_{j=0}^k \left(\frac{(n-j)!(n-k+j)!}{n!(n-k)!}\right)^2 \binom{n}{j}\frac{(ct_1)^jn!}{(n-j)!}b_{k-j}\right],\\
         &= \sum_{k=0}^n z^{n-k}(-1)^k \sum_{j=1}^k \left(\frac{(n-j)!(n-k+j)!}{n!(n-k)!}\right)^2 \binom{n}{j}\frac{c^j jt_1^{j-1}n!}{(n-j)!}b_{k-j},\\ 
         &= \sum_{k=1}^n z^{n-k}(-1)^k \sum_{j=0}^{k-1} \left(\frac{(n-j-1)!(n-k+j+1)!}{n!(n-k)!}\right)^2 \binom{n}{j+1}\frac{c^{j+1} (j+1)t_1^{j}n!}{(n-j-1)!}b_{k-j-1},\\ 
         &= \sum_{k=0}^{n-1} z^{n-k-1}(-1)^{k+1} \sum_{j=0}^{k} \left(\frac{(n-j-1)!(n-k+j)!}{n!(n-k-1)!}\right)^2 \binom{n}{j+1}\frac{c^{j+1} (j+1)t_1^{j}n!}{(n-j-1)!}b_{k-j},\\ 
@@ -604,12 +614,129 @@ In this section we relate finite free probability to eigenvalue processes. To do
     For the sum we have
 
     \begin{align*}
-        (c&\partial_z + cz\partial_{zz} + \partial_t )[w_n(t,z)\aac p(z)] \\  &= \sum_{k=0}^{n-2} z^{n-k-1}(-1)^k \sum_{j=0}^{k} \left(\frac{(n-j)!(n-k+j)!}{n!(n-k-1)!}\right)^2 \binom{n}{j}\frac{c^{j+1}t_1^{j}n!}{(n-j)!}b_{k-j}\Bigl(n-k + (n-k)(n-k-1) - (n-k)^2\Bigr)\\ 
+        (c&\partial_z + cz\partial_{zz} + \partial_t )[L_n(z,t)\aac p(z)] \\  &= \sum_{k=0}^{n-2} z^{n-k-1}(-1)^k \sum_{j=0}^{k} \left(\frac{(n-j)!(n-k+j)!}{n!(n-k-1)!}\right)^2 \binom{n}{j}\frac{c^{j+1}t_1^{j}n!}{(n-j)!}b_{k-j}\Bigl(n-k + (n-k)(n-k-1) - (n-k)^2\Bigr)\\ 
         &\phantom{espacio}+ (-1)^{n-1}\sum_{j=0}^{n-1} \left( \frac{(j+1)!}{n!} \right)^2\binom{n}{j}\frac{c^{j+1}t_1^{j}n!}{(n-j)!}b_{n-j+1} + (-1)^{n}\sum_{j=0}^{n-1} \left( \frac{(j+1)!}{n!} \right)^2\binom{n}{j}\frac{c^{j+1}t_1^{j}n!}{(n-j)!}b_{n-j+1} = 0.
     \end{align*}
 \end{proof}
 
 \subsection{Jacobi process}
+
+Before proceeding with the proper Jacobi process, let us find the expected characteristic polynomial of a static Jacobi matrix. This case is more challenging than the two previous processes, but the static case is greatly simplified by using the tools of Finite Free Probability theory. \todo{Corregir normalización}
+
+%%%% Traducir y corregir normalización
+% Let $A$ and $B$ be two $n\times n$ random matrices with independent standard Gaussian entries. The MANOVA matrix $M$ or Jacobi ensemble is defined as
+
+% \begin{equation*}
+%     M \coloneqq (A^TA + B^TB)^{-1}A^TA.
+% \end{equation*}
+
+% Para obtener $p_M(z)$ el polinomio característico esperado de $M$, podemos primero obtener el de su inversa, $p_{M^{-1}}(z)$. Tenemos que
+
+% \begin{equation*}
+%     M^{-1} = (A^TA)^{-1}(A^TA + B^TB) = I + (A^TA)^{-1}B^TB.
+% \end{equation*}
+
+% Bajo las hipótesis de que $I$ y $(A^TA)^{-1}B^TB$ son normales y que $(A^TA)^{-1}B^TB$ es invariante bajo conjugación por una matriz ortogonal, se tiene que 
+
+% \begin{equation*}
+%     p_{M^{-1}}(z) = p_I(z) \boxplus_n p_{(A^TA)^{-1}B^TB}(z).
+% \end{equation*}
+
+% Además, bajo el supuesto de que $(A^TA)^{-1}$ y $B^TB$ son normales e invariantes bajo conjugación por matrices ortogonales, se tiene que
+
+% \begin{equation*}
+%     p_{(A^TA)^{-1}B^TB}(z) = p_{(A^TA)^{-1}}\boxtimes p_{B^TB}(z).
+% \end{equation*}
+
+% Sabemos además que $p_{B^TB}(z) = L_n(z)$ y $p_{(A^TA)^{-1}}(z)=z^n L_n(1/z)$. Con esto podemos encontrar $p_{M^{-1}}(z)$.
+
+% \begin{align*}
+%     p_{(A^TA)^{-1}B^TB}(z) &= p_{(A^TA)^{-1}}\boxtimes_n p_{B^TB}(z) = (z^n p_{A^T A}(1/z) \boxtimes p_{B^TB}(z)) = \sum_{k=0}^n z^{n-k} (-1)^k \frac{a_kb_k}{\binom{n}{k}},\\ 
+%     &= \sum_{k=0}^n z^{n-k}(-1)^k \frac{\binom{n}{k}\frac{n!}{(n-k)!}\binom{n}{k}(-1)^{n-2k}\frac{n!}{k!}}{\binom{n}{k}} = \sum_{k=0}^n z^{n-k}(-1)^k \binom{n}{k}\frac{n!}{(n-k)!}(-1)^{n-2k}\frac{n!}{k!},\\
+%     &= \sum_{k=0}^n z^{n-k}(-1)^k \binom{n}{k}^2 n! (-1)^{n-2k}.
+% \end{align*}
+
+
+% Ahora calculamos $p_{M^{-1}}(z)$, recordando que $p_I(z) = (z-1)^n$
+
+% \begin{align*}
+%     p_I(z) \boxplus_n p_{(A^TA)^{-1}B^TB}(z) &= \sum_{k=0}^n z^{n-k}(-1)^k \sum_{j=0}^k \frac{(n-j)!(n-k+j)!}{n!(n-k)!}\binom{n}{j}\binom{n}{k-j}^2(-1)^{n-2(k-j)}n!,\\ 
+%     &= \sum_{k=0}^n z^{n-k}(-1)^{n-k}n!\binom{n}{k} \sum_{j=0}^k \frac{n!n!k!}{j!(k-j)!(k-j)!(n-k+j)!},\\ 
+%     &= \sum_{k=0}^n z^{n-k}(-1)^{n-k}n!\binom{n}{k} \sum_{j=0}^k \binom{n}{k-j}\binom{k}{j},\\  
+%     &= \sum_{k=0}^n z^{n-k}(-1)^{n-k}n!\binom{n}{k} \binom{n+k}{k}.
+% \end{align*}
+
+% Finalmente, usamos $p_{M}(z) = z^n p_{M^{-1}}(1/z)$ para obtener
+
+% \begin{align*}
+%     p_{M}(z) &= z^n \sum_{k=0}^n z^{k-n}(-1)^{n-k}n!\binom{n}{k} \binom{n+k}{k} = \sum_{k=0}^n z^{k}(-1)^{n-k}n!\binom{n}{k} \binom{n+k}{k}.
+% \end{align*}
+
+% Esto corresponde al $n$-ésimo polinomio de Legendre evaluado en $1-2z$.
+
+% Resta por probar la invarianza bajo transformaciones ortogonales de las matrices. Es claro que $(A^TA)^{-1}B^TB$ es invariante si $(A^TA)^{-1}$ y $B^TB$ lo son. Recordemos que las matrices de Wishart son invariantes bajo transformaciones ortogonales, entonces resta probar que $(A^TA)^{-1}$ es invariante bajo transformaciones ortogonales, para esto usamos la invarainza de $A^TA$,
+
+% \begin{align*}
+%     Q(A^T A)^{-1}Q^* &= (QA^TAQ^*)^{-1} \overset{d}{=} (A^TA)^{-1}.
+% \end{align*}
+
+% Con esto se prueba que el polinomio característico esperado de una matriz de Jacobi con parámetros $n,n,n$ es un polinomio de Legendre evaluado en $1-2z$.
+% \todo{Traducir y corregir normalización}
+%%%% Traducir y corregir normalización 
+
+%%%%%%%%%%%%%%%%%%%%% Traducida
+
+Recall from Chapter \ref{ch:eigen_processes} that there are essentially two definitions for the Jacobi matrix, one coming form the Multivariate Analysis of Variance and other coming from the upper left corner of a Haar unitary Brownian matrix. We work first with the MANOVA case. To obtain \( p_M(z) \), the expected characteristic polynomial of \( M \), we can first obtain that of its inverse, \( p_{M^{-1}}(z) \). We have
+
+\begin{equation*}
+    M^{-1} = (A^TA)^{-1}(A^TA + B^TB) = I + (A^TA)^{-1}B^TB.
+\end{equation*}
+
+Under the assumptions that \( I \) and \( (A^TA)^{-1}B^TB \) are normal and that \( (A^TA)^{-1}B^TB \) is invariant under conjugation by an orthogonal matrix, it holds that
+
+\begin{equation*}
+    p_{M^{-1}}(z) = p_I(z) \boxplus_n p_{(A^TA)^{-1}B^TB}(z).
+\end{equation*}
+
+Furthermore, under the assumption that \( (A^TA)^{-1} \) and \( B^TB \) are normal and invariant under conjugation by orthogonal matrices, it holds that
+
+\begin{equation*}
+    p_{(A^TA)^{-1}B^TB}(z) = p_{(A^TA)^{-1}} \boxtimes p_{B^TB}(z).
+\end{equation*}
+
+We also know that \( p_{B^TB}(z) = L_n(z) \) and \( p_{(A^TA)^{-1}}(z)=z^n L_n(1/z) \). With this, we can find \( p_{M^{-1}}(z) \).
+
+\begin{align*}
+    p_{(A^TA)^{-1}B^TB}(z) &= p_{(A^TA)^{-1}} \boxtimes_n p_{B^TB}(z) = (z^n p_{A^T A}(1/z) \boxtimes p_{B^TB}(z)) = \sum_{k=0}^n z^{n-k} (-1)^k \frac{a_kb_k}{\binom{n}{k}},\\ 
+    &= \sum_{k=0}^n z^{n-k}(-1)^k \frac{\binom{n}{k}\frac{n!}{(n-k)!}\binom{n}{k}(-1)^{n-2k}\frac{n!}{k!}}{\binom{n}{k}} = \sum_{k=0}^n z^{n-k}(-1)^k \binom{n}{k}\frac{n!}{(n-k)!}(-1)^{n-2k}\frac{n!}{k!},\\
+    &= \sum_{k=0}^n z^{n-k}(-1)^k \binom{n}{k}^2 n! (-1)^{n-2k}.
+\end{align*}
+
+Now we calculate \( p_{M^{-1}}(z) \), remembering that \( p_I(z) = (z-1)^n \)
+
+\begin{align*}
+    p_I(z) \boxplus_n p_{(A^TA)^{-1}B^TB}(z) &= \sum_{k=0}^n z^{n-k}(-1)^k \sum_{j=0}^k \frac{(n-j)!(n-k+j)!}{n!(n-k)!}\binom{n}{j}\binom{n}{k-j}^2(-1)^{n-2(k-j)}n!,\\ 
+    &= \sum_{k=0}^n z^{n-k}(-1)^{n-k}n!\binom{n}{k} \sum_{j=0}^k \frac{n!n!k!}{j!(k-j)!(k-j)!(n-k+j)!},\\ 
+    &= \sum_{k=0}^n z^{n-k}(-1)^{n-k}n!\binom{n}{k} \sum_{j=0}^k \binom{n}{k-j}\binom{k}{j},\\  
+    &= \sum_{k=0}^n z^{n-k}(-1)^{n-k}n!\binom{n}{k} \binom{n+k}{k}.
+\end{align*}
+
+Finally, we use \( p_{M}(z) = z^n p_{M^{-1}}(1/z) \) to obtain
+
+\begin{align*}
+    p_{M}(z) &= z^n \sum_{k=0}^n z^{k-n}(-1)^{n-k}n!\binom{n}{k} \binom{n+k}{k} = \sum_{k=0}^n z^{k}(-1)^{n-k}n!\binom{n}{k} \binom{n+k}{k}.
+\end{align*}
+
+This corresponds to the \(n\)-th Legendre polynomial evaluated at \( 1-2z \), which is precisely the desired expected characteristic polynomial.
+
+It remains to prove the invariance under orthogonal transformations of the matrices. It is clear that \( (A^TA)^{-1}B^TB \) is invariant if \( (A^TA)^{-1} \) and \( B^TB \) are. Recall that Wishart matrices are invariant under orthogonal transformations, so it remains to prove that \( (A^TA)^{-1} \) is invariant under orthogonal transformations. For this, we use the invariance of \( A^TA \),
+
+\begin{align*}
+    Q(A^T A)^{-1}Q^* &= (QA^TAQ^*)^{-1} \overset{n}{=} (A^TA)^{-1}.
+\end{align*}
+
+With this, it is proven that the expected characteristic polynomial of a Jacobi matrix with parameters \( n,n,n \) is a Legendre polynomial evaluated at \( 1-2z \).
+%%%%%%%%%%%%%%%%%%%%%
 
 As defined in \cite{doumerc2005matrices} the generalized singular values problem can be expressed by the following matrix
 
@@ -628,6 +755,8 @@ As defined in \cite{doumerc2005matrices} the generalized singular values problem
 \end{align*}
 
 Thus finding the expected characteristic polynomial (up to a normalization constant) can be done without the need to use the inverse of $W_1 + W_2$.
+
+
 
 In order to find the associated process, we will first generalize the results of the static Wishart and Jacobi matrices with an operator that generalized characteristic polynomial, then we will show that the Wishart process can be built in the base of this operator by adding a time parameter. Finally, we will tray to extend this same procedure to the Jacobi process which, as we will see, is less straightforward. In the process of building this generalizations we will make extensive use of finite free probability.
 
@@ -665,7 +794,7 @@ In order to find the associated process, we will first generalize the results of
             \E{ p_{C, D}(x,y,z) } &= \E{ \det[ x I + y \trans CC + z \trans DD ] } = \E{\chi_{-y\trans CC -z\trans DD}(x)}.
         \end{align*}
 
-        Notice that by the results in \todo{citar convolución como polinomiso característicos esperados}
+        Notice that by the results in Chapter \ref{ch:finite_free},
 
         \begin{align*}
             \E{p_{A+C, B+D}(x,y,z)} &= \E{\chi_{-y\trans AA -z\trans BB}(x)} \boxplus_n \E{\chi_{-y\trans CC -z\trans DD}(x)}.

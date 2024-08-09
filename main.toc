@@ -25,6 +25,7 @@
 \contentsline {section}{\numberline {2.2}Generalization for matrix-valued diffusion processes}{39}{section.2.2}%
 \contentsline {subsection}{\numberline {2.2.1}Wishart process}{49}{subsection.2.2.1}%
 \contentsline {subsection}{\numberline {2.2.2}Jacobi process}{51}{subsection.2.2.2}%
+\contentsline {section}{\numberline {2.3}Simulations}{53}{section.2.3}%
 \contentsline {chapter}{\numberline {3}Finite Free Probability}{55}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Polynomials and convolution}{55}{section.3.1}%
 \contentsline {subsection}{\numberline {3.1.1}Convolution of polynomials}{55}{subsection.3.1.1}%
@@ -50,8 +51,10 @@
 \contentsline {section}{\numberline {4.2}Deterministic eigenvalue processes for matrix-valued diffusions}{95}{section.4.2}%
 \contentsline {subsection}{\numberline {4.2.1}Wishart process}{96}{subsection.4.2.1}%
 \contentsline {subsection}{\numberline {4.2.2}Jacobi process}{97}{subsection.4.2.2}%
-\contentsline {section}{\numberline {4.3}Connections with finite free probability}{97}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}Dyson Brownian motion}{98}{subsection.4.3.1}%
-\contentsline {subsection}{\numberline {4.3.2}Wishart process}{105}{subsection.4.3.2}%
-\contentsline {subsection}{\numberline {4.3.3}Jacobi process}{112}{subsection.4.3.3}%
+\contentsline {section}{\numberline {4.3}Dynamical behavior of the deterministic eigenvalue processes}{97}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Simulations}{97}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Connections with finite free probability}{97}{section.4.5}%
+\contentsline {subsection}{\numberline {4.5.1}Dyson Brownian motion}{98}{subsection.4.5.1}%
+\contentsline {subsection}{\numberline {4.5.2}Wishart process}{105}{subsection.4.5.2}%
+\contentsline {subsection}{\numberline {4.5.3}Jacobi process}{112}{subsection.4.5.3}%
 \contentsline {chapter}{Bibliography}{123}{chapter*.37}%
