@@ -852,6 +852,74 @@
     \field{year}{2012}
   \endentry
 
+  \entry{article:arizmendi_perales}{article}{}{}
+    \name{author}{2}{}{%
+      {{hash=AO}{%
+         family={Arizmendi},
+         familyi={A\bibinitperiod},
+         given={Octavio},
+         giveni={O\bibinitperiod},
+      }}%
+      {{hash=PD}{%
+         family={Perales},
+         familyi={P\bibinitperiod},
+         given={Daniel},
+         giveni={D\bibinitperiod},
+      }}%
+    }
+    \keyw{Cumulants, Finite free convolution, Free probability}
+    \strng{namehash}{AOPD1}
+    \strng{fullhash}{AOPD1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{abstract}{%
+    In this paper we define cumulants for finite free convolution. We give a
+  moment-cumulant formula and show that these cumulants satisfy desired
+  properties: they are additive with respect to finite free convolution and
+  they approach free cumulants as the dimension goes to infinity.%
+    }
+    \verb{doi}
+    \verb https://doi.org/10.1016/j.jcta.2017.11.012
+    \endverb
+    \field{issn}{0097-3165}
+    \field{pages}{244\bibrangedash 266}
+    \field{title}{Cumulants for finite free convolution}
+    \verb{url}
+    \verb https://www.sciencedirect.com/science/article/pii/S0097316517301668
+    \endverb
+    \field{volume}{155}
+    \verb{file}
+    \verb Definición correcta de transformada R finita:C\:/Users/Esaul/Documen
+    \verb ts/Maestría en Probabilidad y Estadística/4 Cuarto semestre/Seminar
+    \verb io de investigación/Referencias/Artículos/Octavio Arizmendi, Daniel
+    \verb  Perales - Cumulants for Finite Free Convolution.pdf:PDF
+    \endverb
+    \field{journaltitle}{Journal of Combinatorial Theory, Series A}
+    \field{year}{2018}
+  \endentry
+
+  \entry{book:percy_deift_orthogonal}{book}{}{}
+    \name{author}{1}{}{%
+      {{hash=DP}{%
+         family={Deift},
+         familyi={D\bibinitperiod},
+         given={Percy},
+         giveni={P\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {American Mathematical Soc.}%
+    }
+    \strng{namehash}{DP1}
+    \strng{fullhash}{DP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Orthogonal Polynomials and Random Matrices: A Riemann-Hilbert
+  Approach: A Riemann-Hilbert Approach}
+    \field{volume}{3}
+    \field{year}{2000}
+  \endentry
+
   \entry{edelman1988eigenvalues}{article}{}{}
     \name{author}{1}{}{%
       {{hash=EA}{%
@@ -874,6 +942,60 @@
     \field{volume}{9}
     \field{journaltitle}{SIAM journal on matrix analysis and applications}
     \field{year}{1988}
+  \endentry
+
+  \entry{article:aomoto1987jacobi_selberg_integrals}{article}{}{}
+    \name{author}{1}{}{%
+      {{hash=AK}{%
+         family={Aomoto},
+         familyi={A\bibinitperiod},
+         given={Kazuhiko},
+         giveni={K\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {SIAM}%
+    }
+    \strng{namehash}{AK1}
+    \strng{fullhash}{AK1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{number}{2}
+    \field{pages}{545\bibrangedash 549}
+    \field{title}{Jacobi polynomials associated with Selberg integrals}
+    \field{volume}{18}
+    \field{journaltitle}{SIAM Journal on Mathematical Analysis}
+    \field{year}{1987}
+  \endentry
+
+  \entry{article:dumitriu_edelman}{article}{}{}
+    \name{author}{2}{}{%
+      {{hash=DI}{%
+         family={Dumitriu},
+         familyi={D\bibinitperiod},
+         given={Ioana},
+         giveni={I\bibinitperiod},
+      }}%
+      {{hash=EA}{%
+         family={Edelman},
+         familyi={E\bibinitperiod},
+         given={Alan},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {American Institute of Physics}%
+    }
+    \strng{namehash}{DIEA1}
+    \strng{fullhash}{DIEA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{number}{11}
+    \field{pages}{5830\bibrangedash 5847}
+    \field{title}{Matrix models for beta ensembles}
+    \field{volume}{43}
+    \field{journaltitle}{Journal of Mathematical Physics}
+    \field{year}{2002}
   \endentry
 \enddatalist
 \endinput

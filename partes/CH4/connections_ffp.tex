@@ -1,6 +1,8 @@
 \section{Connections with finite free probability}
 
-In this section we relate finite free probability to eigenvalue processes. To do so, we first find the expected characteristic polynomial of the random matrices. We show that in some cases they are well-known polynomials whose convolutions satisfy good properties. We start with the case of a self-adjoint Brownian matrix and then we replicate the results for the Wishart and Jacobi processes.
+In this section we relate finite free probability to eigenvalue processes. To do so, we first find the expected characteristic polynomial of the random matrices. We show that in some cases they are well-known polynomials whose convolutions satisfy good properties. We start with the case of a self-adjoint Brownian matrix and then get similar results for the Wishart and Jacobi processes.
+
+Before proceeding with the processes, let us state a lemma that will help us to find the expected characteristic polynomials by using a tridiagonal model.
 
 \begin{lemma} \label{lemma:chpol_tridiag}
     Let $A$ be an $n\times n$ tridiagonal symmetric matrix with diagonal elements $\{a_i\}_{1\le i \le n}$ and subdiagonal elements $\{ b_j \}_{2 \le j \le n}$, such that
@@ -19,8 +21,10 @@ In this section we relate finite free probability to eigenvalue processes. To do
     Then its characteristic polynomial $\chi^n_z(A) = \det(zI_n - A)$ satisfies the following recursion
 
     \begin{equation*}
-        \chi^n_z(A) = (z-a_n)\chi^{n-1}_z(A) - b_{n-1}^2\chi^{n-2}_z(A). \label{eq:recursion}
+        \chi^n_z(A) = (z-a_n)\chi^{n-1}_z(A) - b_{n-1}^2\chi^{n-2}_z(A), \label{eq:recursion}
     \end{equation*}
+
+    \noindent where $\chi_z^{n-1}(A)$ represents the characteristic polynomial of the $(n-1)\times(n-1)$ lower-right block of $A$. Notice that, in particular, this block is also tridiagonal.
 \end{lemma}
 
 \begin{proof}
@@ -50,7 +54,14 @@ In this section we relate finite free probability to eigenvalue processes. To do
     \end{align*}
 \end{proof}
 
+With this lemma and the tools developed in the former chapters, we are ready to study the expected characteristic polynomial of some matrix-valued stochastic processes. In the next subsection, we start with the Dyson Brownian motion.
+
 \subsection{Dyson Brownian motion}
+
+In Chapter \ref{ch:finite_free}  we saw that the tools devloped by Marcus and collaborators \cite{article:finitefree,article:arizmendi_perales,article:finitefree} allow us to express expected characteristic polynomials of sums and products of random matrices as convolutions of the original polynomials. However, we still did not see any tool useful for finding such polynomials when we can not express them in terms of another characteristic polynomial. This topic has been covered in the literature several times \cite{book:percy_deift_orthogonal,edelman1988eigenvalues,article:aomoto1987jacobi_selberg_integrals} but we will use the approach by Ioanna Dumitriu and Alan Edelman found in \cite{article:dumitriu_edelman} because it requires to introduce less technical concepts. Once we find the expected characteristic polynomials by these means, we will relate them to Finite Free Probability Theory using the previous developed tools.
+
+As a first step, we will make use of the invariance under orthogonal (or unitary) transformations of the GOE (or GUE) in order to find a tridiagonal model with the same matrix distribution.
+
 
 \begin{lemma} \label{lemma:tridiag}
     Let $A_{\beta}$ denote an $n\times n$ matrix from the GOE, GUE or GSE, for $\beta = 1,2,4$, respectively. Then the eigenvalues of the tridiagonal matrix $H_\beta$ have the same joint law as the eigenvalues of $A_\beta$, with $H_\beta$ defined as
@@ -72,7 +83,6 @@ In this section we relate finite free probability to eigenvalue processes. To do
     Note that in this case $\chi_\nu$ denotes the chi distribution which is the squared root of a chi-squared random variable or the absolute value of a normal random variable in the case $\nu$ is integer.
 
     We call $H_\beta$ the tridiagonal $\beta$-Hermite ensemble.
-
 \end{lemma}
 
 \begin{proof}
@@ -125,7 +135,7 @@ In this section we relate finite free probability to eigenvalue processes. To do
 \end{proof}
 
 
-
+Since $H_\beta$ has the same distribution as an invariant Gaussian ensemble, the expected characteristic polynomials are the same, and we can find them using that $H_\beta$ is tridiagonal and Lemma \ref{lemma:chpol_tridiag}.
 
 
 
@@ -160,6 +170,8 @@ In this section we relate finite free probability to eigenvalue processes. To do
     So $P_1(z) = H_1(z)$ and $P_2(z) = H_2(z)$. Using the recursion, we can conclude that $P_n(z) = H_n(z)$.
 \end{proof}
 
+Recall that a self adjoint Brownian motion has the same law as $\sqrt{t}$ times a Gaussian invariante ensemble. Once again, we use an equality in distribution and Lemma \ref{lemma:chpol_tridiag} in order to find the expected characteristic polynomial of a self adjoint Brownian motion.
+
 \begin{corollary} \label{corollary:brownian_expected}
     Let $B(t)$ be an $n\times n$ self-adjoint complex Brownian matrix, then its expected characteristic polynomial $P_n(z,t)$ is the $n$th generalized Hermite polynomial with variance $t$, $H_n(z,t)$, i.e. the Hermite polynomials which are orthogonal with respect to a Gaussian random variable of variance $t$.
 \end{corollary}
@@ -192,15 +204,23 @@ In this section we relate finite free probability to eigenvalue processes. To do
         &= \mathbb E \left( \left(x - \sqrt{\frac t2}N_1\right)\left( x - \sqrt{\frac t2}N_2 \right) - \frac t2 \xi_2^2 \right),\\ 
         &= x^2 - t.
     \end{align*}
+
+    With this, we have found a recursion and initial conditions that are enough to uniquely determine the expected characteristic polynomial of a self-adjoint complex Brownian matrix.
 \end{proof}
 
-    With the last result, we have found a recursion and initial conditions that are enough to uniquely determine the expected characteristic polynomial of a self-adjoint complex Brownian matrix.
+    Now that we know that the expected characteristic polynomial of a self adjoint Brownian motion is a Hermite polynomial with variance $t$, we are ready to give a much easier proof of Proposition \ref{prop:convolution_of_hermites} using the tools of Finite Free Probability Theory.
+
+    \begin{proof}[Alternate proof of Proposition \ref{prop:convolution_of_hermites}]
+        Let $H_n(z,t_1)$ and $H_n(z,t_2)$ be the expected characteristic polynomials of two independent self-adjoints Brownian motions $B_1 = (B_1(t), t\ge 0)$ and  $B_2 = (B_2 (t), t\ge0)$ evaluated at the times $t_1$ and $t_2$, respectively. By the Lévy property of the Brownian motion, we know that $B \coloneqq B_1 + B_2$ is another self-adjoint Brownian motion, evaluated at the time $t_1 + t_2$. By Theorem \ref{thm:symmad}, and using the invariance under unitary transformations of $B_1, B_2$, the convolution of the Hermite polynomials is the expected characteristic polynomial of $B$, and Corollary \ref{corollary:brownian_expected} allows us to conclude that this polynomial is $H_n(z,t_1 + t_2)$.
+    \end{proof}
+
+    The Hermite polynomials not only are the expected characteristic polynomials for our Gaussian invariant ensembles, they somehow also carry all the ``non-stochastic information'' of the eigenvalues in the sense that their roots satisfy \eqref{eq:deterministic_dyson}. We will prove this by first showing that the Hermite polynomials are ``harmonic'' in some sense, i.e., they are a solution for the martingale problem of a Brownian motion in reversed time. \todo{Revisar que esto sea cierto}
 
 \begin{theorem} \label{thm:heat_burgers}
     The Hermite polynomials $H_n(z,t)$ solve the differential equation
 
     \begin{equation} \label{eq:calor}
-        \frac{\partial}{\partial t} H_n(z,t) + \frac12 \frac{\partial^2}{\partial z^2} H_n(z,t) = 0,
+      \partial_t [H_n(z,t)] + \frac12 \partial_{zz}[H_n(z,t)] = 0,
     \end{equation}
 
     \noindent and the Cauchy transform $G_{H_n}(y)$ of the empirical measure associated to its roots $\left\{ z_j(t) \right\}_{j\in [n]}$, 
@@ -209,10 +229,10 @@ In this section we relate finite free probability to eigenvalue processes. To do
         G_{H_n}(z,t) \coloneqq \frac1n \sum_{j=1}^n \frac{1}{z_j(t) - z},
     \end{equation*}
 
-    \noindent satisfies the viscous Burgers equation with diffusion coefficient $-1/2$,
+    \noindent solves the viscous Burgers equation with diffusion coefficient $-1/2$,
 
     \begin{equation*} \label{eq:burgers_12}
-        \frac{\partial G_{H_n}(z,t)}{\partial t} + nG_{H_n}(z,t)\frac{\partial G_{H_n}(z,t)}{\partial z} = -\frac12 \frac{\partial^2 G_{H_n}(z,t)}{\partial z^2}.
+        {\partial_t}[\partial G_{H_n}(z,t)] + nG_{H_n}(z,t)\partial_z[G_{H_n}(z,t)] = -\frac12  \partial_{zz}[G_{H_n}(z,t)].
     \end{equation*}
     
 \end{theorem}
@@ -266,7 +286,7 @@ In this section we relate finite free probability to eigenvalue processes. To do
     % \end{align*}
 \end{proof}
 
-
+Using Theorem \ref{thm:heat_burgers} its is easy to prove that the roots of the time dependent Hermite polynomials evolve according to \eqref{eq:deterministic_dyson}.
 
 \begin{corollary}
     The roots $\left\{z_i(t)\right\}_{i\le n}$ of the Hermite polynomials $H_n(z,t)$ satisfy the deterministic Dyson's equation,
@@ -280,20 +300,19 @@ In this section we relate finite free probability to eigenvalue processes. To do
     Let $z_i(t)$ be the roots of $H_n(z,t)$, this means
 
     \begin{align*}
-        H_n(z_i(t),t) &= 0,\\ 
-        \partial_t H_n(z_i(t),t) &= 0.
+        H_n(z_i(t),t) &= 0, \qquad \Rightarrow \partial_t [H_n(z_i(t),t)] = 0.
     \end{align*}
 
-    By the chain rule and the heat kind equation \eqref{eq:calor} in Theorem \ref{thm:heat_burgers} we have
+    By the chain rule and the heat kind equation \eqref{eq:calor} in Theorem \ref{thm:heat_burgers} we have that
 
     \begin{align*}
-        0 &= \partial_t H_n(z_i(t),t) = (\partial_t (z_i))\partial_z H_n(z_i(t),t) - \frac12 \partial_{zz} H_n(z_i(t),t),
-        \intertext{by the Leibniz rule}
-        \frac{\d}{\d t} z_i(t) &= \frac{\partial_{zz} H_n(z_i(t),t)}{2\partial_z H_n(z_i(t),t)} = \frac{2 \sum_{k\neq i} \prod_{j\neq i, j\neq k} (z_i - z_j)}{2 \prod_{j\neq i} (z_i - z_j)} = \sum_{k\neq i} \frac{1}{z_i - z_k}.
+        0 &= \partial_t [H_n(z_i(t),t)] = (\partial_t [z_i])\partial_z [H_n(z_i(t),t)] - \frac12 \partial_{zz} [H_n(z_i(t),t)],
+        \intertext{using the Leibniz rule}
+        \frac{\d}{\d t} z_i(t) &= \frac{\partial_{zz} [H_n(z_i(t),t)]}{2\partial_z [H_n(z_i(t),t)]} = \frac{2 \sum_{k\neq i} \prod_{j\neq i, j\neq k} (z_i - z_j)}{2 \prod_{j\neq i} (z_i - z_j)} = \sum_{k\neq i} \frac{1}{z_i - z_k}.
     \end{align*}
 \end{proof}
 
-
+As a final part for this subsection, let us prove that if you have an arbitrary initial condition for a self adjoint Brownian motion, then its expected characteristic polynomial will also satisfy \eqref{eq:calor}. Notice that as a consequence, this means that its roots will move according to \eqref{eq:deterministic_dyson}.
 
 \begin{theorem}
     Let $A$ be an $n\times n$ fixed matrix and $W$ an $n\times n$ self-adjoint Brownian matrix, then $q_A(z,t)$ defined as
@@ -305,7 +324,7 @@ In this section we relate finite free probability to eigenvalue processes. To do
     \noindent satisfies the following differential equation
     
     \begin{equation*}
-        \partial_t q_A(z,t) + \frac12 \partial_{zz} q_A(z,t) = 0.
+        \partial_t [q_A(z,t)] + \frac12 \partial_{zz} [q_A(z,t)] = 0.
     \end{equation*}
     \end{theorem}
     
@@ -356,7 +375,7 @@ In this section we relate finite free probability to eigenvalue processes. To do
         We compute first $\partial_{zz} [q_A(z,t)]$,
 
         \begin{align*}
-            \partial_{zz} q_A(z,t) %&= \partial_{zz} \left[ \sum_{k=0}^d z^{d-k}(-1)^k \sum_{i=0}^k c_{k,i,d} b_i a_{k-i} t^{i/2} \right],\\ 
+            \partial_{zz} [q_A(z,t)] %&= \partial_{zz} \left[ \sum_{k=0}^d z^{d-k}(-1)^k \sum_{i=0}^k c_{k,i,d} b_i a_{k-i} t^{i/2} \right],\\ 
             &= \partial_{zz} \left[ \sum_{k=0}^n z^{n-k}(-1)^k \sum_{i=0}^k \frac{(n-i)!(n-k+i)!}{n!(n-k)!} b_i a_{k-i} t^{i/2} \right],\\
             &= \sum_{k=0}^{n-2} (n-k)(n-k-1)z^{n-k-2}(-1)^k \sum_{i=0}^k \frac{(n-i)!(n-k+i)!}{n!(n-k)!} b_i a_{k-i} t^{i/2}, \\
             &= \sum_{k=0}^{n-2} z^{n-k-2}(-1)^k \sum_{i=0}^k \frac{(n-i)!(n-k+i)!}{n!(n-k-2)!} b_i a_{k-i} t^{i/2}, \\
@@ -377,7 +396,7 @@ In this section we relate finite free probability to eigenvalue processes. To do
         % \end{align*}
 
         \begin{align*}
-            \partial_t q_A(z,t) &= \partial_t \left[ \sum_{k=0}^n z^{n-k}(-1)^k \sum_{i=0}^k c_{k,i,n} b_i a_{k-i} t^{i/2} \right],\\ 
+            \partial_t [q_A(z,t)] &= \partial_t \left[ \sum_{k=0}^n z^{n-k}(-1)^k \sum_{i=0}^k c_{k,i,n} b_i a_{k-i} t^{i/2} \right],\\ 
             &= \sum_{k=0}^n z^{n-k}(-1)^k \sum_{i=0}^k \frac{(n-i)!(n-k+i)!}{n!(n-k)!} b_i a_{k-i} \frac{i}{2}t^{\frac{i-2}{2}},\\ 
             &= \sum_{k=0}^n z^{n-k}(-1)^k \sum_{j=0}^{k-2} \frac{(n-j-2)!(n-k+j+2)!}{n!(n-k)!} b_{j+2}a_{k-j-2}\left( \frac{j+2}{2} \right)t^{j/2},\\ 
             &= \sum_{k=0}^n z^{n-k}(-1)^k \sum_{j=0}^{k-2} \frac{(n-j)!(n-k+j+2)!}{n!(n-k)!} b_ja_{k-j-2}\frac{(j+2)t^{j/2}}2,\\
@@ -385,19 +404,16 @@ In this section we relate finite free probability to eigenvalue processes. To do
             &= \frac12 \sum_{k=0}^n z^{n-k}(-1)^{k+1} \sum_{j=0}^{k-2} \frac{(n-j)!(n-k+j+2)!}{n!(n-k)!} b_ja_{k-j-2}t^{j/2}, \\ 
             &= -\frac12 \sum_{k=2}^n z^{n-k}(-1)^{k} \sum_{j=0}^{k-2} \frac{(n-j)!(n-k+j+2)!}{n!(n-k)!} b_ja_{k-j-2}t^{j/2} = -\frac12 \partial_{zz} q_A(z,t).
         \end{align*}
-
-
-
-
-
     \end{proof}
     
-
+    We conclude with this theorem that no matter the initial condition of the self-adjoint Brownian motion, the roots of its expected characteristic polynomial will mode according to the deterministic Dyson equation. In the next subsection we get similar results for the Wishart process.
 
 \subsection{Wishart process}
 
+    Similarly to the Brownian motion case, we will first construct a tridiagonal model that will help us to get the expected characteristic polynomial.
+
 \begin{lemma}
-    Let $W_\beta$ be an $n\times n$ matrix from the  $\beta$-Wishart ensemble. The eigenvalues of $W_\beta$ has the same joint law as those of the tridiagonal matrix $L_\beta = B_\beta \trans B_\beta$ with $B_\beta$ is an $m\times n$ bidiagonal matrix defined as 
+    Let $W_\beta$ be an $n\times n$ matrix from the  $\beta$-Wishart ensemble ($\beta \in \{1,2,4\}$). The eigenvalues of $W_\beta$ have the same joint law as those of the tridiagonal matrix $L_\beta = \trans{B_\beta}  B_\beta$ with $B_\beta$ is an $m\times n$ bidiagonal matrix defined as 
 
     \begin{align} \label{eq:tridiag_laguerre}
         B_\beta &= \begin{bmatrix}
@@ -409,9 +425,7 @@ In this section we relate finite free probability to eigenvalue processes. To do
         \end{bmatrix}.
     \end{align}
 
-    The variables $\xi_j$ being independent random variables with distribution $\xi_j \sim \chi_j$.
-
-    We call $L_\beta$ the tridiagonal $\beta$-Laguerre ensemble.
+    The variables $\xi_j$ being independent random variables with distribution $\xi_j \sim \chi_j$. We call $L_\beta$ the tridiagonal $\beta$-Laguerre ensemble.
 \end{lemma}
 
 \begin{proof}
@@ -445,6 +459,7 @@ In this section we relate finite free probability to eigenvalue processes. To do
     The distribution of the entries follows from the definition of the complex and simplectic normal distributions as sums of real normal random variables.
 \end{proof}
 
+    Another use of Lemma \ref{lemma:chpol_tridiag} together with the last Lemma help us to prove that the Laguerre polynomials are the expected characteristic polynomials of the Wishart ensemble.
 
 
 \begin{theorem}
@@ -453,7 +468,7 @@ In this section we relate finite free probability to eigenvalue processes. To do
     \begin{equation*}
         E\left[ \chi_x\left(\trans{R}R\right) \right] = L_n(z),
     \end{equation*}
-
+    \todo{Esto lo podría hacer en general, con una recursión más general.}
     \noindent where $L_n(x) = \left( 1 - \partial_z \right)^n [z^n]$ is the $n$th standard Laguerre polynomial.
 \end{theorem}
 
@@ -474,7 +489,7 @@ In this section we relate finite free probability to eigenvalue processes. To do
 
     \begin{align} \label{eq:laguerre_recursion}
         \E{P_n(z)} &= \E{ (z - \xi^2_{n\beta} - \xi^2_{\beta(m-1)})P_{n-1}(z) - \xi^2_{\beta(n-1)}\xi_{\beta(m-1)}^2 P_{n-2}(z) },\\ 
-        &= (z - \beta(n - m + 1))\E{P_{n-1}(z)} - \beta^2(n-1)(m-1)P_{n-2}(z).
+        &= (z - \beta(n - m + 1))\E{P_{n-1}(z)} - \beta^2(n-1)(m-1)\E{P_{n-2}(z)}.
     \end{align}
 
     Which is satisfied by the Laguerre polynomials. By finding the cases $n=1$ and $n=2$, then using a recursive argument, we finish the proof.
@@ -492,8 +507,10 @@ In this section we relate finite free probability to eigenvalue processes. To do
     Taking expectation leads to $P_z(z) = z^2 - 4z + 2$. The rest of the polynomials are found using recursion \eqref{eq:laguerre_recursion}.
 \end{proof}
 
+    The dynamical case can be found using the static case and the fact that a Wishart matrix has the same law as $t\trans GG$, for $G$ a matrix of independent standard normal variables.
+
 \begin{theorem}
-    Let $B$ be an $n\times n$ matrix and $R_{ij}$ be independent standard Brownian motions, then 
+    Let $B$ be an $n\times n$ matrix and $B_{ij}$ be independent standard Brownian motions, then 
 
     \begin{equation*}
         E\left[ \chi_z\left( \trans{B}B\right) \right] = L_n(z,t),
@@ -512,9 +529,10 @@ In this section we relate finite free probability to eigenvalue processes. To do
     \end{align*}
 \end{proof}
 
+    As defined before, the time dependant Laguerre polynomials are generated by the operator $(1-t\partial_z)^{n}[z^n]$. On the other hand, the Finite Free Poisson distribution is represented by the roots of the polynomial $(1-\frac1n\partial_z)^{n}[z^n]$, this is the expected characteristic polynomial of a Wishart process rescales by $1/n$ and evaluated at time $t=1$. It turns out that we can find a heat kind equation for every polynomial satisfying $p(z,t)=(1-ct\partial_z)^n[z^n]$ with $c \in\R$. Every such equation would imply a unique dynamics for the polynomial roots which is basically a rescaling of the space-time relationship.
 
 \begin{theorem}
-    Let $c>0$ and $P(t,z) \coloneqq \left( 1 - ct\partial_z \right)^n [z^n]$, with $t\ge 0, z \in \C$, then $P(t,z)$ satisfies the following differential equation
+    Let $c\in \R$ and $P(t,z) \coloneqq \left( 1 - ct\partial_z \right)^n [z^n]$, with $t\ge 0, z \in \C$, then $P(t,z)$ satisfies the following differential equation
 
     \begin{equation*} 
         c\partial_z P(t,z) + cz  \partial_{zz}P(t,z) + \partial_t P(t,z) = 0.
@@ -526,33 +544,37 @@ In this section we relate finite free probability to eigenvalue processes. To do
     By definition of $P(t,z)$,
 
     \begin{align*}
-        P(t,z) &= \left( 1 - ct\partial_z \right)^n [z^n] = \sum_{k=0}^n \binom{n}{k}\left( -ct \right)^k \partial_z^k [z^n ] = \left( 1 - ct\partial_z \right)^n [z^n] = \sum_{k=0}^n \binom{n}{k}\left( -ct \right)^k \frac{n!}{(n-k)!}z^{n-k}.
+        P(t,z) &= \left( 1 - ct\partial_z \right)^n [z^n] = \sum_{k=0}^n \binom{n}{k}\left( -ct \right)^k \partial_z^k [z^n ] = \sum_{k=0}^n \binom{n}{k}\left( -ct \right)^k \frac{n!}{(n-k)!}z^{n-k}.
     \end{align*}
 
     Now we find the derivatives
 
     \begin{align*}
-        \partial_z P(t,z) &= \partial_z\left[ \sum_{k=0}^n \binom{n}{k}\left( -ct \right)^k \frac{n!}{(n-k)!}z^{n-k} \right] = \sum_{k=0}^{n-1} \binom{n}{k}\left( -ct \right)^k \frac{n!}{(n-k-1)!}z^{n-k-1},\\ 
-        \partial_{zz} P(t,z) &= \partial_z\left[\sum_{k=0}^{n-1} \binom{n}{k}\left( -ct \right)^k \frac{n!}{(n-k-1)!}z^{n-k-1}\right] = \sum_{k=0}^{n-2} \binom{n}{k}\left( -ct \right)^k \frac{n!}{(n-k-2)!}z^{n-k-2},\\ 
-        \partial_t P(t,z) &= \partial_t \left[ \sum_{k=0}^n \binom{n}{k}\left( -ct \right)^k \frac{n!}{(n-k)!}z^{n-k} \right] = \sum_{k=1}^n \binom{n}{k}k(-c)^kt^{k-1} \frac{n!}{(n-k)!}z^{n-k},\\ 
+        \partial_z [P(t,z)] &= \partial_z\left[ \sum_{k=0}^n \binom{n}{k} \frac{\left( -ct \right)^k n!}{(n-k)!}z^{n-k} \right] = \sum_{k=0}^{n-1} \binom{n}{k} \frac{\left( -ct \right)^k n!}{(n-k-1)!}z^{n-k-1},\\ 
+        \partial_{zz} [P(t,z)] &= \partial_z\left[\sum_{k=0}^{n-1} \binom{n}{k} \frac{\left(-ct\right)^k n!}{(n-k-1)!}z^{n-k-1}\right] = \sum_{k=0}^{n-2} \binom{n}{k} \frac{\left(-ct\right)^k n!}{(n-k-2)!}z^{n-k-2},\\ 
+        \partial_t [P(t,z)] &= \partial_t \left[ \sum_{k=0}^n \binom{n}{k} \frac{\left( -ct \right)^k n!}{(n-k)!}z^{n-k} \right] = \sum_{k=1}^n \binom{n}{k}k \frac{(-c)^kt^{k-1} n!}{(n-k)!}z^{n-k},\\ 
         &= \sum_{k=0}^{n-1} \binom{n}{k+1}(k+1)(-c)^{k+1}t^{k} \frac{n!}{(n-k-1)!}z^{n-k-1}.
     \end{align*}
 
-    For the sum we have
+    For the sum we can separate the last terms with index $n-1$. Thus we have
 
     \begin{align*}
-        \left(c\partial_z + cz\partial_{zz} + \partial_t\right) [P] &= \sum_{k=0}^{n-2} \left[ c\binom{n}{k}\left( -ct \right)^k \frac{n!}{(n-k-1)!}z^{n-k-1} + cz\binom{n}{k}\left( -ct \right)^k \frac{n!}{(n-k-2)!}z^{n-k-2}\right.\\ &\phantom{espac} + \left.\binom{n}{k+1}(k+1)(-c)^{k+1}t^{k} \frac{n!}{(n-k-1)!}z^{n-k-1}\right] \\
-        &\phantom{espaciooo}+ cn(-ct)^{n-1}n!+n(-c)^nt^{n-1}n!,\\ 
-        &= \sum_{k=0}^{n-2} \binom{n}{k} (-ct)^k n!\left( \frac{cz^{n-k-1}+(n-k-1)cz^{n-k-1}-c(n-k)z^{n-k-1}}{(n-k-1)!} \right), \\ 
+        \left(c\partial_z + cz\partial_{zz} + \partial_t\right) [P] &= \sum_{k=0}^{n-2} \left[ c\binom{n}{k}\left( -ct \right)^k \frac{n!}{(n-k-1)!}z^{n-k-1}\right.\\
+        &\phantom{esp} + cz\binom{n}{k}\left( -ct \right)^k \frac{n!}{(n-k-2)!}z^{n-k-2}\\ &\phantom{espac} + \left.\binom{n}{k+1}(k+1)(-c)^{k+1}t^{k} \frac{n!}{(n-k-1)!}z^{n-k-1}\right] \\
+        &\phantom{espaciooo}+ cn(-ct)^{n-1}n!+n(-c)^nt^{n-1}n!,
+        \intertext{reagruping the terms we find}
+        &= \sum_{k=0}^{n-2} \binom{n}{k} (-ct)^k n!\left( \frac{(n-k-1)cz^{n-k-1}-c(n-k-1)z^{n-k-1}}{(n-k-1)!} \right), \\ 
         &=\sum_{k=0}^{n-2} \binom{n}{k} \frac{ c^{k+1}(-t)^kn!z^{n-k-1}}{(n-k-1)!}\left( 1 + n-k-1 -n +k \right) = 0.
     \end{align*}
  \end{proof}
+
+ Now, analogously to the Hermite polynomials and the Dyson Brownian motion, we prove the dynamical behavior for the roots of the polynomial defined by $(1-ct\partial_z)^n[z^n]$. In this case, the dynamics will depend on the constant $c$. For a negative $c$, the time will be reversed and in general for a bigger $c$ the movement will be faster. 
 
  \begin{theorem}
     Let $P(t,z)$ be a monic polynomial with degree $n$ satisfying the equation
 
      \begin{equation*} 
-        c\partial_z P(t,z) + cz  \partial_{zz}P(t,z) + \partial_t P(t,z) = 0.
+        c\partial_z [P(t,z)] + cz  \partial_{zz}[P(t,z)] + \partial_t [P(t,z)] = 0.
      \end{equation*}
 
     Then its roots $\left(z_i(t)\right)_{i=1}^n$ satisfy the equation of motion
@@ -566,10 +588,11 @@ In this section we relate finite free probability to eigenvalue processes. To do
     Let $z_i(t)$ be such that $P(t,z_i(t)) = 0$ for every $t$, this means in particular that $\partial_z P(t,z_i(t)) = 0$, so
 
     \begin{align*}
-        0 &= \partial_t P(t,z_i(t)) = \partial_t z_i(t) \partial_z P(t,z)|_{z=z_i} + \partial_t P(t,z)|_{z=z_i}, \\ 
-        &= \partial_t z_i(t) \partial_z P(t,z)|_{z=z_i} - \left[c\partial_z P(t,z)- cz \partial_{zz}P(t,z)\right]_{z=z_i},
+        0 &= \partial_t [P(t,z_i(t))] = \partial_t [z_i(t)] \partial_z [P(t,z)]|_{z=z_i} + \partial_t [P(t,z)]|_{z=z_i}, \\ 
+        &= \partial_t [z_i(t)] \partial_z [P(t,z)]|_{z=z_i} - \left[c\partial_z [P(t,z)] - cz \partial_{zz}[P(t,z)]\right]_{z=z_i},
         \intertext{now we use that $P(t,z)$ is monic and the Leibnitz rule to get}
-        \partial_t [z_i(t)] &= c\left[\frac{\partial_z P(t,z) + z  \partial_{zz}P(t,z)}{\partial_z P(t,z)}\right]_{z=z_i} = c\left[ 1 +  \frac{2z_i\sum_{k\neq i}\prod_{j\neq i,j\neq k}(z_i - z_j)}{\prod_{j\neq i}(z_i - z_j)} \right] = c\left[ 1 + \sum_{k\neq i}\frac{2z_i}{z_i - z_k}\right],\\
+        \frac{\d}{\d t} z_i(t) &= c\left[\frac{\partial_z [P(t,z)] + z  \partial_{zz}[P(t,z)]}{\partial_z [P(t,z)]}\right]_{z=z_i} = c\left[ 1 +  \frac{2z_i\sum_{k\neq i}\prod_{j\neq i,j\neq k}(z_i - z_j)}{\prod_{j\neq i}(z_i - z_j)} \right],\\
+        &= c\left[ 1 + \sum_{k\neq i}\frac{2z_i}{z_i - z_k}\right],\\
         &= c\left[ 1 + \sum_{k\neq i}\frac{2z_i}{z_i - z_k} - \sum_{k\neq i}\frac{z_i-z_k}{z_i - z_k} + \sum_{k\neq i}\frac{z_i-z_k}{z_i - z_k} \right],\\ 
         &= c\left[ 1 + \sum_{k\neq i}\frac{2z_i-z_i + z_k}{z_i - z_k} + n-1 \right] = c\left[\sum_{k\neq i}\frac{z_i + z_k}{z_i - z_k} + n\right].
     \end{align*}
