@@ -408,7 +408,7 @@ As a final part for this subsection, let us prove that if you have an arbitrary 
     
     We conclude with this theorem that no matter the initial condition of the self-adjoint Brownian motion, the roots of its expected characteristic polynomial will mode according to the deterministic Dyson equation. In the next subsection we get similar results for the Wishart process.
 
-\subsection{Wishart process}
+\subsection{Wishart process} \label{subsec:wishart_laguerre}
 
     Similarly to the Brownian motion case, we will first construct a tridiagonal model that will help us to get the expected characteristic polynomial.
 
@@ -656,72 +656,28 @@ All the results in this section were analogous to the Hermite polynomials relati
 
 For the last process we study in this thesis, we will use a slightly different approach. Although some useful matrix models have been proposed for the Jacobi ensamble \cite{article:jacobi_matrix_model,article:edelman_sutton_jacobi}, we will make use of the definition of the Jacobi matrix in terms of Wishart matrices and what we already know about the Laguerre relationship to Wishart. As we will see, the Jacobi process is stationary, which makes it impossible to define something as the ``dynamical Jacobi polynomials'' (at least as we did with Hermite and Laguerre), however, it is possible to recover the deterministic dynamics when we have an initial law that does not make the process stationary. 
 
-Before proceeding with the proper Jacobi process, let us find the expected characteristic polynomial of a static Jacobi matrix. This case is more challenging than the two previous processes, but the static case is greatly simplified by using the tools of Finite Free Probability theory. \todo{Corregir normalización}
+Before proceeding with the proper Jacobi process, let us find the expected characteristic polynomial of a static Jacobi matrix. This process is more challenging than the two previous processes, but the static case is greatly simplified by using the tools of Finite Free Probability theory. 
 
-%%%% Traducir y corregir normalización
-% Let $A$ and $B$ be two $n\times n$ random matrices with independent standard Gaussian entries. The MANOVA matrix $M$ or Jacobi ensemble is defined as
+Recall from Chapter \ref{ch:eigen_processes} that there are essentially two definitions for the Jacobi matrix, one coming form the Multivariate Analysis of Variance and other coming from the upper left corner of a Haar unitary Brownian matrix. For the static case, We work with the MANOVA case. 
 
-% \begin{equation*}
-%     M \coloneqq (A^TA + B^TB)^{-1}A^TA.
-% \end{equation*}
+\begin{theorem}
+    Let $A,B$ be two $n\times n$ random matrices with i.i.d. standard Gaussian entries. Define the matrix $M$ as
 
-% Para obtener $p_M(z)$ el polinomio característico esperado de $M$, podemos primero obtener el de su inversa, $p_{M^{-1}}(z)$. Tenemos que
+    \begin{equation*}
+        M \coloneqq (\trans AA + \trans BB)^{-1}\trans AA,
+    \end{equation*}
 
-% \begin{equation*}
-%     M^{-1} = (A^TA)^{-1}(A^TA + B^TB) = I + (A^TA)^{-1}B^TB.
-% \end{equation*}
+    then the expected characteristic polynomial of $M$, $\chi_z(M)$ is the $n$th Legendre polynomial,
 
-% Bajo las hipótesis de que $I$ y $(A^TA)^{-1}B^TB$ son normales y que $(A^TA)^{-1}B^TB$ es invariante bajo conjugación por una matriz ortogonal, se tiene que 
+    \begin{equation*}
+        \chi_z(M) = \frac{n!n!}{(2n)!}\sum_{k=0}^n z^k(-1)^{n-k} \binom nk \binom{n+k}k.
+    \end{equation*}
+    \todo{Revisar definición correcta de los Legendre}
+\end{theorem}
 
-% \begin{equation*}
-%     p_{M^{-1}}(z) = p_I(z) \boxplus_n p_{(A^TA)^{-1}B^TB}(z).
-% \end{equation*}
+\begin{proof}
 
-% Además, bajo el supuesto de que $(A^TA)^{-1}$ y $B^TB$ son normales e invariantes bajo conjugación por matrices ortogonales, se tiene que
-
-% \begin{equation*}
-%     p_{(A^TA)^{-1}B^TB}(z) = p_{(A^TA)^{-1}}\boxtimes p_{B^TB}(z).
-% \end{equation*}
-
-% Sabemos además que $p_{B^TB}(z) = L_n(z)$ y $p_{(A^TA)^{-1}}(z)=z^n L_n(1/z)$. Con esto podemos encontrar $p_{M^{-1}}(z)$.
-
-% \begin{align*}
-%     p_{(A^TA)^{-1}B^TB}(z) &= p_{(A^TA)^{-1}}\boxtimes_n p_{B^TB}(z) = (z^n p_{A^T A}(1/z) \boxtimes p_{B^TB}(z)) = \sum_{k=0}^n z^{n-k} (-1)^k \frac{a_kb_k}{\binom{n}{k}},\\ 
-%     &= \sum_{k=0}^n z^{n-k}(-1)^k \frac{\binom{n}{k}\frac{n!}{(n-k)!}\binom{n}{k}(-1)^{n-2k}\frac{n!}{k!}}{\binom{n}{k}} = \sum_{k=0}^n z^{n-k}(-1)^k \binom{n}{k}\frac{n!}{(n-k)!}(-1)^{n-2k}\frac{n!}{k!},\\
-%     &= \sum_{k=0}^n z^{n-k}(-1)^k \binom{n}{k}^2 n! (-1)^{n-2k}.
-% \end{align*}
-
-
-% Ahora calculamos $p_{M^{-1}}(z)$, recordando que $p_I(z) = (z-1)^n$
-
-% \begin{align*}
-%     p_I(z) \boxplus_n p_{(A^TA)^{-1}B^TB}(z) &= \sum_{k=0}^n z^{n-k}(-1)^k \sum_{j=0}^k \frac{(n-j)!(n-k+j)!}{n!(n-k)!}\binom{n}{j}\binom{n}{k-j}^2(-1)^{n-2(k-j)}n!,\\ 
-%     &= \sum_{k=0}^n z^{n-k}(-1)^{n-k}n!\binom{n}{k} \sum_{j=0}^k \frac{n!n!k!}{j!(k-j)!(k-j)!(n-k+j)!},\\ 
-%     &= \sum_{k=0}^n z^{n-k}(-1)^{n-k}n!\binom{n}{k} \sum_{j=0}^k \binom{n}{k-j}\binom{k}{j},\\  
-%     &= \sum_{k=0}^n z^{n-k}(-1)^{n-k}n!\binom{n}{k} \binom{n+k}{k}.
-% \end{align*}
-
-% Finalmente, usamos $p_{M}(z) = z^n p_{M^{-1}}(1/z)$ para obtener
-
-% \begin{align*}
-%     p_{M}(z) &= z^n \sum_{k=0}^n z^{k-n}(-1)^{n-k}n!\binom{n}{k} \binom{n+k}{k} = \sum_{k=0}^n z^{k}(-1)^{n-k}n!\binom{n}{k} \binom{n+k}{k}.
-% \end{align*}
-
-% Esto corresponde al $n$-ésimo polinomio de Legendre evaluado en $1-2z$.
-
-% Resta por probar la invarianza bajo transformaciones ortogonales de las matrices. Es claro que $(A^TA)^{-1}B^TB$ es invariante si $(A^TA)^{-1}$ y $B^TB$ lo son. Recordemos que las matrices de Wishart son invariantes bajo transformaciones ortogonales, entonces resta probar que $(A^TA)^{-1}$ es invariante bajo transformaciones ortogonales, para esto usamos la invarainza de $A^TA$,
-
-% \begin{align*}
-%     Q(A^T A)^{-1}Q^* &= (QA^TAQ^*)^{-1} \overset{d}{=} (A^TA)^{-1}.
-% \end{align*}
-
-% Con esto se prueba que el polinomio característico esperado de una matriz de Jacobi con parámetros $n,n,n$ es un polinomio de Legendre evaluado en $1-2z$.
-% \todo{Traducir y corregir normalización}
-%%%% Traducir y corregir normalización 
-
-%%%%%%%%%%%%%%%%%%%%% Traducida
-
-Recall from Chapter \ref{ch:eigen_processes} that there are essentially two definitions for the Jacobi matrix, one coming form the Multivariate Analysis of Variance and other coming from the upper left corner of a Haar unitary Brownian matrix. We work first with the MANOVA case. To obtain \( p_M(z) \), the expected characteristic polynomial of \( M \), we can first obtain that of its inverse, \( p_{M^{-1}}(z) \). We have
+Denote $p_M(z) \coloneqq \chi_z(M)$. To obtain \( p_M(z) \), we can first find that of its inverse, \( p_{M^{-1}}(z) \). We have
 
 \begin{equation*}
     M^{-1} = (A^TA)^{-1}(A^TA + B^TB) = I + (A^TA)^{-1}B^TB.
@@ -739,64 +695,67 @@ Furthermore, under the assumption that \( (A^TA)^{-1} \) and \( B^TB \) are norm
     p_{(A^TA)^{-1}B^TB}(z) = p_{(A^TA)^{-1}} \boxtimes p_{B^TB}(z).
 \end{equation*}
 
-We also know that \( p_{B^TB}(z) = L_n(z) \) and \( p_{(A^TA)^{-1}}(z)=z^n L_n(1/z) \). With this, we can find \( p_{M^{-1}}(z) \).
+We also know that \( p_{B^TB}(z) = L_n(z) \) and \( p_{(A^TA)^{-1}}(z)=\frac{z^n}{L_n(0)} L_n(1/z) \). With this, we can find \( p_{M^{-1}}(z) \), by noticing that $L_n(0)= (-1)^nn!$,
+
 
 \begin{align*}
-    p_{(A^TA)^{-1}B^TB}(z) &= p_{(A^TA)^{-1}} \boxtimes_n p_{B^TB}(z) = (z^n p_{A^T A}(1/z) \boxtimes p_{B^TB}(z)) = \sum_{k=0}^n z^{n-k} (-1)^k \frac{a_kb_k}{\binom{n}{k}},\\ 
-    &= \sum_{k=0}^n z^{n-k}(-1)^k \frac{\binom{n}{k}\frac{n!}{(n-k)!}\binom{n}{k}(-1)^{n-2k}\frac{n!}{k!}}{\binom{n}{k}} = \sum_{k=0}^n z^{n-k}(-1)^k \binom{n}{k}\frac{n!}{(n-k)!}(-1)^{n-2k}\frac{n!}{k!},\\
-    &= \sum_{k=0}^n z^{n-k}(-1)^k \binom{n}{k}^2 n! (-1)^{n-2k}.
+    p_{(A^TA)^{-1}B^TB}(z) &= p_{(A^TA)^{-1}} \boxtimes_n p_{B^TB}(z) = (\frac{(-1)^n}{n!}z^n p_{A^T A}(1/z) \boxtimes p_{B^TB}(z)),\\
+    &= \frac{(-1)^n}{n!}\sum_{k=0}^n z^{n-k} (-1)^k \frac{a_kb_k}{\binom{n}{k}},\\ 
+    &= \frac{(-1)^n}{n!}\sum_{k=0}^n z^{n-k}(-1)^k \frac{\binom{n}{k}\frac{n!}{(n-k)!}\binom{n}{k}(-1)^{n-2k}\frac{n!}{k!}}{\binom{n}{k}}, \\
+    &= \frac{(-1)^n}{n!}\sum_{k=0}^n z^{n-k}(-1)^k \binom{n}{k}\frac{n!}{(n-k)!}(-1)^{n-2k}\frac{n!}{k!},\\
+    &= \sum_{k=0}^n z^{n-k}(-1)^k \binom{n}{k}^2 (-1)^{2n-2k}.
 \end{align*}
 
 Now we calculate \( p_{M^{-1}}(z) \), remembering that \( p_I(z) = (z-1)^n \)
 
 \begin{align*}
-    p_I(z) \boxplus_n p_{(A^TA)^{-1}B^TB}(z) &= \sum_{k=0}^n z^{n-k}(-1)^k \sum_{j=0}^k \frac{(n-j)!(n-k+j)!}{n!(n-k)!}\binom{n}{j}\binom{n}{k-j}^2(-1)^{n-2(k-j)}n!,\\ 
-    &= \sum_{k=0}^n z^{n-k}(-1)^{n-k}n!\binom{n}{k} \sum_{j=0}^k \frac{n!n!k!}{j!(k-j)!(k-j)!(n-k+j)!},\\ 
-    &= \sum_{k=0}^n z^{n-k}(-1)^{n-k}n!\binom{n}{k} \sum_{j=0}^k \binom{n}{k-j}\binom{k}{j},\\  
-    &= \sum_{k=0}^n z^{n-k}(-1)^{n-k}n!\binom{n}{k} \binom{n+k}{k}.
+    p_I \boxplus_n p_{(A^TA)^{-1}B^TB} &= \sum_{k=0}^n z^{n-k}(-1)^k \sum_{j=0}^k \frac{(n-j)!(n-k+j)!}{n!(n-k)!}\binom{n}{j}\binom{n}{k-j}^2(-1)^{2n-2(k-j)},\\ 
+    &= \sum_{k=0}^n z^{n-k}(-1)^{2n-k}\binom{n}{k} \sum_{j=0}^k \frac{n!n!k!}{j!(k-j)!(k-j)!(n-k+j)!},\\ 
+    &= \sum_{k=0}^n z^{n-k}(-1)^{2n-k}\binom{n}{k} \sum_{j=0}^k \binom{n}{k-j}\binom{k}{j},\\  
+    &= \sum_{k=0}^n z^{n-k}(-1)^{2n-k}\binom{n}{k} \binom{n+k}{k}.
 \end{align*}
 
-Finally, we use \( p_{M}(z) = z^n p_{M^{-1}}(1/z) \) to obtain
+Finally, we use \( p_{M}(z) = \frac{z^n}{p_{M^{-1}}(0)} p_{M^{-1}}(1/z) \) to obtain
 
 \begin{align*}
-    p_{M}(z) &= z^n \sum_{k=0}^n z^{k-n}(-1)^{n-k}n!\binom{n}{k} \binom{n+k}{k} = \sum_{k=0}^n z^{k}(-1)^{n-k}n!\binom{n}{k} \binom{n+k}{k}.
+    p_{M}(z) &= \frac{n!n!z^n}{(2n)!} \sum_{k=0}^n z^{k-n}(-1)^{n-k}n!\binom{n}{k} \binom{n+k}{k} = \frac{n!n!}{(2n)!}\sum_{k=0}^n z^{k}(-1)^{n-k}n!\binom{n}{k} \binom{n+k}{k}.
 \end{align*}
 
 This corresponds to the \(n\)-th Legendre polynomial evaluated at \( 1-2z \), which is precisely the desired expected characteristic polynomial.
+\end{proof}
 
-It remains to prove the invariance under orthogonal transformations of the matrices. It is clear that \( (A^TA)^{-1}B^TB \) is invariant if \( (A^TA)^{-1} \) and \( B^TB \) are. Recall that Wishart matrices are invariant under orthogonal transformations, so it remains to prove that \( (A^TA)^{-1} \) is invariant under orthogonal transformations. For this, we use the invariance of \( A^TA \),
+Now we will approach the dynamical version. Let $N_1,N_2$ be two $n\times n$ random matrices with i.i.d standard Gaussian entries and $B_1, B_2$ be two independent Brownian motions in $\M_{n,n}(\R)$. Notice that 
 
 \begin{align*}
-    Q(A^T A)^{-1}Q^* &= (QA^TAQ^*)^{-1} \overset{n}{=} (A^TA)^{-1}.
+    (\trans{B_1} B_1 + \trans{B_2} B_2)^{-1} \trans{B_1}B_1 &\overset{d}= (t\trans{N_1} N_1 + t\trans{N_2} N_2)^{-1} t\trans{N_1}N_1 = (\trans{N_1} N_1 + \trans{N_2} N_2)^{-1} \trans{N_1}N_1,\\
+    (\trans{B_1} B_1 + \trans{B_2} B_2)^{-1/2} \trans{B_1}B_1& (\trans{B_1} B_1 + \trans{B_2} B_2)^{-1/2} \\ &\overset{d}=(t\trans{N_1} N_1 + t\trans{N_2} N_2)^{-1/2} t\trans{N_1}N_1 (t\trans{N_1} N_1 + t\trans{N_2} N_2)^{-1/2},\\
+    &=(\trans{N_1} N_1 + \trans{N_2} N_2)^{-1/2} \trans{N_1}N_1 (\trans{N_1} N_1 + \trans{N_2} N_2)^{-1/2}.
 \end{align*}
 
-With this, it is proven that the expected characteristic polynomial of a Jacobi matrix with parameters \( n,n,n \) is a Legendre polynomial evaluated at \( 1-2z \).
-%%%%%%%%%%%%%%%%%%%%%
-
-As defined in \cite{doumerc2005matrices} the generalized singular values problem can be expressed by the following matrix
+Thus, in both definitions of the Jacobi matrix, if we substitute the Gaussian random variables with Brownian motions, we get the same distribution. This means that the matrix Jacobi process is stationary with the law of the zeroes of the associated Jacobi polynomial. Then the expected characteristic polynomial doest not depend on $t$ and we can not formulate something as the time dependent Jacobi polynomials or Jacobi polynomials with variance. We will see, however, that if we start the process with another distribution, we can recover the deterministic Jacobi dynamics. All of the following content is taken from \cite{article:marcus_finite_free_point_processes}, where the author manages to generalize the results we got in the previous subsections together with the Jacobi case. We will work with the Jacobi matrix definition in \cite{doumerc2005matrices} where the Jacobi process can be expressed by the following matrix
 
 \begin{equation*}
     W = (\trans{M_1}M_1 + \trans{M_2}M_2)^{-1}\trans{M_1}M_1(\trans{M_1}M_1 + \trans{M_2}M_2)^{-1},
 \end{equation*}
 
-\noindent where $M_1, M_2$ are independent Gaussian matrices with dimensions $n_1\times k$ and $n_2 \times k$, respectively.  We can write $W_i = \trans{M_i}M_i$ for a shorter notation. Now to compute the characteristic polynomial we have,
+\noindent where $M_1, M_2$ are independent Gaussian matrices with dimensions $n_1\times k$ and $n_2 \times k$, respectively.  We can write $W_i = \trans{M_i}M_i$ and $\Delta=\det\left[(W_1+W_2)^{-1}\right]$ for a shorter notation. Now to compute the characteristic polynomial we have,
 
 \begin{align*}
     p_W(z) &= \det\left[ zI - (W_1+W_2)^{-\frac12}W_1(W_1+W_2)^{-\frac12} \right], \\ 
-    &= \det\left[(W_1+W_2)^{-1}\right]\det\left[ z(W_1+W_2) - (W_1+W_2)^{\frac12}W_1(W_1+W_2)^{-\frac12} \right],\\ 
-    &= \det\left[(W_1+W_2)^{-1}\right]\det\left[ z(W_1+W_2)(W_1+W_2)^{\frac12}(W_1+W_2)^{-\frac12} - (W_1+W_2)^{\frac12}W_1(W_1+W_2)^{-\frac12} \right], \\
-    &= \det\left[(W_1+W_2)^{-1}\right]\det\left[(W_1+W_2)^{\frac12}\right]\det\left[ z(W_1 + W_2) - W_1\right]\det\left[(W_1+W_2)^{-\frac12}\right],\\ 
-    &= \det\left[(W_1+W_2)^{-1}\right]\det\left[ (z-1)W_1 + zW_2 \right].
+    &= \Delta\det\left[ z(W_1+W_2) - (W_1+W_2)^{\frac12}W_1(W_1+W_2)^{-\frac12} \right],\\ 
+    &= \Delta\det\left[ z(W_1+W_2)(W_1+W_2)^{\frac12}(W_1+W_2)^{-\frac12} - (W_1+W_2)^{\frac12}W_1(W_1+W_2)^{-\frac12} \right], \\
+    &= \Delta\det\left[(W_1+W_2)^{\frac12}\right]\det\left[ z(W_1 + W_2) - W_1\right]\det\left[(W_1+W_2)^{-\frac12}\right],\\ 
+    &= \Delta\det\left[ (z-1)W_1 + zW_2 \right].
 \end{align*}
 
 Thus finding the expected characteristic polynomial (up to a normalization constant) can be done without the need to use the inverse of $W_1 + W_2$.
 
 
 
-In order to find the associated process, we will first generalize the results of the static Wishart and Jacobi matrices with an operator that generalized characteristic polynomial, then we will show that the Wishart process can be built in the base of this operator by adding a time parameter. Finally, we will tray to extend this same procedure to the Jacobi process which, as we will see, is less straightforward. In the process of building this generalizations we will make extensive use of finite free probability.
+Replicating the procedure in \cite{article:marcus_finite_free_point_processes}, we will first replicate the former results of the static Wishart and Jacobi matrices with an operator that generalized characteristic polynomials, then we will show that the Wishart process can be built in the base of this operator by adding a time parameter. Finally, we will extend this same procedure to the Jacobi process. In the process of building these generalizations we will make extensive use of Finite Free Probability Theory.
 
 \begin{definition}[Generalized characteristic polynomial]
-    Let $A, B$ be two random independent Gaussian matrices in $\mathcal M_{n_1,k}(\mathbb C)$ and $\mathcal M_{n_2,k}(\mathbb C)$ respectively. We define the generalized characteristic polynomial $p_{A,B}(x,y,z)$ as
+    Let $A, B$ be two random independent Gaussian matrices in $\mathcal M_{n_1,k}(\mathbb R)$ and $\mathcal M_{n_2,k}(\mathbb R)$ respectively. We define the generalized characteristic polynomial $p_{A,B}(x,y,z)$ as
 
     \begin{equation*}
         p_{A,B}(x,y,z) \coloneqq \det\left[ xI + y \trans{A}A + z \trans{B}B \right].
@@ -806,6 +765,8 @@ In order to find the associated process, we will first generalize the results of
 \end{definition}
 
     Notice that this generalizes the characteristic polynomial of the (static and dynamical) Wishart and the static Jacobi cases. 
+
+    Similarly to the univariate cases (Theorem \ref{thm:multiplicative_operators}), we have a multiplicative Theorem in terms of the operators that generate the new multivariate polynomials.
 
     \begin{theorem} \label{thm:multivariate_operators}
         Let $F$ and $G$ be two-variable polynomials and $A,B \in \mathcal M_{k,n_1}, C,D \in \mathcal M_{k,n_2}$ such that $C$ and $D$ are invariant under product by signed permutation matrices. Suppose that
@@ -825,19 +786,20 @@ In order to find the associated process, we will first generalize the results of
         By definition, we have that 
         
         \begin{align*}
-            \E{ p_{A, B}(x,y,z) } &= \E{ \det[ x I + y \trans A A + z \trans BB ] } = \E{\chi_{-y\trans AA -z\trans BB}(x)},\\
-            \E{ p_{C, D}(x,y,z) } &= \E{ \det[ x I + y \trans CC + z \trans DD ] } = \E{\chi_{-y\trans CC -z\trans DD}(x)}.
+            \E{ p_{A, B}(x,y,z) } &= \E{ \det[ x I + y \trans A A + z \trans BB ] } = \E{\chi_x(-y\trans AA -z\trans BB)},\\
+            \E{ p_{C, D}(x,y,z) } &= \E{ \det[ x I + y \trans CC + z \trans DD ] } = \E{\chi_x(-y\trans CC -z\trans DD)}.
         \end{align*}
 
-        Notice that by the results in Chapter \ref{ch:finite_free},
+        Notice that by Theorem \ref{thm:symmad} we have that
 
         \begin{align*}
-            \E{p_{A+C, B+D}(x,y,z)} &= \E{\chi_{-y\trans AA -z\trans BB}(x)} \boxplus_n \E{\chi_{-y\trans CC -z\trans DD}(x)}.
+            \E{p_{A+C, B+D}(x,y,z)} &= \E{\chi_x(-y\trans AA -z\trans BB)} \boxplus_n \E{\chi_x(-y\trans CC -z\trans DD)}.
         \end{align*}
 
         Applying Theorem \ref{thm:multiplicative_operators} we get to the desired result by considering the derivatives in $y,z$ as constant coefficients when evaluating in $x$.
-
     \end{proof}
+
+    With the next Theorem we get a limit for the products of differential operators, similarly to what we did in Chapter \ref{ch:finite_free} when proving the finite free limit theorems. We will use this Theorem to prove properties of the generalized characteristic polynomial of Gaussian matrices, by see these matrices as limits.
 
     \begin{theorem} \label{thm:exp_operator}
         Let $\{A_i\}_{i=0}^\infty$ and $\{B_i\}_{i=0}^\infty$ be sequences of matrices invariant under transformation by signed permutation matrices such that
@@ -894,6 +856,8 @@ In order to find the associated process, we will first generalize the results of
     \noindent which is the desired result.
     \end{proof}
 
+    Applying the previous Theorem, we find that the differential operator that generates the generalized characteristic polynomial of Gaussian matrices, has an exponential form.
+
     \begin{corollary}
         Let $A$ and $B$ be equal in law to $\sigma_1 N_1$ and $\sigma_2 N_2$ where $N_1$ and $N_2$ are matrices with all of the entries being independent standard normal random variables, then
         
@@ -917,7 +881,7 @@ In order to find the associated process, we will first generalize the results of
             \end{equation*}        
         \end{proof}
 
-        With this we have an operator that allows us to compute $q_{A,B}(x,y,z)$ for $A,B$ independent Gaussian matrices with zero mean and variances $\sigma_1,\sigma_2$, respectively. Our goal is to be able to use this to study matrix-valued stochastic processes by letting the variances vary linearly in time. Hence, the entries of the matrices have the same law as a standard Brownian motion starting at zero. An interesting question is how this behavior would be affected if we start our processes at points different than zero. The answer is given by Theorem \ref{thm:multivariate_operators} and noticing that any polynomial $r(x,y,z)$ of orders $k,n_1,n_2$ can be seen as a polynomial differential operator acting on $x^ky^{n_1}y^{n_2}$, so if $S\in \M_{k,n_1}(\C),T\in \M_{k,n_2}(\C)$ are fixed matrices and $A, B$ are Gaussian independent matrices with variances $\sigma_1$ and $\sigma_2$, respectively, then
+        With this we have an operator that allows us to compute $q_{A,B}(x,y,z)$ for $A,B$ independent Gaussian matrices with zero mean and variances $\sigma_1,\sigma_2$, respectively. Our goal is to be able to use this to study matrix-valued stochastic processes by letting the variances vary linearly in time. Hence, the entries of the matrices have the same law as a standard Brownian motion starting at zero. An interesting question is how this behavior would be affected if we start our processes at points different than zero. The answer is given by Theorem \ref{thm:multivariate_operators} and noticing that any polynomial $r(x,y,z)$ of orders $k,n_1,n_2$ can be seen as a polynomial differential operator acting on $x^ky^{n_1}y^{n_2}$, so if $S\in \M_{k,n_1}(\R),T\in \M_{k,n_2}(\R)$ are fixed matrices and $A, B$ are Gaussian independent matrices with variances $\sigma_1$ and $\sigma_2$, respectively, then
 
         \begin{equation*}
             \E{q_{S+A,T+B}(x,y,z)} = e^{\sigma_1 \partial_x \partial_y + \sigma_2 \partial_x \partial_z}[q_{S,T}(x,y,z)].
@@ -969,30 +933,31 @@ In order to find the associated process, we will first generalize the results of
 
     \noindent which leads to
 
+
     \begin{equation} \label{eq:generalized_operator}
         \E{p_{A,B}(x,y,z)} = (1+z\sigma_2\partial_x)^{n_2-l} \left(1 + y\sigma_1\partial_x\right)^{n_1 - j}[x^k].
     \end{equation}
 
-    If we let $\sigma_1 = \sigma_2 = 1$ and replace $y=-1, z=0$ in \eqref{eq:generalized_operator}, we recover the static Wishart matrix and we can conclude that
+    If we let $\sigma_1 = \sigma_2 = 1$ and replace $y=-1, z=0$ in \eqref{eq:generalized_operator}, for $n_1 = k$, we recover the static Wishart matrix and we can conclude that
 
     \begin{equation} \label{eq:wishart_finite_free}
         \E{\det[xI - \trans{A}A]} = (1 - \partial_x)^{n_1}[x^k],
     \end{equation}
 
-    \noindent which is exactly the associated Laguerre polynomial previously found in Section \ref{sec:polynomials}.
+    \noindent which is exactly the associated Laguerre polynomial previously defined in Section \ref{sec:polynomials}. Thus, we have successfully replicated the result in Subsection \ref{subsec:wishart_laguerre}.
 
-    Keeping the unitary variances and replacing $x=0, y=(x-1), z=x$ we get the static Jacobi matrix, as shown previously, thus 
+    Keeping the unitary variances and replacing $x=0, y=(x-1), z=x$, we get the static Jacobi matrix, as shown previously, thus 
 
     \begin{equation*}
         \E{\det[(x-1)W_1 + xW_2]} = (1+x\partial_x)^{n_2} \left(1 + (x-1)\partial_x\right)^{n_1}[x^k] = P_k^{n_2 - k, n_1-k}(2x-1).
     \end{equation*}
+    \todo{Sustituir esta forma en el operador del polinomio de Jacobi.}
+    This is the Jacobi polynomial of order $k$ with parameters $n_2 - k$ and $n_1-k$ evaluated in $2x-1$. When we normalize to make it monic, we get the result appearing in \cite{edelman1988eigenvalues}.
 
-    This is the Jacobi polynomial of order $k$ with parameters $n_2 - k$ and $n_1-k$ evaluated in $2x-1$. When we normalize to make it monic we get the result appearing in \cite{edelman1988eigenvalues}.
-
-    Now let $\sigma_1= \sigma_2 = t$, then $A,B$ are equal in law to standard Brownian motions in $\M_{n_1,k}(\R)$ and $\M_{n_2,k}(\R)$, respectively. We should recover the expected characteristic polynomial of the Wishart and Jacobi processes. The Wishart case is evident by replacing $-1$ with $-t$ in \eqref{eq:wishart_finite_free} and compare it to equation \eqref{eq:laguerre_with_variance}. For the Jacobi process, we have
+    Now let $\sigma_1= \sigma_2 = t$, then $A,B$ are equal in law to standard Brownian motions in $\M_{n_1,k}(\R)$ and $\M_{n_2,k}(\R)$, respectively. We should recover the expected characteristic polynomial of the Wishart and Jacobi processes. The Wishart case is evident by replacing $-1$ with $-t$ in \eqref{eq:wishart_finite_free} and compare it to equation \eqref{eq:laguerre_with_variance}. For the Jacobi process with initial condition $p(z)$, we have
 
     \begin{equation} \label{eq:dynamic_jacobi}
-        \E{\det[(x-1)W_1(t) + xW_2(t)]} = (1+xt\partial_x)^{n_2} \left(1 + (x-1)t\partial_x\right)^{n_1}[x^k].
+        \E{\det[(z-1)W_1(t) + zW_2(t)]} = (1+xt\partial_x)^{n_2} \left(1 + (x-1)t\partial_x\right)^{n_1}[p(z)].
     \end{equation}
 
     In analogy to what we found for the Dyson Brownian motion and the Wishart process, we need to verify if the roots of the polynomial defined in \eqref{eq:dynamic_jacobi} satisfy a differential equation given by the finite variation part of \eqref{eq:jacobi}. Let us work in full generality and define for polynomials of the form $x^i y^j z^l$, the operator
@@ -1006,8 +971,11 @@ In order to find the associated process, we will first generalize the results of
     Denote the time-dependant polynomial $Q_{n_1,n_2}^t[p(x,y,z)]$ by $\hat p(x,y,z,t)$. In analogy to what we have done with the Hernmite and Laguerre cases, we want to find for every $t$ the values $x(t), y(t), z(t)$ such that $\hat p(x(t),y(t),z(t),t)=0$. By derivating with respect to $t$, we get
 
     \begin{align*}
-       0 &= \partial_t [\hat p(x(t),y(t),z(t),t)]\\ &= \left[(\partial_t x(t))\partial_x \hat p(x,y,z,t) + (\partial_t y(t))\partial_y  \hat p(x,y,z,t) + (\partial_t z(t))\partial_z \hat p(x,y,z,t) + \partial_t \hat p(x,y,z,t)\right]_{(x,y,z)=(x(t),y(t),z(t))}.
+       0 &= \partial_t [\hat p(x(t),y(t),z(t),t)]\\ &= [(\partial_t x(t))\partial_x \hat p(x,y,z,t) + (\partial_t y(t))\partial_y  \hat p(x,y,z,t) \\
+       &\phantom{espaciooooooooo}+ (\partial_t z(t))\partial_z \hat p(x,y,z,t) + \partial_t \hat p(x,y,z,t)]_{(x,y,z)=(x(t),y(t),z(t))}.
     \end{align*}
+
+    Now, again in full generality, let us find some properties satisfied by the time-dependant polynomial with arbitrary parameters.
 
     \begin{lemma}
         The time-dependant polynomial $\hat p(x,y,z,t)$ satisfies
@@ -1064,6 +1032,8 @@ In order to find the associated process, we will first generalize the results of
         &= - (n_1y + n_2z)\partial_x[p] + y^2\partial_y\partial_x[p] + z^2\partial_z\partial_x[p].
     \end{align*}
 
+    As a last step, we will use that $\hat p$  is homogeneous in order to find more convenient expressions for the derivatives. We state this result as a general Lemma for homogeneous polynomials.
+
     \begin{lemma}
         Let $r(x,y,z)$ be a homogeneous polynomial of order $k$ in $x,y,z$, then
 
@@ -1100,7 +1070,15 @@ In order to find the associated process, we will first generalize the results of
         &= -(n_1y + n_2 z)\partial_x \hat p + (y+z)(k-1)\partial_x \hat p - yz (\partial_z\partial_x \hat p + \partial_y\partial_x \hat p) - (y+z)x\partial_{xx} \hat p|_{t=0}.
     \end{align*}
 
-    Now we can substitute $y = w, z = (w-1)$ and define the polynomial $j(x,w,t)$ as
+    With this, we are ready to prove that, for an arbitrary initial condition, we can recover the deterministic Jacobi dynamics.
+
+    \begin{theorem}
+        Let $J = (J(t), t \ge 0)$ be an $n\times n$ matrix valued Jacobi process with parameters $n_1 - k$ and $n_2 - k$, respectively. Let $A \in \M_{n,n}$ be any matrix with roots in $[0,1]$. Then the roots of the expected characteristic polynomial of $A + J(t)$ satisfy the deterministic Jacobi equation \eqref{eq:deterministic_jacobi}.
+    \end{theorem}
+
+    \begin{proof}
+
+    In the above results, we can substitute $y = w, z = (w-1)$ and define the polynomial $j(x,w,t)$ as
 
     \begin{equation*}
         j(x,w,t) = \hat p(x(t), w(t), w(t)-1, t).
@@ -1109,7 +1087,7 @@ In order to find the associated process, we will first generalize the results of
     Using the above results, we have for $j(w,t)$
 
     \begin{align*}
-        (\partial_t x)(\partial_x j) &+ (\partial_t w)(\partial_w j)|_{t=0} \\
+        (\partial_t x)&(\partial_x j) + (\partial_t w)(\partial_w j)|_{t=0} \\
         &= -(n_1w + n_2w-n_2))\partial_x j + (2w-1)(k-1)\partial_x j - w(w-1)(\partial_x\partial_w j) - (2w-1)x\partial_{xx} j|_{t=0}.
     \end{align*}
 
@@ -1124,8 +1102,10 @@ In order to find the associated process, we will first generalize the results of
     To further simplify the last expression we need some hypothesis about the relationship between $\partial_x j$ and $\partial_w j$. We recover this from the definition as the generalized characteristic polynomial.
 
     \begin{align*}
-        j(x,w,t) &= \E{ \det[ xI + (u-1)\trans A_1(t) A_1(t) + u \trans A_2(t) A_2(t) ] } = \E{ \det[ xI + (u-1)\trans A_1(t) A_1(t) + u (I - \trans A_1(t) A_1(t)) ] }, \\
-        &= \E{ \det[ (x+u)I - \trans A_1(t) A_1(t) +(u-u)\trans A_1(t) A_1(t) ] } = \E{ \det[ (x+u)I - \trans A_1(t) A_1(t)] }.
+        j(x,w,t) &= \E{ \det[ xI + (u-1)\trans A_1(t) A_1(t) + u \trans A_2(t) A_2(t) ] }, \\
+        &= \E{ \det[ xI + (u-1)\trans A_1(t) A_1(t) + u (I - \trans A_1(t) A_1(t)) ] }, \\
+        &= \E{ \det[ (x+u)I - \trans A_1(t) A_1(t) +(u-u)\trans A_1(t) A_1(t) ] }, \\
+        &= \E{ \det[ (x+u)I - \trans A_1(t) A_1(t)] }.
     \end{align*}
 
     So this means that the derivatives of $j$ with respect to $x$ are the same as its derivatives with respect to $w$ and then we can equate $\partial_w j$ to $\partial_x j$ to get
@@ -1140,6 +1120,8 @@ In order to find the associated process, we will first generalize the results of
         &=  n_2 - (n_1 + n_2)w_i + \sum_{j \neq i}\frac{ - w_iw_j - w_j(w_i-1) +w_i }{w_i - w_j},\\
         &= n_2 - (n_1 + n_2)w_i + \sum_{j \neq i}\frac{w_j(1-w_i) +w_i(1-w_j)}{w_i - w_j}.
     \end{align*}
+
+\end{proof}
     %Notice that by definition, $p(x,y,z)$ is a homogeneous polynomial, and this allows us to 
     
     % Poner casos estáticos junto al Hermite

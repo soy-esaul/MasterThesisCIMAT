@@ -338,7 +338,7 @@ The symmetric additive convolution between two Hermite polynomials with the same
     Once again, we are interested in a monic scaling of these polynomials, but now we also want a ``transaltion of them''. The original Jacobi (and Legendre) polynomials are defined in $[-1,1]$, but we are interested in polynomials that take values in $[0,1]$. We get these polynmials by evaluating a Jacobi polynomila in $1-2z$, so that they are orthogonal under the measure $\mathds 1_{(0,1)}(z)z^\alpha(1-z)^\beta \d z$, i.e. the measure of a beta distribution. In the particular case when $\alpha = \beta = 0$, they are orthogonal under the measure of an uniform random variable in $(0,1)$. The closed form for the Legendre polynomials evaluated in $1-2z$ and scaled to be monic is
 
     \begin{equation*}
-        P_n(z) = \frac{n!}{(2n)!} \sum_{k=0}^n \binom nk (-1)^{n-k} \frac{(n+k)!}{k!} z^k.
+        P_n(z) =\frac{n!n!}{(2n)!}\sum_{k=0}^n z^k(-1)^{n-k} \binom nk \binom{n+k}k.
     \end{equation*}
 
     The first few Legendre polynomials are
