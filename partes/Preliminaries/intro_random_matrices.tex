@@ -79,7 +79,7 @@ Given any self adjoint $n\times n$ matrix $A$, we can associate an empirical pro
 
 We call $\hat\mu$ the empirical spectral measure. 
 
-If $A$ is random (i.e. its entries are random variables), $\hat\mu:\Omega \times \F \to [0,1]$ is a random measure, which means that for every $\omega$, $\hat\mu(\omega, \cdot)$ is a probability measure and for every measurable set $B\in\F$, $\hat\mu(\cdot,B)$ is a real random variable. In this case, it is possible to define a deterministic empirical measure associated to $A$ by simply taking the expectation of $\hat\mu$ on the measure of $A$.
+If $A$ is random (i.e. its entries are random variables), $\hat\mu:\Omega \times \F \to [0,1]$ is a random measure, which means that for every $\omega$, $\hat\mu(\omega, \cdot)$ is a probability measure, and for every measurable set $B\in\F$, $\hat\mu(\cdot,B)$ is a real random variable. In this case, it is possible to define a deterministic empirical measure associated to $A$ by simply taking the expectation of $\hat\mu$ on the measure of $A$.
 
 \begin{equation*}
     \hat\nu(B) \coloneqq \E{ \frac1n \sum_{j=1}^n \mathds 1_B(\lambda_j) } = \frac1n \sum_{j=1}^n \P{\lambda_j \in B}.
@@ -115,7 +115,7 @@ The next identity allows us to compute similar moments of $A$.
     \end{equation*}
 \end{theorem}
 
-In random matrix theory it is common to work with matrix ensembles. An ensemble is a set of matrices with a probability measure associated to them.
+In random matrix theory it is common to work with matrix ensembles. An ensemble is a set of matrices with an associated probability measure.
 
 \begin{example}[Independent identically distributed entries ensemble]
     If $A$ is an $n\times n$ matrix whose entries $A_{ij}, 1 \le i \le n, 1\le j \le n$ are all independent identically distributed random variables, we say that $A$ is an i.i.d. ensemble.
@@ -126,7 +126,7 @@ In random matrix theory it is common to work with matrix ensembles. An ensemble 
 \end{example}
 
 \begin{example}[Gaussian invariant ensembles]
-    Let $\mathbb H$ denote the field of quaternions and $\mathbb F \in \{ \R, \C, \mathbb H \}$. If $R$ is an hermitian matrix whose entries are standard normal random variables in $\mathbb F$ independent except for symmetries, then we say that $R$ is a Gaussian invariant ensemble. Depending on $\mathbb F$ we have particular names for each ensemble.
+    Let $\mathbb H$ denote the field of quaternions and $\mathbb F \in \{ \R, \C, \mathbb H \}$. If $R$ is a hermitian matrix whose entries are standard normal random variables in $\mathbb F$ independent except for symmetries, then we say that $R$ is a Gaussian invariant ensemble. Depending on $\mathbb F$ we have particular names for each ensemble.
 
     \begin{itemize}
         \item If $\mathbb F = \R$, we call $R$ the Gaussian orthogonal ensemble.
@@ -134,15 +134,15 @@ In random matrix theory it is common to work with matrix ensembles. An ensemble 
         \item If $\mathbb F = \mathbb H$, we call $R$ the Gaussian symplectic ensemble.
     \end{itemize}
 
-    The specific names are given because the distribution of the eigenvalues of $R$ remains unchanged under a conjugation by an orthogonal (respectively unitary, symplectic) matrix. This property is analogous to the property of vector of independent normal variables that preserve their distribution after being transformed by an orthogonal matrix.
+    The specific names are given because the distribution of the eigenvalues of $R$ remains unchanged under a conjugation by an orthogonal (respectively unitary, symplectic) matrix. This property is analogous to the property of a vector of independent normal variables that preserve their distribution after being transformed by an orthogonal matrix.
 \end{example}
 
 \begin{example}[Haar unitary ensemble]
-    If we consider $\mathcal U_{n,n}(\C)$ the group of complex unitary matrices ($\hermit{U}U = I_n = U\hermit{U}$). We can define in $\mathbb U_{n,n}(\C)$ a Haar measure that is unique up to a constant. If we normalize this measure we have the only Haar probability measure $\mu_U$ in $\mathbb U_{n,n}(\C)$. A Haar unitary ensemble is a matrix sampled from $\mu_U$.
+    If we consider $\mathcal U_{n,n}(\C)$ the group of complex unitary matrices ($\hermit{U}U = I_n = U\hermit{U}$). In $\mathbb U_{n,n}(\C)$, we can define  a Haar measure unique up to a constant. If we normalize this measure we have the only Haar probability measure $\mu_U$ in $\mathbb U_{n,n}(\C)$. A Haar unitary ensemble is a matrix sampled from $\mu_U$.
 \end{example}
 
 \begin{example}[Wigner example]
-    Let $W$ be a random self-adjoint matrix whose every entry is a i.i.d. random variable except for the symmetries. Then we say that $W$ is a Wigner ensemble. Notice in particular that the Gaussian invariant ensembles are Wigner ensembles. This is one of the first studied ensembles.
+    Let $W$ be a random self-adjoint matrix whose every entry is an i.i.d. random variable except for the symmetries. Then we say that $W$ is a Wigner ensemble. Notice in particular that the Gaussian invariant ensembles are Wigner ensembles. This is one of the first studied ensembles.
 \end{example}
 
 \begin{example}[Wishart ensemble]
@@ -153,7 +153,7 @@ In random matrix theory it is common to work with matrix ensembles. An ensemble 
 
 % Laws of large numbers, Wigner's semicircle law.
 
-The next results give the convergence of an empirical spectral measure to a continuous probability measure in $\R$ when the matrix dimension $n$ tends to infinity. The limit only depends on the first two moments of the variables involved and not on the whole distribution, so it can be seen as a matrix analogous of the Central Limit Theorem.
+The next results give the convergence of an empirical spectral measure to a continuous probability measure in $\R$ when the matrix dimension $n$ tends to infinity. The limit only depends on the first two moments of the variables involved and not on the whole distribution, thus it can be seen as a matrix analogous to the Central Limit Theorem.
 
 \begin{theorem}[Wigner's semicircle law \cite{book:mingo_speicher}]
     For each $n\in \N$, let $W^{(n)}$ be a Wigner ensemble  and its entries $W_{ij}^{(n)}$ satisfy the following conditions.
