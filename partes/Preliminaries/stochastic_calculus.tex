@@ -1,10 +1,10 @@
 \section{Stochastic Calculus}
 
-When we work with continuous time processes, one of the most important tools is stochastic calculus. The results provided by the Itô integral and related concepts allow to study dynamical systems with a random behaviour. In this section we introduce some stochastic calculus that are used along the thesis. The first part deals with the definition and main properties of Itô and Stratonovich integrals in $\R$-valued processes, we later generalize the definition to $\R^d$-valued processes and finally to processes taking values in spaces of matrices.
+When working with continuous time processes, stochastic calculus is one of the most useful tools. The results provided by the Itô integral and related concepts allow us to study dynamical systems with random behavior. In this section, we introduce some stochastic calculus used in the thesis. The first part deals with the definition and main properties of Itô and Stratonovich integrals in $\R$-valued processes, we later generalize the definition to $\R^d$-valued processes and finally to processes taking values in spaces of matrices.
 
 \subsection{Stochastic calculus for $\mathbb{R}^n$-valued processes}
 
-We begin by defining the Itô integral for $\R$-valued processes and stating its main properties. In all of the next definitions, consider we are working on a filtered probability space $(\Omega, \mathscr F, (\mathscr F_t)_t, P)$ and we use the convention that a continuous time stochastic process is a stochastic process indexed by $\R^+ = [0,\infty)$. Most of the definition and results here are taken from \cite{book:klebaner}, a more general approach to the subject can be found in \cite{book:karatzas} or \cite{book:revuzyor}.
+We start defining the Itô integral for $\R$-valued processes and stating its main properties. In all of the next definitions, consider we are working on a filtered probability space $(\Omega, \mathscr F, (\mathscr F_t)_t, P)$ and we use the convention that a continuous time stochastic process is a stochastic process indexed by $\R^+ = [0,\infty)$. Most of the definition and results here are taken from \cite{book:klebaner}, a more general approach to the subject can be found in \cite{book:karatzas} or \cite{book:revuzyor}.
 
 There are several definitions of the Itô integral, some of them are more general. For the sake of simplicity, we will use one that resembles the definition of Lebesgue integral. Let us consider a simple process $X = (X(t))_{t\ge0}$ adapted to the filtration $\mathscr F_t$, i.e.
 
@@ -16,14 +16,14 @@ There are several definitions of the Itô integral, some of them are more genera
 
 
 \begin{definition} \label{def:itosimple}
-    Let $X$ be a simple processes adapted to $\mathscr F_t$ and square integrable. Let $B = (B(t))_{t\ge 0}$ be a Brownian motion adapted to $\mathscr F_t$. The Itô integral of $X$ with respect to $B$ on $[0,T]$ is 
+    Let $X$ be a simple process adapted to $\mathscr F_t$ and square integrable. Let $B = (B(t))_{t\ge 0}$ be a Brownian motion adapted to $\mathscr F_t$. The Itô integral of $X$ with respect to $B$ on $[0,T]$ is 
 
     \begin{equation*}
         \int_0^T X(s) \d B(s) \coloneqq \sum_{j=0}^{n-1} \xi_j(B(j+1) - B(j)).
     \end{equation*}
 \end{definition}
 
-It is not hard to verify from the definition that the integral is linear and has zero mean. Also, it can be proven that it satisfies the so called Itô isometry,
+It is not hard to verify from the definition that the integral is linear and has zero mean. Also, it can be proven that it satisfies the so-called Itô isometry,
 
 \begin{equation*}
     \E{ \left( \int_0^T X(s) \d B(s)\right)^2 } = \int_0^T \E{X^2(s)} \d s.
