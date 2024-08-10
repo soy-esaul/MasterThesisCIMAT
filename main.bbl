@@ -997,5 +997,85 @@
     \field{journaltitle}{Journal of Mathematical Physics}
     \field{year}{2002}
   \endentry
+
+  \entry{article:jacobi_matrix_model}{article}{}{}
+    \name{author}{1}{}{%
+      {{hash=LRA}{%
+         family={Lippert},
+         familyi={L\bibinitperiod},
+         given={Ross\bibnamedelima A.},
+         giveni={R\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{LRA1}
+    \strng{fullhash}{LRA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{abstract}{%
+    {This note presents a random matrix model for general ($\beta$\\&gt;0)
+  $\beta$-Jacobi ensembles. This generalizes the well-known MANOVA models for
+  $\beta$=1,2,4 and eliminates the quantization of $\beta$ (and other
+  parameters) present in the previously known models. This model is a partial
+  answer to an open problem presented by Dumitriu and Edelman, where they also
+  presented models for the $\beta$-Laguerre and $\beta$-Hermite ensembles.}%
+    }
+    \verb{doi}
+    \verb 10.1063/1.1604184
+    \endverb
+    \verb{eprint}
+    \verb https://pubs.aip.org/aip/jmp/article-pdf/44/10/4807/19006721/4807\_1\
+    \verb _online.pdf
+    \endverb
+    \field{issn}{0022-2488}
+    \field{number}{10}
+    \field{pages}{4807\bibrangedash 4816}
+    \field{title}{{A matrix model for the $\beta$-Jacobi ensemble}}
+    \verb{url}
+    \verb https://doi.org/10.1063/1.1604184
+    \endverb
+    \field{volume}{44}
+    \verb{file}
+    \verb Para el modelo matricial del beta-Jacobi:C\:/Users/Esaul/Documents/Ma
+    \verb estría en Probabilidad y Estadística/4 Cuarto semestre/Seminario de
+    \verb  investigación/Referencias/Artículos/Ross A. Lippert - A matrix mod
+    \verb el for the beta-Jacobi ensemble.pdf:PDF
+    \endverb
+    \field{journaltitle}{Journal of Mathematical Physics}
+    \field{month}{10}
+    \field{year}{2003}
+    \warn{\item Can't use 'journaltitle' + 'journal' \item Can't use 'date' +
+  'year'}
+  \endentry
+
+  \entry{article:edelman_sutton_jacobi}{article}{}{}
+    \name{author}{2}{}{%
+      {{hash=EA}{%
+         family={Edelman},
+         familyi={E\bibinitperiod},
+         given={Alan},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=SBD}{%
+         family={Sutton},
+         familyi={S\bibinitperiod},
+         given={Brian\bibnamedelima D},
+         giveni={B\bibinitperiod\bibinitdelim D\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer}%
+    }
+    \strng{namehash}{EASBD1}
+    \strng{fullhash}{EASBD1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{number}{2}
+    \field{pages}{259\bibrangedash 285}
+    \field{title}{The beta-Jacobi matrix model, the CS decomposition, and
+  generalized singular value problems}
+    \field{volume}{8}
+    \field{journaltitle}{Foundations of Computational Mathematics}
+    \field{year}{2008}
+  \endentry
 \enddatalist
 \endinput

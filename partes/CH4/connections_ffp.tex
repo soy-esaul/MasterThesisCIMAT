@@ -312,10 +312,10 @@ Using Theorem \ref{thm:heat_burgers} its is easy to prove that the roots of the 
     \end{align*}
 \end{proof}
 
-As a final part for this subsection, let us prove that if you have an arbitrary initial condition for a self adjoint Brownian motion, then its expected characteristic polynomial will also satisfy \eqref{eq:calor}. Notice that as a consequence, this means that its roots will move according to \eqref{eq:deterministic_dyson}.
+As a final part for this subsection, let us prove that if you have an arbitrary (real valued) initial condition for a self adjoint Brownian motion, then its expected characteristic polynomial will also satisfy \eqref{eq:calor}. Notice that as a consequence, this means that its roots will move according to \eqref{eq:deterministic_dyson}.
 
 \begin{theorem}
-    Let $A$ be an $n\times n$ fixed matrix and $W$ an $n\times n$ self-adjoint Brownian matrix, then $q_A(z,t)$ defined as
+    Let $A$ be an $n\times n$ fixed self-adjoint matrix and $W$ an $n\times n$ self-adjoint Brownian matrix, then $q_A(z,t)$ defined as
     
     \begin{equation*}
         q_A(z,t) \coloneqq \E{ \chi_z( A + W) },
@@ -598,9 +598,11 @@ As a final part for this subsection, let us prove that if you have an arbitrary 
     \end{align*}
 \end{proof}
 
-\begin{theorem}
+    In total analogy to Proposition \ref{prop:convolution_of_hermites}, we have a similar result for the Laguerre polynomials using asymmetric additive convolution.
+
+\begin{proposition}
     Let $L_n(z,t_1) = (1-ct_1\partial_z)^n[z^n]$ and $L_n(z,t_2) = (1-ct_2\partial_z)^n[z^n]$ be two Laguerre polynomials of degree $n$, then their asymmetric additive convolution $L_n(z,t_1) \aac L_n(z,t_2)$ is a Laguerre polynomial of degree $n$ with variance $t_1+t_2$, $L_n(z,t_1+t_2)$. 
-\end{theorem}
+\end{proposition}
 
 \begin{proof}
     \begin{align*}
@@ -610,6 +612,8 @@ As a final part for this subsection, let us prove that if you have an arbitrary 
         &=  \sum_{k=0}^n \binom{n}{k} \frac{(-1)^k z^{n-k}n!}{(n-k)!}[c(t_1 + t_2)]^k = L_n(z,t_1 + t_2).
     \end{align*}
 \end{proof}
+
+Finally, just like in the Dyson Brownian motion case, we state a Theorem that allows us to conclude that, no matter the initial position of the roots, if convoluted with a Laguerre polynomial, they will always move according to the deterministic Wishart process.
 
 \begin{theorem}
     Let $L_n(z,t)$ be a Laguerre polynomial of order $n$ with variance $t$ and let $p(z)$ be any monic polynomial. Then the asymmetric additive convolution of $L_n(z,t)$ and $p(z)$, $L_n(z,t) \aac p(z)$ satisfies the following differential equation
@@ -624,25 +628,33 @@ As a final part for this subsection, let us prove that if you have an arbitrary 
 
     \begin{align*}
         \partial_z[L_n(z,t) \aac p(z)] &= \partial_z \left[ \sum_{k=0}^n z^{n-k}(-1)^k \sum_{j=0}^k \left(\frac{(n-j)!(n-k+j)!}{n!(n-k)!}\right)^2 \binom{n}{j}\frac{(ct_1)^jn!}{(n-j)!}b_{k-j}\right],\\ 
-        &= \sum_{k=0}^{n-1} (n-k)z^{n-k-1}(-1)^k \sum_{j=0}^k \left(\frac{(n-j)!(n-k+j)!}{n!(n-k)!}\right)^2 \binom{n}{j}\frac{(ct_1)^jn!}{(n-j)!}b_{k-j},\\
+        &= \sum_{k=0}^{n-1} (n-k)z^{n-k-1}(-1)^k \sum_{j=0}^k \left(\frac{(n-j)!(n-k+j)!}{n!(n-k)!}\right)^2 \binom{n}{j}\frac{(ct_1)^jn!}{(n-j)!}b_{k-j},
+        \intertext{we use the first derivative to find the second one}
         \partial_{zz}[L_n(z,t) \aac p(z)] &= \partial_{zz} \left[ \sum_{k=0}^n z^{n-k}(-1)^k \sum_{j=0}^k \left(\frac{(n-j)!(n-k+j)!}{n!(n-k)!}\right)^2 \binom{n}{j}\frac{(ct_1)^jn!}{(n-j)!}b_{k-j}\right],\\ 
-        &= \sum_{k=0}^{n-2} (n-k)(n-k-1)z^{n-k-2}(-1)^k \sum_{j=0}^k \left(\frac{(n-j)!(n-k+j)!}{n!(n-k)!}\right)^2 \binom{n}{j}\frac{(ct_1)^jn!}{(n-j)!}b_{k-j},\\
+        &= \sum_{k=0}^{n-2} (n-k)(n-k-1)z^{n-k-2}(-1)^k \sum_{j=0}^k \left(\frac{(n-j)!(n-k+j)!}{n!(n-k)!}\right)^2 \binom{n}{j}\frac{(ct_1)^jn!}{(n-j)!}b_{k-j},
+        \intertext{finally, for the derivative in time}
         \partial_t[L_n(z,t) \aac p(z)] &= \partial_t \left[ \sum_{k=0}^n z^{n-k}(-1)^k \sum_{j=0}^k \left(\frac{(n-j)!(n-k+j)!}{n!(n-k)!}\right)^2 \binom{n}{j}\frac{(ct_1)^jn!}{(n-j)!}b_{k-j}\right],\\
         &= \sum_{k=0}^n z^{n-k}(-1)^k \sum_{j=1}^k \left(\frac{(n-j)!(n-k+j)!}{n!(n-k)!}\right)^2 \binom{n}{j}\frac{c^j jt_1^{j-1}n!}{(n-j)!}b_{k-j},\\ 
         &= \sum_{k=1}^n z^{n-k}(-1)^k \sum_{j=0}^{k-1} \left(\frac{(n-j-1)!(n-k+j+1)!}{n!(n-k)!}\right)^2 \binom{n}{j+1}\frac{c^{j+1} (j+1)t_1^{j}n!}{(n-j-1)!}b_{k-j-1},\\ 
+        \intertext{with a shift in the coefficients we can have the same index as in the two other derivatives}
         &= \sum_{k=0}^{n-1} z^{n-k-1}(-1)^{k+1} \sum_{j=0}^{k} \left(\frac{(n-j-1)!(n-k+j)!}{n!(n-k-1)!}\right)^2 \binom{n}{j+1}\frac{c^{j+1} (j+1)t_1^{j}n!}{(n-j-1)!}b_{k-j},\\ 
         &= \sum_{k=0}^{n-1} (n-k)^2 z^{n-k-1}(-1)^{k+1} \sum_{j=0}^{k} \left(\frac{(n-j)!(n-k+j)!}{n!(n-k)!}\right)^2 \binom{n}{j}\frac{c^{j+1}t_1^{j}n!}{(n-j)!}b_{k-j},\\ 
     \end{align*}
 
-    For the sum we have
+    Now we can sum all over the same set onf indexes up to $n-2$ and sum the two terms wth index $n-1$ outside
 
     \begin{align*}
-        (c&\partial_z + cz\partial_{zz} + \partial_t )[L_n(z,t)\aac p(z)] \\  &= \sum_{k=0}^{n-2} z^{n-k-1}(-1)^k \sum_{j=0}^{k} \left(\frac{(n-j)!(n-k+j)!}{n!(n-k-1)!}\right)^2 \binom{n}{j}\frac{c^{j+1}t_1^{j}n!}{(n-j)!}b_{k-j}\Bigl(n-k + (n-k)(n-k-1) - (n-k)^2\Bigr)\\ 
-        &\phantom{espacio}+ (-1)^{n-1}\sum_{j=0}^{n-1} \left( \frac{(j+1)!}{n!} \right)^2\binom{n}{j}\frac{c^{j+1}t_1^{j}n!}{(n-j)!}b_{n-j+1} + (-1)^{n}\sum_{j=0}^{n-1} \left( \frac{(j+1)!}{n!} \right)^2\binom{n}{j}\frac{c^{j+1}t_1^{j}n!}{(n-j)!}b_{n-j+1} = 0.
+        (c&\partial_z + cz\partial_{zz} + \partial_t )[L_n(z,t)\aac p(z)] \\  &= \sum_{k=0}^{n-2} z^{n-k-1}(-1)^k \sum_{j=0}^{k} \left(\frac{(n-j)!(n-k+j)!}{n!(n-k-1)!}\right)^2 \binom{n}{j}\frac{c^{j+1}t_1^{j}n!}{(n-j)!}b_{k-j}\Bigl((n-k)^2 - (n-k)^2\Bigr)\\ 
+        &\phantom{espacio}+ (-1)^{n-1}\sum_{j=0}^{n-1} \left( \frac{(j+1)!}{n!} \right)^2\binom{n}{j}\frac{c^{j+1}t_1^{j}n!}{(n-j)!}b_{n-j+1}\\
+        &\phantom{espaciooooooo} + (-1)^{n}\sum_{j=0}^{n-1} \left( \frac{(j+1)!}{n!} \right)^2\binom{n}{j}\frac{c^{j+1}t_1^{j}n!}{(n-j)!}b_{n-j+1} = 0.
     \end{align*}
 \end{proof}
 
+All the results in this section were analogous to the Hermite polynomials relationship to the Dyson Brownian motion. As we will see in the next section, the results are not as easy to generalize for the matrix Jacobi process. Thus we will need to make a more extensive use of Finite Free Probability Theory.
+
 \subsection{Jacobi process}
+
+For the last process we study in this thesis, we will use a slightly different approach. Although some useful matrix models have been proposed for the Jacobi ensamble \cite{article:jacobi_matrix_model,article:edelman_sutton_jacobi}, we will make use of the definition of the Jacobi matrix in terms of Wishart matrices and what we already know about the Laguerre relationship to Wishart. As we will see, the Jacobi process is stationary, which makes it impossible to define something as the ``dynamical Jacobi polynomials'' (at least as we did with Hermite and Laguerre), however, it is possible to recover the deterministic dynamics when we have an initial law that does not make the process stationary. 
 
 Before proceeding with the proper Jacobi process, let us find the expected characteristic polynomial of a static Jacobi matrix. This case is more challenging than the two previous processes, but the static case is greatly simplified by using the tools of Finite Free Probability theory. \todo{Corregir normalización}
 
