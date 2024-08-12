@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.7.30)  10 AUG 2024 15:33
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.7.30)  11 AUG 2024 14:21
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1632,7 +1632,7 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-10.22153pt}.
 
-[98]) (partes/CH4/connections_ffp.tex
+[98]
 
 
 Package fancyhdr Warning: \headheight is too small (15.0pt): 
@@ -1652,7 +1652,14 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 
 [100]
 
-[101]
+
+Package fancyhdr Warning: \headheight is too small (15.0pt): 
+(fancyhdr)                Make it at least 25.22153pt, for example:
+(fancyhdr)                \setlength{\headheight}{25.22153pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-10.22153pt}.
+
+[101]) (partes/CH4/connections_ffp.tex
 
 
 Package fancyhdr Warning: \headheight is too small (15.0pt): 
@@ -1662,6 +1669,9 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-10.22153pt}.
 
 [102]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
 
 [103]
 
@@ -1674,39 +1684,6 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 
 [104]
 
-LaTeX Warning: Command \' invalid in math mode on input line 268.
-
-Missing character: There is no í in font cmr10!
-
-LaTeX Warning: Command \' invalid in math mode on input line 268.
-
-Missing character: There is no í in font cmr10!
-
-LaTeX Warning: Command \' invalid in math mode on input line 268.
-
-Missing character: There is no í in font cmr8!
-
-LaTeX Warning: Command \' invalid in math mode on input line 268.
-
-Missing character: There is no í in font cmr6!
-
-LaTeX Warning: Command \' invalid in math mode on input line 268.
-
-Missing character: There is no í in font cmr10!
-
-LaTeX Warning: Command \' invalid in math mode on input line 268.
-
-Missing character: There is no í in font cmr10!
-
-LaTeX Warning: Command \' invalid in math mode on input line 268.
-
-Missing character: There is no í in font cmr8!
-
-LaTeX Warning: Command \' invalid in math mode on input line 268.
-
-Missing character: There is no í in font cmr6!
-
-
 [105]
 
 
@@ -1717,8 +1694,44 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-10.22153pt}.
 
 [106]
+Underfull \vbox (badness 5105) has occurred while \output is active []
+
+
 
 [107]
+
+LaTeX Warning: Command \' invalid in math mode on input line 268.
+
+Missing character: There is no í in font cmr10!
+
+LaTeX Warning: Command \' invalid in math mode on input line 268.
+
+Missing character: There is no í in font cmr10!
+
+LaTeX Warning: Command \' invalid in math mode on input line 268.
+
+Missing character: There is no í in font cmr8!
+
+LaTeX Warning: Command \' invalid in math mode on input line 268.
+
+Missing character: There is no í in font cmr6!
+
+LaTeX Warning: Command \' invalid in math mode on input line 268.
+
+Missing character: There is no í in font cmr10!
+
+LaTeX Warning: Command \' invalid in math mode on input line 268.
+
+Missing character: There is no í in font cmr10!
+
+LaTeX Warning: Command \' invalid in math mode on input line 268.
+
+Missing character: There is no í in font cmr8!
+
+LaTeX Warning: Command \' invalid in math mode on input line 268.
+
+Missing character: There is no í in font cmr6!
+
 
 
 Package fancyhdr Warning: \headheight is too small (15.0pt): 
@@ -1730,7 +1743,7 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 [108]
 
 [109]
-Underfull \vbox (badness 2726) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
@@ -1753,18 +1766,11 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-10.22153pt}.
 
 [112]
-Overfull \hbox (51.43976pt too wide) detected at line 613
-[]
- []
+Underfull \vbox (badness 2726) has occurred while \output is active []
 
 
 
 [113]
-Overfull \hbox (70.9014pt too wide) detected at line 642
-[]
- []
-
-
 
 
 Package fancyhdr Warning: \headheight is too small (15.0pt): 
@@ -1774,11 +1780,13 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-10.22153pt}.
 
 [114]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
 
 [115]
+Overfull \hbox (51.43976pt too wide) detected at line 613
+[]
+ []
+
+
 
 
 Package fancyhdr Warning: \headheight is too small (15.0pt): 
@@ -1788,8 +1796,16 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-10.22153pt}.
 
 [116]
+Overfull \hbox (70.9014pt too wide) detected at line 642
+[]
+ []
+
+
 
 [117]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
 
 
 Package fancyhdr Warning: \headheight is too small (15.0pt): 
@@ -1801,11 +1817,6 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 [118]
 
 [119]
-Overfull \hbox (65.57379pt too wide) detected at line 841
-[]
- []
-
-
 
 
 Package fancyhdr Warning: \headheight is too small (15.0pt): 
@@ -1817,9 +1828,6 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 [120]
 
 [121]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
 
 
 Package fancyhdr Warning: \headheight is too small (15.0pt): 
@@ -1829,13 +1837,13 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-10.22153pt}.
 
 [122]
-
-[123]
-Overfull \hbox (19.17017pt too wide) detected at line 985
-[][][]\OML/cmm/m/it/10.95 @[]\OT1/cmr/m/n/10.95 [[](\OML/cmm/m/it/10.95 x; y; z; t\OT1/cmr/m/n/10.95 )][] = (\OML/cmm/m/it/10.95 n[]y \OT1/cmr/m/n/10.95 + \OML/cmm/m/it/10.95 n[]z\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 @[]\OT1/cmr/m/n/10.95 [[](\OML/cmm/m/it/10.95 x; y; z; t\OT1/cmr/m/n/10.95 )][] \OMS/cmsy/m/n/10.95 ^^@ \OML/cmm/m/it/10.95 y[]@[]@[]\OT1/cmr/m/n/10.95 [[](\OML/cmm/m/it/10.95 x; y; z; t\OT1/cmr/m/n/10.95 )][] \OMS/cmsy/m/n/10.95 ^^@ \OML/cmm/m/it/10.95 z[]@[]@[]\OT1/cmr/m/n/10.95 [[](\OML/cmm/m/it/10.95 x; y; z; t\OT1/cmr/m/n/10.95 )][]\OML/cmm/m/it/10.95 :
+Overfull \hbox (65.57379pt too wide) detected at line 841
+[]
  []
 
 
+
+[123]
 
 
 Package fancyhdr Warning: \headheight is too small (15.0pt): 
@@ -1845,18 +1853,11 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-10.22153pt}.
 
 [124]
-Overfull \hbox (48.47052pt too wide) detected at line 1010
-[]
- []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
 [125]
-Overfull \hbox (3.3668pt too wide) detected at line 1071
-[]
- []
-
-
 
 
 Package fancyhdr Warning: \headheight is too small (15.0pt): 
@@ -1866,13 +1867,50 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-10.22153pt}.
 
 [126]
+Overfull \hbox (19.17017pt too wide) detected at line 985
+[][][]\OML/cmm/m/it/10.95 @[]\OT1/cmr/m/n/10.95 [[](\OML/cmm/m/it/10.95 x; y; z; t\OT1/cmr/m/n/10.95 )][] = (\OML/cmm/m/it/10.95 n[]y \OT1/cmr/m/n/10.95 + \OML/cmm/m/it/10.95 n[]z\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 @[]\OT1/cmr/m/n/10.95 [[](\OML/cmm/m/it/10.95 x; y; z; t\OT1/cmr/m/n/10.95 )][] \OMS/cmsy/m/n/10.95 ^^@ \OML/cmm/m/it/10.95 y[]@[]@[]\OT1/cmr/m/n/10.95 [[](\OML/cmm/m/it/10.95 x; y; z; t\OT1/cmr/m/n/10.95 )][] \OMS/cmsy/m/n/10.95 ^^@ \OML/cmm/m/it/10.95 z[]@[]@[]\OT1/cmr/m/n/10.95 [[](\OML/cmm/m/it/10.95 x; y; z; t\OT1/cmr/m/n/10.95 )][]\OML/cmm/m/it/10.95 :
+ []
+
+
+
+[127]
+Overfull \hbox (48.47052pt too wide) detected at line 1010
+[]
+ []
+
+
+
+
+Package fancyhdr Warning: \headheight is too small (15.0pt): 
+(fancyhdr)                Make it at least 25.22153pt, for example:
+(fancyhdr)                \setlength{\headheight}{25.22153pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-10.22153pt}.
+
+[128]
+Overfull \hbox (3.3668pt too wide) detected at line 1071
+[]
+ []
+
+
+
+[129]
 Overfull \hbox (19.6825pt too wide) detected at line 1092
 []
  []
 
 
 
-[127]))
+
+Package fancyhdr Warning: \headheight is too small (15.0pt): 
+(fancyhdr)                Make it at least 25.22153pt, for example:
+(fancyhdr)                \setlength{\headheight}{25.22153pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-10.22153pt}.
+
+[130]))
+
+[131] (conclusions.tex
 
 
 Package fancyhdr Warning: \headheight is too small (15.0pt): 
@@ -1881,13 +1919,13 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-10.22153pt}.
 
-[128] (conclusions.tex)
-
-[129
+[132
 
 
 
-]
+])
+
+[133]
 
 
 Package fancyhdr Warning: \headheight is too small (15.0pt): 
@@ -1896,7 +1934,7 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-10.22153pt}.
 
-[130
+[134
 
 ]
 LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 132.
@@ -1909,13 +1947,13 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             See the microtype manual for details.
 
 
-[131]
+[135]
 
-[132]
+[136]
 
-[133]
+[137]
 
-[134
+[138
 
 ] (main.aux (partes/Preliminares.aux) (partes/CH2.aux) (partes/CH3.aux) (partes/CH4.aux))
  ***********
@@ -1945,17 +1983,17 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 ### semi simple group (level 1) entered at line 109 (\begingroup)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 35550 strings out of 473904
- 675509 string characters out of 5736415
- 1969908 words of memory out of 5000000
- 57052 multiletter control sequences out of 15000+600000
- 595896 words of font info for 242 fonts, out of 8000000 for 9000
+ 35567 strings out of 473904
+ 675753 string characters out of 5736415
+ 1971908 words of memory out of 5000000
+ 57056 multiletter control sequences out of 15000+600000
+ 596017 words of font info for 243 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,20n,101p,1970b,1754s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/doublestroke/dsrom10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/rsfs/rsfs10.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfbx1000.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfbx1095.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfbx1200.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfbx1440.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfbx2074.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfbx2488.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfcc1095.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfrm0800.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfrm1000.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfrm1095.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfrm1200.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfti0800.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfti1095.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sftt1095.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfxc1728.pfb>
-Output written on main.pdf (144 pages, 1144043 bytes).
+Output written on main.pdf (148 pages, 1158948 bytes).
 PDF statistics:
- 1639 PDF objects out of 1728 (max. 8388607)
- 490 named destinations out of 1000 (max. 500000)
+ 1678 PDF objects out of 1728 (max. 8388607)
+ 501 named destinations out of 1000 (max. 500000)
  64415 words of extra memory for PDF output out of 74296 (max. 10000000)
 

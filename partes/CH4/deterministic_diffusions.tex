@@ -111,4 +111,123 @@ These results can be particularized for any matrix-valued diffusions. Especially
 
 \section{Dynamical behavior of the deterministic eigenvalue processes}
 
+\begin{lemma} \label{lemma:separation}
+    Let $\lambda_i,\lambda_j$ be two functions moving according to \eqref{eq:deterministic_dyson} such that $\lambda_i(0) > \lambda_j(0)$ and there is no $\lambda_k$ such that $\lambda_i(0) > \lambda_k(0) > \lambda_j(0)$. Then, $\lambda_i$ and $\lambda_k$ repel each other if and only if 
+
+    \begin{equation} \label{eq:separation_condition}
+        \frac{2}{(\lambda_i - \lambda_j)^2} > \sum_{k\neq i,j} \frac{1}{(\lambda_i - \lambda_k)(\lambda_j - \lambda_k)}
+    \end{equation}
+\end{lemma}
+
+\begin{proof}
+
+    The distance between the particles grows if and only if its derivative its positive, so 
+
+    \begin{align*}
+        \frac{\d }{\d t} (\lambda_i - \lambda_j) &= \sum_{k\neq i} \frac{1}{\lambda_i - \lambda_k} - \sum_{k\neq j} \frac{1}{\lambda_j - \lambda_k} = \sum_{k\neq i,j} \left( \frac{1}{\lambda_i - \lambda_k} - \frac{1}{\lambda_j - \lambda_k} \right) + \frac{2}{\lambda_i - \lambda_j},\\
+        &= \sum_{k \neq i, j} \frac{\lambda_j - \lambda_k - \lambda_i + \lambda_k}{(\lambda_i- \lambda_k)(\lambda_j - \lambda_k)} + \frac{2}{\lambda_i - \lambda_j},= \frac{2}{(\lambda_i - \lambda_j)^2} - \sum_{k\neq i,j} \frac{1}{(\lambda_i - \lambda_k)(\lambda_j - \lambda_k)}.
+    \end{align*}
+
+    Comparing to zero, we get the desired result.
+\end{proof}
+
+\begin{theorem}
+    If a system of functions satisfies \eqref{eq:deterministic_dyson}, then there ar no collisions.
+\end{theorem}
+
+\begin{proof}
+    Write condition \eqref{eq:separation_condition} as
+
+    \begin{equation*}
+        \frac{2}{(\lambda_i - \lambda_j)^2} > \sum_{k\neq i,j} \frac{1}{(\lambda_i - \lambda_j + \lambda_j -\lambda_k)(\lambda_j - \lambda_k)},
+    \end{equation*}
+
+    \noindent and take $\lambda_i \to \lambda_j$. As $\lambda_i$ approaches $\lambda_k$, the left-hand side grows to $\infty$, while the right-hand side converges to the finite quantity
+
+    \begin{equation*}
+        \sum_{k\neq i,j} \frac{1}{(\lambda_j - \lambda_k)^2}.
+    \end{equation*}
+
+    Thus, before the collision occurs, the distance between $\lambda_i$ and $\lambda_j$ starts to grow.
+\end{proof}
+
+\begin{theorem} \label{thm:hermite_minimal_grows}
+    Let $(\lambda_1, \lambda_2, \dots, \lambda_n)$ be a system of functions moving according to \eqref{eq:deterministic_dyson} and let $\lambda_i,\lambda_j$ be such that for a given $t_0$ it is satisfied $\lambda_i(t_0) > \lambda_j(t_0)$ and 
+    
+    \begin{equation*}
+        \lambda_i(t_0) - \lambda_j(t_0) = \min_{k,l \in [n]} \abs{ \lambda_k(t_0) - \lambda_l(t_0)}.
+    \end{equation*}
+
+    Then, $\lambda_i$ and $\lambda_k$ repel. 
+\end{theorem}
+
+\begin{proof}
+    Define the constants $c_{ik}, c_{jk}$ as 
+
+    \begin{equation*}
+        c_{ik} = \frac{\lambda_i - \lambda_k}{\lambda_i - \lambda_j}, \qquad c_{jk} = \frac{\lambda_j - \lambda_k}{\lambda_i - \lambda_j}.
+    \end{equation*}
+
+    Notice that the condition that the distance between $\lambda_i$ and $\lambda_j$ is minimal means that there is no $\lambda_k$ between them and therefore for a fixed $k_0$, $c_{ik_0}$ and $c_{jk_0}$ have the same sign. We can write the right-hand side of \eqref{eq:separation_condition} as
+
+    \begin{align*}
+        \sum_{k\neq i,j} \frac{1}{(\lambda_i - \lambda_k)(\lambda_j - \lambda_k)} &= \sum_{k\neq i,j} \frac{1}{ c_{ik}(\lambda_i - \lambda_j) c_{jk}(\lambda_i - \lambda_j)} = \sum_{k\neq i,j} \frac{ (c_{ik}c_{jk})^{-1} }{(\lambda_i-\lambda_j)^2}.
+    \end{align*}
+
+    With this, condition \eqref{eq:separation_condition} can be written as
+
+    \begin{align}
+        \frac{2}{(\lambda_i - \lambda_j)^2} &> \sum_{k\neq i,j} \frac{ (c_{ik}c_{jk})^{-1} }{(\lambda_i-\lambda_j)^2},\\
+        \Leftrightarrow 2 &> \sum_{k\neq i,j} \frac{1}{c_{ik}c_{jk}}. \label{eq:simplified_condition}
+    \end{align}
+
+    We know that the distance between $\lambda_i$ and $\lambda_j$ is minimal, in the worst-case scenario, all of the other distances are the same as $\lambda_i - \lambda_j$, so $\abs{c_{ik}},\abs{c_{ij}}>1$. Notice that if $\lambda_{i-1}$ is the function located immediately bellow $\lambda_i$, this would mean that in the worst case scenario $c_{i,i-1}=-1$ and $c_{j,i-1} = -2$. Similarly, for $\lambda_{i-2}$ we would have $c_{i,i-1} = -2, c_{j,i-2} =-3$. In general, $c_{i,i-l} = -l, c_{j,i-l} = -(l+1)$. Analogously, if $\lambda_{j+l}$ is the function located $l$ positions below $j$, then $c_{j,j+l} = l, c_{i,j+l} = l+1$.
+
+    Now, for the arrangement of the functions, we have two extreme cases. If $\lambda_i$ and $\lambda_j$ are the functions in one of the extremes (i.e. the two biggest or two smallest ones), this would mean that the right-hand side of \eqref{eq:simplified_condition} can be written as
+
+    \begin{align*}
+        \sum_{k\neq i,j} \frac{1}{c_{ik}c_{jk}} &= \sum_{k=1}^{n-2} \frac{1}{k(k+1)} = \sum_{k=1}^{n-2} \frac{k+1 - k}{k(k+1)} = \sum_{k=1}^{n-2} \left( \frac{1}{k} - \frac{1}{k+1} \right),\\
+        &= 1 - \frac{1}{n-1} = \frac{n-2}{n-1} < 2.
+    \end{align*}
+
+    So in this case, applying Lemma \ref{lemma:separation}, $\lambda_i,\lambda_j$ would repel each other. The other extreme case is when exactly half of the functions are located at each side of $\lambda_i$ and $\lambda_j$. Let us suppose first that $n$ is even, in this case we would have,
+
+    \begin{align*}
+        \sum_{k\neq i,j} \frac{1}{c_{ik}c_{jk}} &= 2 \sum_{k=1}^{\frac{n-2}{2}} \frac{1}{k(k+1)} = 2\left(1 - \frac{2}{n}\right) = 2 - \frac4n < 2.
+    \end{align*}
+
+    There is also separation in this case. Finally, if $n$ is even, we considr the previos sum for $\lfloor n/2 \rfloor$ and sum the term corresponding to the remaining function.
+
+    \begin{equation*}
+        \sum_{k\neq i,j} \frac{1}{c_{ik}c_{jk}} = 2 - \frac{4}{n} + \frac1{(\lfloor n/2\rfloor+1)(\lfloor n/2\rfloor +2)} < 2.
+    \end{equation*}
+
+    So, even in the worst-case scenario, criterion \eqref{eq:separation_condition} is satisfied, and we conclude that the minimal distance grows for every initial condition of the system.
+\end{proof}
+
+\begin{corollary}
+    In a system governed by~\eqref{eq:deterministic_dyson}, for $n\ge3$ not all of the functions separate for every given initial condition. For $n =2$, the functions always repel each other.
+\end{corollary}
+
+\begin{proof}
+    We prove the first part by providing a counterexample. Suppose that the separation between $\lambda_i$ and $\lambda_j$ is 1, while all of the other separations are $0.1$. The same computations that the proof of in Theorem \ref{thm:hermite_minimal_grows}, but with a re-scaling of the $c_{ik}c_{jk}$ lead to
+
+    \begin{align*}
+        \sum_{k\neq i,j} \frac{1}{c_{ik}c_{jk}} = \frac{1}{0.01}\left( 1 - \frac1{n-1}\right) = 100 - \frac{100}{n-1}.
+    \end{align*}
+
+    Clearly, for $n\ge 3$, condition~\eqref{eq:separation_condition} is satisfied.
+
+    For the second part, we simply take that if $\lambda_i$ and $\lambda_j$ are the unique functions in the system, then 
+
+    \begin{equation*}
+        \sum_{k\neq i,j} \frac{1}{(\lambda_i - \lambda_k)(\lambda_j - \lambda_k)} = 0 < \frac{2}{(\lambda_i - \lambda_j)^2},
+    \end{equation*}
+
+    \noindent for every position of $\lambda_i, \lambda_j$.
+\end{proof}
+
+
+
+
 \section{Simulations}

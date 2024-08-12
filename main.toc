@@ -53,10 +53,10 @@
 \contentsline {subsection}{\numberline {4.2.1}Wishart process}{98}{subsection.4.2.1}%
 \contentsline {subsection}{\numberline {4.2.2}Jacobi process}{99}{subsection.4.2.2}%
 \contentsline {section}{\numberline {4.3}Dynamical behavior of the deterministic eigenvalue processes}{99}{section.4.3}%
-\contentsline {section}{\numberline {4.4}Simulations}{99}{section.4.4}%
-\contentsline {section}{\numberline {4.5}Connections with finite free probability}{99}{section.4.5}%
-\contentsline {subsection}{\numberline {4.5.1}Dyson Brownian motion}{100}{subsection.4.5.1}%
-\contentsline {subsection}{\numberline {4.5.2}Wishart process}{109}{subsection.4.5.2}%
-\contentsline {subsection}{\numberline {4.5.3}Jacobi process}{116}{subsection.4.5.3}%
-\contentsline {chapter}{Conclusions}{129}{chapter*.41}%
-\contentsline {chapter}{Bibliography}{131}{chapter*.42}%
+\contentsline {section}{\numberline {4.4}Simulations}{102}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Connections with finite free probability}{102}{section.4.5}%
+\contentsline {subsection}{\numberline {4.5.1}Dyson Brownian motion}{103}{subsection.4.5.1}%
+\contentsline {subsection}{\numberline {4.5.2}Wishart process}{112}{subsection.4.5.2}%
+\contentsline {subsection}{\numberline {4.5.3}Jacobi process}{119}{subsection.4.5.3}%
+\contentsline {chapter}{Conclusions}{133}{chapter*.41}%
+\contentsline {chapter}{Bibliography}{135}{chapter*.42}%
