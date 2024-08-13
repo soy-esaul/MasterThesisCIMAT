@@ -88,9 +88,9 @@ These results can be particularized for any matrix-valued diffusions. Especially
 \begin{corollary}
     Let $Y = (Y(t), t \ge 0)$ be an $n\times n$ Wishart process with parameter $m$ and diagonalization $Y = QM\trans{Q}$. Let $X$ be an $n\times n$ self adjoint matrix process with diagonalization $X = H \Lambda \trans{H}$, such that the off-diagonal part of $\trans{H} \d X H $ and $\overset{d}{=} \trans{Q} \d Y Q$ coincide, and $(\trans{H} \d X H)_{ii} = 0$ for every $i \in [n]$. Then the eigenvalues of $X$, $\lambda_1 \ge \lambda_2 \ge \cdots \ge \lambda_n$ satisfy the following system of stochastic differential equations
 
-    \begin{equation*}
+    \begin{equation} \label{eq:deterministic_wishart}
         \d \lambda_i = \left( m +\sum_{k\neq i} \frac{ \abs{\lambda_i} + \abs{\lambda_k} }{\lambda_i - \lambda_k}\right)\d t.
-    \end{equation*}
+    \end{equation}
 \end{corollary}
 
 \begin{proof}
@@ -112,7 +112,7 @@ These results can be particularized for any matrix-valued diffusions. Especially
 \section{Dynamical behavior of the deterministic eigenvalue processes}
 
 \begin{lemma} \label{lemma:separation}
-    Let $\lambda_i,\lambda_j$ be two functions moving according to \eqref{eq:deterministic_dyson} such that $\lambda_i(0) > \lambda_j(0)$ and there is no $\lambda_k$ such that $\lambda_i(0) > \lambda_k(0) > \lambda_j(0)$. Then, $\lambda_i$ and $\lambda_k$ repel each other if and only if 
+    Let $\lambda_1,\dots,\lambda_n$ be a system of $n$ functions moving according to \eqref{eq:deterministic_dyson} and $\lambda_i(0) > \lambda_j(0)$ and there is no $\lambda_k$ such that $\lambda_i(0) > \lambda_k(0) > \lambda_j(0)$. Then, $\lambda_i$ and $\lambda_k$ repel each other if and only if 
 
     \begin{equation} \label{eq:separation_condition}
         \frac{2}{(\lambda_i - \lambda_j)^2} > \sum_{k\neq i,j} \frac{1}{(\lambda_i - \lambda_k)(\lambda_j - \lambda_k)}
@@ -130,6 +130,8 @@ These results can be particularized for any matrix-valued diffusions. Especially
 
     Comparing to zero, we get the desired result.
 \end{proof}
+
+
 
 \begin{theorem}
     If a system of functions satisfies \eqref{eq:deterministic_dyson}, then there ar no collisions.
@@ -162,7 +164,7 @@ These results can be particularized for any matrix-valued diffusions. Especially
 \end{theorem}
 
 \begin{proof}
-    Define the constants $c_{ik}, c_{jk}$ as 
+    Define the quotients $c_{ik}, c_{jk}$ as 
 
     \begin{equation*}
         c_{ik} = \frac{\lambda_i - \lambda_k}{\lambda_i - \lambda_j}, \qquad c_{jk} = \frac{\lambda_j - \lambda_k}{\lambda_i - \lambda_j}.
@@ -227,7 +229,96 @@ These results can be particularized for any matrix-valued diffusions. Especially
     \noindent for every position of $\lambda_i, \lambda_j$.
 \end{proof}
 
+\begin{lemma} \label{lemma:separating_condition_wishart}
+    Let $(\lambda_1, \lambda_2, \dots, \lambda_n)$ be a system of $n$ functions moving according to \eqref{eq:deterministic_wishart}, and let $\lambda_i, \lambda_j$ be such that $\lambda_i(t_0) > \lambda_j(t_0)$ and there is no $\lambda_k$ such that $\lambda_i(t_0) > \lambda_k(t_0) > \lambda_j(t_0)$. Then $\lambda_i$ and $\lambda_j$ repel each other if and only if 
 
+    \begin{equation} \label{eq:separation_condition_wishart}
+        \frac{\lambda_i + \lambda_j}{(\lambda_i - \lambda_j)^2} > \sum_{k\neq i,j} \frac{\lambda_k}{(\lambda_i-\lambda_k)(\lambda_j-\lambda_k)}.
+    \end{equation}
+\end{lemma}
 
+\begin{proof}
+
+    Take the derivative of the separation and use linearity with \eqref{eq:deterministic_wishart} to get
+
+    \begin{align*}
+        \frac{\d}{\d t}(\lambda_i - \lambda_j) &= \sum_{k\neq i} \frac{\lambda_i + \lambda_k}{\lambda_i - \lambda_k} - \sum_{k\neq j} \frac{\lambda_j + \lambda_k}{\lambda_j - \lambda_k}, \\
+        &= \sum_{k \neq i,j} \frac{ (\lambda_i + \lambda_k)(\lambda_j - \lambda_k) - (\lambda_j + \lambda_k)(\lambda_i - \lambda_k) }{(\lambda_i - \lambda_k)(\lambda_j - \lambda_k)} + 2\frac{\lambda_i + \lambda_j}{\lambda_i - \lambda_j},\\
+        &= \sum_{k\neq i,j} \frac{2\lambda_k(\lambda_j - \lambda_i)}{(\lambda_i-\lambda_k)(\lambda_j-\lambda_k)} + 2 \frac{\lambda_i + \lambda_j}{\lambda_i - \lambda_j}.
+    \end{align*}
+
+    Comparing to zero yields the result.
+\end{proof}
+
+\begin{corollary}
+    In a system of $n$ functions satisfying \eqref{eq:deterministic_wishart} there is no collision of the functions.
+\end{corollary}
+
+\begin{proof}
+    Use condition \eqref{eq:separation_condition_wishart} and let $\lambda_i \to \lambda_j$, then
+
+    \begin{equation*}
+        \frac{\lambda_i + \lambda_j}{(\lambda_i-\lambda_j)^2} \to \infty,
+    \end{equation*}
+
+    \noindent but
+
+    \begin{align*}
+        \sum_{k\neq i,j} \frac{\lambda_k}{(\lambda_i-\lambda_k)(\lambda_j-\lambda_k)} = \sum_{k\neq i,j} \frac{\lambda_k}{(\lambda_i-\lambda_j + \lambda_j -\lambda_k)(\lambda_j-\lambda_k)} \to \sum_{k\neq i,j} \frac{\lambda_k}{(\lambda_j-\lambda_k)^2} < \infty.
+    \end{align*}
+
+    So before the functions collide, the derivative of the separation is positive and they repel each other.
+\end{proof}
+
+\begin{theorem} \label{thm:laguerre_does_not_grow}
+    Let $(\lambda_1, \lambda_2, \dots, \lambda_n)$ be a system of $n$ functions moving according to \eqref{eq:deterministic_wishart} and let $\lambda_i,\lambda_j$ be such that for a given $t_0$ it is satisfied $\lambda_i(t_0) > \lambda_j(t_0)$ and 
+    
+    \begin{equation*}
+        \lambda_i(t_0) - \lambda_j(t_0) = \min_{k,l \in [n]} \abs{ \lambda_k(t_0) - \lambda_l(t_0)}.
+    \end{equation*}
+
+    Then, $\lambda_i$ and $\lambda_k$ do not necessarily repel. 
+\end{theorem}
+
+\begin{proof}
+    We will prove providing an initial condition for which the minimal distance will have a negative derivative. Let $\lambda_j(t_0) = \min_{k \le n} \lambda_k(t_0)$ and so $\lambda_i(t_0) = \min_{k\neq j} \lambda_k(t_0)$. Similarly to the proof of Theorem \ref*{thm:hermite_minimal_grows}, let us define the quotients $c_{ik},c_{jk}$ as 
+
+    \begin{equation*}
+        c_{ik} = \frac{\lambda_i - \lambda_k}{\lambda_i - \lambda_j}, \qquad c_{jk} = \frac{\lambda_j - \lambda_k}{\lambda_i - \lambda_j}.
+    \end{equation*}
+
+    For every fixed $k$, the quotients $c_{ik}$ and $c_{jk}$ have the same sign and given the minimality of $\lambda_i - \lambda_j$ we have that $c_{ik}c_{jk}>1$. Using these quantities, the separation condition \eqref{eq:separation_condition_wishart} is reduced to 
+
+    \begin{equation*}
+        \lambda_i + \lambda_j > \sum_{k \neq i,j} \frac{\lambda_k}{c_{ik}c_{jk}}.
+    \end{equation*}
+
+    Suppose that $\lambda_i - \lambda_j =1$, and that $\lambda_k > \lambda_i$ for all $k \notin \{i,j\}$. Assume further that the separation between all the $(\lambda_k)_{k\neq i,j}$ is $1+\epsilon$ for some $\epsilon >0$. Then $c_{i,i-1}= 1+\epsilon, \abs{c_{j,i+1}}= 2 + \epsilon$ and in general $\abs{c_{i,i+l}}=l(1+\epsilon), \abs{c_{j,i+l}} = 1 + l(1+\epsilon)$. Furthermore, we have that $\lambda_{i+l}$ can be expressed as
+
+    \begin{equation*}
+         \lambda_{i+l} = \lambda_i + l(1+\epsilon) = \lambda_j + 1 + l(1+\epsilon).
+    \end{equation*}
+
+    With this, the separating condition for $\lambda_i$ and $\lambda_j$ can be written as
+
+    \begin{equation*}
+        2\lambda_j + 1 > \sum_{k=2}^{n} \frac{\lambda_j + 1 + k(1+\epsilon)}{k(1+\epsilon)(1+k(1+\epsilon))}. 
+    \end{equation*}
+
+    The left-hand side is fixed for fixed $\lambda_j(t_0)$. For the left-hand side we have
+
+    \begin{align*}
+        \sum_{k=2}^{n} \frac{\lambda_j + 1 + k(1+\epsilon)}{k(1+\epsilon)(1+k(1+\epsilon))} = \sum_{k=2}^n \frac{\lambda_j + 1}{k(1+\epsilon)(1+k(1+\epsilon))} + \sum_{k=2}^n \frac{1}{1+k(1+\epsilon)}.
+    \end{align*}
+
+    For the second element in the sum and $\epsilon$ sufficiently small we have 
+
+    \begin{align*}
+        \sum_{k=2}^n \frac{1}{1+k(1+\epsilon)} > \sum_{k=2}^n \frac{1}{1+2k} > \frac12\sum_{k=2}^n \frac{1}{1+k}.
+    \end{align*}
+
+    The last expression can be made arbitrarily big for $n$ big enough. We conclude that under these conditions, for a system with enough functions, the minimal distance can be made smaller with a specific initial condition.
+    
+\end{proof}
 
 \section{Simulations}
