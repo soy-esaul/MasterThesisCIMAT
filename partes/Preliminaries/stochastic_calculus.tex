@@ -1,6 +1,6 @@
 \section{Stochastic Calculus}
 
-When working with continuous time processes, stochastic calculus is one of the most useful tools. The results provided by the Itô integral and related concepts allow us to study dynamical systems with random behavior. In this section, we introduce some stochastic calculus used in the thesis. The first part deals with the definition and main properties of Itô and Stratonovich integrals in $\R$-valued processes, we later generalize the definition to $\R^d$-valued processes and finally to processes taking values in spaces of matrices.
+Stochastic calculus is one of the most useful tools when working with continuous time processes. The results provided by the Itô integral and related concepts allow us to study dynamical systems with random behavior. In this section, we introduce some stochastic calculus used in the thesis. The first part deals with the definition and main properties of Itô and Stratonovich integrals in $\R$-valued processes, we later generalize the definition to $\R^d$-valued processes and finally to processes taking values in spaces of matrices.
 
 \subsection{Stochastic calculus for $\mathbb{R}^n$-valued processes}
 
@@ -29,7 +29,7 @@ It is not hard to verify from the definition that the integral is linear and has
     \E{ \left( \int_0^T X(s) \d B(s)\right)^2 } = \int_0^T \E{X^2(s)} \d s.
 \end{equation*}
 
-Another important fact is that the Itô integral is a martingale. These last two happen to be the most important properties of this integral and one usually wants to preserve them when defining a stochastic integral for more general processes. \todo{Probar propiedades}
+Another important fact is that the Itô integral is a martingale. These last two are the most important properties of this integral and one usually wants to preserve them when defining a stochastic integral for more general processes. \todo{Probar propiedades}
 
 If we have a square integrable continuous time process $X(t)$ adapted to $\F_t$ and a sequence of simple adapted processes $X_n(t)$ that are also square integrable and converge in probability to $X(t)$, then under certain conditions,\todo{cuáles son estas condiciones?} one can prove that the integrals $\int_0^T X_n(s)\d B(s)$ also have a limit in probability. We define the Itô integral for general adapted processes as this limit.
 
