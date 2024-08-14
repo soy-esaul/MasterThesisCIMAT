@@ -605,25 +605,32 @@ A standard technique for the simulation of solutions to stochastic differential 
 
 These path simulations have the purpose of visualizing the behavior of the eigenvalue process and how the presence of the Brownian motion term affects the trajectories. Comparing with the simulations of the deterministic processes in Chapter \ref{ch:determinist} will allow us to appreciate how mcuh the finite-variation part of the process ``determines'' its evolution.
 
-In Figure \ref{fig:dyson_comparison}, we can see the path of a nine-dimensional Dyson Brownian motion compared to the finite-variation term. 
+In Figure \ref{fig:dyson_comparison}, we can see the path of a nine-dimensional Dyson Brownian motion compared to the finite-variation term. The color of each line represents the correspondence between the drift and the stochastic visualization. We can notice that both the random and the deterministic version do not collide. In the deterministic version, the values separate over time, while in the stochastic one, they ar affected by a noise that causes them to deviate slightly.
 
-\begin{figure}[h!] \label{fig:dyson_comparison}
+\begin{figure}[h!] 
     \input{img/dyson_comparison.pgf}
-    \caption{Superposition of simulation of a Dyson Brownian motion and its finite-variation part.}
+    \caption{Superposition of simulation of a Dyson Brownian motion and its finite-variation part.\label{fig:dyson_comparison}}
 \end{figure}
 
-\begin{figure}[h!] \label{fig:four_dyson}
+In Figure \ref{fig:four_dyson} there are four different path simulations for a Dyson Brownian motion with dimension equal to four, five, seven and nine. The initial condition in the third last cases is with $n$ equally spaced points around zero. In the first case, the initial condition is slightly different because the two points in the middle have a separation of size one, while the surrounding points are separated by 0.1 of them. This appears to have little effect on this system, but in Chapter \ref{ch:determinist} we will see that in the deterministic case, it has an effect.
+
+Although the distances between paths in every simulation of Figure \ref{fig:four_dyson} are stochastic, we can notice that the spacing between consecutive points is more or less uniform, which is what we would expect as the particles reject each other with a similar strength. Also, it is interesting to notice that, although the number of paths increases in every chart of the figure, the total path spacing until $t=10$ is more or less uniform in all of them. 
+
+\begin{figure}[h!] 
     \input{img/four_dysons.pgf}
-    \caption{Simulation of four different Dyson Brownian motions with different dimension.}
+    \caption{Simulation of four different Dyson Brownian motions with different dimension.\label{fig:four_dyson}}
 \end{figure}
 
+The ``uniform spacing'' behavior of the Dyson process contrasts with the path simulations for the Wishart process in Figure \ref{fig:wishart_comparison}. In this figure, we have the path for a Wishart process of dimension nine with the corresponding finite variation path. As we can see, the spacing of the particles with the biggest values tends to grow faster. This can be explained because for the Wishart process, the interaction term is proportional to the value of both functions.
 
-\begin{figure} \label{fig:wishart_comparison}
+\begin{figure} 
     \input{img/wishart_comparison.pgf}
-    \caption{Superposition of path simulations of a Wishart process and its finite dimensional part.}
+    \caption{Superposition of path simulations of a Wishart process and its finite dimensional part.\label{fig:wishart_comparison}}
 \end{figure}
 
-\begin{figure} \label{fig:jacobi}
+For the Jacobi process path simulations in Figure \ref{fig:jacobi}, we notice a more stable behavior. In Chapter \ref{ch:determinist} we will see that this process has an stationary distribution and thus it is expected that, given any initial condition, the process converges to it. Notice that in this simulation the convergence appears to have rather quickly, as the points appear to be evenly separated at time $t=0.05$.
+
+\begin{figure} 
     \includegraphics[width=6in]{img/jacobi.pdf}
-    \caption{Psth simulation for a Jacobi process.}
+    \caption{Path simulation for a Jacobi process.\label{fig:jacobi}}
 \end{figure}
