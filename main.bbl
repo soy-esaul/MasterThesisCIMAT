@@ -708,6 +708,33 @@
     \field{year}{2003}
   \endentry
 
+  \entry{book:asmussen}{book}{}{}
+    \name{author}{2}{}{%
+      {{hash=AS}{%
+         family={Asmussen},
+         familyi={A\bibinitperiod},
+         given={S{\o}ren},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=GPW}{%
+         family={Glynn},
+         familyi={G\bibinitperiod},
+         given={Peter\bibnamedelima W},
+         giveni={P\bibinitperiod\bibinitdelim W\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer}%
+    }
+    \strng{namehash}{ASGPW1}
+    \strng{fullhash}{ASGPW1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Stochastic simulation: algorithms and analysis}
+    \field{volume}{57}
+    \field{year}{2007}
+  \endentry
+
   \entry{walsh1922location}{article}{}{}
     \name{author}{1}{}{%
       {{hash=WJL}{%

@@ -599,21 +599,31 @@ With this differential equation, it is easy again to use Theorem \ref{thm:diffus
 \end{proof}
 
 
-\section{Simulations}
+\section{Path simulations}
 
-\begin{figure}[h!]
+A standard technique for the simulation of solutions to stochastic differential equations is the Euler-Maruyama method. Details about the method can be found in \cite{book:asmussen}[Chapter 10]. The code used for the following figures can be found in the Appendix \ref{appendix:codes}. 
+
+These path simulations have the purpose of visualizing the behavior of the eigenvalue process and how the presence of the Brownian motion term affects the trajectories. Comparing with the simulations of the deterministic processes in Chapter \ref{ch:determinist} will allow us to appreciate how mcuh the finite-variation part of the process ``determines'' its evolution.
+
+In Figure \ref{fig:dyson_comparison}, we can see the path of a nine-dimensional Dyson Brownian motion compared to the finite-variation term. 
+
+\begin{figure}[h!] \label{fig:dyson_comparison}
     \input{img/dyson_comparison.pgf}
+    \caption{Superposition of simulation of a Dyson Brownian motion and its finite-variation part.}
 \end{figure}
 
-\begin{figure}[h!]
+\begin{figure}[h!] \label{fig:four_dyson}
     \input{img/four_dysons.pgf}
+    \caption{Simulation of four different Dyson Brownian motions with different dimension.}
 \end{figure}
 
 
-\begin{figure}
+\begin{figure} \label{fig:wishart_comparison}
     \input{img/wishart_comparison.pgf}
+    \caption{Superposition of path simulations of a Wishart process and its finite dimensional part.}
 \end{figure}
 
-\begin{figure}
+\begin{figure} \label{fig:jacobi}
     \includegraphics[width=6in]{img/jacobi.pdf}
+    \caption{Psth simulation for a Jacobi process.}
 \end{figure}

@@ -1,4 +1,4 @@
-\chapter{Code for the simulations}
+\chapter{Code for the simulations} \label{appendix:codes}
 
 \begin{lstlisting}[language=Python, caption=Euler-Maruyama algorithm for simulation of eigenvalue processes]
     #%% Euler-Maruyama method for eigenvalue SDE solutions
@@ -83,7 +83,7 @@
                     diff = simulation[i,j] - simulation[i,k]
                     if diff != 0:
                         mu += (simulation[i,j]*(1-simulation[i,k]) + simulation[i,k]*(1-simulation[i,j]))/diff
-                simulation[i+1,j] = simulation[i,j] + dt*(mu+n_2-(n_1+n_2)*simulation[i,j]) + 1.5*sqrtime*np.random.randn()*np.sqrt(simulation[i,j]*(1-simulation[i,j]))
+                simulation[i+1,j] = simulation[i,j] + dt*(mu+n_2-(n_1+n_2)*simulation[i,j]) + 2*sqrtime*np.random.randn()*np.sqrt(simulation[i,j]*(1-simulation[i,j]))
         return simulation
     
     def deterministic_jacobi(dt=0.1,time=10,n=5,starting=np.linspace(start=0.1, stop=0.9, num=5),n_1=5,n_2=5):

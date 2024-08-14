@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.7.30)  13 AUG 2024 20:32
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.7.30)  13 AUG 2024 21:39
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1477,7 +1477,15 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-10.22153pt}.
 
-[54] (img/dyson_comparison.pgf
+[54]
+
+Package caption Warning: \label without proper reference on input line 610.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `fig:dyson_comparison' on page 55 undefined on input line 608.
+
+(img/dyson_comparison.pgf
 Package microtype Info: Fixing zero \fontdimen 6 for font `U/dsrom/m/n/10'
 (microtype)             (new value: 10.0pt) on input line 82.
 Package microtype Info: Fixing zero \fontdimen 6 for font `U/dsrom/m/n/7'
@@ -1515,10 +1523,10 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 (img/wishart_comparison.pgf)
-<img/jacobi.pdf, id=813, 433.62pt x 289.08pt>
+<img/jacobi.pdf, id=817, 433.62pt x 289.08pt>
 File: img/jacobi.pdf Graphic file (type pdf)
 <use img/jacobi.pdf>
-Package pdftex.def Info: img/jacobi.pdf  used on input line 618.
+Package pdftex.def Info: img/jacobi.pdf  used on input line 627.
 (pdftex.def)             Requested size: 433.62pt x 289.09251pt.
 ))
 
@@ -1756,7 +1764,11 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-10.22153pt}.
 
-[105] (img/four_det_dysons.pgf) (img/deterministic_wishart.pgf)
+[105] (img/four_det_dysons.pgf)
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+(img/deterministic_wishart.pgf)
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
@@ -1842,9 +1854,6 @@ Missing character: There is no í in font cmr8!
 LaTeX Warning: Command \' invalid in math mode on input line 268.
 
 Missing character: There is no í in font cmr6!
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
 
 
 [113]
@@ -2121,14 +2130,8 @@ LaTeX Warning: There were undefined references.
 
 LaTeX Warning: There were multiply-defined labels.
 
-
-Package rerunfilecheck Warning: File `main.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `main.out':
-(rerunfilecheck)             Before: 57B458F8A7D724A5F0F3BEFA843DB6FD;9858
-(rerunfilecheck)             After:  DFF69305B1DBE348395041CFECE4ED73;9858.
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: E14322098E955B293811C76241359F89;9886.
 
 Package biblatex Warning: Please (re)run BibTeX on the file(s):
 (biblatex)                main
@@ -2143,23 +2146,17 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 ### semi simple group (level 1) entered at line 109 (\begingroup)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 37662 strings out of 473904
- 706332 string characters out of 5736415
- 3228608 words of memory out of 5000000
- 58979 multiletter control sequences out of 15000+600000
- 600950 words of font info for 262 fonts, out of 8000000 for 9000
+ 37667 strings out of 473904
+ 706517 string characters out of 5736415
+ 3230994 words of memory out of 5000000
+ 58981 multiletter control sequences out of 15000+600000
+ 601079 words of font info for 264 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,20n,101p,1970b,2452s stack positions out of 10000i,1000n,20000p,200000b,200000s
-
-pdfTeX warning (dest): name{chapter*.46} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{chapter*.45} has been referenced but does not exist, replaced by a fixed one
-
 <C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/doublestroke/dsrom10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/rsfs/rsfs10.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfbx1000.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfbx1095.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfbx1200.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfbx1440.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfbx2074.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfbx2488.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfcc1095.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfrm0600.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfrm0800.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfrm1000.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfrm1095.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfrm1200.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfti0800.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfti1095.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sftt0900.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sftt1095.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfxc1728.pfb>
-Output written on main.pdf (158 pages, 2401841 bytes).
+Output written on main.pdf (158 pages, 2409622 bytes).
 PDF statistics:
- 1905 PDF objects out of 2073 (max. 8388607)
- 627 named destinations out of 1000 (max. 500000)
+ 1908 PDF objects out of 2073 (max. 8388607)
+ 626 named destinations out of 1000 (max. 500000)
  75180 words of extra memory for PDF output out of 89155 (max. 10000000)
 
