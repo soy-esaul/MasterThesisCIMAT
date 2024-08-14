@@ -1,0 +1,104 @@
+\chapter{Code for the simulations}
+
+\begin{lstlisting}[language=Python, caption=Euler-Maruyama algorithm for simulation of eigenvalue processes]
+    #%% Euler-Maruyama method for eigenvalue SDE solutions
+    import numpy as np
+    import matplotlib.pyplot as plt
+    import matplotlib
+    
+    def dyson(dt=0.1,time=10,n=5,starting=np.linspace(start=0, stop=5, num=5)):
+        num_points = int(time / dt)
+        simulation = np.zeros((num_points,n))
+        for l in range(n):
+            simulation[0,l] = starting[l]
+        sqrtime = np.sqrt(dt)
+        for i in range(num_points-1):
+            for j in range(n):
+                mu = 0
+                for k in range(n):
+                    diff = simulation[i,j] - simulation[i,k]
+                    if diff != 0:
+                        mu += 1/diff
+                simulation[i+1,j] = simulation[i,j] + dt*mu + sqrtime*np.random.randn()
+        return simulation
+    
+    def deterministic_dyson(dt=0.1,time=10,n=5,starting=np.linspace(start=0, stop=5, num=5)):
+        num_points = int(time / dt)
+        simulation = np.zeros((num_points,n))
+        for l in range(n):
+            simulation[0,l] = starting[l]
+        sqrtime = np.sqrt(dt)
+        for i in range(num_points-1):
+            for j in range(n):
+                mu = 0
+                for k in range(n):
+                    diff = simulation[i,j] - simulation[i,k]
+                    if diff != 0:
+                        mu += 1/diff
+                simulation[i+1,j] = simulation[i,j] + dt*mu
+        return simulation
+    
+    def wishart(dt=0.1,time=10,n=5,starting=np.linspace(start=0, stop=5, num=5)):
+        num_points = int(time / dt)
+        simulation = np.zeros((num_points,n))
+        for l in range(n):
+            simulation[0,l] = starting[l]
+        sqrtime = np.sqrt(dt)
+        for i in range(num_points-1):
+            for j in range(n):
+                mu = 0
+                for k in range(n):
+                    diff = simulation[i,j] - simulation[i,k]
+                    if diff != 0:
+                        mu += (simulation[i,k]+simulation[i,j])/diff
+                simulation[i+1,j] = simulation[i,j] + dt*(mu+n) + sqrtime*np.random.randn()*np.sqrt(simulation[i,j])
+        return simulation
+    
+    def deterministic_wishart(dt=0.1,time=10,n=5,starting=np.linspace(start=0, stop=5, num=5)):
+        num_points = int(time / dt)
+        simulation = np.zeros((num_points,n))
+        for l in range(n):
+            simulation[0,l] = starting[l]
+        sqrtime = np.sqrt(dt)
+        for i in range(num_points-1):
+            for j in range(n):
+                mu = 0
+                for k in range(n):
+                    diff = simulation[i,j] - simulation[i,k]
+                    if diff != 0:
+                        mu += (simulation[i,k]+simulation[i,j])/diff
+                simulation[i+1,j] = simulation[i,j] + dt*(mu+n)
+        return simulation
+    
+    def jacobi(dt=0.1,time=10,n=5,starting=np.linspace(start=0.1, stop=0.9, num=5),n_1=5,n_2=5):
+        num_points = int(time / dt)
+        simulation = np.zeros((num_points,n))
+        for l in range(n):
+            simulation[0,l] = starting[l]
+        sqrtime = np.sqrt(dt)
+        for i in range(num_points-1):
+            for j in range(n):
+                mu = 0
+                for k in range(n):
+                    diff = simulation[i,j] - simulation[i,k]
+                    if diff != 0:
+                        mu += (simulation[i,j]*(1-simulation[i,k]) + simulation[i,k]*(1-simulation[i,j]))/diff
+                simulation[i+1,j] = simulation[i,j] + dt*(mu+n_2-(n_1+n_2)*simulation[i,j]) + 1.5*sqrtime*np.random.randn()*np.sqrt(simulation[i,j]*(1-simulation[i,j]))
+        return simulation
+    
+    def deterministic_jacobi(dt=0.1,time=10,n=5,starting=np.linspace(start=0.1, stop=0.9, num=5),n_1=5,n_2=5):
+        num_points = int(time / dt)
+        simulation = np.zeros((num_points,n))
+        for l in range(n):
+            simulation[0,l] = starting[l]
+        sqrtime = np.sqrt(dt)
+        for i in range(num_points-1):
+            for j in range(n):
+                mu = 0
+                for k in range(n):
+                    diff = simulation[i,j] - simulation[i,k]
+                    if diff != 0:
+                        mu += (simulation[i,j]*(1-simulation[i,k]) + simulation[i,k]*(1-simulation[i,j]))/diff
+                simulation[i+1,j] = simulation[i,j] + dt*(mu+n_2-(n_1+n_2)*simulation[i,j]) 
+        return simulation
+\end{lstlisting}

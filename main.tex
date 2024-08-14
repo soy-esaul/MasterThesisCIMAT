@@ -5,7 +5,7 @@
 \usepackage[svgnames,table]{xcolor}  % color library (REQUIRED by CIMATpreamble)
 \usepackage{CIMATpreamble}  % definition of the CIMAT cover page
 \graphicspath{{img/}}  % set path for images folder
-
+\usepackage{listings}
 
 % \let\Bbbk\relax
 % \let\openbox\relax
@@ -132,7 +132,9 @@ A mis padres \ldots
 \printbibliography[heading=bibintoc]
 
 % Appendix
-%\appendix
+\appendix
+
+\include{appendix}
 
 \backmatter
 

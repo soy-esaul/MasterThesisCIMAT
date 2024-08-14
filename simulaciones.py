@@ -73,12 +73,9 @@ def jacobi(dt=0.1,time=10,n=5,starting=np.linspace(start=0.1, stop=0.9, num=5),n
     for l in range(n):
         simulation[0,l] = starting[l]
     sqrtime = np.sqrt(dt)
-    # i index is the time discretization
     for i in range(num_points-1):
-        # with j we iterate over every particle
         for j in range(n):
             mu = 0
-            # with k we iterate over the remaining particles (k \neq j)
             for k in range(n):
                 diff = simulation[i,j] - simulation[i,k]
                 if diff != 0:
@@ -92,12 +89,9 @@ def deterministic_jacobi(dt=0.1,time=10,n=5,starting=np.linspace(start=0.1, stop
     for l in range(n):
         simulation[0,l] = starting[l]
     sqrtime = np.sqrt(dt)
-    # i index is the time discretization
     for i in range(num_points-1):
-        # with j we iterate over every particle
         for j in range(n):
             mu = 0
-            # with k we iterate over the remaining particles (k \neq j)
             for k in range(n):
                 diff = simulation[i,j] - simulation[i,k]
                 if diff != 0:
@@ -109,7 +103,6 @@ if __name__ == "__main__":
     # Style for matplotlib
     # matplotlib.style.use("seaborn-v0_8")
     plt.style.use('tableau-colorblind10')
-    plt.figure(figsize=(7,4))
     
     CB_color_cycle = ['#377eb8', '#ff7f00', '#4daf4a',
                   '#f781bf', '#a65628', '#984ea3',
@@ -117,12 +110,12 @@ if __name__ == "__main__":
     
     matplotlib.rcParams['axes.prop_cycle'] = matplotlib.cycler(color=CB_color_cycle)
     # Code for LaTeX
-    # matplotlib.use("pgf")  # LaTeX
-    # plt.rcParams.update({   # LaTeX
-    # "pgf.texsystem": "pdflatex",  # LaTeX
-    # 'font.family': 'serif',   # LaTeX
-    # 'text.usetex': True,    # LaTeX
-    # 'pgf.rcfonts': False,})   # LaTeX
+    matplotlib.use("pgf")  # LaTeX
+    plt.rcParams.update({   # LaTeX
+    "pgf.texsystem": "pdflatex",  # LaTeX
+    'font.family': 'serif',   # LaTeX
+    'text.usetex': True,    # LaTeX
+    'pgf.rcfonts': False,})   # LaTeX
 
     # Set random seed 
     np.random.seed(57)
@@ -130,6 +123,7 @@ if __name__ == "__main__":
     # Examples
 
     # Dyson and deterministic Dyson comparison
+    plt.figure(figsize=(6,4))
     n = 9
     time_dyson = 20
     dt = 0.01
@@ -143,12 +137,11 @@ if __name__ == "__main__":
         plt.plot(time_mesh,sims[:,i],linewidth=1)
     plt.xlabel(r"Time ($t$)")
     plt.ylabel(r"Position in space ($\lambda_i$)")
-    plt.show()
-    # plt.savefig("img/explot.pgf")
+    plt.savefig("img/dyson_comparison.pgf")
 
     # Examples of Dyson Brownian motion
     dys_fig, dys_ax = plt.subplots(2,2)
-    dys_fig.set_size_inches(7,7)
+    dys_fig.set_size_inches(6,6)
     n_ex2 = 4
     dt_ex2 =0.01
     time_ex2 = 10
@@ -189,13 +182,12 @@ if __name__ == "__main__":
     # Figure parameters
     for ax in dys_ax.flat:
         ax.set(xlabel=r'time ($t$)', ylabel=r'Position')
-    for ax in dys_ax.flat:
-        ax.label_outer()
+    dys_fig.savefig("img/four_dysons.pgf")
     
     # deterministic Dyson
     # A distance that does not grow
     det_dys_fig, det_dys_ax = plt.subplots(2,2)
-    det_dys_fig.set_size_inches(7,7)
+    det_dys_fig.set_size_inches(6,6)
     n_ex2 = 4
     dt_ex2 =0.01
     time_ex2 = 10
@@ -233,41 +225,64 @@ if __name__ == "__main__":
     # Figure parameters
     for ax in det_dys_ax.flat:
         ax.set(xlabel=r'time ($t$)', ylabel=r'Position')
-    for ax in det_dys_ax.flat:
-        ax.label_outer()
+    # for ax in det_dys_ax.flat:
+    #     ax.label_outer()
+    det_dys_fig.savefig("img/four_det_dysons.pgf")
 
     # Wishart process
     # # Wishart process
-    plt.figure(figsize=(7,4))
-    n_wis = 10
+    plt.figure(figsize=(6,4))
+    n_wis = 9
+    dt_wis = 0.01
+    time_wis = 2
+    time_mesh_wis = np.linspace(start=0,stop=time_wis,num=int(time_wis/dt_wis))
     starting_wis = np.linspace(start=0.1, stop=20, num=n_wis)
-    sims_wis = wishart(dt=0.01,time=10,n=n_wis,starting=starting_wis)
+    sims_wis = wishart(dt=dt_wis,time=2,n=n_wis,starting=starting_wis)
+    sims_det_wis = deterministic_wishart(dt=dt_wis,time=2,n=n_wis,starting=starting_wis)
     for i in range(n_wis):
-        plt.plot(sims_wis[:,i])
-    # plt.show()
+        plt.plot(time_mesh_wis,sims_wis[:,i],linewidth=1)
+    for i in range(n_wis):
+        plt.plot(time_mesh_wis,sims_det_wis[:,i],linewidth=1)
+    plt.xlabel(r"Time ($t$)")
+    plt.ylabel(r"Position in space ($\lambda_i$)")
+    plt.savefig("img/wishart_comparison.pgf")
 
-    # # Deterministic Wishart process
-    # plt.figure(figsize=(7,4))
-    # sims_det_wis = deterministic_wishart(dt=0.01,time=2,n=n_wis,starting=starting_wis)
-    # for i in range(n_wis):
-    #     plt.plot(sims_det_wis[:,i])
-    # plt.show()
+    # Deterministic Wishart process
+    plt.figure(figsize=(6,4))
+    sims_det_wis = deterministic_wishart(dt=0.01,time=2,n=n_wis,starting=starting_wis)
+    for i in range(n_wis):
+        plt.plot(time_mesh_wis,sims_det_wis[:,i])
+    plt.xlabel(r"Time ($t$)")
+    plt.ylabel(r"Position in space ($\lambda_i$)")
+    plt.savefig("img/deterministic_wishart.pgf")
 
     # Jacobi process
-    # plt.figure(figsize=(7,4))
-    # sims_jacobi = jacobi(dt=0.000001,time=0.05,n=n_jacobi,starting=starting_jacobi,n_1=n_jacobi+1,n_2=n_jacobi+2)
-    # for i in range(n_jacobi):
-    #     plt.plot(sims_jacobi[:,i])
-    # plt.show()
+    plt.figure(figsize=(6,4))
+    n_jacobi = 9
+    dt_jacobi=0.000001
+    time_jacobi=0.05
+    starting_jacobi = np.linspace(start=0.3, stop=0.5, num=n_jacobi)
+    time_mesh_jacobi = np.linspace(start=0,stop=time_jacobi,num=int(time_jacobi/dt_jacobi))
+    sims_jacobi = jacobi(dt=dt_jacobi,time=time_jacobi,n=n_jacobi,starting=starting_jacobi,n_1=n_jacobi+1,n_2=n_jacobi+2)
+    for i in range(n_jacobi):
+        plt.plot(time_mesh_jacobi,sims_jacobi[:,i],linewidth=0.6)
+    plt.xlabel(r"Time ($t$)")
+    plt.ylabel(r"Position in space ($\lambda_i$)")
+    plt.savefig("img/jacobi.pdf")
 
     # Deterministic Jacobi
-    # plt.figure(figsize=(7,4))
-    # n_jacobi = 9
-    # starting_jacobi = np.linspace(start=0.3, stop=0.5, num=n_jacobi)
-    # sims_det_jacobi = deterministic_jacobi(dt=0.001,time=0.05,n=n_jacobi,starting=starting_jacobi,n_1=n_jacobi+1,n_2=n_jacobi+2)
-    # for i in range(n_jacobi):
-    #     plt.plot(sims_det_jacobi[:,i])
-    # plt.show()
+    plt.figure(figsize=(6,4))
+    n_det_jacobi = 9
+    dt_det_jacobi=0.001
+    time_det_jacobi=0.05
+    starting_det_jacobi = np.linspace(start=0.3, stop=0.5, num=n_jacobi)
+    time_mesh_det_jacobi = np.linspace(start=0,stop=time_jacobi,num=int(time_det_jacobi/dt_det_jacobi))
+    sims_det_jacobi = deterministic_jacobi(dt=dt_det_jacobi,time=time_det_jacobi,n=n_det_jacobi,starting=starting_det_jacobi,n_1=n_det_jacobi+1,n_2=n_det_jacobi+2)
+    for i in range(n_det_jacobi):
+        plt.plot(time_mesh_det_jacobi,sims_det_jacobi[:,i])
+    plt.xlabel(r"Time ($t$)")
+    plt.ylabel(r"Position in space ($\lambda_i$)")
+    plt.savefig("img/deterministic_jacobi.pgf")
 
     
     

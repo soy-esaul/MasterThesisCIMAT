@@ -27,36 +27,37 @@
 \contentsline {subsection}{\numberline {2.2.1}Wishart process}{51}{subsection.2.2.1}%
 \contentsline {subsection}{\numberline {2.2.2}Jacobi process}{53}{subsection.2.2.2}%
 \contentsline {section}{\numberline {2.3}Simulations}{55}{section.2.3}%
-\contentsline {chapter}{\numberline {3}Finite Free Probability}{57}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Polynomials and convolution}{57}{section.3.1}%
-\contentsline {subsection}{\numberline {3.1.1}Convolution of polynomials}{57}{subsection.3.1.1}%
-\contentsline {subsubsection}{Symmetric additive convolution}{58}{section*.23}%
-\contentsline {subsubsection}{Symmetric multiplicative convolution}{60}{section*.24}%
-\contentsline {subsubsection}{Asymmetric additive convolution}{60}{section*.25}%
-\contentsline {subsection}{\numberline {3.1.2}Classical orthogonal polynomial ensembles}{61}{subsection.3.1.2}%
-\contentsline {subsubsection}{Hermite polynomials}{62}{section*.26}%
-\contentsline {subsubsection}{Laguerre polynomials}{64}{section*.28}%
-\contentsline {subsubsection}{Jacobi polynomials}{66}{section*.30}%
-\contentsline {section}{\numberline {3.2}Expected characteristic polynomials}{67}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}Minor orthogonality}{68}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}Relationship to polynomial convolution}{73}{subsection.3.2.2}%
-\contentsline {section}{\numberline {3.3}The finite $\mathcal R_n$ transform}{76}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}Definition of the transform}{77}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}Finite free distributions}{87}{subsection.3.3.2}%
-\contentsline {subsubsection}{Constant distribution}{88}{section*.33}%
-\contentsline {subsubsection}{Gaussian distribution}{89}{section*.34}%
-\contentsline {subsubsection}{Poisson distribution}{89}{section*.35}%
-\contentsline {subsection}{\numberline {3.3.3}Finite Free Limit Theorems}{90}{subsection.3.3.3}%
-\contentsline {chapter}{\numberline {4}Deterministic eigenvalue processes for matrix valued processes}{95}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Deterministic Dyson Brownian motion}{95}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Deterministic eigenvalue processes for matrix-valued diffusions}{97}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}Wishart process}{98}{subsection.4.2.1}%
-\contentsline {subsection}{\numberline {4.2.2}Jacobi process}{99}{subsection.4.2.2}%
-\contentsline {section}{\numberline {4.3}Dynamical behavior of the deterministic eigenvalue processes}{99}{section.4.3}%
-\contentsline {section}{\numberline {4.4}Simulations}{104}{section.4.4}%
-\contentsline {section}{\numberline {4.5}Connections with finite free probability}{104}{section.4.5}%
-\contentsline {subsection}{\numberline {4.5.1}Dyson Brownian motion}{105}{subsection.4.5.1}%
-\contentsline {subsection}{\numberline {4.5.2}Wishart process}{114}{subsection.4.5.2}%
-\contentsline {subsection}{\numberline {4.5.3}Jacobi process}{121}{subsection.4.5.3}%
-\contentsline {chapter}{Conclusions}{135}{chapter*.41}%
-\contentsline {chapter}{Bibliography}{137}{chapter*.42}%
+\contentsline {chapter}{\numberline {3}Finite Free Probability}{59}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Polynomials and convolution}{59}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Convolution of polynomials}{59}{subsection.3.1.1}%
+\contentsline {subsubsection}{Symmetric additive convolution}{60}{section*.27}%
+\contentsline {subsubsection}{Symmetric multiplicative convolution}{62}{section*.28}%
+\contentsline {subsubsection}{Asymmetric additive convolution}{62}{section*.29}%
+\contentsline {subsection}{\numberline {3.1.2}Classical orthogonal polynomial ensembles}{63}{subsection.3.1.2}%
+\contentsline {subsubsection}{Hermite polynomials}{64}{section*.30}%
+\contentsline {subsubsection}{Laguerre polynomials}{66}{section*.32}%
+\contentsline {subsubsection}{Jacobi polynomials}{68}{section*.34}%
+\contentsline {section}{\numberline {3.2}Expected characteristic polynomials}{69}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Minor orthogonality}{70}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Relationship to polynomial convolution}{75}{subsection.3.2.2}%
+\contentsline {section}{\numberline {3.3}The finite $\mathcal R_n$ transform}{78}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Definition of the transform}{79}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Finite free distributions}{89}{subsection.3.3.2}%
+\contentsline {subsubsection}{Constant distribution}{90}{section*.37}%
+\contentsline {subsubsection}{Gaussian distribution}{91}{section*.38}%
+\contentsline {subsubsection}{Poisson distribution}{91}{section*.39}%
+\contentsline {subsection}{\numberline {3.3.3}Finite Free Limit Theorems}{92}{subsection.3.3.3}%
+\contentsline {chapter}{\numberline {4}Deterministic eigenvalue processes for matrix valued processes}{97}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Deterministic Dyson Brownian motion}{97}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Deterministic eigenvalue processes for matrix-valued diffusions}{99}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Wishart process}{100}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Jacobi process}{101}{subsection.4.2.2}%
+\contentsline {section}{\numberline {4.3}Dynamical behavior of the deterministic eigenvalue processes}{101}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Simulations}{106}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Connections with finite free probability}{108}{section.4.5}%
+\contentsline {subsection}{\numberline {4.5.1}Dyson Brownian motion}{109}{subsection.4.5.1}%
+\contentsline {subsection}{\numberline {4.5.2}Wishart process}{117}{subsection.4.5.2}%
+\contentsline {subsection}{\numberline {4.5.3}Jacobi process}{124}{subsection.4.5.3}%
+\contentsline {chapter}{Conclusions}{139}{chapter*.48}%
+\contentsline {chapter}{Bibliography}{141}{chapter*.49}%
+\contentsline {chapter}{\numberline {A}Code for the simulations}{145}{appendix.A}%
