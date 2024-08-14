@@ -1,0 +1,63 @@
+\contentsline {chapter}{Abstract}{iii}{chapter*.2}%
+\contentsline {paragraph}{Palabras clave:}{iii}{section*.3}%
+\contentsline {chapter}{Agradecimientos}{v}{chapter*.4}%
+\contentsline {chapter}{Introduction}{1}{chapter*.6}%
+\contentsline {chapter}{\numberline {1}Preliminaries}{3}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Introduction to main concepts in Random Matrix Theory}{4}{section.1.1}%
+\contentsline {subsection}{\numberline {1.1.1}Matrix algebra}{4}{subsection.1.1.1}%
+\contentsline {subsection}{\numberline {1.1.2}Random matrix ensembles}{5}{subsection.1.1.2}%
+\contentsline {subsection}{\numberline {1.1.3}Asymptotic results for random matrices}{7}{subsection.1.1.3}%
+\contentsline {section}{\numberline {1.2}Stochastic Calculus}{7}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}Stochastic calculus for $\mathbb {R}^n$-valued processes}{8}{subsection.1.2.1}%
+\contentsline {subsubsection}{Stochastic Calculus for $\mathbb R^n$-valued processes}{14}{section*.15}%
+\contentsline {subsubsection}{Infinitesimal generator and harmonic functions}{16}{section*.16}%
+\contentsline {subsubsection}{Complex stochastic calculus}{17}{section*.17}%
+\contentsline {subsection}{\numberline {1.2.2}Stochastic calculus for matrix-valued processes}{17}{subsection.1.2.2}%
+\contentsline {section}{\numberline {1.3}Non-commutative probability}{20}{section.1.3}%
+\contentsline {subsection}{\numberline {1.3.1}Non-commutative probability spaces}{20}{subsection.1.3.1}%
+\contentsline {subsection}{\numberline {1.3.2}Notions of independence}{24}{subsection.1.3.2}%
+\contentsline {subsection}{\numberline {1.3.3}Convolution}{25}{subsection.1.3.3}%
+\contentsline {subsection}{\numberline {1.3.4}Classical and free central limit theorems}{28}{subsection.1.3.4}%
+\contentsline {chapter}{\numberline {2}Eigenvalue processes for matrix-valued processes}{31}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Dyson Brownian Motion}{32}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Real case}{33}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}Complex case}{36}{subsection.2.1.2}%
+\contentsline {subsection}{\numberline {2.1.3}Non-collision of the eigenvalues}{39}{subsection.2.1.3}%
+\contentsline {section}{\numberline {2.2}Generalization for matrix-valued diffusion processes}{41}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Wishart process}{51}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Jacobi process}{53}{subsection.2.2.2}%
+\contentsline {section}{\numberline {2.3}Path simulations}{55}{section.2.3}%
+\contentsline {chapter}{\numberline {3}Finite Free Probability}{59}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Polynomials and convolution}{59}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Convolution of polynomials}{59}{subsection.3.1.1}%
+\contentsline {subsubsection}{Symmetric additive convolution}{60}{section*.27}%
+\contentsline {subsubsection}{Symmetric multiplicative convolution}{62}{section*.28}%
+\contentsline {subsubsection}{Asymmetric additive convolution}{62}{section*.29}%
+\contentsline {subsection}{\numberline {3.1.2}Classical orthogonal polynomial ensembles}{63}{subsection.3.1.2}%
+\contentsline {subsubsection}{Hermite polynomials}{64}{section*.30}%
+\contentsline {subsubsection}{Laguerre polynomials}{66}{section*.32}%
+\contentsline {subsubsection}{Jacobi polynomials}{68}{section*.34}%
+\contentsline {section}{\numberline {3.2}Expected characteristic polynomials}{69}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Minor orthogonality}{70}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Relationship to polynomial convolution}{75}{subsection.3.2.2}%
+\contentsline {section}{\numberline {3.3}The finite $\mathcal R_n$ transform}{78}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Definition of the transform}{79}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Finite free distributions}{89}{subsection.3.3.2}%
+\contentsline {subsubsection}{Constant distribution}{90}{section*.37}%
+\contentsline {subsubsection}{Gaussian distribution}{91}{section*.38}%
+\contentsline {subsubsection}{Poisson distribution}{91}{section*.39}%
+\contentsline {subsection}{\numberline {3.3.3}Finite Free Limit Theorems}{92}{subsection.3.3.3}%
+\contentsline {chapter}{\numberline {4}Deterministic eigenvalue processes for matrix valued processes}{97}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Deterministic Dyson Brownian motion}{97}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Deterministic eigenvalue processes for matrix-valued diffusions}{99}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Wishart process}{100}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Jacobi process}{101}{subsection.4.2.2}%
+\contentsline {section}{\numberline {4.3}Dynamical behavior of the deterministic eigenvalue processes}{101}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Simulations}{106}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Connections with finite free probability}{106}{section.4.5}%
+\contentsline {subsection}{\numberline {4.5.1}Dyson Brownian motion}{108}{subsection.4.5.1}%
+\contentsline {subsection}{\numberline {4.5.2}Wishart process}{117}{subsection.4.5.2}%
+\contentsline {subsection}{\numberline {4.5.3}Jacobi process}{124}{subsection.4.5.3}%
+\contentsline {chapter}{Conclusions}{139}{chapter*.48}%
+\contentsline {chapter}{Bibliography}{141}{chapter*.49}%
+\contentsline {chapter}{\numberline {A}Code for the simulations}{145}{appendix.A}%
