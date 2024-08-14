@@ -60,4 +60,4 @@
 \contentsline {subsection}{\numberline {4.5.3}Jacobi process}{126}{subsection.4.5.3}%
 \contentsline {chapter}{Conclusions}{139}{chapter*.48}%
 \contentsline {chapter}{Bibliography}{141}{chapter*.49}%
-\contentsline {chapter}{\numberline {A}Code for the simulations}{145}{appendix.A}%
+\contentsline {chapter}{\numberline {A}Code for the path simulations}{145}{appendix.A}%
