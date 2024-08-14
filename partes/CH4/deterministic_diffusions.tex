@@ -207,7 +207,7 @@ These results can be particularized for any matrix-valued diffusions. Especially
     So, even in the worst-case scenario, criterion \eqref{eq:separation_condition} is satisfied, and we conclude that the minimal distance grows for every initial condition of the system.
 \end{proof}
 
-\begin{corollary}
+\begin{corollary} \label{corollary:hermite_not_all_repel}
     In a system governed by~\eqref{eq:deterministic_dyson}, for $n\ge3$ not all of the functions separate for every given initial condition. For $n =2$, the functions always repel each other.
 \end{corollary}
 
@@ -321,22 +321,31 @@ These results can be particularized for any matrix-valued diffusions. Especially
     
 \end{proof}
 
-\section{Simulations}
+\newpage 
+\section{Path simulations}
 
-
+With these simulations we exemplify the dynamical behavior of the system of functions explained in the laste section. In Figure \ref{fig:four_det_dyson} we have the analogous to Figure \ref{fig:four_dyson}. The initial conditions are uniformly spaced points around zero for the last three examples. For the first example, the distance between the two points in the middle is two, while the top and bottom points are separated by 0.1 of the two in the middle. We can notice that, in concordance with Corollary \ref{corollary:hermite_not_all_repel}, the bigger value actually decreases during some time until the particle spacing is more uniform and then it starts growing. For the functions with a small separation, this distance grows very quickly at the beginning, as expected by Theorem \ref{thm:hermite_minimal_grows}.
 
 
 \begin{figure}[h!]
     \input{img/four_det_dysons.pgf}
-    \caption{Simulation of four different deterministic Dyson Brownian motions with different dimension.}
+    \caption{Simulation of four different deterministic Dyson Brownian motions with different dimension.\label{fig:four_det_dyson}}
 \end{figure}
+
+In the remaining three panels of Figure \ref{fig:four_det_dyson}, we also a behavior according to \ref{thm:hermite_minimal_grows}. Also notice that \eqref{eq:deterministic_dyson} implies that if we start with a configuration that is evenly spaced, then the points will stay evenly spaced through time, which is precisely what we can see. 
+
+In Figure \ref{fig:det_wishart}, we have the simulation analogous to \ref{fig:wishart_comparison} with a nine-dimensional deterministic Wishart process. Apart form observing that the toal distance of the particles grow, we check that this examples confirms Theorem \ref{thm:laguerre_does_not_grow}, as the distance between the two paths in the bottom is minimal at some point and it continues decreasing. However, the biggest is the value of the function and the surrounding ones, the faster their spacing grows, as we can notice for the two functions in the top.
 
 \begin{figure}[h!]
     \input{img/deterministic_wishart.pgf}
-    \caption{Simulation of the path of a deterministic Wishart process}
+    \caption{Simulation of the path of a deterministic Wishart process.\label{fig:det_wishart}}
 \end{figure}
+
+For the path simulations of the deterministic Jacobi process, we observe that for $t=0.05$ they are almost evenly spaced in $[0,1]$. We would expect this deterministic process to converge to the equilibrium which would be the roots of the ninth Jacobi polynomial with parameters $n_1 = 1, n_2 =2$. 
 
 \begin{figure}[h!]
     \input{img/deterministic_jacobi.pgf}
-    \caption{Simulation of the path of a deterministic Jacobi process}
+    \caption{Simulation of the path of a deterministic Jacobi process.\label{fig:det_jacobi}}
 \end{figure}
+
+\newpage

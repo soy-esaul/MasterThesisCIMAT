@@ -53,11 +53,11 @@
 \contentsline {subsection}{\numberline {4.2.1}Wishart process}{100}{subsection.4.2.1}%
 \contentsline {subsection}{\numberline {4.2.2}Jacobi process}{101}{subsection.4.2.2}%
 \contentsline {section}{\numberline {4.3}Dynamical behavior of the deterministic eigenvalue processes}{101}{section.4.3}%
-\contentsline {section}{\numberline {4.4}Simulations}{106}{section.4.4}%
-\contentsline {section}{\numberline {4.5}Connections with finite free probability}{106}{section.4.5}%
-\contentsline {subsection}{\numberline {4.5.1}Dyson Brownian motion}{108}{subsection.4.5.1}%
-\contentsline {subsection}{\numberline {4.5.2}Wishart process}{117}{subsection.4.5.2}%
-\contentsline {subsection}{\numberline {4.5.3}Jacobi process}{124}{subsection.4.5.3}%
+\contentsline {section}{\numberline {4.4}Path simulations}{107}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Connections with finite free probability}{109}{section.4.5}%
+\contentsline {subsection}{\numberline {4.5.1}Dyson Brownian motion}{110}{subsection.4.5.1}%
+\contentsline {subsection}{\numberline {4.5.2}Wishart process}{119}{subsection.4.5.2}%
+\contentsline {subsection}{\numberline {4.5.3}Jacobi process}{126}{subsection.4.5.3}%
 \contentsline {chapter}{Conclusions}{139}{chapter*.48}%
 \contentsline {chapter}{Bibliography}{141}{chapter*.49}%
 \contentsline {chapter}{\numberline {A}Code for the simulations}{145}{appendix.A}%
