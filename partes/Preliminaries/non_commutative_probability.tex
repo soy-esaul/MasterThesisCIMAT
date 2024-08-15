@@ -313,10 +313,34 @@ Usually we denote $a\cdot b = ab$ to simplify notation. Now we give the definiti
         \end{equation*}
     \end{theorem}
 
-    Now we compute a few examples of Cauchy-Stieltjes transforms
+    The following are Cauchy-Stieltjes transforms for a few well-known distributions
 
-    \begin{example} \todo{Hacer ejemplos} 
+    \begin{example}
         % Semicírculo, arcoseno, medida empírica.
+        \begin{itemize}
+            \item A random variable has standard semicircle distribution if it has density $f$ such that
+            
+            \[ f(x) = \frac{\sqrt{4-x^2}}{2\pi}, \qquad x \in [-2,2]. \]
+
+            In this case, its Cauchy-Stieltjes transform is
+
+            \[G_s(z) = \frac{z - \sqrt{z^2-4}}{2}, \quad \forall z \in \C^+.\]
+            
+            \item A random variable has arcsine distribution if it has density $g$ such that
+            \[ g(x) = \frac1\pi \frac{1}{\sqrt{4-x^2}}, \qquad x \in [-2,2]. \]
+
+            In this case, its Cauchy-Stieltjes transform is given by
+
+            \[ G_a(z) = \frac{1}{\sqrt{z^2-4}}. \]
+
+            \item Let $\mu$ be an empirical probability measure over a finte set of points $x_1,x_2, \dots, x_n$. Then 
+            
+            \[ \mu(\{x\}) = \frac1n \sum_{k=1}^n \delta_{x_k}(x), \]
+
+            \noindent and its Cauchy-Stieltjes transform is given by
+
+            \[ G_\mu(z) = \frac1n \sum_{k=0}^n \frac{1}{z - x_k}. \]
+        \end{itemize}
     \end{example}
 
     If $\mu$ is absolutely continuous with respect to the Lebesgue measure and has density $f_\mu$, then it is possible to recover $f_\mu$ from the Cauchy transform $G_\mu$ by using the Stieltjes inversion formula.

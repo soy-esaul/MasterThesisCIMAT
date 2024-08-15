@@ -254,14 +254,14 @@ The symmetric additive convolution between two Hermite polynomials with the same
     \noindent while the generalized Laguerre polynomials are defined by the differential operator
 
     \begin{equation*}
-        L_n^{\alpha}(z) \coloneqq x^{-\alpha} \left( 1 - \partial_z \right)^{n}[x^{n+\alpha}].
+        L_n^{\alpha}(z) \coloneqq x^{-\alpha} \left( 1 - \partial_z \right)^{n}[x^{n+\alpha}] \coloneqq \sum_{k=0}^n(-1)^k (n+\alpha)_{n+\alpha-k} x^{n-k}.
     \end{equation*}
 
     Notice that this is equivalent to the definition by the linear differential operator
 
     \begin{equation*}
-        L_n^{\alpha}(z) \coloneqq \left( 1 - \partial_z \right)^{n+\alpha}[x^n].
-    \end{equation*} \todo{Expandir operadores}
+        L_n^{\alpha}(z) \coloneqq \left( 1 - \partial_z \right)^{n+\alpha}[x^n] = \sum_{k=0}^n (-1)^k (n+\alpha)_{n+\alpha-k} x^{n-k}.
+    \end{equation*}
 
     Just as in the case of the Hermite polynomials, we can generalize to bi-variate versions which corresponds to a chi-squared law with variance $t^2$. The time dependent Laguerre polynomials also known as Laguerre polynomials with variance are polynomials on $z$ and $t$ defined by the analogous linear operator
 

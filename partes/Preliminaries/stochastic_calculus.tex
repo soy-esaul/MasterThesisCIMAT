@@ -29,9 +29,9 @@ It is not hard to verify from the definition that the integral is linear and has
     \E{ \left( \int_0^T X(s) \d B(s)\right)^2 } = \int_0^T \E{X^2(s)} \d s.
 \end{equation*}
 
-Another important fact is that the Itô integral is a martingale. These last two are the most important properties of this integral and one usually wants to preserve them when defining a stochastic integral for more general processes. \todo{Probar propiedades}
+Another important fact is that the Itô integral is a martingale. These last two are the most important properties of this integral and one usually wants to preserve them when defining a stochastic integral for more general processes. The proof of these properties can be found in \cite{book:legall}, \cite{book:klebaner} or \cite{book:karatzas}.
 
-If we have a square integrable continuous time process $X(t)$ adapted to $\F_t$ and a sequence of simple adapted processes $X_n(t)$ that are also square integrable and converge in probability to $X(t)$, then under certain conditions,\todo{cuáles son estas condiciones?} one can prove that the integrals $\int_0^T X_n(s)\d B(s)$ also have a limit in probability. We define the Itô integral for general adapted processes as this limit.
+If we have a square integrable continuous time process $X(t)$ adapted to $\F_t$ and a sequence of simple adapted processes $X_n(t)$ that are also square integrable and converge in probability to $X(t)$, then under proper conditions, one can prove that the integrals $\int_0^T X_n(s)\d B(s)$ also have a limit in probability. We define the Itô integral for general adapted processes as this limit.
 
 \begin{definition}
     Let $X$ be a square integrable adapted process to $\mathscr F_t$ and $(X_n(t))_{n\ge 0}$ a sequence of simple adapted, square integrable processes converging in probability to $X(t)$. We define the integral of $X(t)$ with respect to a Brownian motion $B(t)$ as
@@ -77,12 +77,12 @@ As we have mentioned before, when extending the definition of the Itô integral 
     
     \begin{equation*}
         \E{ \int_0^T X(s) \d B(s) }^2 = \int_0^T \E{X^2(s)} \d s.
-    \end{equation*}\todo{Escribir prueba de esto?}
+    \end{equation*}
     
     \end{enumerate}
 \end{theorem}
 
-If we consider, for a given adapted process $X$, the Itô integral process $I=(I(t), t \ge 0)$ defined as
+For a proof of last Theorem, consult \cite{book:klebaner}. If we consider, for a given adapted process $X$, the Itô integral process $I=(I(t), t \ge 0)$ defined as
 
     \begin{equation*}
         I(t) \coloneqq \int_0^t X(s) \d B(s),
@@ -219,13 +219,12 @@ Notice that in the case of the Stratanovich integral, we recover the classical i
 
 % Sacado de Revuz-Yor
 
-\todo{Incluir pruebas para todos estos resultados}
 
-The next results are technical but they are needed for the proofs in Chapter \ref{ch:eigen_processes}. The first one states the existence of a process called local time and the stochastic differential equation it satisfies, the second one gives a way to prove when this local time process is zero.
+The next results are technical but they are needed for the proofs in Chapter \ref{ch:eigen_processes}. The first one states the existence of a process called local time and the stochastic differential equation it satisfies, the second one gives a way to prove when this local time process is zero. Both results with their proofs acn be found in \cite{book:revuzyor}
 
 % Sacado de Revuz-Yor
 
-\begin{theorem}[Tanaka's formula (\cite{book:revuzyor}) ] \todo{Tomado de Revuz-Yor}
+\begin{theorem}[Tanaka's formula]
     Let $X$ be a continuous semimartingale. For any real number $a$, there exists an increasing continuous process $L^a$ called the local time of $X$ in $a$ such that,
 
 
@@ -239,8 +238,8 @@ The next results are technical but they are needed for the proofs in Chapter \re
 
 
 % Sacado de Revuz-Yor ¿Qué es $\rho$? pág 389 Lemma 3.3
-\begin{theorem}[\cite{book:revuzyor}] \label{thm:local_zero} 
-    \todo{Tomado de Revuz-Yor. pág 389 Lemma 3.3.}
+\begin{theorem} \label{thm:local_zero} 
+    %\todo{Tomado de Revuz-Yor. pág 389 Lemma 3.3.}
     Let  $\rho : (0,\infty) \to (0,\infty)$ a measurable function that satisfies 
 
     \begin{equation*}
@@ -257,12 +256,12 @@ The next results are technical but they are needed for the proofs in Chapter \re
     \noindent then $L^0(X) = 0$.
 \end{theorem}
 
-Gronwall's lemma allows us to bound a function satsifying a differential inequality by the solution of the associated differential equation. It will be  useful for the multidimensional version of the Yamada-Watanabe Theorem.
+Gronwall's lemma allows us to bound a function satsifying a differential inequality by the solution of the associated differential equation. It will be  useful for the multidimensional version of the Yamada-Watanabe Theorem. The proof is in \cite{book:legall}[page 213].
 
 % Sacado de Le Gall, pág 213
 
-\begin{lemma}[Gronwall's lemma (\cite{book:legall})] 
-    \label{lemma:gronwall} \todo{Tomado de Le Gall, pág 213}
+\begin{lemma}[Gronwall's lemma] 
+    \label{lemma:gronwall} %\todo{Tomado de Le Gall, pág 213}
     Let $T >0$ and let $g$ be any nonnegative bounded measurable function on $[0,T]$. Assume that there exists two constants $a\ge 0$ and $b\ge 0$ such that for every $t\in [0,T]$,
 
     \[ g(t) \le a + b\int_0^t g(s)~\d s. \]

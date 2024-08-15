@@ -91,6 +91,15 @@ We are usually interested on knowing if $\hat\mu$ and $\hat \nu$ converge to a g
 
 \begin{example} \todo{Agregar ejemplos}
 % distribuciones espectrales con límite.
+Let $A= c I$ for $c \in \R$ and $I$ the identity matrix with size $n\times n$. Then $\hat{\mu}_n(\{c\}) = \hat{\nu}_n(\{c\}) = 1$ for every $n$ and 
+
+\begin{equation*}
+    \lim_{n\to\infty} \hat{\nu}_n = \lim_{n\to\infty} \hat{\mu}_n = \delta_c.
+\end{equation*}
+\end{example}
+
+\begin{example}
+    Let $A$ be an $n \times n$ matrix with $A = \mathrm{diag}[u_1, u_2, \dots, u_n]$ and $u_1, \dots, u_n$ are i.i.d. random variables with uniform distribution on $[0,1]$. Then both $\hat \mu_n$ and $\hat \nu_n$ converge to the measure of an uniform random variable on $[0,1]$.
 \end{example}
 
 Using that the trace equals the sum of eigenvalues, we have that the expectation over  $\hat\nu$ is equal to
