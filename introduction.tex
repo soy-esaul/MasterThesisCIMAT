@@ -1,2 +1,44 @@
 \chapter*{Introduction}
 \addcontentsline{toc}{chapter}{Introduction} 
+
+Around modern statistics, there are two problems that random matrix theory can help solve; one is the study of large covariance matrices, and the other is the theoretical justification of deep learning.
+
+Throughout history, the collection of data from nature has been affected by intrinsic noise that arises as a result of imprecision or errors in measurement. Traditional statistical methods are useful for eliminating this noise when working with small amounts of data. When the number of variables and observations increases, the relationships between variables are modeled with a very large covariance matrix that requires the use of random matrix theory.
+
+In a topic adjacent to statistics, the theoretical foundation of new deep learning techniques is incomplete. Despite the advances that have been achieved using this type of model, their implementation normally follows heuristic rules, which makes it impossible to generalize the results or find optimal methodologies. Currently, there are several attempts to generate a rigorous theory for the convergence of deep learning models. Essentially, a deep learning model is a set of parameters that are updated in each iteration of the training algorithm. One approach to this problem is to represent the training of the model under a certain algorithm as the evolution of a matrix-valued stochastic process.
+
+Random matrix theory, through the study of the evolution of matrix processes, provides tools for solving this problem. Typically, the study of random matrices is based on knowing the behavior of spectral distributions. In particular, when working with matrix-valued stochastic processes, it is of interest to know the behavior of their eigenvalue process.
+
+In Freeman Dyson's seminal work \cite{article:dyson}, a system of differential equations is obtained to describe the eigenvalues of a Brownian motion in a space of real (GOE), complex (GUE), or quaternionic (GSE) self-adjoint matrices. The process that describes the evolution of each of these eigenvalues is called Dyson's Brownian motion, and it is the only weak solution to the following stochastic differential equation,
+
+\begin{equation}
+d\lambda_j = \sqrt{\frac2\beta} dB_j + \sum_{k\neq j} \frac{dt}{\lambda_j-\lambda_k}, \label{eq:dys}
+\end{equation}
+
+where $\lambda_i$ is the $i$-th eigenvalue of the matrix, and $B_1, B_2,\dots,B_n$ represent independent Brownian motions. In this case, the parameter $\beta$ depends on the space in which the random matrices take values, and thus $\beta=1$ represents the orthogonal case (GOE), $\beta=2$ the unitary case (GUE), and $\beta=4$ the symplectic case (GSE).
+
+Several subsequent works find differential equations for the eigenvalues of matrix processes. Particularly, Graczyk and Małecki \cite{article:multiyamada} manage to generalize Dyson's result by finding a differential equation for the eigenvalues of matrix processes $X = (X_t, t\ge 0)$ that satisfy a stochastic differential equation of the form
+
+\begin{equation}
+\d X(t) = g(X(t))d W(t)h(X(t)) + h(X_t)dW(t)^Tg(X(t)) + b(X(t))\d t,
+\end{equation}
+
+where $W(t)$ is a matrix whose entries are all independent Brownian motions, and where the functions $g$ and $h$ act spectrally on $X$. Under certain acceptable regularity conditions, Graczyk and Małecki show that the eigenvalues of this process are the only solution to the following differential equation
+
+\begin{equation}
+\d\lambda_j = 2g(\lambda_j)h(\lambda_j)\d B_j + \left( b(\lambda_j) + \sum_{k\neq j} \frac{G(\lambda_j,\lambda_k)}{\lambda_j - \lambda_k} \right)\d t,
+\end{equation}
+
+where $B_1,\dots,B_n$ are independent Brownian motions and $G(x,y) := g^2(x)h^2(y)$.
+
+In a different context, Marcus, Spielman, and Srivastava \cite{article:finitefree} study convolutions of polynomials and find that, using an analogy with free probability, it is possible to write these convolutions as the expected polynomials of sums and products of random matrices invariant under unitary transformations. Specifically, they find that the roots of characteristic polynomial of a Brownian motion in the space of Hermitian matrices satisfy the equation
+
+\begin{equation} \label{eq:det_dys}
+\d\lambda_j = \sum_{k\neq j} \frac{\d t}{\lambda_j-\lambda_k}.
+\end{equation}
+
+This equation coincides with the equation satisfied by Dyson's Brownian motion when the diffusion coefficient is removed.
+
+A final precedent is found in Holcomb and Paquette \cite{article:holcomb_paquette} where they build a tridiagonal matrix model whose eigenvalues satisfy \eqref{eq:det_dys}. The presence of this equation in several contexts suggests that a relationship can be found and used to translate knowledge between different areas.
+
+This thesis is a modest attempt to explore how the theory of stochastic processes and finite free probability can be used to approach the study of eigenvalue processes. In the first chapter we introduce basic concepts on random matrix theory, stochastic calculus, and non-commutative probability . In Chapter two we use stochastic calculus tools to study the behavior of eigenvalue processes in a quite general setting. In Chapter three we provide a brief introduction to finite free probability theory as a theoretical setting to study expected characteristic polynomials. Finally, in Chapter four we construct matrix-valued stochastic processes whose spectrum behaves as the roots of the expected characteristic polynomial for some of the matrix-valued stochastic processes studied in Chapter two. We then relate these results to Finite Free Probability Theory by showing some connections. 

@@ -139,7 +139,7 @@ Since $H_\beta$ has the same distribution as an invariant Gaussian ensemble, the
 
 
 
-\begin{theorem}
+\begin{theorem} \label{thm:dyson_is_hermite}
     Let $X$ be an $n\times n$ GUE, then its expected characteristic polynomial, $P_n(z)$ is the $n$th Hermite polynomial.
 \end{theorem}
 
@@ -412,7 +412,7 @@ As a final part for this subsection, let us prove that if you have an arbitrary 
 
     Similarly to the Brownian motion case, we will first construct a tridiagonal model that will help us to get the expected characteristic polynomial.
 
-\begin{lemma}
+\begin{lemma} 
     Let $W_\beta$ be an $n\times n$ matrix from the  $\beta$-Wishart ensemble ($\beta \in \{1,2,4\}$). The eigenvalues of $W_\beta$ have the same joint law as those of the tridiagonal matrix $L_\beta = \trans{B_\beta}  B_\beta$ with $B_\beta$ is an $m\times n$ bidiagonal matrix defined as 
 
     \begin{align} \label{eq:tridiag_laguerre}
@@ -509,7 +509,7 @@ As a final part for this subsection, let us prove that if you have an arbitrary 
 
     The dynamical case can be found using the static case and the fact that a Wishart matrix has the same law as $t\trans GG$, for $G$ a matrix of independent standard normal variables.
 
-\begin{theorem}
+\begin{theorem} \label{thm:wishart_is_laguerre}
     Let $B$ be an $n\times n$ matrix and $B_{ij}$ be independent standard Brownian motions, then 
 
     \begin{equation*}
@@ -600,7 +600,7 @@ As a final part for this subsection, let us prove that if you have an arbitrary 
 
     In total analogy to Proposition \ref{prop:convolution_of_hermites}, we have a similar result for the Laguerre polynomials using asymmetric additive convolution.
 
-\begin{proposition}
+\begin{proposition} \label{prop:convolution_of_laguerres}
     Let $L_n(z,t_1) = (1-ct_1\partial_z)^n[z^n]$ and $L_n(z,t_2) = (1-ct_2\partial_z)^n[z^n]$ be two Laguerre polynomials of degree $n$, then their asymmetric additive convolution $L_n(z,t_1) \aac L_n(z,t_2)$ is a Laguerre polynomial of degree $n$ with variance $t_1+t_2$, $L_n(z,t_1+t_2)$. 
 \end{proposition}
 

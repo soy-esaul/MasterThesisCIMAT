@@ -17,6 +17,100 @@
 \endgroup
 
 \datalist[entry]{none/global//global/global/global}
+  \entry{article:dyson}{article}{}{}
+    \name{author}{1}{}{%
+      {{hash=DFJ}{%
+         family={Dyson},
+         familyi={D\bibinitperiod},
+         given={Freeman\bibnamedelima J.},
+         giveni={F\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{DFJ1}
+    \strng{fullhash}{DFJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{abstract}{%
+    "{A new type of Coulomb gas is defined, consisting of n point charges
+  executing Brownian motions under the influence of their mutual electrostatic
+  repulsions. It is proved that this gas gives an exact mathematical
+  description of the behavior of the eigenvalues of an (n × n) Hermitian
+  matrix, when the elements of the matrix execute independent Brownian motions
+  without mutual interaction. By a suitable choice of initial conditions, the
+  Brownian motion leads to an ensemble of random matrices which is a good
+  statistical model for the Hamiltonian of a complex system possessing
+  approximate conservation laws. The development with time of the Coulomb gas
+  represents the statistical behavior of the eigenvalues of a complex system as
+  the strength of conservation‐destroying interactions is gradually
+  increased. A ``virial theorem'' is proved for the Brownian‐motion gas, and
+  various properties of the stationary Coulomb gas are deduced as
+  corollaries.}"%
+    }
+    \verb{doi}
+    \verb {10.1063/1.1703862}
+    \endverb
+    \verb{eprint}
+    \verb {https://pubs.aip.org/aip/jmp/article-pdf/3/6/1191/8158355/1191\_1\_o
+    \verb nline.pdf}
+    \endverb
+    \field{issn}{{0022-2488}}
+    \field{number}{6}
+    \field{pages}{1191\bibrangedash 1198}
+    \field{title}{A Brownian-Motion Model for the Eigenvalues of a Random
+  Matrix}
+    \verb{url}
+    \verb {https://doi.org/10.1063/1.1703862}
+    \endverb
+    \field{volume}{3}
+    \verb{file}
+    \verb :C\:/Users/Esaul/Documents/Maestría en Probabilidad y Estadística/4
+    \verb  Cuarto semestre/Seminario de investigación/Referencias/Artículos/F
+    \verb reeman J. Dyson - A Brownian Motion Model for the Eigenvalues of a Ra
+    \verb ndom Matrix.pdf:PDF
+    \endverb
+    \field{journaltitle}{Journal of Mathematical Physics}
+    \field{day}{22}
+    \field{month}{06}
+    \field{year}{1962}
+    \warn{\item Can't use 'date' + 'year'}
+  \endentry
+
+  \entry{article:multiyamada}{article}{}{}
+    \name{author}{2}{}{%
+      {{hash=GP}{%
+         family={Graczyk},
+         familyi={G\bibinitperiod},
+         given={Piotr},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=MJ}{%
+         family={Małecki},
+         familyi={M\bibinitperiod},
+         given={Jacek},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{GPMJ1}
+    \strng{fullhash}{GPMJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.1063/1.4790507
+    \endverb
+    \field{title}{Multidimensional Yamada-Watanabe theorem and its
+  applications}
+    \field{volume}{54}
+    \verb{file}
+    \verb :C\:/Users/Esaul/Documents/Maestría en Probabilidad y Estadística/4
+    \verb  Cuarto semestre/Seminario de investigación/Referencias/Artículos/P
+    \verb iotr Graczyk, Jacek Malecki - Multidimensional Yamada-Watanabe theore
+    \verb m and its applications to particle systems.pdf:PDF
+    \endverb
+    \field{journaltitle}{Journal of Mathematical Physics}
+    \field{month}{08}
+    \field{year}{2011}
+  \endentry
+
   \entry{article:finitefree}{article}{}{}
     \name{author}{3}{}{%
       {{hash=MAW}{%
@@ -55,6 +149,30 @@
     \endverb
     \field{journaltitle}{Probability Theory and Related Fields}
     \field{year}{2022}
+  \endentry
+
+  \entry{article:holcomb_paquette}{article}{}{}
+    \name{author}{2}{}{%
+      {{hash=HD}{%
+         family={Holcomb},
+         familyi={H\bibinitperiod},
+         given={Diane},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=PE}{%
+         family={Paquette},
+         familyi={P\bibinitperiod},
+         given={Elliot},
+         giveni={E\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{HDPE1}
+    \strng{fullhash}{HDPE1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Tridiagonal models for Dyson Brownian motion}
+    \field{journaltitle}{arXiv preprint arXiv:1707.02700}
+    \field{year}{2017}
   \endentry
 
   \entry{book:mingo_speicher}{book}{}{}
@@ -321,100 +439,6 @@
     \field{year}{2016}
   \endentry
 
-  \entry{article:multiyamada}{article}{}{}
-    \name{author}{2}{}{%
-      {{hash=GP}{%
-         family={Graczyk},
-         familyi={G\bibinitperiod},
-         given={Piotr},
-         giveni={P\bibinitperiod},
-      }}%
-      {{hash=MJ}{%
-         family={Małecki},
-         familyi={M\bibinitperiod},
-         given={Jacek},
-         giveni={J\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{GPMJ1}
-    \strng{fullhash}{GPMJ1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \verb{doi}
-    \verb 10.1063/1.4790507
-    \endverb
-    \field{title}{Multidimensional Yamada-Watanabe theorem and its
-  applications}
-    \field{volume}{54}
-    \verb{file}
-    \verb :C\:/Users/Esaul/Documents/Maestría en Probabilidad y Estadística/4
-    \verb  Cuarto semestre/Seminario de investigación/Referencias/Artículos/P
-    \verb iotr Graczyk, Jacek Malecki - Multidimensional Yamada-Watanabe theore
-    \verb m and its applications to particle systems.pdf:PDF
-    \endverb
-    \field{journaltitle}{Journal of Mathematical Physics}
-    \field{month}{08}
-    \field{year}{2011}
-  \endentry
-
-  \entry{article:dyson}{article}{}{}
-    \name{author}{1}{}{%
-      {{hash=DFJ}{%
-         family={Dyson},
-         familyi={D\bibinitperiod},
-         given={Freeman\bibnamedelima J.},
-         giveni={F\bibinitperiod\bibinitdelim J\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{DFJ1}
-    \strng{fullhash}{DFJ1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{abstract}{%
-    "{A new type of Coulomb gas is defined, consisting of n point charges
-  executing Brownian motions under the influence of their mutual electrostatic
-  repulsions. It is proved that this gas gives an exact mathematical
-  description of the behavior of the eigenvalues of an (n × n) Hermitian
-  matrix, when the elements of the matrix execute independent Brownian motions
-  without mutual interaction. By a suitable choice of initial conditions, the
-  Brownian motion leads to an ensemble of random matrices which is a good
-  statistical model for the Hamiltonian of a complex system possessing
-  approximate conservation laws. The development with time of the Coulomb gas
-  represents the statistical behavior of the eigenvalues of a complex system as
-  the strength of conservation‐destroying interactions is gradually
-  increased. A ``virial theorem'' is proved for the Brownian‐motion gas, and
-  various properties of the stationary Coulomb gas are deduced as
-  corollaries.}"%
-    }
-    \verb{doi}
-    \verb {10.1063/1.1703862}
-    \endverb
-    \verb{eprint}
-    \verb {https://pubs.aip.org/aip/jmp/article-pdf/3/6/1191/8158355/1191\_1\_o
-    \verb nline.pdf}
-    \endverb
-    \field{issn}{{0022-2488}}
-    \field{number}{6}
-    \field{pages}{1191\bibrangedash 1198}
-    \field{title}{A Brownian-Motion Model for the Eigenvalues of a Random
-  Matrix}
-    \verb{url}
-    \verb {https://doi.org/10.1063/1.1703862}
-    \endverb
-    \field{volume}{3}
-    \verb{file}
-    \verb :C\:/Users/Esaul/Documents/Maestría en Probabilidad y Estadística/4
-    \verb  Cuarto semestre/Seminario de investigación/Referencias/Artículos/F
-    \verb reeman J. Dyson - A Brownian Motion Model for the Eigenvalues of a Ra
-    \verb ndom Matrix.pdf:PDF
-    \endverb
-    \field{journaltitle}{Journal of Mathematical Physics}
-    \field{day}{22}
-    \field{month}{06}
-    \field{year}{1962}
-    \warn{\item Can't use 'date' + 'year'}
-  \endentry
-
   \entry{article:allez_guionnet_beta}{article}{}{}
     \name{author}{2}{}{%
       {{hash=AR}{%
@@ -452,30 +476,6 @@
     \field{volume}{18}
     \field{journaltitle}{Electronic Journal of Probability}
     \field{year}{2013}
-  \endentry
-
-  \entry{article:holcomb_paquette}{article}{}{}
-    \name{author}{2}{}{%
-      {{hash=HD}{%
-         family={Holcomb},
-         familyi={H\bibinitperiod},
-         given={Diane},
-         giveni={D\bibinitperiod},
-      }}%
-      {{hash=PE}{%
-         family={Paquette},
-         familyi={P\bibinitperiod},
-         given={Elliot},
-         giveni={E\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{HDPE1}
-    \strng{fullhash}{HDPE1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{title}{Tridiagonal models for Dyson Brownian motion}
-    \field{journaltitle}{arXiv preprint arXiv:1707.02700}
-    \field{year}{2017}
   \endentry
 
   \entry{book:mckean}{book}{}{}
@@ -1103,6 +1103,40 @@
     \field{volume}{8}
     \field{journaltitle}{Foundations of Computational Mathematics}
     \field{year}{2008}
+  \endentry
+
+  \entry{article:roots_grow_polya}{article}{}{}
+    \name{author}{3}{}{%
+      {{hash=BP}{%
+         family={Br{\"a}nd{\'e}n},
+         familyi={B\bibinitperiod},
+         given={Petter},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=KI}{%
+         family={Krasikov},
+         familyi={K\bibinitperiod},
+         given={Ilia},
+         giveni={I\bibinitperiod},
+      }}%
+      {{hash=SB}{%
+         family={Shapiro},
+         familyi={S\bibinitperiod},
+         given={Boris},
+         giveni={B\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{BP+1}
+    \strng{fullhash}{BPKISB1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{number}{11}
+    \field{pages}{4831\bibrangedash 4843}
+    \field{title}{Elements of P{\'o}lya-Schur theory in the finite difference
+  setting}
+    \field{volume}{144}
+    \field{journaltitle}{Proceedings of the American Mathematical Society}
+    \field{year}{2016}
   \endentry
 \enddatalist
 \endinput
