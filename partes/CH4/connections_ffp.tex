@@ -629,13 +629,13 @@ Finally, just like in the Dyson Brownian motion case, we state a Theorem that al
     We find the derivatives first
 
     \begin{align*}
-        \partial_z[L_n(z,t) \aac p(z)] &= \partial_z \left[ \sum_{k=0}^n z^{n-k}(-1)^k \sum_{j=0}^k \left(\frac{(n-j)!(n-k+j)!}{n!(n-k)!}\right)^2 \binom{n}{j}\frac{(ct_1)^jn!}{(n-j)!}b_{k-j}\right],\\ 
+        \partial_z[L_n&(z,t) \aac p(z)]\\ &= \partial_z \left[ \sum_{k=0}^n z^{n-k}(-1)^k \sum_{j=0}^k \left(\frac{(n-j)!(n-k+j)!}{n!(n-k)!}\right)^2 \binom{n}{j}\frac{(ct_1)^jn!}{(n-j)!}b_{k-j}\right],\\ 
         &= \sum_{k=0}^{n-1} (n-k)z^{n-k-1}(-1)^k \sum_{j=0}^k \left(\frac{(n-j)!(n-k+j)!}{n!(n-k)!}\right)^2 \binom{n}{j}\frac{(ct_1)^jn!}{(n-j)!}b_{k-j},
         \intertext{we use the first derivative to find the second one}
-        \partial_{zz}[L_n(z,t) \aac p(z)] &= \partial_{zz} \left[ \sum_{k=0}^n z^{n-k}(-1)^k \sum_{j=0}^k \left(\frac{(n-j)!(n-k+j)!}{n!(n-k)!}\right)^2 \binom{n}{j}\frac{(ct_1)^jn!}{(n-j)!}b_{k-j}\right],\\ 
+        \partial_{zz}[L_n&(z,t) \aac p(z)]\\ &= \partial_{zz} \left[ \sum_{k=0}^n z^{n-k}(-1)^k \sum_{j=0}^k \left(\frac{(n-j)!(n-k+j)!}{n!(n-k)!}\right)^2 \binom{n}{j}\frac{(ct_1)^jn!}{(n-j)!}b_{k-j}\right],\\ 
         &= \sum_{k=0}^{n-2} (n-k)(n-k-1)z^{n-k-2}(-1)^k \sum_{j=0}^k \left(\frac{(n-j)!(n-k+j)!}{n!(n-k)!}\right)^2 \binom{n}{j}\frac{(ct_1)^jn!}{(n-j)!}b_{k-j},
         \intertext{finally, for the derivative in time}
-        \partial_t[L_n(z,t) \aac p(z)] &= \partial_t \left[ \sum_{k=0}^n z^{n-k}(-1)^k \sum_{j=0}^k \left(\frac{(n-j)!(n-k+j)!}{n!(n-k)!}\right)^2 \binom{n}{j}\frac{(ct_1)^jn!}{(n-j)!}b_{k-j}\right],\\
+        \partial_t[L_n&(z,t) \aac p(z)]\\ &= \partial_t \left[ \sum_{k=0}^n z^{n-k}(-1)^k \sum_{j=0}^k \left(\frac{(n-j)!(n-k+j)!}{n!(n-k)!}\right)^2 \binom{n}{j}\frac{(ct_1)^jn!}{(n-j)!}b_{k-j}\right],\\
         &= \sum_{k=0}^n z^{n-k}(-1)^k \sum_{j=1}^k \left(\frac{(n-j)!(n-k+j)!}{n!(n-k)!}\right)^2 \binom{n}{j}\frac{c^j jt_1^{j-1}n!}{(n-j)!}b_{k-j},\\ 
         &= \sum_{k=1}^n z^{n-k}(-1)^k \sum_{j=0}^{k-1} \left(\frac{(n-j-1)!(n-k+j+1)!}{n!(n-k)!}\right)^2 \binom{n}{j+1}\frac{c^{j+1} (j+1)t_1^{j}n!}{(n-j-1)!}b_{k-j-1},\\ 
         \intertext{with a shift in the coefficients we can have the same index as in the two other derivatives}
@@ -648,7 +648,8 @@ Finally, just like in the Dyson Brownian motion case, we state a Theorem that al
     \begin{align*}
         (c&\partial_z + cz\partial_{zz} + \partial_t )[L_n(z,t)\aac p(z)] \\  &= \sum_{k=0}^{n-2} z^{n-k-1}(-1)^k \sum_{j=0}^{k} \left(\frac{(n-j)!(n-k+j)!}{n!(n-k-1)!}\right)^2 \binom{n}{j}\frac{c^{j+1}t_1^{j}n!}{(n-j)!}b_{k-j}\Bigl((n-k)^2 - (n-k)^2\Bigr)\\ 
         &\phantom{espacio}+ (-1)^{n-1}\sum_{j=0}^{n-1} \left( \frac{(j+1)!}{n!} \right)^2\binom{n}{j}\frac{c^{j+1}t_1^{j}n!}{(n-j)!}b_{n-j+1}\\
-        &\phantom{espaciooooooo} + (-1)^{n}\sum_{j=0}^{n-1} \left( \frac{(j+1)!}{n!} \right)^2\binom{n}{j}\frac{c^{j+1}t_1^{j}n!}{(n-j)!}b_{n-j+1} = 0.
+        &\phantom{espaciooooooo} + (-1)^{n}\sum_{j=0}^{n-1} \left( \frac{(j+1)!}{n!} \right)^2\binom{n}{j}\frac{c^{j+1}t_1^{j}n!}{(n-j)!}b_{n-j+1} \\
+        &= 0.
     \end{align*}
 \end{proof}
 
@@ -701,7 +702,7 @@ We also know that \( p_{B^TB}(z) = L_n(z) \) and \( p_{(A^TA)^{-1}}(z)=\frac{z^n
 
 
 \begin{align*}
-    p_{(A^TA)^{-1}B^TB}(z) &= p_{(A^TA)^{-1}} \boxtimes_n p_{B^TB}(z) = (\frac{(-1)^n}{n!}z^n p_{A^T A}(1/z) \boxtimes p_{B^TB}(z)),\\
+    p_{(A^TA)^{-1}B^TB}(z) &= p_{(A^TA)^{-1}} \boxtimes_n p_{B^TB}(z) = \left(\frac{(-1)^n}{n!}z^n p_{A^T A}(1/z) \boxtimes p_{B^TB}(z)\right),\\
     &= \frac{(-1)^n}{n!}\sum_{k=0}^n z^{n-k} (-1)^k \frac{a_kb_k}{\binom{n}{k}},\\ 
     &= \frac{(-1)^n}{n!}\sum_{k=0}^n z^{n-k}(-1)^k \frac{\binom{n}{k}\frac{n!}{(n-k)!}\binom{n}{k}(-1)^{n-2k}\frac{n!}{k!}}{\binom{n}{k}}, \\
     &= \frac{(-1)^n}{n!}\sum_{k=0}^n z^{n-k}(-1)^k \binom{n}{k}\frac{n!}{(n-k)!}(-1)^{n-2k}\frac{n!}{k!},\\
@@ -726,10 +727,13 @@ Finally, we use \( p_{M}(z) = \frac{z^n}{p_{M^{-1}}(0)} p_{M^{-1}}(1/z) \) to ob
 This corresponds to the \(n\)-th Legendre polynomial evaluated at \( 1-2z \), which is precisely the desired expected characteristic polynomial.
 \end{proof}
 
-Now we will approach the dynamical version. Let $N_1,N_2$ be two $n\times n$ random matrices with i.i.d standard Gaussian entries and $B_1, B_2$ be two independent Brownian motions in $\M_{n,n}(\R)$. Notice that 
+Now we will approach the dynamical version. Let $N_1,N_2$ be two $n\times n$ random matrices with i.i.d standard Gaussian entries and $B_1, B_2$ be two independent Brownian motions in $\M_{n,n}(\R)$. 
+
+Notice that if we substitute these matrices in the first definition of the Jacobi matrix, we get
 
 \begin{align*}
-    (\trans{B_1} B_1 + \trans{B_2} B_2)^{-1} \trans{B_1}B_1 &\overset{d}= (t\trans{N_1} N_1 + t\trans{N_2} N_2)^{-1} t\trans{N_1}N_1 = (\trans{N_1} N_1 + \trans{N_2} N_2)^{-1} \trans{N_1}N_1,\\
+    (\trans{B_1} B_1 + \trans{B_2} B_2)^{-1} \trans{B_1}B_1 &\overset{d}= (t\trans{N_1} N_1 + t\trans{N_2} N_2)^{-1} t\trans{N_1}N_1 = (\trans{N_1} N_1 + \trans{N_2} N_2)^{-1} \trans{N_1}N_1,
+\intertext{while for the second definition, we get}
     (\trans{B_1} B_1 + \trans{B_2} B_2)^{-1/2} \trans{B_1}B_1& (\trans{B_1} B_1 + \trans{B_2} B_2)^{-1/2} \\ &\overset{d}=(t\trans{N_1} N_1 + t\trans{N_2} N_2)^{-1/2} t\trans{N_1}N_1 (t\trans{N_1} N_1 + t\trans{N_2} N_2)^{-1/2},\\
     &=(\trans{N_1} N_1 + \trans{N_2} N_2)^{-1/2} \trans{N_1}N_1 (\trans{N_1} N_1 + \trans{N_2} N_2)^{-1/2}.
 \end{align*}
@@ -836,7 +840,7 @@ Replicating the procedure in \cite{article:marcus_finite_free_point_processes}, 
         This means for $q_{A_i/\sqrt m, B_i/\sqrt m}(x,y,z)$ that
 
         \begin{align*}
-            \E{q_{A_i/\sqrt m, B_i/\sqrt m}(x,y,z)} &= y^{n_1}z^{n_2}\E{ \det[ xI + \frac{1}{m}\left( y^{-1}\trans A_i A_i + z^{-1}\trans B_i BI \right) ] }, \\ 
+            &\E{q_{A_i/\sqrt m, B_i/\sqrt m}(x,y,z)}\\ &= y^{n_1}z^{n_2}\E{ \det[ xI + \frac{1}{m}\left( y^{-1}\trans A_i A_i + z^{-1}\trans B_i BI \right) ] }, \\ 
             &= y^{n_1}z^{n_2}\left[ x^k + \frac{x^{k-1}y^{-1}}{m}\E{Tr(\trans A_iA_i)} + \frac{x^{k-1}z^{-1}}{m}\E{Tr(\trans B_i B_i)} + O\left(\frac{1}{m^2}\right))\right],\\ 
             &= x^k y^{n_1}z^{n-2} + \frac{\sigma_1 n_1 k}{m}x^{k-1}y^{n_1-1}z^{n-2} + \frac{\sigma_2 n_2 k}{m}x^{k-1}y^{n_1}z^{n_2-1} + O \left(\frac{1}{m^2}\right), \\
             &= \left( 1 + \frac{\sigma_1}{m}\partial_y\partial_x + \frac{\sigma_2}{m}\partial_z\partial_x + O \left(\frac{1}{m^2}\right)\right)[x^k y^{n_1} z^{n_2}]
@@ -1007,7 +1011,8 @@ Replicating the procedure in \cite{article:marcus_finite_free_point_processes}, 
         Then, differentiating in $t$ and evaluating at $t=0$ gives us
 
         \begin{align*}
-            \left.\partial_t \left\{ Q_{n_1,n_2}^t [p(x,y,z)] \right\}\right|_{t=0} &= \left.\partial_t \left\{ \sum_{i,j,l} c_{ijl}\left\{ (n_2-l)itx^{i-1}y^j z^{l+1} + (n_1-j)itx^{i-1}y^{j+1}z^l \right\} + O(t^2) \right\}\right|_{t=0}, \\
+            \left.\partial_t \left\{ Q_{n_1,n_2}^t [p(x,y,z)] \right\}\right|_{t=0} &= \left.\partial_t \left\{ \sum_{i,j,l} c_{ijl}\left\{ (n_2-l)itx^{i-1}y^j z^{l+1} \right.\right.\right.\\
+            &\left.\left.\phantom{espac\sum_{i,j,l}}\left.+ (n_1-j)itx^{i-1}y^{j+1}z^l \right\} + O(t^2) \right\}\right|_{t=0}, \\
             &= \sum_{ijl} c_{ijl}\{ (n_2-l)ix^{i-1}y^jz^{l+1} + (n_1-j)ix^{i-1}y^{j+1}z^l\}.
         \end{align*}
 
@@ -1096,8 +1101,9 @@ Replicating the procedure in \cite{article:marcus_finite_free_point_processes}, 
     Letting $x=0$, we find the evolution equation for the matrix Jacobi process
 
     \begin{align*}
-        \left.(\partial_t w)\frac{\partial_w j}{\partial_x j}\right|_{t=0} &= \left.-(n_1w + n_2w) + (2w-1)(k-1) - w(w-1)\frac{\partial_x\partial_w j}{\partial_x j}\right|_{t=0},\\
-        \Rightarrow \partial_t w &= -[n_1w + n_2 (w-1) +(2w-1)(k-1)]\frac{\partial_x j}{\partial_w j} - w(w-1)\frac{\partial_x\partial_w j}{\partial_w j},\\ 
+        \left.(\partial_t w)\frac{\partial_w j}{\partial_x j}\right|_{t=0} &= \left.-(n_1w + n_2w) + (2w-1)(k-1) - w(w-1)\frac{\partial_x\partial_w j}{\partial_x j}\right|_{t=0},
+        \intertext{then}
+        \partial_t w &= -[n_1w + n_2 (w-1) +(2w-1)(k-1)]\frac{\partial_x j}{\partial_w j} - w(w-1)\frac{\partial_x\partial_w j}{\partial_w j},\\ 
         &= [-(n_1-k+1)w - (n_2 -k+1)(w-1)]\frac{\partial_x j}{\partial_w j} - w(w-1)\frac{\partial_x\partial_w j}{\partial_w j}.
     \end{align*}
 
