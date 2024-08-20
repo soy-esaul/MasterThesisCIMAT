@@ -1,12 +1,12 @@
 \section{Stochastic Calculus}
 
-Stochastic calculus is one of the most useful tools when working with continuous time processes. The results provided by the Itô integral and related concepts allow us to study dynamical systems with random behavior. In this section, we introduce some stochastic calculus used in the thesis. The first part deals with the definition and main properties of Itô and Stratonovich integrals in $\R$-valued processes, we later generalize the definition to $\R^d$-valued processes and finally to processes taking values in spaces of matrices.
+When we work with continuous-time processes, stochastic calculus is one of the most useful tools. The results provided by the Itô integral and related concepts allow us to study dynamical systems with random behavior. In this section, we introduce some stochastic calculus used in the thesis. The first part deals with the definition and main properties of Itô and Stratonovich integrals in $\R$-valued processes. Later, we generalize the definition to $\R^d$-valued processes, and finally, to processes taking values in spaces of matrices.
 
 \subsection{Stochastic calculus for $\mathbb{R}^n$-valued processes}
 
-We start defining the Itô integral for $\R$-valued processes and stating its main properties. In all of the next definitions, consider we are working on a filtered probability space $(\Omega, \mathscr F, (\mathscr F_t)_t, P)$ and we use the convention that a continuous time stochastic process is a stochastic process indexed by $\R^+ = [0,\infty)$. Most of the definitions and results here are taken from \cite{book:klebaner}, a more general approach to the subject can be found in \cite{book:karatzas} or \cite{book:revuzyor}.
+We start by defining the Itô integral for \(\mathbb{R}\)-valued processes and stating its main properties. In all of the following definitions, we consider that we are working on a filtered probability space \((\Omega, \mathscr{F}, (\mathscr{F}_t)_{t \geq 0}, P)\), and we use the convention that a continuous-time stochastic process is a process indexed by \(\mathbb{R}^+ = [0,\infty)\). Most of the definitions and results presented here are taken from \cite{book:klebaner}. A more general approach to the subject can be found in \cite{book:karatzas} or \cite{book:revuzyor}.
 
-There are several definitions of the Itô integral, some of them are more general. For the sake of simplicity, we will use one that resembles the definition of Lebesgue integral. Let us consider a simple process $X = (X(t))_{t\ge0}$ adapted to the filtration $\mathscr F_t$, i.e.
+There are several definitions of the Itô integral, some of which are more general. For simplicity, we will use one that resembles the definition of the Lebesgue integral. Consider a simple process \(X = (X(t))_{t \geq 0}\), adapted to the filtration \(\mathscr{F}_t\), i.e.,
 
 \begin{equation*}
     X(t) = \xi_0\delta_{0,t} + \sum_{j=0}^{n-1}  \xi_j \mathds 1_{(t_j,t_{j+1}]}(t),
@@ -29,19 +29,19 @@ It is not hard to verify from the definition that the integral is linear and has
     \E{ \left( \int_0^T X(s) \d B(s)\right)^2 } = \int_0^T \E{X^2(s)} \d s.
 \end{equation*}
 
-Another important fact is that the Itô integral is a martingale. These last two are the most important properties of this integral and one usually wants to preserve them when defining a stochastic integral for more general processes. The proof of these properties can be found in \cite{book:legall}, \cite{book:klebaner} or \cite{book:karatzas}.
+Another important fact is that the Itô integral is a martingale. These last two properties are the most important, and one typically aims to preserve them when defining a stochastic integral for more general processes. The proof of these properties can be found in \cite{book:legall}, \cite{book:klebaner} or \cite{book:karatzas}.
 
-If we have a square integrable continuous time process $X(t)$ adapted to $\F_t$ and a sequence of simple adapted processes $X_n(t)$ that are also square integrable and converge in probability to $X(t)$, then under proper conditions, one can prove that the integrals $\int_0^T X_n(s)\d B(s)$ also have a limit in probability. We define the Itô integral for general adapted processes as this limit.
+If we have a square-integrable continuous time process $X(t)$ adapted to $\F_t$ and a sequence of simple adapted processes $X_n(t)$ that are also square-integrable and converge in probability to $X(t)$, then under proper conditions, one can prove that the integrals $\int_0^T X_n(s)\d B(s)$ also have a limit in probability. We define the Itô integral for general adapted processes as this limit.
 
 \begin{definition}
-    Let $X$ be a square integrable adapted process to $\mathscr F_t$ and $(X_n(t))_{n\ge 0}$ a sequence of simple adapted, square integrable processes converging in probability to $X(t)$. We define the integral of $X(t)$ with respect to a Brownian motion $B(t)$ as
+    Let $X$ be a square-integrable adapted process to $\mathscr F_t$ and $(X_n(t))_{n\ge 0}$ a sequence of simple adapted, square-integrable processes converging in probability to $X(t)$. We define the integral of $X(t)$ with respect to a Brownian motion $B(t)$ as
 
     \begin{equation*}
         \int_0^T X(s) \d B(s) = \lim_{n\to\infty}^P \int_0^T X_n(s) \d B(s).
     \end{equation*}
 \end{definition}
 
-As we have mentioned before, when extending the definition of the Itô integral to more general processes, one wishes to preserve the good properties it has for simple processes. The next Theorem allows us to characterize when the integral has these properties
+As we have mentioned before, when extending the definition of the Itô integral to more general processes, one wishes to preserve its good properties. The next Theorem allows us to characterize when the integral has these properties
 
 \begin{theorem}
     If $X = (X(t), t \ge 0)$ and $Y = (Y(t), t \ge 0)$ are regular adapted process and satisfy
@@ -106,7 +106,7 @@ For a proof of last Theorem, consult \cite{book:klebaner}. If we consider, for a
     \end{equation*}
 \end{theorem}
 
-We can notice in Definition \ref{def:itosimple} that when we define the Itô integral, we care about in which point of the interval $(t_{i},t_{i+1}]$ we evaluate $X(t)$. This is not casual and we want to take the lower value so that the resulting process is a martingale. However, this causes that several results from classical calculus are not generalized in Itô calculus. One of the main results in Itô calculus is the following theorem, that allows us to prove some other important facts.
+We can notice in Definition \ref{def:itosimple} that when we define the Itô integral, we care about in which point of the interval $(t_{i},t_{i+1}]$ we evaluate $X(t)$. This is not casual and we want to take the lower value so that the resulting process is a martingale. However, this causes several results from classical calculus not to be generalized in Itô calculus. One of the main results in Itô calculus is the following theorem, which allows us to prove some other important facts.
 
 \begin{theorem}[Itô formula for Brownian motion] \label{thm:ito_formula_brownian}
     Let $f$ be a twice differentiable function and $B$ a Brownian motion, then
@@ -116,7 +116,7 @@ We can notice in Definition \ref{def:itosimple} that when we define the Itô int
     \end{equation*}
 \end{theorem}
 
-The proof is done using a Taylor expansion of second order for $f$ and taking a limit. We will omit it here, but it is important to notice that (under suitable conditions) the Itô formula allows us to write a function of a Brownian motion as a sum of a martingale and a finite variation process.
+The proof is done using a second order Taylor expansion for $f$ and taking a limit. We will omit it here, but it is important to notice that (under suitable conditions) the Itô formula allows us to write a function of a Brownian motion as a sum of a martingale and a finite variation process.
 
 We can define the Itô integral with respect to processes other than the Brownian motion. The class of processes for which we can define an Itô integral is rather large, so we will define a smaller class that is of interest for this work.
 
@@ -128,7 +128,7 @@ We can define the Itô integral with respect to processes other than the Brownia
     \end{equation}
 \end{definition}
 
-It is an usual convention to write the ``differential'' of an Itô process as
+It is a usual convention to write the ``differential'' of an Itô process as
 
  \begin{equation*}
     \d Y(s) = \mu(s) \d s + \sigma(s) \d B(s).
@@ -160,7 +160,7 @@ It is an usual convention to write the ``differential'' of an Itô process as
 
  \end{definition}
 
- Although the definition of an Itô integral with respect to an Itô process can be given in a more direct way, it happens to coincide with the last one. In a similar spirit as in the definition of the Itô integral with respect to an Itô process, we can also extend Theorem \ref{thm:ito_formula_brownian} for Itô processes.
+ Although the definition of an Itô integral with respect to an Itô process can be given more directly, it coincides with the last one. In a similar spirit as in the definition of the Itô integral with respect to an Itô process, we can also extend Theorem \ref{thm:ito_formula_brownian} for Itô processes.
 
  \begin{theorem}[Itô formula for Itô processes]
     Let $Y$ be an Itô process satisfying $\d Y = \mu \d s + \sigma \d B$ and $f$ be a twice continuously differentiable function, then the stochastic differential of $f(Y(t))$ is well defined and is given by
@@ -171,7 +171,7 @@ It is an usual convention to write the ``differential'' of an Itô process as
     \end{align*}
 \end{theorem}
 
-Although the Itô integral is the most common one, it is not the only notion of stochastic integration and some others can be used in certain contexts. One of the most used alternatives is the Stratanovich integral, that preserves several properties of standard calculus. The Stratanovich integral is useful when we deal with random matrix calculus because it allows to simplify calculations.
+Although the Itô integral is the most common one, it is not the only notion of stochastic integration and some others can be used in certain contexts. One of the most used alternatives is the Stratanovich integral, which preserves several properties of standard calculus. The Stratanovich integral is useful when we deal with random matrix calculus because it allows to simplify calculations.
 
 \begin{definition}[Stratanovich integral]
     Let $X$ and $Y$ be two continuous adapted processes. The Stratanovich integral of $X$ with respect to $Y$ denoted as $\int_0^t X(s) \partial Y(s)$ is the $L^2$ limit of the sums
@@ -199,7 +199,7 @@ By the last Theorem we can write the Stratanovich differential similarly to the 
     Y(s) \partial X(s) = Y(s) \d X(s) + \frac12 \d \langle X,Y \rangle (t).
 \end{equation*}
 
-Sometimes we write this diferential as $Y(s) \partial X(s) = Y(s) \circ \d X(s)$. This notation is especially helpful when we work with matrix-valued processes.
+Sometimes we write this differential as $Y(s) \partial X(s) = Y(s) \circ \d X(s)$. This notation is especially helpful when we work with matrix-valued processes.
 
 Perhaps the main situation when the Stratanovich integral is used instead of the Itô version is when we want to preserve the classical integration by parts formula. The next Theorem uses the relationship between both integrals to compute the differential of the product $XY$.
 
@@ -220,7 +220,7 @@ Notice that in the case of the Stratanovich integral, we recover the classical i
 % Sacado de Revuz-Yor
 
 
-The next results are technical but they are needed for the proofs in Chapter \ref{ch:eigen_processes}. The first one states the existence of a process called local time and the stochastic differential equation it satisfies, the second one gives a way to prove when this local time process is zero. Both results with their proofs acn be found in \cite{book:revuzyor}
+The next results are technical but needed for the proofs in Chapter \ref{ch:eigen_processes}. The first one states the existence of a process called local time and the stochastic differential equation it satisfies, the second one gives a way to prove when this local time process is zero. Both results with their proofs acn be found in \cite{book:revuzyor}
 
 % Sacado de Revuz-Yor
 
@@ -256,13 +256,13 @@ The next results are technical but they are needed for the proofs in Chapter \re
     \noindent then $L^0(X) = 0$.
 \end{theorem}
 
-Gronwall's lemma allows us to bound a function satsifying a differential inequality by the solution of the associated differential equation. It will be  useful for the multidimensional version of the Yamada-Watanabe Theorem. The proof is in \cite[page 213]{book:legall}.
+Gronwall's lemma allows us to bound a function satisfying a differential inequality by the solution of the associated differential equation. It will be useful for the multidimensional version of the Yamada-Watanabe Theorem. The proof is in \cite[page 213]{book:legall}.
 
 % Sacado de Le Gall, pág 213
 
 \begin{lemma}[Gronwall's lemma] 
     \label{lemma:gronwall} %\todo{Tomado de Le Gall, pág 213}
-    Let $T >0$ and let $g$ be any nonnegative bounded measurable function on $[0,T]$. Assume that there exists two constants $a\ge 0$ and $b\ge 0$ such that for every $t\in [0,T]$,
+    Let $T >0$ and $g$ be any nonnegative bounded measurable function on $[0,T]$. Assume that there exists two constants $a\ge 0$ and $b\ge 0$ such that for every $t\in [0,T]$,
 
     \[ g(t) \le a + b\int_0^t g(s)~\d s. \]
 
@@ -271,7 +271,7 @@ Gronwall's lemma allows us to bound a function satsifying a differential inequal
     \[ g(t) \le a \exp(bt). \]
 \end{lemma}
 
-Below it is stated a generalized version of the well-known Mckean's principle. This result gives solutions for a stopping time to be infinte a.s. In particular, it is used when working with eigenvalue processes to conclude the non-collision of the eigenvalues. This generalization and its proof appear in \cite{mayerhofer2011strong}.
+Below it is a generalized version of the well-known Mckean's principle. This result gives solutions for a stopping time to be infinite a.s. In particular, it is used when working with eigenvalue processes to conclude the non-collision of the eigenvalues. This generalization and its proof appear in \cite{mayerhofer2011strong}.
 
 \begin{lemma}[Generalized McKean's argument] \label{lemma:mckean}
     Let $Z = (Z_s)_{s\in \R_+}$ be an adapted \textit{càdlàg} $\R^+\setminus \{0\}$-valued stochastic process on a stochastic interval $[0,\tau_0)$ such that $Z_0 > 0$ a.s. and $\tau_0 = \inf\{0 < s \le \tau_0 : Z_{s-} = 0\}$. Suppose that $h:\R_+\setminus\{0\}\to\R$ is continuous and satisfies the following:
@@ -298,9 +298,9 @@ Below it is stated a generalized version of the well-known Mckean's principle. T
 
 \subsubsection{Stochastic Calculus for $\R^n$-valued processes}
 
-If we have a continuous time stochastic process taking values in $\R^n$, it is possible to give a definition of the Itô integral with respect to a multivariate Brownian motion. Based on this, we can extend several results of univariate stochastic calculus, this can then be used for introducing stochastic calculus for matrix-valued processes.
+If we have a continuous time stochastic process taking values in $\R^n$, it is possible to define the Itô integral with respect to a multivariate Brownian motion. Based on this, we can extend several results of univariate stochastic calculus, this can then be used for introducing stochastic calculus for matrix-valued processes.
 
-An $\R^n$-valued Brownian motion $\vec B = \left\{ (B_1(t), \dots, B_n(t)) , t \ge 0 \right\}$ is an $n$ length vector whose every entry $B_i$ is an independent Brownian motion in $\R$. An $n$-dimensional process $\vec X$ is said to be adapted to a filtration $\F$ if each one of its entries is. If $X_i$ is the $i$th entry of $\vec X$ and for every $i$ we have that
+An $\R^n$-valued Brownian motion $\vec B = \left\{ (B_1(t), \dots, B_n(t)) , t \ge 0 \right\}$ is an $n$ length vector whose every entry $B_i$ is an independent Brownian motion in $\R$. An $n$-dimensional process $\vec X$ is said to be adapted to a filtration $\F$ if each of its entries is. If $X_i$ is the $i$th entry of $\vec X$ and for every $i$ we have that
 
 \begin{equation*}
     \int_0^T X_i^2(s) \d s < \infty,
@@ -312,7 +312,7 @@ An $\R^n$-valued Brownian motion $\vec B = \left\{ (B_1(t), \dots, B_n(t)) , t \
     \int_0^t \vec X(s) \cdot \d \vec B(s) \coloneqq \sum_{j=1}^n \int_0^t X_j(s) \d B_j (s).
 \end{equation*}
 
-Notice that the integral notation suggests the similarity with a dot product. Similarly we also denote the multivariate integral as $\vec X(s) \cdot \d \vec B(s)$.
+Notice that the integral notation suggests the similarity with a dot product. Similarly, we also denote the multivariate integral as $\vec X(s) \cdot \d \vec B(s)$.
 
 The process $\sum_{j=1}^n \int_0^t X_j(s) \d B_j (s)$ takes values in $\R$. If we add a finite variation part $\mu$, then we can have a process $Y$ similar to an Itô process but driven by a multidimensional Brownian motion,
 
@@ -335,7 +335,7 @@ By taking $\vec Y = (Y_1, \dots, Y_n)$ we have an $n$-dimensional Itô process, 
 
 \noindent with $\Sigma$ an $n\times n$ matrix valued function with entries $\sigma_{ij}$.
 
-Before stating the Itô formula for multidimensional processes, we need to know the quadratic covariation between entries of a multidimensional Itô process. 
+Before giving the Itô formula for multidimensional processes, we need to know the quadratic covariation between entries of a multidimensional Itô process. 
 
 \begin{theorem}
     Let $\vec Y$ be an $n$-dimensional Itô process, then the quadratic covariation of two of its entries $Y_i, Y_j$ is given by
@@ -345,7 +345,7 @@ Before stating the Itô formula for multidimensional processes, we need to know 
     \end{equation*}
 \end{theorem}
 
-The matrix $\Sigma \trans \Sigma$ is often called the diffusion matrix. In the next Theorem, we generalize the Itô formula for multidimensional Itô processes.
+The matrix $\Sigma \trans \Sigma$ is often called the diffusion matrix. We generalize the Itô formula for multidimensional Itô processes in the following Theorem.
 
 \begin{theorem}[Multidimensional Itô formula]
     Let $\vec Y $ be an $n$-dimensional Itô process and $f: \R^n \to R^m$ be a $C^2$ function. The process $f(Y_1(t), \dots, Y_n(t))$ is also an Itô process and has a stochastic differential given by
@@ -367,7 +367,7 @@ In particular when $n=2$, $Y_1(t) = Y(t)$ for some Itô process $\d Y = \mu \d t
 
 \subsubsection{Infinitesimal generator and harmonic functions}
 
-Every Itô process is markovian and thus it has an associated Markov semigroup and infinitesimal generator. These operators can tell us many of the properties of the processes and in particular the infinitesimal generator can be used to prove that some transformations of an Itô process are martingales.
+Every Itô process is Markovian and thus it has an associated Markov semigroup and infinitesimal generator. These operators can tell us many of the properties of the processes and particularly the infinitesimal generator can be used to prove that some transformations of an Itô process are martingales.
 
 \begin{definition}
     Let $X$ be an Itô process with $\d X(t) = \mu(X,t) \d t + \sigma(X,t) \d B(t)$. The infinitesimal generator  of $X$ is the second order differential operator $\mathcal A_t$,
@@ -401,19 +401,19 @@ If the integral $\int_0^t \frac{\partial f}{\partial x}(X(s),s)\sigma(X(s),s) \d
     \noindent is a martingale.
 \end{theorem}
 
-We have in particular that under the same conditions, when $\mathcal A_t f(Y(t)) + \frac{\partial f}{\partial t}(Y(t),t) = 0$, $f(Y(t),t)$ is a martingale. If $f$ only depends on $x$, this is equivalent to asking it to be a solution to $\mathcal A_t f = 0$. These functions are known as harmonic functions for the process $Y$.
+We have in particular that under the same conditions when $\mathcal A_t f(Y(t)) + \frac{\partial f}{\partial t}(Y(t),t) = 0$, $f(Y(t),t)$ is a martingale. If $f$ only depends on $x$, this is equivalent to asking it to be a solution to $\mathcal A_t f = 0$. These functions are known as harmonic functions for the process $Y$.
 
 
 \subsubsection{Complex stochastic calculus}
 
 
-It is possible to define continuous time stochastic processes in more general fields than $\R$ and then create a notion of stochastic integral for these processes. Particuarly, in the case of random matrix theory, we care about process taking values in the field of complex numbers ($\C$) and the field of quaternions ($\mathbb H$). Provided that both spaces can be seen as a vector space with $\R$ as the field of scalars, the extension of the definitions is natural by considering that every process in $\C$ or $\mathbb H$ has the form $A + i B$ or $A + i B + j C + k D$, respectively, with $A,B,C,D$ stochastic processes taking values in $\R$.
+It is possible to define continuous time stochastic processes in more general fields than $\R$ and then create a notion of stochastic integral for these processes. Particularly, in the case of random matrix theory, we care about processes taking values in the field of complex numbers ($\C$) and the field of quaternions ($\mathbb H$). Provided that both spaces can be seen as a vector space with $\R$ as the field of scalars, the extension of the definitions is natural by considering that every process in $\C$ or $\mathbb H$ has the form $A + i B$ or $A + i B + j C + k D$, respectively, with $A, B, C, D$ stochastic processes taking values in $\R$.
 
 \begin{example}[Brownian motion in $\C$]
-    Let $B_1$ and $B_2$ be two independent Brownian motions taking values in $\R$. We say that $Z = B_1 + i B_2$ is a Brownian motion in $\C$.
+    Let $B_1$ and $B_2$ be independent Brownian motions taking values in $\R$. We say that $Z = B_1 + i B_2$ is a Brownian motion in $\C$.
 \end{example}
 
-Some of the matrix-valued processes in this thesis have entries in $\C$ and thus it is useful to introduce the following result for complex Brownian motions.
+Some of the matrix-valued processes in this thesis have entries in $\C$. Thus, introducing the following result for complex Brownian motions results useful.
 
 \begin{theorem}
     Let $Z$ be a complex Brownian motion, then its quadratic covariation and the quadratic variation with respect to its complex conjugate are given by
@@ -431,7 +431,7 @@ Some of the matrix-valued processes in this thesis have entries in $\C$ and thus
 
 \subsection{Stochastic calculus for matrix-valued processes}
 
-In a similar fashion as we can generalize the stochastic calculus results for $\R^n$-valued processes, it is possible to extend the definitions and results to matrix-valued processes. Given a filtered probability space $(\Omega, \F \F_t, \P)$, an $n\times m$ continuous time matrix valued process $M$ is a function
+Similarly, as we can generalize the stochastic calculus results for $\R^n$-valued processes, it is possible to extend the definitions and results to matrix-valued processes. Given a filtered probability space $(\Omega, \F \F_t, \P)$, an $n\times m$ continuous-time matrix-valued process $M$ is a function
 
 \begin{align*}
     M : \R^+ \times \Omega \to \mathcal M_{m,n}(\mathbb F),\\ 
@@ -440,7 +440,7 @@ In a similar fashion as we can generalize the stochastic calculus results for $\
 
 \noindent where for every fixed $\omega^*$, $M(t,\omega^*)$ is a function from $\R^+$ to $\mathcal M_{m,n}(\mathbb F)$ and for every fixed $t^*$, $M(t^*)$ is a random matrix. $\mathbb F$ represents an arbitrary field for the entries, $\R, \mathbb C$ or $\mathbb H$ are usual choices, but in this thesis we are only interested in matrix-valued processes with entries in $\R$ and $\C$. 
 
-Usually, we need the matrix-valued process to satisfy some symmetry condition such as being symmetric, hermitian or orthogonal. It is common then to restrict the matrix valued process to take values in a smaller subset of $\mathcal M_{m,n}$. Along this work, we are only interested in squared matrix-valued processes.
+Usually, we need the matrix-valued process to satisfy some symmetry condition such as being symmetric, hermitian or orthogonal. It is common to restrict the matrix-valued process to take values in a smaller subset of $\mathcal M_{m,n}$. Along this work, we are only interested in squared matrix-valued processes.
 
 \begin{example}[Brownian motion in $\mathcal M_{n,n}(\mathbb F)$]
     We say that a matrix-valued process $B = (B(t), t \ge 0)$ is a standard Brownian motion in $M_{n,n}(\mathbb F)$ if every entry $B_{ij}$ is an independent Brownian motion in the field $\mathbb F$.
@@ -464,13 +464,13 @@ Now we show the definition of the Itô integral for matrix-valued processes.
     \noindent where $1 \le k \le n$, $1 \le l \le m$, $1 \le i \le p$ and $1 \le j \le q$. 
 \end{definition}
 
-The definition above applies also when we are integrating with respect to a Brownian motion in smaller subspace of $\mathcal M_{n,m}(\mathbb F)$. An interesting property of the stochastic matrix integral is that one can integrate by the left or by the right and this operation need not to be commutative, even if it is well defined in both cases. 
+The definition above applies also when we are integrating with respect to a Brownian motion in a smaller subspace of $\mathcal M_{n,m}(\mathbb F)$. An interesting property of the stochastic matrix integral is that one can integrate by the left or right. This operation needs not to be commutative, even if it is well defined in both cases. 
 
-Just as in the $\R$ and $\R^n$ case, we can enlarge the class of process with respect we can integrate. It is convenient to define such processes only in spaces of squared matrices.
+Just as in the $\R$ and $\R^n$ case, we can enlarge the class of process with respect to which we can integrate. It is convenient to define such processes only in spaces of squared matrices.
 
 \begin{definition}[Matrix-valued Itô process]
 
-    Let $B$ be a Brownian motion in $\mathcal M_{n,n}(\mathbb F)$ and $S, R, M$ be  adapted matrix-valued processes taking values in $\mathcal M_{n,n}(\mathbb F)$. Then we say the process $X$ satisfying 
+    Let $B$ be a Brownian motion in $\mathcal M_{n,n}(\mathbb F)$ and $S, R, M$ be adapted matrix-valued processes taking values in $\mathcal M_{n,n}(\mathbb F)$. Then we say the process $X$ satisfying 
 \begin{equation*}
     \d X(t) = S(t) \d B(t) R(t) + M(t) \d t, 
 \end{equation*}
@@ -494,9 +494,9 @@ The quadratic covariation between two matrix-valued processes $X, Y$ taking valu
     \langle X, Y \rangle_{ij} (t) = \sum_{=1}^m \langle X_{ik}, Y_{kj} \rangle (t).
 \end{equation*}
 
-The same applies when we find the quadratic variation of a matrix-valued process. Now we state the Itô formula for matrix valued processes. This is taken from \cite{thesis_trujillo}
+The same applies when we find the quadratic variation of a matrix-valued process. Now we state the Itô formula for matrix-valued processes. This is taken from \cite{thesis_trujillo}
 
-\begin{theorem}[Itô Formula for matrix valued processes]
+\begin{theorem}[Itô Formula for matrix-valued processes]
     Let $U \subset \mathcal M_{m,n}(\R)$ an open set, $X$ a continuous semimartingale taking values in $U$ and $f: U \to \R$ twice continuously differentiable. Then $f(X)$ is a continuous semimartingale and
 
     \begin{align*}
