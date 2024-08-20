@@ -111,7 +111,8 @@
 
     \begin{align*}
         \sum_{pqrs} \trans{H}_{ip}H_{qj}\trans{H}_{kr}H_{sm}g^2(X)_{pr}h^2(X)_{qs} &= \biggl(\sum_{pr}\trans{H}_{ip}g^2(X)_{pr}H_{rk}\biggr)\biggl(\sum_{qs}\trans{H}_{jq}h^2(X)_{qs}H_{sm}\biggr),\\
-        &= \bigl( \trans{H}Hg^2(\Lambda)\trans{H}H\bigr)_{ik}\bigl(\trans{H}Hh^2(\Lambda)\trans{H}H\bigr)_{jm} = g^2(\Lambda)_{ik}h^2(\Lambda)_{jm}.
+        &= \bigl( \trans{H}Hg^2(\Lambda)\trans{H}H\bigr)_{ik}\bigl(\trans{H}Hh^2(\Lambda)\trans{H}H\bigr)_{jm},\\ 
+        &= g^2(\Lambda)_{ik}h^2(\Lambda)_{jm}.
     \end{align*}
 
     Repeating the analogous procedure with all of the terms we find that the covariation is
@@ -191,13 +192,14 @@
     
     Then we can compute the quadratic covariation $\d X_{ij}\d X_{kl}$ using \eqref{eq:complex_diff},
 
-    \begin{align}
+    \begin{align*}
         \d X_{ij}\d X_{kl} &=  \d\langle X_{ij},X_{kl} \rangle(t), \\
         &= \d\langle \left( g(X)\d  W h(X) + h(X)\d \hermit{W} g(X) \right)_{ij}, \left(g(X)\d W h(X) + h(X)\d \hermit{W} g(X)\right)_{kl} \rangle(t),\\
-        &= \d\langle \left(g(X)\d  W h(X)\right)_{ij}, \left(h(X)\d \hermit{W} g(X)\right)_{kl}\rangle + \d\langle \left(g(X)\d  W h(X)\right)_{kl}, \left(h(X)\d \hermit{W} g(X)\right)_{ij}\rangle(t),\\
+        &= \d\langle \left(g(X)\d  W h(X)\right)_{ij}, \left(h(X)\d \hermit{W} g(X)\right)_{kl}\rangle \\
+        &\phantom{esp}+ \d\langle \left(g(X)\d  W h(X)\right)_{kl}, \left(h(X)\d \hermit{W} g(X)\right)_{ij}\rangle(t),\\
         &= 2g^2(X)_{il}h^2(X)_{jk}\d t + 2g^2(X)_{kj}h^2(X)_{li}\d t,\\
         &= 2\left( g^2(X)_{il}h^2(X)_{kj} + g^2(X)_{jk}h^2(X)_{il} \right)\d t.
-    \end{align}
+    \end{align*}
 
 
     Analogously to the real case, we define $A$, the stochastic logarithm of $H$, as

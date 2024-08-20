@@ -38,8 +38,8 @@ The next is a rather technical definition, but that allows to prove several of o
         \mathbb E_R \left[ \det [QR]_{S,T}\det [\hermit{R}\hermit{Q}]_{U,V} \right] &= \mathbb E_R \left[  \sum_{\abs{W}=k} \sum_{\abs{Z} = l} \det[Q]_{S,W} \det[R]_{W,T} \det[\hermit{R}]_{U,Z}\det[\hermit{Q}]_{Z,V} \right],\\
         &= \sum_{\abs{W}=k} \sum_{\abs{Z} = l} \det[Q]_{S,W}\det[\hermit{Q}]_{Z,V} \mathbb E_R \left[ \det[R]_{W,T}\det[\hermit{R}]_{U,Z}\right],\\
         &= \sum_{\abs{W}=k} \sum_{\abs{Z} = l} \det[Q]_{S,W}\det[\hermit{Q}]_{Z,V} \mathbb E_R \left[\frac{\delta_{W,Z}\delta_{T,U}}{\binom{\max\{m,n\}}{k}}\right],\\
-        &= \sum_{\abs{W}=k} \det[Q]_{S,W}\det[\hermit{Q}]_{W,V}\frac{\delta_{T,U}}{\binom{\max\{m,n\}}{k}}
-        = \det[Q\hermit{Q}]_{S,V} \frac{\delta_{T,U}}{\binom{\max\{m,n\}}{k}},\\
+        &= \sum_{\abs{W}=k} \det[Q]_{S,W}\det[\hermit{Q}]_{W,V}\frac{\delta_{T,U}}{\binom{\max\{m,n\}}{k}},\\
+        &= \det[Q\hermit{Q}]_{S,V} \frac{\delta_{T,U}}{\binom{\max\{m,n\}}{k}},\\
         &= \det[I]_{S,V} \frac{\delta_{T,U}}{\binom{\max\{m,n\}}{k}},
         \intertext{Notice that $\det[I]_{S,V} = 1$ if and only if $S=V$, so we conclude that}
         \mathbb E_R \left[ \det[QR]_{S,T}\det[\hermit{R}\hermit{Q}]_{U,V} \right] &= \frac{\delta_{S,V}\delta_{T,U}}{\binom{\max\{m,n\}}{k}}.
@@ -219,7 +219,7 @@ For both the additive and multiplicative cases, the results are written in two p
     \noindent together with Theorem \ref{thm:marcus_binet} and Lemma \ref{lemma:conjugate_minorth} to get %\todo{Hay que aclarar las normas de matrices.}
 
     \begin{align*}
-        \mathbb E_{A,B,R}&\left[ \sigma_k(A + RB\hermit{R}) \right]\\ &= \sum_{S \in \binom{[n]}{k}} \mathbb E_{A,B,R} \left[ \det[A + RB\hermit{R}]_{S,S} \right],\\ 
+        \mathbb E_{A,B,R}&\left[ \sigma_k(A + RB\hermit{R}) \right] = \sum_{S \in \binom{[n]}{k}} \mathbb E_{A,B,R} \left[ \det[A + RB\hermit{R}]_{S,S} \right],\\ 
         \intertext{denote by $\overline U$ the complement of $U$, then}
         &= \sum_{S\in\binom{[n]}{k}} \sum_{i=0}^k \sum_{U,V\in \binom{[k]}{i}} (-1)^{\norm{U}_1 + \norm{V}_1} \mathbb E_A\left[ \det [A]_{U(S),V(S)} \right] \mathbb E_{B,R}\left[ \det[RB\hermit R]_{\overline{U}(S),\overline{V}(S)} \right],\\ 
         &= \sum_{S\in\binom{[n]}{k}} \sum_{i=0}^k \sum_{U,V\in \binom{[k]}{i}} (-1)^{\norm{U}_1 + \norm{V}_1} \mathbb E_A\left[ \det[A]_{U(S),V(S)} \right] \delta_{\overline{U}(S),\overline{V}(S)} \frac{\mathbb E_{B}\left[ \sigma_{k-i}(B)\right]}{\binom{n}{k-i}},\\ 
@@ -323,7 +323,7 @@ In the first part of this section we introduce some technical definitions and le
 Before stating the results in this section, it is important to introduce the notation for ``congruent polynomials''. Let $p,q$ be two polynomials on $z$, we say that $p$ is congruent with $q$ modulo $z^{n}$ if the first $n+1$ coefficients of $p$ and $q$ coincide. We will denote this relationship by
 
 \begin{equation*}
-    p(z) \equiv q(z) \qquad \mod [z^n].
+    p(z) \equiv q(z), \qquad \mod [z^n].
 \end{equation*}
 
 If we think of a formal power series as an ``infinite polynomial'', the definition of polynomial congruence can be extended. Notice that if $f(z)$ is a formal power series, then $f(z) \mod [z^n]$ is a polynomial of degree at most $n$.
@@ -420,9 +420,11 @@ The Legendre transform, and the properties that will be proven later, will be us
     Since $f$ is strictly convex and differentiable at $x_0$ we have for $x\in D, x\neq x_0$ that 
     
     \begin{align*}
-        f(x) &> f(x_0) + (x-x_0)f'(x_0), \\
-        \Rightarrow f(x) -xf'(x_0) &> f(x_0) - x_0 f'(x_0),\\
-        \Rightarrow xf'(x_0) - f(x) &< x_0 f'(x_0) - f(x_0).
+        f(x) &> f(x_0) + (x-x_0)f'(x_0), 
+\intertext{resting $xf'(x_0)$ in both sides leads to}
+        f(x) -xf'(x_0) &> f(x_0) - x_0 f'(x_0),
+\intertext{the inequality is reversed when we multiply by $-1$;}
+        xf'(x_0) - f(x) &< x_0 f'(x_0) - f(x_0).
     \end{align*}
 
     This means that 
@@ -439,12 +441,14 @@ The Legendre transform, and the properties that will be proven later, will be us
         (f^*)'(f'(x_0))f''(x_0) = x_0 f''(x_0) + f'(x_0) - f'(x_0) = x_0 f''(x_0). 
     \end{equation*}
 
-    The second derivative $f''(x_0)$ can not be zero because $f$ is strictly convex, so $(f^*)'(f'(x_0)) = z$, which means $f^*$ and $f'$ are inverse under composition (in any point where $f$ is twice differentiable). For the second equation we use the fact that these functions are inverse and derive,
+    The second derivative $f''(x_0)$ can not be zero because $f$ is strictly convex, and therefore $(f^*)'(f'(x_0)) = z$, which means $f^*$ and $f'$ are inverse under composition (in any point where $f$ is twice differentiable). For the second equation we use the fact that these functions are inverse and derive,
 
     \begin{align*}
-        f'((f^*)'(z)) &= z,\\
-        \Rightarrow f''((f^*)(x_0))(f^*)''(x_0) &= 1,\\
-        \Rightarrow f''((f^*)(x_0)) &= \frac1{(f^*)''(x_0)}.
+        f'((f^*)'(z)) &= z,
+        \intertext{deriving with respect to $z$ gives us}
+        f''((f^*)(x_0))(f^*)''(x_0) &= 1,
+        \intertext{when we divide both sides by $(f^*)''(x_0)$}
+        f''((f^*)(x_0)) &= \frac1{(f^*)''(x_0)}.
     \end{align*}
 \end{proof}
 
@@ -521,7 +525,8 @@ Notice that for bigger $n$, the definition above is more similar to the definiti
 
     \begin{align*}
         \partial_x [g(x)] &= \partial_x \left[-\ln \Delta^+[xI - A]\right] = -\partial_x \left\{ \ln\left[ \left(\prod_{j=1}^n (x - \lambda_j) \right)^{\frac1n}\right] \right\}, \\
-        &= -\partial_x \left\{\ln \left[ \prod_{j=1}^n (x-\lambda_j)^{\frac1n} \right]\right\} = - \partial_x \left[\sum_{j=1}^n \frac1n \ln (x-\lambda_j)\right] = -\frac1n \sum_{j=1}^n  \frac1{x-\lambda_j} = - G_{\mu_A}(x).
+        &= -\partial_x \left\{\ln \left[ \prod_{j=1}^n (x-\lambda_j)^{\frac1n} \right]\right\} = - \partial_x \left[\sum_{j=1}^n \frac1n \ln (x-\lambda_j)\right],\\ 
+        &= -\frac1n \sum_{j=1}^n  \frac1{x-\lambda_j} = - G_{\mu_A}(x).
     \end{align*}
 
     For the second derivative we have
@@ -640,7 +645,7 @@ Our next goal is to prove that the finite $\mathcal R_n$ transform linearizes th
     Let $A$ be an $n\times n$ real symmetric matrix. Denote by $\lambda(A)$ its spectrum and by $U_A$ the $U$ transform of $\lambda(A)$, then 
 
     \begin{equation*}
-        \frac{\norm{e^{-xs}\Delta^+(xI - A)}_n^n}{\norm{e^{-xs}\Delta^+(xI)}_n^n} \equiv \frac1n\sum_{u_i \in U_A} e^{-ns u_i} \qquad \mod [s^{n+1}]. 
+        \frac{\norm{e^{-xs}\Delta^+(xI - A)}_n^n}{\norm{e^{-xs}\Delta^+(xI)}_n^n} \equiv \frac1n\sum_{u_i \in U_A} e^{-ns u_i}, \qquad \mod [s^{n+1}]. 
     \end{equation*} 
 \end{lemma}
 
@@ -680,7 +685,7 @@ With the previous result in hand, it is now easier to find the finite $\mathcal 
     Let $A$ be a an $n\times n$ symmetric matrix with real entries, with spectrum $\lambda(A)$ and $U_A$ be the $U$ transform of $\lambda(A)$, then 
 
     \begin{equation*}
-        \mathcal R_{n}^{\mu_A}(s) \equiv - \frac1n \frac{\partial}{\partial s} \ln \left(\frac1n \sum_{u_i \in U_A} e^{-nsu_i} \right) \qquad \mod [s^n].
+        \mathcal R_{n}^{\mu_A}(s) \equiv - \frac1n \frac{\partial}{\partial s} \ln \left(\frac1n \sum_{u_i \in U_A} e^{-nsu_i} \right), \qquad \mod [s^n].
     \end{equation*}
 \end{corollary}
 
@@ -688,7 +693,7 @@ With the previous result in hand, it is now easier to find the finite $\mathcal 
     Taking logarithm in both sides of Lemma \ref{lemma:quotient_norms} we get 
 
     \begin{equation*}
-        \ln \left( \frac{\norm{e^{-xs}\Delta^+(xI - A)}_n^n}{\norm{e^{-xs}\Delta^+(xI)}_n^n} \right) \equiv \ln\left( \frac1n\sum_{u_i \in U_A} e^{-ns u_i} \right) \qquad \mod [s^{n+1}].
+        \ln \left( \frac{\norm{e^{-xs}\Delta^+(xI - A)}_n^n}{\norm{e^{-xs}\Delta^+(xI)}_n^n} \right) \equiv \ln\left( \frac1n\sum_{u_i \in U_A} e^{-ns u_i} \right), \qquad \mod [s^{n+1}].
     \end{equation*}
 
     The first $n+1$ coeficientes of the power series coincide, so the first $k$ coefficients of the derivatives also coincide. Now we use the definition of the $\mathcal R_n$ transform
@@ -706,10 +711,10 @@ One of the central results in this section is the equivalence of the symmetric a
 \begin{theorem}
     Let $A$ and $B$ be two $n\times n$ real symmetric matrices. The following are equivalents:
 
-    \begin{enumerate}
-        \item \[ \mathcal R_n^{\mu_A}(s) + \mathcal R_n^{\mu_B}(s) = \mathcal R_n^{\mu_{A+B}}(s) \qquad \mod[s^n]. \]
+    \begin{itemize}
+        \item \[ \mathcal R_n^{\mu_A}(s) + \mathcal R_n^{\mu_B}(s) = \mathcal R_n^{\mu_{A+B}}(s), \quad \mod[s^n]. \]
         \item \[ \det[xI - A] \boxplus_n \det[xI-B] = \det[xI - A - B]. \]
-    \end{enumerate}
+    \end{itemize}
 \end{theorem}
 
 \begin{proof}
@@ -722,19 +727,19 @@ One of the central results in this section is the equivalence of the symmetric a
     Expanding the power and equating terms, the last happens if and only if the first $m$ moments of $U_A + U_B$ and $U_{A+B}$ coincide. This is in turn equivalent to 
 
     \begin{equation*}
-        \E{e^{-ms(U_A + U_B)}} = \E{e^{-ms(U_A + U_B)}} = \E{ e^{-msU_{A+B}} } \qquad \mod [s^{n+1}].
+        \E{e^{-ms(U_A + U_B)}} = \E{e^{-ms(U_A + U_B)}} = \E{ e^{-msU_{A+B}} }, \qquad \mod [s^{n+1}].
     \end{equation*}
 
     Define the function $f_A(s) \coloneqq - \frac1n \ln \E{ e^{-msU_A} }$ and similarly for $B$ and $A+B$. Using this function, the second statement is equivalent to 
 
     \begin{equation} \label{eq:f_matrix_module}
-        f_A(s) + f_B(s) \equiv f_{A+B}(s) \qquad \mod [s^{n+1}].
+        f_A(s) + f_B(s) \equiv f_{A+B}(s), \qquad \mod [s^{n+1}].
     \end{equation}
 
     Using Corollary \ref{corollary:R_n_as_a_logarithm}, the first statement is equivalent to 
 
     \begin{equation} \label{eq:differential_matrix_module}
-        \frac{\partial}{\partial_s} f_A(s) + \frac{\partial}{\partial_s} f_B(s) \equiv \frac{\partial}{\partial_s} f_{A+B}(s) \qquad \mod[s^n].
+        \frac{\partial}{\partial_s} f_A(s) + \frac{\partial}{\partial_s} f_B(s) \equiv \frac{\partial}{\partial_s} f_{A+B}(s), \qquad \mod[s^n].
     \end{equation}
 
     So proving the equivalence of the two statements reduces to prove the equivalence between \eqref{eq:f_matrix_module} and \eqref{eq:differential_matrix_module}. Because the formal series in \eqref{eq:f_matrix_module} coincide up to the $n+1$th term, the derivatives coincide up to the $n$th term, so one implication is trivial. For the second implication, it suffices to prove that $f_A(0) + f_B(0) = f_{A+B}(0)$, but we have that $f_A(0)=f_B(0)=f_{A+B}(0)$, so the result follows.
@@ -752,7 +757,7 @@ We have seen that the finite $\mathcal R_n$ transform is a power series that lin
     Let $P(n^{-1}\partial_z)$ be a polynomial on $n^{-1}\partial_z$ such that the linear differential operator applied to $x^n$, $P(n^{-1}\partial_z)[z^n]$ is a monic polynomial. Then $P(n^{-1}\partial_z) = \det[zI - A]$ for a matrix $A$ if and only if 
 
     \begin{equation} \label{eq:cauchy_transform_R}
-        \frac1n \frac{\partial_s P(s)}{P(s)} \equiv - \mathcal R_n^{\mu_A}(s) \qquad \mod [s^{n+1}].
+        \frac1n \frac{\partial_s P(s)}{P(s)} \equiv - \mathcal R_n^{\mu_A}(s), \qquad \mod [s^{n+1}].
     \end{equation}
 \end{theorem}
 
@@ -760,7 +765,7 @@ We have seen that the finite $\mathcal R_n$ transform is a power series that lin
     Recall that
 
     \begin{equation*}
-        \mathcal R_{n}^{\mu_A}(s) \equiv - \frac1n \frac{\partial}{\partial s} \ln \left(\frac1n \sum_{u_i \in U_A} e^{-nsu_i} \right) \qquad \mod [s^n].
+        \mathcal R_{n}^{\mu_A}(s) \equiv - \frac1n \frac{\partial}{\partial s} \ln \left(\frac1n \sum_{u_i \in U_A} e^{-nsu_i} \right), \qquad \mod [s^n].
     \end{equation*}
 
     Also 
@@ -772,7 +777,7 @@ We have seen that the finite $\mathcal R_n$ transform is a power series that lin
     Then \eqref{eq:cauchy_transform_R} is satisfied if and only if 
 
     \begin{equation*}
-        P(s) \equiv \frac1n \sum_{u_i \in U_A} e^{-nsu_i} \qquad \mod [s^{n+1}].
+        P(s) \equiv \frac1n \sum_{u_i \in U_A} e^{-nsu_i}, \qquad \mod [s^{n+1}].
     \end{equation*}
 
     The last relationship in turn is equivalent to 
@@ -878,13 +883,13 @@ One of the central topics in Probability Theory is the convergence of sums of ra
 
     \begin{align*}
         \frac1n\sum_{j=1}^n r_{ij} &= m,\\
-        \frac1n\sum_{j=1}^n r_{ij}^2 < c,
+        \frac1n\sum_{j=1}^n r_{ij}^2 &< c,
     \end{align*}
 
     \noindent for some positive constant $c$. Define $q_i(k,z) \coloneqq k^{-n}p_i(kz)$. Then
 
     \begin{equation*}
-        \lim_{k\to \infty} [ q_1(k,z) \boxplus_n q_2(k,z) \boxplus_n \cdots \boxplus_n q_k(k,z) ] = (x-m)^n
+        \lim_{k\to \infty} [ q_1(k,z) \boxplus_n q_2(k,z) \boxplus_n \cdots \boxplus_n q_k(k,z) ] = (x-m)^n.
     \end{equation*}
 \end{theorem}
 

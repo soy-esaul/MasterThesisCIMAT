@@ -40,7 +40,7 @@ It is straightforward from the definition to prove that the symmetric additive c
 \begin{align*}
     p \boxplus_n (\alpha q + r) &= \sum_{k=0}^n z^{n-k}(-1)^k \sum_{i+j = k} \frac{(n-i)!(n-j)!}{n!(n-k)!}a_i (\alpha b_j + c_j), \\ 
     &= \alpha \sum_{k=0}^n z^{n-k}(-1)^k \sum_{i+j = k} \frac{(n-i)!(n-j)!}{n!(n-k)!}a_i b_j\\ 
-    &+ \sum_{k=0}^n z^{n-k}(-1)^k \sum_{i+j = k} \frac{(n-i)!(n-j)!}{n!(n-k)!}a_i c_j,\\
+    &\phantom{unpoc} +\sum_{k=0}^n z^{n-k}(-1)^k \sum_{i+j = k} \frac{(n-i)!(n-j)!}{n!(n-k)!}a_i c_j,\\
     &= \alpha(p \boxplus_n q) + (p \boxplus_n r).
 \end{align*}
 
@@ -272,7 +272,7 @@ The symmetric additive convolution between two Hermite polynomials with the same
     Likewise, the time dependent generalized Laguerre polynomials are defined by the operator one would expect
 
     \begin{equation*}
-        L_n^{\alpha}(z,t) \coloneqq \left( 1 - t\partial_z \right)^{n+\alpha}[x^n]
+        L_n^{\alpha}(z,t) \coloneqq \left( 1 - t\partial_z \right)^{n+\alpha}[x^n] \coloneqq \sum_{k=0}^n \binom nk (-t)^k (n+\alpha)_{n+\alpha-k}x^{n-k}.
     \end{equation*}
 
     Expanding the definition, we can list the first few time-dependent standard Laguerre polynomials,

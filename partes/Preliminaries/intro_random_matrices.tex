@@ -167,17 +167,18 @@ The next results give the convergence of an empirical spectral measure to a cont
 \begin{theorem}[Wigner's semicircle law \cite{book:mingo_speicher}]
     For each $n\in \N$, let $W^{(n)}$ be a Wigner ensemble  and its entries $W_{ij}^{(n)}$ satisfy the following conditions.
 
-    \begin{enumerate}
+    \begin{itemize}
         \item $\E{\abs{W_{ij}^{(n)}}^k}<\infty$ for all $k\in \N$.
         \item $\E{W_{ij}} = 0$ for every $1 \le i \le n, 1 \le j \le n$.
         \item $\E{ W_{ij}^{(n) 2} } = 1/\sqrt{n}$.
-    \end{enumerate}
+    \end{itemize}
 
     Then both $\hat\mu$ and $\hat\nu$ converge in distribution to the semicircle distribution, i.e. the absolutely continuous distribution with density
 
     \begin{equation*}
-        f(x) = \frac{\sqrt{4 - x^2}}{2\pi}
+        f(x) = \frac{\sqrt{4 - x^2}}{2\pi}.
     \end{equation*}
 
-    {\color{red} De Octavio: decir que $\hat\mu$ converges almost surely}
+    Moreover, $\hat\mu$ converges almost surely. \todo{{De Octavio: decir que $\hat\mu$ converges almost surely}}
+    
 \end{theorem}

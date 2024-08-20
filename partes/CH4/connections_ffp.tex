@@ -49,7 +49,7 @@ Before proceeding with the processes, let us state a lemma that will help us to 
     The determinant of $zI_n - A$ is 
 
     \begin{align*}
-        \det \left( zI_n - A \right) &= (zI_n - A)_{11}\det(zI_{n-1}-B) - (zI_n - A)_{12}(xI_n - A)_{21}\det(xI_n - C)\\ 
+        \det \left( zI_n - A \right) &= (zI_n - A)_{11}\det(zI_{n-1}-B) - (zI_n - A)_{12}(xI_n - A)_{21}\det(xI_n - C),\\ 
         &= (z - a_n)\chi^{n-1}_z(A) - b_{n-1}^2\chi^{n-2}_z(A).
     \end{align*}
 \end{proof}
@@ -297,10 +297,10 @@ Using Theorem \ref{thm:heat_burgers} its is easy to prove that the roots of the 
 \end{corollary}
 
 \begin{proof}
-    Let $z_i(t)$ be the roots of $H_n(z,t)$, this means
+    Let $z_i(t)$ be the roots of $H_n(z,t)$, this means that $H_n(z_i(t),t) = 0$, which implies
 
     \begin{align*}
-        H_n(z_i(t),t) &= 0, \qquad \Rightarrow \partial_t [H_n(z_i(t),t)] = 0.
+        \partial_t [H_n(z_i(t),t)] = 0.
     \end{align*}
 
     By the chain rule and the heat kind equation \eqref{eq:calor} in Theorem \ref{thm:heat_burgers} we have that
@@ -341,8 +341,9 @@ As a final part for this subsection, let us prove that if you have an arbitrary 
 
         \begin{align}
             b_{j} &= \frac{n! (-1)^{j/2}}{2^{j/2} (j/2)! (n-j)!},\\ 
-            b_{j-2} &= \frac{n! (-1)^{\frac{j-2}{2}}}{2^{\frac{j-2}{2}} \left(\frac{j-2}{2}\right)! (n-j+2)!},\\ 
-            \Rightarrow b_{j} &= \frac{n! (-1)^{\frac{j-2}{2}}}{2^{\frac{j-2}{2}} \left(\frac{j-2}{2}\right)! (n-j+2)!} \frac{(-1)(n-j+2)(n-j+1)}{j},\\  
+            b_{j-2} &= \frac{n! (-1)^{\frac{j-2}{2}}}{2^{\frac{j-2}{2}} \left(\frac{j-2}{2}\right)! (n-j+2)!},
+            \intertext{this leads to} 
+            b_{j} &= \frac{n! (-1)^{\frac{j-2}{2}}}{2^{\frac{j-2}{2}} \left(\frac{j-2}{2}\right)! (n-j+2)!} \frac{(-1)(n-j+2)(n-j+1)}{j},\\  
             &= b_{j-2} \frac{(-1)(n-j+2)(n-j+1)}{j}. \label{eq:hermite_coef_recurr}
         \end{align}
 
@@ -606,7 +607,8 @@ As a final part for this subsection, let us prove that if you have an arbitrary 
 
 \begin{proof}
     \begin{align*}
-        L_n(z,t_1) \aac L_n(z,t_2) &= \sum_{k=0}^n z^{n-k}(-1)^k \sum_{j=0}^k \left(\frac{(n-j)!(n-k+j)!}{n!(n-k)!}\right)^2\binom{n}{j}\frac{(ct_1)^jn!}{(n-j)!}\binom{n}{k-j}\frac{(ct_1)^{k-j} n!}{(n-k+j)!}\\ 
+        L_n(z,t_1) \aac& L_n(z,t_2) \\
+        &= \sum_{k=0}^n z^{n-k}(-1)^k \sum_{j=0}^k \left(\frac{(n-j)!(n-k+j)!}{n!(n-k)!}\right)^2\binom{n}{j}\frac{(ct_1)^jn!}{(n-j)!}\binom{n}{k-j}\frac{(ct_1)^{k-j} n!}{(n-k+j)!}\\ 
         &= \sum_{k=0}^n z^{n-k}(-1)^k \sum_{j=0}^k \frac{((n-j)!)^2((n-k+j)!)^2(n!)^4(ct_1)^j(ct_2)^{k-j}}{(n!)^2((n-k)!)^2j!(k-j)!((n-j)!)^2((n-k+j)!)^2},\\ 
         &= \sum_{k=0}^n \binom{n}{k} \frac{(-1)^k z^{n-k}n!}{(n-k)!}\sum_{j=0}^k \binom{k}{j}(ct_1)^j(ct_2)^{k-j}, \\  
         &=  \sum_{k=0}^n \binom{n}{k} \frac{(-1)^k z^{n-k}n!}{(n-k)!}[c(t_1 + t_2)]^k = L_n(z,t_1 + t_2).

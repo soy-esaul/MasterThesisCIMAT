@@ -256,7 +256,7 @@ The next results are technical but they are needed for the proofs in Chapter \re
     \noindent then $L^0(X) = 0$.
 \end{theorem}
 
-Gronwall's lemma allows us to bound a function satsifying a differential inequality by the solution of the associated differential equation. It will be  useful for the multidimensional version of the Yamada-Watanabe Theorem. The proof is in \cite{book:legall}[page 213].
+Gronwall's lemma allows us to bound a function satsifying a differential inequality by the solution of the associated differential equation. It will be  useful for the multidimensional version of the Yamada-Watanabe Theorem. The proof is in \cite[page 213]{book:legall}.
 
 % Sacado de Le Gall, pág 213
 
@@ -323,7 +323,7 @@ The process $\sum_{j=1}^n \int_0^t X_j(s) \d B_j (s)$ takes values in $\R$. If w
 If we take $\vec \mu(t) = (\mu_1(t), \dots, \mu_n (t))$ to be a vector of integrable functions and for each $i \in [n]$ we consider a vector-valued process $\vec \sigma_i(t) = (\sigma_{i1}(t), \dots, \sigma_{in}(t))$, then for each $i \in [n]$ we have a single dimensional Itô process driven by a multivariate Brownian motion,
 
 \begin{equation*}
-    \d Y_i = \mu_i(s) \d s + \sum_{j=1}^n \sigma_{ij}(s) \d B_j (s)
+    \d Y_i = \mu_i(s) \d s + \sum_{j=1}^n \sigma_{ij}(s) \d B_j (s).
 \end{equation*}
 
 
@@ -351,7 +351,7 @@ The matrix $\Sigma \trans \Sigma$ is often called the diffusion matrix. In the n
     Let $\vec Y $ be an $n$-dimensional Itô process and $f: \R^n \to R^m$ be a $C^2$ function. The process $f(Y_1(t), \dots, Y_n(t))$ is also an Itô process and has a stochastic differential given by
 
     \begin{align*}
-        \d f(Y_1(t), \dots, Y_n(t)) = \sum_{i=1}^n \frac{\partial}{\partial x_i} f(Y_1(&t), \dots, Y_n(t))\\  
+        \d f(Y_1(t), \dots, Y_n(t)) = \sum_{i=1}^n &\frac{\partial}{\partial x_i} f(Y_1(t), \dots, Y_n(t))\\  
         &+ \frac12 \sum_{i=1}^n \sum_{j=1}^n \frac{\partial^2}{\partial x_i\partial x_j} f(Y_1(t), \dots, Y_n(t)) \d \langle Y_i, Y_j\rangle (t).
     \end{align*}
 \end{theorem}
