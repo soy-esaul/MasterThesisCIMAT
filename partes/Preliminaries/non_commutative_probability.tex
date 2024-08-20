@@ -1,26 +1,27 @@
-\section{Non-commutative probability}
+\section{Free probability}
 
-Although random matrices are constructed based on classical definitions of random variables as measurable functions in a given probability space, they differ fundamentally from classical random variables in their basic algebraic properties. Namely, the product of random matrices does not need to commute, whereas the product of real-valued random variables always commutes. This simple fact complicates the use of classical analytical tools in probability to study random matrices. Recently, the emerging field of non-commutative probability has developed several techniques for the algebraic study of non-commutative random variables. These techniques have significantly impacted random matrices theory.
+Although random matrices are constructed based on classical definitions of random variables as measurable functions on a given probability space, they differ fundamentally from classical random variables in their basic algebraic properties. Specifically, the product of random matrices does not necessarily commute, whereas the product of real-valued random variables always commutes. This simple fact complicates the use of classical analytical tools in probability to study random matrices. Recently, the emerging field of non-commutative probability has developed several techniques for the algebraic study of non-commutative random variables. These techniques have significantly impacted the theory of random matrices.
 
-In this section we give a brief introduction to the fundamental concepts and ideas of non-commutative probability and its application to the study of random matrices. These concepts will be later used in Chapter \ref{ch:finite_free}.
+In this section, we provide a brief introduction to the fundamental concepts and ideas of Free probability and its application to the study of random matrices. These concepts will be used later in Chapter \ref{ch:finite_free}.
+
 
 \subsection{Non-commutative probability spaces}
 
-A classical probability space is defined based on its analytical structure. When we work in non-commutative probability probability spaces, we are mainly concerned about the algebraic relationship between random variables. Before introducing the concept of a non-commutative probability space, we define an unital algebra.
+A classical probability space is defined based on its analytical structure. When we work in non-commutative probability spaces, we are mainly concerned with the algebraic relationship between random variables. Before introducing the concept of a non-commutative probability space, we define an unital algebra.
 
 \begin{definition}[Unital algebra]
-    Let $\mathcal A$ be a vector space over the field $\mathbb F$ equipped with the additional binary operation $\cdot$. We say that $\mathcal A$ is a unital algebra if it satisfies the following properties for $a,b,c \in \mathcal A$ and $\alpha, \beta \in K$,
+    Let $\mathcal A$ be a vector space over the field $\mathbb F$ equipped with the additional binary operation $\cdot$. We say that $\mathcal A$ is an unital algebra if it satisfies the following properties for $a,b,c \in \mathcal A$ and $\alpha, \beta \in K$:
 
-    \begin{enumerate}
+    \begin{itemize}
         \item Right distributivity. $(a + b) \cdot c = a\cdot c + b \cdot c$.
         \item Left distributivity. $a\cdot(b + c) = a\cdot b + a \cdot c$.
         \item Compatibility with scalars. $(\alpha a)\cdot(\beta b) = (\alpha \beta)(a\cdot b)$.
-        \item Identity. There is an element $1_{\mathcal A}$ such that $a 1_{\mathcal A} = a = 1_{\mathcal A} a$. We call $1_{\mathcal A}$ the identity element in $\mathcal A$.
-    \end{enumerate}
+        \item Identity. There is an element $1_{\mathcal A}\in \mathcal A$ such that $a 1_{\mathcal A} = a = 1_{\mathcal A} a$. We call $1_{\mathcal A}$ the identity element in $\mathcal A$.
+    \end{itemize}
 
 \end{definition}
 
-Usually we denote $a\cdot b = ab$ to simplify notation. Now we give the definition of non-commutative probability space found in \cite{book:nica_speicher}.
+Typically, we denote \(a \cdot b\) as \(ab\) to simplify notation. Now, we define a non-commutative probability space as found in \cite{book:nica_speicher}.
 
 \begin{definition}[Non-commutative probability space] \label{def:non_commutative_probability_space}
     A non-commutative probability space $(\A,\phi)$ consists of a unital algebra $\A$ over $\C$ and a unital linear functional $\phi$, i.e.
@@ -48,6 +49,17 @@ Usually we denote $a\cdot b = ab$ to simplify notation. Now we give the definiti
 
     The notion of a non-commutative probability space generalizes the idea of some spaces of random variables, including spaces of random matrices.
 
+    We call \(a^*\) the adjoint of \(a\). If we replace 'unital algebra' with '\(*\)-algebra' in Definition \ref{def:non_commutative_probability_space}, we obtain the definition of a \(*\)-probability space.
+
+    There are additional properties that the functional \(\phi\) in a non-commutative probability space \((\mathcal{A}, \phi)\) may satisfy. If \(\phi(ab) = \phi(ba)\) for every \(a, b \in \mathcal{A}\), we say that \(\phi\) is tracial. If \((\mathcal{A}, \phi)\) is a \(*\)-probability space and \(\phi(a^*a) \geq 0\) for every \(a \in \mathcal{A}\), we say that \(\phi\) is positive. If \(\phi(a^*a) = 0\) only when \(a = 0\), then we say that \(\phi\) is faithful.
+    
+    We can distinguish different types of non-commutative random variables depending on their algebraic properties.
+    
+    We say that \(a \in \mathcal{A}\) is self-adjoint if \(a^* = a\), unitary if \(a^*a = 1_{\mathcal{A}} = aa^*\), and normal if it commutes with its adjoint, \(a^*a = aa^*\).
+    
+    The notion of a non-commutative probability space generalizes the concept of certain spaces of random variables, including spaces of random matrices.
+
+
     \begin{example}
         Let $(\Omega, \F, \mathbb P)$ be a classical probability space and $\A = L^\infty(\Omega, \mathbb P, \R)$ the set of bounded measurable functions from $\Omega$ taking values in $\R$. Equip $\A$ with the linear operator $\phi$ given by 
 
@@ -55,7 +67,7 @@ Usually we denote $a\cdot b = ab$ to simplify notation. Now we give the definiti
             \phi(a) = \int_\Omega a(\omega) \d \P{\omega} = \E{a},
         \end{equation*}
 
-        \noindent for $a \in \A$. Then $(\A,\phi)$ is a non commutative probability space. 
+        \noindent for $a \in \A$. Then $(\A,\phi)$ is a non-commutative probability space. 
 
         If we take the space $\A' = L^\infty(\Omega, \mathbb P, \C)$ of bounded measurable functions taking complex values, then we can have a $*$-operation given by the complex conjugate and $(\A', \phi)$ is a $*$-probability space.
     \end{example}
@@ -76,7 +88,7 @@ Usually we denote $a\cdot b = ab$ to simplify notation. Now we give the definiti
       
     \end{example}
 
-    A definition of a non-commutative probability space that includes random variables which do not necessarily have finite moments of every order can be done, but it is not needed for the purposes of this work. 
+    A definition of a non-commutative probability space that includes random variables that do not necessarily have finite moments of every order can be done, but it is not needed for this work. 
 
     \begin{example}
         Let $\mathbb F \in \{\R,\C\}$ and $\M_{n,n}(\mathbb F)$ be the algebra of $n\times n$ matrices with entries in $\mathbb F$, where the operations are $+$ the sum of matrices and $\cdot$ the usual matrix product. Denote by $\tr$ the normalized trace, i.e.
