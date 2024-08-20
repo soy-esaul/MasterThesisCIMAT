@@ -7,15 +7,15 @@
 \contentsline {subsection}{\numberline {1.1.1}Matrix algebra}{6}{subsection.1.1.1}%
 \contentsline {subsection}{\numberline {1.1.2}Random matrix ensembles}{7}{subsection.1.1.2}%
 \contentsline {subsection}{\numberline {1.1.3}Asymptotic results for random matrices}{9}{subsection.1.1.3}%
-\contentsline {section}{\numberline {1.2}Stochastic Calculus}{9}{section.1.2}%
+\contentsline {section}{\numberline {1.2}Stochastic Calculus}{10}{section.1.2}%
 \contentsline {subsection}{\numberline {1.2.1}Stochastic calculus for $\mathbb {R}^n$-valued processes}{10}{subsection.1.2.1}%
-\contentsline {subsubsection}{Stochastic Calculus for $\mathbb R^n$-valued processes}{16}{section*.9}%
+\contentsline {subsubsection}{Stochastic Calculus for $\mathbb R^n$-valued processes}{17}{section*.9}%
 \contentsline {subsubsection}{Infinitesimal generator and harmonic functions}{18}{section*.10}%
 \contentsline {subsubsection}{Complex stochastic calculus}{19}{section*.11}%
-\contentsline {subsection}{\numberline {1.2.2}Stochastic calculus for matrix-valued processes}{19}{subsection.1.2.2}%
+\contentsline {subsection}{\numberline {1.2.2}Stochastic calculus for matrix-valued processes}{20}{subsection.1.2.2}%
 \contentsline {section}{\numberline {1.3}Non-commutative probability}{22}{section.1.3}%
-\contentsline {subsection}{\numberline {1.3.1}Non-commutative probability spaces}{22}{subsection.1.3.1}%
-\contentsline {subsection}{\numberline {1.3.2}Notions of independence}{26}{subsection.1.3.2}%
+\contentsline {subsection}{\numberline {1.3.1}Non-commutative probability spaces}{23}{subsection.1.3.1}%
+\contentsline {subsection}{\numberline {1.3.2}Tensor and Free Independence}{27}{subsection.1.3.2}%
 \contentsline {subsection}{\numberline {1.3.3}Convolution}{28}{subsection.1.3.3}%
 \contentsline {subsection}{\numberline {1.3.4}Classical and free central limit theorems}{31}{subsection.1.3.4}%
 \contentsline {chapter}{\numberline {2}Eigenvalue processes for matrix-valued processes}{33}{chapter.2}%
