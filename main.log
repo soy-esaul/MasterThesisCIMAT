@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.7.30)  20 AUG 2024 12:49
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.7.30)  20 AUG 2024 17:56
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1054,12 +1054,6 @@ Package microtype Info: Using default kerning set `alltext'.
 (C:\Users\Esaul\AppData\Roaming\MiKTeX\tex/latex/microtype\mt-cmr.cfg
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman (RS)
 )
-
-Package microtype Warning: \nonfrenchspacing is active. Adjustment of
-(microtype)                interword spacing will disable it. You might want
-(microtype)                to add `\microtypecontext{spacing=nonfrench}'
-(microtype)                to your preamble.
-
 *geometry* verbose mode - [ newgeometry ] result:
 * driver: pdftex
 * paper: letterpaper
@@ -1098,7 +1092,7 @@ File: logos/logo.png Graphic file (type png)
 Package pdftex.def Info: logos/logo.png  used on input line 73.
 (pdftex.def)             Requested size: 70.95331pt x 91.04872pt.
 LaTeX Font Info:    Trying to load font information for U+msa on input line 73.
-(C:\Program Files\MiKTeX\tex/latex/amsfonts\umsa.fd
+ (C:\Program Files\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 ) (C:\Users\Esaul\AppData\Roaming\MiKTeX\tex/latex/microtype\mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
@@ -1171,9 +1165,6 @@ Package pdftex.def Info: logos/banner.png  used on input line 73.
 
 
 [8] (introduction.tex
-Underfull \vbox (badness 3323) has occurred while \output is active []
-
-
 
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
@@ -1232,6 +1223,12 @@ Package hyperref Info: bookmark level for unknown todo defaults to 0 on input li
 
 [7]
 
+Package microtype Warning: I cannot find a spacing list for font
+(microtype)                `TS1/cmr/m/n/10.95' (context: `nonfrench'). Switching off
+(microtype)                spacing for this font on input line 141.
+
+
+
 [8{C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]) (partes/Preliminaries/stochastic_calculus.tex
 
 [9]
@@ -1273,26 +1270,23 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 [19]
 
 [20]
-Underfull \vbox (badness 1454) has occurred while \output is active []
-
-
 
 [21]) (partes/Preliminaries/non_commutative_probability.tex
 
 [22]
-Overfull \hbox (3.552pt too wide) in paragraph at lines 43--44
+Overfull \hbox (3.552pt too wide) in paragraph at lines 44--45
 []\T1/cmr/m/n/10.95 (-10) There are some ad-di-tional prop-er-ties we can have for the func-tional $\OML/cmm/m/it/10.95 '$ \T1/cmr/m/n/10.95 (-10) in a non-commutative
+ []
+
+
+Overfull \hbox (7.9714pt too wide) in paragraph at lines 46--47
+[]\T1/cmr/m/n/10.95 (-10) Depending on its al-ge-braic prop-er-ties, we can dis-tin-guish dif-fer-ent kinds of non-commutative
  []
 
 
 
 [23]
-Overfull \hbox (7.12215pt too wide) in paragraph at lines 45--46
-[]\T1/cmr/m/n/10.95 (-10) Depending on its al-ge-braic prop-er-ties, we can dis-tin-guish dif-fer-ent kinds of non-commutative
- []
-
-
-Overfull \hbox (3.92804pt too wide) in paragraph at lines 74--75
+Overfull \hbox (4.7773pt too wide) in paragraph at lines 86--87
 []\T1/cmr/m/n/10.95 (-10) Clearly $\OML/cmm/m/it/10.95 L[]\OT1/cmr/m/n/10.95 (-10) (
 \OML/cmm/m/it/10.95 ; \U/msb/m/n/10.95 P\OML/cmm/m/it/10.95 ; \U/msb/m/n/10.95 F\OT1/cmr/m/n/10.95 (-10) ) \OMS/cmsy/m/n/10.95 ^^Z \OML/cmm/m/it/10.95 L[]\OT1/cmr/m/n/10.95 (-10) (
 \OML/cmm/m/it/10.95 ; \U/msb/m/n/10.95 P\OML/cmm/m/it/10.95 ; \U/msb/m/n/10.95 F\OT1/cmr/m/n/10.95 (-10) )$\T1/cmr/m/n/10.95 (-10) , and since we are ask-ing ev-ery vari-able in $\OML/cmm/m/it/10.95 L[]\OT1/cmr/m/n/10.95 (-10) (
@@ -1346,11 +1340,6 @@ Overfull \hbox (11.1728pt too wide) in paragraph at lines 20--21
 
 
 [35]
-Overfull \hbox (2.17345pt too wide) in paragraph at lines 82--83
-[]\T1/cmr/m/n/10.95 (-10) The di-ag-o-nals of $\OT1/cmr/m/n/10.95 (-10) (\OML/cmm/m/it/10.95 @L\OT1/cmr/m/n/10.95 (-10) )^^C$ \T1/cmr/m/n/10.95 (-10) and $\OT1/cmr/m/n/10.95 (-10) ^^C\OML/cmm/m/it/10.95 @L$ \T1/cmr/m/n/10.95 (-10) co-in-cide, so $\OT1/cmr/m/n/10.95 (-10) d^^C[] = [][]$\T1/cmr/m/n/10.95 (-10) . Let $\OT1/cmr/m/n/10.95 (-10) d\OML/cmm/m/it/10.95 N [][]\OT1/cmr/m/n/10.95 (-10) = \OML/cmm/m/it/10.95 H[]\OT1/cmr/m/n/10.95 (-10) (\OML/cmm/m/it/10.95 @B\OT1/cmr/m/n/10.95 (-10) )\OML/cmm/m/it/10.95 H$\T1/cmr/m/n/10.95 (-10) ,.
- []
-
-
 
 
 Package fancyhdr Warning: \headheight is too small (15.0pt): 
@@ -1401,9 +1390,6 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 [42]) (partes/CH2/diffusions.tex
 
 [43]
-Underfull \vbox (badness 1314) has occurred while \output is active []
-
-
 
 
 Package fancyhdr Warning: \headheight is too small (15.0pt): 
@@ -1539,7 +1525,7 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-10.22153pt}.
 
 [58] (img/wishart_comparison.pgf)
-<img/jacobi.pdf, id=870, 433.62pt x 289.08pt>
+<img/jacobi.pdf, id=867, 433.62pt x 289.08pt>
 File: img/jacobi.pdf Graphic file (type pdf)
 <use img/jacobi.pdf>
 Package pdftex.def Info: img/jacobi.pdf  used on input line 634.
@@ -1596,7 +1582,7 @@ Overfull \hbox (3.3687pt too wide) detected at line 46
  []
 
 
-Underfull \vbox (badness 7576) has occurred while \output is active []
+Underfull \vbox (badness 4634) has occurred while \output is active []
 
 
 
@@ -1883,7 +1869,7 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 [120]
 
 [121]
-Underfull \vbox (badness 2726) has occurred while \output is active []
+Underfull \vbox (badness 1221) has occurred while \output is active []
 
 
 
@@ -2124,8 +2110,14 @@ LaTeX Warning: There were undefined references.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 8657DB2C71E160432E82DAAE5B001D1F;9970.
+
+Package rerunfilecheck Warning: File `main.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `main.out':
+(rerunfilecheck)             Before: 8657DB2C71E160432E82DAAE5B001D1F;9970
+(rerunfilecheck)             After:  82C0993F675D2A7C431B0B93EDB5895B;9915.
 
 Package biblatex Warning: Please (re)run BibTeX on the file(s):
 (biblatex)                main
@@ -2140,17 +2132,17 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 ### semi simple group (level 1) entered at line 123 (\begingroup)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 37622 strings out of 473904
- 705783 string characters out of 5736415
- 3215817 words of memory out of 5000000
- 58937 multiletter control sequences out of 15000+600000
- 601354 words of font info for 267 fonts, out of 8000000 for 9000
+ 37615 strings out of 473904
+ 705761 string characters out of 5736415
+ 3216548 words of memory out of 5000000
+ 58942 multiletter control sequences out of 15000+600000
+ 601071 words of font info for 263 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,20n,101p,1970b,2450s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/doublestroke/dsrom10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/rsfs/rsfs10.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfbx1000.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfbx1095.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfbx1200.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfbx1440.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfbx2074.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfbx2488.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfcc1095.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfrm0600.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfrm0800.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfrm1000.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfrm1095.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfrm1200.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfti0800.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfti1095.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sftt0900.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sftt1095.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfxc1728.pfb>
-Output written on main.pdf (164 pages, 2442285 bytes).
+Output written on main.pdf (164 pages, 2442653 bytes).
 PDF statistics:
- 1962 PDF objects out of 2073 (max. 8388607)
- 613 named destinations out of 1000 (max. 500000)
+ 1956 PDF objects out of 2073 (max. 8388607)
+ 609 named destinations out of 1000 (max. 500000)
  75180 words of extra memory for PDF output out of 89155 (max. 10000000)
 
