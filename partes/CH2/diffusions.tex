@@ -1,13 +1,13 @@
 \section{Generalization for matrix-valued diffusion processes} \label{sec:matrix_difusions}
 
 \begin{theorem} \label{thm:diffusion_real}
-    Let $B = (B(t), t\ge 0)$ be a Brownian motion in $\M_{p,p}(\R)$ and $X(t)$ be a symmetric $p\times p$ matrix-valued stochastic process satisfying the stochastic differential equation
+    Let $B = (B(t), t\ge 0)$ be a Brownian motion in $\M_{n,n}(\R)$ and $X(t)$ be a symmetric $n\times n$ matrix-valued stochastic process satisfying the stochastic differential equation
 
     \begin{equation}
         \d X(t) = g(X(t)) \d B(t) h(X(t)) + h(X(t)) \d \trans{B(t)} g(X(t)) + b(X(t))\d t, \label{eq:matrix_diffusion}
     \end{equation}
 
-    where $g,h,b$ are real functions acting spectrally, and $X(0)$ is a symmetric $p\times p$ matrix with $p$ different eigenvalues. 
+    where $g,h,b$ are real functions acting spectrally, and $X(0)$ is a symmetric $n\times n$ matrix with $n$ different eigenvalues. 
 
     Let $G(x,y) = g^2(x)h^2(y) + g^2(y)h^2(x)$, and
     
@@ -15,7 +15,7 @@
         \tau = \inf\{ t: \lambda_i(t) = \lambda_j(t) \text{ for some } i\neq j \}. \label{eq:collision_time}
     \end{equation} 
     
-    Then, for $t < \tau$ the eigenvalue process $\Lambda(t)$ verifies the following stochastic differential equations:
+    Then, for $t < \tau$ the eigenvalue process $\Lambda(t)$ verifies the following system of stochastic differential equations:
 
     \begin{equation}
         \d \lambda_i = 2g(\lambda_i)h(\lambda_i)\d W_i + \biggl( b(\lambda_i) + \sum_{k\neq i} \frac{G(\lambda_i,\lambda_k)}{\lambda_i - \lambda_k} \biggr)\d t, \label{eq:gen_dyson}
@@ -29,9 +29,9 @@
 
     \[ X(t) = H \Lambda H^T, \]
 
-    \noindent where both $\Lambda$ and $H$ are matrix-valued stochastic processes, $\Lambda = \mathrm{diag}(\lambda_1, \dots, \lambda_p)$ is the diagonal matrix of ordered eigenvalues of $X(t)$ and $H$ is the corresponding matrix of eigenvectors.
+    \noindent where both $\Lambda$ and $H$ are matrix-valued stochastic processes, $\Lambda = \mathrm{diag}(\lambda_1, \dots, \lambda_n)$ is the diagonal matrix of ordered eigenvalues of $X(t)$ and $H$ is the corresponding matrix of eigenvectors.
 
-    Let us define the stochastic logarith of $H$ as
+    Let us define the stochastic logarithm of $H$ as
 
     \begin{equation*}
         \d A \coloneqq H^{-1} \partial H = H^T \partial H = H^T \d H + \frac12(\d H^T)\d H.
@@ -43,7 +43,7 @@
         0 = \d I = \d(H^T H) = H^T\d H + (\d H)^T H + (\d H)^T \d H = H^T\partial H + (\partial H)^T H = A + A^T.
     \end{align*}
 
-    Which means $A$ is skew symmetric. Using that $H^T H = I$, we have $\Lambda = H^T H \Lambda H^T H = H^T X H$, by the matrix Itô formula, we find \todo{Revisar bien esta cuenta}
+    Which means $A$ is skew-symmetric. Using that $H^T H = I$, we have $\Lambda = H^T H \Lambda H^T H = H^T X H$, by the matrix Itô formula, we find 
 
 
     \begin{align*} 
@@ -92,7 +92,7 @@
         &= \left( Hg^2(\Lambda)\trans H \right)_{ik}\left( Hh^2(\Lambda)\trans H \right)_{jm} \d t = g^2(X)_{ik} h^2(X)_{jm} \d t.
     \end{align*}
 
-    Proceeding similarly with the other four summands we find
+    Proceeding similarly with the other four summands we find that
 
     \begin{align*}
         \d X_{ij} \d X_{km} = (g^2(X)_{ik}h^2(X)_{jm} + g^2(X)_{im}h^2(X)_{jk} + g^2(X)_{jk}h^2(X)_{im} + g^2(X)_{jm}h^2(X)_{ik})\d t.
@@ -163,19 +163,19 @@
 
 
 \begin{theorem} \label{thm:diffusion_complejo}
-    Let $W(t)$ be a complex $p\times p$ Brownian matrix. Suppose that $X = (X(t), t \ge 0)$ is a matrix-valued process taking values in the group of self adjoint matrices and it satisfies the following matrix stochastic differential equation:
+    Let $W(t)$ be a complex $n\times n$ Brownian matrix. Suppose that $X = (X(t), t \ge 0)$ is a matrix-valued process taking values in the group of self-adjoint matrices and it satisfies the following matrix stochastic differential equation:
 
     \begin{equation}\label{eq:complex_diff}
         \d X(t) = g(X(t))\d  W(t) h(X(t)) + h(X(t))\hermit{\d W(t)} g(X(t)) + b(X(t))\d t,
     \end{equation}
 
-    \noindent with $g,h,b: \R \to \R$ and $X_0$ is a hermitian $p\times p$ random matrix with $p$ different eigenvalues.
+    \noindent with $g,h,b: \R \to \R$ and $X_0$ is an Hermitian $n\times n$ random matrix with $n$ different eigenvalues.
 
     Let $G(x,y) = g^2(x)h^2(y) + g^2(y)h^2(x)$, and
     
     \[ \tau = \inf\{ t: \lambda_i(t) = \lambda_j(t) \text{ for some } i\neq j \}. \]
     
-    Then, for $t < \tau$ the eigenvalue process $\Lambda_t$ verifies the following stochastic differential equations:
+    Then, for $t < \tau$ the eigenvalue process $\Lambda_t$ verifies the following system of stochastic differential equations:
 
     \begin{equation}
         \d \lambda_i = 2g(\lambda_i)h(\lambda_i)\d W_i + \biggl( b(\lambda_i) + 2\sum_{k\neq i} \frac{G(\lambda_i,\lambda_k)}{\lambda_i - \lambda_k} \biggr)\d t,
@@ -218,7 +218,8 @@
 
     \begin{align*} % Mejorar esto.
         \d \Lambda &= \d(H^* X H) = H^*(\d(XH)) + (\d H^*) XH + \d(H^*)\d (XH),\\
-        &= H^*(\d X) H + H^* X \d H + H^*(\d X\d H) + (\d H^*)X H + \d(H^*)(\d X)H + \d(H^*)X\d H + \d H^*\d X\d H,\\
+        &= H^*(\d X) H + H^* X \d H + H^*(\d X\d H) + (\d H^*)X H + \d(H^*)(\d X)H\\
+        &\phantom{espacioooooooo} + \d(H^*)X\d H + \d H^*\d X\d H,\\
         &= H^*(\partial X)H + H^*X\partial H + (\partial H^*)XH = H^*(\partial X)H + \Lambda H^* \partial H + (\partial H^*)H\Lambda,\\
         &= H^*(\partial X)H + \Lambda \partial A + \trans{\partial A}\Lambda = H^*(\partial X)H + \Lambda \partial A - \partial A \Lambda.
     \end{align*}
@@ -285,28 +286,224 @@
     This ends the proof.
 \end{proof}
 
+\subsection{Non-collision of the eigenvalues}
+
+We have found that the eigenvalues of a matrix-valued diffusion process in $\M_{n,n}(\R)$ and $\M_{n,n}(\C)$ satisfy a system of stochastic differential equations until the first time of collision. Now we prove that this time $\tau$ is infinite a.s. 
+
+The proof we give is taken from \cite{article:multiyamada} and makes use a generalized version of the so called McKean's argument appearing first in \cite{book:mckean} and used in \cite{bru1989diffusions}. The original McKean's argument makes use of a multivariate function $U(x_1, \dots,x_n)$ that has continuous derivatives and such that its evaluation on $\lambda_1, \cdots, \lambda_n$ is a local martingale. With a change of time a Girsanov theorem, one is able to conclude that the time of collision $\tau$ is infinite (for details see \cite{bru1989diffusions}). The generalization allows us to drop the local martingale hypothesis, by considering that the non-martingale part of the process is ``well-behaved'' (see hypotheses in Lemma \ref{lemma:mckean}). 
+
+\begin{theorem} \label{thm:collision}
+    Let $\Lambda = (\lambda_i)_{i=1,\dots,n}$ be an $n$-dimensional stochastic process starting at the open Weyl chamber $\Delta_n = (\lambda_1(0)<\cdots <\lambda_n(0)) \subset \R^n$ and satisfying \eqref{eq:gen_dyson} with functions $g,h,b:\R \to \R$ such that $g^2, h^2, b$ are Lipschitz continuous and $g^2h^2$ is convex or is continuously differentiable with derivative locally Lipschitz on $\R$. Then the first collision time $\tau$ defined as in \eqref{eq:collision_time} is infinite a.s.
+\end{theorem}
+
+\begin{proof}
+
+    
+    
+    Start by defining $U \coloneqq -\sum_{i<j} \log(\lambda_j - \lambda_i)$ for $t\in [0,\tau]$. Notice that, in concordance to the hypotheses of Lemma \ref{lemma:mckean}, $\log(x)$ is a continuous function from $\R^+ \setminus \{0\}$ to $\R$ such that $\lim_{x\downarrow 0} \log(x) = -\infty$. For each pair of different $i,j \in [n]$, such that $\lambda_i >  \lambda_j$, we evaluate $\log(\cdot)$ on the difference $Z_{ij}(t) = \lambda_i(t) - \lambda_j(t)$. The initial condition at the open Weyl chamber guarantees that $Z_{ij}(0) > 0$ for every $i,j$. We need to prove that, for every $i,j$
+
+    \begin{align*}
+        \log(Z_{ij}(t)) &= Z_{ij}(0) + M_{ij}(t) + P_{ij}(t),
+    \end{align*}
+
+    \noindent where $Z_{ij}$ is a local martingale on $[0,\tau)$, and $P_{ij}$ is an adapted càdlàg process such that
+
+    \begin{equation*}
+        \inf_{t \in [0,\tau \wedge T)} P(t) > - \infty, \qquad \text{ a.s.}
+    \end{equation*}
+
+    \noindent for every $T \in \R^+\setminus \{0\}$. Working with the sum of the variables accounts for working with all the differences at once. The sign affecting $U$ is a convention. If we change the hypothesis in \ref{lemma:mckean} to consider a function $h$ with limit $+\infty$ near $0^+$, the inequality bounding $P$ would be reversed. So we will find $P(t)<\infty$.
+    
+    By the multidimensional Itô formula, we have
+
+    \begin{align*}
+        \d U &= \sum_{i=1}^n \frac{\partial U}{\partial \lambda_i} \d\lambda_i + \frac12 \sum_{i,j} \frac{\partial^2 U}{\partial \lambda_i \partial \lambda_j} \d \langle \lambda_i,\lambda_j \rangle(t),
+        \intertext{by the zero covariation between eigenvalues,}
+        &= \sum_{i=1}^n \frac{\partial U}{\partial x_i} \d\lambda_i + \frac12 \sum_{j=1}^n \frac{\partial^2 U}{\partial x_j^2} \d\langle \lambda_j, \lambda_j\rangle(t).
+    \end{align*}
+
+    For a fixed $\lambda_i$ the term $\frac{\partial U}{\partial \lambda_i} \d\lambda_i$ is
+
+    \begin{align*}
+        \frac{\partial U}{\partial \lambda_i} \d\lambda_i &= \frac{\partial}{\partial \lambda_i}\left[ -\sum_{k<j} \log( \lambda_j - \lambda_k) \right] \d \lambda_i = \frac{\partial}{\partial \lambda_i}\left[ -\sum_{k<i} \log( \lambda_i - \lambda_k) - \sum_{j>i} \log(\lambda_j - \lambda_i) \right] \d \lambda_i,\\
+        &= -\sum_{k<i} \frac{\d \lambda_i}{\lambda_i - \lambda_k} + \sum_{j>i} \frac{\d \lambda_i}{\lambda_j - \lambda_i}.
+    \end{align*}
+
+    Summing the last for every $i \in [n]$, we have
+
+    \begin{align*}
+        \sum_{i=1}^n \frac{\partial U}{\partial \lambda_i} \d \lambda_i &= \sum_{i=1}^n \left[  \sum_{j>i} \frac{\d \lambda_i}{\lambda_j - \lambda_i} - \sum_{k<i} \frac{\d \lambda_i}{\lambda_i - \lambda_k}\right] = \sum_{i<j} \frac{\d \lambda_{i} - \d \lambda_{j}}{\lambda_{j} - \lambda_{i}}.
+    \end{align*}
+
+    For the second derivative we can use the previously found results,
+
+    \begin{align*}
+        \frac{\partial^2 U}{\partial \lambda_i^2}\d\langle \lambda_i, \lambda_i\rangle(t) &= \frac{\partial}{\partial \lambda_i} \left[ -\sum_{k<i} \frac{1}{\lambda_i - \lambda_k} + \sum_{j>i} \frac{1}{\lambda_j - \lambda_i} \right]\d\langle \lambda_i, \lambda_i\rangle(t),\\
+        &= \sum_{k<i} \frac{\d\langle \lambda_i, \lambda_i\rangle(t)}{(\lambda_i - \lambda_k)^2} + \sum_{j>i} \frac{\d\langle \lambda_i, \lambda_i\rangle(t)}{(\lambda_j-\lambda_i)^2}.
+    \end{align*}
+
+    Summing over all the values $i \in [n]$, we have 
+
+    \begin{align*}
+        \sum_{i=1}^n \sum_{i=1}^n \frac{\partial U}{\partial \lambda_i} \d \lambda_i &= \sum_{i<j} \frac{\d\langle \lambda_i, \lambda_i\rangle(t) + \d\langle \lambda_j, \lambda_j\rangle(t)}{(\lambda_j - \lambda_i)^2}
+    \end{align*}
+    
+    Using what we found for the derivatives and the fact that $\d \lambda_i\d\lambda_i = 4g^2(\lambda_i)h^2(\lambda_i)$, we find
+
+    \begin{align*}
+        \d U &= \sum_{i < j} \left[\frac{\d \lambda_i - \d \lambda_j}{\lambda_j - \lambda_i} + \frac12\frac{\d\langle \lambda_i, \lambda_i \rangle + \d\langle \lambda_j, \lambda_j \rangle}{(\lambda_j - \lambda_i)^2}\right],\\
+        &= \sum_{i<j} \left[\frac{\d \lambda_i - \d \lambda_j}{\lambda_j - \lambda_i} + 2\frac{g^2(\lambda_i)h^2(\lambda_i)+g^2(\lambda_j)h^2(\lambda_j)}{(\lambda_j - \lambda_i)^2}\d t\right].
+    \end{align*}
+
+    Now we expand the terms $\d \lambda_i$ in the first summand,
+
+    \begin{align*}
+        &\frac{\d \lambda_i - \d \lambda_j}{\lambda_j - \lambda_i} =\\ 
+        &=\frac{ 2g(\lambda_i)h(\lambda_i)\d W_i + \left(\sum_{k\neq i} \frac{G(\lambda_i,\lambda_k)}{\lambda_i - \lambda_k} + b(\lambda_i)\right)\d t - 2g(\lambda_j)h(\lambda_j)\d W_j - \left(\sum_{k\neq j} \frac{G(\lambda_j,\lambda_k)}{\lambda_j - \lambda_k} + b(\lambda_j)\right)\d t }{\lambda_j - \lambda_i}.
+    \end{align*}
+
+    Denote by $\d M$ the martingale part of $U$. Summing the martingale part of for every pair of values $i,j$ in the last expression we find
+
+    \[\d M = 2 \sum_{i<j} \frac{g(\lambda_i)h(\lambda_i)\d W_i - g(\lambda_j)h(\lambda_j)\d W_j}{\lambda_j - \lambda_i}.\]
+
+    The finite variation part of $U$, $\d P$ is given by $\sum_{i<j}2\frac{g^2(\lambda_i)h^2(\lambda_i)+g^2(\lambda_j)h^2(\lambda_j)}{(\lambda_j - \lambda_i)^2}\d t$ together with the finite variation part of $\sum_{i<j}\frac{\d \lambda_i - \d \lambda_j}{\lambda_j - \lambda_i}$. This last term is
+
+    \begin{align*}
+        &\sum_{i<j} \frac{b(\lambda_i) - b(\lambda_j)}{\lambda_j - \lambda_i}\d t + \sum_{i<j}\frac1{\lambda_j-\lambda_i}\left(\sum_{k\neq i}\frac{G(\lambda_i,\lambda_k)}{\lambda_i-\lambda_k} - \sum_{k\neq j}\frac{G(\lambda_j,\lambda_k)}{\lambda_j-\lambda_k} \right)\d t,\\
+        &= \sum_{i<j} \frac{b(\lambda_i) - b(\lambda_j)}{\lambda_j - \lambda_i}\d t + \sum_{i<j}\frac1{\lambda_j-\lambda_i}\left[\sum_{k\neq i,j}\left(\frac{G(\lambda_i,\lambda_k)}{\lambda_i-\lambda_k} -\frac{G(\lambda_j,\lambda_k)}{\lambda_j-\lambda_k} \right) - \frac{2G(\lambda_i,\lambda_j)}{\lambda_j-\lambda_i} \right]\d t.
+    \end{align*}
+
+    In order to organize the finite variation part, we define the following processes:
+
+    \begin{align*}
+        \d A_1 &\coloneqq \sum_{i<j} \frac{b(\lambda_i) - b(\lambda_j)}{\lambda_j - \lambda_i}\d t,\\
+        \d A_2 &\coloneqq 2\sum_{i<j} \frac{g^2(\lambda_i)h^2(\lambda_i) + g^2(\lambda_i)h^2(\lambda_i) - G(\lambda_i,\lambda_j)}{(\lambda_j - \lambda_i)^2}\d t,\\
+        \d A_3 &\coloneqq \sum_{i<j}\frac{1}{\lambda_j-\lambda_i}\sum_{k\neq i, k \neq j}\left( \frac{G(\lambda_i,\lambda_k)}{\lambda_i-\lambda_k} - \frac{G(\lambda_j,\lambda_k)}{\lambda_j - \lambda_k} \right) \d t.\\
+        %&= \sum_{i<j<k} \frac{G(\lambda_j,\lambda_k)(\lambda_k-\lambda_j)-G(\lambda_i,\lambda_k)(\lambda_k-\lambda_i)+G(\lambda_i,\lambda_j)(\lambda_j-\lambda_i)}{(\lambda_j-\lambda_i)(\lambda_k-\lambda_i)(\lambda_k-\lambda_j)}\d t.
+    \end{align*}
+
+    Notice that $\d P = \d A_1 + \d A_2 + \d A_3$. The Lipschitz condition on $b$ implies that
+
+    \begin{align*}
+        \abs{A_1(t)} &\le \abs{\sum_{i<j} \int_0^t \frac{b(\lambda_i) - b(\lambda_j)}{\lambda_j - \lambda_i}\d s} \le \sum_{i<j} \int_0^t \frac{\abs{b(\lambda_i) - b(\lambda_j)}}{\lambda_j - \lambda_i}\d s \le \sum_{i<j} \frac{K\abs{\lambda_i - \lambda_j}}{\lambda_j - \lambda_i}t, \\
+        &= \sum_{i<j} Kt = Kt\frac{n(n-1)}{2},
+    \end{align*}
+
+    \noindent where $K$ is the cpnstant coming from the Lipschitz continuity. Now, for $A_2$, we have
+
+    \begin{align*}
+        \d A_2 &= 2\sum_{i<j} \frac{g^2(\lambda_i)h^2(\lambda_i) + g^2(\lambda_i)h^2(\lambda_i) - g^2(\lambda_i)h^2(\lambda_j) - g^2(\lambda_j)h^2(\lambda_i)}{(\lambda_j - \lambda_i)^2}\d t,\\
+        &= 2\sum_{i<j} \frac{\left( g^2(\lambda_j) - g^2(\lambda_i) \right)\left(h^2(\lambda_j) - h^2(\lambda_i)\right)}{(\lambda_j - \lambda_i)^2}\d t.
+    \end{align*} 
+
+    Again, we use the Lipschitz continuity of $h^2$ and $g^2$ to find a bound. We suppose that the constant for the Lipschitz continuity is also $K$.
+
+    \begin{align*}
+        \abs{A_2(t)} \le 2\sum_{i<j} K^2t = K^2t n(n-1).
+    \end{align*}
+
+    For the term $\d A_3$, we have
+
+    \begin{align*}
+        \d A_3 &= \sum_{i<j, k\neq i,j} \frac{G(\lambda_i,\lambda_k)(\lambda_j-\lambda_k) - G(\lambda_j,\lambda_k)(\lambda_i-\lambda_k)}{(\lambda_i-\lambda_k)(\lambda_j-\lambda_k)(\lambda_j-\lambda_i)}\d t,\\
+        &= \sum_{i<j<k} \frac{G(\lambda_i,\lambda_k)(\lambda_j-\lambda_k) - G(\lambda_j,\lambda_k)(\lambda_i-\lambda_k)}{(\lambda_i-\lambda_k)(\lambda_j-\lambda_k)(\lambda_j-\lambda_i)}\d t\\
+        &\phantom{espacio}+\sum_{i<k<j} \frac{G(\lambda_i,\lambda_k)(\lambda_j-\lambda_k) - G(\lambda_j,\lambda_k)(\lambda_i-\lambda_k)}{(\lambda_i-\lambda_k)(\lambda_j-\lambda_k)(\lambda_j-\lambda_i)}\d t\\
+        &\phantom{más espacio aquí}+\sum_{k<i<j} \frac{G(\lambda_i,\lambda_k)(\lambda_j-\lambda_k) - G(\lambda_j,\lambda_k)(\lambda_i-\lambda_k)}{(\lambda_i-\lambda_k)(\lambda_j-\lambda_k)(\lambda_j-\lambda_i)}\d t.
+    \end{align*}
+
+    By reassigning the indices in the last two sums, we arrive to the equivalent expression;
+
+        \begin{align*}
+        \d A_3 &= \sum_{i<j<k} \left[\frac{G(\lambda_i,\lambda_k)(\lambda_j-\lambda_k) - G(\lambda_j,\lambda_k)(\lambda_i-\lambda_k)}{(\lambda_i-\lambda_k)(\lambda_j-\lambda_k)(\lambda_j-\lambda_i)}\right.\\
+        &\phantom{espacio aquí}+\frac{G(\lambda_i,\lambda_j)(\lambda_k-\lambda_j) - G(\lambda_k,\lambda_j)(\lambda_i-\lambda_j)}{(\lambda_i-\lambda_j)(\lambda_k-\lambda_j)(\lambda_k-\lambda_i)}\\
+        &\phantom{mas espacio aquí}\left.+ \frac{G(\lambda_j,\lambda_i)(\lambda_k-\lambda_i) - G(\lambda_k,\lambda_i)(\lambda_j-\lambda_i)}{(\lambda_j-\lambda_i)(\lambda_k-\lambda_i)(\lambda_k-\lambda_j)}\right]\d t,\\
+        &= \sum_{i<j<k} \frac{G(\lambda_j,\lambda_k)(\lambda_k-\lambda_j) - G(\lambda_i,\lambda_k)(\lambda_i - \lambda_k) + G(\lambda_i,\lambda_j)(\lambda_j - \lambda_i)}{(\lambda_j - \lambda_i)(\lambda_k - \lambda_i)(\lambda_k - \lambda_j)}\d t.
+    \end{align*}
+
+    Now, define the funtion $H(x,y,z)$ as
+
+    \begin{align*}
+        H(x,y,z) &\coloneqq \left[ (g^2(x) - g^2(z))(h^2(y) - h^2(z)) + (g^2(y) - g^2(z))(h^2(x) - h^2(z))\right](y-x),\\ 
+        &= \left( G(x,y) - G(x,z) - G(y,z) + G(z,z)\right)(y-x).
+    \end{align*}
+
+     By the Lipschitz conditions on $g^2$ and $h^2$ we find that 
+    
+    \begin{align*}
+        \abs{H(x,y,z} &\le \abs{y-x}[ K\abs{x-z}K\abs{y-z} + K\abs{y-z}K\abs{x-z}],\\
+        &= 2K^2\abs{(y-x)(x-z)(y-z)}.
+    \end{align*}
+
+    Also, we have the equality
+
+    \begin{align*}
+        H(x,y,z) + H(y,z,x) - H(x,z,y) &= \left( G(x,y) - G(x,z) - G(y,z) + G(z,z)\right)(y-x) \\
+        &\phantom{espa}+ \left( G(y,z) - G(y,x) - G(z,x) + G(x,x)\right)(z-y) \\
+        &\phantom{espacio}- \left( G(x,z) - G(x,y) - G(z,y) + G(y,y)\right)(z-x),\\
+        &=2(z-y)G(y,z) - 2(z-x)G(x,z) + 2(y-x)G(x,y)\\
+         &\phantom{espac}+ G(x,x)(z-y) - G(y,y)(z-x) + G(z,z)(y-x).
+    \end{align*}
+
+    
+    Using the last expression, we can write $2\d A_3$ as
+
+
+    \begin{align*}
+        2\d A_3 &= 2\sum_{i<j<k} \frac{G(\lambda_j,\lambda_k)(\lambda_k-\lambda_j) - G(\lambda_i,\lambda_k)(\lambda_i - \lambda_k) + G(\lambda_i,\lambda_j)(\lambda_j - \lambda_i)}{(\lambda_j - \lambda_i)(\lambda_k - \lambda_i)(\lambda_k - \lambda_j)}\d t,\\
+        &= \sum_{i<j<k} \frac{H(\lambda_i,\lambda_j,\lambda_k) + H(\lambda_j,\lambda_k,\lambda_i) - H(\lambda_i,\lambda_k,\lambda_j)}{(\lambda_j - \lambda_i)(\lambda_k - \lambda_i)(\lambda_k - \lambda_j)}\d t\\
+        &\phantom{espac}+ \sum_{i<j<k} \frac{-G(\lambda_i,\lambda_i)(\lambda_k-\lambda_j) + G(\lambda_j,\lambda_j)(\lambda_k - \lambda_i) - G(\lambda_k,\lambda_k)(\lambda_j - \lambda_i)}{(\lambda_j - \lambda_i)(\lambda_k - \lambda_i)(\lambda_k - \lambda_j)}\d t.
+    \end{align*}
+
+    Assign the names $\d A_4$ and $\d A_5$ to the last summands. For $A_4$ we have, using the bound on $H(x,y,z)$,
+
+    \begin{align*}
+        \abs{A_4} \le \sum_{i<j<k} 6 K^2t = \frac{6K^2n(n-1)(n-2)t}{6} = K^2n(n-1)(n-2)t.
+    \end{align*}
+
+    Finally, we can re-write $\d A_5$ as 
+
+    \begin{align}
+        \d A_5(t) &= \sum_{i<j<k} \frac{ G(\lambda_j,\lambda_j)(\lambda_k - \lambda_i) - G(\lambda_i,\lambda_i)(\lambda_k - \lambda_j) - G(\lambda_k,\lambda_k)(\lambda_j-\lambda_i)}{(\lambda_j-\lambda_i)(\lambda_k-\lambda_i)(\lambda_k-\lambda_j)}\d t,\notag \\
+        &= \sum_{i<j<k} \left( \frac{G(\lambda_j,\lambda_j) - G(\lambda_i,\lambda_i) }{\lambda_j - \lambda_i} - \frac{G(\lambda_k,\lambda_k) - G(\lambda_j,\lambda_j)}{\lambda_k - \lambda_j} \right)\frac{1}{\lambda_k - \lambda_i}\d t. \label{eq:dA5}
+    \end{align}
+
+    If $G(x,x)$ is convex, then 
+
+    \[ \frac{G(x,x) - G(y,y)}{x-y}, \]
+
+    \noindent is monotone decreasing in every variable letting the other fixed and thus $A_5$ is non-positive. If $G(x,x)$ is continuously differentiable with derivative locally Lipschitz, then 
+
+    \[ \abs{G'(x,x) - G'(y,y)} \le C\abs{x-y}, \]
+
+    \noindent and we conclude that every summand in \eqref{eq:dA5} is bounded by $C$, which means $\abs{A_5(t)}\le Ctn(n-1)(n-2)/6$.
+
+    We have found that the finite variation part of $U$ is bounded for every finite $t$, then all the hypotheses of Lemma \ref{lemma:mckean} are satisfied and we can conclude that $\tau = \infty$ a.s.
+
+\end{proof}
+
+The following result is the first part of a multidimensional version of Yamada-Watanabe theorem. It is the main result in \cite{article:multiyamada} and we will use it to prove the uniqueness of the solutions to \eqref{eq:gen_dyson}.
 
 \begin{theorem}[Multidimensional Yamada-Watanabe Theorem \cite{article:multiyamada}]%First part of Multidimensional Yamada-Watanabe] 
     \label{thm:mult_yamada_watanabe}
-    Let $p\in \N$ and %,q,r\in \N$ and 
+    Let $n\in \N$ and %,q,r\in \N$ and 
 
     \begin{align*}
-        b_i&: \R^p \to \R, \qquad i = 1, \dots, p,%\\
+        b_i&: \R^n \to \R, \qquad i = 1, \dots, n,%\\
         %c_k&: \R^{p+r} \to \R, \qquad k = p+1, \dots, p + q,\\
         %d_j&: \R^{p+r} \to \R, \qquad j = p+1, \dots, p + r, 
     \end{align*}
 
-    \noindent be real-valued continuous functions satisfying the following Lipschitz conditions for $C>0$,
+    \noindent be real-valued bounded continuous functions satisfying the following Lipschitz conditions for $C>0$,
 
     \begin{align*}
-        \abs{b_i(y_1) - b_i(y_2)} &\le C \norm{y_1 - y_2}, \quad i = 1, \dots, p,%\\
+        \abs{b_i(y_1) - b_i(y_2)} &\le C \norm{y_1 - y_2}, \quad i = 1, \dots, n,%\\
         %\abs{c_k(y_1,z_1) - c_k(y_2,z_2)} &\le C\norm{(y_1,z_1) - (y_2,z_2)}, \quad k = p+1, \dots, p + q,\\
         %\abs{d_j(y_1,z_1) - d_j(y_2,z_2)} &\le C\norm{(y_1,z_1) - (y_2,z_2)}, \quad j = p+1, \dots, p + r,
     \end{align*}
 
-    \noindent for every $y_1, y_2 \in \R^p$. %and $z_1,z_2\in \R^r$. 
+    \noindent for every $y_1, y_2 \in \R^n$. %and $z_1,z_2\in \R^r$. 
 
-    Further, let $\sigma_i:\R \to \R, i =1, \dots, p$ be a set of measurable functions such that
+    Further, let $\sigma_i:\R \to \R, i =1, \dots, n$ be a set of bounded measurable functions such that
 
     \[ \abs{\sigma_i(x) - \sigma_i(y)}^2 \le \rho_i(\abs{x-y}), \quad x,y \in \R, \]
 
@@ -317,19 +514,19 @@
     Then the pathwise uniqueness holds for the following system of stochastic differential equations
 
     \begin{align}
-        \d Y_i &= \sigma_i(Y_i)\d B_i + b_i(Y)\d t, \qquad i = 1, \dots, p,%\\
+        \d Y_i &= \sigma_i(Y_i)\d B_i + b_i(Y)\d t, \qquad i = 1, \dots, n,%\\
         %\d Z_j &= \sum_{k=p+1}^{p+q} c_k(Y,Z) \d B_k + d_j(Y,Z)\d t, \quad j = p + 1, \dots, p+r,
     \end{align}
 
-    \noindent where $B_1, \dots, B_{p}$ are independent Brownian motions.
+    \noindent where $B_1, \dots, B_{n}$ are independent Brownian motions.
 \end{theorem}
 
 \begin{proof}
-    Let $Y$ and $\hat Y$ be two solutions with respect to the same multidimensional Brownian motion $B = (B_i)_{i \le p}$ such that $Y(0) = \hat Y(0)$ %and $Z(0) = \hat Z(0)$ 
-    a.s., for $i\le p$ we have
+    Let $Y$ and $\hat Y$ be two solutions with respect to the same multidimensional Brownian motion $B = (B_i)_{i \le n}$ such that $Y(0) = \hat Y(0)$ %and $Z(0) = \hat Z(0)$ 
+    a.s., for $i\le n$ we have
 
     \begin{equation}
-        Y_i(t) - \hat Y_i(t) = \int_0^t \sigma_i(Y_i) - \sigma_i(\hat Y_i) ~\d B_i(s) + \int_0^t b_i(Y_i) - b_i(\hat Y_i) ~\d s.
+        Y_i(t) - \hat Y_i(t) = \int_0^t \left(\sigma_i(Y_i) - \sigma_i(\hat Y_i)\right) ~\d B_i(s) + \int_0^t \left(b_i(Y_i) - b_i(\hat Y_i) \right)~\d s.
     \end{equation}
 
     We can then see that
@@ -349,38 +546,44 @@
     Since $\sigma_i$ is bounded, we have that $\sgn(Y_i(t) - \hat Y_i(t))(\sigma_i(Y_i(t)) - \sigma_i(\hat Y_i(t)))$ is bounded and therefore the first integral in the last expression is a martingale with mean 0, which in turns implies that
 
     \begin{equation*}
-        \abs{ Y_i(t) - \hat Y_i(t) } - \int_0^t \sgn(Y_i(s) - \hat Y_i(s))(b_i(Y_i(s)) - b_i(\hat Y_i(s)))~\d t,
+        \abs{ Y_i(t) - \hat Y_i(t) } - \int_0^t \sgn(Y_i(s) - \hat Y_i(s))(b_i(Y_i(s)) - b_i(\hat Y_i(s)))~\d s,
     \end{equation*}
 
     \noindent is a zero-mean martingale. Then, by using the Lipschitz properties of $b_i$ we have
 
     \begin{align*}
-        \E{\abs{Y_i(t) - \hat Y_i(t)}} &= \E{  \int_0^t \sgn(Y_i(s) - \hat Y_i(s))(b_i(Y_i(s)) - b_i(\hat Y_i(s)))~\d s },\\
+        \norm{Y_i(t) - \hat Y_i(t)}_1 &= \E{  \int_0^t \sgn(Y_i(s) - \hat Y_i(s))(b_i(Y_i(s)) - b_i(\hat Y_i(s)))~\d s },\\
         &\le \E{ \int_0^t \abs{b_i(Y_i(s)) - b_i(\hat Y_i(s))}~\d s},\\
-        &= \int_0^t \E{ \abs{ b_i(Y_i(s)) - b_i(\hat Y_i(s)) } }~\d s 
-        \le  C\int_0^t \E{\abs{Y_i(s) - \hat Y_i(s)}}~\d s.
+        &= \int_0^t  \norm{ b_i(Y_i(s)) - b_i(\hat Y_i(s)) }_1~\d s 
+        \le  C\int_0^t \norm{Y_i(s) - \hat Y_i(s)}_1 ~\d s.
     \end{align*}
 
-    Summing for every $i$ we get
+    The $L^1$ norm in the last term is taken integrating with respect to $\omega$. Summing for every $i$ we get
 
     \begin{equation*}
-        \E{\abs{Y(t) - \hat Y(t)}} \le  Cp\int_0^t \E{\abs{Y(t) - \hat Y(s)}}~\d s.
+        \norm{Y(t) - \hat Y(t)}_1 \le  C \int_0^t \norm{Y(t) - \hat Y(s)}_1~\d s.
     \end{equation*}
 
-    Using Gronwall's lemma (\ref{lemma:gronwall}) we get that
+    Using Gronwall's lemma (\ref{lemma:gronwall}) and the equalilty in the initial conditions of $Y$ and $\hat Y$, we get that
+
+    \begin{align*}
+        \norm{Y(t) - \hat Y(t)}_1 \le \norm{Y(0) - \hat Y(0)}_1 e^{ct} = 0.
+    \end{align*}
+
+    Thus, we can conclude that 
 
     \begin{equation*}
-        \E{\abs{Y(t) - \hat Y(t)}} = 0, 
+        \norm{Y(t) - \hat Y(t)}_1 = 0, 
     \end{equation*}
 
-    \noindent which implies $Y(t) = \hat Y(t)$ a.s. for every $t>0$, ending the proof.
+    \noindent which implies $Y(t) = \hat Y(t)$ a.s. for every fixed $t>0$. The pathwise uniqueness follows from the continuity.
 \end{proof}
 
-
+With the next theorem, the result on the pathwise uniqueness is particularized for the cases of systems of stochastic differential equations coming from eigenvalue systems.
 
 
 \begin{theorem}[Spectral matrix Yamada-Watanabe theorem] \label{thm:spectral_yamadawatanabe}
-    Let $X(t)$ be a $p\times p$ symmetric matrix-valued process satisfying the equation \eqref{eq:matrix_diffusion} with initial condition $X(0)$ that is a symmetric $p\times p$ matrix with $p$ different eigenvalues. Suppose further that
+    Let $X(t)$ be an $n\times n$ symmetric matrix-valued process satisfying the equation \eqref{eq:matrix_diffusion} with initial condition $X(0)$ that is a symmetric $n\times n$ matrix with $n$ different eigenvalues. Suppose further that
 
     \begin{equation}
         \abs{ g(x)h(x) - g(y)h(y) }^2 \le \rho(\abs{x-y}), \qquad x,y \in \R,
@@ -394,52 +597,65 @@
 \end{theorem}
 
 \begin{proof}
-    Let $PN \trans{P}$ be a diagonalization for $X(0)$. We need to show that a unique strong solution exists for \eqref{eq:gen_dyson} when $\Lambda(0)=N$. The functions
+    Let $H_0 \Lambda_0 \trans{H_0}$ be a diagonalization for $X(0)$. We need to show that a unique strong solution exists for \eqref{eq:gen_dyson} when $\Lambda(0)=\Lambda_0$. The functions
     
-    \[ b_i(\lambda_1, \dots,\lambda_p) = b(\lambda_i) + \sum_{k \neq i} \frac{G(\lambda_i,\lambda_k)}{\lambda_i - \lambda_k}, \]
+    \[ a_i(\lambda_1, \dots,\lambda_n) = b(\lambda_i) + \sum_{k \neq i} \frac{G(\lambda_i,\lambda_k)}{\lambda_i - \lambda_k}, \]
 
-    \noindent are locally Lipschitz continuous on $\Delta_p$ so they can be extended from the compact sets 
+    \noindent are locally Lipschitz continuous on $\Delta_n = \{ 0 \le \lambda_1 < \lambda_2 < \dots < \lambda_n \}$ so they can be extended from the compact sets 
 
-    \[ D_m = \{ 0 \le \lambda_1 < \lambda_2 < \cdots < \lambda_p < m, \lambda_{i+1} - \lambda_i \ge 1/m \}, \]
+    \[ D_m = \{ 0 \le \lambda_1 < \lambda_2 < \cdots < \lambda_n < m, \lambda_{i+1} - \lambda_i \ge 1/n \}, \]
 
-    \noindent to bounded Lipschitz functions on $\R^p$. Let $b_i^m$ denote such extension for $m \in \N \setminus \{0\}$. For $i = 1, \dots, p$, we consider the system of SDEs,
+    \noindent to bounded Lipschitz functions on $\R^n$. Let $a_i^m$ denote such extension for $m \in \N \setminus \{0\}$. For $i = 1, \dots, n$, we consider the system of stochastic differential equations,
 
-    \[ \d \lambda_i = 2g(\lambda_i^m)h(\lambda_i^m)\d W_i + b_i^m(\Lambda^m) \d t. \]
+    \begin{equation}
+        \d \lambda^m_i = 2g(\lambda_i^m)h(\lambda_i^m)\d W_i + a_i^m(\Lambda^m) \d t. \label{eq:cortada}
+    \end{equation}
 
-    We have that $\abs{g(x)h(x) - g(y)h(y)}^2 \le \rho(\abs{x-y})$ and $\int_{0^+} \rho(x)^{-1}\d x=\infty$, and using Theorem \ref{thm:mult_yamada_watanabe} we get that there is a unique strong solution for the system of SDEs. Since $D_m \subset D_{m+1}$, we have that $\lim_{m\to\infty} D_m = \Delta_p$, so there exists a unique strong solution $\Lambda(t)$ for the SDEs system up to the first exit time from $\Delta_p$. This time is $\tau$, the first collision time of the eigenvalues.
-
+    We have that $\abs{g(x)h(x) - g(y)h(y)}^2 \le \rho(\abs{x-y})$ and $\int_{0^+} \rho(x)^{-1}\d x=\infty$, and using Theorem \ref{thm:mult_yamada_watanabe} we get that there is a unique strong solution for the system \eqref{eq:cortada} for every $m$. Due to the path uniqueness, and since $D_m \subset D_{m+1}$, for every pair $m,m'$ we have that $\lambda^m$ and $\lambda^{m'}$ coincide on $D_{m \wedge m'}$. Letting $m\to \infty$ we have that $D_m \to \Delta_n$, and $\lim_{n\to}\lambda_i^m$ is a solution on $\Delta_n$. If $\lambda_i$ is another solution on $\Delta_n$, they must coincide in every $D_m$ and thus they coincide in $\Delta_n$. 
+    
+    So there is a unique strong solution $\Lambda(t)$ for the system of stochastic differential equations up to the first exit time from $\Delta_n$. This time is $\tau$, the first collision time of the eigenvalues.
 \end{proof}
 
-\begin{corollary}
-    Suppose that $b, g^2, h^2$ are Lipschitz continuous, $g^2h^2$ is convex or or continuously differentiable with derivative uniformly Lipschitz on $\R$ and that $G(x,y) \coloneqq g^2(x)h^2(y) + g^2(y)h^2(x)$ is strictly positive on $\{x \neq y\}$. Then the system of SDEs \eqref{eq:gen_dyson} for the eigenvalue process satisfying \eqref{eq:matrix_diffusion} has a unique strong solution on $[0,\infty)$.
+From Theorem \ref{thm:collision} we already knwo that the time of first collision $\tau$ is infinite a.s. In the next corollary, we summarize both results.
+
+\begin{corollary} \label{corollary:todo_junto}
+    Suppose that $b, g^2, h^2$ are Lipschitz continuous, $g^2h^2$ is convex or continuously differentiable with derivative locally Lipschitz on $\R$ and that $G(x,y) \coloneqq g^2(x)h^2(y) + g^2(y)h^2(x)$ is strictly positive on $\{x \neq y\}$. Then the system of SDEs \eqref{eq:gen_dyson} for the eigenvalue process satisfying \eqref{eq:matrix_diffusion} has a unique strong solution on $[0,\infty)$.
 \end{corollary}
 
 \begin{proof}
-    Recall that if $f$ is a non-negative Lipschitz continuous function, then $\sqrt f$ is $1/2$-Hölder continuous. Since $g^2$ and $h^2$ are Lipschitz continuous, then $g^2h^2$ is locally Lipschitz continuous and $gh$ is $1/2$-Hölder continuous. Then
+    Let $f$ is a non-negative Lipschitz continuous function, define $\sqrt f$ as the positive square root of $f$. Using that $\sqrt x$ is 1/2-Hölder continuous, we have that
+
+    \begin{equation*}
+        \abs{ \sqrt{f(x)} - \sqrt{f(y)}  } \le \abs{ f(x) - f(y) }^{\frac12}  \le K \abs{x-y}^{\frac12}.
+    \end{equation*}
+
+    
+    
+    Then $\sqrt f$ is $1/2$-Hölder continuous. Since $g^2$ and $h^2$ are Lipschitz continuous, then $g^2h^2$ is locally Lipschitz continuous and $gh$ is $1/2$-Hölder continuous. Then
 
     \begin{align*}
         \abs{g(x)h(x) - g(y)h(y)}^2 &\le \left( K\abs{x-y}^{\frac12} \right)^2 = K^2 \abs{x-y}.
     \end{align*}
 
-    Taking $\rho(|x-y|) = K^2\abs{x-y}$ we see that the conditions of Theorem \ref{thm:spectral_yamadawatanabe} are satisfied and then the uniqueness and existence of the strong solution applies on $[0,\tau)$. By Theorem \ref{thm:collision} we have that $\tau=\infty$ a.s., and thus the existence and uniqueness is satisfied on $[0,\infty)$.
+    Taking $\rho(|x-y|) = K^2\abs{x-y}$ we see that the conditions of Theorem \ref{thm:spectral_yamadawatanabe} are satisfied and then the uniqueness and existence of the strong solution applies on $[0,\tau)$. By Theorem \ref{thm:collision} we have that $\tau=\infty$ a.s., thus the existence and uniqueness is satisfied on $[0,\infty)$.
 \end{proof}
 
+With these results, we are are ready to apply to two processes of interest.
 
 
 \subsection{Wishart process}
 
+The Wishart process is a dynamic version of the Wishart matrix, first described by John Wishart \cite{article:wishart}. If we assume a data population consisting of \(n\) features observed in \(k\) individuals, we can form a rectangular \(n \times k\) array with this data; let us name this array \(X\). If we further assume that the variables and individuals are completely uncorrelated, and that individual data points (the \(i\)th feature of the \(j\)th individual) follow a standard normal distribution, then \(X\) is a standard independent Gaussian matrix of size \(n \times k\). The matrix \(X\) can be thought of as a size \(k\) sample observation of an independent normal vector \(\vec{v}\) in \(\mathbb{R}^k\). It is a well-known fact in statistics that an estimator for the covariance matrix of \(\vec{v}\) is \(W \coloneqq X^TX\). Under the aforementioned assumptions, \(W\) follows a Wishart distribution.
 
-The Wishart process is a dynamical version of the Wishart matrix, which was first described by John Wishart \cite{article:wishart}. If we assume a data population to consist of $n$ features observed in $k$ individuals, then we can form a rectangular $n\times k$ array with this data, let us name $X$ to such array. If we further assume that the variables and individualsa re totally non-correlated and they individual data points ($i$th feature of the $j$th individual) follow a standard normal distribution, then $X$ is a standard independent Gaussian matrix of size $n\times k$. The matrix $X$ can be thought as a size $k$ sample observation of an independent Normal vector $\vec v$ in $\R^k$. It is a well known fact in statistics that an estimator for the covariance matrix of $\vec v$ is $W \coloneqq \trans{X}X$. Under the former assumptions, $W$ follows a Wishart distribution.
-
-Besides estimating a covariance matrix, the Wishart matrix distribution has some other uses in multivariate statistics. A notable one is its use for Principal Component Analysis (PCA). In \cite{book:hastie_tibshirani}, Principal Components are described as ``a sequence of projections of the data, mutually uncorrelated and ordered in variance''. The key idea is that if we find the eigenvalues of a covariance matrix and order them, then we can know what are the most influential features in the data variance, i.e.\ the eigenvector associated to the largest eigenvalue carries out the most variance of the data. Every eigenvector is a ``projection of the data'' and uncorrelated to any other eigenvector (as they form an orthogonal basis). 
-
-A natural question that comes to mind when doing PCA is what would happen to the Principal Components if we add a mild perturbation (e.g. Gaussian noise). Bru \cite{bru1989diffusions} tackled this problem by considering adding a Brownian motion as a noise. With this, she was able to use stochastic calculus techniques to study the behaviour of the Principal Components when the added variance fluctuated. 
+Besides estimating a covariance matrix, the Wishart matrix distribution has other applications in multivariate statistics. A notable one is its use in Principal Component Analysis (PCA). In \cite{book:hastie_tibshirani}, Principal Components are described as ``a sequence of projections of the data, mutually uncorrelated and ordered in variance''. The key idea is that if we find the eigenvalues of a covariance matrix and order them, we can identify the most influential features in the data variance, i.e., the eigenvector associated with the largest eigenvalue carries the most variance of the data. Each eigenvector is a “projection of the data” and is uncorrelated with any other eigenvector, as they form an orthogonal basis.
 
 
-In this subsection, we use the Theorems proven previously to replicate Bru's results. It is worthmentioning that the techniques in this section taken from \cite{article:multiyamada} were originally inspired by the work of Bru in \cite{bru1989diffusions}.
+A natural question that arises when performing PCA is what happens to the Principal Components if we add a mild perturbation (e.g., Gaussian noise). Bru \cite{bru1989diffusions} addressed this problem by considering the addition of Brownian motion as noise. This approach allowed her to use stochastic calculus techniques to study the behavior of the Principal Components when the added variance fluctuated.
+
+In this subsection, we use the theorems proven previously to replicate Bru's results. It is worth mentioning that the techniques in this section taken from \cite{article:multiyamada} were originally inspired by the work of Bru in \cite{bru1989diffusions}.
 
 
-Once we have Theorems \ref{thm:diffusion_real} and \ref{thm:diffusion_complejo}, proving the form of the eigenvalues in a Wishart process is quite straight-forward.
+Once we have Theorems \ref{thm:diffusion_real} and \ref{thm:diffusion_complejo}, proving the form of the eigenvalues in a Wishart process is quite straightforward.
 
 
 
@@ -477,13 +693,13 @@ Once we have Theorems \ref{thm:diffusion_real} and \ref{thm:diffusion_complejo},
     By the matrix Itô formula we have for $X$,
 
     \begin{equation*}
-        \d X(t) = (\d \trans{\tilde B}(t)) \tilde B(t) + (\trans{\tilde B}(t)) \d B(t) + \d \langle \trans{\tilde B}, \tilde B \rangle(t).
+        \d X(t) = (\d \trans{\tilde B}(t)) \tilde B(t) + (\trans{\tilde B}(t)) \d \tilde B(t) + \d \langle \trans{\tilde B}, \tilde B \rangle(t).
     \end{equation*}
 
-    For the covariation term we can find
+    For the covariation term, we can find
 
     \begin{align*}
-        \d \langle \trans{\tilde B}, \tilde B \rangle(t)_{ij} &= \sum_{k=1}^m \d \langle \tilde B_{ki}, B_{kj} \rangle(t) = m\delta_{ij} \d t.
+        \d \langle \trans{\tilde B}, \tilde B \rangle(t)_{ij} &= \sum_{k=1}^m \d \langle \tilde B_{ki}, \tilde B_{kj} \rangle(t) = m\delta_{ij} \d t.
     \end{align*}
 
     This means $\d \langle \trans{\tilde B}, \tilde B \rangle(t) = m I \d t$.
@@ -491,7 +707,7 @@ Once we have Theorems \ref{thm:diffusion_real} and \ref{thm:diffusion_complejo},
     For the remaining terms, we find the covariation,
 
     \begin{equation*}
-        (\trans {\tilde B} \d B)_{ij} (\trans{(\d \tilde B)}B)_{kl} = X_{il}\delta_{jk} \d t,
+        (\trans {\tilde B} \d \tilde B)_{ij} (\trans{(\d \tilde B)}\tilde B)_{kl} = X_{il}\delta_{jk} \d t,
     \end{equation*}
 
     \noindent which in total accounts for 
@@ -516,23 +732,23 @@ Using Brownian motions in $\M_{n,m}(\C)$ instead and repeating all the steps we 
 
 \subsection{Jacobi process}
 
-Similarly to the Wishart case, the Jacobi process is a dynamical generalization of a random matrix used in statistics. There are basically two contexts in where the matrix jacobi process appears, one of them is in analysis of variance \cite{book:multivariate_statistics} and there it is defined as the ``quotient'' of a Wishart matrix and its sum to an independent Wishart matrix, i.e.
+Similarly to the Wishart case, the Jacobi process is a dynamical generalization of a random matrix used in statistics. The Jacobi process typically appears in two contexts: one is in the multivariate analysis of variance (MANOVA) \cite{book:multivariate_statistics}, where it is defined as the “quotient” of a Wishart matrix and the sum of that matrix with an independent Wishart matrix, i.e.,
 
 \begin{equation*}
     J \coloneqq (W_1 + W_2)^{-1}W_1,
 \end{equation*}
 
-\noindent where $W_1, W_2$ are indepenent Wishart matrices. In this context, the Jacobi matrix (known as MANOVA matrix) is something as a generalization of an $F$ distribution in the context of univariate ANOVA.
+\noindent where $W_1, W_2$ are indepenent Wishart matrices. In this context, the Jacobi matrix (known as MANOVA matrix) is a generalization of an $F$ distribution in the context of univariate ANOVA.
 
 The second context, and the one we are interested in is the Generalized Singular Value Decomposition (GSVD) algorithm \cite{article:GSVD_van_loan} which is used for a block matrix. The construction we give here is found in \cite{article:marcus_finite_free_point_processes} and it coincides with the construction of a Beta-matrix in \cite{doumerc2005matrices}. 
 
 Let $M$ be an independent Gaussian matrix in $\M_{m,n}(\R)$ with $n \le m$. We can decompose $M$ as a block matrix in the way
 
 \begin{equation*}
-    M = \begin{bmatrix} M_1 \\ M_2 \end{bmatrix} \begin{matrix} n_1 \\ n_2 \end{matrix}.
+    M = \begin{bmatrix} M_1 \\ M_2 \end{bmatrix}.
 \end{equation*}
 
-So $M_1 \in \M_{n_1,n}$ and $M_2 \in \M_{n_2,n}$ are independent Gaussian matrices in its respective spaces, and $n_1 + n_2 = m$. With the GSVD algorithm we can find simultaneously singular value decompositions for $M_1$ and $M_2$ such that $M_1 = U_1 CH, M_2 = U_2 S H$ where $U_1 \in \M_{n_1,n_1}(\R), U_2 \in \M_{n_2,n_2}(\R)$ are orthogonal matrices, $C\in \M_{n_1,n}, S \in \M_{n_2,n}(\R)$ are pseudo diagonals satisfying $\trans{C}C + \trans{S}S = I_{n\times n}$, and $H \in \M_{n,n}$ is invertible. Although the decomposition is not unique, it can be taken so that $U_1,U_2,H$ are Haar distributed, mutually independent and independent from $C,S$. 
+So $M_1 \in \M_{n_1,n}(\R)$ and $M_2 \in \M_{n_2,n}(\R)$ are independent Gaussian matrices in its respective spaces, and $n_1 + n_2 = m$. With the GSVD algorithm we can find simultaneously singular value decompositions for $M_1$ and $M_2$ such that $M_1 = U_1 CH, M_2 = U_2 S H$ where $U_1 \in \M_{n_1,n_1}(\R), U_2 \in \M_{n_2,n_2}(\R)$ are orthogonal matrices, $C\in \M_{n_1,n}, S \in \M_{n_2,n}(\R)$ are pseudo diagonals satisfying $\trans{C}C + \trans{S}S = I_{n\times n}$, and $H \in \M_{n,n}$ is invertible. Although the decomposition is not unique, it can be taken so that $U_1,U_2,H$ are Haar distributed, mutually independent and independent from $C,S$. 
 
 Then we take $W_1 = \trans{M_1}M_1$ and $W_2 = \trans{M_1}M_1$, we have that $W_1$ and $W_2$ are $n\times n$ Wishart matrices with shape parameters $n_1$ and $n_2$, respectively. Our matrix of interest is
 
@@ -549,7 +765,7 @@ Then we take $W_1 = \trans{M_1}M_1$ and $W_2 = \trans{M_1}M_1$, we have that $W_
     &= \det{\trans CC}.
 \end{align*}
 
-So $J$ has the same eignevalues of $\trans CC$. If we give a singular values decomposition for $M$, $M = VDU$ with $D \in \M_{m,n}(\R)$ pseudodiagonal $D = (\Delta, 0)^T$, $\Delta$ diagonal, and $U \in \M_{n,n}(\R),V \in \M_{m,m}(\R)$ Haar unitaries and independent. Then $\trans M M = \trans U \Delta^2 U$, and
+So $J$ has the same eigenvalues of $\trans CC$. If we give a singular values decomposition for $M$, $M = VDU$ with $D \in \M_{m,n}(\R)$ pseudodiagonal $D = (\Delta, 0)^T$, $\Delta$ diagonal, and $U \in \M_{n,n}(\R),V \in \M_{m,m}(\R)$ Haar unitaries and independent. Then $\trans M M = \trans U \Delta^2 U$, and
 
 \begin{equation*}
     (W_1 + W_2)^{\frac12} = (\trans U \Delta U)^{\frac12}.
@@ -567,7 +783,7 @@ Substituting this in our previous definition for $J$ we have
     J &= (W_1 + W_2)^{-\frac12} W_1 (W_1 + W_2)^{-\frac12},\\ &= (\trans M M)^{-\frac12} (\trans M M)^{\frac12} (\trans U \trans X X U)  (\trans M M)^{\frac12} (\trans M M)^{-\frac12} = \trans{(XU)}XU.
 \end{align*}
 
-Since $X$ is invarant under multiplication by orthogonal matrices, and $U,X$ are indeopndent, then law of $J$ is equal to the law of $\trans X X$. The conclusion is that we can build the Jacobi matrix in two different ways, one using the standard definition as in the MANOVA case and another as the square of the upper left corner in a Haar distributed random matrix. This was discovered by Collins \cite{thesis:collins} and is used by Doumerc to construct the dynamical version of this matrix \cite{doumerc2005matrices}.
+Since $X$ is invariant under multiplication by orthogonal matrices, and $U,X$ are independent, then the law of $J$ is equal to the law of $\trans X X$. The conclusion is that we can build the Jacobi matrix in two different ways, one using the standard definition as in the MANOVA case and another as the square of the upper left corner in a Haar-distributed random matrix. This was discovered by Collins \cite{thesis:collins} and is used by Doumerc to construct the dynamical version of this matrix \cite{doumerc2005matrices}.
 
 For the stochastic process case, it is shown in \cite{doumerc2005matrices} that if $X$ is the upper corner of a Haar unitary Brownian motion, then $J \coloneqq \trans X X$ satisfies the following stochastic differential equation
 
@@ -575,16 +791,16 @@ For the stochastic process case, it is shown in \cite{doumerc2005matrices} that 
     \d J (t) = \sqrt{J(t)} \d B(t) \sqrt{I_n - J(t)} + \sqrt{I_n - J(t)} \d B(t) \sqrt{J(t)} + (n_2 I_n - (n_1 + n_2) J(t) ) \d t.
 \end{equation*}
 
-With this differential equation, it is easy again to use Theorem \ref{thm:diffusion_real} to conclude the next corollary: 
+With this differential equation, it is easy again to use Theorem \ref{thm:diffusion_real} to conclude the next Corollary: 
 
 \begin{corollary}
-    Let $X$ be an $n\times n$ matrix valued process satisfying the following stochastic differential equation
+    Let $X$ be an $n\times n$ matrix-valued process satisfying the following stochastic differential equation
 
     \begin{equation*}
         \d X (t) = \sqrt{X(t)} \d B(t) \sqrt{I_n - X(t)} + \sqrt{I_n - X(t)} \d B(t) \sqrt{X(t)} + (n_2 I_n - (n_1 + n_2) X(t) ) \d t.
     \end{equation*}
 
-    Then its eigenvalues are the unique strong solution to the system of stochastic differential equations
+    Then its eigenvalues are the unique strong solution in $[0,\infty)$ to the system of stochastic differential equations
 
     \begin{equation} \label{eq:jacobi}
         \d \lambda_i = 2 \sqrt{\lambda_i(1-\lambda_i)} \d W_i + \left( n_2 -(n_1 + n_2)\lambda_i + \sum_{k\neq i} \frac{\lambda_i(1-\lambda_k) + \lambda_k(1-\lambda_i)}{\lambda_i - \lambda_k} \right) \d t,
@@ -595,7 +811,7 @@ With this differential equation, it is easy again to use Theorem \ref{thm:diffus
 
 
 \begin{proof}
-    Let $g(x) = \sqrt{\abs{x}}, h(x) = \sqrt{\abs{1-x}}$ and $b(x) = n_2 - (n_1 + n_2)x$ in \ref{thm:diffusion_real}. \todo{Mencionar en estas pruebas también cómo se da la existencia y unicidad de las soluciones fuertes (por los teoremas probados anteriormente.)}
+    Let $g(x) = \sqrt{\abs{x}}, h(x) = \sqrt{\abs{1-x}}$ and $b(x) = n_2 - (n_1 + n_2)x$ in \ref{thm:diffusion_real}. The uniqueness of the solution comes from Corollary \ref{corollary:todo_junto}.
 \end{proof}
 
 
@@ -603,13 +819,13 @@ With this differential equation, it is easy again to use Theorem \ref{thm:diffus
 
 A standard technique for the simulation of solutions to stochastic differential equations is the Euler-Maruyama method. Details about the method can be found in \cite{book:asmussen}[Chapter 10]. The code used for the following figures can be found in the Appendix \ref{appendix:codes}. 
 
-These path simulations have the purpose of visualizing the behavior of the eigenvalue process and how the presence of the Brownian motion term affects the trajectories. Comparing with the simulations of the deterministic processes in Chapter \ref{ch:determinist} will allow us to appreciate how mcuh the finite-variation part of the process ``determines'' its evolution.
+These path simulations have the purpose of visualizing the behavior of the eigenvalue process and how the presence of the Brownian motion term affects the trajectories. Comparing with the simulations of the deterministic processes in Chapter \ref{ch:determinist} will allow us to appreciate how much the finite-variation part of the process ``determines'' its evolution.
 
 In Figure \ref{fig:dyson_comparison}, we can see the path of a nine-dimensional Dyson Brownian motion compared to the finite-variation term. The color of each line represents the correspondence between the drift and the stochastic visualization. We can notice that both the random and the deterministic version do not collide. In the deterministic version, the values separate over time, while in the stochastic one, they ar affected by a noise that causes them to deviate slightly.
 
 \begin{figure}[h!] 
     \input{img/dyson_comparison.pgf}
-    \caption{Superposition of simulation of a Dyson Brownian motion and its finite-variation part.\label{fig:dyson_comparison}}
+    \caption{Superposition of simulation of a Dyson Brownian motion and its finite variation part. The initial conditions are $(-3, -2.25, -1.5, -0.75, 0, 0.75, 1.5, 2.25, 3)$.\label{fig:dyson_comparison}}
 \end{figure}
 
 In Figure \ref{fig:four_dyson} there are four different path simulations for a Dyson Brownian motion with dimension equal to four, five, seven and nine. The initial condition in the third last cases is with $n$ equally spaced points around zero. In the first case, the initial condition is slightly different because the two points in the middle have a separation of size one, while the surrounding points are separated by 0.1 of them. This appears to have little effect on this system, but in Chapter \ref{ch:determinist} we will see that in the deterministic case, it has an effect.
@@ -618,19 +834,21 @@ Although the distances between paths in every simulation of Figure \ref{fig:four
 
 \begin{figure}[h!] 
     \input{img/four_dysons.pgf}
-    \caption{Simulation of four different Dyson Brownian motions with different dimension.\label{fig:four_dyson}}
+    \caption{Simulation of four different Dyson Brownian motions with different dimension. The initial conditions from left to right are $(-1.1,-1,2,2.1)$, $(-1, -0.5, 0, 0.5, 1)$, $(-2.5,-1.67,-0.83,0,0.83,1.67,2.5)$ and $(-2.5,-1.875,-1.25,-0.625,0,0.625,1.25,1.875,2.5)$.\label{fig:four_dyson}}
 \end{figure}
 
 The ``uniform spacing'' behavior of the Dyson process contrasts with the path simulations for the Wishart process in Figure \ref{fig:wishart_comparison}. In this figure, we have the path for a Wishart process of dimension nine with the corresponding finite variation path. As we can see, the spacing of the particles with the biggest values tends to grow faster. This can be explained because for the Wishart process, the interaction term is proportional to the value of both functions.
 
 \begin{figure} 
     \input{img/wishart_comparison.pgf}
-    \caption{Superposition of path simulations of a Wishart process and its finite dimensional part.\label{fig:wishart_comparison}}
+    \caption{Superposition of path simulations of a Wishart process and its finite variation part. The initial conditions are $(0.1,2.6,5.1,7.6,10.1,12.6,15.1,17.6,20.1)$.\label{fig:wishart_comparison}}
 \end{figure}
 
 For the Jacobi process path simulations in Figure \ref{fig:jacobi}, we notice a more stable behavior. In Chapter \ref{ch:determinist} we will see that this process has an stationary distribution and thus it is expected that, given any initial condition, the process converges to it. Notice that in this simulation the convergence appears to have rather quickly, as the points appear to be evenly separated at time $t=0.05$.
 
 \begin{figure} 
     \includegraphics[width=6in]{img/jacobi.pdf}
-    \caption{Path simulation for a Jacobi process.\label{fig:jacobi}}
+    \caption{Path simulation for a Jacobi process. The initial conditions are $(0.3,0.325,0.35,0.375,0.4,0.425,0.45,0.475,0.5)$.\label{fig:jacobi}}
 \end{figure}
+
+

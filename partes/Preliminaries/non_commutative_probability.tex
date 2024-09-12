@@ -1,8 +1,8 @@
 \section{Free probability}
 
-Although random matrices are constructed based on classical definitions of random variables as measurable functions on a given probability space, they differ fundamentally from classical random variables in their basic algebraic properties. Specifically, the product of random matrices does not necessarily commute, whereas the product of real-valued random variables always commutes. This simple fact complicates the use of classical analytical tools in probability to study random matrices. Recently, the emerging field of non-commutative probability has developed several techniques for the algebraic study of non-commutative random variables. These techniques have significantly impacted the theory of random matrices.
+Although random matrices are constructed based on classical definitions of random variables as measurable functions on a given probability space, they differ fundamentally from classical random variables in their basic algebraic properties. Specifically, the product of random matrices does not necessarily commute, whereas the product of real-valued random variables always commutes. This simple fact complicates the use of classical analytical tools in probability to study random matrices. The emerging field of non-commutative probability has recently developed several techniques for the algebraic study of non-commutative random variables. These techniques have significantly impacted the theory of random matrices.
 
-In this section, we provide a brief introduction to the fundamental concepts and ideas of Free probability and its application to the study of random matrices. These concepts will be used later in Chapter \ref{ch:finite_free}.
+In this section, we briefly introduce the fundamental concepts and ideas of Free probability and its application to the study of random matrices. These concepts will be used later in Chapter \ref{ch:finite_free}.
 
 
 \subsection{Non-commutative probability spaces}
@@ -10,7 +10,7 @@ In this section, we provide a brief introduction to the fundamental concepts and
 A classical probability space is defined based on its analytical structure. When we work in non-commutative probability spaces, we are mainly concerned with the algebraic relationship between random variables. Before introducing the concept of a non-commutative probability space, we define an unital algebra.
 
 \begin{definition}[Unital algebra]
-    Let $\mathcal A$ be a vector space over the field $\mathbb F$ equipped with the additional binary operation $\cdot$. We say that $\mathcal A$ is an unital algebra if it satisfies the following properties for $a,b,c \in \mathcal A$ and $\alpha, \beta \in K$:
+    Let $\mathcal A$ be a vector space over the field $\mathbb F$ equipped with an additional binary operation $\cdot$. We say that $\mathcal A$ is an unital algebra if it satisfies the following properties for $a,b,c \in \mathcal A$ and $\alpha, \beta \in \mathbb F$:
 
     \begin{itemize}
         \item Right distributivity. $(a + b) \cdot c = a\cdot c + b \cdot c$.
@@ -30,8 +30,7 @@ Typically, we denote \(a \cdot b\) as \(ab\) to simplify notation. Now, we defin
         \phi : \A \to \C, \qquad \phi(1_\A) = 1.
     \end{equation*}
 \end{definition}
-
-    An element $a$ in $\A$ is called a non-commutative random variable in $(\A, \phi)$ or simply a random variable in $(\A,\phi)$.
+An element $a$ in $\A$ is called a non-commutative random variable in $(\A, \phi)$ or simply a random variable in $(\A,\phi)$.
 
     A concept related to non-commutative probability is that of $*$-probability space (star probability space). We introduce the definition of a $*$-algebra.
 
@@ -44,7 +43,7 @@ Typically, we denote \(a \cdot b\) as \(ab\) to simplify notation. Now, we defin
 
     There are additional properties that the functional \(\phi\) in a non-commutative probability space \((\mathcal{A}, \phi)\) may satisfy. If \(\phi(ab) = \phi(ba)\) for every \(a, b \in \mathcal{A}\), we say that \(\phi\) is tracial. If \((\mathcal{A}, \phi)\) is a \(*\)-probability space and \(\phi(a^*a) \geq 0\) for every \(a \in \mathcal{A}\), we say that \(\phi\) is positive. If \(\phi(a^*a) = 0\) only when \(a = 0\), then we say that \(\phi\) is faithful.
 
-    We can distinguish different kinds of non-commutative random variables depending on their algebraic properties; we say that $a \in \A$ is self-adjoint if $a^* = a$, unitary if $a^*a = 1_\A = a^*a$ and normal if it commutes with its adjoint $a^*a = aa^*$.
+    %We can distinguish different kinds of non-commutative random variables depending on their algebraic properties; we say that $a \in \A$ is self-adjoint if $a^* = a$, unitary if $a^*a = 1_\A = a^*a$ and normal if it commutes with its adjoint $a^*a = aa^*$.
 
     The notion of a non-commutative probability space generalizes the idea of some spaces of random variables, including spaces of random matrices.
 
@@ -117,7 +116,7 @@ Typically, we denote \(a \cdot b\) as \(ab\) to simplify notation. Now, we defin
         Then $(\A, \phi)$ is a $*$-probability space with the $*$-operation being the conjugate transpose or simply the transpose if $\mathbb F = \R$.
     \end{example}
 
-    One of the central concepts in classical probability theory is the distribution of a random variable. In a non-commutative probability space $(\A,\phi)$ we can define the distribution of a random variable $a$ as how $\phi$ acts on $a$. In analogy to classical probability, we give a definition of the moments of a non-commutative random variable.
+    One of the central concepts in classical probability theory is the distribution of a random variable. In a non-commutative probability space $(\A,\phi)$ we can define the distribution of a random variable $a$ as how $\phi$ acts on powers of $a$. In analogy to classical probability, we give a definition of the moments of a non-commutative random variable.
 
     \begin{definition} \label{def:star_moment}
         Let $a$ be a random variable in a $*$-probability space $(\A,\phi)$. A $*$-moment of $a$ is any expression of the form
@@ -129,7 +128,7 @@ Typically, we denote \(a \cdot b\) as \(ab\) to simplify notation. Now, we defin
         \noindent with $k \in \mathbb{N}$ and $e_0, \dots, e_k \in \{1,*\}$.
     \end{definition}
 
-    Denote by $\C\langle x, x^*\rangle$ the unital algebra freely generated by the indeterminates $x$ and $x^*$, i.e. $\C\langle x,x^*\rangle$ is the algebra over $\C$ generated by all of the monomials of the form
+    Denote by $\C\langle X, X^*\rangle$ the unital algebra freely generated by the indeterminates $X$ and $X^*$, i.e. $\C\langle X,X^*\rangle$ is the algebra over $\C$ generated by all of the monomials of the form
 
     \begin{equation*}
         x^{e_0}\cdots x^{e_k},
@@ -141,7 +140,7 @@ Typically, we denote \(a \cdot b\) as \(ab\) to simplify notation. Now, we defin
         Let $a$ be a random variable in a $*$-probability space $(\A,\phi)$. A $*$-distribution is a linear functional
 
         \begin{equation*}
-            \mu : \C\langle x, x^*\rangle \to \C,
+            \mu : \C\langle X, X^*\rangle \to \C,
         \end{equation*}
 
         \noindent that satisfies
@@ -175,20 +174,20 @@ Typically, we denote \(a \cdot b\) as \(ab\) to simplify notation. Now, we defin
 
     \noindent for $B$ a Borel set of $\mathbb F$.
 
-    \begin{example}[Haar unitary random variable]
-        Let $u$ be a random variable in a non-commutative probability space $(\A,\phi)$. We say that $u$ is a Haar unitary element if it is unitary ($u^*u = 1_\A = uu^*$) and for every $k\in \mathbb Z \setminus \{0\}$ we have
+    % \begin{example}[Haar unitary random variable]
+    %     Let $u$ be a random variable in a non-commutative probability space $(\A,\phi)$. We say that $u$ is a Haar unitary element if it is unitary ($u^*u = 1_\A = uu^*$) and for every $k\in \mathbb Z \setminus \{0\}$ we have
 
-        \begin{equation*}
-            \phi(u^k) = 0.
-        \end{equation*}
-    \end{example}
+    %     \begin{equation*}
+    %         \phi(u^k) = 0.
+    %     \end{equation*}
+    % \end{example}
 
-    This definition generalizes the one of Haar unitary ensemble for random matrices.
+    % This definition generalizes the one of the Haar unitary ensemble for random matrices.
 
 \subsection{Tensor and Free Independence}
 %{\color{red} De Octavio: sugerencia de cambio de titulo de seccion, Tensor and Free Independence}
 
-    The definition of independence in classical probability assumes that the product of random variables is commutative. This property does not hold in general for non-commutative probability spaces and particularly in the case of random matrix spaces. Instead, we have four different notions of independence defined in terms of the moments.
+    The definition of independence in classical probability assumes that the product of random variables is commutative. This property does not hold in general for non-commutative probability spaces and particularly in the case of random matrix spaces. Instead, we have four different notions of independence defined in terms of the moments. In this thesis, we will only consider the notions of tensor and free independence.
 
     Formally, a notion of independence is a rule that allows to compute mixed moments of the form
 
@@ -198,7 +197,7 @@ Typically, we denote \(a \cdot b\) as \(ab\) to simplify notation. Now, we defin
 
     \noindent in terms of the individual moments of $a$ and $b$.
 
-    The classical notion of independence corresponds to  tensor independence in non-commutative probability.
+    The classical notion of independence corresponds to tensor independence in non-commutative probability.
 
     \begin{definition}[Tensor independence]
         Let $(\A, \phi)$ be a non-commutative probability space and $I$ a set of indexes. A set of unital subalgebras $(\A_{i})_{i\in I}$ is called tensor independent if the following two conditions are satisfied
@@ -215,7 +214,7 @@ Typically, we denote \(a \cdot b\) as \(ab\) to simplify notation. Now, we defin
         When we say that two random variables $a,b$ are tensor independent, we mean that the unitary subalgebras $\A_1, \A_2$ generated by $a$ and $b$, respectively are tensor independent.
     \end{definition}
 
-    Tensor independence is a symmetric relationship. If $a$ is tensor independent of $b$, then $b$ is tensor independent of $a$, this is not the case for every notion of independence. We can distinguish three additional notions of independence, for this work, we introduce only the notion of ``Free independence'', the definition of the other notions of independence can be found in \cite{anaya2016cumulantes}.
+    Tensor independence is a symmetric relationship. If $a$ is tensor independent of $b$, then $b$ is tensor independent of $a$, this is not the case for every notion of independence. We can distinguish three additional notions of independence, we introduce the notion of ``Free independence'', the definition of the other notions can be found in \cite{anaya2016cumulantes}.
 
     % \begin{definition}[Boolean independence]
     %     Let $(\A, \phi)$ be a non-commutative probability space. Two random variables $a,b$  are called boolean independent if for every $k \in \N$, and every $m_i, n_j \in \N \cup *\N$ we have that
@@ -254,12 +253,12 @@ Typically, we denote \(a \cdot b\) as \(ab\) to simplify notation. Now, we defin
     \end{definition}
 
 
-\subsection{Convolution}
+\subsubsection{Convolution}
 
-    In classical probability, when we need to compute the distribution of a sum of (tensor) independent random variables, we find the convolution of the aassociated measures. In non-commutative probability spaces, adding two independent random variables in any notion of independence gives place to a different kind of convolution.
+    In classical probability, when we need to compute the distribution of a sum of (tensor) independent random variables, we find the convolution of the associated measures. In non-commutative probability spaces, adding two independent random variables in any notion of independence gives place to a different kind of convolution.
 
     \begin{definition}[Non-commutative convolution]
-        Let $(\A,\phi)$ be a non-commutative probability space and $a,b\in\A$ be {\color{red} selfadjoint and} independent (in some notion), then the convolution (in some notion) of $a$ and $b$ is the algebraic distribution of $a+b$, i.e. the linear operator characterizing the moments
+        Let $(\A,\phi)$ be a non-commutative probability space and $a,b\in\A$ be {\color{red} self-adjoint and} independent (in some notion), then the convolution (in some notion) of $a$ and $b$ is the algebraic distribution of $a+b$, i.e. the linear operator characterizing the moments
         \begin{equation*}
             \phi\left((a+b)^{m}\right),
         \end{equation*}
@@ -291,7 +290,7 @@ Typically, we denote \(a \cdot b\) as \(ab\) to simplify notation. Now, we defin
         \kappa_{a+b}(n) = \kappa_a(n) + \kappa_b(n).
     \end{equation*}
 
-    Analogous coefficients can be defined for the other notions of independence. The main tool to study them is the Cauchy-Stieltjes transform sometimes called only ``Cauchy transform''.
+    Analogous coefficients can be defined for the other notions of independence. The main tool to study them is the Cauchy-Stieltjes transform, sometimes called only ``Cauchy transform''.
 
     \begin{definition}[Cauchy-Stieltjes transform]
         Let $\mu$ be a probability measure on $\R$, its Cauchy-Stieltjes transform, $G_\mu(t)$ is
@@ -303,7 +302,7 @@ Typically, we denote \(a \cdot b\) as \(ab\) to simplify notation. Now, we defin
         \noindent for $z \in \C^+ \coloneqq \{ z \in\C : Im(z) >0 \}$. The Cauchy transform takes values in $\C^- \coloneqq \{ z \in\C : Im(z) >0 \}$.
     \end{definition}
 
-    When $\mu$ is characterized by its moments $m_k(\mu)$, there is a relationship between them and the Cauchy-Stieltjes transform $\mu$ given by 
+    When $\mu$ has bounded support, there is a relationship between their moments and the Cauchy-Stieltjes transform $\mu$ given by 
 
     \begin{align*}
         G_\mu(z) &= z^{-1} \int_\R \frac{1}{1 - \frac tz} \mu(\d t) = z^{-1} \int_\R \sum_{k=0}^\infty \left( \frac tz \right)^k \mu(\d t),\\  
@@ -312,7 +311,7 @@ Typically, we denote \(a \cdot b\) as \(ab\) to simplify notation. Now, we defin
 
     \noindent with $m_k(\mu)$ being the $k$th moment of $\mu$ and for $\abs{z} \ge \sup \left\{ t : t \in \mathrm{supp} (\mu) \right\}$.
 
-    The collection of functions $f_z(t) = 1/(z-t)$ parametrized by $z\in \C^+$ forms a separating test family for the space of probability measures. This implies that the Cauchy-Stieltjes transform uniquely characterizes the probability measure. Due to the relevance of this proposition, we state it in the next Theorem.
+    The collection of functions $f_z(t) = 1/(z-t)$ parametrized by $z\in \C^+$ forms a separating test family for the space of probability measures. This implies that the Cauchy-Stieltjes transform uniquely characterizes the probability measure. Due to the relevance of this proposition, we state it in the next theorem.
 
     \begin{theorem}
         Given $\mu$ and $\nu$ two probability measures on $\C$ with Cauchy-Stieltjes transforms $G_\mu$ and $G_\nu$ respectively. Then
@@ -344,13 +343,13 @@ Typically, we denote \(a \cdot b\) as \(ab\) to simplify notation. Now, we defin
 
             \[ G_a(z) = \frac{1}{\sqrt{z^2-4}}. \]
 
-            \item Let $\mu$ be an empirical probability measure over a finite set of points $x_1,x_2, \dots, x_n$. Then 
+            \item Let $\mu$ be an empirical probability measure over a finite set of points $\lambda_1,\lambda_2, \dots, \lambda_n$. Then 
             
-            \[ \mu(\{x\}) = \frac1n \sum_{k=1}^n \delta_{x_k}(x), \]
+            \[ \mu(\{x\}) = \frac1n \sum_{k=1}^n \delta_{\lambda_k}(x), \]
 
             \noindent and its Cauchy-Stieltjes transform is given by
 
-            \[ G_\mu(z) = \frac1n \sum_{k=0}^n \frac{1}{z - x_k}. \]
+            \[ G_\mu(z) = \frac1n \sum_{k=0}^n \frac{1}{z - \lambda_k}. \]
         \end{itemize}
     \end{example}
 
@@ -386,9 +385,9 @@ Typically, we denote \(a \cdot b\) as \(ab\) to simplify notation. Now, we defin
             
             % \[ \mathcal B_\mu \coloneqq \frac1z - F_\mu(\frac1z). \]
 
-            \item The $S$ transform $S_\mu$ is defined in terms of the inverse under composition of the $\mathcal R$ transform,
+            %\item The $S$ transform $S_\mu$ is defined in terms of the inverse under composition of the $\mathcal R$ transform,
             
-            \[ S_\mu(z) \coloneqq \frac1z\mathcal R_{\mu}^{-1}(z).\] 
+            %\[ S_\mu(z) \coloneqq \frac1z\mathcal R_{\mu}^{-1}(z).\] 
         \end{itemize}
     \end{definition}
 
@@ -414,7 +413,7 @@ Typically, we denote \(a \cdot b\) as \(ab\) to simplify notation. Now, we defin
             \[ \mathcal R_{\mu \boxplus \nu}(z) = \mathcal R_{\mu}(z) + \mathcal R_{\nu} (z).\]
     \end{theorem}
 
-    The fact that the notion of non-commutative convolution generalizes the sum of independent random variables allows us to get results similar to the Central Limit Theorem. In the next section, we state this result for the classical and free independence cases.
+    In classical probability, the sum of independent random variables under mild assumptions converges to a normal random variable. This result is known as the Central Limit Theorem and there is an analogous result for the case of free independence. In the next section, we state this result for the classical and free independence cases.
 
 \subsection{Classical and free central limit theorems}
 
@@ -424,7 +423,7 @@ Typically, we denote \(a \cdot b\) as \(ab\) to simplify notation. Now, we defin
 
     \noindent for $X_i$ independent (in some sense) and identically distributed random variables with mean 0 and variance 1.
 
-    In classical probability, the variables are tensor independent and the limit is the Gaussian distribution. The next Theorem gives us a generalization in the case of free independence. A proof can be found in \cite{book:nica_speicher}.
+    In classical probability, the variables are tensor independent and the limit is the Gaussian distribution. The next theorem gives us a generalization in the case of free independence. A proof can be found in \cite{book:nica_speicher}.
 
     \begin{theorem}
         Let $(\A,\phi)$ be a non-commutative probability space and $(a_i)_{i\in \N}$ be a sequence of random variables in $\A$ with common distribution and that have zero mean ($\phi(a_1)=0$) and variance 1 ($\phi(a_1^2)=1$). 
@@ -441,7 +440,7 @@ Typically, we denote \(a \cdot b\) as \(ab\) to simplify notation. Now, we defin
 
             \noindent with $N$ a standard normal random variable.
             
-            % \item If the random variables are boolean independent, then
+            % \item If the random variables are boolean-independent, then
             
             % \begin{equation*}
             %     S_n \xrightarrow[n\to\infty]{D} b,        

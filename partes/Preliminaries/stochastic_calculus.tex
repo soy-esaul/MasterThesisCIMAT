@@ -41,7 +41,7 @@ If we have a square-integrable continuous time process $X(t)$ adapted to $\F_t$ 
     \end{equation*}
 \end{definition}
 
-As we have mentioned before, when extending the definition of the Itô integral to more general processes, one wishes to preserve its good properties. The next Theorem allows us to characterize when the integral has these properties
+As we have mentioned before, when extending the definition of the Itô integral to more general processes, one wishes to preserve its good properties. The next theorem allows us to characterize when the integral has these properties
 
 \begin{theorem}
     If $X = (X(t), t \ge 0)$ and $Y = (Y(t), t \ge 0)$ are regular adapted process and satisfy
@@ -82,7 +82,7 @@ As we have mentioned before, when extending the definition of the Itô integral 
     \end{enumerate}
 \end{theorem}
 
-For a proof of last Theorem, consult \cite{book:klebaner}. If we consider, for a given adapted process $X$, the Itô integral process $I=(I(t), t \ge 0)$ defined as
+For a proof of last theorem, consult \cite{book:klebaner}. If we consider, for a given adapted process $X$, the Itô integral process $I=(I(t), t \ge 0)$ defined as
 
     \begin{equation*}
         I(t) \coloneqq \int_0^t X(s) \d B(s),
@@ -96,7 +96,7 @@ For a proof of last Theorem, consult \cite{book:klebaner}. If we consider, for a
 
     \noindent with $\{t_{j,n}\}_{j=1}^n$ a partition of $[0,t]$ for every $n$ and $\delta_n = \sup_j \left\{ t_{j+1,n} - t_{j,n} \right\} \to 0$ as $n\to \infty$.
     
-    The following Theorem gives us a way to find explicitly the quadratic variation of an Itô integral process,
+    The following theorem gives us a way to find explicitly the quadratic variation of an Itô integral process,
 
 \begin{theorem}
     The quadratic variation of an Itô integral is
@@ -193,7 +193,7 @@ Although the Itô integral is the most common one, it is not the only notion of 
     \end{equation*}
 \end{theorem}
 
-By the last Theorem we can write the Stratanovich differential similarly to the Itô differential as
+By the last theorem we can write the Stratanovich differential similarly to the Itô differential as
 
 \begin{equation*}
     Y(s) \partial X(s) = Y(s) \d X(s) + \frac12 \d \langle X,Y \rangle (t).
@@ -201,7 +201,7 @@ By the last Theorem we can write the Stratanovich differential similarly to the 
 
 Sometimes we write this differential as $Y(s) \partial X(s) = Y(s) \circ \d X(s)$. This notation is especially helpful when we work with matrix-valued processes.
 
-Perhaps the main situation when the Stratanovich integral is used instead of the Itô version is when we want to preserve the classical integration by parts formula. The next Theorem uses the relationship between both integrals to compute the differential of the product $XY$.
+Perhaps the main situation when the Stratanovich integral is used instead of the Itô version is when we want to preserve the classical integration by parts formula. The next theorem uses the relationship between both integrals to compute the differential of the product $XY$.
 
 % Product formula for Itô and Stratanovich integral
 % \todo[inline]{Agregar demostración de que los resultados son generalizables a semimartingalas matriciales}
@@ -345,7 +345,7 @@ Before giving the Itô formula for multidimensional processes, we need to know t
     \end{equation*}
 \end{theorem}
 
-The matrix $\Sigma \trans \Sigma$ is often called the diffusion matrix. We generalize the Itô formula for multidimensional Itô processes in the following Theorem.
+The matrix $\Sigma \trans \Sigma$ is often called the diffusion matrix. We generalize the Itô formula for multidimensional Itô processes in the following theorem.
 
 \begin{theorem}[Multidimensional Itô formula]
     Let $\vec Y $ be an $n$-dimensional Itô process and $f: \R^n \to R^m$ be a $C^2$ function. The process $f(Y_1(t), \dots, Y_n(t))$ is also an Itô process and has a stochastic differential given by
@@ -383,7 +383,7 @@ With this definition, we can re-write equation \eqref{eq:ito_2var} as
     \d f (Y(t),t) = \left( \mathcal A_t f(Y(t),t) + \frac{\partial f}{\partial t}(Y(t),t) \right) \d t + \frac{\partial f}{\partial x}(Y(t),t)\sigma(Y(t),t) \d B(t).
 \end{equation*}
 
-If the integral $\int_0^t \frac{\partial f}{\partial x}(X(s),s)\sigma(X(s),s) \d B(s)$ is a martingale, then the process $f(Y(t),t) - \int_0^t \left( \mathcal A_s f(Y(s)) + \frac{\partial f}{\partial s}(Y(s),s) \right) \d s$ is a martingale. This result is stated in the following Theorem
+If the integral $\int_0^t \frac{\partial f}{\partial x}(X(s),s)\sigma(X(s),s) \d B(s)$ is a martingale, then the process $f(Y(t),t) - \int_0^t \left( \mathcal A_s f(Y(s)) + \frac{\partial f}{\partial s}(Y(s),s) \right) \d s$ is a martingale. This result is stated in the following theorem
 
 \begin{theorem}
     Let $Y(t)$ be an Itô process with differential $\d Y(t) = \mu(Y(t),t) \d t + \sigma(Y(t),t)\d B(t)$ such that $\mu(x,t)$ and $\sigma(x,t)$ are Lipschitz in $x$ with the same constant for every $t$ and satisfy

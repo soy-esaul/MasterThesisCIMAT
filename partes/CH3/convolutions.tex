@@ -2,7 +2,7 @@
 
 \subsection{Convolution of polynomials}
 
-In this subsection, we present three notions of polynomial convolution, the first two were introduced around a century ago \cite{walsh1922location} \cite{szeg1939orthogonal}. Their study began using tools outside of probability theory, but we do not include any of those results here, instead, we are merely interested in introducing them to relate them to expected characteristic polynomials of random matrices. In the next subsection we introduce three ensembles of orthogonal polynomials, namely the Hermite, Laguerre and Jacobi polynomials. We prove some nice properties of these polynomials, especially related to the notions of convolution introduced previously.  The third notion of convolution was presented in the context of Finite Free Probability Theory \cite{article:finitefree} as it was found to share similar properties to the other two, linking it to Random Matrix Theory.
+In this subsection, we present three notions of polynomial convolution, the first two were introduced around a century ago, \cite{walsh1922location,szeg1939orthogonal}. Their study began using tools outside of probability theory, but we do not include any of those results here, instead, we are merely interested in introducing them to relate them to expected characteristic polynomials of random matrices. In the next subsection we introduce three ensembles of orthogonal polynomials, namely the Hermite, Laguerre and Jacobi polynomials. We prove some nice properties of these polynomials, especially related to the notions of convolution introduced previously.  The third notion of convolution was presented in the context of Finite Free Probability Theory \cite{article:finitefree} as it was found to share similar properties to the other two, linking it to Random Matrix Theory.
 
 The three notions of convolution are defined for complex polynomials. Although one could get the convolution between any two polynomials, we are interested uniquely in monic polynomials as our main object of interest are the roots and their behavior under convolution. In full generality, we can write a monic complex polynomial $p(z)$ as
 
@@ -35,7 +35,7 @@ This notion of convolution will be the most used along the text. Several of the 
     \noindent with $\partial_z$ denoting the differentiation with respect to $z$.
 \end{definition}
 
-It is straightforward from the definition to prove that the symmetric additive convolution is linear. Let $p,q,r$ be degree $n$ polynomials with $a_i, b_i, c_i$ their respective coefficients and $\alpha \in \R$, then
+It is straightforward from the definition to prove that the symmetric additive convolution is linear: Let $p,q,r$ be degree $n$ polynomials with $a_i, b_i, c_i$ their respective coefficients and $\alpha \in \R$, then
 
 \begin{align*}
     p \boxplus_n (\alpha q + r) &= \sum_{k=0}^n z^{n-k}(-1)^k \sum_{i+j = k} \frac{(n-i)!(n-j)!}{n!(n-k)!}a_i (\alpha b_j + c_j), \\ 
@@ -120,10 +120,10 @@ This notion of convolution was found for the first time by Marcus, Spielman and 
 \end{definition}
 
 
-Although many properties of these convolutions can be found without using Finite Free Probability Theory, we are mainly interested in describing their relationship to random matrices, so we will not include them. In the next subsection we present three ensembles of orthogonal polynomials and find that two of them have good properties related to the convolutions. The polynomials are also associated to Random Matrix Theory, as it is shown in later sections.
+Although many properties of these convolutions can be found without using Finite Free Probability Theory, we are mainly interested in describing their relationship to random matrices, so we will not include them. In the next subsection we present three ensembles of orthogonal polynomials and find that two of them have good properties related to the convolutions described above. The polynomials are also associated to Random Matrix Theory, as it is shown in later sections.
 %\subsection{Linearization of convolutions}
 
-\subsection{Classical orthogonal polynomial ensembles}
+\subsection{Some classical orthogonal polynomial ensembles}
 
 In order to define a property of ``orthogonality''  between elements of a given space, it is required to have some notion of inner product. If we are specifically working with spaces of square integrable functions with respect to some measure $L^2(\mu)$, the inner product between $f,g \in L^2(\mu)$ is given by
 
@@ -151,7 +151,7 @@ It is important to notice that if a set of polynomials is orthogonal under any f
 
 \subsubsection{Hermite polynomials}
 
-There are essentially two definitions of the Hermite polynomials, the first one is mostly used in Physics \cite{book:mathematical_methods_for_physicists}, and the second one is related to Probability Theory as appearing in \cite{marcus2021polynomial}. The main difference between them is the measure under which they are orthogonal. The ``physicist Hermite polynomials'' are orthogonal under the measure $e^{-x^2}\d x$, the heat kernel. The ``probabilist Hermite polynomials'' are orthogonal under $e^{-\frac{x^2}{2}} \d x$, the Gaussian kernel. We will restrict to the probabilist Hermite polynomials and will use the term ``Hermite polynomials'' to talk about them.
+There are essentially two definitions of the Hermite polynomials, the first one is mostly used in physics \cite{book:mathematical_methods_for_physicists}, and the second one is related to Probability Theory as appearing in \cite{marcus2021polynomial}. The main difference between them is the measure under which they are orthogonal. The ``physicist Hermite polynomials'' are orthogonal under the measure $e^{-x^2}\d x$, the heat kernel. The ``probabilist Hermite polynomials'' are orthogonal under $e^{-\frac{x^2}{2}} \d x$, the Gaussian kernel. We will restrict to the probabilist Hermite polynomials and will use the term ``Hermite polynomials'' to talk about them.
 
 The $n$th Hermite polynomial, denoted by $H_n(z)$ is defined by a linear differential operator applied to $z^n$,
 
@@ -204,11 +204,10 @@ The Hermite polynomials are characterized by the following recursion together wi
 \begin{equation} \label{eq:recursion_hermite}
     H_n(x,t) = x H_{n-1}(x,t) - t(n-1)H_{n-2}(x,t).
 \end{equation}
- \todo{¿probar esto?}
 
 % Convolución aditiva simétrica de dos polinomios de Hermite
 
-The next proposition shows us that the Hermite polynomials with variance are well-behaved with respect to the symmetric additive convolution. This result will be more obvious once we have developed the tools of Finite Free Probability Theory and we will be able to give an easier proof after section \ref{sec:minor_orthogonality}.
+The next proposition shows us that the Hermite polynomials with variance are well-behaved with respect to the symmetric additive convolution. This result will be more obvious once we have developed the tools of Finite Free Probability Theory and we will be able to give an easier proof after Section \ref{sec:minor_orthogonality}.
 
 \begin{proposition} \label{prop:convolution_of_hermites}
 The symmetric additive convolution between two Hermite polynomials with the same order $H_n(z,t_1), H_n(z,t_2)$ is another Hermite polynomial with variance $t_1 + t_2$.
@@ -254,9 +253,10 @@ The symmetric additive convolution between two Hermite polynomials with the same
     \noindent while the generalized Laguerre polynomials are defined by the differential operator
 
     \begin{equation*}
-        L_n^{\alpha}(z) \coloneqq x^{-\alpha} \left( 1 - \partial_z \right)^{n}[x^{n+\alpha}] \coloneqq \sum_{k=0}^n(-1)^k (n+\alpha)_{n+\alpha-k} x^{n-k}.
+        L_n^{\alpha}(z) \coloneqq x^{-\alpha} \left( 1 - \partial_z \right)^{n}[x^{n+\alpha}] \coloneqq \sum_{k=0}^n(-1)^k (n+\alpha)_{n+\alpha-k} x^{n-k},
     \end{equation*}
-
+    where $(n+\alpha)_{n+\alpha -k}$ denotes the Pochhammer symbol.
+    
     Notice that this is equivalent to the definition by the linear differential operator
 
     \begin{equation*}
@@ -329,13 +329,20 @@ The symmetric additive convolution between two Hermite polynomials with the same
         P_{n}^{(\alpha ,\beta )}(z) = \frac{(-1)^{n}}{2^{n}n!}(1-z)^{-\alpha }(1+z)^{-\beta }\partial_z^n \left\{(1-z)^{\alpha }(1+z)^{\beta }\left(1-z^{2}\right)^{n}\right\}.
     \end{equation*}
 
-    The parameters $\alpha,\beta$ take values in $\R^+$. If $\alpha = \beta = 0$, then we have the Legendre polynomials defined by the differential operator
+    The parameters $\alpha,\beta$ take values in $\R^+$. In the particular case when $\alpha$ and $\beta$ are positive integers, we have
+
+    \begin{equation} \label{eq:jacobi_standard}
+        P_n^{(\alpha, \beta)}(x) = \sum_{k=0}^{n} \binom{n+\alpha}{n-k} \binom{n+\beta}{k} \left( \frac{x-1}{2} \right)^k \left( \frac{x+1}{2} \right)^{n-k}
+    \end{equation}
+    
+    
+    If $\alpha = \beta = 0$, then we have the Legendre polynomials defined by the differential operator
 
     \begin{equation*}
         P_{n}(z) = \frac{1}{2^{n}n!}\partial_z^n [(z^{2}-1)^{n}].
     \end{equation*}
 
-    Once again, we are interested in a monic scaling of these polynomials, but now we also want a ``transaltion of them''. The original Jacobi (and Legendre) polynomials are defined in $[-1,1]$, but we are interested in polynomials that take values in $[0,1]$. We get these polynmials by evaluating a Jacobi polynomila in $1-2z$, so that they are orthogonal under the measure $\mathds 1_{(0,1)}(z)z^\alpha(1-z)^\beta \d z$, i.e. the measure of a beta distribution. In the particular case when $\alpha = \beta = 0$, they are orthogonal under the measure of an uniform random variable in $(0,1)$. The closed form for the Legendre polynomials evaluated in $1-2z$ and scaled to be monic is
+    Once again, we are interested in a monic scaling of these polynomials, but now we also want a ``transaltion of them''. The original Jacobi (and Legendre) polynomials are defined in $[-1,1]$, but we are interested in polynomials that take values in $[0,1]$. We get these polynmials by evaluating a Jacobi polynomial in $1-2z$, so that they are orthogonal under the measure $\mathds 1_{(0,1)}(z)z^\alpha(1-z)^\beta \d z$, i.e. the measure of a beta distribution. In the particular case when $\alpha = \beta = 0$, they are orthogonal under the measure of an uniform random variable in $(0,1)$. The closed form for the Legendre polynomials evaluated in $1-2z$ and scaled to be monic is
 
     \begin{equation*}
         P_n(z) =\frac{n!n!}{(2n)!}\sum_{k=0}^n z^k(-1)^{n-k} \binom nk \binom{n+k}k.
@@ -359,4 +366,4 @@ The symmetric additive convolution between two Hermite polynomials with the same
 
     Just as in the previous case, we will use the name ``Legendre polynomials'' or ``Jacobi polynomials'' to talk about these monic scalings.
 
-    The Jacobi polynomials are a generalization of several other polynomial ensembles and they are closely related to several topics in the theory of orthogonal polynomials. To read more about them, revise \cite[Chapter IV]{szeg1939orthogonal}.
+    The Jacobi polynomials are a generalization of several other polynomial ensembles and they are closely related to several topics in the theory of orthogonal polynomials. To read more about them, we recomend to revise \cite[Chapter IV]{szeg1939orthogonal}.

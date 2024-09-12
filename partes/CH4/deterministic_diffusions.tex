@@ -1,6 +1,6 @@
 \section{Deterministic eigenvalue processes for matrix-valued diffusions}
 
-Now that we have shown the construction of a matrix-valued process whose eigenvalue is the deterministic Dyson Brownian motion, we generaliza the result to get processes with a deterministic spectrum that can follow the dynamics of any eigenvalue process with the form \eqref{eq:gen_dyson}.
+Now that we have shown the construction of a matrix-valued process whose eigenvalue is the deterministic Dyson Brownian motion, we generalize the result to get processes with a deterministic spectrum that can follow the dynamics of any eigenvalue process with the form \eqref{eq:gen_dyson}.
 
 % \begin{theorem}
 
@@ -20,73 +20,78 @@ Now that we have shown the construction of a matrix-valued process whose eigenva
 % \end{theorem}
 
 \begin{theorem} \label{thm:deterministic_diffusion}
-    Let $B = (B(t), t\ge 0)$ be a Brownian motion in $\M_{p,p}(\R)$ and $Y(t) = QM\trans{Q}$ be a symmetric $p\times p$ matrix-valued stochastic process satisfying the stochastic differential equation
+    Let $B = (B(t), t\ge 0)$ be a Brownian motion in $\M_{n,n}(\R)$ and $Y(t) = QM\trans{Q}$ be a symmetric $n\times n$ matrix-valued stochastic process satisfying the stochastic differential equation
 
     \begin{equation}
         \d Y(t) = g(Y(t)) \d B(t) h(Y(t)) + h(Y(t)) \d \trans{B(t)} g(Y(t)) + b(Y(t))\d t, \label{eq:matrix_diffusion}
     \end{equation}
 
-    where $g,h,b$ are real functions acting spectrally, and $Y(0)$ is a symmetric $p\times p$ matrix with $p$ different eigenvalues.
+    where $g,h,b$ are real functions acting spectrally, and $Y(0)$ is a symmetric $n\times n$ matrix with $n$ different eigenvalues.
 
-    Let $G(x,y) = g^2(x)h^2(y) + g^2(y)h^2(x)$, $\tau$ be defined as in \eqref{eq:collision_time}, and take a process $X = (X(t), t\ge 0)$ with diagonalization $X = H \Lambda \trans{H}$ such that $\trans H (\d \Lambda) H$ has the same off-diagonal entries as $\trans Q ( \d M) \circ Q$ and has diagonal entries equal to zero.
+    Let $G(x,y) = g^2(x)h^2(y) + g^2(y)h^2(x)$, $\tau$ be defined as in \eqref{eq:collision_time}, and take a process $X = (X(t), t\ge 0)$ with diagonalization $X = H \Lambda \trans{H}$ satisfying:
+    \begin{itemize}
+        \item $(\trans H (\d X) H)_{ij} = (\trans Q ( \d Y) Q)_{ij}$ for $i\neq j$.
+        \item $(\trans H (\d X) H)_{ii}=0$ for every $i \in [n]$.
+    \end{itemize}
     
     Then, for $t < \tau$ the eigenvalue process $\Lambda(t)$ verifies the following system of stochastic differential equations:
 
     \begin{equation}
-        \d \lambda_i = \biggl( b(\lambda_i) + \sum_{k\neq i} \frac{G(\lambda_i,\lambda_k)}{\lambda_i - \lambda_k} \biggr)\d t.
+        \d \lambda_i = \biggl( b(\lambda_i) + \sum_{k\neq i} \frac{G(\lambda_i,\lambda_k)}{\lambda_i - \lambda_k} \biggr)\d t. \label{eq:deterministic_diffusion}
     \end{equation}
 \end{theorem}
 
 
 \begin{proof}
-    We define again $L$ to be the stochastic logarithm of $H$, $L \coloneqq \trans H \circ \d H$ and using the same techniques as in Theorem \ref{thm:diffusion_real} we have that,
+    We define again $L$ to be the stochastic logarithm of $H$, $\d L \coloneqq \trans H \circ \d H$ and by the same techniques as in the proof of Theorem \ref{thm:diffusion_real} we have that,
 
     \begin{equation*}
-        \d \Lambda = \trans H \circ(\partial X) \circ H - (\partial L)\circ \Lambda + \Lambda \circ \partial L.
+        \d \Lambda = \trans H \circ(\partial X) \circ H - (\d L)\circ \Lambda + \Lambda \circ \d L.
     \end{equation*}
 
-    Using that $\Lambda \circ \partial L -  (\partial L)\circ \Lambda $ has zero diagonal, we get that $\d lambda_i = (\trans H \circ(\partial X) \circ H)_{ii}$ and by hypothesis, we know that the martingale part of this diagonal is zero. 
+    Define $\d N \coloneqq \trans H \circ(\partial X) \circ H$. Using that $\Lambda \circ \partial L -  (\partial L)\circ \Lambda $ has zero diagonal, we get that $\d \Lambda_i = \d N_{ii}$. The martingale part of $\d N_{ii}$ is the martingale part of $(\trans H (\d X) H)_{ii}$, and by hypothesis, this is zero.
 
-    Define $\d N \coloneqq \trans H \circ(\partial X) \circ H$. For $i\neq j$ we have that $\d L_{ij} = \d N_{ij}/(\lambda_j - \lambda_i)$.
+    From the above equation, for $i\neq j$ we have that 
 
-    Finally, we compute the finite variation $\d F$ part of $\d N$,
+    \begin{align*}
+        0 &= \d N_{ij} - (\d L \circ \Lambda)_{ij} + (\Lambda \circ \d L)_{ij} = \d N_{ij} - \d L_{ij} (\lambda_j - \lambda_i).
+    \end{align*}
+    
+    This implies that $\d L_{ij} = \d N_{ij}/(\lambda_j - \lambda_i)$. Now we compute the finite variation part $\d F$ of $\d N$,
 
     \begin{align*}
         \d F &= \trans H b(X) H \d t + \frac12 (\d \trans H \d X H + \trans H \d X H), \\ 
-        &= b(\Lambda) \d t + \frac12( \trans{(\d N\d A)} + \d N \d A ).
+        &= b(\Lambda) \d t + \frac12( \trans{(\d N\d L)} + \d N \d L).
     \end{align*}
 
     For $\d N \d A$ we find
 
     \begin{align*}
-        (\d N \d A)_{ij} &= \sum_{k\neq j} \d N_{ik}\d A_{kj} = \sum_{k\neq j} \frac{\d N_{ik}\d N_{kj}}{\lambda_j - \lambda_k}.
+        (\d N \d L)_{ij} &= \sum_{k\neq j} \d N_{ik}\d L_{kj} = \sum_{k\neq j} \frac{\d N_{ik}\d N_{kj}}{\lambda_j - \lambda_k}.
     \end{align*}
 
-    Now we use that the martingale part of  $\d N$ has the same entries as $\trans{Q} M Q$ and by the results in Theorem \ref{thm:diffusion_real} we know that 
+    Now we use that the martingale part of  $\d N$ has the same entries as $\trans{Q} (\d Y) Q$ and by the results in Theorem \ref{thm:diffusion_real} we know that 
 
     \begin{equation*}
         (\trans{Q} M Q)_{ik}(\trans{Q} M Q)_{kj} = \delta_{ij}G(\lambda_i,\lambda_k)\d t,
     \end{equation*}
 
-    \noindent so substituting the last result we get
+    \noindent so substituting the last equality we get
 
     \begin{equation*}
-        \d \lambda_i = \d F_{ii} = b(\lambda_i)\d t + \sum_{k\neq j} \frac{G(\lambda_i,\lambda_k)\d t}{\lambda_j - \lambda_k},
+        \d \lambda_i = \d F_{ii} = b(\lambda_i)\d t + \sum_{k\neq j} \frac{G(\lambda_i,\lambda_k)}{\lambda_j - \lambda_k}\d t,
     \end{equation*}
 
     \noindent which is the desired result.
-
-
-
 \end{proof}
 
 
-These results can be particularized for any matrix-valued diffusions. Especially, we are interested in the Wishart and Jacobi processes. We give the proofs for these as a corollary to last Theorem.
+These results can be particularized for any matrix-valued diffusions. Especially, we are interested in the Wishart and Jacobi processes. We state the result in these two cases as a corollary to the last theorem.
 
 \subsection{Wishart process}
 
 \begin{corollary}
-    Let $Y = (Y(t), t \ge 0)$ be an $n\times n$ Wishart process with parameter $m$ and diagonalization $Y = QM\trans{Q}$. Let $X$ be an $n\times n$ self adjoint matrix process with diagonalization $X = H \Lambda \trans{H}$, such that the off-diagonal part of $\trans{H} \d X H $ and $\overset{d}{=} \trans{Q} \d Y Q$ coincide, and $(\trans{H} \d X H)_{ii} = 0$ for every $i \in [n]$. Then the eigenvalues of $X$, $\lambda_1 \ge \lambda_2 \ge \cdots \ge \lambda_n$ satisfy the following system of stochastic differential equations
+    Let $Y = (Y(t), t \ge 0)$ be an $n\times n$ Wishart process with parameter $m$ and diagonalization $Y = QM\trans{Q}$. Let $X$ be an $n\times n$ self-adjoint matrix process with diagonalization $X = H \Lambda \trans{H}$, such that the off-diagonal part of $\trans{H} \d X H $ and $\trans{Q} \d Y Q$ coincide, and $(\trans{H} \d X H)_{ii} = 0$ for every $i \in [n]$. Then the eigenvalues of $X$, $\lambda_1 \ge \lambda_2 \ge \cdots \ge \lambda_n$ satisfy the following system of stochastic differential equations
 
     \begin{equation} \label{eq:deterministic_wishart}
         \d \lambda_i = \left( m +\sum_{k\neq i} \frac{ \abs{\lambda_i} + \abs{\lambda_k} }{\lambda_i - \lambda_k}\right)\d t.
@@ -94,64 +99,134 @@ These results can be particularized for any matrix-valued diffusions. Especially
 \end{corollary}
 
 \begin{proof}
-    
+    Apply Theorem \ref{thm:deterministic_diffusion} with $b(x)\equiv m, h(x)\equiv 1, g(x)=\sqrt{x} $. 
 \end{proof}
 
 
 \subsection{Jacobi process}
 
 \begin{corollary}
-    Let $Y = (Y(t), t \ge 0)$ be an $n\times n$ matrix Jacobi process with parameters $n_1,n_2$ and diagonalization $Y = QM\trans{Q}$. Let $X$ be an $n\times n$ self adjoint matrix process with diagonalization $X = H \Lambda \trans{H}$, such that the off-diagonal part of $\trans{H} \d X H $ and $\overset{d}{=} \trans{Q} \d Y Q$ coincide, and $(\trans{H} \d X H)_{ii} = 0$ for every $i \in [n]$. Then the eigenvalues of $X$, $\lambda_1 \ge \lambda_2 \ge \cdots \ge \lambda_n$ satisfy the following system of stochastic differential equations
+    Let $Y = (Y(t), t \ge 0)$ be an $n\times n$ matrix Jacobi process with parameters $n_1,n_2$ and diagonalization $Y = QM\trans{Q}$. Let $X$ be an $n\times n$ self-adjoint matrix process with diagonalization $X = H \Lambda \trans{H}$, such that the off-diagonal part of $\trans{H} \d X H $ and $\trans{Q} \d Y Q$ coincide, and $(\trans{H} \d X H)_{ii} = 0$ for every $i \in [n]$. Then the eigenvalues of $X$, $\lambda_1 \ge \lambda_2 \ge \cdots \ge \lambda_n$ satisfy the following system of stochastic differential equations
 
     \begin{equation} \label{eq:deterministic_jacobi}
         \d \lambda_i = \left( n_2 - (n_1 + n_2)\lambda_i + \sum_{k\neq i} \frac{\lambda_k(1-\lambda_i) + \lambda_i(1-\lambda_k)}{\lambda_i - \lambda_k} \right)\d t.
     \end{equation}
-
 \end{corollary}
+
+\begin{proof}
+    Apply Theorem \ref{thm:deterministic_diffusion} with $b(x) = n_2 - (n_1+n_2)x, h(x) = \sqrt{\abs{1-x}}, g(x)=\sqrt{\abs{x}}$. 
+\end{proof}
+
+The systems of eigenvalues for the processes in this chapter follow a deterministic behavior. In the next section, we study some properties derived from the dynamics for the deterministic versions of the Dyson Brownian motion and the Wishart process.
 
 \section{Dynamical behavior of the deterministic eigenvalue processes}
 
+This section aims to derive some results of the dynamical behavior for the deterministic Dyson Brownian motion and the deterministic Wishart process. In particular, we are interested in studying the possibility of collision. Since the Jacobi process is stationary, the behavior is a bit different. We do not include results about it here.
+
+An easy result for a system of functions satisfying \eqref{eq:deterministic_diffusion}, is that the distance between the biggest and the smallest function always grows.
+
+
+\begin{proposition}
+     Let $\lambda_1, \dots, \lambda_n$ be a system of $n$ functions satisfying \eqref{eq:deterministic_diffusion} with $b$ monotone increasing and initial condition $\lambda_1(0) < \dots < \lambda_n(0)$. Then the distance between $\lambda_n$ and $\lambda_1$ grows for every time before the first collision $t\le \tau$.
+
+     \begin{equation*}
+         \frac{\d}{\d t}\left( \lambda_n(t) - \lambda_1(t) \right) > 0, \qquad t \ge 0.
+     \end{equation*}
+\end{proposition}
+
+\begin{proof}
+    Compute the derivative of the difference using \eqref{eq:deterministic_diffusion}:
+
+    \begin{align*}
+        \frac{\d}{\d t}\left( \lambda_n(t) - \lambda_1(t) \right) &= \frac{\d}{\d t} \lambda_n(t) - \frac{\d}{\d t} \lambda_1 (t),\\
+        &= b(\lambda_n) + \sum_{k\neq n} \frac{G(\lambda_n,\lambda_k)}{\lambda_n - \lambda_k} - b(\lambda_1) - \sum_{k\neq 1} \frac{G(\lambda_1,\lambda_k)}{\lambda_1 - \lambda_k},\\
+        &= b(\lambda_n) - b(\lambda_1) + \sum_{k\neq n} \frac{G(\lambda_n,\lambda_k)}{\lambda_n - \lambda_k} + \sum_{k\neq 1} \frac{G(\lambda_1,\lambda_k)}{\lambda_1 - \lambda_k}.
+    \end{align*}
+
+    Due to the monotonicity of $b$, the difference $b(\lambda_n) - b(\lambda_1)$ is non-negative. The two last terms are positive because $\lambda_n-\lambda_k$ and $\lambda_k-\lambda_1$ are positive for every $k\in [n]\setminus \{1,n\}$.
+\end{proof}
+
+In particular, in a system of functions following the equations of the deterministic Dyson Brownian motion or the deterministic Wishart process, the distance between the biggest and the smallest functions always grows.
+
+\subsection{Dyson Brownian motion}
+
+%  Next, we prove that in a system of functions that satisfy the system of equations of the deterministic Dyson Brownian motion, the sum of the distances between functions grows as $t$ grows.
+
+% \begin{theorem}
+%     Let $\lambda_1,\dots,\lambda_n$ be a system of $n$ functions satisfying \eqref{eq:deterministic_dyson}. Then the sum of the distances 
+
+%     \begin{equation*}
+%         \sum_{i,j,i\neq j} \abs{\lambda_i - \lambda_j},
+%     \end{equation*}
+
+%     \noindent grows as $t$ grows.
+% \end{theorem}
+
+% \begin{proof}
+%     Using the monotonicity of the logarithm function, the growth of the sum of distances is equivalent to the growth of the sum of the logarithms. Define the function $H$ as 
+    
+%     \begin{equation*}
+%         H \coloneqq \sum_{i,j, i\neq j} \log \abs{ \lambda_i - \lambda_j }.
+%     \end{equation*}
+
+%     The derivative of $H$ with respect to $\lambda_i$ is 
+
+%     \begin{align*}
+%         \frac{\partial H}{\partial \lambda_i} = \sum_{j \neq i} \frac{\partial}{\partial \lambda_i} \left[ \log \abs{\lambda_i - \lambda_j } \right] = \sum_{j\neq i} \frac{1}{\lambda_i - \lambda_j} = \partial_t [\lambda_i].
+%     \end{align*}
+
+%     With this, the derivative of $H$ with respect to $t$ is 
+
+%     \begin{align*}
+%         \partial_t[H] &= \sum_{i=1}^n \left(\frac{\partial}{\partial t}\lambda_i\right)\left(\frac{\partial}{\partial \lambda_i} H\right) = \sum_{i=1}^n \left( \sum_{j \neq i} \frac{1}{\lambda_i - \lambda_j} \right)^2, \\
+%         &= \sum_{i=1}^n \sum_{j\neq i} \frac{1}{(\lambda_i - \lambda_j)^2} + 2 \sum_{i=1}^n\sum_{j\neq i, k \neq i} \frac{1}{(\lambda_i - \lambda_k)(\lambda_i-\lambda_j)}.
+%     \end{align*}
+
+%     In the second term, we have the sum of all the possible terms of the form 
+
+%     \begin{equation*}
+%         \frac{1}{(\lambda_i - \lambda_k)(\lambda_i-\lambda_j)},
+%     \end{equation*}
+
+%     \noindent for $i,j,k$ different. Notice that for every set of three different indexes $i,j,k$ we have
+
+%     \begin{align*}
+%         \frac1{(\lambda_i-\lambda_j)(\lambda_i-\lambda_k)} &+ \frac1{(\lambda_j-\lambda_i)(\lambda_j-\lambda_k)} + \frac1{(\lambda_k-\lambda_j)(\lambda_k-\lambda_i)} \\
+%         &= \frac{\lambda_i - \lambda_j}{\lambda_j - \lambda_k} - \frac{\lambda_i-\lambda_k}{\lambda_j - \lambda_k} + 1 = 0.
+%     \end{align*}
+
+%     Then $\partial_t[H] = \sum_{i,j,i\neq j} 1/(\lambda_i - \lambda_j)^2$, and since this derivative is positive, $H$ grows with $t$. This implies that the sum of the distances grows as well.
+% \end{proof}
+
+If we have a system of functions $\lambda_1, \lambda_2, \dots, \lambda_n$ that satisfy a system like \eqref{eq:deterministic_dyson} or \eqref{eq:deterministic_wishart}, we will say that the functions $\lambda_i$ and $\lambda_j$ repel each other at time $t_0$ if the derivative $\frac{\d}{\d t} \abs{\lambda_i - \lambda_j}$ exists and is positive at time $t_0$. The next Lemma gives us a necessary and sufficient condition for this to happen in the case of a deterministic Dyson Brownian motion.
+
 \begin{lemma} \label{lemma:separation}
-    Let $\lambda_1,\dots,\lambda_n$ be a system of $n$ functions moving according to \eqref{eq:deterministic_dyson} and $\lambda_i(0) > \lambda_j(0)$ and there is no $\lambda_k$ such that $\lambda_i(0) > \lambda_k(0) > \lambda_j(0)$. Then, $\lambda_i$ and $\lambda_k$ repel each other if and only if 
+    Let $\lambda_1,\dots,\lambda_n$ be a system of $n$ functions satisfying the system of differential equations \eqref{eq:deterministic_dyson}. Take $\lambda_i(t_0) > \lambda_j(t_0)$ and such that there is no $\lambda_k$ that satisfies $\lambda_i(t_0) > \lambda_k(t_0) > \lambda_j(t_0)$. Then, $\lambda_i$ and $\lambda_k$ repel each other at time $t=t_0$ if and only if 
 
     \begin{equation} \label{eq:separation_condition}
-        \frac{2}{(\lambda_i - \lambda_j)^2} > \sum_{k\neq i,j} \frac{1}{(\lambda_i - \lambda_k)(\lambda_j - \lambda_k)}
+        \frac{2}{(\lambda_i(t_0) - \lambda_j(t_0))^2} > \sum_{k\neq i,j} \frac{1}{(\lambda_i(t_0) - \lambda_k(t_0))(\lambda_j(t_0) - \lambda_k(t_0))}.
     \end{equation}
 \end{lemma}
 
 \begin{proof}
 
-    The distance between the particles grows if and only if its derivative its positive, so 
+    Since there is no confusion, let us write $\lambda_i(t_0)$ as $\lambda_i$ for every $i$. The distance between two functions grows if and only if its derivative its positive, so 
 
     \begin{align*}
         \frac{\d }{\d t} (\lambda_i - \lambda_j) &= \sum_{k\neq i} \frac{1}{\lambda_i - \lambda_k} - \sum_{k\neq j} \frac{1}{\lambda_j - \lambda_k} = \sum_{k\neq i,j} \left( \frac{1}{\lambda_i - \lambda_k} - \frac{1}{\lambda_j - \lambda_k} \right) + \frac{2}{\lambda_i - \lambda_j},\\
-        &= \sum_{k \neq i, j} \frac{\lambda_j - \lambda_k - \lambda_i + \lambda_k}{(\lambda_i- \lambda_k)(\lambda_j - \lambda_k)} + \frac{2}{\lambda_i - \lambda_j},= \frac{2}{(\lambda_i - \lambda_j)^2} - \sum_{k\neq i,j} \frac{1}{(\lambda_i - \lambda_k)(\lambda_j - \lambda_k)}.
+        &= \sum_{k \neq i, j} \frac{\lambda_j - \lambda_k - \lambda_i + \lambda_k}{(\lambda_i- \lambda_k)(\lambda_j - \lambda_k)} + \frac{2}{\lambda_i - \lambda_j},= \frac{2}{\lambda_i - \lambda_j} - \sum_{k\neq i,j} \frac{\lambda_i - \lambda_j}{(\lambda_i - \lambda_k)(\lambda_j - \lambda_k)}.
     \end{align*}
-
-    Comparing to zero, we get the desired result.
+    
+    So this derivative is positive if and only if
+    
+    \begin{align*}
+        \frac{2}{\lambda_i - \lambda_j} &> \sum_{k\neq i,j} \frac{\lambda_i - \lambda_j}{(\lambda_i - \lambda_k)(\lambda_j - \lambda_k)}.
+    \intertext{Finally, we divide both sides of the equality by $\lambda_i - \lambda_j$ to find the equivalent condition:}
+        \frac{2}{(\lambda_I - \lambda_j)^2} &> \sum_{k\neq i,j} \frac{1}{(\lambda_i - \lambda_k)(\lambda_j - \lambda_k)}.
+    \end{align*}
 \end{proof}
 
 
-
-\begin{theorem}
-    If a system of functions satisfies \eqref{eq:deterministic_dyson}, then there ar no collisions.
-\end{theorem}
-
-\begin{proof}
-    Write condition \eqref{eq:separation_condition} as
-
-    \begin{equation*}
-        \frac{2}{(\lambda_i - \lambda_j)^2} > \sum_{k\neq i,j} \frac{1}{(\lambda_i - \lambda_j + \lambda_j -\lambda_k)(\lambda_j - \lambda_k)},
-    \end{equation*}
-
-    \noindent and take $\lambda_i \to \lambda_j$. As $\lambda_i$ approaches $\lambda_k$, the left-hand side grows to $\infty$, while the right-hand side converges to the finite quantity
-
-    \begin{equation*}
-        \sum_{k\neq i,j} \frac{1}{(\lambda_j - \lambda_k)^2}.
-    \end{equation*}
-
-    Thus, before the collision occurs, the distance between $\lambda_i$ and $\lambda_j$ starts to grow.
-\end{proof}
 
 \begin{theorem} \label{thm:hermite_minimal_grows}
     Let $(\lambda_1, \lambda_2, \dots, \lambda_n)$ be a system of functions moving according to \eqref{eq:deterministic_dyson} and let $\lambda_i,\lambda_j$ be such that for a given $t_0$ it is satisfied $\lambda_i(t_0) > \lambda_j(t_0)$ and 
@@ -167,10 +242,12 @@ These results can be particularized for any matrix-valued diffusions. Especially
     Define the quotients $c_{ik}, c_{jk}$ as 
 
     \begin{equation*}
-        c_{ik} = \frac{\lambda_i - \lambda_k}{\lambda_i - \lambda_j}, \qquad c_{jk} = \frac{\lambda_j - \lambda_k}{\lambda_i - \lambda_j}.
+        c_{ik} = \frac{\lambda_i(t_0) - \lambda_k(t_0)}{\lambda_i(t_0) - \lambda_j(t_0)}, \qquad c_{jk} = \frac{\lambda_j(t_0) - \lambda_k(t_0)}{\lambda_i(t_0) - \lambda_j(t_0)}.
     \end{equation*}
 
-    Notice that the condition that the distance between $\lambda_i$ and $\lambda_j$ is minimal means that there is no $\lambda_k$ between them and therefore for a fixed $k_0$, $c_{ik_0}$ and $c_{jk_0}$ have the same sign. We can write the right-hand side of \eqref{eq:separation_condition} as
+    Notice that the condition that the distance between $\lambda_i$ and $\lambda_j$ at time $t_0$ is minimal means that there is no $\lambda_k$ between them. Therefore, for a fixed $k_0$, $c_{ik_0}$ and $c_{jk_0}$ have the same sign and $c_{ik_0}c_{jk_0}>0$. 
+    
+    Again, let us write $\lambda_i(t_0)$ as $\lambda_i$ for every $i$. We can write the right-hand side of \eqref{eq:separation_condition} as
 
     \begin{align*}
         \sum_{k\neq i,j} \frac{1}{(\lambda_i - \lambda_k)(\lambda_j - \lambda_k)} &= \sum_{k\neq i,j} \frac{1}{ c_{ik}(\lambda_i - \lambda_j) c_{jk}(\lambda_i - \lambda_j)} = \sum_{k\neq i,j} \frac{ (c_{ik}c_{jk})^{-1} }{(\lambda_i-\lambda_j)^2}.
@@ -179,11 +256,12 @@ These results can be particularized for any matrix-valued diffusions. Especially
     With this, condition \eqref{eq:separation_condition} can be written as
 
     \begin{align}
-        \frac{2}{(\lambda_i - \lambda_j)^2} &> \sum_{k\neq i,j} \frac{ (c_{ik}c_{jk})^{-1} }{(\lambda_i-\lambda_j)^2},\\
-        \Leftrightarrow 2 &> \sum_{k\neq i,j} \frac{1}{c_{ik}c_{jk}}. \label{eq:simplified_condition}
+        \frac{2}{(\lambda_i - \lambda_j)^2} &> \sum_{k\neq i,j} \frac{ (c_{ik}c_{jk})^{-1} }{(\lambda_i-\lambda_j)^2},\notag\\
+        \intertext{this condition is equivalent to}
+        2 &> \sum_{k\neq i,j} \frac{1}{c_{ik}c_{jk}}. \label{eq:simplified_condition}
     \end{align}
 
-    We know that the distance between $\lambda_i$ and $\lambda_j$ is minimal, in the worst-case scenario, all of the other distances are the same as $\lambda_i - \lambda_j$, so $\abs{c_{ik}},\abs{c_{ij}}>1$. Notice that if $\lambda_{i-1}$ is the function located immediately bellow $\lambda_i$, this would mean that in the worst case scenario $c_{i,i-1}=-1$ and $c_{j,i-1} = -2$. Similarly, for $\lambda_{i-2}$ we would have $c_{i,i-1} = -2, c_{j,i-2} =-3$. In general, $c_{i,i-l} = -l, c_{j,i-l} = -(l+1)$. Analogously, if $\lambda_{j+l}$ is the function located $l$ positions below $j$, then $c_{j,j+l} = l, c_{i,j+l} = l+1$.
+    We know that the distance between $\lambda_i$ and $\lambda_j$ is minimal, in the worst-case scenario, all of the other distances are the same as $\lambda_i - \lambda_j$, so $\abs{c_{ik}},\abs{c_{ij}}\ge1$. Notice that if $\lambda_{i-1}$ is the function located immediately below $\lambda_i$, this would mean that in the worst case scenario $c_{i,i-1}=-1$ and $c_{j,i-1} = -2$. Similarly, for $\lambda_{i-2}$ we would have $c_{i,i-1} = -2, c_{j,i-2} =-3$. In general, $c_{i,i-l} = -l, c_{j,i-l} = -(l+1)$. Analogously, if $\lambda_{j+l}$ is the function located $l$ positions below $j$, then $c_{j,j+l} = l, c_{i,j+l} = l+1$.
 
     Now, for the arrangement of the functions, we have two extreme cases. If $\lambda_i$ and $\lambda_j$ are the functions in one of the extremes (i.e. the two biggest or two smallest ones), this would mean that the right-hand side of \eqref{eq:simplified_condition} can be written as
 
@@ -195,42 +273,62 @@ These results can be particularized for any matrix-valued diffusions. Especially
     So in this case, applying Lemma \ref{lemma:separation}, $\lambda_i,\lambda_j$ would repel each other. The other extreme case is when exactly half of the functions are located at each side of $\lambda_i$ and $\lambda_j$. Let us suppose first that $n$ is even, in this case we would have,
 
     \begin{align*}
-        \sum_{k\neq i,j} \frac{1}{c_{ik}c_{jk}} &= 2 \sum_{k=1}^{\frac{n-2}{2}} \frac{1}{k(k+1)} = 2\left(1 - \frac{2}{n}\right) = 2 - \frac4n < 2.
+        \sum_{k\neq i,j} \frac{1}{c_{ik}c_{jk}} &= \sum_{k=1}^{\frac{n-2}{2}} \frac{1}{c_{i,i-k}c_{j,i-k}} + \sum_{k=1}^{\frac{n-2}{2}} \frac{1}{c_{i,j+k}c_{j,j+k}} = \sum_{k=1}^{\frac{n-2}{2}} \frac{1}{k(k+1)} + \sum_{k=1}^{\frac{n-2}{2}} \frac{1}{k(k+1)}, \\
+        &= 2 \sum_{k=1}^{\frac{n-2}{2}} \frac{1}{k(k+1)} = 2\left(1 - \frac{2}{n}\right) = 2 - \frac4n < 2.
     \end{align*}
 
-    There is also separation in this case. Finally, if $n$ is even, we considr the previos sum for $\lfloor n/2 \rfloor$ and sum the term corresponding to the remaining function.
+    There is also repulsion in this case. Finally, if $n$ is odd, $n-1$ is even and 
 
-    \begin{equation*}
-        \sum_{k\neq i,j} \frac{1}{c_{ik}c_{jk}} = 2 - \frac{4}{n} + \frac1{(\lfloor n/2\rfloor+1)(\lfloor n/2\rfloor +2)} < 2.
-    \end{equation*}
+    \begin{align*}
+        \sum_{k\neq i,j} \frac{1}{c_{ik}c_{jk}} &= \sum_{k=1}^{\frac{n+1-2}{2}} \frac{1}{c_{i,i-k}c_{j,i-k}} + \sum_{k=1}^{\frac{n+1-2}{2}} \frac{1}{c_{i,j+k}c_{j,j+k}} + \frac{1}{\left(\frac{n+1}{2}\right)\left(\frac{n+3}{2}\right)},\\
+        &= 2\left( 1 - \frac{2}{n+1} \right) + \frac{4}{(n+1)(n+3)} < 2.
+    \end{align*}
+    
+    % we consider the previous sum for $\lfloor n/2 \rfloor$ and sum the term corresponding to the remaining function, i.e. the term 
+
+    % \begin{equation*}
+    %     \sum_{k\neq i,j} \frac{1}{c_{ik}c_{jk}} = 2 - \frac{4}{n} + \frac1{(\lfloor n/2\rfloor+1)(\lfloor n/2\rfloor +2)} < 2.
+    % \end{equation*}
 
     So, even in the worst-case scenario, criterion \eqref{eq:separation_condition} is satisfied, and we conclude that the minimal distance grows for every initial condition of the system.
 \end{proof}
 
-\begin{corollary} \label{corollary:hermite_not_all_repel}
-    In a system governed by~\eqref{eq:deterministic_dyson}, for $n\ge3$ not all of the functions separate for every given initial condition. For $n =2$, the functions always repel each other.
+
+If at some time $t_0$, it happens that $\lambda_i(t_0) = \lambda_j(t_0)$, we say that the functions $\lambda_i$ and $\lambda_j$ collide at time $t_0$. An easy consequence of Theorem \ref{thm:hermite_minimal_grows} is that there are no collisions for a deterministic Dyson Brownian motion.
+
+\begin{corollary}
+    If a system of functions satisfies \eqref{eq:deterministic_dyson} with initial condition $\lambda_1(0) < \lambda_2(0) <\dots <\lambda_n(0)$, then there are no collisions.
 \end{corollary}
 
 \begin{proof}
-    We prove the first part by providing a counterexample. Suppose that the separation between $\lambda_i$ and $\lambda_j$ is 1, while all of the other separations are $0.1$. The same computations that the proof of in Theorem \ref{thm:hermite_minimal_grows}, but with a re-scaling of the $c_{ik}c_{jk}$ lead to
+    Let $\delta$ be the minimal distance between two functions at time $0$, i.e.,
+
+    \begin{equation*}
+        \delta = \min_{k,l\in [n]} \abs{ \lambda_k(0) - \lambda_l(0)}.
+    \end{equation*}
+    By Theorem \ref{thm:hermite_minimal_grows}, the distance between any two functions is bigger than $\delta$ for every $t >0$.
+\end{proof}
+
+
+Although the minimal distance between two functions always grows in a system that satisfies \eqref{eq:deterministic_dyson}, this is not the case for all the distances in every configuration. This result is stated in the following remark.
+
+
+\begin{remark} \label{remark:hermite_not_all_repel}
+    In a system that satisfies~\eqref{eq:deterministic_dyson}, for $n\ge3$, not all functions repel for every given initial condition. For $n =2$, the functions always repel each other.
+\end{remark}
+
+\begin{proof}
+    We prove the first part by providing a counterexample. Suppose that $\lambda_i,\lambda_j$ are the two biggest or two smallest functions at time $t_0$, and their separation is 1, while all the other separations are $0.1$. The same computations that the proof of Theorem \ref{thm:hermite_minimal_grows}, but with a re-scaling of the $c_{ik}c_{jk}$ lead to
 
     \begin{align*}
         \sum_{k\neq i,j} \frac{1}{c_{ik}c_{jk}} = \frac{1}{0.01}\left( 1 - \frac1{n-1}\right) = 100 - \frac{100}{n-1}.
-    \end{align*}
-
-    Clearly, for $n\ge 3$, condition~\eqref{eq:separation_condition} is satisfied.
-
-    For the second part, we simply take that if $\lambda_i$ and $\lambda_j$ are the unique functions in the system, then 
-
-    \begin{equation*}
-        \sum_{k\neq i,j} \frac{1}{(\lambda_i - \lambda_k)(\lambda_j - \lambda_k)} = 0 < \frac{2}{(\lambda_i - \lambda_j)^2},
-    \end{equation*}
-
-    \noindent for every position of $\lambda_i, \lambda_j$.
+    \end{align*} Clearly, for $n\ge 3$, condition~\eqref{eq:separation_condition} is not satisfied. The second part is a direct consequence of Theorem \ref{thm:hermite_minimal_grows}.
 \end{proof}
 
+\subsection{Wishart process}
+
 \begin{lemma} \label{lemma:separating_condition_wishart}
-    Let $(\lambda_1, \lambda_2, \dots, \lambda_n)$ be a system of $n$ functions moving according to \eqref{eq:deterministic_wishart}, and let $\lambda_i, \lambda_j$ be such that $\lambda_i(t_0) > \lambda_j(t_0)$ and there is no $\lambda_k$ such that $\lambda_i(t_0) > \lambda_k(t_0) > \lambda_j(t_0)$. Then $\lambda_i$ and $\lambda_j$ repel each other if and only if 
+    Let $(\lambda_1, \lambda_2, \dots, \lambda_n)$ be a system of $n$ functions satisfying \eqref{eq:deterministic_wishart}. Let $\lambda_i, \lambda_j$ be such that $\lambda_i(t_0) > \lambda_j(t_0)$ and there is no $\lambda_k$ such that $\lambda_i(t_0) > \lambda_k(t_0) > \lambda_j(t_0)$. Then $\lambda_i$ and $\lambda_j$ repel each other at time $t_0$ if and only if 
 
     \begin{equation} \label{eq:separation_condition_wishart}
         \frac{\lambda_i + \lambda_j}{(\lambda_i - \lambda_j)^2} > \sum_{k\neq i,j} \frac{\lambda_k}{(\lambda_i-\lambda_k)(\lambda_j-\lambda_k)}.
@@ -247,7 +345,13 @@ These results can be particularized for any matrix-valued diffusions. Especially
         &= \sum_{k\neq i,j} \frac{2\lambda_k(\lambda_j - \lambda_i)}{(\lambda_i-\lambda_k)(\lambda_j-\lambda_k)} + 2 \frac{\lambda_i + \lambda_j}{\lambda_i - \lambda_j}.
     \end{align*}
 
-    Comparing to zero yields the result.
+    Thus, the derivative is positive if and only if 
+
+    \begin{align*}
+        \sum_{k\neq i,j} \frac{2\lambda_k(\lambda_j - \lambda_i)}{(\lambda_i-\lambda_k)(\lambda_j-\lambda_k)} > 2 \frac{\lambda_i + \lambda_j}{\lambda_j - \lambda_i}.\\
+        \intertext{Dividing both sides by $2(\lambda_j - \lambda_i)$ we get}
+        \sum_{k\neq i,j} \frac{\lambda_k}{(\lambda_i-\lambda_k)(\lambda_j-\lambda_k)} >  \frac{\lambda_i + \lambda_j}{(\lambda_j - \lambda_i)^2}.
+    \end{align*}
 \end{proof}
 
 \begin{corollary}
@@ -270,18 +374,18 @@ These results can be particularized for any matrix-valued diffusions. Especially
     So before the functions collide, the derivative of the separation is positive and they repel each other.
 \end{proof}
 
-\begin{theorem} \label{thm:laguerre_does_not_grow}
+\begin{proposition} \label{proposition:laguerre_does_not_grow}
     Let $(\lambda_1, \lambda_2, \dots, \lambda_n)$ be a system of $n$ functions moving according to \eqref{eq:deterministic_wishart} and let $\lambda_i,\lambda_j$ be such that for a given $t_0$ it is satisfied $\lambda_i(t_0) > \lambda_j(t_0)$ and 
     
     \begin{equation*}
         \lambda_i(t_0) - \lambda_j(t_0) = \min_{k,l \in [n]} \abs{ \lambda_k(t_0) - \lambda_l(t_0)}.
     \end{equation*}
 
-    Then, $\lambda_i$ and $\lambda_k$ do not necessarily repel. 
-\end{theorem}
+    Then, $\lambda_i$ and $\lambda_j$ do not necessarily repel. 
+\end{proposition}
 
 \begin{proof}
-    We will prove providing an initial condition for which the minimal distance will have a negative derivative. Let $\lambda_j(t_0) = \min_{k \le n} \lambda_k(t_0)$ and so $\lambda_i(t_0) = \min_{k\neq j} \lambda_k(t_0)$. Similarly to the proof of Theorem \ref*{thm:hermite_minimal_grows}, let us define the quotients $c_{ik},c_{jk}$ as 
+    We will prove the result by providing an initial condition for which the minimal distance will have a negative derivative. Let $\lambda_j(t_0) = \min_{k \le n} \lambda_k(t_0)$ and so $\lambda_i(t_0) = \min_{k\neq j} \lambda_k(t_0)$. Similarly to the proof of Theorem \ref{thm:hermite_minimal_grows}, let us denote $\lambda_i(t_0)$ as $\lambda_i$ along the proof and define the quotients $c_{ik},c_{jk}$ as 
 
     \begin{equation*}
         c_{ik} = \frac{\lambda_i - \lambda_k}{\lambda_i - \lambda_j}, \qquad c_{jk} = \frac{\lambda_j - \lambda_k}{\lambda_i - \lambda_j}.
@@ -293,7 +397,10 @@ These results can be particularized for any matrix-valued diffusions. Especially
         \lambda_i + \lambda_j > \sum_{k \neq i,j} \frac{\lambda_k}{c_{ik}c_{jk}}.
     \end{equation*}
 
-    Suppose that $\lambda_i - \lambda_j =1$, and that $\lambda_k > \lambda_i$ for all $k \notin \{i,j\}$. Assume further that the separation between all the $(\lambda_k)_{k\neq i,j}$ is $1+\epsilon$ for some $\epsilon >0$. Then $c_{i,i-1}= 1+\epsilon, \abs{c_{j,i+1}}= 2 + \epsilon$ and in general $\abs{c_{i,i+l}}=l(1+\epsilon), \abs{c_{j,i+l}} = 1 + l(1+\epsilon)$. Furthermore, we have that $\lambda_{i+l}$ can be expressed as
+    Take $\lambda_i, \lambda_j$ such that $\lambda_i - \lambda_j =1$ at $t=t_0$, and that $\lambda_k > \lambda_i$ for all $k \notin \{i,j\}$. Take the separation between all the $(\lambda_k)_{k\neq i,j}$ to be $1+\epsilon$ for some $\epsilon >0$. Then the coefficients $c_{i,i+1}, c_{j,i+1}$ are equal to
+
+    \[ c_{i,i+1} = \frac{\lambda_i - \lambda_{i+1}}{\lambda_i - \lambda_j} = -\frac{1+\epsilon}{1}, \qquad c_{j,i+1} = \frac{\lambda_j - \lambda_{i+1}}{\lambda_i - \lambda_j} = -\frac{2+\epsilon}{1}. \]
+    In general, $\abs{c_{i,i+l}}=l(1+\epsilon), \abs{c_{j,i+l}} = 1 + l(1+\epsilon)$. Furthermore, we have that $\lambda_{i+l}$ can be expressed as
 
     \begin{equation*}
          \lambda_{i+l} = \lambda_i + l(1+\epsilon) = \lambda_j + 1 + l(1+\epsilon).
@@ -304,8 +411,7 @@ These results can be particularized for any matrix-valued diffusions. Especially
     \begin{equation*}
         2\lambda_j + 1 > \sum_{k=2}^{n} \frac{\lambda_j + 1 + k(1+\epsilon)}{k(1+\epsilon)(1+k(1+\epsilon))}. 
     \end{equation*}
-
-    The left-hand side is fixed for fixed $\lambda_j(t_0)$. For the left-hand side we have
+    The left-hand side is fixed for fixed $\lambda_j(t_0)$. For the left-hand side, we have
 
     \begin{align*}
         \sum_{k=2}^{n} \frac{\lambda_j + 1 + k(1+\epsilon)}{k(1+\epsilon)(1+k(1+\epsilon))} = \sum_{k=2}^n \frac{\lambda_j + 1}{k(1+\epsilon)(1+k(1+\epsilon))} + \sum_{k=2}^n \frac{1}{1+k(1+\epsilon)}.
@@ -321,31 +427,31 @@ These results can be particularized for any matrix-valued diffusions. Especially
     
 \end{proof}
 
-\newpage 
+
 \section{Path simulations}
 
-With these simulations we exemplify the dynamical behavior of the system of functions explained in the laste section. In Figure \ref{fig:four_det_dyson} we have the analogous to Figure \ref{fig:four_dyson}. The initial conditions are uniformly spaced points around zero for the last three examples. For the first example, the distance between the two points in the middle is two, while the top and bottom points are separated by 0.1 of the two in the middle. We can notice that, in concordance with Corollary \ref{corollary:hermite_not_all_repel}, the bigger value actually decreases during some time until the particle spacing is more uniform and then it starts growing. For the functions with a small separation, this distance grows very quickly at the beginning, as expected by Theorem \ref{thm:hermite_minimal_grows}.
+With these simulations, we exemplify the dynamical behavior of the system of functions explained in the last section. In Figure \ref{fig:four_det_dyson} we have the analogous to Figure \ref{fig:four_dyson}. The initial conditions are uniformly spaced points around zero for the last three examples. For the first example, the distance between the two points in the middle is two, while the top and bottom points are separated by 0.1 of the two in the middle. We can notice that in concordance with Remark \ref{remark:hermite_not_all_repel}, the bigger value decreases for some time until the particle spacing is more uniform and then it starts growing. For the functions with a small separation, this distance grows very quickly at the beginning, as expected by Theorem \ref{thm:hermite_minimal_grows}.
 
 
 \begin{figure}[h!]
     \input{img/four_det_dysons.pgf}
-    \caption{Simulation of four different deterministic Dyson Brownian motions with different dimension.\label{fig:four_det_dyson}}
+    \caption{Simulation of four different deterministic Dyson Brownian motions with different dimensions. The initial conditions from left to right are $(-1.1,-1,2,2.1)$, $(-1, -0.5, 0, 0.5, 1)$, $(-2.5,-1.67,-0.83,0,0.83,1.67,2.5)$ and $(-2.5,-1.875,-1.25,-0.625,0,0.625,1.25,1.875,2.5)$. \label{fig:four_det_dyson}}
 \end{figure}
 
-In the remaining three panels of Figure \ref{fig:four_det_dyson}, we also a behavior according to \ref{thm:hermite_minimal_grows}. Also notice that \eqref{eq:deterministic_dyson} implies that if we start with a configuration that is evenly spaced, then the points will stay evenly spaced through time, which is precisely what we can see. 
+In the remaining three panels of Figure \ref{fig:four_det_dyson}, we also see a behavior according to \ref{thm:hermite_minimal_grows}. Also notice that \eqref{eq:deterministic_dyson} implies that if we start with a configuration that is evenly spaced, then the points will roughly stay evenly spaced through time, which is precisely what we can see. 
 
-In Figure \ref{fig:det_wishart}, we have the simulation analogous to \ref{fig:wishart_comparison} with a nine-dimensional deterministic Wishart process. Apart form observing that the toal distance of the particles grow, we check that this examples confirms Theorem \ref{thm:laguerre_does_not_grow}, as the distance between the two paths in the bottom is minimal at some point and it continues decreasing. However, the biggest is the value of the function and the surrounding ones, the faster their spacing grows, as we can notice for the two functions in the top.
+In Figure \ref{fig:det_wishart}, we have the simulation analogous to \ref{fig:wishart_comparison} with a nine-dimensional deterministic Wishart process. Apart from observing that the total distance of the particles grows, we check that this example confirms Proposition \ref{proposition:laguerre_does_not_grow}, as the distance between the two paths in the bottom is minimal at some point and it continues to decrease. However, the biggest is the value of the function and the surrounding ones, the faster their spacing grows, as we can notice for the two functions at the top.
 
 \begin{figure}[h!]
     \input{img/deterministic_wishart.pgf}
-    \caption{Simulation of the path of a deterministic Wishart process.\label{fig:det_wishart}}
+    \caption{Simulation of the path of a deterministic Wishart process. The initial conditions are $(0.1,2.6,5.1,7.6,10.1,12.6,15.1,17.6,20.1)$.\label{fig:det_wishart}}
 \end{figure}
 
 For the path simulations of the deterministic Jacobi process, we observe that for $t=0.05$ they are almost evenly spaced in $[0,1]$. We would expect this deterministic process to converge to the equilibrium which would be the roots of the ninth Jacobi polynomial with parameters $n_1 = 1, n_2 =2$. 
 
 \begin{figure}[h!]
     \input{img/deterministic_jacobi.pgf}
-    \caption{Simulation of the path of a deterministic Jacobi process.\label{fig:det_jacobi}}
+    \caption{Simulation of the path of a deterministic Jacobi process. The initial conditions are $(0.3,0.325,0.35,0.375,0.4,0.425,0.45,0.475,0.5)$.\label{fig:det_jacobi}}
 \end{figure}
 
 \newpage

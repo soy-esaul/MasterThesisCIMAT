@@ -3,7 +3,7 @@
 
 \section{Expected characteristic polynomials} \label{sec:minor_orthogonality}
 
-In this section we show the relationship between the polynomial convolutions defined before and Random Matrix Theory, specifically through the expected characteristic polynomial. Although several results can be found, we will restrict to the symmetric additive case and its relationship to sums of random matrices. The main result in this section is Theorem \ref{thm:symmad}, a similar Theorem ca also be stated for the product of matrices and symmetric multiplicative convolution. The first subsection introduces minor orthogonality, which is a key concept to prove the following results. In the second subsection we prove the main result.
+In this section we show the relationship between the polynomial convolutions defined before and Random Matrix Theory, specifically through the expected characteristic polynomial. Although several results can be found, we will restrict to the symmetric additive case and its relationship to sums of random matrices. The main result in this section is Theorem \ref{thm:symmad}, a similar theorem can also be stated for the product of matrices and symmetric multiplicative convolution. The first subsection introduces minor orthogonality, which is a key concept to prove the following results. In the second subsection we prove the main result.
 
 \subsection{Minor orthogonality}
 
@@ -19,7 +19,7 @@ The next is a rather technical definition, but that allows to prove several of o
 
     In the last definition, $\mathbb E_R$ denotes taking the expectation with respect to $R$. We use this convention because in what follows we will have computations of expectations with several random matrices involved and it is convenient to know what is the matrix we are taking the expectation of in every step.
 
-    Later we will prove that some well-known matrix ensembles are minor orthogonal, and that property will help us to make use of the related results. Before doing that, we will prove a  Lemma that allows us to conclude that some transformations of minor orthogonal matrices are also minor orthogonal.
+    Later we will prove that some well-known matrix ensembles are minor orthogonal, and that property will help us to make use of the related results. Before doing that, we will prove a lemma that allows us to conclude that some transformations of minor orthogonal matrices are also minor orthogonal.
 
 \begin{lemma} \label{lemma:orth_trans_is_minorth}
     If $R$ is minor orthogonal and $Q$ is a constant matrix such that $Q\hermit{Q} = I$, then $Q$ is minor orthogonal. If $\hermit{Q}Q = I$, then $RQ$ is minor orthogonal.
@@ -48,7 +48,7 @@ The next is a rather technical definition, but that allows to prove several of o
     The case $\hermit{Q}Q =I$ is proven in the same way.
 \end{proof}
 
-The former Theorem implies that minor orthogonality is preserved under unitary transformations. Now, we will introduce the signed permutation matrix ensemble and prove that it is minor orthogonal. This ensemble will be later used to conclude minor orthogonality in a broader class of random matrices.
+The former theorem implies that minor orthogonality is preserved under unitary transformations. Now, we will introduce the signed permutation matrix ensemble and prove that it is minor orthogonal. This ensemble will be later used to conclude minor orthogonality in a broader class of random matrices.
 
 \begin{definition}[Signed permutation matrix]
     A signed permutation matrix is a matrix that can be written $EP$ where $E$ is a diagonal matrix with entries $\pm 1$ and $P$ is a permutation matrix.
@@ -59,7 +59,7 @@ The former Theorem implies that minor orthogonality is preserved under unitary t
 \end{lemma}
 
 \begin{proof}
-    Let $Q$ be a signed permutation matrix, we can write $Q = E P$, where $E$ is a diagonal random matrix with entries $\pm 1$ taken uniformly and $P$ is a matrix chosen uniformly from the permutation matrices, and both are independent. Then for $\abs{S} = \abs{T} = k$ and $\abs{U} = \abs{U} = l$, we have
+    Let $Q$ be a signed permutation matrix, we can write $Q = E P$, where $E$ is a diagonal random matrix with entries $\pm 1$ taken uniformly and $P$ is a matrix chosen uniformly from the permutation matrices, and both are independent. Then for $\abs{S} = \abs{T} = k$ and $\abs{U} = \abs{V} = l$, we have
 
     \begin{align*}
         \mathbb E_Q\left[ \det[Q]_{S,T}\det[\hermit{Q}]_{U,V} \right] &= \mathbb E_{E,P}\left[ \det[E P]_{S,T}\det[\hermit{P}E]_{U,V} \right],\\
@@ -135,13 +135,13 @@ Now that we know that the signed permutations ensemble is minor orthogonal, we c
 % Formulas
 
 
-Let us denote by $\sigma_k(A)$ the coefficient of of $(-1)^{k}x^{d-k}$ in the characteristic polynomial of a $d$-dimensional matrix $A$. We will use the fact that \todo{Tal vez esto debería ir en preliminares}
+Let us denote by $\sigma_k(A)$ the coefficient of of $(-1)^{k}x^{d-k}$ in the characteristic polynomial of a $d$-dimensional matrix $A$. We will use the fact that 
 
 \begin{equation*}
     \sigma_k(A) = \sum_{\abs{S} = k} \det[A]_{S,S}.
 \end{equation*}
 
-The following two Lemmas will help us to find explicit coefficients for expected characteristic polynomials with the aid of minor orthogonality properties.
+The following two lemmas will help us to find explicit coefficients for expected characteristic polynomials with the aid of minor orthogonality properties.
 
 \begin{lemma} \label{lemma:conjugate_minorth}
     Let $m \le n$, $B$ an $n\times n$ random matrix and $R$ an $m\times n$ minor-orthogonal matrix independent from $B$. For all sets $S,T \subset \binom{[m]}{k}$ we have
@@ -191,11 +191,11 @@ The following two Lemmas will help us to find explicit coefficients for expected
     \noindent which is the $k$th coefficient of $\frac{d!}{a!} \frac{\d^{(a-d)}}{\d x} \mathbb E_A \left[\chi_x(A) \right]$.
 \end{proof}
 
-With these results, now wea re ready to prove the main Theorems relating polynomial convolution to the expected characteristic polynomials of sums and products of random matrices.
+With these results, now wea re ready to prove the main theorems relating polynomial convolutions to the expected characteristic polynomials of sums and products of random matrices.
 
-\subsection{Relationship to polynomial convolution}
+\subsection{Relation to polynomial convolution}
 
-Until now, we have used minor orthogonality properties to find some expressions for expected characteristic polynomials. In this section, we will see that under suitable circumstances, those expressions are actually related to polynomial convolutions. We prove the relationship for the symmetric additive and symmetric multiplicative cases. An analogous for the asymmetric additive case can be found in \cite{article:finitefree}. \todo{Hay que corregir la introducción de la sección (y capítulo) donde dije que estas relaciones sólo se probaban en el caso simétrico aditivo.}
+Until now, we have used minor orthogonality properties to find some expressions for expected characteristic polynomials. In this section, we will see that under suitable circumstances, those expressions are actually related to polynomial convolutions. We prove the relationship for the symmetric additive and symmetric multiplicative cases. An analogous for the asymmetric additive case can be found in \cite{article:finitefree}. %\todo{Hay que corregir la introducción de la sección (y capítulo) donde dije que estas relaciones sólo se probaban en el caso simétrico aditivo.}
 
 For both the additive and multiplicative cases, the results are written in two parts; one for the statement of the expected characteristic polynomial coefficients and another stating explicitly the convolution of expected characteristic polynomials. The relationship with Free Probability Theory will be more evident for the additive case in the next section where we introduce the $\mathcal R_n$ finite transform. For the multiplicative case a similar transform can be introduced, but it is not included in this work. 
 
@@ -219,14 +219,15 @@ For both the additive and multiplicative cases, the results are written in two p
     \noindent together with Theorem \ref{thm:marcus_binet} and Lemma \ref{lemma:conjugate_minorth} to get %\todo{Hay que aclarar las normas de matrices.}
 
     \begin{align*}
-        \mathbb E_{A,B,R}&\left[ \sigma_k(A + RB\hermit{R}) \right] = \sum_{S \in \binom{[n]}{k}} \mathbb E_{A,B,R} \left[ \det[A + RB\hermit{R}]_{S,S} \right],\\ 
-        \intertext{denote by $\overline U$ the complement of $U$, then}
+        \mathbb E_{A,B,R}&\left[ \sigma_k(A + RB\hermit{R}) \right] = \sum_{S \in \binom{[n]}{k}} \mathbb E_{A,B,R} \left[ \det[A + RB\hermit{R}]_{S,S} \right].\\ 
+        \intertext{Denote by $\overline U$ the complement of $U$, then}
+        \mathbb E_{A,B,R}&\left[ \sigma_k(A + RB\hermit{R}) \right]\\
         &= \sum_{S\in\binom{[n]}{k}} \sum_{i=0}^k \sum_{U,V\in \binom{[k]}{i}} (-1)^{\norm{U}_1 + \norm{V}_1} \mathbb E_A\left[ \det [A]_{U(S),V(S)} \right] \mathbb E_{B,R}\left[ \det[RB\hermit R]_{\overline{U}(S),\overline{V}(S)} \right],\\ 
-        &= \sum_{S\in\binom{[n]}{k}} \sum_{i=0}^k \sum_{U,V\in \binom{[k]}{i}} (-1)^{\norm{U}_1 + \norm{V}_1} \mathbb E_A\left[ \det[A]_{U(S),V(S)} \right] \delta_{\overline{U}(S),\overline{V}(S)} \frac{\mathbb E_{B}\left[ \sigma_{k-i}(B)\right]}{\binom{n}{k-i}},\\ 
-        \intertext{using that $U(S)=V(S)$ if and only if $\overline{U}(S) = \overline{V}(S)$,}
+        &= \sum_{S\in\binom{[n]}{k}} \sum_{i=0}^k \sum_{U,V\in \binom{[k]}{i}} (-1)^{\norm{U}_1 + \norm{V}_1} \mathbb E_A\left[ \det[A]_{U(S),V(S)} \right] \delta_{\overline{U}(S),\overline{V}(S)} \frac{\mathbb E_{B}\left[ \sigma_{k-i}(B)\right]}{\binom{n}{k-i}}.\\ 
+        \intertext{Using that $U(S)=V(S)$ if and only if $\overline{U}(S) = \overline{V}(S)$,}
+        \mathbb E_{A,B,R}&\left[ \sigma_k(A + RB\hermit{R}) \right]\\
         &= \sum_{i=0}^k \frac{\mathbb E_{B}\left[ \sigma_{k-i}(B)\right]}{\binom{n}{k-i}} \sum_{S\in\binom{[n]}{k}} \sum_{U,V\in \binom{[k]}{i}}  \mathbb E_A\left[\det[A]_{U(S),U(S)} \right].
     \end{align*}
-
     To finish the proof we need to find
 
     \begin{equation} \label{eq:suma_rara} \sum_{S\in\binom{[n]}{k}} \sum_{U\in \binom{[k]}{i}}  \mathbb E_A\left[\det[A]_{U(S),U(S)} \right]. \end{equation}
@@ -268,7 +269,7 @@ For both the additive and multiplicative cases, the results are written in two p
 \end{proof}
 
 
-The next two Theorems are the analogous of the previous ones for the symmetric multiplicative convolution. As it was stated previously, these convolutions can be seen as ``approximations'' to the Free additive and Free multiplicative convolutions.
+The next two theorems are the analogous of the previous ones for the symmetric multiplicative convolution. As it was stated previously, these convolutions can be seen as ``approximations'' to the free additive and free multiplicative convolutions.
 
 
 \begin{theorem} \label{thm:implies_symm_mult}
@@ -280,12 +281,12 @@ The next two Theorems are the analogous of the previous ones for the symmetric m
 \end{theorem}
 
 \begin{proof}
+By the Cauchy-Binet formula and independence
     \begin{align*}
         \mathbb E_{A,B,R} \left[\sigma_k(ARB\hermit{R})\right] &= \sum_{S \in \binom{[n]}{k}} \mathbb E_{A,B,R} \left[\det[ARB\hermit{R}]_{S,S}\right],\\ 
-        \intertext{By the Cauchy-Binet formula and independence}
         &= \sum_{S,T \in \binom{[n]}{k}} \mathbb E_A\left[ \det[A]_{S,T} \right] \mathbb E_{B,R} \left[ \det [RB\hermit{R}]_{T,S} \right],\\ 
-        \intertext{By Lemma \ref{lemma:conjugate_minorth}}
-        &= \sum_{S,T \in \binom{[n]}{k}} \mathbb E_A\left[\det[A]_{S,T} \right] \delta_{T,S}\frac{\mathbb E_B\left[ \sigma_k(B)\right]}{\binom{n}{k}},\\
+        \intertext{Now we use Lemma \ref{lemma:conjugate_minorth} to conclude}
+        \mathbb E_{A,B,R} \left[\sigma_k(ARB\hermit{R})\right] &= \sum_{S,T \in \binom{[n]}{k}} \mathbb E_A\left[\det[A]_{S,T} \right] \delta_{T,S}\frac{\mathbb E_B\left[ \sigma_k(B)\right]}{\binom{n}{k}},\\
         &= \frac{\mathbb E_A[\sigma_k(A)]\mathbb E_B[\sigma_k(B)]}{\binom{n}{k}}.
     \end{align*}
 \end{proof}
@@ -316,9 +317,9 @@ In finite probability, the $\mathcal R$ transform linearizes free additive convo
     \mathcal R_\mu(s) = \sum_{k=0}^\infty s^{k} r_k,
 \end{equation*}
 
-\noindent with $r_k$ being the free cumulants of the measure. For the Finite Free case, a similar transform can be defined, and we will prove that it converges to the $\mathcal R$ transform. A similar finite transform converging to the corresponding free one can be dfeined for the multiplicative convolution, we do not include those results here. 
+\noindent with $r_k$ being the free cumulants of the measure. For the finite free case, a similar transform can be defined, and we will prove that it converges to the $\mathcal R$ transform. %A similar finite transform converging to the corresponding free one can be defined for the multiplicative convolution, we do not include those results here. 
 
-In the first part of this section we introduce some technical definitions and lemmas, then we define the finite $\mathcal R_n$ transform and prove its two main properties, namely that it converges to a $\mathcal R$ transform and that it linearizes symmetric additive convolution of polynomials. In the following two subsections we use the transform to find the polynomials associated to finite free distributions and later to prove the analogous in Finite Free Probability Theory to the most classical limit theorems in Probability Theory.
+In the first part of this section we introduce some technical definitions and lemmas, then we define the finite $\mathcal R_n$ transform and prove its two main properties, namely that it converges to an $\mathcal R$ transform and that it linearizes symmetric additive convolution of polynomials. In the following two subsections we use the transform to find the polynomials associated to finite free distributions and later to prove the analogous in Finite Free Probability Theory to the most classical limit theorems in Probability Theory. The content of this section is taken from \cite{article:marcus_finite}.
 
 Before stating the results in this section, it is important to introduce the notation for ``congruent polynomials''. Let $p,q$ be two polynomials on $z$, we say that $p$ is congruent with $q$ modulo $z^{n}$ if the first $n+1$ coefficients of $p$ and $q$ coincide. We will denote this relationship by
 
@@ -369,15 +370,14 @@ This measure is similar to the spectral empirical measure of a random matrix. We
 
 Now we will define two objects that are auxiliary in the following proofs. Both are named transforms, but it is important to remark that one of them is an operator acting on functions while the other is a multiset which is uniquely related to another multiset in some way.
 
-The existence of the $U$ transform can be stated by the following Lemma that we state without proof. The proof can be found in \cite{anaya2016cumulantes}.
+The existence of the $U$ transform can be stated by the following lemma that we state without proof. The proof can be found in \cite{anaya2016cumulantes}.
 
 \begin{lemma}[$U$ transform]
-    Let $S$ be a multiset of complex numbers and denote by $\abs S=n$ its number of elements with multiplicity. Then exists an unique multiset of complex numbers $T$ such that $\abs{T}=n$ and 
+    Let $S$ be a multiset of complex numbers and denote by $\abs S=n$ its number of elements with multiplicity. Then there exists an unique multiset of complex numbers $T$ such that $\abs{T}=n$ and 
 
     \begin{equation*}
         \prod_{s_i \in S} (x-s_i) = \frac 1n \sum_{t_i \in T} (x-t_i)^n.
     \end{equation*}
-
     We call such multiset the $U$ transform of $S$.
 \end{lemma}
 
@@ -406,8 +406,7 @@ The Legendre transform, and the properties that will be proven later, will be us
     \begin{equation*}
         f^*(f'(x_0)) = x_0 f'(x_0) - f(x_0).
     \end{equation*}
-
-    If additionally, $f$ has a second derivative, then the following two results are satisfied
+If additionally, $f$ has a second derivative, then the following two results are satisfied
 
     \begin{align*}
         (f')^{-1}(x_0) &= (f^*)'(x_0), \\
@@ -452,7 +451,7 @@ The Legendre transform, and the properties that will be proven later, will be us
     \end{align*}
 \end{proof}
 
-    The following Theorem reales the Legendre transform to an $L^\infty$ norm and will be used in the proof of the convergence of the finite $\mathcal R_n$ transform to an $\mathcal R$ transform.
+    The following theorem relates the Legendre transform to an $L^\infty$ norm and will be used in the proof of the convergence of the finite $\mathcal R_n$ transform to an $\mathcal R$ transform.
 
 \begin{lemma} \label{lemma:legendre_transform_norm}
     Let $D \subset \R$ and $\mu$ a measure that is absolutely continuous with respect to the Lebesgue measure, then for any continuous function $f: D \to \R$ we have that
@@ -509,7 +508,7 @@ With the finite $\mathcal K_n$ transform it is possible to define the finite $\m
     \end{equation*}
 \end{definition}
 
-Notice that for bigger $n$, the definition above is more similar to the definition of the $\mathcal R$ transform in terms of the $\mathcal K$ transform given in Chapter \ref{ch:preliminaries}. If we assume that $\mathcal K_n^{\mu_A}(s)$ converges to some $\mathcal K$ transform when $n\to\infty$, then $\mathcal R_n^{\mu_A}(s)$ would converge to the corresponding $\mathcal R$ transform. In the next Theorem we will prove exactly this convergence.
+Notice that for bigger $n$, the definition above is more similar to the definition of the $\mathcal R$ transform in terms of the $\mathcal K$ transform given in Chapter \ref{ch:preliminaries}. If we assume that $\mathcal K_n^{\mu_A}(s)$ converges to some $\mathcal K$ transform when $n\to\infty$, then $\mathcal R_n^{\mu_A}(s)$ would converge to the corresponding $\mathcal R$ transform. In the next theorem we will prove exactly this convergence.
 
 \begin{theorem} Let $A$ be a self-adjoint $n \times n$ matrix with empirical spectral distribution $\mu_A$, then
 
@@ -574,8 +573,7 @@ The simplest finite $\mathcal K_n$ transform we can find is the one related to t
             0, & \text{otherwise.}
         \end{array} \right.
     \end{equation*}
-
-    Then its finite $\mathcal K_n$ transform is
+Then its finite $\mathcal K_n$ transform is
 
     \begin{equation*}
         \mathcal K_n^{\mu_0} (s) = \left( 1 + \frac1n \right)\frac1s.
@@ -586,11 +584,11 @@ The simplest finite $\mathcal K_n$ transform we can find is the one related to t
     Notice that for every $m$, the measure $\mu_0$ is the empirical spectral measure associated to the matrix $0_{n\times n}$, so we can write
 
     \begin{align*}
-        \norm{ e^{-xs}\Delta^+ (xI) }_n &= \norm{ e^{-xs}(x^n)^{\frac1n} }_n,
-        \intertext{Remember the integral is taken from $\rho_A$ to $\infty$. In tjis case all the eeigenvalues are 0, so}
-        &= \left( \int_0^\infty (e^{-xs}x)^n \right)^{\frac1n} = (\mathcal L[x^n](ns))^{\frac1n},
-        \intertext{where $\mathcal L[f]$ represents the Laplace transform of the function $f$,}
-        &= \left( \frac{n!}{(ns)^{n+1}} \right)^{\frac1n}.
+        \norm{ e^{-xs}\Delta^+ (xI) }_n &= \norm{ e^{-xs}(x^n)^{\frac1n} }_n.
+        \intertext{Remember the integral is taken from $\rho_A$ to $\infty$. In this case all the eigenvalues are 0, so}
+        \norm{ e^{-xs}\Delta^+ (xI) }_n &= \left( \int_0^\infty (e^{-xs}x)^n \right)^{\frac1n} = (\mathcal L[x^n](ns))^{\frac1n},
+        \intertext{where $\mathcal L[f]$ represents the Laplace transform of the function $f$. With this, we have}
+        \norm{ e^{-xs}\Delta^+ (xI) }_n &= \left( \frac{n!}{(ns)^{n+1}} \right)^{\frac1n}.
     \end{align*}
 
     The logarithm of the previous expression is
@@ -598,7 +596,6 @@ The simplest finite $\mathcal K_n$ transform we can find is the one related to t
     \begin{equation*}
         \ln \left( \frac{n!}{(ns)^{n+1}} \right)^{\frac1n} = \frac1n \ln \left( \frac{n!}{(ns)^{n+1}} \right) = \frac1n \log\left( \frac{n!}{(n)^{n+1}}\right) - \frac{n+1}{n} \log s.
     \end{equation*}
-
     Finally, we differentiate to find the desired expression.
 
     \begin{equation*}
@@ -659,21 +656,21 @@ Our next goal is to prove that the finite $\mathcal R_n$ transform linearizes th
     Using this and the previously found result for $\norm{e^{-xs}\Delta^+(xI)}_n^n$ we find
 
     \begin{align*}
-        \frac{\norm{e^{-xs}\Delta^+(xI - A)}_n^n}{\norm{e^{-xs}\Delta^+(xI)}_n^n} &= \frac{(ns)^{n+1}}{n!}\norm{e^{-xs}\Delta^+(xI - A)}_n^n = \frac{(ns)^{n+1}}{n!}\int_{\rho_A}^\infty e^{-nxs} \Delta^+(xI - A)^n \d x,
-        \intertext{by definition of the $U$ transform}
-        &= \frac{(ns)^{n+1}}{n!}\int_{\rho_A}^\infty e^{-nxs} \frac1n \sum_{u_i \in U_A} (x-u_i)^n \d x,
-        \intertext{use the change of variables $y = x + \rho_A$}
-        &= \frac{(ns)^{n+1}e^{-ns\rho_A}}{n!}\int_{0}^\infty e^{-nsy} \frac1n \sum_{u_i \in U_A} (y + \rho_A-u_i)^n \d y, \\
-        \intertext{using linearity and definition of the Laplace transform}
-        &= \frac1n \sum_{u_i\in U_A} \frac{(ns)^{n+1}}{n!}e^{-ns\rho_A} \mathcal L\{(y + \rho_A - U_A)^n\}(ns), 
-        \intertext{by linearity of the Laplace transform}
-        &=  \frac1n \sum_{u_i\in U_A} \frac{(ns)^{n+1}}{n!}e^{-ns\rho_A} \sum_{k=0}^n \binom nk  (\rho_A - u_i)^{n-k}\mathcal L\{y^k\}(ns).
+        \frac{\norm{e^{-xs}\Delta^+(xI - A)}_n^n}{\norm{e^{-xs}\Delta^+(xI)}_n^n} &= \frac{(ns)^{n+1}}{n!}\norm{e^{-xs}\Delta^+(xI - A)}_n^n = \frac{(ns)^{n+1}}{n!}\int_{\rho_A}^\infty e^{-nxs} \Delta^+(xI - A)^n \d x.
+        \intertext{By definition of the $U$ transform}
+        \frac{\norm{e^{-xs}\Delta^+(xI - A)}_n^n}{\norm{e^{-xs}\Delta^+(xI)}_n^n} &= \frac{(ns)^{n+1}}{n!}\int_{\rho_A}^\infty e^{-nxs} \frac1n \sum_{u_i \in U_A} (x-u_i)^n \d x.
+        \intertext{Use the change of variables $y = x + \rho_A$}
+        \frac{\norm{e^{-xs}\Delta^+(xI - A)}_n^n}{\norm{e^{-xs}\Delta^+(xI)}_n^n} &= \frac{(ns)^{n+1}e^{-ns\rho_A}}{n!}\int_{0}^\infty e^{-nsy} \frac1n \sum_{u_i \in U_A} (y + \rho_A-u_i)^n \d y. \\
+        \intertext{Using linearity and the definition of the Laplace transform}
+        \frac{\norm{e^{-xs}\Delta^+(xI - A)}_n^n}{\norm{e^{-xs}\Delta^+(xI)}_n^n} &= \frac1n \sum_{u_i\in U_A} \frac{(ns)^{n+1}}{n!}e^{-ns\rho_A} \mathcal L\{(y + \rho_A - U_A)^n\}(ns).
+        \intertext{By linearity of the Laplace transform}
+        \frac{\norm{e^{-xs}\Delta^+(xI - A)}_n^n}{\norm{e^{-xs}\Delta^+(xI)}_n^n} &=  \frac1n \sum_{u_i\in U_A} \frac{(ns)^{n+1}}{n!}e^{-ns\rho_A} \sum_{k=0}^n \binom nk  (\rho_A - u_i)^{n-k}\mathcal L\{y^k\}(ns).
         \intertext{Finally, we expand and cancel terms to arrive to}
         \frac{\norm{e^{-xs}\Delta^+(xI - A)}_n^n}{\norm{e^{-xs}\Delta^+(xI)}_n^n}
         &= \frac1n \sum_{u_i\in U_A} \frac{(ns)^{n+1}}{n!}e^{-ns\rho_A} \sum_{k=0}^n \frac{n!}{k!(n-k)!}  (\rho_A - u_i)^{n-k}\frac{k!}{(ns)^{k+1}}, \\
-        &= \frac1n \sum_{u_i \in U_A} e^{-ns\rho_A} \sum_{k=0}^n \frac{(ns)^{n-k}(\rho_A - u_i)^{n-k}}{(n-k)!}, \\
-        \intertext{we can use the polynomial congruence relation for the series expansion of the exponential function and the truncated series $\sum_{k=0}^n x^n/n!$.}
-        &\equiv \frac1n \sum_{u_i\in U_A} e^{-ns\rho_A} e^{ns(\rho_A - u_i)}, \quad \mod [s^{n+1}],\\
+        &= \frac1n \sum_{u_i \in U_A} e^{-ns\rho_A} \sum_{k=0}^n \frac{(ns)^{n-k}(\rho_A - u_i)^{n-k}}{(n-k)!}.\\
+        \intertext{We can use the polynomial congruence relation for the series expansion of the exponential function and the truncated series $\sum_{k=0}^n x^n/n!$.}
+        \frac{\norm{e^{-xs}\Delta^+(xI - A)}_n^n}{\norm{e^{-xs}\Delta^+(xI)}_n^n} &\equiv \frac1n \sum_{u_i\in U_A} e^{-ns\rho_A} e^{ns(\rho_A - u_i)}, \quad \mod [s^{n+1}],\\
         &\equiv \frac1n \sum_{u_i\in U_A} e^{-nsu_i}, \quad \mod [s^{n+1}].
     \end{align*}
 \end{proof}
@@ -696,7 +693,7 @@ With the previous result in hand, it is now easier to find the finite $\mathcal 
         \ln \left( \frac{\norm{e^{-xs}\Delta^+(xI - A)}_n^n}{\norm{e^{-xs}\Delta^+(xI)}_n^n} \right) \equiv \ln\left( \frac1n\sum_{u_i \in U_A} e^{-ns u_i} \right), \qquad \mod [s^{n+1}].
     \end{equation*}
 
-    The first $n+1$ coeficientes of the power series coincide, so the first $k$ coefficients of the derivatives also coincide. Now we use the definition of the $\mathcal R_n$ transform
+    The first $n+1$ coefficients of the power series coincide, so the first $k$ coefficients of the derivatives also coincide. Now we use the definition of the $\mathcal R_n$ transform
 
     \begin{align*}
         \mathcal R_{n}^{\mu_A}(s) &= \mathcal K_{n}^{\mu_A}(s) - \mathcal K_n^{\mu_0}(s), \\
@@ -706,7 +703,7 @@ With the previous result in hand, it is now easier to find the finite $\mathcal 
     \end{align*}
 \end{proof}
 
-One of the central results in this section is the equivalence of the symmetric additive convolution of two polynomials and the sum of the finite $\mathcal R_n$ transform of the measures associated to its roots (which is in turn the empirical measure associated to the eigenvalues of some matrix). The following Theorem shows us that the analogy between the finite $\mathcal R_n$ transform and the $\mathcal R$ transform is not only in terms of their convergence, but also in the role of linearizing convolution. 
+One of the central results in this section is the equivalence of the symmetric additive convolution of two polynomials and the sum of the finite $\mathcal R_n$ transform of the measures associated to its roots (which is in turn the empirical measure associated to the eigenvalues of some matrix). The following theorem shows us that the analogy between the finite $\mathcal R_n$ transform and the $\mathcal R$ transform is not only in terms of their convergence, but also in the role of linearizing convolution. 
 
 \begin{theorem}
     Let $A$ and $B$ be two $n\times n$ real symmetric matrices. The following are equivalents:
@@ -742,16 +739,16 @@ One of the central results in this section is the equivalence of the symmetric a
         \frac{\partial}{\partial_s} f_A(s) + \frac{\partial}{\partial_s} f_B(s) \equiv \frac{\partial}{\partial_s} f_{A+B}(s), \qquad \mod[s^n].
     \end{equation}
 
-    So proving the equivalence of the two statements reduces to prove the equivalence between \eqref{eq:f_matrix_module} and \eqref{eq:differential_matrix_module}. Because the formal series in \eqref{eq:f_matrix_module} coincide up to the $n+1$th term, the derivatives coincide up to the $n$th term, so one implication is trivial. For the second implication, it suffices to prove that $f_A(0) + f_B(0) = f_{A+B}(0)$, but we have that $f_A(0)=f_B(0)=f_{A+B}(0)$, so the result follows.
+    So proving the equivalence of the two statements reduces to prove the equivalence between \eqref{eq:f_matrix_module} and \eqref{eq:differential_matrix_module}. Because the formal series in \eqref{eq:f_matrix_module} coincide up to the $(n+1)$th term, the derivatives coincide up to the $n$th term, so one implication is trivial. For the second implication, it suffices to prove that $f_A(0) + f_B(0) = f_{A+B}(0)$, but we have that $f_A(0)=f_B(0)=f_{A+B}(0)$, so the result follows.
 \end{proof} 
 
 As it was mentioned several times before in this chapter, the relationship between symmetric additive convolution and free additive convolution shown by these results is not exclusive. Similar results can be given for the symmetric multiplicative convolution and free multiplicative convolution. Although we are not including them here, they can be consulted in \cite{marcus2021polynomial} and \cite{article:finitefree}.
 
-For the last part of this Chapter, we will use the recently exposed tools to find the polynomials corresponding to three classical laws in the finite free setting; namely the constant, Gaussian and Poisson distributions. After that, we will prove the finite free version of the three corresponding limit theorems; the law of large numbers, the central limit theorem and the Poisson limit theorem.
+For the last part of this chapter, we will use the recently exposed tools to find the polynomials corresponding to three classical laws in the finite free setting; namely the constant, Gaussian and Poisson distributions. After that, we will prove the finite free version of the three corresponding limit theorems; the law of large numbers, the central limit theorem and the Poisson limit theorem.
 
-\subsection{Finite free distributions}
+\subsection{Basic distributions in Finite Free Probability}
 
-We have seen that the finite $\mathcal R_n$ transform is a power series that linearizes finite free convolution. In free probability terms, we can say that the corresponding coefficients in the expansion are the finite free cumulants. Using this and the fact that we know what are the cumulants for several well known distributions, we can find the polynomials corresponding to these laws in Finite Free Probability Theory. As a prerequisite, we prove a Theorem that allows us to recover a polynomial from the finite $\mathcal R_n$ transform of its roots.
+We have seen that the finite $\mathcal R_n$ transform is a power series that linearizes finite free convolution. In free probability terms, we can say that the corresponding coefficients in the expansion are the finite free cumulants. Using this and the fact that we know what are the cumulants for several well known distributions, we can find the polynomials corresponding to these laws in Finite Free Probability Theory. As a prerequisite, we prove a theorem that allows us to recover a polynomial from the finite $\mathcal R_n$ transform of its roots.
 
 \begin{theorem} \label{thm:if_and_only_if}
     Let $P(n^{-1}\partial_z)$ be a polynomial on $n^{-1}\partial_z$ such that the linear differential operator applied to $x^n$, $P(n^{-1}\partial_z)[z^n]$ is a monic polynomial. Then $P(n^{-1}\partial_z) = \det[zI - A]$ for a matrix $A$ if and only if 
@@ -842,7 +839,7 @@ We can use Theorem \ref{thm:if_and_only_if} again to find
     p(z) &= P(n^{-1}\partial_z)[z^n] = e^{-\sigma^2\frac{\partial_z^2}{2n}}[z^n] \eqcolon H_n(z,\sigma^2/n). 
 \end{align*}
 
-The last expression corresponds to the Hermite polynomial wit variance $\sigma^2/n$.
+The last expression corresponds to the Hermite polynomial with variance $\sigma^2/n$.
 
 \subsubsection{Poisson distribution}
 
@@ -870,7 +867,7 @@ So the finite free Poisson distribution corresponds to a generalized Laguerre po
 
 \subsection{Finite Free Limit Theorems}
 
-One of the central topics in Probability Theory is the convergence of sums of random variables to some laws. In Free Probability we have analogous convergence Theorems for the main distributions. Three of the most famous limit Theorems have the previously shown laws as limits (constant, Gaussian, Poisson). In non-commutative Probability Theory in general, these laws are characterized by their cumulants and happen to be limits of the corresponding sums of random variables. In what follows, we will show that when we re-scale and convolute polynomials under standard assumptions, we also recover our three limit laws.
+One of the central topics in Probability Theory is the convergence of sums of random variables to some laws. In Free Probability we have analogous convergence theorems for the main distributions. Three of the most famous limit theorems have the previously shown laws as limits (constant, Gaussian, Poisson). In non-commutative Probability Theory in general, these laws are characterized by their cumulants and happen to be limits of the corresponding sums of random variables. In what follows, we will show that when we re-scale and convolute polynomials under standard assumptions, we also recover our three limit laws.
 
 \begin{theorem}[Finite Free Law of Large Numbers]
     Let $(p_i(z))_{i=1}^n$ be a sequence of degree $n$ monic polynomials with real roots $r_{ij}$ such that

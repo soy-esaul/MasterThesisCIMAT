@@ -36,12 +36,12 @@ A process $B$ as defined above clearly has real eigenvalues, so we can order the
     \end{equation} 
 \end{definition}
 
-In the following Theorem, we derive a stochastic differential equation for the behaviour of a Brownian symmetric matrix's spectrum on $[0,\tau)$.
+In the following theorem, we derive a stochastic differential equation for the behaviour of a Brownian symmetric matrix's spectrum on $[0,\tau)$.
 
 \begin{theorem} \label{thm:dyson_real}
     Let $B = (B(t), t \ge 0)$ be a symmetric $n\times n$ matrix-valued Brownian motion in $\M_{n,n}(\R)$ with diagonalization $B = H \Lambda \trans{H}$ and eigenvalues $\lambda_1, \dots, \lambda_n$. Define $\tau$ the first time of collision of the eigenvalues as in \eqref{eq:collision_time_dyson}.
     
-    Then, for $t < \tau$ the eigenvalue process $\Lambda = (\Lambda(t), t\ge 0)$ verifies the following stochastic differential equations:
+    Then, for $t < \tau$ the eigenvalue process $\Lambda = (\Lambda(t), t\ge 0)$ verifies the following system of stochastic differential equations:
 
     \begin{equation}
         \d \lambda_i = \sqrt{2}\d W_i + \sum_{k\neq i} \frac{\d t}{\lambda_i - \lambda_k}, 
@@ -75,11 +75,11 @@ In the following Theorem, we derive a stochastic differential equation for the b
 
     \begin{align*}
         \d \Lambda &= \d (H^T B H) = (\partial H^T B)H + H^TB\partial H = (\partial H)^T B H + H^T (\partial B) H + H^T B \partial H, \\ 
-        &= (\partial H)^T H \Lambda + H^T (\partial B) H + \lambda H^T \partial H = (\partial L)^T \Lambda + H^T (\partial B) H + \Lambda \partial L, \\ 
+        &= (\partial H)^T H \Lambda + H^T (\partial B) H + \Lambda H^T \partial H = (\partial L)^T \Lambda + H^T (\partial B) H + \Lambda \partial L, \\ 
         &= H^T (\partial B) H - (\partial L) \Lambda + \Lambda \partial L. 
     \end{align*}
 
-    The diagonals of $(\partial L)\Lambda$ and $\Lambda \partial L$ coincide, so $\d \Lambda_{ii} = \left(H^T(\partial B)H\right)_{ii}$. Let $\d N \coloneqq H^T(\partial B)H$,. Now, for $i\neq j$, we use that $\Lambda$ is diagonal to get
+    The diagonals of $(\partial L)\Lambda$ and $\Lambda \partial L$ coincide, so $\d \Lambda_{ii} = \left(H^T(\partial B)H\right)_{ii}$. Let $\d N \coloneqq H^T(\partial B)H$. Now, for $i\neq j$, we use that $\Lambda$ is diagonal to get
 
     \begin{equation*}
         0 = \d N_{ij} + (\lambda_i - \lambda_j) \d L_{ij}.
@@ -218,7 +218,7 @@ Although we do not prove it here, it is a well known fact that equation \eqref{e
         0 = \d I = \d(\hermit H H) = \hermit H \d H + \hermit{(\d H)} H + \hermit{(\d H)} \d H = \hermit H \partial H + \hermit{(\partial H)} H = \d L + \d \hermit{L}.
     \end{equation*}
 
-    We have that $\d \hermit L = - \d L$ and $L$ is skew-hermitian. Now we use Itô fomrula for $\Lambda = \hermit H B H$,
+    We have that $\d \hermit L = - \d L$ and $L$ is skew-hermitian. Now we use Itô formula for $\Lambda = \hermit H B H$,
 
     \begin{align*}
         \d \Lambda &= \d (\hermit H B H) = (\partial \hermit H B)H + \hermit H B\partial H = \hermit{(\partial H)} B H + \hermit H (\partial B) H + \hermit H B \partial H, \\ 
@@ -286,77 +286,6 @@ Although we do not prove it here, it is a well known fact that equation \eqref{e
 
 
 
-
-
-
-
-
-\subsection{Non-collision of the eigenvalues}
-
-We have found that the eigenvalues of a Brownian motion in $\M_{n,n}(\R)$ and $\M_{n,n}(\C)$ satisfy Dyson's equation until the first time of collision. Now we prove that this time $\tau$ is infinite a.s. 
-
-The proof we give is taken from \cite{article:multiyamada} and makes use of the so called McKean's argument appearing first in \cite{book:mckean} and used in \cite{bru1989diffusions} and \cite{thesis_trujillo}. The result is rather general because it is used for the generalization to matrix-valued diffusion processes.
-
-\begin{theorem} \label{thm:collision}
-    Let $\Lambda = (\lambda_i)_{i=1,\dots,p}$ be a process starting at the open Weyl chamber $\Delta_p$ and satisfying \eqref{eq:gen_dyson} with functions $g,h,b:\R \to \R$ such that $g^2, h^2, b$ are Lipschitz continuous and $g^2h^2$ is convex or is continuously differentiable with derivative uniformly Lipschitz on $\R$. Then the first collision time $\tau$ defined as in \eqref{eq:collision_time} is infinite a.s.
-\end{theorem}
-
-\begin{proof}
-
-    
-    
-    Define $U \coloneqq -\sum_{i<j} \log(\lambda_j - \lambda_i)$ for $t\in [0,\tau]$. By Itô's formula and the fact that $\d \lambda_i\d\lambda_j = 4\delta_{ij}g^2(\lambda_i)h^2(\lambda_i)$ we find
-
-    \begin{align*}
-        \d U &= \sum_{i < j} \left[\frac{\d \lambda_i - \d \lambda_j}{\lambda_j - \lambda_i} + \frac12\frac{\d\langle \lambda_i, \lambda_i \rangle + \d\langle \lambda_j, \lambda_j \rangle}{(\lambda_j - \lambda_i)^2}\right],\\
-        &= \sum_{i<j} \left[\frac{\d \lambda_i - \d \lambda_j}{\lambda_j - \lambda_i} + 2\frac{g^2(\lambda_i)h^2(\lambda_i)-g^2(\lambda_j)h^2(\lambda_j)}{(\lambda_j - \lambda_i)^2}\d t\right].
-    \end{align*}
-
-    Now we define the following processes
-
-    \begin{align*}
-        \d M &= 2 \sum_{i<j} \frac{g(\lambda_i)h(\lambda_i)\d \nu_i - g(\lambda_)h(\lambda_j)\d \nu_j}{\lambda_j - \lambda_i},\\
-        \d A_1 &= \sum_{i<j} \frac{b(\lambda_i) - b(\lambda_j)}{\lambda_j - \lambda_i}\d t,\\
-        \d A_2 &= 2\sum_{i<j} \frac{\left( g^2(\lambda_j) - g^2(\lambda_i) \right)\left(h^2(\lambda_j) - h^2(\lambda_i)\right)}{(\lambda_j - \lambda_i)}\d t,\\
-        \d A_3 &= \sum_{i<j}\frac{1}{\lambda_j-\lambda_i}\sum_{k\neq i, k \neq j}\left( \frac{G(\lambda_i,\lambda_k)}{\lambda_i-\lambda_k} - \frac{G(\lambda_j,\lambda_k)}{\lambda_j - \lambda_k} \right) \d t,\\
-        &= \sum_{i<j<k} \frac{G(\lambda_j,\lambda_k)(\lambda_k-\lambda_j)-G(\lambda_i,\lambda_k)(\lambda_k-\lambda_i)+G(\lambda_i,\lambda_j)(\lambda_j-\lambda_i)}{(\lambda_j-\lambda_i)(\lambda_k-\lambda_i)(\lambda_k-\lambda_j)}\d t.
-    \end{align*}
-
-    Using \eqref{eq:gen_dyson} we find that $\d U = \d M + \d A_1 + \d A_2 + \d A_3$. Our goal is to use the McKean argument by proving that $U$ is bounded over any bounded interval $[0,t]$. Let us start by showing that the finite variation part of $U$ ($\d A_1, \d A_2$, and $\d A_3$) is bounded. Lipschitz continuity of $b,g^2$ and $h^2$ implies that $\abs{A_1(t)}\le Kp(p-1)t/2$ and $\abs{A_2(t)}\le K^2p(p-1)t$ with $K$ a constant appearing in the Lipschitz condition. Later, we define a function $H$ as
-
-    \begin{equation*}
-        H(x,yz) \coloneqq \left[ (g^2(x) - g^2(z))(h^2(y) - h^2(z)) + (g^2(y) - g^2(z))(h^2(x) - h^2(z))\right](y-x),
-    \end{equation*}
-
-    \noindent then
-
-    \begin{equation*}
-        H(x,y,z) = \left( G(x,y) - G(x,z) - G(y,z) + G(z,z)\right)(y-x),
-    \end{equation*}
-
-    \noindent and
-
-    \begin{align*}
-        H(x,y,z) + H(y,z,x) - H(x,z,y) &= 2(z-y)G(y,z) - 2(z-x)G(x,z) + 2(y-x)G(x,y)\\
-         &+ G(x,x)(z-y) - G(y,y)(z-x) + G(z,z)(y-x).
-    \end{align*}
-
-    By the Lipschitz conditions on $g^2$ and $h^2$ we find that $\abs{H(x,y,z)} \le 2K^2\abs{(y-x)(z-y)(z-x)}$. Using the last equality, \todo{Escribir detalles de esta cuenta} we can write $2\d A_3 = \d A_4 + \d A_5$, with $0 \le A_4(t) \le K^2 p(p-1)(p-2)t/6$ and
-
-    \begin{align}%Escribir detalles de esta cuenta
-        \d A_5(t) &= \sum_{i<j<k} \frac{ G(\lambda_j,\lambda_j)(\lambda_k - \lambda_i) - G(\lambda_i,\lambda_i)(\lambda_k - \lambda_j) - G(\lambda_k,\lambda_k)(\lambda_j-\lambda_i)}{(\lambda_j-\lambda_i)(\lambda_k-\lambda_i)(\lambda_k-\lambda_j)}\d t,\\
-        &= \sum_{i<j<k} \left( \frac{G(\lambda_j,\lambda_j) - G(\lambda_i,\lambda_i) }{\lambda_j - \lambda_i} - \frac{G(\lambda_k,\lambda_k) - G(\lambda_j,\lambda_j)}{\lambda_k - \lambda_j} \right)\frac{1}{\lambda_k - \lambda_i}\d t. \label{eq:dA5}
-    \end{align}
-
-    If $G(x,x)$ is convex, then $A_5$ is non positive. If $G(x,x)$ is continuously differentiable with derivative uniformly Lipschitz, then
-
-    \[ \abs{G'(x,x) - G'(y,y)} \le C\abs{x-y}, \]
-
-    \noindent and the \eqref{eq:dA5} is bounded by $C$, which means $\abs{A_5(t)}\le Ct$.
-
-    We have found that the finite variation part of $U$ is bounded for finite $t$, then we can apply McKean's argument \ref{lemma:mckean} to conclude that $U$ can not explode in finite time and thus $\tau = \infty$ a.s.
-
-\end{proof}
 
 
 

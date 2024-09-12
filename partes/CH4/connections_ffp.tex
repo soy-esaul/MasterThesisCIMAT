@@ -49,7 +49,7 @@ Before proceeding with the processes, let us state a lemma that will help us to 
     The determinant of $zI_n - A$ is 
 
     \begin{align*}
-        \det \left( zI_n - A \right) &= (zI_n - A)_{11}\det(zI_{n-1}-B) - (zI_n - A)_{12}(xI_n - A)_{21}\det(xI_n - C),\\ 
+        \det \left( zI_n - A \right) &= (zI_n - A)_{11}\det(zI_{n-1}-B) - (zI_n - A)_{12}(zI_{n-2} - A)_{21}\det(zI_n - C),\\ 
         &= (z - a_n)\chi^{n-1}_z(A) - b_{n-1}^2\chi^{n-2}_z(A).
     \end{align*}
 \end{proof}
@@ -64,10 +64,10 @@ As a first step, we will make use of the invariance under orthogonal (or unitary
 
 
 \begin{lemma} \label{lemma:tridiag}
-    Let $A_{\beta}$ denote an $n\times n$ matrix from the GOE, GUE or GSE, for $\beta = 1,2,4$, respectively. Then the eigenvalues of the tridiagonal matrix $H_\beta$ have the same joint law as the eigenvalues of $A_\beta$, with $H_\beta$ defined as
+    Let $A_{\beta}$ denote an $n\times n$ Gaussian invariant ensemble, GOE for $\beta=1$, GUE for $\beta =2$ and GSE for $\beta=4$. Then the eigenvalues of the tridiagonal matrix $H_\beta$ have the same joint law as the eigenvalues of $A_\beta$, with $G_\beta$ defined as
 
     \begin{align} \label{eq:tridiag_hermite}
-        H_\beta &= \frac1{\sqrt2}\begin{bmatrix}
+        G_\beta &= \frac1{\sqrt2}\begin{bmatrix}
             N_1   & \xi_2 & 0     & \cdots & 0 \\ 
             \xi_2 & N_2   & \xi_3 & \cdots & 0 \\
             0     & \xi_3 & N_3  & \cdots & 0 \\
@@ -95,14 +95,24 @@ As a first step, we will make use of the invariance under orthogonal (or unitary
         \end{bmatrix},
     \end{align*}
 
-    \noindent with $N_1$ a normal random variable, $\vec x$ an $n-1$-dimensional gaussian vector with independent entries in $\R, \C$ or $\H$, depending on $\beta$, and $B_{\beta}$ an $(n-1)\times(n-1)$ matrix from the GOE, GUE or GSE, respectively. All of the elements are independent from each other.
+    \noindent with $N_1$ a normal random variable, $\vec x$ an $n-1$-dimensional Gaussian vector with independent standard Gaussian entries in $\R, \C$ or $\H$ depending on $\beta$, and $B_{\beta}$ an $(n-1)\times(n-1)$ GOE, GUE or GSE, for $\beta = 1,2,4$, respectively. All of the elements are independent of each other.
 
-    Now we take $H$ to be any $(n-1)\times(n-1)$ orthogonal (or unitary, symplectic, according to $\beta$) matrix such that $H \trans{\vec x} = \norm{\vec x}_2 e_1$, where $e_1 = (1,0,\cdots,0)$ is the first element in the canonical basis of $\R^{n-1}$. Then we have
+    Now we take $\vec v_1, \vec v_2, \dots, \vec v_{n-2}$ to be any vectors independent of $x$ with $\norm{\vec v_i}_2 = \norm{\vec x}_2$ for every $i$. Define a matrix $Q$ such that
+
+    \begin{align*}
+        Q \coloneqq \frac1{\norm{\vec x}}\begin{bmatrix}
+            \trans{\vec x} \\
+            \trans{\vec v_1} \\
+            \vdots \\
+            \trans{\vec v_n} 
+        \end{bmatrix}.
+    \end{align*}
+    Then $Q$ is an $(n-1)\times(n-1)$ orthogonal (or unitary, symplectic, according to $\beta$) matrix such that $Q \trans{\vec x} = \norm{\vec x}_2 e_1$, where $e_1 = (1,0,\cdots,0)$ is the first element in the canonical basis of $\R^{n-1}$. With this,  we have
 
     \begin{align*}
         \begin{bmatrix}
             1 & \trans{\vec0} \\ 
-            \vec0 & H
+            \vec0 & Q
         \end{bmatrix} 
         \begin{bmatrix}
             N_1 & \trans{\vec x} \\ 
@@ -110,32 +120,32 @@ As a first step, we will make use of the invariance under orthogonal (or unitary
         \end{bmatrix}  
         \begin{bmatrix}
             1 & \trans{\vec 0} \\ 
-            \vec 0 & \trans H
+            \vec 0 & \trans Q
         \end{bmatrix} &= \begin{bmatrix}
             N_1 & \trans{\vec x} \\ 
-            \norm{\vec x}_2e_1 & H B_{\beta}
+            \norm{\vec x}_2e_1 & Q B_{\beta}
         \end{bmatrix}  
         \begin{bmatrix}
             1 & \trans{\vec0} \\ 
-            \vec0 & \trans H
+            \vec0 & \trans Q
         \end{bmatrix} 
         =
         \begin{bmatrix}
             N_1 & \norm{x}_2\trans{e_1} \\ 
-            \norm{x}_2 e_1 & H B_\beta \trans{H}
+            \norm{x}_2 e_1 & Q B_\beta \trans{Q}
         \end{bmatrix}.
     \end{align*}
 
-    Now we can find the distribution of each of the blocks of the new matrix. The variable $N_1$ has not changed, it is a standard normal variable. The term $\norm{\vec x}_2$ is the norm of a Gaussian vector of length $n-1$ with real (complex or quaternionic) entries, non-correlated and with variance $1/2$, so it is distributed like a $\frac1{\sqrt{2}}\chi_{\beta(n-1)}$ random variable, where $\beta$ indicates the number of normal variables in each entry of the matrix. Since $B_\beta$ is a GOE (GUE, GSE), it is invariant under orthogonal (unitary, symplectic) transformations and thus $H B_{\beta} \trans{H}$ is a GOE (GUE, GSE).
+    Now we can find the distribution of each of the blocks of the new matrix. The variable $N_1$ has not changed, it is a standard normal variable. The term $\norm{\vec x}_2$ is the norm of a Gaussian vector of length $n-1$ with real (complex or quaternionic) entries, non-correlated and with variance $1/2$, so it is distributed like a $\frac1{\sqrt{2}}\chi_{\beta(n-1)}$ random variable, where $\beta$ indicates the number of normal variables in each entry of the matrix. Since $B_\beta$ is a GOE (GUE, GSE), it is invariant under orthogonal (unitary, symplectic) transformations and thus $Q B_{\beta} \trans{Q}$ is a GOE (GUE, GSE).
 
     The matrix $ \begin{bmatrix}
         1 & \trans{\vec0} \\ 
-        \vec0 & H
+        \vec0 & Q
     \end{bmatrix}$ is orthogonal (unitary, symplectic), so the eigenvalue distribution of $A_\beta$ remains unchanged under this transformation. By repeating the procedure with $B_\beta$, we find the tridiagonal matrix \eqref{eq:tridiag_hermite}, which finishes the proof.
 \end{proof}
 
 
-Since $H_\beta$ has the same distribution as an invariant Gaussian ensemble, the expected characteristic polynomials are the same, and we can find them using that $H_\beta$ is tridiagonal and Lemma \ref{lemma:chpol_tridiag}.
+Since $G_\beta$ has the same distribution as an invariant Gaussian ensemble, the expected characteristic polynomials are the same, and we can find them using that $G_\beta$ is tridiagonal and Lemma \ref{lemma:chpol_tridiag}.
 
 
 
@@ -160,10 +170,10 @@ Since $H_\beta$ has the same distribution as an invariant Gaussian ensemble, the
     For $P_2(z)$, we have
 
     \begin{align*}
-        P_2(z) &= \mathbb E \left( \det \begin{bmatrix}
+        P_2(z) &= \mathbb E \left( \det \frac1{\sqrt2}\begin{bmatrix}
         z - N_1 & \xi_{2} \\ 
         \xi_2 & z - N_2
-        \end{bmatrix} \right) = \mathbb E \left[ \left(z - \frac{N_1}{\sqrt{2}}\right)^2 - \frac{\xi_2^2}2 \right],\\ 
+        \end{bmatrix} \right) = \mathbb E \left[ \left(z - \frac{N_1}{\sqrt{2}}\right)\left(z - \frac{N_2}{\sqrt{2}}\right) - \frac{\xi_2^2}2 \right],\\ 
         &= z^2 - 1.
     \end{align*}
 
@@ -177,44 +187,59 @@ Recall that a self adjoint Brownian motion has the same law as $\sqrt{t}$ times 
 \end{corollary}
 
 \begin{proof}
-
-    We will prove the result by showing that $P_n(x,t)$ satisfies the following recursion
-    
+    Find the expected characteristic polynomial by definition and use the equality in distribution of $B(t)$ with $A_2$, a GUE;
     \begin{align*}
-        P_n(z,t) &= x P_{n-1}(z,t) - t(n-1)P_{n-2}(z,t),
+        \E{ \det[ zI - B(t) ] } &= \E{ \det[ zI - \sqrt{t} A_2 ] } = t^{-\frac n2}\E{ \det[ zt^{\frac12}I - A_2 ] },
+        \intertext{using Theorem \ref{thm:dyson_is_hermite}}
+        &= t^{-\frac n2}H_n(zt^{\frac12}) = t^{-\frac n2} n! \sum_{k=0}^{\lfloor \frac n2\rfloor} \frac{(-1)^k(zt^{\frac12})^{n - 2k}}{2^k k! (n-2k)!},\\
+        &= n! \sum_{k=0}^{\lfloor \frac n2\rfloor} \frac{(-t)^kz^{n - 2k}}{2^k k! (n-2k)!} = H_n(z,t).
     \end{align*}
-
-    \noindent with initial conditions $P_1(z,t) = z$ and $P_2(z,t) = z^2-t$.
-
-    For any given $t$, $B(t)$ has the same law as $\sqrt{t}A_2$ with $A_2$ a GUE. By Lemma \ref{lemma:tridiag}, the expected characteristic polynomial is the same as that of $\sqrt{t}H_2$ with $H_2$ a $2$-Hermite polynomial. Let $Q_n(x,t)$ be the characteristic polyomial of $\sqrt{t}H_2$, applying Lemma \ref{lemma:chpol_tridiag} we have
-
-    \begin{align*}
-        P_n(x,t) &= \mathbb E \left(  \left( x - \sqrt{\frac t2}N_1 \right) Q_{n-1}(x,t) - \frac t2 \xi_{2(n-1)}^2 Q_{n-2}(x,t)\right), \\ 
-        &= x P_{n-1}(x,t) - t(n-1)P_{n-2}(x,t).
-    \end{align*}
-
-    Now we find the first two polynomials,
-
-    \begin{align*}
-        P_1(x,t) &= \mathbb E \left( x - \sqrt{\frac t2}N_1 \right) = x,\\
-        P_2(x,t) &= \mathbb E \left( \det\begin{bmatrix}
-            x - \sqrt{\frac t2}N_1 & \sqrt{\frac t2} \xi_2 \\ 
-            \sqrt{\frac t2} \xi_2  & x - \sqrt{\frac t2}N_2                         
-        \end{bmatrix} \right),\\ 
-        &= \mathbb E \left( \left(x - \sqrt{\frac t2}N_1\right)\left( x - \sqrt{\frac t2}N_2 \right) - \frac t2 \xi_2^2 \right),\\ 
-        &= x^2 - t.
-    \end{align*}
-
-    With this, we have found a recursion and initial conditions that are enough to uniquely determine the expected characteristic polynomial of a self-adjoint complex Brownian matrix.
 \end{proof}
+
+% \begin{proof}
+
+%     We will prove the result by showing that $P_n(x,t)$ satisfies the following recursion
+    
+%     \begin{align*}
+%         P_n(z,t) &= x P_{n-1}(z,t) - t(n-1)P_{n-2}(z,t),
+%     \end{align*}
+
+%     \noindent with initial conditions $P_1(z,t) = z$ and $P_2(z,t) = z^2-t$.
+
+%     For any given $t$, $B(t)$ has the same law as $\sqrt{t}A_2$ with $A_2$ a GUE. By Lemma \ref{lemma:tridiag}, the expected characteristic polynomial is the same as that of $\sqrt{t}H_2$ with $H_2$ a $2$-Hermite polynomial. Let $Q_n(x,t)$ be the characteristic polyomial of $\sqrt{t}H_2$, applying Lemma \ref{lemma:chpol_tridiag} we have
+
+%     \begin{align*}
+%         P_n(x,t) &= \mathbb E \left(  \left( x - \sqrt{\frac t2}N_1 \right) Q_{n-1}(x,t) - \frac t2 \xi_{2(n-1)}^2 Q_{n-2}(x,t)\right), \\ 
+%         &= x P_{n-1}(x,t) - t(n-1)P_{n-2}(x,t).
+%     \end{align*}
+
+%     Now we find the first two polynomials,
+
+%     \begin{align*}
+%         P_1(x,t) &= \mathbb E \left( x - \sqrt{\frac t2}N_1 \right) = x,\\
+%         P_2(x,t) &= \mathbb E \left( \det\begin{bmatrix}
+%             x - \sqrt{\frac t2}N_1 & \sqrt{\frac t2} \xi_2 \\ 
+%             \sqrt{\frac t2} \xi_2  & x - \sqrt{\frac t2}N_2                         
+%         \end{bmatrix} \right),\\ 
+%         &= \mathbb E \left( \left(x - \sqrt{\frac t2}N_1\right)\left( x - \sqrt{\frac t2}N_2 \right) - \frac t2 \xi_2^2 \right),\\ 
+%         &= x^2 - t.
+%     \end{align*}
+
+%     With this, we have found a recursion and initial conditions that are enough to uniquely determine the expected characteristic polynomial of a self-adjoint complex Brownian matrix.
+% \end{proof}
 
     Now that we know that the expected characteristic polynomial of a self adjoint Brownian motion is a Hermite polynomial with variance $t$, we are ready to give a much easier proof of Proposition \ref{prop:convolution_of_hermites} using the tools of Finite Free Probability Theory.
 
     \begin{proof}[Alternate proof of Proposition \ref{prop:convolution_of_hermites}]
-        Let $H_n(z,t_1)$ and $H_n(z,t_2)$ be the expected characteristic polynomials of two independent self-adjoints Brownian motions $B_1 = (B_1(t), t\ge 0)$ and  $B_2 = (B_2 (t), t\ge0)$ evaluated at the times $t_1$ and $t_2$, respectively. By the Lévy property of the Brownian motion, we know that $B \coloneqq B_1 + B_2$ is another self-adjoint Brownian motion, evaluated at the time $t_1 + t_2$. By Theorem \ref{thm:symmad}, and using the invariance under unitary transformations of $B_1, B_2$, the convolution of the Hermite polynomials is the expected characteristic polynomial of $B$, and Corollary \ref{corollary:brownian_expected} allows us to conclude that this polynomial is $H_n(z,t_1 + t_2)$.
+        Let $H_n(z,t_1)$ and $H_n(z,t_2)$ be the expected characteristic polynomials of two independent self-adjoints Brownian motions $B_1 = (B_1(t), t\ge 0)$ and  $B_2 = (B_2 (t), t\ge0)$ evaluated at the times $t_1$ and $t_2$, respectively. By the Lévy property of the Brownian motion, we know that $B \coloneqq B_1 + B_2$ is another self-adjoint Brownian motion, evaluated at the time $t_1 + t_2$. By Theorem \ref{thm:symmad}, and using the invariance under unitary transformations of $B_1, B_2$, 
+
+        \begin{align*}
+            H_n(z,t_1) \boxplus_n H_n(z,t_2) &= \E{ \chi_{z}(B_1(t) + Q B_2(t) \hermit{Q}) } = \E{ \chi_{z}(B_1(t) + B_2(t)) } = \E{\chi_z(B(t))}. 
+        \end{align*}
+        A last use of Corollary \ref{corollary:brownian_expected} allows us to conclude that this polynomial is $H_n(z,t_1 + t_2)$.
     \end{proof}
 
-    The Hermite polynomials not only are the expected characteristic polynomials for our Gaussian invariant ensembles, they somehow also carry all the ``non-stochastic information'' of the eigenvalues in the sense that their roots satisfy \eqref{eq:deterministic_dyson}. We will prove this by first showing that the Hermite polynomials are ``harmonic'' in some sense, i.e., they are a solution for the martingale problem of a Brownian motion in reversed time. \todo{Revisar que esto sea cierto}
+    The Hermite polynomials not only are the expected characteristic polynomials for our Gaussian invariant ensembles, they somehow also carry all the ``non-stochastic information'' of the eigenvalues in the sense that their roots satisfy \eqref{eq:deterministic_dyson}. We will prove this by first showing that the Hermite polynomials are ``harmonic'' in some sense, i.e., they are a solution for the martingale problem of a Brownian motion in reversed time.
 
 \begin{theorem} \label{thm:heat_burgers}
     The Hermite polynomials $H_n(z,t)$ solve the differential equation
@@ -241,7 +266,12 @@ Recall that a self adjoint Brownian motion has the same law as $\sqrt{t}$ times 
 
     Lets us write $H_n(z,t)= H_n$, $G_{H_n}(z,t) = G$ and $\frac{\partial f}{\partial z} = \partial_z f$ to simplify the notation.
 
-    First, we prove that $H$ satisfies \eqref{eq:calor}. Write $H_n(z,t) = \exp\left\{-\frac{t \partial_z^2}{2}\right\}(z^n)$, and
+    First, we prove that $H_n(z,t)$ satisfies \eqref{eq:calor}. Write $H_n(z,t) = \exp\left\{-\frac{t \partial_z^2}{2}\right\}[z^n]$, where
+
+    \begin{equation*}
+        \exp\left\{-\frac{t \partial_z^2}{2}\right\} [z^n] \coloneqq \sum_{j=0}^\infty \frac{\left( -t \partial_z^2 \right)^j }{2^j j!} [z^n].
+    \end{equation*}
+    Then 
 
     \begin{align*}
         \partial_t H_n &= \partial_t \exp\left\{-\frac{t \partial_z^2}{2}\right\}(z^n) 
@@ -264,7 +294,7 @@ Recall that a self adjoint Brownian motion has the same law as $\sqrt{t}$ times 
         &= \frac1n \frac{ H_n^2\partial_z H_n \partial_{zz}H_n + H_n^3\partial_{zzz}H_n - 2H_n^2\partial_z H_n \partial_{zz}H_n }{H_n^4} \\
         & \phantom{separadoasídem}-\frac1n\frac{2H_n^2\partial_z H_n \partial_{zz}H_n - 2 H_n (\partial_z H_n)^3}{H_n^4},\\
         &= \frac1n\frac{-3H_n\partial_z H_n \partial_{zz}H_n + H_n^2 \partial_{zzz}H_n + 2(\partial_z H_n)^3}{H_n^3} \\
-        G\partial_z G &= \frac{\partial_z H_n}{nH_n}\left( \frac{H_n \partial_{zz}H_n - (\partial_z H_n)^2}{H_n^2}  \right) = \frac{1}{n^2}\frac{H_n\partial_z H_n \partial_{zz}H_n - (\partial_z H_n)^3}{H_n^3}.
+        G\partial_z G &= \frac{\partial_z H_n}{nH_n}\left( \frac{H_n \partial_{zz}H_n - (\partial_z H_n)^2}{nH_n^2}  \right) = \frac{1}{n^2}\frac{H_n\partial_z H_n \partial_{zz}H_n - (\partial_z H_n)^3}{H_n^3}.
     \end{align*}
 
     Finally, we can use the above results to find
@@ -288,7 +318,7 @@ Recall that a self adjoint Brownian motion has the same law as $\sqrt{t}$ times 
 
 Using Theorem \ref{thm:heat_burgers} its is easy to prove that the roots of the time dependent Hermite polynomials evolve according to \eqref{eq:deterministic_dyson}.
 
-\begin{corollary}
+\begin{corollary} \label{corollary:movement_roots_hermite}
     The roots $\left\{z_i(t)\right\}_{i\le n}$ of the Hermite polynomials $H_n(z,t)$ satisfy the deterministic Dyson's equation,
 
     \begin{equation*}
@@ -302,12 +332,16 @@ Using Theorem \ref{thm:heat_burgers} its is easy to prove that the roots of the 
     \begin{align*}
         \partial_t [H_n(z_i(t),t)] = 0.
     \end{align*}
-
     By the chain rule and the heat kind equation \eqref{eq:calor} in Theorem \ref{thm:heat_burgers} we have that
 
     \begin{align*}
-        0 &= \partial_t [H_n(z_i(t),t)] = (\partial_t [z_i])\partial_z [H_n(z_i(t),t)] - \frac12 \partial_{zz} [H_n(z_i(t),t)],
-        \intertext{using the Leibniz rule}
+        0 &= \partial_t [H_n(z_i(t),t)] = (\partial_t [z_i(t)])\partial_z [H_n(z_i(t),t)] - \frac12 \partial_{zz} [H_n(z_i(t),t)].
+        \intertext{Using the product rule, for the derivative of products, we have}
+        \partial_{z}[H_n(z_i(t),t)] &= \left.\partial_z \left[\prod_{j=1}^n (z- z_j)\right]\right|_{z=z_i(t)} =  \left.\sum_{k=1}^n \prod_{j\neq k} (z-z_j)\right|_{z=z_i(t)}\\ 
+        &= \prod_{j\neq i} (z_i-z_j). \\
+        \partial_{zz}[H_n(z_i(t),t)] &= \left. \partial_z \left[ \sum_{k=1}^n \prod_{j\neq k} (z-z_j)\right]\right|_{z = z_i(t)} = \left.\sum_{k=1}^n \sum_{j\neq k} \prod_{l\neq j,k} (z-z_l)\right|_{z=z_i(t)},\\
+        &= 2 \sum_{j\neq i} \prod_{l\neq j,i}(z_i-z_l).
+        \intertext{Finally, if we substitute this in the previously found expression, we find}
         \frac{\d}{\d t} z_i(t) &= \frac{\partial_{zz} [H_n(z_i(t),t)]}{2\partial_z [H_n(z_i(t),t)]} = \frac{2 \sum_{k\neq i} \prod_{j\neq i, j\neq k} (z_i - z_j)}{2 \prod_{j\neq i} (z_i - z_j)} = \sum_{k\neq i} \frac{1}{z_i - z_k}.
     \end{align*}
 \end{proof}
@@ -334,16 +368,15 @@ As a final part for this subsection, let us prove that if you have an arbitrary 
 
         \begin{align*}
             p(z)     &= \sum_{j=0}^n a_j z^j,\\ 
-            H_d(z,t) &= \sum_{j=0}^n b_j t^{j/2} z^{d-j}.
+            H_n(z,t) &= \sum_{j=0}^n b_j t^{j/2} z^{d-j}.
         \end{align*}
-        
-        Notice that if $n$ is odd all of the $b_j$ are zero for even $j$  and if $n$ is even, all of the $b_j$ are zero for odd $j$. Further, using the explicit expression for the coefficients we have the following recursion for $b_j$
+        Notice that, from the explicit representation of the Hermite polynomials in Section \ref{sec:polynomials}, if $n$ is odd all of the $b_j$ are zero for even $j$  and if $n$ is even, all of the $b_j$ are zero for odd $j$. Further, using the explicit expression for the coefficients we have the following recursion for $b_j$
 
         \begin{align}
-            b_{j} &= \frac{n! (-1)^{j/2}}{2^{j/2} (j/2)! (n-j)!},\\ 
-            b_{j-2} &= \frac{n! (-1)^{\frac{j-2}{2}}}{2^{\frac{j-2}{2}} \left(\frac{j-2}{2}\right)! (n-j+2)!},
+            b_{j} &= \frac{n! (-1)^{j/2}}{2^{j/2} (j/2)! (n-j)!},\notag \\ 
+            b_{j-2} &= \frac{n! (-1)^{\frac{j-2}{2}}}{2^{\frac{j-2}{2}} \left(\frac{j-2}{2}\right)! (n-j+2)!}, \notag
             \intertext{this leads to} 
-            b_{j} &= \frac{n! (-1)^{\frac{j-2}{2}}}{2^{\frac{j-2}{2}} \left(\frac{j-2}{2}\right)! (n-j+2)!} \frac{(-1)(n-j+2)(n-j+1)}{j},\\  
+            b_{j} &= \frac{n! (-1)^{\frac{j-2}{2}}}{2^{\frac{j-2}{2}} \left(\frac{j-2}{2}\right)! (n-j+2)!} \frac{(-1)(n-j+2)(n-j+1)}{j},\notag \\  
             &= b_{j-2} \frac{(-1)(n-j+2)(n-j+1)}{j}. \label{eq:hermite_coef_recurr}
         \end{align}
 
@@ -407,11 +440,11 @@ As a final part for this subsection, let us prove that if you have an arbitrary 
         \end{align*}
     \end{proof}
     
-    We conclude with this theorem that no matter the initial condition of the self-adjoint Brownian motion, the roots of its expected characteristic polynomial will mode according to the deterministic Dyson equation. In the next subsection we get similar results for the Wishart process.
+    We conclude with this theorem that, independently of the initial condition of the self-adjoint Brownian motion, the roots of its expected characteristic polynomial will move according to the deterministic Dyson equation. In the next subsection we get similar results for the Wishart process.
 
 \subsection{Wishart process} \label{subsec:wishart_laguerre}
 
-    Similarly to the Brownian motion case, we will first construct a tridiagonal model that will help us to get the expected characteristic polynomial.
+    Similarly to the Dyson Brownian motion case, we will first construct a tridiagonal model that will help us to get the expected characteristic polynomial.
 
 \begin{lemma} 
     Let $W_\beta$ be an $n\times n$ matrix from the  $\beta$-Wishart ensemble ($\beta \in \{1,2,4\}$). The eigenvalues of $W_\beta$ have the same joint law as those of the tridiagonal matrix $L_\beta = \trans{B_\beta}  B_\beta$ with $B_\beta$ is an $m\times n$ bidiagonal matrix defined as 
@@ -469,7 +502,7 @@ As a final part for this subsection, let us prove that if you have an arbitrary 
     \begin{equation*}
         E\left[ \chi_x\left(\trans{R}R\right) \right] = L_n(z),
     \end{equation*}
-    \todo{Esto lo podría hacer en general, con una recursión más general.}
+
     \noindent where $L_n(x) = \left( 1 - \partial_z \right)^n [z^n]$ is the $n$th standard Laguerre polynomial.
 \end{theorem}
 
@@ -488,12 +521,11 @@ As a final part for this subsection, let us prove that if you have an arbitrary 
 
     \noindent with this the expected characteristic polynomial satisfies the recursion
 
-    \begin{align} \label{eq:laguerre_recursion}
-        \E{P_n(z)} &= \E{ (z - \xi^2_{n\beta} - \xi^2_{\beta(m-1)})P_{n-1}(z) - \xi^2_{\beta(n-1)}\xi_{\beta(m-1)}^2 P_{n-2}(z) },\\ 
-        &= (z - \beta(n - m + 1))\E{P_{n-1}(z)} - \beta^2(n-1)(m-1)\E{P_{n-2}(z)}.
+    \begin{align}
+        \E{P_n(z)} &= \E{ (z - \xi^2_{n\beta} - \xi^2_{\beta(m-1)})P_{n-1}(z) - \xi^2_{\beta(n-1)}\xi_{\beta(m-1)}^2 P_{n-2}(z) },\notag \\ 
+        &= (z - \beta(n - m + 1))\E{P_{n-1}(z)} - \beta^2(n-1)(m-1)\E{P_{n-2}(z)}, \label{eq:laguerre_recursion}
     \end{align}
-
-    Which is satisfied by the Laguerre polynomials. By finding the cases $n=1$ and $n=2$, then using a recursive argument, we finish the proof.
+    which is satisfied by the Laguerre polynomials. By finding the cases $n=1$ and $n=2$, then using a recursive argument, we finish the proof.
 
     The case $n=1$ is trivial because in this case $G$ is an univariate Gaussian random variable, so $\trans{G}G = G^2$ is a chi-squared random variable and $P_1(z) = z - 1$. For the case $n=2$ we have
 
@@ -591,7 +623,7 @@ As a final part for this subsection, let us prove that if you have an arbitrary 
     \begin{align*}
         0 &= \partial_t [P(t,z_i(t))] = \partial_t [z_i(t)] \partial_z [P(t,z)]|_{z=z_i} + \partial_t [P(t,z)]|_{z=z_i}, \\ 
         &= \partial_t [z_i(t)] \partial_z [P(t,z)]|_{z=z_i} - \left[c\partial_z [P(t,z)] - cz \partial_{zz}[P(t,z)]\right]_{z=z_i},
-        \intertext{now we use that $P(t,z)$ is monic and the Leibnitz rule to get}
+        \intertext{now we use that $P(t,z)$ is monic and recall the derivatives of a monic polynomials evaluated at $z=z_i(t)$ from the proof of Corollary \ref{corollary:movement_roots_hermite}}
         \frac{\d}{\d t} z_i(t) &= c\left[\frac{\partial_z [P(t,z)] + z  \partial_{zz}[P(t,z)]}{\partial_z [P(t,z)]}\right]_{z=z_i} = c\left[ 1 +  \frac{2z_i\sum_{k\neq i}\prod_{j\neq i,j\neq k}(z_i - z_j)}{\prod_{j\neq i}(z_i - z_j)} \right],\\
         &= c\left[ 1 + \sum_{k\neq i}\frac{2z_i}{z_i - z_k}\right],\\
         &= c\left[ 1 + \sum_{k\neq i}\frac{2z_i}{z_i - z_k} - \sum_{k\neq i}\frac{z_i-z_k}{z_i - z_k} + \sum_{k\neq i}\frac{z_i-z_k}{z_i - z_k} \right],\\ 
@@ -615,7 +647,7 @@ As a final part for this subsection, let us prove that if you have an arbitrary 
     \end{align*}
 \end{proof}
 
-Finally, just like in the Dyson Brownian motion case, we state a Theorem that allows us to conclude that, no matter the initial position of the roots, if convoluted with a Laguerre polynomial, they will always move according to the deterministic Wishart process.
+Finally, we state a theorem that allows us to conclude that, for every initial conditions, if convoluted with a Laguerre polynomial, they will always move according to the deterministic Wishart process.
 
 \begin{theorem}
     Let $L_n(z,t)$ be a Laguerre polynomial of order $n$ with variance $t$ and let $p(z)$ be any monic polynomial. Then the asymmetric additive convolution of $L_n(z,t)$ and $p(z)$, $L_n(z,t) \aac p(z)$ satisfies the following differential equation
@@ -661,7 +693,7 @@ For the last process we study in this thesis, we will use a slightly different a
 
 Before proceeding with the proper Jacobi process, let us find the expected characteristic polynomial of a static Jacobi matrix. This process is more challenging than the two previous processes, but the static case is greatly simplified by using the tools of Finite Free Probability theory. 
 
-Recall from Chapter \ref{ch:eigen_processes} that there are essentially two definitions for the Jacobi matrix, one coming form the Multivariate Analysis of Variance and other coming from the upper left corner of a Haar unitary Brownian matrix. For the static case, We work with the MANOVA case. 
+Recall from Chapter \ref{ch:eigen_processes} that there are essentially two definitions for the Jacobi matrix, one coming from the Multivariate Analysis of Variance and the other coming from the upper left corner of a Haar unitary Brownian matrix. For the static case, we work with the MANOVA case. 
 
 \begin{theorem}
     Let $A,B$ be two $n\times n$ random matrices with i.i.d. standard Gaussian entries. Define the matrix $M$ as
@@ -675,7 +707,6 @@ Recall from Chapter \ref{ch:eigen_processes} that there are essentially two defi
     \begin{equation*}
         \chi_z(M) = \frac{n!n!}{(2n)!}\sum_{k=0}^n z^k(-1)^{n-k} \binom nk \binom{n+k}k.
     \end{equation*}
-    \todo{Revisar definición correcta de los Legendre}
 \end{theorem}
 
 \begin{proof}
@@ -721,7 +752,7 @@ Now we calculate \( p_{M^{-1}}(z) \), remembering that \( p_I(z) = (z-1)^n \)
 Finally, we use \( p_{M}(z) = \frac{z^n}{p_{M^{-1}}(0)} p_{M^{-1}}(1/z) \) to obtain
 
 \begin{align*}
-    p_{M}(z) &= \frac{n!n!z^n}{(2n)!} \sum_{k=0}^n z^{k-n}(-1)^{n-k}n!\binom{n}{k} \binom{n+k}{k} = \frac{n!n!}{(2n)!}\sum_{k=0}^n z^{k}(-1)^{n-k}n!\binom{n}{k} \binom{n+k}{k}.
+    p_{M}(z) &= \frac{n!n!z^n}{(2n)!} \sum_{k=0}^n z^{k-n}(-1)^{n-k}\binom{n}{k} \binom{n+k}{k} = \frac{n!n!}{(2n)!}\sum_{k=0}^n z^{k}(-1)^{n-k}\binom{n}{k} \binom{n+k}{k}.
 \end{align*}
 
 This corresponds to the \(n\)-th Legendre polynomial evaluated at \( 1-2z \), which is precisely the desired expected characteristic polynomial.
@@ -772,7 +803,7 @@ Replicating the procedure in \cite{article:marcus_finite_free_point_processes}, 
 
     Notice that this generalizes the characteristic polynomial of the (static and dynamical) Wishart and the static Jacobi cases. 
 
-    Similarly to the univariate cases (Theorem \ref{thm:multiplicative_operators}), we have a multiplicative Theorem in terms of the operators that generate the new multivariate polynomials.
+    Similarly to the univariate cases (Theorem \ref{thm:multiplicative_operators}), we have a multiplicative theorem in terms of the operators that generate the new multivariate polynomials.
 
     \begin{theorem} \label{thm:multivariate_operators}
         Let $F$ and $G$ be two-variable polynomials and $A,B \in \mathcal M_{k,n_1}, C,D \in \mathcal M_{k,n_2}$ such that $C$ and $D$ are invariant under product by signed permutation matrices. Suppose that
@@ -805,7 +836,7 @@ Replicating the procedure in \cite{article:marcus_finite_free_point_processes}, 
         Applying Theorem \ref{thm:multiplicative_operators} we get to the desired result by considering the derivatives in $y,z$ as constant coefficients when evaluating in $x$.
     \end{proof}
 
-    With the next Theorem we get a limit for the products of differential operators, similarly to what we did in Chapter \ref{ch:finite_free} when proving the finite free limit theorems. We will use this Theorem to prove properties of the generalized characteristic polynomial of Gaussian matrices, by see these matrices as limits.
+    With the next theorem we get a limit for the products of differential operators, similarly to what we did in Chapter \ref{ch:finite_free} when proving the finite free limit theorems. We will use this theorem to prove properties of the generalized characteristic polynomial of Gaussian matrices, by see these matrices as limits.
 
     \begin{theorem} \label{thm:exp_operator}
         Let $\{A_i\}_{i=0}^\infty$ and $\{B_i\}_{i=0}^\infty$ be sequences of matrices invariant under transformation by signed permutation matrices such that
@@ -835,7 +866,6 @@ Replicating the procedure in \cite{article:marcus_finite_free_point_processes}, 
         \begin{equation*}
             \det( { A} + h { B} ) = \det({ A})  + h \, Tr \left( \mbox{adj} ({A}) \, { B} \right) + O \left(h^2\right).
         \end{equation*}
-        \todo{Probar esto}
 
         This means for $q_{A_i/\sqrt m, B_i/\sqrt m}(x,y,z)$ that
 
@@ -862,7 +892,7 @@ Replicating the procedure in \cite{article:marcus_finite_free_point_processes}, 
     \noindent which is the desired result.
     \end{proof}
 
-    Applying the previous Theorem, we find that the differential operator that generates the generalized characteristic polynomial of Gaussian matrices, has an exponential form.
+    Applying the previous theorem, we find that the differential operator that generates the generalized characteristic polynomial of Gaussian matrices, has an exponential form.
 
     \begin{corollary}
         Let $A$ and $B$ be equal in law to $\sigma_1 N_1$ and $\sigma_2 N_2$ where $N_1$ and $N_2$ are matrices with all of the entries being independent standard normal random variables, then
@@ -954,13 +984,16 @@ Replicating the procedure in \cite{article:marcus_finite_free_point_processes}, 
 
     Keeping the unitary variances and replacing $x=0, y=(x-1), z=x$, we get the static Jacobi matrix, as shown previously, thus 
 
-    \begin{equation*}
-        \E{\det[(x-1)W_1 + xW_2]} = (1+x\partial_x)^{n_2} \left(1 + (x-1)\partial_x\right)^{n_1}[x^k] = P_k^{n_2 - k, n_1-k}(2x-1).
-    \end{equation*}
-    \todo{Sustituir esta forma en el operador del polinomio de Jacobi.}
-    This is the Jacobi polynomial of order $k$ with parameters $n_2 - k$ and $n_1-k$ evaluated in $2x-1$. When we normalize to make it monic, we get the result appearing in \cite{edelman1988eigenvalues}.
+    \begin{align*}
+        \E{\det[(x-1)W_1 + xW_2]} &= (1+x\partial_x)^{n_2} \left(1 + (x-1)\partial_x\right)^{n_1}[x^k]\\
+        &=\left\{ \left(\sum_{j=0}^{n_2} \binom {n_2}j z^j \partial_z^j \right) \left( \sum_{l=0}^{n_1} \binom {n_1}j z^l \partial_z^l \right) \right\}[x^k],\\
+        &= \sum_{j=0}^k \sum_{l\le n-j} \binom{n_2}{j}\binom{n_1}l z^j (z-1)^{n-l} \partial_z^{j+l}[z^k]\\
+        &= \sum_{l=0}^k \binom{n_2}{k-l} \binom{n_1}l z^{n-l}(z-1)^l \eqqcolon P_k^{n_2 - k, n_1-k}(2x-1).
+    \end{align*}
+    
+    This is the standard Jacobi polynomial in \eqref{eq:jacobi_standard} with order $k$ and parameters $n_2 - k$, $n_1-k$ evaluated in $2x-1$. When we normalize to make it monic, we get the result appearing in \cite{edelman1988eigenvalues}.
 
-    Now let $\sigma_1= \sigma_2 = t$, then $A,B$ are equal in law to standard Brownian motions in $\M_{n_1,k}(\R)$ and $\M_{n_2,k}(\R)$, respectively. We should recover the expected characteristic polynomial of the Wishart and Jacobi processes. The Wishart case is evident by replacing $-1$ with $-t$ in \eqref{eq:wishart_finite_free} and compare it to equation \eqref{eq:laguerre_with_variance}. For the Jacobi process with initial condition $p(z)$, we have
+    Now let $\sigma_1= \sigma_2 = t$, then $A,B$ are equal in law to standard Brownian motions in $\M_{n_1,k}(\R)$ and $\M_{n_2,k}(\R)$, respectively. We should recover the expected characteristic polynomial of the Wishart and Jacobi processes. The Wishart case is evident by replacing $-1$ with $-t$ in \eqref{eq:wishart_finite_free} and comparing it to equation \eqref{eq:laguerre_with_variance}. For the Jacobi process with initial condition $p(z)$, we have
 
     \begin{equation} \label{eq:dynamic_jacobi}
         \E{\det[(z-1)W_1(t) + zW_2(t)]} = (1+xt\partial_x)^{n_2} \left(1 + (x-1)t\partial_x\right)^{n_1}[p(z)].
