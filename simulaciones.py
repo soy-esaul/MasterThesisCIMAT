@@ -101,8 +101,8 @@ def deterministic_jacobi(dt=0.1,time=10,n=5,starting=np.linspace(start=0.1, stop
 
 if __name__ == "__main__":
     # Style for matplotlib
-    # matplotlib.style.use("seaborn-v0_8")
-    plt.style.use('tableau-colorblind10')
+    matplotlib.style.use("seaborn-v0_8")
+    # plt.style.use('tableau-colorblind10')
     
     CB_color_cycle = ['#377eb8', '#ff7f00', '#4daf4a',
                   '#f781bf', '#a65628', '#984ea3',
@@ -123,7 +123,7 @@ if __name__ == "__main__":
     # Examples
 
     # Dyson and deterministic Dyson comparison
-    plt.figure(figsize=(6,4))
+    plt.figure(figsize=(6,2.5))
     n = 9
     time_dyson = 20
     dt = 0.01
@@ -141,11 +141,11 @@ if __name__ == "__main__":
 
     # Examples of Dyson Brownian motion
     dys_fig, dys_ax = plt.subplots(2,2)
-    dys_fig.set_size_inches(6,6)
+    dys_fig.set_size_inches(6.5,4)
     n_ex2 = 4
     dt_ex2 =0.01
     time_ex2 = 10
-    starting_ex2 = np.array( [-1.1,-1,2,2.1] )
+    starting_ex2 = np.array([-1.1,-1,2,2.1])
     
     # First experiment
     time_mesh_ex2 = np.linspace(start=0,stop=time_ex2,num=int(time_ex2/dt_ex2))
@@ -187,7 +187,7 @@ if __name__ == "__main__":
     # deterministic Dyson
     # A distance that does not grow
     det_dys_fig, det_dys_ax = plt.subplots(2,2)
-    det_dys_fig.set_size_inches(6,6)
+    det_dys_fig.set_size_inches(6.5,2.5)
     n_ex2 = 4
     dt_ex2 =0.01
     time_ex2 = 10
@@ -231,7 +231,7 @@ if __name__ == "__main__":
 
     # Wishart process
     # # Wishart process
-    plt.figure(figsize=(6,4))
+    plt.figure(figsize=(6,2.5))
     n_wis = 9
     dt_wis = 0.01
     time_wis = 2
@@ -248,7 +248,7 @@ if __name__ == "__main__":
     plt.savefig("img/wishart_comparison.pgf")
 
     # Deterministic Wishart process
-    plt.figure(figsize=(6,4))
+    plt.figure(figsize=(6,2.5))
     sims_det_wis = deterministic_wishart(dt=0.01,time=2,n=n_wis,starting=starting_wis)
     for i in range(n_wis):
         plt.plot(time_mesh_wis,sims_det_wis[:,i])
@@ -257,7 +257,7 @@ if __name__ == "__main__":
     plt.savefig("img/deterministic_wishart.pgf")
 
     # Jacobi process
-    plt.figure(figsize=(6,4))
+    plt.figure(figsize=(6,2.5))
     n_jacobi = 9
     dt_jacobi=0.000001
     time_jacobi=0.05
@@ -271,7 +271,7 @@ if __name__ == "__main__":
     plt.savefig("img/jacobi.pdf")
 
     # Deterministic Jacobi
-    plt.figure(figsize=(6,4))
+    plt.figure(figsize=(6,2.5))
     n_det_jacobi = 9
     dt_det_jacobi=0.001
     time_det_jacobi=0.05

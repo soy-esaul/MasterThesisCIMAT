@@ -448,7 +448,7 @@ Although the minimal distance between two functions always grows in a system tha
 With these simulations, we exemplify the dynamical behavior of the system of functions explained in the last section. In Figure \ref{fig:four_det_dyson} we have the analogous to Figure \ref{fig:four_dyson}. The initial conditions are uniformly spaced points around zero for the last three examples. For the first example, the distance between the two points in the middle is two, while the top and bottom points are separated by 0.1 of the two in the middle. We can notice that in concordance with Remark \ref{remark:hermite_not_all_repel}, the bigger value decreases for some time until the particle spacing is more uniform and then it starts growing. For the functions with a small separation, this distance grows very quickly at the beginning, as expected by Theorem \ref{thm:hermite_minimal_grows}.
 
 
-\begin{figure}[h!]
+\begin{figure}[h!] \centering 
     \input{img/four_det_dysons.pgf}
     \caption{Simulation of four different deterministic Dyson Brownian motions with different dimensions. The initial conditions from left to right are $(-1.1,-1,2,2.1)$, $(-1, -0.5, 0, 0.5, 1)$, $(-2.5,-1.67,-0.83,0,0.83,1.67,2.5)$ and $(-2.5,-1.875,-1.25,-0.625,0,0.625,1.25,1.875,2.5)$. \label{fig:four_det_dyson}}
 \end{figure}
@@ -457,16 +457,16 @@ In the remaining three panels of Figure \ref{fig:four_det_dyson}, we also see a 
 
 In Figure \ref{fig:det_wishart}, we have the simulation analogous to \ref{fig:wishart_comparison} with a nine-dimensional deterministic Wishart process. Apart from observing that the total distance of the particles grows, we check that this example confirms Proposition \ref{proposition:laguerre_does_not_grow}, as the distance between the two paths in the bottom is minimal at some point and it continues to decrease. However, the biggest is the value of the function and the surrounding ones, the faster their spacing grows, as we can notice for the two functions at the top.
 
-\begin{figure}[h!]
+\begin{figure}[h!] \centering 
     \input{img/deterministic_wishart.pgf}
     \caption{Simulation of the path of a deterministic Wishart process. The initial conditions are $(0.1,2.6,5.1,7.6,10.1,12.6,15.1,17.6,20.1)$.\label{fig:det_wishart}}
 \end{figure}
 
 For the path simulations of the deterministic Jacobi process, we observe that for $t=0.05$ they are almost evenly spaced in $[0,1]$. We would expect this deterministic process to converge to the equilibrium which would be the roots of the ninth Jacobi polynomial with parameters $n_1 = 1, n_2 =2$. 
 
-\begin{figure}[h!]
+\begin{figure}[h!] \centering 
     \input{img/deterministic_jacobi.pgf}
     \caption{Simulation of the path of a deterministic Jacobi process. The initial conditions are $(0.3,0.325,0.35,0.375,0.4,0.425,0.45,0.475,0.5)$.\label{fig:det_jacobi}}
 \end{figure}
 
-\newpage
+%\newpage

@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.7.30)  20 AUG 2024 17:56
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.7.30)  13 SEP 2024 02:39
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"c:/Users/Esaul/Documents/Maestr√≠a en Probabilidad y Estad√≠stica/4 Cuarto semestre/Tesis_Overleaf/MasterThesisCIMAT/main.tex"
-(c:/Users/Esaul/Documents/Maestr√≠a en Probabilidad y Estad√≠stica/4 Cuarto semestre/Tesis_Overleaf/MasterThesisCIMAT/main.tex
+**"c:/Users/Esaul/Documents/Maestr√≠a en Probabilidad y Estad√≠stica/4 Cuarto semestre/Tesis_Overleaf2/MasterThesisCIMAT/main.tex"
+(c:/Users/Esaul/Documents/Maestr√≠a en Probabilidad y Estad√≠stica/4 Cuarto semestre/Tesis_Overleaf2/MasterThesisCIMAT/main.tex
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-05-27>
 (C:\Program Files\MiKTeX\tex/latex/base\book.cls
@@ -628,7 +628,7 @@ Package biblatex Info: ... file 'blx-dm.def' found.
 File: blx-dm.def 2024/03/21 v3.20 biblatex datamodel (PK/MW)
 )
 Package biblatex Info: Trying to load biblatex style data model...
-Package biblatex Info: ... file 'nature.dbx' not found.
+Package biblatex Info: ... file 'ieee.dbx' not found.
 Package biblatex Info: Trying to load biblatex custom data model...
 Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
 \c@afterword=\count379
@@ -718,16 +718,6 @@ Package biblatex Info: ... file 'blx-compat.def' found.
  (C:\Program Files\MiKTeX\tex/latex/biblatex\blx-compat.def
 File: blx-compat.def 2024/03/21 v3.20 biblatex compatibility (PK/MW)
 )
-Package biblatex Info: Trying to load BibTeX backend compatibility...
-Package biblatex Info: ... file 'blx-bibtex.def' found.
- (C:\Program Files\MiKTeX\tex/latex/biblatex\blx-bibtex.def
-File: blx-bibtex.def 2024/03/21 v3.20 biblatex compatibility (PK/MW)
-
-
-Package biblatex Warning: Using fall-back bibtex backend:
-(biblatex)                functionality may be reduced/unavailable.
-
-)
 Package biblatex Info: Trying to load generic definitions...
 Package biblatex Info: ... file 'biblatex.def' found.
  (C:\Program Files\MiKTeX\tex/latex/biblatex\biblatex.def
@@ -746,10 +736,10 @@ File: biblatex.def 2024/03/21 v3.20 biblatex compatibility (PK/MW)
 \biburllcskip=\muskip22
 \c@smartand=\count455
 )
-Package biblatex Info: Trying to load bibliography style 'nature'...
-Package biblatex Info: ... file 'nature.bbx' found.
- (C:\Program Files\MiKTeX\tex/latex/biblatex-nature\nature.bbx
-File: nature.bbx 2020/12/30 v1.3d biblatex bibliography style
+Package biblatex Info: Trying to load bibliography style 'ieee'...
+Package biblatex Info: ... file 'ieee.bbx' found.
+ (C:\Program Files\MiKTeX\tex/latex/biblatex-ieee\ieee.bbx
+File: ieee.bbx 2024/08/14 v1.3g biblatex bibliography style
 Package biblatex Info: Trying to load bibliography style 'numeric-comp'...
 Package biblatex Info: ... file 'numeric-comp.bbx' found.
  (C:\Program Files\MiKTeX\tex/latex/biblatex/bbx\numeric-comp.bbx
@@ -765,10 +755,10 @@ File: standard.bbx 2024/03/21 v3.20 biblatex bibliography style (PK/MW)
 \c@bbx:relatedcount=\count456
 \c@bbx:relatedtotal=\count457
 ))))
-Package biblatex Info: Trying to load citation style 'nature'...
-Package biblatex Info: ... file 'nature.cbx' found.
- (C:\Program Files\MiKTeX\tex/latex/biblatex-nature\nature.cbx
-File: nature.cbx 2020/12/30 v1.3d biblatex citation style
+Package biblatex Info: Trying to load citation style 'ieee'...
+Package biblatex Info: ... file 'ieee.cbx' found.
+ (C:\Program Files\MiKTeX\tex/latex/biblatex-ieee\ieee.cbx
+File: ieee.cbx 2024/08/14 v1.3g biblatex citation style
 Package biblatex Info: Trying to load citation style 'numeric-comp'...
 Package biblatex Info: ... file 'numeric-comp.cbx' found.
  (C:\Program Files\MiKTeX\tex/latex/biblatex/cbx\numeric-comp.cbx
@@ -788,7 +778,11 @@ Package biblatex Info: Redefining '\textcites'.
 Package biblatex Info: Redefining '\cites'.
 Package biblatex Info: Redefining '\parencites'.
 Package biblatex Info: Redefining '\smartcites'.
-))
+)
+Package biblatex Info: Redefining '\cite'.
+Package biblatex Info: Redefining '\supercite'.
+Package biblatex Info: Redefining '\cites'.
+)
 Package biblatex Info: Trying to load configuration file...
 Package biblatex Info: ... file 'biblatex.cfg' found.
  (C:\Program Files\MiKTeX\tex/latex/biblatex\biblatex.cfg
@@ -834,7 +828,9 @@ Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \c@theorem=\count467
 \c@definition=\count468
 \c@example=\count469
-) (C:\Program Files\MiKTeX\tex/latex/todonotes\todonotes.sty
+)
+\c@remark=\count470
+ (C:\Program Files\MiKTeX\tex/latex/todonotes\todonotes.sty
 Package: todonotes 2024/01/05 v1.1.7 Todonotes source and documentation.
 Package: todonotes 2024/01/05
  (C:\Program Files\MiKTeX\tex/latex/xkeyval\xkeyval.sty
@@ -843,24 +839,24 @@ Package: xkeyval 2022/06/16 v2.9 package option processing (HA)
 \XKV@toks=\toks52
 \XKV@tempa@toks=\toks53
 )
-\XKV@depth=\count470
+\XKV@depth=\count471
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 )) (C:\Program Files\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarypositioning.code.tex
 File: tikzlibrarypositioning.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ) (C:\Program Files\MiKTeX\tex/latex/tools\calc.sty
 Package: calc 2023/07/08 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count471
-\calc@Bcount=\count472
+\calc@Acount=\count472
+\calc@Bcount=\count473
 \calc@Adimen=\dimen298
 \calc@Bdimen=\dimen299
 \calc@Askip=\skip92
 \calc@Bskip=\skip93
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count473
+\calc@Ccount=\count474
 \calc@Cskip=\skip94
 )
-\c@@todonotes@numberoftodonotes=\count474
+\c@@todonotes@numberoftodonotes=\count475
 ) (C:\Users\Esaul\AppData\Roaming\MiKTeX\tex/latex/jknappen\mathrsfs.sty
 Package: mathrsfs 1996/01/01 Math RSFS package v1.0 (jk)
 \symrsfs=\mathgroup6
@@ -868,7 +864,7 @@ Package: mathrsfs 1996/01/01 Math RSFS package v1.0 (jk)
 Package: microtype 2023/03/13 v3.1a Micro-typographical refinements (RS)
 \MT@toks=\toks54
 \MT@tempbox=\box72
-\MT@count=\count475
+\MT@count=\count476
 LaTeX Info: Redefining \noprotrusionifhmode on input line 1059.
 LaTeX Info: Redefining \leftprotrusion on input line 1060.
 \MT@prot@toks=\toks55
@@ -876,7 +872,7 @@ LaTeX Info: Redefining \rightprotrusion on input line 1078.
 LaTeX Info: Redefining \textls on input line 1368.
 \MT@outer@kern=\dimen300
 LaTeX Info: Redefining \textmicrotypecontext on input line 1988.
-\MT@listname@count=\count476
+\MT@listname@count=\count477
  (C:\Users\Esaul\AppData\Roaming\MiKTeX\tex/latex/microtype\microtype-pdftex.def
 File: microtype-pdftex.def 2023/03/13 v3.1a Definitions specific to pdftex (RS)
 LaTeX Info: Redefining \lsstyle on input line 902.
@@ -891,7 +887,7 @@ Package: mathtools 2024/03/11 v1.30 mathematical typesetting tools
  (C:\Program Files\MiKTeX\tex/latex/mathtools\mhsetup.sty
 Package: mhsetup 2021/03/18 v1.4 programming setup (MH)
 )
-\g_MT_multlinerow_int=\count477
+\g_MT_multlinerow_int=\count478
 \l_MT_multwidth_dim=\dimen301
 \origjot=\skip96
 \l_MT_shortvdotswithinadjustabove_dim=\dimen302
@@ -903,8 +899,8 @@ Package: mhsetup 2021/03/18 v1.4 programming setup (MH)
 \xmathstrut@box=\box73
 \xmathstrut@dim=\dimen308
 )
-\@quotelevel=\count478
-\@quotereset=\count479
+\@quotelevel=\count479
+\@quotereset=\count480
  (main.aux (partes/Preliminares.aux) (partes/CH2.aux) (partes/CH3.aux) (partes/CH4.aux
 
 LaTeX Warning: Label `eq:matrix_diffusion' multiply defined.
@@ -912,36 +908,36 @@ LaTeX Warning: Label `eq:matrix_diffusion' multiply defined.
 ) (appendix.aux))
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 69.
-LaTeX Font Info:    ... okay on input line 69.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 69.
-LaTeX Font Info:    ... okay on input line 69.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 69.
-LaTeX Font Info:    ... okay on input line 69.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 69.
-LaTeX Font Info:    ... okay on input line 69.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 69.
-LaTeX Font Info:    ... okay on input line 69.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 69.
-LaTeX Font Info:    ... okay on input line 69.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 69.
-LaTeX Font Info:    ... okay on input line 69.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 69.
-LaTeX Font Info:    ... okay on input line 69.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 69.
-LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
  (C:\Program Files\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count480
+\scratchcounter=\count481
 \scratchdimen=\dimen309
 \scratchbox=\box74
-\nofMPsegments=\count481
-\nofMParguments=\count482
+\nofMPsegments=\count482
+\nofMParguments=\count483
 \everyMPshowfont=\toks56
-\MPscratchCnt=\count483
+\MPscratchCnt=\count484
 \MPscratchDim=\dimen310
-\MPnumerator=\count484
-\makeMPintoPDFobject=\count485
+\MPnumerator=\count485
+\makeMPintoPDFobject=\count486
 \everyMPtoPDFconversion=\toks57
 ) (C:\Program Files\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -984,8 +980,8 @@ File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-\c@lstlisting=\count486
-Package hyperref Info: Link coloring OFF on input line 69.
+\c@lstlisting=\count487
+Package hyperref Info: Link coloring OFF on input line 68.
 (main.out) (main.out)
 \@outlinefile=\write5
 \openout5 = `main.out'.
@@ -1001,42 +997,39 @@ File: english.lbx 2024/03/21 v3.20 biblatex localization (PK/MW)
 Package biblatex Info: Input encoding 'utf8' detected.
 Package biblatex Info: Automatic encoding selection.
 (biblatex)             Assuming data encoding 'utf8'.
-Package biblatex Info: Input encoding 'utf8' detected.
-Package biblatex Info: Data encoding 'utf8' specified.
-(biblatex)             No need to reencode data.
-\openout4 = `main-blx.bib'.
+\openout4 = `main.bcf'.
 
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'main.bbl' found.
  (main.bbl
 
-Package biblatex Warning: BibTeX reported the following issues
+Package biblatex Warning: Biber reported the following issues
 (biblatex)                with 'article:dyson':
 (biblatex)                - Can't use 'date' + 'year'.
 
 
-Package biblatex Warning: BibTeX reported the following issues
+Package biblatex Warning: Biber reported the following issues
 (biblatex)                with 'book:revuzyor':
 (biblatex)                - Can't use 'date' + 'year'.
 
 
-Package biblatex Warning: BibTeX reported the following issues
+Package biblatex Warning: Biber reported the following issues
 (biblatex)                with 'article:jacobi_matrix_model':
 (biblatex)                - Can't use 'journaltitle' + 'journal' 
 (biblatex)                - Can't use 'date' + 'year'.
 
 )
-Package biblatex Info: Reference section=0 on input line 69.
-Package biblatex Info: Reference segment=0 on input line 69.
-LaTeX Info: Redefining \microtypecontext on input line 69.
-Package microtype Info: Applying patch `item' on input line 69.
-Package microtype Info: Applying patch `toc' on input line 69.
-Package microtype Info: Applying patch `eqnum' on input line 69.
+Package biblatex Info: Reference section=0 on input line 68.
+Package biblatex Info: Reference segment=0 on input line 68.
+LaTeX Info: Redefining \microtypecontext on input line 68.
+Package microtype Info: Applying patch `item' on input line 68.
+Package microtype Info: Applying patch `toc' on input line 68.
+Package microtype Info: Applying patch `eqnum' on input line 68.
 
 
-Package microtype Warning: Unable to apply patch `footnote' on input line 69.
+Package microtype Warning: Unable to apply patch `footnote' on input line 68.
 
-Package microtype Info: Applying patch `verbatim' on input line 69.
+Package microtype Info: Applying patch `verbatim' on input line 68.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2),
 (microtype)             factor: 1100.
@@ -1044,7 +1037,7 @@ Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 10, shrink: 10, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 69.
+LaTeX Info: Redefining \showhyphens on input line 68.
 Package microtype Info: Tracking enabled.
 Package microtype Info: Using default tracking set `smallcaps'.
 Package microtype Info: Adjustment of interword spacing enabled.
@@ -1086,37 +1079,37 @@ File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman (
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-<logos/logo.png, id=206, 166.7028pt x 213.9192pt>
+<logos/logo.png, id=202, 166.7028pt x 213.9192pt>
 File: logos/logo.png Graphic file (type png)
 <use logos/logo.png>
-Package pdftex.def Info: logos/logo.png  used on input line 73.
+Package pdftex.def Info: logos/logo.png  used on input line 72.
 (pdftex.def)             Requested size: 70.95331pt x 91.04872pt.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 73.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 72.
  (C:\Program Files\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 ) (C:\Users\Esaul\AppData\Roaming\MiKTeX\tex/latex/microtype\mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 73.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 72.
  (C:\Program Files\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (C:\Users\Esaul\AppData\Roaming\MiKTeX\tex/latex/microtype\mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 73.
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 72.
  (C:\Users\Esaul\AppData\Roaming\MiKTeX\tex/latex/jknappen\ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
-Underfull \hbox (badness 10000) detected at line 73
+Underfull \hbox (badness 10000) detected at line 72
 \T1/cmr/bx/n/14.4 T E S I S
  []
 
 
 
-<logos/banner.png, id=208, 820.06375pt x 248.93pt>
+<logos/banner.png, id=204, 820.06375pt x 248.93pt>
 File: logos/banner.png Graphic file (type png)
 <use logos/banner.png>
-Package pdftex.def Info: logos/banner.png  used on input line 73.
+Package pdftex.def Info: logos/banner.png  used on input line 72.
 (pdftex.def)             Requested size: 614.29497pt x 186.48053pt.
 [1
 
@@ -1126,17 +1119,7 @@ Package pdftex.def Info: logos/banner.png  used on input line 73.
 
 [2
 
-] (main.tdo)
-\tf@tdo=\write6
-\openout6 = `main.tdo'.
-
-
-
-[3]
-
-[4
-
-]
+] (abstract.tex)
 
 [1
 
@@ -1144,34 +1127,22 @@ Package pdftex.def Info: logos/banner.png  used on input line 73.
 
 [2
 
-] (abstract.tex)
-
-[3]
-
-[4
-
-]
-
-[5]
-
-[6
-
 ] (main.toc
 
-[7])
-\tf@toc=\write7
-\openout7 = `main.toc'.
+[3])
+\tf@toc=\write6
+\openout6 = `main.toc'.
 
 
 
-[8] (introduction.tex
+[4] (introduction.tex
 
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.19 
-      [1
+l.24 \end{equation}
+                    [1
 
 
 ])
@@ -1180,34 +1151,18 @@ l.19
 pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.126 
-       [2]
-
-
-pdfTeX warning (ext4): destination with the same identifier (name{page.3}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.130 \include{partes/Preliminares.tex}
-                                        [3]
+l.129 \include{partes/Preliminares.tex}
+                                        [2]
 \openout2 = `partes/Preliminares.aux'.
 
  (partes/Preliminares.tex
-
-
-pdfTeX warning (ext4): destination with the same identifier (name{page.4}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.1 \chapter
-            {Preliminaries} \label{ch:preliminaries} [4
-
-
-]
 Chapter 1.
 (partes/Preliminaries/intro_random_matrices.tex
 
-[5]
+[3
 
-[6]
+
+]
 LaTeX Font Info:    Trying to load font information for U+dsrom on input line 77.
  (C:\Program Files\MiKTeX\tex/latex/doublestroke\udsrom.fd
 File: Udsrom.fd 1995/08/01 v0.1 Double stroke roman font definitions
@@ -1218,20 +1173,19 @@ Package microtype Info: Fixing zero \fontdimen 6 for font `U/dsrom/m/n/8'
 (microtype)             (new value: 8.0pt) on input line 77.
 Package microtype Info: Fixing zero \fontdimen 6 for font `U/dsrom/m/n/6'
 (microtype)             (new value: 6.0pt) on input line 77.
-Package hyperref Info: bookmark level for unknown todo defaults to 0 on input line 92.
 
 
-[7]
+[4]
+
+[5]
 
 Package microtype Warning: I cannot find a spacing list for font
 (microtype)                `TS1/cmr/m/n/10.95' (context: `nonfrench'). Switching off
 (microtype)                spacing for this font on input line 141.
 
+) (partes/Preliminaries/stochastic_calculus.tex
 
-
-[8{C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]) (partes/Preliminaries/stochastic_calculus.tex
-
-[9]
+[6{C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
 Package microtype Info: Fixing zero \fontdimen 6 for font `U/dsrom/m/n/12'
 (microtype)             (new value: 12.0pt) on input line 5.
 
@@ -1249,11 +1203,20 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 
 
+[7]
+
+[8]
+
+[9]
+
 [10]
 
 [11]
 
 [12]
+Underfull \vbox (badness 2326) has occurred while \output is active []
+
+
 
 [13]
 
@@ -1261,32 +1224,12 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 [15]
 
-[16]
+[16]) (partes/Preliminaries/non_commutative_probability.tex
 
 [17]
 
 [18]
-
-[19]
-
-[20]
-
-[21]) (partes/Preliminaries/non_commutative_probability.tex
-
-[22]
-Overfull \hbox (3.552pt too wide) in paragraph at lines 44--45
-[]\T1/cmr/m/n/10.95 (-10) There are some ad-di-tional prop-er-ties we can have for the func-tional $\OML/cmm/m/it/10.95 '$ \T1/cmr/m/n/10.95 (-10) in a non-commutative
- []
-
-
-Overfull \hbox (7.9714pt too wide) in paragraph at lines 46--47
-[]\T1/cmr/m/n/10.95 (-10) Depending on its al-ge-braic prop-er-ties, we can dis-tin-guish dif-fer-ent kinds of non-commutative
- []
-
-
-
-[23]
-Overfull \hbox (4.7773pt too wide) in paragraph at lines 86--87
+Overfull \hbox (4.7773pt too wide) in paragraph at lines 82--83
 []\T1/cmr/m/n/10.95 (-10) Clearly $\OML/cmm/m/it/10.95 L[]\OT1/cmr/m/n/10.95 (-10) (
 \OML/cmm/m/it/10.95 ; \U/msb/m/n/10.95 P\OML/cmm/m/it/10.95 ; \U/msb/m/n/10.95 F\OT1/cmr/m/n/10.95 (-10) ) \OMS/cmsy/m/n/10.95 ^^Z \OML/cmm/m/it/10.95 L[]\OT1/cmr/m/n/10.95 (-10) (
 \OML/cmm/m/it/10.95 ; \U/msb/m/n/10.95 P\OML/cmm/m/it/10.95 ; \U/msb/m/n/10.95 F\OT1/cmr/m/n/10.95 (-10) )$\T1/cmr/m/n/10.95 (-10) , and since we are ask-ing ev-ery vari-able in $\OML/cmm/m/it/10.95 L[]\OT1/cmr/m/n/10.95 (-10) (
@@ -1295,35 +1238,76 @@ Overfull \hbox (4.7773pt too wide) in paragraph at lines 86--87
 
 
 
-[24]
+[19]
+
+[20]
+Overfull \hbox (12.34839pt too wide) in paragraph at lines 200--201
+[]\T1/cmr/m/n/10.95 (-10) The clas-si-cal no-tion of in-de-pen-dence cor-re-sponds to ten-sor in-de-pen-dence in non-commutative
+ []
+
+
+
+[21]
+
+[22]
+
+[23]
+
+[24]))
 
 [25]
+\openout2 = `partes/CH2.aux'.
 
-[26]
+ (partes/CH2.tex
 
-[27]
+[26
+
+
+
+
+]
+Chapter 2.
+
+
+[27] (partes/CH2/dyson_brownian_motion.tex
+Overfull \hbox (11.1728pt too wide) in paragraph at lines 20--21
+\T1/cmr/m/n/10.95 (-10) cess tak-ing val-ues in $\OMS/cmsy/m/n/10.95 M[]\OT1/cmr/m/n/10.95 (-10) (\U/msb/m/n/10.95 R\OT1/cmr/m/n/10.95 (-10) )$ \T1/cmr/m/n/10.95 (-10) whose en-tries are stan-dard Brow-n-ian mo-tions $\OMS/cmsy/m/n/10.95 f\OML/cmm/m/it/10.95 B[]\OT1/cmr/m/n/10.95 (-10) (\OML/cmm/m/it/10.95 t\OT1/cmr/m/n/10.95 (-10) )\OMS/cmsy/m/n/10.95 g[]$
+ []
+
+
+
+
+Package fancyhdr Warning: \headheight is too small (15.0pt): 
+(fancyhdr)                Make it at least 25.22153pt, for example:
+(fancyhdr)                \setlength{\headheight}{25.22153pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-10.22153pt}.
 
 [28]
 
 [29]
 
+
+Package fancyhdr Warning: \headheight is too small (15.0pt): 
+(fancyhdr)                Make it at least 25.22153pt, for example:
+(fancyhdr)                \setlength{\headheight}{25.22153pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-10.22153pt}.
+
 [30]
 
-[31]))
-
-[32]
-\openout2 = `partes/CH2.aux'.
-
- (partes/CH2.tex
-Chapter 2.
+[31]
 
 
-[33
+Package fancyhdr Warning: \headheight is too small (15.0pt): 
+(fancyhdr)                Make it at least 25.22153pt, for example:
+(fancyhdr)                \setlength{\headheight}{25.22153pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-10.22153pt}.
 
+[32]) (partes/CH2/diffusions.tex
 
-
-
-] (partes/CH2/dyson_brownian_motion.tex
+[33]
 
 
 Package fancyhdr Warning: \headheight is too small (15.0pt): 
@@ -1333,13 +1317,19 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-10.22153pt}.
 
 [34]
-Overfull \hbox (11.1728pt too wide) in paragraph at lines 20--21
-\T1/cmr/m/n/10.95 (-10) cess tak-ing val-ues in $\OMS/cmsy/m/n/10.95 M[]\OT1/cmr/m/n/10.95 (-10) (\U/msb/m/n/10.95 R\OT1/cmr/m/n/10.95 (-10) )$ \T1/cmr/m/n/10.95 (-10) whose en-tries are stan-dard Brow-n-ian mo-tions $\OMS/cmsy/m/n/10.95 f\OML/cmm/m/it/10.95 B[]\OT1/cmr/m/n/10.95 (-10) (\OML/cmm/m/it/10.95 t\OT1/cmr/m/n/10.95 (-10) )\OMS/cmsy/m/n/10.95 g[]$
+Overfull \hbox (5.49794pt too wide) detected at line 99
+[]
  []
+
+
+Underfull \vbox (badness 2393) has occurred while \output is active []
 
 
 
 [35]
+Underfull \vbox (badness 2027) has occurred while \output is active []
+
+
 
 
 Package fancyhdr Warning: \headheight is too small (15.0pt): 
@@ -1351,6 +1341,9 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 [36]
 
 [37]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
 
 
 Package fancyhdr Warning: \headheight is too small (15.0pt): 
@@ -1371,13 +1364,80 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-10.22153pt}.
 
 [40]
+Overfull \hbox (29.45174pt too wide) detected at line 363
+[]
+ []
+
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
 [41]
-Underfull \vbox (badness 10000) has occurred while \output is active []
 
+LaTeX Warning: Command \' invalid in math mode on input line 412.
+
+
+LaTeX Warning: Command \' invalid in math mode on input line 412.
+
+Missing character: There is no · in font cmr10!
+Missing character: There is no Ì in font cmr10!
+
+LaTeX Warning: Command \' invalid in math mode on input line 412.
+
+
+LaTeX Warning: Command \' invalid in math mode on input line 412.
+
+Missing character: There is no · in font cmr10!
+Missing character: There is no Ì in font cmr10!
+
+LaTeX Warning: Command \' invalid in math mode on input line 412.
+
+
+LaTeX Warning: Command \' invalid in math mode on input line 412.
+
+Missing character: There is no · in font cmr8!
+Missing character: There is no Ì in font cmr8!
+
+LaTeX Warning: Command \' invalid in math mode on input line 412.
+
+
+LaTeX Warning: Command \' invalid in math mode on input line 412.
+
+Missing character: There is no · in font cmr6!
+Missing character: There is no Ì in font cmr6!
+
+LaTeX Warning: Command \' invalid in math mode on input line 412.
+
+
+LaTeX Warning: Command \' invalid in math mode on input line 412.
+
+Missing character: There is no · in font cmr10!
+Missing character: There is no Ì in font cmr10!
+
+LaTeX Warning: Command \' invalid in math mode on input line 412.
+
+
+LaTeX Warning: Command \' invalid in math mode on input line 412.
+
+Missing character: There is no · in font cmr10!
+Missing character: There is no Ì in font cmr10!
+
+LaTeX Warning: Command \' invalid in math mode on input line 412.
+
+
+LaTeX Warning: Command \' invalid in math mode on input line 412.
+
+Missing character: There is no · in font cmr8!
+Missing character: There is no Ì in font cmr8!
+
+LaTeX Warning: Command \' invalid in math mode on input line 412.
+
+
+LaTeX Warning: Command \' invalid in math mode on input line 412.
+
+Missing character: There is no · in font cmr6!
+Missing character: There is no Ì in font cmr6!
 
 
 
@@ -1387,7 +1447,77 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-10.22153pt}.
 
-[42]) (partes/CH2/diffusions.tex
+[42]
+
+LaTeX Warning: Command \' invalid in math mode on input line 421.
+
+Missing character: There is no Ì in font cmr10!
+
+LaTeX Warning: Command \' invalid in math mode on input line 421.
+
+Missing character: There is no Ì in font cmr10!
+
+LaTeX Warning: Command \' invalid in math mode on input line 421.
+
+Missing character: There is no Ì in font cmr8!
+
+LaTeX Warning: Command \' invalid in math mode on input line 421.
+
+Missing character: There is no Ì in font cmr6!
+
+LaTeX Warning: Command \' invalid in math mode on input line 421.
+
+Missing character: There is no Ì in font cmr10!
+
+LaTeX Warning: Command \' invalid in math mode on input line 421.
+
+Missing character: There is no Ì in font cmr10!
+
+LaTeX Warning: Command \' invalid in math mode on input line 421.
+
+Missing character: There is no Ì in font cmr8!
+
+LaTeX Warning: Command \' invalid in math mode on input line 421.
+
+Missing character: There is no Ì in font cmr6!
+
+LaTeX Warning: Command \' invalid in math mode on input line 421.
+
+Missing character: There is no Ì in font cmr10!
+
+LaTeX Warning: Command \' invalid in math mode on input line 421.
+
+Missing character: There is no Ì in font cmr10!
+
+LaTeX Warning: Command \' invalid in math mode on input line 421.
+
+Missing character: There is no Ì in font cmr8!
+
+LaTeX Warning: Command \' invalid in math mode on input line 421.
+
+Missing character: There is no Ì in font cmr6!
+
+LaTeX Warning: Command \' invalid in math mode on input line 421.
+
+Missing character: There is no Ì in font cmr10!
+
+LaTeX Warning: Command \' invalid in math mode on input line 421.
+
+Missing character: There is no Ì in font cmr10!
+
+LaTeX Warning: Command \' invalid in math mode on input line 421.
+
+Missing character: There is no Ì in font cmr8!
+
+LaTeX Warning: Command \' invalid in math mode on input line 421.
+
+Missing character: There is no Ì in font cmr6!
+
+Overfull \hbox (1.59467pt too wide) detected at line 445
+[]
+ []
+
+
 
 [43]
 
@@ -1399,11 +1529,6 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-10.22153pt}.
 
 [44]
-Overfull \hbox (5.49794pt too wide) detected at line 99
-[]
- []
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
@@ -1420,11 +1545,6 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 [46]
 
 [47]
-Overfull \hbox (43.58516pt too wide) detected at line 224
-[]
- []
-
-
 
 
 Package fancyhdr Warning: \headheight is too small (15.0pt): 
@@ -1434,9 +1554,6 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-10.22153pt}.
 
 [48]
-Underfull \vbox (badness 5771) has occurred while \output is active []
-
-
 
 [49]
 
@@ -1447,42 +1564,7 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-10.22153pt}.
 
-[50]
-
-[51]
-
-
-Package fancyhdr Warning: \headheight is too small (15.0pt): 
-(fancyhdr)                Make it at least 25.22153pt, for example:
-(fancyhdr)                \setlength{\headheight}{25.22153pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-10.22153pt}.
-
-[52]
-
-[53]
-
-
-Package fancyhdr Warning: \headheight is too small (15.0pt): 
-(fancyhdr)                Make it at least 25.22153pt, for example:
-(fancyhdr)                \setlength{\headheight}{25.22153pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-10.22153pt}.
-
-[54]
-
-[55]
-
-
-Package fancyhdr Warning: \headheight is too small (15.0pt): 
-(fancyhdr)                Make it at least 25.22153pt, for example:
-(fancyhdr)                \setlength{\headheight}{25.22153pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-10.22153pt}.
-
-[56]
-
-[57] (img/dyson_comparison.pgf
+[50] (img/dyson_comparison.pgf
 Package microtype Info: Fixing zero \fontdimen 6 for font `U/dsrom/m/n/10'
 (microtype)             (new value: 10.0pt) on input line 82.
 Package microtype Info: Fixing zero \fontdimen 6 for font `U/dsrom/m/n/7'
@@ -1511,12 +1593,32 @@ Package microtype Info: Fixing zero \fontdimen 6 for font `U/dsrom/m/n/5.5'
 LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <5.5> not available
 (Font)              size <5> substituted on input line 240.
 
-) (img/four_dysons.pgf)
+)
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+(img/four_dysons.pgf)
+Overfull \hbox (35.56592pt too wide) in paragraph at lines 42470--837
+ [][] 
+ []
+
+
+Underfull \hbox (badness 1308) in paragraph at lines 837--837
+[][]\T1/cmr/bx/n/10 (+10) Figure 2.2[][]: []|\T1/cmr/m/n/10 (+10) Sim-u-la-tion of four dif-fer-ent Dyson Brow-n-ian mo-tions with dif-fer-ent di-men-
+ []
+
+
+Underfull \hbox (badness 2150) in paragraph at lines 837--837
+\T1/cmr/m/n/10 (+10) sion. The ini-tial con-di-tions from left to right are $\OT1/cmr/m/n/10 (+10) (\OMS/cmsy/m/n/10 ^^@\OT1/cmr/m/n/10 (+10) 1\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 (+10) 1\OML/cmm/m/it/10 ; \OMS/cmsy/m/n/10 ^^@\OT1/cmr/m/n/10 (+10) 1\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 (+10) 2\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 (+10) 2\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 (+10) 1)$\T1/cmr/m/n/10 (+10) , $\OT1/cmr/m/n/10 (+10) (\OMS/cmsy/m/n/10 ^^@\OT1/cmr/m/n/10 (+10) 1\OML/cmm/m/it/10 ; \OMS/cmsy/m/n/10 ^^@\OT1/cmr/m/n/10 (+10) 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 (+10) 5\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 (+10) 0\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 (+10) 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 (+10) 5\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 (+10) 1)$\T1/cmr/m/n/10 (+10) ,
+ []
+
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 
+[51] (img/wishart_comparison.pgf)
+
 
 Package fancyhdr Warning: \headheight is too small (15.0pt): 
 (fancyhdr)                Make it at least 25.22153pt, for example:
@@ -1524,97 +1626,123 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-10.22153pt}.
 
-[58] (img/wishart_comparison.pgf)
-<img/jacobi.pdf, id=867, 433.62pt x 289.08pt>
+[52]
+<img/jacobi.pdf, id=783, 433.62pt x 180.675pt>
 File: img/jacobi.pdf Graphic file (type pdf)
 <use img/jacobi.pdf>
-Package pdftex.def Info: img/jacobi.pdf  used on input line 634.
-(pdftex.def)             Requested size: 433.62pt x 289.09251pt.
+Package pdftex.def Info: img/jacobi.pdf  used on input line 850.
+(pdftex.def)             Requested size: 433.62pt x 180.68282pt.
+
+Underfull \hbox (badness 6893) in paragraph at lines 851--851
+[][]\T1/cmr/bx/n/10 (+10) Figure 2.4[][]: []|\T1/cmr/m/n/10 (+10) Path sim-u-la-tion for a Ja-cobi pro-cess. The ini-tial con-di-tions are
+ []
+
 ))
 
-[59]
-
-
-Package fancyhdr Warning: \headheight is too small (15.0pt): 
-(fancyhdr)                Make it at least 25.22153pt, for example:
-(fancyhdr)                \setlength{\headheight}{25.22153pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-10.22153pt}.
-
-[60 <./img/jacobi.pdf>]
+[53 <./img/jacobi.pdf>]
 \openout2 = `partes/CH3.aux'.
 
  (partes/CH3.tex
-Chapter 3.
-(partes/CH3/convolutions.tex
 
-[61
+
+Package fancyhdr Warning: \headheight is too small (15.0pt): 
+(fancyhdr)                Make it at least 25.22153pt, for example:
+(fancyhdr)                \setlength{\headheight}{25.22153pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-10.22153pt}.
+
+[54
 
 
 
 
 ]
+Chapter 3.
+
+LaTeX Warning: Citation 'article:marcus_finite' on page 55 undefined on input line 3.
+
+(partes/CH3/convolutions.tex
+
+[55]
+
+[56]
+
+[57]
+
+[58]
+
+[59]
+Underfull \vbox (badness 2600) has occurred while \output is active []
+
+
+
+[60]
+
+[61]
 
 [62]
 
-[63]
+[63]) (partes/CH3/ffp_and_rm.tex
+Overfull \hbox (3.3687pt too wide) detected at line 46
+[]
+ []
+
+
 
 [64]
 
 [65]
 
 [66]
+Underfull \vbox (badness 6173) has occurred while \output is active []
+
+
 
 [67]
 
 [68]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
 
 [69]
 
-[70]) (partes/CH3/ffp_and_rm.tex
+[70]
+Package microtype Info: Fixing zero \fontdimen 6 for font `U/dsrom/m/n/14.4'
+(microtype)             (new value: 14.4pt) on input line 312.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 312.
+
+
+LaTeX Warning: Citation 'article:marcus_finite' on page 71 undefined on input line 322.
+
+
 
 [71]
-Overfull \hbox (3.3687pt too wide) detected at line 46
-[]
- []
-
-
-Underfull \vbox (badness 4634) has occurred while \output is active []
-
-
 
 [72]
-Underfull \vbox (badness 1342) has occurred while \output is active []
-
-
 
 [73]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
 
 [74]
 
 [75]
 
 [76]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
 
 [77]
+Underfull \vbox (badness 3954) has occurred while \output is active []
+
+
 
 [78]
+Underfull \vbox (badness 2941) has occurred while \output is active []
+
+
 
 [79]
-Package microtype Info: Fixing zero \fontdimen 6 for font `U/dsrom/m/n/14.4'
-(microtype)             (new value: 14.4pt) on input line 311.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 311.
-
-
 
 [80]
 
@@ -1623,58 +1751,102 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 [82]
 
 [83]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
 
 [84]
 
-[85]
+[85]))
 
 [86]
-
-[87]
-
-[88]
-
-[89]
-
-[90]
-
-[91]
-
-[92]
-
-[93]
-
-[94]
-Underfull \vbox (badness 7186) has occurred while \output is active []
-
-
-
-[95]
-Underfull \vbox (badness 2818) has occurred while \output is active []
-
-
-
-[96]
-Underfull \vbox (badness 2096) has occurred while \output is active []
-
-
-
-[97]))
-
-[98]
 \openout2 = `partes/CH4.aux'.
 
  (partes/CH4.tex
 Chapter 4.
 (partes/CH4/deterministic_dyson.tex
 
-[99
+[87
 
 
 
 
-]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+]) (partes/CH4/deterministic_diffusions.tex
+
+
+Package fancyhdr Warning: \headheight is too small (15.0pt): 
+(fancyhdr)                Make it at least 25.22153pt, for example:
+(fancyhdr)                \setlength{\headheight}{25.22153pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-10.22153pt}.
+
+[88]
+
+
+Package fancyhdr Warning: \headheight is too small (15.0pt): 
+(fancyhdr)                Make it at least 25.22153pt, for example:
+(fancyhdr)                \setlength{\headheight}{25.22153pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-10.22153pt}.
+
+[89]
+
+
+Package fancyhdr Warning: \headheight is too small (15.0pt): 
+(fancyhdr)                Make it at least 25.22153pt, for example:
+(fancyhdr)                \setlength{\headheight}{25.22153pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-10.22153pt}.
+
+[90]
+
+
+Package fancyhdr Warning: \headheight is too small (15.0pt): 
+(fancyhdr)                Make it at least 25.22153pt, for example:
+(fancyhdr)                \setlength{\headheight}{25.22153pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-10.22153pt}.
+
+[91]
+
+
+Package fancyhdr Warning: \headheight is too small (15.0pt): 
+(fancyhdr)                Make it at least 25.22153pt, for example:
+(fancyhdr)                \setlength{\headheight}{25.22153pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-10.22153pt}.
+
+[92]
+
+
+Package fancyhdr Warning: \headheight is too small (15.0pt): 
+(fancyhdr)                Make it at least 25.22153pt, for example:
+(fancyhdr)                \setlength{\headheight}{25.22153pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-10.22153pt}.
+
+[93]
+
+
+Package fancyhdr Warning: \headheight is too small (15.0pt): 
+(fancyhdr)                Make it at least 25.22153pt, for example:
+(fancyhdr)                \setlength{\headheight}{25.22153pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-10.22153pt}.
+
+[94]
+
+
+Package fancyhdr Warning: \headheight is too small (15.0pt): 
+(fancyhdr)                Make it at least 25.22153pt, for example:
+(fancyhdr)                \setlength{\headheight}{25.22153pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-10.22153pt}.
+
+[95] (img/four_det_dysons.pgf)
+Overfull \hbox (35.56592pt too wide) in paragraph at lines 1567--453
+ [][] 
+ []
 
 
 
@@ -1685,7 +1857,9 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-10.22153pt}.
 
-[100]) (partes/CH4/deterministic_diffusions.tex
+[96] (img/deterministic_wishart.pgf)
+
+[97] (img/deterministic_jacobi.pgf)) (partes/CH4/connections_ffp.tex
 
 
 Package fancyhdr Warning: \headheight is too small (15.0pt): 
@@ -1693,6 +1867,19 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 (fancyhdr)                \setlength{\headheight}{25.22153pt}.
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-10.22153pt}.
+
+[98]
+
+[99]
+
+
+Package fancyhdr Warning: \headheight is too small (15.0pt): 
+(fancyhdr)                Make it at least 25.22153pt, for example:
+(fancyhdr)                \setlength{\headheight}{25.22153pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-10.22153pt}.
+
+[100]
 
 [101]
 
@@ -1705,12 +1892,41 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 
 [102]
 
+LaTeX Warning: Command \' invalid in math mode on input line 298.
 
-Package fancyhdr Warning: \headheight is too small (15.0pt): 
-(fancyhdr)                Make it at least 25.22153pt, for example:
-(fancyhdr)                \setlength{\headheight}{25.22153pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-10.22153pt}.
+Missing character: There is no Ì in font cmr10!
+
+LaTeX Warning: Command \' invalid in math mode on input line 298.
+
+Missing character: There is no Ì in font cmr10!
+
+LaTeX Warning: Command \' invalid in math mode on input line 298.
+
+Missing character: There is no Ì in font cmr8!
+
+LaTeX Warning: Command \' invalid in math mode on input line 298.
+
+Missing character: There is no Ì in font cmr6!
+
+LaTeX Warning: Command \' invalid in math mode on input line 298.
+
+Missing character: There is no Ì in font cmr10!
+
+LaTeX Warning: Command \' invalid in math mode on input line 298.
+
+Missing character: There is no Ì in font cmr10!
+
+LaTeX Warning: Command \' invalid in math mode on input line 298.
+
+Missing character: There is no Ì in font cmr8!
+
+LaTeX Warning: Command \' invalid in math mode on input line 298.
+
+Missing character: There is no Ì in font cmr6!
+
+Underfull \vbox (badness 4279) has occurred while \output is active []
+
+
 
 [103]
 
@@ -1722,15 +1938,14 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-10.22153pt}.
 
 [104]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
-Package fancyhdr Warning: \headheight is too small (15.0pt): 
-(fancyhdr)                Make it at least 25.22153pt, for example:
-(fancyhdr)                \setlength{\headheight}{25.22153pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-10.22153pt}.
 
 [105]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
 
 
 Package fancyhdr Warning: \headheight is too small (15.0pt): 
@@ -1740,16 +1955,6 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-10.22153pt}.
 
 [106]
-Underfull \vbox (badness 4429) has occurred while \output is active []
-
-
-
-
-Package fancyhdr Warning: \headheight is too small (15.0pt): 
-(fancyhdr)                Make it at least 25.22153pt, for example:
-(fancyhdr)                \setlength{\headheight}{25.22153pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-10.22153pt}.
 
 [107]
 
@@ -1760,11 +1965,13 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-10.22153pt}.
 
-[108] (img/four_det_dysons.pgf)
+[108]
+Underfull \vbox (badness 1546) has occurred while \output is active []
 
-[109] (img/deterministic_wishart.pgf) (img/deterministic_jacobi.pgf)
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[109]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
@@ -1775,9 +1982,22 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-10.22153pt}.
 
-[110]) (partes/CH4/connections_ffp.tex
+[110]
+Overfull \hbox (7.62715pt too wide) detected at line 647
+[]
+ []
+
+
 
 [111]
+Overfull \hbox (1.83197pt too wide) detected at line 676
+[]
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
 
 
 Package fancyhdr Warning: \headheight is too small (15.0pt): 
@@ -1810,39 +2030,6 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 
 [116]
 
-LaTeX Warning: Command \' invalid in math mode on input line 268.
-
-Missing character: There is no Ì in font cmr10!
-
-LaTeX Warning: Command \' invalid in math mode on input line 268.
-
-Missing character: There is no Ì in font cmr10!
-
-LaTeX Warning: Command \' invalid in math mode on input line 268.
-
-Missing character: There is no Ì in font cmr8!
-
-LaTeX Warning: Command \' invalid in math mode on input line 268.
-
-Missing character: There is no Ì in font cmr6!
-
-LaTeX Warning: Command \' invalid in math mode on input line 268.
-
-Missing character: There is no Ì in font cmr10!
-
-LaTeX Warning: Command \' invalid in math mode on input line 268.
-
-Missing character: There is no Ì in font cmr10!
-
-LaTeX Warning: Command \' invalid in math mode on input line 268.
-
-Missing character: There is no Ì in font cmr8!
-
-LaTeX Warning: Command \' invalid in math mode on input line 268.
-
-Missing character: There is no Ì in font cmr6!
-
-
 [117]
 
 
@@ -1853,11 +2040,19 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-10.22153pt}.
 
 [118]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 1735) has occurred while \output is active []
 
 
 
 [119]
+Overfull \hbox (19.17017pt too wide) detected at line 1024
+[][][]\OML/cmm/m/it/10.95 @[]\OT1/cmr/m/n/10.95 [[](\OML/cmm/m/it/10.95 x; y; z; t\OT1/cmr/m/n/10.95 )][] = (\OML/cmm/m/it/10.95 n[]y \OT1/cmr/m/n/10.95 + \OML/cmm/m/it/10.95 n[]z\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 @[]\OT1/cmr/m/n/10.95 [[](\OML/cmm/m/it/10.95 x; y; z; t\OT1/cmr/m/n/10.95 )][] \OMS/cmsy/m/n/10.95 ^^@ \OML/cmm/m/it/10.95 y[]@[]@[]\OT1/cmr/m/n/10.95 [[](\OML/cmm/m/it/10.95 x; y; z; t\OT1/cmr/m/n/10.95 )][] \OMS/cmsy/m/n/10.95 ^^@ \OML/cmm/m/it/10.95 z[]@[]@[]\OT1/cmr/m/n/10.95 [[](\OML/cmm/m/it/10.95 x; y; z; t\OT1/cmr/m/n/10.95 )][]\OML/cmm/m/it/10.95 :
+ []
+
+
+Underfull \vbox (badness 1975) has occurred while \output is active []
+
+
 
 
 Package fancyhdr Warning: \headheight is too small (15.0pt): 
@@ -1869,7 +2064,9 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 [120]
 
 [121]
-Underfull \vbox (badness 1221) has occurred while \output is active []
+Overfull \hbox (3.3668pt too wide) detected at line 1111
+[]
+ []
 
 
 
@@ -1881,8 +2078,16 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-10.22153pt}.
 
 [122]
+Overfull \hbox (19.6825pt too wide) detected at line 1132
+[]
+ []
 
-[123]
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[123]))
 
 
 Package fancyhdr Warning: \headheight is too small (15.0pt): 
@@ -1891,22 +2096,23 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-10.22153pt}.
 
-[124]
-Overfull \hbox (7.62715pt too wide) detected at line 615
-[]
- []
+[124] (conclusions.tex
+
+LaTeX Warning: Reference `thm:laguerre_does_not_grow' on page 125 undefined on input line 6.
+
+
+LaTeX Warning: Citation 'pmlr-v70-pennington17a' on page 125 undefined on input line 8.
+
+
+LaTeX Warning: Citation 'srivastava2002methods' on page 125 undefined on input line 8.
 
 
 
-[125]
-Overfull \hbox (1.83197pt too wide) detected at line 644
-[]
- []
+[125
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
 
-
+])
 
 
 Package fancyhdr Warning: \headheight is too small (15.0pt): 
@@ -1916,140 +2122,7 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-10.22153pt}.
 
 [126]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-
-[127]
-
-
-Package fancyhdr Warning: \headheight is too small (15.0pt): 
-(fancyhdr)                Make it at least 25.22153pt, for example:
-(fancyhdr)                \setlength{\headheight}{25.22153pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-10.22153pt}.
-
-[128]
-
-[129]
-
-
-Package fancyhdr Warning: \headheight is too small (15.0pt): 
-(fancyhdr)                Make it at least 25.22153pt, for example:
-(fancyhdr)                \setlength{\headheight}{25.22153pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-10.22153pt}.
-
-[130]
-
-[131]
-
-
-Package fancyhdr Warning: \headheight is too small (15.0pt): 
-(fancyhdr)                Make it at least 25.22153pt, for example:
-(fancyhdr)                \setlength{\headheight}{25.22153pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-10.22153pt}.
-
-[132]
-
-[133]
-
-
-Package fancyhdr Warning: \headheight is too small (15.0pt): 
-(fancyhdr)                Make it at least 25.22153pt, for example:
-(fancyhdr)                \setlength{\headheight}{25.22153pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-10.22153pt}.
-
-[134]
-
-[135]
-
-
-Package fancyhdr Warning: \headheight is too small (15.0pt): 
-(fancyhdr)                Make it at least 25.22153pt, for example:
-(fancyhdr)                \setlength{\headheight}{25.22153pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-10.22153pt}.
-
-[136]
-Overfull \hbox (19.17017pt too wide) detected at line 991
-[][][]\OML/cmm/m/it/10.95 @[]\OT1/cmr/m/n/10.95 [[](\OML/cmm/m/it/10.95 x; y; z; t\OT1/cmr/m/n/10.95 )][] = (\OML/cmm/m/it/10.95 n[]y \OT1/cmr/m/n/10.95 + \OML/cmm/m/it/10.95 n[]z\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 @[]\OT1/cmr/m/n/10.95 [[](\OML/cmm/m/it/10.95 x; y; z; t\OT1/cmr/m/n/10.95 )][] \OMS/cmsy/m/n/10.95 ^^@ \OML/cmm/m/it/10.95 y[]@[]@[]\OT1/cmr/m/n/10.95 [[](\OML/cmm/m/it/10.95 x; y; z; t\OT1/cmr/m/n/10.95 )][] \OMS/cmsy/m/n/10.95 ^^@ \OML/cmm/m/it/10.95 z[]@[]@[]\OT1/cmr/m/n/10.95 [[](\OML/cmm/m/it/10.95 x; y; z; t\OT1/cmr/m/n/10.95 )][]\OML/cmm/m/it/10.95 :
- []
-
-
-Underfull \vbox (badness 5274) has occurred while \output is active []
-
-
-
-[137]
-
-
-Package fancyhdr Warning: \headheight is too small (15.0pt): 
-(fancyhdr)                Make it at least 25.22153pt, for example:
-(fancyhdr)                \setlength{\headheight}{25.22153pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-10.22153pt}.
-
-[138]
-Overfull \hbox (3.3668pt too wide) detected at line 1078
-[]
- []
-
-
-Overfull \hbox (19.6825pt too wide) detected at line 1099
-[]
- []
-
-
-Underfull \vbox (badness 1502) has occurred while \output is active []
-
-
-
-[139]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-
-
-Package fancyhdr Warning: \headheight is too small (15.0pt): 
-(fancyhdr)                Make it at least 25.22153pt, for example:
-(fancyhdr)                \setlength{\headheight}{25.22153pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-10.22153pt}.
-
-[140]))
-
-[141] (conclusions.tex
-
-
-Package fancyhdr Warning: \headheight is too small (15.0pt): 
-(fancyhdr)                Make it at least 25.22153pt, for example:
-(fancyhdr)                \setlength{\headheight}{25.22153pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-10.22153pt}.
-
-[142
-
-
-
-]
-Underfull \vbox (badness 2913) has occurred while \output is active []
-
-
-
-[143])
-
-
-Package fancyhdr Warning: \headheight is too small (15.0pt): 
-(fancyhdr)                Make it at least 25.22153pt, for example:
-(fancyhdr)                \setlength{\headheight}{25.22153pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-10.22153pt}.
-
-[144]
-LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 146.
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 145.
  (C:\Program Files\MiKTeX\tex/latex/base\t1cmtt.fd
 File: t1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
 )
@@ -2059,18 +2132,18 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             See the microtype manual for details.
 
 
-[145
+[127
 
 ]
 
-[146]
+[128]
 
-[147]
+[129]
 \openout2 = `appendix.aux'.
 
  (appendix.tex
 
-[148
+[130
 
 
 ]
@@ -2081,16 +2154,16 @@ File: lstlang1.sty 2024/05/25 1.10b listings language file
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 3.
 
 
-[149]
+[131]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-[150])
+[132])
 
-[151]
+[133]
 
-[152
+[134
 
 
 
@@ -2110,16 +2183,10 @@ LaTeX Warning: There were undefined references.
 
 LaTeX Warning: There were multiply-defined labels.
 
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: F7A048E8AC7A399C67EC155562052007;9846.
 
-Package rerunfilecheck Warning: File `main.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `main.out':
-(rerunfilecheck)             Before: 8657DB2C71E160432E82DAAE5B001D1F;9970
-(rerunfilecheck)             After:  82C0993F675D2A7C431B0B93EDB5895B;9915.
-
-Package biblatex Warning: Please (re)run BibTeX on the file(s):
+Package biblatex Warning: Please (re)run Biber on the file:
 (biblatex)                main
 (biblatex)                and rerun LaTeX afterwards.
 
@@ -2129,20 +2196,20 @@ Package logreq Info: Writing requests to 'main.run.xml'.
  )
 (\end occurred inside a group at level 1)
 
-### semi simple group (level 1) entered at line 123 (\begingroup)
+### semi simple group (level 1) entered at line 122 (\begingroup)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 37615 strings out of 473904
- 705761 string characters out of 5736415
- 3216548 words of memory out of 5000000
- 58942 multiletter control sequences out of 15000+600000
- 601071 words of font info for 263 fonts, out of 8000000 for 9000
+ 37340 strings out of 473904
+ 699288 string characters out of 5736415
+ 3327265 words of memory out of 5000000
+ 58709 multiletter control sequences out of 15000+600000
+ 601687 words of font info for 271 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,20n,101p,1970b,2450s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 99i,20n,101p,1674b,2447s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/doublestroke/dsrom10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/rsfs/rsfs10.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfbx1000.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfbx1095.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfbx1200.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfbx1440.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfbx2074.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfbx2488.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfcc1095.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfrm0600.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfrm0800.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfrm1000.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfrm1095.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfrm1200.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfti0800.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfti1095.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sftt0900.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sftt1095.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfxc1728.pfb>
-Output written on main.pdf (164 pages, 2442653 bytes).
+Output written on main.pdf (140 pages, 2404389 bytes).
 PDF statistics:
- 1956 PDF objects out of 2073 (max. 8388607)
- 609 named destinations out of 1000 (max. 500000)
- 75180 words of extra memory for PDF output out of 89155 (max. 10000000)
+ 1836 PDF objects out of 2073 (max. 8388607)
+ 560 named destinations out of 1000 (max. 500000)
+ 75172 words of extra memory for PDF output out of 89155 (max. 10000000)
 
