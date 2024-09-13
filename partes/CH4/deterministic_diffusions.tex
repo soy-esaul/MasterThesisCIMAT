@@ -126,7 +126,7 @@ This section aims to derive some results of the dynamical behavior for the deter
 An easy result for a system of functions satisfying \eqref{eq:deterministic_diffusion}, is that the distance between the biggest and the smallest function always grows.
 
 
-\begin{proposition}
+\begin{proposition} \label{proposition:total_distance_grows}
      Let $\lambda_1, \dots, \lambda_n$ be a system of $n$ functions satisfying \eqref{eq:deterministic_diffusion} with $b$ monotone increasing and initial condition $\lambda_1(0) < \dots < \lambda_n(0)$. Then the distance between $\lambda_n$ and $\lambda_1$ grows for every time before the first collision $t\le \tau$.
 
      \begin{equation*}
@@ -331,7 +331,7 @@ Although the minimal distance between two functions always grows in a system tha
     Let $(\lambda_1, \lambda_2, \dots, \lambda_n)$ be a system of $n$ functions satisfying \eqref{eq:deterministic_wishart}. Let $\lambda_i, \lambda_j$ be such that $\lambda_i(t_0) > \lambda_j(t_0)$ and there is no $\lambda_k$ such that $\lambda_i(t_0) > \lambda_k(t_0) > \lambda_j(t_0)$. Then $\lambda_i$ and $\lambda_j$ repel each other at time $t_0$ if and only if 
 
     \begin{equation} \label{eq:separation_condition_wishart}
-        \frac{\lambda_i + \lambda_j}{(\lambda_i - \lambda_j)^2} > \sum_{k\neq i,j} \frac{\lambda_k}{(\lambda_i-\lambda_k)(\lambda_j-\lambda_k)}.
+        \frac{\lambda_i(t_0) + \lambda_j(t_0)}{(\lambda_i(t_0) - \lambda_j(t_0))^2} > \sum_{k\neq i,j} \frac{\lambda_k(t_0)}{(\lambda_i(t_0)-\lambda_k(t_0))(\lambda_j(t_0)-\lambda_k(t_0))}.
     \end{equation}
 \end{lemma}
 
@@ -355,24 +355,39 @@ Although the minimal distance between two functions always grows in a system tha
 \end{proof}
 
 \begin{corollary}
-    In a system of $n$ functions satisfying \eqref{eq:deterministic_wishart} there is no collision of the functions.
+    In a system of $n$ functions satisfying \eqref{eq:deterministic_wishart}, if three or more functions do not collide at the same time, then there is no collision of the functions in finite time.
 \end{corollary}
 
 \begin{proof}
-    Use condition \eqref{eq:separation_condition_wishart} and let $\lambda_i \to \lambda_j$, then
+   If $n=2$, Proposition \ref{proposition:total_distance_grows} guarantees the result. For $n\ge 3$, take an initial condition with $\lambda_i(0) < \lambda_j(0)$ and there is no $k$ such that $\lambda_i(0) < \lambda_k(0) < \lambda_j(0)$. Now suppose that $\lambda_i$ $\lambda_j$ are the first two functions to collide and they do it at the time of the first collision $\tau \in \R^+$, defined as 
+
+   \begin{equation*}
+       \tau \coloneqq \inf\left\{ t > 0 \colon \lambda_i(t) \ge \lambda_j(t) \right\}.
+   \end{equation*}
+
+   The function $\lambda_j(t) - \lambda_i(t)$ is differentiable, so it has finite variation. Because it is positive in $(0, \tau)$ and vanishes at time $\tau$, it must be monotone decreasing $(\tau-\epsilon, \tau)$ for $\epsilon >0$ sufficiently small. Then in this interval, its derivative must be negative. %Choose an arbitrary $\epsilon >0$.% and take any $t_0 \in (\tau-\epsilon, \tau)$.
+   Define the time dependent quotients $c_{ik}(t),c_{jk}(t)$ as 
 
     \begin{equation*}
-        \frac{\lambda_i + \lambda_j}{(\lambda_i-\lambda_j)^2} \to \infty,
+        c_{ik}(t) = \frac{\lambda_i(t) - \lambda_k(t)}{\lambda_i(t) - \lambda_j(t)}, \qquad c_{jk}(t) = \frac{\lambda_j(t) - \lambda_k(t)}{\lambda_i(t) - \lambda_j(t)}.
     \end{equation*}
-
-    \noindent but
+    At every $t \in (0,\tau)$ the derivative of $\lambda_j - \lambda_i$ is negative if and only if
 
     \begin{align*}
-        \sum_{k\neq i,j} \frac{\lambda_k}{(\lambda_i-\lambda_k)(\lambda_j-\lambda_k)} = \sum_{k\neq i,j} \frac{\lambda_k}{(\lambda_i-\lambda_j + \lambda_j -\lambda_k)(\lambda_j-\lambda_k)} \to \sum_{k\neq i,j} \frac{\lambda_k}{(\lambda_j-\lambda_k)^2} < \infty.
+        \sum_{k \neq i,j} \frac{\lambda_k(t)}{c_{ik}(t)c_{jk}(t)} &> \lambda_i(t) + \lambda_j(t). 
     \end{align*}
+    Take $\lambda_i(\tau) = \lambda_j(\tau) = L$. Due to the continuity of the functions, it follows that every $\lambda_k$ is bounded on $[0,\tau]$ for $k \in [n]$, let $K$ be a common bound for them. Suppose that for every $k \neq i,j$, $\lambda_k(\tau) \neq L$ . Using that $c_{ik}(t)c_{jk}(t) > 0$, this implies that
 
-    So before the functions collide, the derivative of the separation is positive and they repel each other.
-\end{proof}
+    \begin{align*}
+        \lim_{t\to \tau} c_{ik}(t)c_{jk}(t) = \lim_{t\to\tau} \left(\frac{\lambda_i(t) - \lambda_k(t)}{\lambda_i(t) - \lambda_j(t)}\right)\left(\frac{\lambda_j(t) - \lambda_k(t)}{\lambda_i(t) - \lambda_j(t)}\right) = \infty.
+    \end{align*}
+    This means that   
+
+    \begin{equation*}
+        \lim_{t\to\tau} \sum_{k\neq i,j} \frac{\lambda_k(t)}{c_{ik}(t)c_{jk}(t)} = 0.
+    \end{equation*}
+    But $\lim_{t\to\tau} \lambda_i(t) + \lambda_j(t) = 2L >0$. So, for every $\epsilon$ small enough the condition \eqref{eq:separation_condition_wishart} is satisfied in $(\tau-\epsilon,\tau)$ which contradicts the fact that the derivative is negative in these intervals. We conclude that there is no collision in finite time.
+    \end{proof}
 
 \begin{proposition} \label{proposition:laguerre_does_not_grow}
     Let $(\lambda_1, \lambda_2, \dots, \lambda_n)$ be a system of $n$ functions moving according to \eqref{eq:deterministic_wishart} and let $\lambda_i,\lambda_j$ be such that for a given $t_0$ it is satisfied $\lambda_i(t_0) > \lambda_j(t_0)$ and 
