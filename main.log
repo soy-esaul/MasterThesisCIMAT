@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.7.30)  13 SEP 2024 02:39
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.7.30)  13 SEP 2024 02:51
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1001,24 +1001,7 @@ Package biblatex Info: Automatic encoding selection.
 
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'main.bbl' found.
- (main.bbl
-
-Package biblatex Warning: Biber reported the following issues
-(biblatex)                with 'article:dyson':
-(biblatex)                - Can't use 'date' + 'year'.
-
-
-Package biblatex Warning: Biber reported the following issues
-(biblatex)                with 'book:revuzyor':
-(biblatex)                - Can't use 'date' + 'year'.
-
-
-Package biblatex Warning: Biber reported the following issues
-(biblatex)                with 'article:jacobi_matrix_model':
-(biblatex)                - Can't use 'journaltitle' + 'journal' 
-(biblatex)                - Can't use 'date' + 'year'.
-
-)
+ (main.bbl)
 Package biblatex Info: Reference section=0 on input line 68.
 Package biblatex Info: Reference segment=0 on input line 68.
 LaTeX Info: Redefining \microtypecontext on input line 68.
@@ -1079,7 +1062,7 @@ File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman (
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-<logos/logo.png, id=202, 166.7028pt x 213.9192pt>
+<logos/logo.png, id=198, 166.7028pt x 213.9192pt>
 File: logos/logo.png Graphic file (type png)
 <use logos/logo.png>
 Package pdftex.def Info: logos/logo.png  used on input line 72.
@@ -1106,7 +1089,7 @@ Underfull \hbox (badness 10000) detected at line 72
 
 
 
-<logos/banner.png, id=204, 820.06375pt x 248.93pt>
+<logos/banner.png, id=200, 820.06375pt x 248.93pt>
 File: logos/banner.png Graphic file (type png)
 <use logos/banner.png>
 Package pdftex.def Info: logos/banner.png  used on input line 72.
@@ -1137,6 +1120,13 @@ Package pdftex.def Info: logos/banner.png  used on input line 72.
 
 [4] (introduction.tex
 
+LaTeX Warning: Citation 'article:dyson' on page 1 undefined on input line 12.
+
+
+LaTeX Warning: Citation 'article:multiyamada' on page 1 undefined on input line 20.
+
+
+
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
@@ -1145,7 +1135,14 @@ l.24 \end{equation}
                     [1
 
 
-])
+]
+
+LaTeX Warning: Citation 'article:finitefree' on page 2 undefined on input line 33.
+
+
+LaTeX Warning: Citation 'article:holcomb_paquette' on page 2 undefined on input line 41.
+
+)
 
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has been already used, duplicate ignored
@@ -1163,8 +1160,11 @@ Chapter 1.
 
 
 ]
+
+LaTeX Warning: Citation 'article:finitefree' on page 4 undefined on input line 41.
+
 LaTeX Font Info:    Trying to load font information for U+dsrom on input line 77.
- (C:\Program Files\MiKTeX\tex/latex/doublestroke\udsrom.fd
+(C:\Program Files\MiKTeX\tex/latex/doublestroke\udsrom.fd
 File: Udsrom.fd 1995/08/01 v0.1 Double stroke roman font definitions
 )
 Package microtype Info: Fixing zero \fontdimen 6 for font `U/dsrom/m/n/10.95'
@@ -1182,6 +1182,9 @@ Package microtype Info: Fixing zero \fontdimen 6 for font `U/dsrom/m/n/6'
 Package microtype Warning: I cannot find a spacing list for font
 (microtype)                `TS1/cmr/m/n/10.95' (context: `nonfrench'). Switching off
 (microtype)                spacing for this font on input line 141.
+
+
+LaTeX Warning: Citation 'book:mingo_speicher' on page 6 undefined on input line 167.
 
 ) (partes/Preliminaries/stochastic_calculus.tex
 
@@ -1202,8 +1205,30 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 5.
 
 
+LaTeX Warning: Citation 'book:klebaner' on page 7 undefined on input line 7.
+
+
+LaTeX Warning: Citation 'book:karatzas' on page 7 undefined on input line 7.
+
+
+LaTeX Warning: Citation 'book:revuzyor' on page 7 undefined on input line 7.
+
+
+LaTeX Warning: Citation 'book:legall' on page 7 undefined on input line 32.
+
+
+LaTeX Warning: Citation 'book:klebaner' on page 7 undefined on input line 32.
+
+
+LaTeX Warning: Citation 'book:karatzas' on page 7 undefined on input line 32.
+
+
 
 [7]
+
+LaTeX Warning: Citation 'book:klebaner' on page 8 undefined on input line 85.
+
+
 
 [8]
 
@@ -1211,7 +1236,21 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 [10]
 
+LaTeX Warning: Citation 'book:revuzyor' on page 11 undefined on input line 208.
+
+
+LaTeX Warning: Citation 'book:revuzyor' on page 11 undefined on input line 223.
+
+
+
 [11]
+
+LaTeX Warning: Citation 'book:legall' on page 12 undefined on input line 259.
+
+
+LaTeX Warning: Citation 'mayerhofer2011strong' on page 12 undefined on input line 274.
+
+
 
 [12]
 Underfull \vbox (badness 2326) has occurred while \output is active []
@@ -1224,9 +1263,25 @@ Underfull \vbox (badness 2326) has occurred while \output is active []
 
 [15]
 
+LaTeX Warning: Citation 'thesis_trujillo' on page 16 undefined on input line 497.
+
+
+LaTeX Warning: Citation 'bru1989diffusions' on page 16 undefined on input line 508.
+
+
+Overfull \hbox (18.04263pt too wide) in paragraph at lines 508--509
+[]\T1/cmr/m/n/10.95 (-10) The next ver-sion of matrix-valued in-te-gra-tion by parts for-mula ap-pears in []
+ []
+
+
+
 [16]) (partes/Preliminaries/non_commutative_probability.tex
 
 [17]
+
+LaTeX Warning: Citation 'book:nica_speicher' on page 18 undefined on input line 24.
+
+
 
 [18]
 Overfull \hbox (4.7773pt too wide) in paragraph at lines 82--83
@@ -1246,6 +1301,9 @@ Overfull \hbox (12.34839pt too wide) in paragraph at lines 200--201
  []
 
 
+LaTeX Warning: Citation 'anaya2016cumulantes' on page 21 undefined on input line 217.
+
+
 
 [21]
 
@@ -1253,7 +1311,11 @@ Overfull \hbox (12.34839pt too wide) in paragraph at lines 200--201
 
 [23]
 
-[24]))
+[24]
+
+LaTeX Warning: Citation 'book:nica_speicher' on page 25 undefined on input line 426.
+
+))
 
 [25]
 \openout2 = `partes/CH2.aux'.
@@ -1268,8 +1330,27 @@ Overfull \hbox (12.34839pt too wide) in paragraph at lines 200--201
 ]
 Chapter 2.
 
+LaTeX Warning: Citation 'article:multiyamada' on page 27 undefined on input line 3.
+
+
+LaTeX Warning: Citation 'bru1989diffusions' on page 27 undefined on input line 3.
+
+
+Underfull \vbox (badness 6188) has occurred while \output is active []
+
+
 
 [27] (partes/CH2/dyson_brownian_motion.tex
+
+LaTeX Warning: Citation 'article:dyson' on page 28 undefined on input line 5.
+
+
+LaTeX Warning: Citation 'article:allez_guionnet_beta' on page 28 undefined on input line 11.
+
+
+LaTeX Warning: Citation 'article:holcomb_paquette' on page 28 undefined on input line 11.
+
+
 Overfull \hbox (11.1728pt too wide) in paragraph at lines 20--21
 \T1/cmr/m/n/10.95 (-10) cess tak-ing val-ues in $\OMS/cmsy/m/n/10.95 M[]\OT1/cmr/m/n/10.95 (-10) (\U/msb/m/n/10.95 R\OT1/cmr/m/n/10.95 (-10) )$ \T1/cmr/m/n/10.95 (-10) whose en-tries are stan-dard Brow-n-ian mo-tions $\OMS/cmsy/m/n/10.95 f\OML/cmm/m/it/10.95 B[]\OT1/cmr/m/n/10.95 (-10) (\OML/cmm/m/it/10.95 t\OT1/cmr/m/n/10.95 (-10) )\OMS/cmsy/m/n/10.95 g[]$
  []
@@ -1286,6 +1367,9 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 [28]
 
 [29]
+Underfull \vbox (badness 2343) has occurred while \output is active []
+
+
 
 
 Package fancyhdr Warning: \headheight is too small (15.0pt): 
@@ -1298,6 +1382,10 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 
 [31]
 
+LaTeX Warning: Citation 'article:dyson' on page 32 undefined on input line 186.
+
+
+
 
 Package fancyhdr Warning: \headheight is too small (15.0pt): 
 (fancyhdr)                Make it at least 25.22153pt, for example:
@@ -1305,9 +1393,12 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-10.22153pt}.
 
-[32]) (partes/CH2/diffusions.tex
+[32]
 
-[33]
+[33]) (partes/CH2/diffusions.tex
+Underfull \vbox (badness 2856) has occurred while \output is active []
+
+
 
 
 Package fancyhdr Warning: \headheight is too small (15.0pt): 
@@ -1317,17 +1408,14 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-10.22153pt}.
 
 [34]
-Overfull \hbox (5.49794pt too wide) detected at line 99
-[]
- []
-
-
-Underfull \vbox (badness 2393) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
 [35]
-Underfull \vbox (badness 2027) has occurred while \output is active []
+Overfull \hbox (5.49794pt too wide) detected at line 99
+[]
+ []
 
 
 
@@ -1341,9 +1429,6 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 [36]
 
 [37]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
 
 
 Package fancyhdr Warning: \headheight is too small (15.0pt): 
@@ -1353,6 +1438,19 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-10.22153pt}.
 
 [38]
+
+LaTeX Warning: Citation 'article:multiyamada' on page 39 undefined on input line 293.
+
+
+LaTeX Warning: Citation 'book:mckean' on page 39 undefined on input line 293.
+
+
+LaTeX Warning: Citation 'bru1989diffusions' on page 39 undefined on input line 293.
+
+
+LaTeX Warning: Citation 'bru1989diffusions' on page 39 undefined on input line 293.
+
+
 
 [39]
 
@@ -1367,9 +1465,6 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 Overfull \hbox (29.45174pt too wide) detected at line 363
 []
  []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
@@ -1438,6 +1533,9 @@ LaTeX Warning: Command \' invalid in math mode on input line 412.
 
 Missing character: There is no á in font cmr6!
 Missing character: There is no í in font cmr6!
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
 
 
 
@@ -1521,6 +1619,13 @@ Overfull \hbox (1.59467pt too wide) detected at line 445
 
 [43]
 
+LaTeX Warning: Citation 'article:multiyamada' on page 44 undefined on input line 484.
+
+
+LaTeX Warning: Citation 'article:multiyamada' on page 44 undefined on input line 486.
+
+
+
 
 Package fancyhdr Warning: \headheight is too small (15.0pt): 
 (fancyhdr)                Make it at least 25.22153pt, for example:
@@ -1529,9 +1634,6 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-10.22153pt}.
 
 [44]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
 
 [45]
 
@@ -1544,7 +1646,24 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 
 [46]
 
+LaTeX Warning: Citation 'article:wishart' on page 47 undefined on input line 648.
+
+
+
 [47]
+
+LaTeX Warning: Citation 'book:hastie_tibshirani' on page 48 undefined on input line 650.
+
+
+LaTeX Warning: Citation 'bru1989diffusions' on page 48 undefined on input line 653.
+
+
+LaTeX Warning: Citation 'article:multiyamada' on page 48 undefined on input line 655.
+
+
+LaTeX Warning: Citation 'bru1989diffusions' on page 48 undefined on input line 655.
+
+
 
 
 Package fancyhdr Warning: \headheight is too small (15.0pt): 
@@ -1555,7 +1674,27 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 
 [48]
 
+LaTeX Warning: Citation 'book:multivariate_statistics' on page 49 undefined on input line 735.
+
+
+LaTeX Warning: Citation 'article:GSVD_van_loan' on page 49 undefined on input line 743.
+
+
+LaTeX Warning: Citation 'article:marcus_finite_free_point_processes' on page 49 undefined on input line 743.
+
+
+LaTeX Warning: Citation 'doumerc2005matrices' on page 49 undefined on input line 743.
+
+
+
 [49]
+
+LaTeX Warning: Citation 'thesis:collins' on page 50 undefined on input line 786.
+
+
+LaTeX Warning: Citation 'doumerc2005matrices' on page 50 undefined on input line 786.
+
+
 
 
 Package fancyhdr Warning: \headheight is too small (15.0pt): 
@@ -1564,7 +1703,19 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-10.22153pt}.
 
-[50] (img/dyson_comparison.pgf
+[50]
+
+LaTeX Warning: Citation 'doumerc2005matrices' on page 51 undefined on input line 788.
+
+
+LaTeX Warning: Citation 'book:asmussen' on page 51 undefined on input line 820.
+
+
+Overfull \hbox (5.05145pt too wide) in paragraph at lines 820--821
+\T1/cmr/m/n/10.95 (-10) Euler-Maruyama method. De-tails about the method can be found in [][Chapter
+ []
+
+(img/dyson_comparison.pgf
 Package microtype Info: Fixing zero \fontdimen 6 for font `U/dsrom/m/n/10'
 (microtype)             (new value: 10.0pt) on input line 82.
 Package microtype Info: Fixing zero \fontdimen 6 for font `U/dsrom/m/n/7'
@@ -1597,7 +1748,9 @@ LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <5.5> not available
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-(img/four_dysons.pgf)
+
+
+[51] (img/four_dysons.pgf)
 Overfull \hbox (35.56592pt too wide) in paragraph at lines 42470--837
  [][] 
  []
@@ -1615,19 +1768,8 @@ Underfull \hbox (badness 2150) in paragraph at lines 837--837
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-
-
-[51] (img/wishart_comparison.pgf)
-
-
-Package fancyhdr Warning: \headheight is too small (15.0pt): 
-(fancyhdr)                Make it at least 25.22153pt, for example:
-(fancyhdr)                \setlength{\headheight}{25.22153pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-10.22153pt}.
-
-[52]
-<img/jacobi.pdf, id=783, 433.62pt x 180.675pt>
+(img/wishart_comparison.pgf)
+<img/jacobi.pdf, id=701, 433.62pt x 180.675pt>
 File: img/jacobi.pdf Graphic file (type pdf)
 <use img/jacobi.pdf>
 Package pdftex.def Info: img/jacobi.pdf  used on input line 850.
@@ -1639,10 +1781,16 @@ Underfull \hbox (badness 6893) in paragraph at lines 851--851
 
 ))
 
-[53 <./img/jacobi.pdf>]
-\openout2 = `partes/CH3.aux'.
 
- (partes/CH3.tex
+Package fancyhdr Warning: \headheight is too small (15.0pt): 
+(fancyhdr)                Make it at least 25.22153pt, for example:
+(fancyhdr)                \setlength{\headheight}{25.22153pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-10.22153pt}.
+
+[52]
+
+[53]
 
 
 Package fancyhdr Warning: \headheight is too small (15.0pt): 
@@ -1651,30 +1799,75 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-10.22153pt}.
 
-[54
+[54 <./img/jacobi.pdf>]
+\openout2 = `partes/CH3.aux'.
+
+ (partes/CH3.tex
+Chapter 3.
+
+LaTeX Warning: Citation 'article:finitefree' on page 55 undefined on input line 3.
+
+
+LaTeX Warning: Citation 'article:marcus_finite' on page 55 undefined on input line 3.
+
+
+LaTeX Warning: Citation 'anaya2016cumulantes' on page 55 undefined on input line 3.
+
+(partes/CH3/convolutions.tex
+
+LaTeX Warning: Citation 'walsh1922location' on page 55 undefined on input line 5.
+
+
+LaTeX Warning: Citation 'szeg1939orthogonal' on page 55 undefined on input line 5.
+
+
+LaTeX Warning: Citation 'article:finitefree' on page 55 undefined on input line 5.
+
+
+
+[55
 
 
 
 
 ]
-Chapter 3.
-
-LaTeX Warning: Citation 'article:marcus_finite' on page 55 undefined on input line 3.
-
-(partes/CH3/convolutions.tex
-
-[55]
 
 [56]
 
+LaTeX Warning: Citation 'marcus2021polynomial' on page 57 undefined on input line 99.
+
+
+LaTeX Warning: Citation 'article:finitefree' on page 57 undefined on input line 99.
+
+
+
 [57]
+
+LaTeX Warning: Citation 'article:finitefree' on page 58 undefined on input line 111.
+
+
 
 [58]
 
+LaTeX Warning: Citation 'szeg1939orthogonal' on page 59 undefined on input line 150.
+
+
+LaTeX Warning: Citation 'book:orthogonal_polynomials_and_stochastic_processes' on page 59 undefined on input line 150.
+
+
+Overfull \hbox (40.10655pt too wide) in paragraph at lines 150--151
+\T1/cmr/m/n/10.95 (-10) the-ory of stochas-tic pro-cesses, see []. 
+ []
+
+
+LaTeX Warning: Citation 'book:mathematical_methods_for_physicists' on page 59 undefined on input line 154.
+
+
+LaTeX Warning: Citation 'marcus2021polynomial' on page 59 undefined on input line 154.
+
+
+
 [59]
-Underfull \vbox (badness 2600) has occurred while \output is active []
-
-
 
 [60]
 
@@ -1682,7 +1875,11 @@ Underfull \vbox (badness 2600) has occurred while \output is active []
 
 [62]
 
-[63]) (partes/CH3/ffp_and_rm.tex
+[63]
+
+LaTeX Warning: Citation 'szeg1939orthogonal' on page 64 undefined on input line 369.
+
+) (partes/CH3/ffp_and_rm.tex
 Overfull \hbox (3.3687pt too wide) detected at line 46
 []
  []
@@ -1699,6 +1896,10 @@ Underfull \vbox (badness 6173) has occurred while \output is active []
 
 
 [67]
+
+LaTeX Warning: Citation 'article:finitefree' on page 68 undefined on input line 198.
+
+
 
 [68]
 
@@ -1719,11 +1920,22 @@ LaTeX Warning: Citation 'article:marcus_finite' on page 71 undefined on input li
 
 [71]
 
+LaTeX Warning: Citation 'anaya2016cumulantes' on page 72 undefined on input line 373.
+
+
+
 [72]
 
 [73]
 
 [74]
+
+LaTeX Warning: Citation 'anaya2016cumulantes' on page 75 undefined on input line 480.
+
+
+LaTeX Warning: Citation 'article:fuglede_kadisen_determinant' on page 75 undefined on input line 499.
+
+
 
 [75]
 
@@ -1746,6 +1958,13 @@ Underfull \vbox (badness 2941) has occurred while \output is active []
 
 [80]
 
+LaTeX Warning: Citation 'marcus2021polynomial' on page 81 undefined on input line 745.
+
+
+LaTeX Warning: Citation 'article:finitefree' on page 81 undefined on input line 745.
+
+
+
 [81]
 
 [82]
@@ -1756,6 +1975,10 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 [84]
+
+LaTeX Warning: Citation 'marcus2021polynomial' on page 85 undefined on input line 921.
+
+
 
 [85]))
 
@@ -1870,6 +2093,28 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 
 [98]
 
+LaTeX Warning: Citation 'article:finitefree' on page 99 undefined on input line 61.
+
+
+LaTeX Warning: Citation 'article:arizmendi_perales' on page 99 undefined on input line 61.
+
+
+LaTeX Warning: Citation 'article:finitefree' on page 99 undefined on input line 61.
+
+
+LaTeX Warning: Citation 'book:percy_deift_orthogonal' on page 99 undefined on input line 61.
+
+
+LaTeX Warning: Citation 'edelman1988eigenvalues' on page 99 undefined on input line 61.
+
+
+LaTeX Warning: Citation 'article:aomoto1987jacobi_selberg_integrals' on page 99 undefined on input line 61.
+
+
+LaTeX Warning: Citation 'article:dumitriu_edelman' on page 99 undefined on input line 61.
+
+
+
 [99]
 
 
@@ -1880,6 +2125,9 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-10.22153pt}.
 
 [100]
+Underfull \vbox (badness 1308) has occurred while \output is active []
+
+
 
 [101]
 
@@ -1924,7 +2172,7 @@ LaTeX Warning: Command \' invalid in math mode on input line 298.
 
 Missing character: There is no í in font cmr6!
 
-Underfull \vbox (badness 4279) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
@@ -1938,14 +2186,8 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-10.22153pt}.
 
 [104]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
 
 [105]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
 
 
 Package fancyhdr Warning: \headheight is too small (15.0pt): 
@@ -2008,6 +2250,18 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 
 [112]
 
+LaTeX Warning: Citation 'article:jacobi_matrix_model' on page 113 undefined on input line 692.
+
+
+LaTeX Warning: Citation 'article:edelman_sutton_jacobi' on page 113 undefined on input line 692.
+
+
+Overfull \hbox (53.14029pt too wide) in paragraph at lines 692--693
+\T1/cmr/m/n/10.95 (-10) some use-ful ma-trix mod-els have been pro-posed for the Ja-cobi en-sam-ble [],
+ []
+
+
+
 [113]
 
 
@@ -2019,7 +2273,21 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 
 [114]
 
+LaTeX Warning: Citation 'article:marcus_finite_free_point_processes' on page 115 undefined on input line 772.
+
+
+LaTeX Warning: Citation 'doumerc2005matrices' on page 115 undefined on input line 772.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
 [115]
+
+LaTeX Warning: Citation 'article:marcus_finite_free_point_processes' on page 116 undefined on input line 792.
+
+
 
 
 Package fancyhdr Warning: \headheight is too small (15.0pt): 
@@ -2040,17 +2308,10 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-10.22153pt}.
 
 [118]
-Underfull \vbox (badness 1735) has occurred while \output is active []
-
-
 
 [119]
-Overfull \hbox (19.17017pt too wide) detected at line 1024
-[][][]\OML/cmm/m/it/10.95 @[]\OT1/cmr/m/n/10.95 [[](\OML/cmm/m/it/10.95 x; y; z; t\OT1/cmr/m/n/10.95 )][] = (\OML/cmm/m/it/10.95 n[]y \OT1/cmr/m/n/10.95 + \OML/cmm/m/it/10.95 n[]z\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 @[]\OT1/cmr/m/n/10.95 [[](\OML/cmm/m/it/10.95 x; y; z; t\OT1/cmr/m/n/10.95 )][] \OMS/cmsy/m/n/10.95 ^^@ \OML/cmm/m/it/10.95 y[]@[]@[]\OT1/cmr/m/n/10.95 [[](\OML/cmm/m/it/10.95 x; y; z; t\OT1/cmr/m/n/10.95 )][] \OMS/cmsy/m/n/10.95 ^^@ \OML/cmm/m/it/10.95 z[]@[]@[]\OT1/cmr/m/n/10.95 [[](\OML/cmm/m/it/10.95 x; y; z; t\OT1/cmr/m/n/10.95 )][]\OML/cmm/m/it/10.95 :
- []
 
-
-Underfull \vbox (badness 1975) has occurred while \output is active []
+LaTeX Warning: Citation 'edelman1988eigenvalues' on page 120 undefined on input line 994.
 
 
 
@@ -2062,6 +2323,11 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-10.22153pt}.
 
 [120]
+Overfull \hbox (19.17017pt too wide) detected at line 1024
+[][][]\OML/cmm/m/it/10.95 @[]\OT1/cmr/m/n/10.95 [[](\OML/cmm/m/it/10.95 x; y; z; t\OT1/cmr/m/n/10.95 )][] = (\OML/cmm/m/it/10.95 n[]y \OT1/cmr/m/n/10.95 + \OML/cmm/m/it/10.95 n[]z\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 @[]\OT1/cmr/m/n/10.95 [[](\OML/cmm/m/it/10.95 x; y; z; t\OT1/cmr/m/n/10.95 )][] \OMS/cmsy/m/n/10.95 ^^@ \OML/cmm/m/it/10.95 y[]@[]@[]\OT1/cmr/m/n/10.95 [[](\OML/cmm/m/it/10.95 x; y; z; t\OT1/cmr/m/n/10.95 )][] \OMS/cmsy/m/n/10.95 ^^@ \OML/cmm/m/it/10.95 z[]@[]@[]\OT1/cmr/m/n/10.95 [[](\OML/cmm/m/it/10.95 x; y; z; t\OT1/cmr/m/n/10.95 )][]\OML/cmm/m/it/10.95 :
+ []
+
+
 
 [121]
 Overfull \hbox (3.3668pt too wide) detected at line 1111
@@ -2098,6 +2364,9 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 
 [124] (conclusions.tex
 
+LaTeX Warning: Citation 'article:roots_grow_polya' on page 125 undefined on input line 6.
+
+
 LaTeX Warning: Reference `thm:laguerre_does_not_grow' on page 125 undefined on input line 6.
 
 
@@ -2107,12 +2376,27 @@ LaTeX Warning: Citation 'pmlr-v70-pennington17a' on page 125 undefined on input 
 LaTeX Warning: Citation 'srivastava2002methods' on page 125 undefined on input line 8.
 
 
+LaTeX Warning: Citation 'bru1989diffusions' on page 125 undefined on input line 8.
+
+
+LaTeX Warning: Citation 'article:aomoto1987jacobi_selberg_integrals' on page 125 undefined on input line 10.
+
+
+Overfull \hbox (23.42523pt too wide) in paragraph at lines 10--11
+\T1/cmr/m/n/10.95 (-10) prop-er-ties of con-vo-lu-tion than the one found in [].
+ []
+
+
 
 [125
 
 
 
 ])
+
+LaTeX Warning: Empty bibliography on input line 145.
+
+
 
 
 Package fancyhdr Warning: \headheight is too small (15.0pt): 
@@ -2122,7 +2406,15 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-10.22153pt}.
 
 [126]
-LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 145.
+\openout2 = `appendix.aux'.
+
+ (appendix.tex
+Appendix A.
+(C:\Program Files\MiKTeX\tex/latex/listings\lstlang1.sty
+File: lstlang1.sty 2024/05/25 1.10b listings language file
+)
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 3.
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 3.
  (C:\Program Files\MiKTeX\tex/latex/base\t1cmtt.fd
 File: t1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
 )
@@ -2134,36 +2426,17 @@ Package microtype Info: Loading generic protrusion settings for font family
 
 [127
 
-]
-
-[128]
-
-[129]
-\openout2 = `appendix.aux'.
-
- (appendix.tex
-
-[130
-
 
 ]
-Appendix A.
-(C:\Program Files\MiKTeX\tex/latex/listings\lstlang1.sty
-File: lstlang1.sty 2024/05/25 1.10b listings language file
-)
-Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 3.
-
-
-[131]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-[132])
+[128])
 
-[133]
+[129]
 
-[134
+[130
 
 
 
@@ -2184,7 +2457,7 @@ LaTeX Warning: There were undefined references.
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: F7A048E8AC7A399C67EC155562052007;9846.
+(rerunfilecheck)             Checksum: 10A5F8889508496841D554B964657476;9740.
 
 Package biblatex Warning: Please (re)run Biber on the file:
 (biblatex)                main
@@ -2199,17 +2472,17 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 ### semi simple group (level 1) entered at line 122 (\begingroup)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 37340 strings out of 473904
- 699288 string characters out of 5736415
- 3327265 words of memory out of 5000000
- 58709 multiletter control sequences out of 15000+600000
- 601687 words of font info for 271 fonts, out of 8000000 for 9000
+ 37120 strings out of 473904
+ 690202 string characters out of 5736415
+ 3300503 words of memory out of 5000000
+ 58550 multiletter control sequences out of 15000+600000
+ 599545 words of font info for 259 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,20n,101p,1674b,2447s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/doublestroke/dsrom10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/rsfs/rsfs10.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfbx1000.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfbx1095.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfbx1200.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfbx1440.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfbx2074.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfbx2488.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfcc1095.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfrm0600.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfrm0800.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfrm1000.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfrm1095.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfrm1200.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfti0800.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfti1095.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sftt0900.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sftt1095.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfxc1728.pfb>
-Output written on main.pdf (140 pages, 2404389 bytes).
+ 99i,20n,101p,1674b,2448s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/doublestroke/dsrom10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/rsfs/rsfs10.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfbx1000.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfbx1095.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfbx1200.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfbx1440.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfbx2074.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfbx2488.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfrm0600.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfrm0800.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfrm1000.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfrm1095.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfrm1200.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfti0800.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfti1095.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sftt0900.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/cm-super/sfxc1728.pfb>
+Output written on main.pdf (136 pages, 2322170 bytes).
 PDF statistics:
- 1836 PDF objects out of 2073 (max. 8388607)
- 560 named destinations out of 1000 (max. 500000)
- 75172 words of extra memory for PDF output out of 89155 (max. 10000000)
+ 1647 PDF objects out of 1728 (max. 8388607)
+ 517 named destinations out of 1000 (max. 500000)
+ 71068 words of extra memory for PDF output out of 74296 (max. 10000000)
 
