@@ -158,12 +158,6 @@
 \pgftext[x=2.998192in,y=1.227778in,,top]{\color{textcolor}\rmfamily\fontsize{10.000000}{12.000000}\selectfont \(\displaystyle {10.0}\)}%
 \end{pgfscope}%
 \begin{pgfscope}%
-\definecolor{textcolor}{rgb}{0.150000,0.150000,0.150000}%
-\pgfsetstrokecolor{textcolor}%
-\pgfsetfillcolor{textcolor}%
-\pgftext[x=1.957386in,y=1.048766in,,top]{\color{textcolor}\rmfamily\fontsize{11.000000}{13.200000}\selectfont time (\(\displaystyle t\))}%
-\end{pgfscope}%
-\begin{pgfscope}%
 \pgfpathrectangle{\pgfqpoint{0.812500in}{1.325000in}}{\pgfqpoint{2.289773in}{0.875000in}}%
 \pgfusepath{clip}%
 \pgfsetroundcap%
@@ -219,12 +213,6 @@
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
 \pgftext[x=0.645833in, y=1.947671in, left, base]{\color{textcolor}\rmfamily\fontsize{10.000000}{12.000000}\selectfont \(\displaystyle {5}\)}%
-\end{pgfscope}%
-\begin{pgfscope}%
-\definecolor{textcolor}{rgb}{0.150000,0.150000,0.150000}%
-\pgfsetstrokecolor{textcolor}%
-\pgfsetfillcolor{textcolor}%
-\pgftext[x=0.482252in,y=1.762500in,,bottom,rotate=90.000000]{\color{textcolor}\rmfamily\fontsize{11.000000}{13.200000}\selectfont Position}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \pgfpathrectangle{\pgfqpoint{0.812500in}{1.325000in}}{\pgfqpoint{2.289773in}{0.875000in}}%
@@ -494,12 +482,6 @@
 \pgftext[x=5.745919in,y=1.227778in,,top]{\color{textcolor}\rmfamily\fontsize{10.000000}{12.000000}\selectfont \(\displaystyle {10.0}\)}%
 \end{pgfscope}%
 \begin{pgfscope}%
-\definecolor{textcolor}{rgb}{0.150000,0.150000,0.150000}%
-\pgfsetstrokecolor{textcolor}%
-\pgfsetfillcolor{textcolor}%
-\pgftext[x=4.705114in,y=1.048766in,,top]{\color{textcolor}\rmfamily\fontsize{11.000000}{13.200000}\selectfont time (\(\displaystyle t\))}%
-\end{pgfscope}%
-\begin{pgfscope}%
 \pgfpathrectangle{\pgfqpoint{3.560227in}{1.325000in}}{\pgfqpoint{2.289773in}{0.875000in}}%
 \pgfusepath{clip}%
 \pgfsetroundcap%
@@ -555,12 +537,6 @@
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
 \pgftext[x=3.324116in, y=2.151757in, left, base]{\color{textcolor}\rmfamily\fontsize{10.000000}{12.000000}\selectfont \(\displaystyle {10}\)}%
-\end{pgfscope}%
-\begin{pgfscope}%
-\definecolor{textcolor}{rgb}{0.150000,0.150000,0.150000}%
-\pgfsetstrokecolor{textcolor}%
-\pgfsetfillcolor{textcolor}%
-\pgftext[x=3.160535in,y=1.762500in,,bottom,rotate=90.000000]{\color{textcolor}\rmfamily\fontsize{11.000000}{13.200000}\selectfont Position}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \pgfpathrectangle{\pgfqpoint{3.560227in}{1.325000in}}{\pgfqpoint{2.289773in}{0.875000in}}%
@@ -848,12 +824,6 @@
 \pgftext[x=2.998192in,y=0.177778in,,top]{\color{textcolor}\rmfamily\fontsize{10.000000}{12.000000}\selectfont \(\displaystyle {10.0}\)}%
 \end{pgfscope}%
 \begin{pgfscope}%
-\definecolor{textcolor}{rgb}{0.150000,0.150000,0.150000}%
-\pgfsetstrokecolor{textcolor}%
-\pgfsetfillcolor{textcolor}%
-\pgftext[x=1.957386in,y=-0.001234in,,top]{\color{textcolor}\rmfamily\fontsize{11.000000}{13.200000}\selectfont time (\(\displaystyle t\))}%
-\end{pgfscope}%
-\begin{pgfscope}%
 \pgfpathrectangle{\pgfqpoint{0.812500in}{0.275000in}}{\pgfqpoint{2.289773in}{0.875000in}}%
 \pgfusepath{clip}%
 \pgfsetroundcap%
@@ -909,12 +879,6 @@
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
 \pgftext[x=0.576388in, y=0.992171in, left, base]{\color{textcolor}\rmfamily\fontsize{10.000000}{12.000000}\selectfont \(\displaystyle {10}\)}%
-\end{pgfscope}%
-\begin{pgfscope}%
-\definecolor{textcolor}{rgb}{0.150000,0.150000,0.150000}%
-\pgfsetstrokecolor{textcolor}%
-\pgfsetfillcolor{textcolor}%
-\pgftext[x=0.412808in,y=0.712500in,,bottom,rotate=90.000000]{\color{textcolor}\rmfamily\fontsize{11.000000}{13.200000}\selectfont Position}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \pgfpathrectangle{\pgfqpoint{0.812500in}{0.275000in}}{\pgfqpoint{2.289773in}{0.875000in}}%
@@ -1236,12 +1200,6 @@
 \pgftext[x=5.745919in,y=0.177778in,,top]{\color{textcolor}\rmfamily\fontsize{10.000000}{12.000000}\selectfont \(\displaystyle {10.0}\)}%
 \end{pgfscope}%
 \begin{pgfscope}%
-\definecolor{textcolor}{rgb}{0.150000,0.150000,0.150000}%
-\pgfsetstrokecolor{textcolor}%
-\pgfsetfillcolor{textcolor}%
-\pgftext[x=4.705114in,y=-0.001234in,,top]{\color{textcolor}\rmfamily\fontsize{11.000000}{13.200000}\selectfont time (\(\displaystyle t\))}%
-\end{pgfscope}%
-\begin{pgfscope}%
 \pgfpathrectangle{\pgfqpoint{3.560227in}{0.275000in}}{\pgfqpoint{2.289773in}{0.875000in}}%
 \pgfusepath{clip}%
 \pgfsetroundcap%
@@ -1297,12 +1255,6 @@
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
 \pgftext[x=3.324116in, y=0.938560in, left, base]{\color{textcolor}\rmfamily\fontsize{10.000000}{12.000000}\selectfont \(\displaystyle {10}\)}%
-\end{pgfscope}%
-\begin{pgfscope}%
-\definecolor{textcolor}{rgb}{0.150000,0.150000,0.150000}%
-\pgfsetstrokecolor{textcolor}%
-\pgfsetfillcolor{textcolor}%
-\pgftext[x=3.160535in,y=0.712500in,,bottom,rotate=90.000000]{\color{textcolor}\rmfamily\fontsize{11.000000}{13.200000}\selectfont Position}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \pgfpathrectangle{\pgfqpoint{3.560227in}{0.275000in}}{\pgfqpoint{2.289773in}{0.875000in}}%

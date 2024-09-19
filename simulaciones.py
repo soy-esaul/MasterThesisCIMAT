@@ -141,7 +141,7 @@ if __name__ == "__main__":
 
     # Examples of Dyson Brownian motion
     dys_fig, dys_ax = plt.subplots(2,2)
-    dys_fig.set_size_inches(6.5,4)
+    dys_fig.set_size_inches(6.5,3)
     n_ex2 = 4
     dt_ex2 =0.01
     time_ex2 = 10
@@ -180,8 +180,8 @@ if __name__ == "__main__":
     for i in range(n_ex5):
         dys_ax[1,1].plot(time_mesh_ex5,sims_ex5[:,i],linewidth=0.6)
     # Figure parameters
-    for ax in dys_ax.flat:
-        ax.set(xlabel=r'time ($t$)', ylabel=r'Position')
+    # for ax in dys_ax.flat:
+    #     ax.set(xlabel=r'time ($t$)', ylabel=r'Position')
     dys_fig.savefig("img/four_dysons.pgf")
     
     # deterministic Dyson
@@ -223,8 +223,8 @@ if __name__ == "__main__":
     for i in range(n_ex5):
         det_dys_ax[1,1].plot(time_mesh_ex5,sims_ex5[:,i])
     # Figure parameters
-    for ax in det_dys_ax.flat:
-        ax.set(xlabel=r'time ($t$)', ylabel=r'Position')
+    # for ax in det_dys_ax.flat:
+    #     ax.set(xlabel=r'time ($t$)', ylabel=r'Position')
     # for ax in det_dys_ax.flat:
     #     ax.label_outer()
     det_dys_fig.savefig("img/four_det_dysons.pgf")
