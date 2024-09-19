@@ -828,23 +828,23 @@ In Figure \ref{fig:dyson_comparison}, we can see the path of a nine-dimensional 
     \caption{Superposition of simulation of a Dyson Brownian motion and its finite variation part. The initial conditions are $(-3, -2.25, -1.5, -0.75, 0, 0.75, 1.5, 2.25, 3)$.\label{fig:dyson_comparison}}
 \end{figure}
 
-In Figure \ref{fig:four_dyson} there are four different path simulations for a Dyson Brownian motion with dimension equal to four, five, seven and nine. The initial condition in the third last cases is with $n$ equally spaced points around zero. In the first case, the initial condition is slightly different because the two points in the middle have a separation of size one, while the surrounding points are separated by 0.1 of them. This appears to have little effect on this system, but in Chapter \ref{ch:determinist} we will see that in the deterministic case, it has an effect.
+In Figure \ref{fig:four_dyson} there are four different path simulations for a Dyson Brownian motion with dimensions equal to four, five, seven, and nine. The initial condition in the third last cases is with $n$ equally spaced points around zero. In the first case, the initial condition is slightly different because the two points in the middle have a separation of size one, while the surrounding points are separated by 0.1 of them. This appears to have little effect on this system, but in Chapter \ref{ch:determinist} we will see that in the deterministic case, it has an effect.
 
-Although the distances between paths in every simulation of Figure \ref{fig:four_dyson} are stochastic, we can notice that the spacing between consecutive points is more or less uniform, which is what we would expect as the particles reject each other with a similar strength. Also, it is interesting to notice that, although the number of paths increases in every chart of the figure, the total path spacing until $t=10$ is more or less uniform in all of them. 
+Although the distances between paths in every simulation of Figure \ref{fig:four_dyson} are stochastic, we can notice that the spacing between consecutive points is more or less uniform, which is what we would expect as the particles reject each other with similar strength. Also, it is interesting to notice that, although the number of paths increases in every chart of the figure, the total path spacing until $t=10$ is more or less uniform in all of them. 
 
 \begin{figure}[h!] \centering 
     \input{img/four_dysons.pgf}
-    \caption{Simulation of four different Dyson Brownian motions with different dimension. The initial conditions from left to right are $(-1.1,-1,2,2.1)$, $(-1, -0.5, 0, 0.5, 1)$, $(-2.5,-1.67,-0.83,0,0.83,1.67,2.5)$ and $(-2.5,-1.875,-1.25,-0.625,0,0.625,1.25,1.875,2.5)$.\label{fig:four_dyson}}
+    \caption{Simulation of four different Dyson Brownian motions with different dimensions. The initial conditions from left to right and top tp bottom are $(-1.1,-1,2,2.1)$, $(-1, -0.5, 0, 0.5, 1)$, $(-2.5,-1.67,-0.83,0,0.83,1.67,2.5)$ and $(-2.5,-1.875,-1.25,-0.625,0,0.625,1.25,1.875,2.5)$.\label{fig:four_dyson}}
 \end{figure}
 
-The ``uniform spacing'' behavior of the Dyson process contrasts with the path simulations for the Wishart process in Figure \ref{fig:wishart_comparison}. In this figure, we have the path for a Wishart process of dimension nine with the corresponding finite variation path. As we can see, the spacing of the particles with the biggest values tends to grow faster. This can be explained because for the Wishart process, the interaction term is proportional to the value of both functions.
+The ``uniform spacing'' behavior of the Dyson process contrasts with the path simulations for the Wishart process in Figure \ref{fig:wishart_comparison}. In this figure, we have the path for a Wishart process of dimension nine with the corresponding finite variation path. As we can see, the spacing of the particles with the biggest values tends to grow faster. This can be explained because, for the Wishart process, the interaction term is proportional to the value of both functions.
 
 \begin{figure} \centering 
     \input{img/wishart_comparison.pgf}
     \caption{Superposition of path simulations of a Wishart process and its finite variation part. The initial conditions are $(0.1,2.6,5.1,7.6,10.1,12.6,15.1,17.6,20.1)$.\label{fig:wishart_comparison}}
 \end{figure}
 
-For the Jacobi process path simulations in Figure \ref{fig:jacobi}, we notice a more stable behavior. In Chapter \ref{ch:determinist} we will see that this process has an stationary distribution and thus it is expected that, given any initial condition, the process converges to it. Notice that in this simulation the convergence appears to have rather quickly, as the points appear to be evenly separated at time $t=0.05$.
+For the Jacobi process path simulations in Figure \ref{fig:jacobi}, we notice a more stable behavior. In Chapter \ref{ch:determinist} we will see that this process has a stationary distribution and thus it is expected that, given any initial condition, the process converges to it. Notice that in this simulation the convergence appears to have been rather quick, as the points seem to be roughly evenly separated at time $t=0.05$. The stationary behavior can be more evident with the path simulations of the deterministic version in Chapter \ref{ch:determinist}.
 
 \begin{figure} \centering
     \includegraphics[width=6in]{img/jacobi.pdf}

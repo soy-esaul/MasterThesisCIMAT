@@ -64,10 +64,10 @@ The former theorem implies that minor orthogonality is preserved under unitary t
     \begin{align*}
         \mathbb E_Q\left[ \det[Q]_{S,T}\det[\hermit{Q}]_{U,V} \right] &= \mathbb E_{E,P}\left[ \det[E P]_{S,T}\det[\hermit{P}E]_{U,V} \right],\\
         &= \sum_{\abs{W} = k} \sum_{\abs{Z} = l} \mathbb E_{E,P} \left[ \det [E]_{S,W} \det[P]_{W,T} \det[\hermit{P}]_{U,Z} \det[E]_{Z,V} \right],
-        \intertext{every $\det[E]_{S,W}$ is diagonal and the determinant would be zero if $S\neq W$, so}
-        &= \mathbb E_{E,P} \left[ \det[E]_{S,S} \det[P]_{W,T} \det[\hermit{P}]_{U,Z} \det[E]_{V,V} \right],\\
+        \intertext{every $[E]_{S,W}$ is a diagonal or shift matrix and the determinant would be zero if $S\neq W$, so}
+        \mathbb E_Q\left[ \det[Q]_{S,T}\det[\hermit{Q}]_{U,V} \right]&= \mathbb E_{E,P} \left[ \det[E]_{S,S} \det[P]_{W,T} \det[\hermit{P}]_{U,Z} \det[E]_{V,V} \right],\\
         \intertext{Let $\left\{\chi_i\right\}_{1\le i \le n}$ be the diagonal entries of $E$, then}
-        &= \mathbb E_{E}\left[ \prod_{i\in S} \chi_i \prod_{j\in V} \chi_j \right] \mathbb E_{P}\left[  [P]_{S,T}[\hermit{P}]_{U,V} \right].
+        \mathbb E_Q\left[ \det[Q]_{S,T}\det[\hermit{Q}]_{U,V} \right]&= \mathbb E_{E}\left[ \prod_{i\in S} \chi_i \prod_{j\in V} \chi_j \right] \mathbb E_{P}\left[  [P]_{S,T}[\hermit{P}]_{U,V} \right].
     \end{align*}
 
     Now we use that the variables $\chi_i$ are independent and uniform in $\{-1,1\}$, so that $\mathbb E[\chi_i] = 0$, but $\mathbb E[\chi_i^2] = 1$ for all $i$, and this means 
@@ -84,7 +84,7 @@ The former theorem implies that minor orthogonality is preserved under unitary t
         &= \delta_{S,V} \mathbb E_{P}\left[  \det[P]_{S,T}\det[P]_{S,U} \right].
     \end{align*}
 
-    The submatrix $P_{S,T}$ can be transformed in a diagonal matrix by a permutation matrix because it has at most a non zero entry for each row and each column. If the diagonal matrix has a zero entry in the diagonal, then the determinant $\det[P]_{S,T}$ is zero, in other case, it is different that zero. The only case when all of the diagonal entries of the diagonal matrix are not zero is when $T = \pi(S)$ with $\pi$ the permutation function corresponding to $P$. This means that in order to have a non-zero determinant we need $T = \pi(S) = U$, and $\det[P]_{S,U} = \in \{-1,1\}$, so
+    The submatrix $P_{S,T}$ can be transformed in a diagonal matrix by a permutation matrix because it has at most a non zero entry for each row and each column. If the diagonal matrix has a zero entry in the diagonal, then the determinant $\det[P]_{S,T}$ is zero, in other case, it is different that zero. The only case when all of the diagonal entries of the diagonal matrix are not zero is when $T = \pi(S)$ with $\pi$ the permutation function corresponding to $P$. This means that in order to have a non-zero determinant we need $T = \pi(S) = U$, and $\det[P]_{S,U} \in \{-1,1\}$, so
 
     \begin{align*}
         \mathbb E_R \left[ \det[QR]_{S,T}\det[\hermit{R}\hermit{Q}]_{U,V} \right] &= \delta_{S,V} \delta_{T,U} \mathbb E_{P}\left[ \det [P]_{S,T}\det[P]_{S,T} \right],\\ 
@@ -191,7 +191,7 @@ The following two lemmas will help us to find explicit coefficients for expected
     \noindent which is the $k$th coefficient of $\frac{d!}{a!} \frac{\d^{(a-d)}}{\d x} \mathbb E_A \left[\chi_x(A) \right]$.
 \end{proof}
 
-With these results, now wea re ready to prove the main theorems relating polynomial convolutions to the expected characteristic polynomials of sums and products of random matrices.
+With these results, now we are ready to prove the main theorems relating polynomial convolutions to the expected characteristic polynomials of sums and products of random matrices.
 
 \subsection{Relation to polynomial convolution}
 
@@ -225,8 +225,7 @@ For both the additive and multiplicative cases, the results are written in two p
         &= \sum_{S\in\binom{[n]}{k}} \sum_{i=0}^k \sum_{U,V\in \binom{[k]}{i}} (-1)^{\norm{U}_1 + \norm{V}_1} \mathbb E_A\left[ \det [A]_{U(S),V(S)} \right] \mathbb E_{B,R}\left[ \det[RB\hermit R]_{\overline{U}(S),\overline{V}(S)} \right],\\ 
         &= \sum_{S\in\binom{[n]}{k}} \sum_{i=0}^k \sum_{U,V\in \binom{[k]}{i}} (-1)^{\norm{U}_1 + \norm{V}_1} \mathbb E_A\left[ \det[A]_{U(S),V(S)} \right] \delta_{\overline{U}(S),\overline{V}(S)} \frac{\mathbb E_{B}\left[ \sigma_{k-i}(B)\right]}{\binom{n}{k-i}}.\\ 
         \intertext{Using that $U(S)=V(S)$ if and only if $\overline{U}(S) = \overline{V}(S)$,}
-        \mathbb E_{A,B,R}&\left[ \sigma_k(A + RB\hermit{R}) \right]\\
-        &= \sum_{i=0}^k \frac{\mathbb E_{B}\left[ \sigma_{k-i}(B)\right]}{\binom{n}{k-i}} \sum_{S\in\binom{[n]}{k}} \sum_{U,V\in \binom{[k]}{i}}  \mathbb E_A\left[\det[A]_{U(S),U(S)} \right].
+        \mathbb E_{A,B,R}&\left[ \sigma_k(A + RB\hermit{R}) \right] = \sum_{i=0}^k \frac{\mathbb E_{B}\left[ \sigma_{k-i}(B)\right]}{\binom{n}{k-i}} \sum_{S\in\binom{[n]}{k}} \sum_{U,V\in \binom{[k]}{i}}  \mathbb E_A\left[\det[A]_{U(S),U(S)} \right].
     \end{align*}
     To finish the proof we need to find
 
@@ -481,7 +480,7 @@ Just as in the free case, the finite $\mathcal R_n$ transform can be defined in 
     Let $A$ be an $n\times n$ symmetric matrix with real entries. We define the $\mathcal K_n$ transform of its empirical spectral measure $\mu_A$ as 
 
     \begin{equation*}
-        \mathcal K_n^{\mu_A} (s) \coloneqq - \frac{\partial}{\partial s} \ln \norm{ e^{xs} \Delta^+ [x I - A]^{\frac1n} }_n,
+        \mathcal K_n^{\mu_A} (s) \coloneqq - \frac{\partial}{\partial s} \ln \norm{ e^{xs} \Delta^+ [x I - A] }_n,
     \end{equation*}
 
     \noindent where $\Delta^+$ represents the normalized determinant
@@ -985,21 +984,21 @@ One of the central topics in Probability Theory is the convergence of sums of ra
 
 
 \begin{theorem}[Finite Free Poisson Limit Theorem]
-    Let $p(z) = x^{n-1}(x-1)$. And for $\nu n \in \N$, the $\nu n$ times symmetric additive convolution of $p(z)$ with itself is a polynomial corresponding to the finite free Poisson distribution.
+    Let $p(z) = z^{n-1}(z-1)$. And for $\nu n \in \N$, the $\nu n$ times symmetric additive convolution of $p(z)$ with itself is a polynomial corresponding to the finite free Poisson distribution.
 
     \begin{equation*}
-        \underbrace{p(z) \boxplus_n p(z) \boxplus_n \cdots \boxplus_n p(z)}_\text{$\nu n$ times} = (\nu n)!(-n)^{-\nu n}z^{n(1-\nu)}L_{\nu n}^{n(1-\nu)}(zn).
+        \underbrace{p(z) \boxplus_n p(z) \boxplus_n \cdots \boxplus_n p(z)}_\text{$\nu n$ times} = \left(1-\frac1n \partial_z \right)^{\nu n}[z^n].%(\nu n)!(-n)^{-\nu n}z^{n(1-\nu)}L_{\nu n}^{n(1-\nu)}(zn).
     \end{equation*}
 \end{theorem}
 
 \begin{proof}
-    Notice that $x^{n-1}(x-1) = x^n - x^{n-1}$ can be written as generated by a linear differential operator in the following way
+    Notice that $z^{n-1}(z-1) = z^n - z^{n-1}$ can be written as generated by a linear differential operator in the following way
 
     \begin{equation*}
         \left(1 - \frac1n \partial_z\right)[z^n] = z^n - z^{n-1}.
     \end{equation*}
 
-    Now, applying once again Theorem \ref*{thm:multiplicative_operators} we get
+    Now, applying once again Theorem \ref{thm:multiplicative_operators} we get
 
     \begin{align*}
         \underbrace{p(z) \boxplus_n p(z) \boxplus_n \cdots \boxplus_n p(z)}_\text{$\nu n$ times} &= \left(1-\frac1n \partial_z \right)^{\nu n}[z^n].

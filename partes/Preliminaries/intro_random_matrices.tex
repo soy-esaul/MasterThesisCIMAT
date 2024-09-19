@@ -1,6 +1,6 @@
-This chapter has two purposes; the first is to introduce some concepts and results used throughout the thesis. The second is to standardize the notation coming from different areas, making it easier to read the text. The first section briefly introduces the objects of study of random matrix theory and a few matrix algebra results recalled later in the proofs. The second section introduces stochastic calculus for $\R$-valued processes and then for processes taking values in spaces of matrices. The theory developed here will be used for the dynamics of eigenvalues in Chapters \ref{ch:eigen_processes} and \ref{ch:determinist}. The last section covers the essential definition and theorems coming from non-commutative probability theory and constitutes a precedent for Chapter \ref{ch:finite_free}.
+This chapter has two purposes; the first is to introduce some concepts and results used throughout the thesis. The second is to standardize the notation coming from different areas, making it easier to read the text. The first section briefly introduces the objects of study of random matrix theory and a few matrix algebra results recalled later. The second section is a brief presentation of stochastic calculus for $\R$-valued processes and then for processes taking values in spaces of matrices. The theory developed here will be used for the dynamics of eigenvalues in Chapters \ref{ch:eigen_processes} and \ref{ch:determinist}. The last section covers the essential definitions and theorems coming from non-commutative probability theory and constitutes a precedent for Chapter \ref{ch:finite_free}.
 
-To be consistent along the text, we introduce here the notation we will be using. However, the use of several kinds of objects commonly denoted with the same symbols makes it necessary to specify the kind of object we are dealing with every time. The time parameter of a stochastic process will always be shown in parentheses (i.e., $W(t)$). The subindexes will represent the entry of a matrix or vector. An integer interval of length $k$ will be represented by the symbol $[k]$, i.e.
+The use of several kinds of objects commonly denoted with the same symbols makes it necessary to specify the kind of object we are dealing with every time. The time parameter of a stochastic process will always be shown in parentheses (i.e., $W(t)$). The subindexes will represent the entry of a matrix or vector. An integer interval of length $k$ will be represented by the symbol $[k]$, i.e.
 
 \begin{equation*}
     [k] \coloneqq \{1,2,\dots, k-1, k\}.
@@ -8,15 +8,15 @@ To be consistent along the text, we introduce here the notation we will be using
 
 When we place a set $S$ in the combinations symbol $\binom{S}{k}$, we denote the collection of all subsets of $S$ that have exactly $k$ elements. 
 
-The determinant of a matrix $A$ will be denoted by $\det[A]$ and if $S,T$ are sets of integers, $\det[A]_{S,T}$ represents the determinant of the submatrix $A_{S,T}$. The transpose of $A$ is denoted as $\trans{A}$ and if it has complex entries, its adjoint element is $\hermit{A}$. The space of $n\times m$ matrices with entries in a field $\mathbb F$ is denoted by $\mathcal M_{n,m}(\mathbb F)$. The space of $n\times n$ symmetric matrices is denoted by $\mathcal H_{n,n}(\R)$ and the space of $n\times n$ hermitian by $\mathcal H_{n,n}(\C)$.
+The determinant of a matrix $A$ will be denoted by $\det[A]$ and if $S,T$ are sets of integers, $\det[A]_{S,T}$ represents the determinant of the submatrix $A_{S,T}$. The transpose of $A$ is denoted as $\trans{A}$ and its adjoint element is $\hermit{A}$. The space of $n\times m$ matrices with entries in a field $\mathbb F$ is denoted by $\mathcal M_{n,m}(\mathbb F)$. The space of $n\times n$ symmetric matrices is denoted by $\mathcal H_{n,n}(\R)$ and the space of $n\times n$ hermitian by $\mathcal H_{n,n}(\C)$.
 
 The symbol $\langle X,Y \rangle(t)$ denotes the quadratic covariation between the processes $X$ and $Y$ and sometimes it will also be represented by $\d X\d Y$. The derivative concerning a given variable $x$ will be represented either using $\frac{\d}{\d x}, \frac{\partial}{\partial x}$ or $\partial_x$ and following the convention in the literature we will sometimes denote $\frac{\d}{\d t} f = g$ as $\d f = g\d t$.
 
-In the next section, we introduce the basic concepts in the study of random matrices.
+In the next section, we present some basic ideas in the study of random matrices.
 
 \section{Introduction to main concepts in Random Matrix Theory}
 
-This section is meant to present the essential objects we study in random matrix theory and illustrate a few techniques that can be used to derive results. However, most of the relevant results are presented later with the tools introduced in the following sections.
+This section is meant to introduce the essential objects we study in Random Matrix Theory and illustrate a few techniques that can be used to derive results. However, most of the relevant results are presented later with the tools introduced in the following sections.
 
 % Empirical spectral measures
 
@@ -24,7 +24,7 @@ This section is meant to present the essential objects we study in random matrix
 
 \subsection{Matrix algebra}
 
-Before stating the most specific concepts and results related to random matrices, it is important to mention a few purely algebraic results of matrices as they will be useful in the thesis.
+Before stating the most specific concepts and results related to random matrices, it is important to mention a few purely algebraic well-known facts of matrix algebra as they will be useful in the thesis.
 
 The Cauchy-Binet formula allows us to find the minor of a product of matrices in terms of the minors of the individual matrices.
 

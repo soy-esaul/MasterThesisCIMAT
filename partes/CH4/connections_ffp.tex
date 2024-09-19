@@ -986,9 +986,9 @@ Replicating the procedure in \cite{article:marcus_finite_free_point_processes}, 
 
     \begin{align*}
         \E{\det[(x-1)W_1 + xW_2]} &= (1+x\partial_x)^{n_2} \left(1 + (x-1)\partial_x\right)^{n_1}[x^k]\\
-        &=\left\{ \left(\sum_{j=0}^{n_2} \binom {n_2}j z^j \partial_z^j \right) \left( \sum_{l=0}^{n_1} \binom {n_1}j z^l \partial_z^l \right) \right\}[x^k],\\
-        &= \sum_{j=0}^k \sum_{l\le n-j} \binom{n_2}{j}\binom{n_1}l z^j (z-1)^{n-l} \partial_z^{j+l}[z^k]\\
-        &= \sum_{l=0}^k \binom{n_2}{k-l} \binom{n_1}l z^{n-l}(z-1)^l \eqqcolon P_k^{n_2 - k, n_1-k}(2x-1).
+        &=\left\{ \left(\sum_{j=0}^{n_2} \binom {n_2}j x^j \partial_x^j \right) \left( \sum_{l=0}^{n_1} \binom {n_1}j x^l \partial_x^l \right) \right\}[x^k],\\
+        &= \sum_{j=0}^k \sum_{l\le n-j} \binom{n_2}{j}\binom{n_1}l x^j (x-1)^{n-l} \partial_x^{j+l}[x^k]\\
+        &= \sum_{l=0}^k \binom{n_2}{k-l} \binom{n_1}l x^{n-l}(x-1)^l \eqqcolon P_k^{n_2 - k, n_1-k}(2x-1).
     \end{align*}
     
     This is the standard Jacobi polynomial in \eqref{eq:jacobi_standard} with order $k$ and parameters $n_2 - k$, $n_1-k$ evaluated in $2x-1$. When we normalize to make it monic, we get the result appearing in \cite{edelman1988eigenvalues}.
