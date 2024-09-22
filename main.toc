@@ -34,7 +34,7 @@
 \contentsline {subsection}{\numberline {3.1.2}Some classical orthogonal polynomial ensembles}{58}{subsection.3.1.2}%
 \contentsline {subsubsection}{Hermite polynomials}{59}{section*.16}%
 \contentsline {subsubsection}{Laguerre polynomials}{61}{section*.17}%
-\contentsline {subsubsection}{Jacobi polynomials}{62}{section*.18}%
+\contentsline {subsubsection}{Jacobi polynomials}{63}{section*.18}%
 \contentsline {section}{\numberline {3.2}Expected characteristic polynomials}{64}{section.3.2}%
 \contentsline {subsection}{\numberline {3.2.1}Minor orthogonality}{64}{subsection.3.2.1}%
 \contentsline {subsection}{\numberline {3.2.2}Relation to polynomial convolution}{69}{subsection.3.2.2}%
