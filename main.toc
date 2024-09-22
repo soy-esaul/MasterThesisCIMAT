@@ -20,7 +20,7 @@
 \contentsline {section}{\numberline {2.1}Dyson Brownian Motion}{28}{section.2.1}%
 \contentsline {subsection}{\numberline {2.1.1}Real case}{28}{subsection.2.1.1}%
 \contentsline {subsection}{\numberline {2.1.2}Complex case}{31}{subsection.2.1.2}%
-\contentsline {section}{\numberline {2.2}Generalization for matrix-valued diffusion processes}{34}{section.2.2}%
+\contentsline {section}{\numberline {2.2}Generalization for matrix-valued diffusion processes}{33}{section.2.2}%
 \contentsline {subsection}{\numberline {2.2.1}Non-collision of the eigenvalues}{39}{subsection.2.2.1}%
 \contentsline {subsection}{\numberline {2.2.2}Wishart process}{47}{subsection.2.2.2}%
 \contentsline {subsection}{\numberline {2.2.3}Jacobi process}{49}{subsection.2.2.3}%
@@ -59,4 +59,5 @@
 \contentsline {subsection}{\numberline {4.5.2}Wishart process}{108}{subsection.4.5.2}%
 \contentsline {subsection}{\numberline {4.5.3}Jacobi process}{114}{subsection.4.5.3}%
 \contentsline {chapter}{Conclusions}{127}{chapter*.25}%
-\contentsline {chapter}{\numberline {A}Code for the path simulations}{129}{appendix.A}%
+\contentsline {chapter}{Bibliography}{129}{chapter*.26}%
+\contentsline {chapter}{\numberline {A}Code for the path simulations}{133}{appendix.A}%

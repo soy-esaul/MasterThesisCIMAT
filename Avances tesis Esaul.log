@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.7.30)  6 AUG 2024 12:03
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.7.30)  22 SEP 2024 13:00
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"c:/Users/Esaul/Documents/Maestría en Probabilidad y Estadística/4 Cuarto semestre/Tesis_Overleaf/MasterThesisCIMAT/Avances tesis Esaul.tex"
-(c:/Users/Esaul/Documents/Maestría en Probabilidad y Estadística/4 Cuarto semestre/Tesis_Overleaf/MasterThesisCIMAT/Avances tesis Esaul.tex
+**"c:/Users/Esaul/Documents/Maestría en Probabilidad y Estadística/4 Cuarto semestre/Tesis_Overleaf2/MasterThesisCIMAT/Avances tesis Esaul.tex"
+(c:/Users/Esaul/Documents/Maestría en Probabilidad y Estadística/4 Cuarto semestre/Tesis_Overleaf2/MasterThesisCIMAT/Avances tesis Esaul.tex
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-05-27>
 (C:\Program Files\MiKTeX\tex/latex/base\article.cls
@@ -737,9 +737,9 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 28
 \Hy@SectionHShift=\skip77
 )
 \c@theorem=\count358
-)
 \c@definition=\count359
- (C:\Program Files\MiKTeX\tex/latex/eso-pic\eso-pic.sty
+\c@remark=\count360
+) (C:\Program Files\MiKTeX\tex/latex/eso-pic\eso-pic.sty
 Package: eso-pic 2023/05/03 v3.0c eso-pic (RN)
 \ESO@tempdima=\dimen293
 \ESO@tempdimb=\dimen294
@@ -773,9 +773,9 @@ Package: geometry 2020/01/02 v5.9 Page Geometry
  (C:\Program Files\MiKTeX\tex/generic/iftex\ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 )
-\Gm@cnth=\count360
-\Gm@cntv=\count361
-\c@Gm@tempcnt=\count362
+\Gm@cnth=\count361
+\Gm@cntv=\count362
+\c@Gm@tempcnt=\count363
 \Gm@bindingoffset=\dimen295
 \Gm@wd@mp=\dimen296
 \Gm@odd@mp=\dimen297
@@ -786,10 +786,10 @@ Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 \Gm@layoutvoffset=\dimen302
 \Gm@dimlist=\toks48
  (C:\Users\Esaul\AppData\Roaming\MiKTeX\tex/latex/geometry\geometry.cfg))
-\c@myWeekNum=\count363
+\c@myWeekNum=\count364
  (portada.tex) (C:\Program Files\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count364
+\l__color_backend_stack_int=\count365
 \l__pdf_internal_box=\box79
 ) (Avances tesis Esaul.aux)
 \openout1 = `"Avances tesis Esaul.aux"'.
@@ -828,24 +828,24 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 110.
 LaTeX Font Info:    ... okay on input line 110.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 110.
 LaTeX Font Info:    ... okay on input line 110.
-\c@mv@tabular=\count365
-\c@mv@boldtabular=\count366
+\c@mv@tabular=\count366
+\c@mv@boldtabular=\count367
  (C:\Program Files\MiKTeX\tex/latex/translator\translator-months-dictionary-English.dict
 Dictionary: translator-months-dictionary, Language: English 
 ) (C:\Program Files\MiKTeX\tex/latex/translator\translator-months-dictionary-Spanish.dict
 Dictionary: translator-months-dictionary, Language: Spanish 
 ) (C:\Program Files\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count367
+\scratchcounter=\count368
 \scratchdimen=\dimen303
 \scratchbox=\box80
-\nofMPsegments=\count368
-\nofMParguments=\count369
+\nofMPsegments=\count369
+\nofMParguments=\count370
 \everyMPshowfont=\toks49
-\MPscratchCnt=\count370
+\MPscratchCnt=\count371
 \MPscratchDim=\dimen304
-\MPnumerator=\count371
-\makeMPintoPDFobject=\count372
+\MPnumerator=\count372
+\makeMPintoPDFobject=\count373
 \everyMPtoPDFconversion=\toks50
 ) (C:\Program Files\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -1498,13 +1498,13 @@ Package rerunfilecheck Info: File `"Avances tesis Esaul".out' has not changed.
 (rerunfilecheck)             Checksum: 9379ABB441EF401CE799454AE3BA9C8E;7526.
  ) 
 Here is how much of TeX's memory you used:
- 29843 strings out of 473904
- 574534 string characters out of 5736415
+ 29850 strings out of 473904
+ 574612 string characters out of 5736415
  1973908 words of memory out of 5000000
- 51917 multiletter control sequences out of 15000+600000
+ 51924 multiletter control sequences out of 15000+600000
  954114 words of font info for 112 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 117i,18n,121p,1135b,1097s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 117i,18n,121p,1136b,1097s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/typoland/lato/Lato-Bold.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/typoland/lato/Lato-Italic.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/typoland/lato/Lato-Regular.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/playfair/PlyfrDisplay-Black.pfb><C:/Users/Esaul/AppData/Roaming/MiKTeX/fonts/type1/public/playfair/PlyfrDisplay-Bold.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmss10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmss8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/sansmathfonts/cmssex10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/sansmathfonts/cmssmi10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/sansmathfonts/cmssmi6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/sansmathfonts/cmssmi8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/sansmathfonts/cmsssy10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/sansmathfonts/cmsssy6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/sansmathfonts/cmsssy8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/doublestroke/dsss10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/sansmathfonts/ssmsam10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/sansmathfonts/ssmsbm10.pfb>
 Output written on "Avances tesis Esaul.pdf" (31 pages, 474846 bytes).
 PDF statistics:
