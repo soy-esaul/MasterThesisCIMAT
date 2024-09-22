@@ -497,13 +497,13 @@ As a final part for this subsection, let us prove that if you have an arbitrary 
 
 
 \begin{theorem}
-    Let $R$ be an $n\times n$ matrix and $R_{ij}$ be independent Gaussian random variables with mean 0 and variance 1, then
+    Let $R$ be an $m\times n$ matrix with $m\ge n$, and $R_{ij}$ be independent Gaussian random variables with mean 0 and variance 1, then
 
     \begin{equation*}
-        E\left[ \chi_x\left(\trans{R}R\right) \right] = L_n(z),
+        E\left[ \chi_x\left(\trans{R}R\right) \right] = L_n^{(m-n)}(z),
     \end{equation*}
 
-    \noindent where $L_n(x) = \left( 1 - \partial_z \right)^n [z^n]$ is the $n$th standard Laguerre polynomial.
+    \noindent where $L_n(x)^{(m-n)} = \left( 1 - \partial_z \right)^{m} [z^n]$ is the $n$th generalized Laguerre polynomial with $\alpha = m-n$.
 \end{theorem}
 
 \begin{proof}
@@ -519,56 +519,59 @@ As a final part for this subsection, let us prove that if you have an arbitrary 
         (L_\beta)_{11} = \xi^2_{n\beta} + \xi^2_{\beta(m-1)}, \qquad (L_\beta)_{12} = \xi_{\beta(n-1)}\xi_{\beta(m-1)},
     \end{equation*}
 
-    \noindent with this the expected characteristic polynomial satisfies the recursion
+    \noindent with this, the expected characteristic polynomial satisfies the recursion
 
     \begin{align}
         \E{P_n(z)} &= \E{ (z - \xi^2_{n\beta} - \xi^2_{\beta(m-1)})P_{n-1}(z) - \xi^2_{\beta(n-1)}\xi_{\beta(m-1)}^2 P_{n-2}(z) },\notag \\ 
-        &= (z - \beta(n - m + 1))\E{P_{n-1}(z)} - \beta^2(n-1)(m-1)\E{P_{n-2}(z)}, \label{eq:laguerre_recursion}
+        &= (z - \beta(n + m - 1))\E{P_{n-1}(z)} - \beta^2(n-1)(m-1)\E{P_{n-2}(z)}, \label{eq:laguerre_recursion}
     \end{align}
-    which is satisfied by the Laguerre polynomials. By finding the cases $n=1$ and $n=2$, then using a recursive argument, we finish the proof.
+    which is satisfied by the generalized Laguerre polynomials with $\alpha=m-n$ \eqref{eq:recusion_laguerre}. By finding the cases $n=1$ and $n=2$, then using a recursive argument, we finish the proof.
 
-    The case $n=1$ is trivial because in this case $G$ is an univariate Gaussian random variable, so $\trans{G}G = G^2$ is a chi-squared random variable and $P_1(z) = z - 1$. For the case $n=2$ we have
+    The case $n=1$ is trivial because in this case $G$ is a Gaussian random vector of length $m\ge1$, so $\trans{G}G = G^2$ is a chi-squared random variable with $m$ degrees of freedom and $P_1(z) = z - m = z - (\alpha+1)$. For the case $n=2$, we have $G=[\vec v_1, \vec v_2]$, with $\vec v_1,\vec v_2$ two independent $\R^m$ valued standard Gaussian vectors, then 
 
     \begin{align*}
         P_2(z) &= \det[zI - \trans{G}G] = \det\begin{bmatrix}
-            z- g_1^2 - g_2^2 & -g_1g_3 - g_2 g_4 \\
-            - g_1g_3 - g_2 g_4 & z - g_3^2 - g_4^2
+            z- \norm{\vec v_1}^2 & -\sum_{j} v_{1j}v_{2j} \\
+            -\sum_{j} v_{1j}v_{2j} & z - \norm{\vec v_2}^2
         \end{bmatrix}, \\
-        &= z^2 - z(g_1^2 + g_2^2 + g_3^2 + g_4^2) +g_1^2 g_3^2 + g_2^2g_4^2 -2g_1g_2g_3g_4.
+        &= (z- \norm{\vec v_1}^2)(z - \norm{\vec v_2}^2) -\left(\sum_{j} v_{1j}v_{2j} \right)^2.\\
+        \intertext{Taking expectation leads to}
+        \E{P_2(z)} &= z^2 - 2mz + m^2 + \sum_{j} \E{v_{1j}^2 v_{2j}^2} - 2\sum_{j,i<j} \E{v_{1j}v_{2i}}, \\
+        &= z^2 - 2mz + m^2 - m,
+        &= z^2 - 2(\alpha+2)z + (\alpha+2)(\alpha + 1).
     \end{align*}
-
-    Taking expectation leads to $P_z(z) = z^2 - 4z + 2$. The rest of the polynomials are found using recursion \eqref{eq:laguerre_recursion}.
+The rest of the polynomials are found using recursion \eqref{eq:laguerre_recursion}.
 \end{proof}
 
     The dynamical case can be found using the static case and the fact that a Wishart matrix has the same law as $t\trans GG$, for $G$ a matrix of independent standard normal variables.
 
 \begin{theorem} \label{thm:wishart_is_laguerre}
-    Let $B$ be an $n\times n$ matrix and $B_{ij}$ be independent standard Brownian motions, then 
+    Let $B$ be an $m\times n$ matrix with $m>n$ and $B_{ij}$ be independent standard Brownian motions, then 
 
     \begin{equation*}
-        E\left[ \chi_z\left( \trans{B}B\right) \right] = L_n(z,t),
+        E\left[ \chi_z\left( \trans{B}B\right) \right] = L_n^{(m-n)}(z,t),
     \end{equation*}
 
-    \noindent where $L_n(z,t) = \left( 1 - t\partial_z \right)^n z^n$ is the $n$th Laguerre polynomial with variance $t$.
+    \noindent where $L_n^{(m-n)}(z,t) = \left( 1 - t\partial_z \right)^n z^m$ is the $n$th generalized Laguerre polynomial with variance $t$ and $\alpha = m-n$.
 \end{theorem}
 
 \begin{proof}
-    Let $G$ be an $n\times n$ matrix of independent standard Gaussian random variables, so $B \overset{d}{=} \sqrt{t}G$ and this means $\trans{B}B \overset{d}{=} t \trans G G$, it follows that
+    Let $G$ be an $m\times n$ matrix of independent standard Gaussian random variables, so $B \overset{d}{=} \sqrt{t}G$ and this means $\trans{B}B \overset{d}{=} t \trans G G$, it follows that
 
     \begin{align*}
         \E{\det[zI - \trans B B]} &= \E{\det[zI - t \trans G G]} = t^n \E{\frac zt I - \trans GG]}, \\
-        &= t^n \left(1 - \frac{\d }{\d (z/t)}\right)^n\left[ \frac{z}{t}^n\right] = t^n\sum_{k=0}^n (-1)^k \binom nk \frac{n!}{(n-k)!} \left(\frac zt\right)^{n-k},\\
-        &= \sum_{k=0}^n (-t)^k \binom nk \frac{n!}{(n-k)!} z^{n-k} = \left( 1 - t\frac{\d}{\d z} \right)^n [z^n].
+        &= t^n \left(1 - \frac{\d }{\d (z/t)}\right)^m\left[ \frac{z}{t}^n\right] = t^n\sum_{k=0}^n (-1)^k \binom mk \frac{n!}{(n-k)!} \left(\frac zt\right)^{n-k},\\
+        &= \sum_{k=0}^n (-t)^k \binom mk \frac{n!}{(n-k)!} z^{n-k} = \left( 1 - t\frac{\d}{\d z} \right)^m [z^n].
     \end{align*}
 \end{proof}
 
-    As defined before, the time dependant Laguerre polynomials are generated by the operator $(1-t\partial_z)^{n}[z^n]$. On the other hand, the Finite Free Poisson distribution is represented by the roots of the polynomial $(1-\frac1n\partial_z)^{n}[z^n]$, this is the expected characteristic polynomial of a Wishart process rescales by $1/n$ and evaluated at time $t=1$. It turns out that we can find a heat kind equation for every polynomial satisfying $p(z,t)=(1-ct\partial_z)^n[z^n]$ with $c \in\R$. Every such equation would imply a unique dynamics for the polynomial roots which is basically a rescaling of the space-time relationship.
+    As defined before, the time dependant Laguerre polynomials with $\alpha=0$ are generated by the operator $(1-t\partial_z)^{n}[z^n]$. On the other hand, the Finite Free Poisson distribution is represented by the roots of the polynomial $(1-\frac1n\partial_z)^{n}[z^n]$, this is the expected characteristic polynomial of a Wishart process with $\alpha=0$, rescaled by $1/n$ and evaluated at time $t=1$. It turns out that we can find a heat kind equation for every polynomial satisfying $p(z,t)=(1-ct\partial_z)^n[z^n]$ with $c \in\R$. Every such equation would imply a unique dynamics for the polynomial roots which is basically a rescaling of the space-time relationship.
 
 \begin{theorem}
-    Let $c\in \R$ and $P(t,z) \coloneqq \left( 1 - ct\partial_z \right)^n [z^n]$, with $t\ge 0, z \in \C$, then $P(t,z)$ satisfies the following differential equation
+    Let $c\in \R$ and $P(t,z) \coloneqq \left( 1 - ct\partial_z \right)^m [z^n]$, with $m \ge n, t\ge 0, z \in \C$, then $P(t,z)$ satisfies the following differential equation
 
     \begin{equation*} 
-        c\partial_z P(t,z) + cz  \partial_{zz}P(t,z) + \partial_t P(t,z) = 0.
+        c(m-n+1)\partial_z P(t,z) + cz  \partial_{zz}P(t,z) + \partial_t P(t,z) = 0.
      \end{equation*}
 
 \end{theorem}
@@ -577,43 +580,44 @@ As a final part for this subsection, let us prove that if you have an arbitrary 
     By definition of $P(t,z)$,
 
     \begin{align*}
-        P(t,z) &= \left( 1 - ct\partial_z \right)^n [z^n] = \sum_{k=0}^n \binom{n}{k}\left( -ct \right)^k \partial_z^k [z^n ] = \sum_{k=0}^n \binom{n}{k}\left( -ct \right)^k \frac{n!}{(n-k)!}z^{n-k}.
+        P(t,z) &= \left( 1 - ct\partial_z \right)^m [z^n] = \sum_{k=0}^n \binom{m}{k}\left( -ct \right)^k \partial_z^k [z^n ] = \sum_{k=0}^n \binom{m}{k}\left( -ct \right)^k \frac{n!}{(n-k)!}z^{n-k}.
     \end{align*}
 
     Now we find the derivatives
 
     \begin{align*}
-        \partial_z [P(t,z)] &= \partial_z\left[ \sum_{k=0}^n \binom{n}{k} \frac{\left( -ct \right)^k n!}{(n-k)!}z^{n-k} \right] = \sum_{k=0}^{n-1} \binom{n}{k} \frac{\left( -ct \right)^k n!}{(n-k-1)!}z^{n-k-1},\\ 
-        \partial_{zz} [P(t,z)] &= \partial_z\left[\sum_{k=0}^{n-1} \binom{n}{k} \frac{\left(-ct\right)^k n!}{(n-k-1)!}z^{n-k-1}\right] = \sum_{k=0}^{n-2} \binom{n}{k} \frac{\left(-ct\right)^k n!}{(n-k-2)!}z^{n-k-2},\\ 
-        \partial_t [P(t,z)] &= \partial_t \left[ \sum_{k=0}^n \binom{n}{k} \frac{\left( -ct \right)^k n!}{(n-k)!}z^{n-k} \right] = \sum_{k=1}^n \binom{n}{k}k \frac{(-c)^kt^{k-1} n!}{(n-k)!}z^{n-k},\\ 
-        &= \sum_{k=0}^{n-1} \binom{n}{k+1}(k+1)(-c)^{k+1}t^{k} \frac{n!}{(n-k-1)!}z^{n-k-1}.
+        \partial_z [P(t,z)] &= \partial_z\left[ \sum_{k=0}^n \binom{m}{k} \frac{\left( -ct \right)^k n!}{(n-k)!}z^{n-k} \right] = \sum_{k=0}^{n-1} \binom{m}{k} \frac{\left( -ct \right)^k n!}{(n-k-1)!}z^{n-k-1},\\ 
+        \partial_{zz} [P(t,z)] &= \partial_z\left[\sum_{k=0}^{n-1} \binom{m}{k} \frac{\left(-ct\right)^k n!}{(n-k-1)!}z^{n-k-1}\right] = \sum_{k=0}^{n-2} \binom{m}{k} \frac{\left(-ct\right)^k n!}{(n-k-2)!}z^{n-k-2},\\ 
+        \partial_t [P(t,z)] &= \partial_t \left[ \sum_{k=0}^n \binom{m}{k} \frac{\left( -ct \right)^k n!}{(n-k)!}z^{n-k} \right] = \sum_{k=1}^n \binom{m}{k}k \frac{(-c)^kt^{k-1} n!}{(n-k)!}z^{n-k},\\ 
+        &= \sum_{k=0}^{n-1} \binom{m}{k+1}(k+1)(-c)^{k+1}t^{k} \frac{n!}{(n-k-1)!}z^{n-k-1}.
     \end{align*}
 
     For the sum we can separate the last terms with index $n-1$. Thus we have
 
     \begin{align*}
-        \left(c\partial_z + cz\partial_{zz} + \partial_t\right) [P] &= \sum_{k=0}^{n-2} \left[ c\binom{n}{k}\left( -ct \right)^k \frac{n!}{(n-k-1)!}z^{n-k-1}\right.\\
-        &\phantom{esp} + cz\binom{n}{k}\left( -ct \right)^k \frac{n!}{(n-k-2)!}z^{n-k-2}\\ &\phantom{espac} + \left.\binom{n}{k+1}(k+1)(-c)^{k+1}t^{k} \frac{n!}{(n-k-1)!}z^{n-k-1}\right] \\
-        &\phantom{espaciooo}+ cn(-ct)^{n-1}n!+n(-c)^nt^{n-1}n!,
-        \intertext{reagruping the terms we find}
-        &= \sum_{k=0}^{n-2} \binom{n}{k} (-ct)^k n!\left( \frac{(n-k-1)cz^{n-k-1}-c(n-k-1)z^{n-k-1}}{(n-k-1)!} \right), \\ 
-        &=\sum_{k=0}^{n-2} \binom{n}{k} \frac{ c^{k+1}(-t)^kn!z^{n-k-1}}{(n-k-1)!}\left( 1 + n-k-1 -n +k \right) = 0.
+        \left(c(m-n+1)\partial_z + cz\partial_{zz} + \partial_t\right) [P] &= \sum_{k=0}^{n-2} \left[ c\binom{m}{k}\left( -ct \right)^k \frac{(m-n+1)n!}{(n-k-1)!}z^{n-k-1}\right.\\
+        &\phantom{esp} + cz\binom{m}{k}\left( -ct \right)^k \frac{n!}{(n-k-2)!}z^{n-k-2}\\ &\phantom{espac} + \left.\binom{m}{k+1}(k+1)(-c)^{k+1}t^{k} \frac{n!}{(n-k-1)!}z^{n-k-1}\right] \\
+        &\phantom{espaciooo}+ \frac{m!c^nt^{n-1}n}{(m-n+1)!}\left((-1)^{n-1}+(-1)^n\right). %cn(-ct)^{n-1}n!+n(-c)^nt^{n-1}n!,
+        \intertext{Reagruping the terms we find}
+        %&= \sum_{k=0}^{n-2} \binom{m}{k} (-ct)^k n!\left( \frac{(n-k-1)cz^{n-k-1}-c(n-k-1)z^{n-k-1}}{(n-k-1)!} \right), \\ 
+        \left(c(m-n+1)\partial_z + cz\partial_{zz} + \partial_t\right) [P] &=\sum_{k=0}^{n-2} \binom{m}{k} \frac{ c(-ct)^kn!z^{n-k-1}}{(n-k-1)!}\left( m-n+1+n-k-1-m+k \right),\\
+        &= 0.
     \end{align*}
  \end{proof}
 
- Now, analogously to the Hermite polynomials and the Dyson Brownian motion, we prove the dynamical behavior for the roots of the polynomial defined by $(1-ct\partial_z)^n[z^n]$. In this case, the dynamics will depend on the constant $c$. For a negative $c$, the time will be reversed and in general for a bigger $c$ the movement will be faster. 
+ Now, we prove the dynamical behavior for the roots of the polynomial defined by $(1-ct\partial_z)^n[z^n]$. In this case, the dynamics will depend on the constant $c$. For a negative $c$, the time will be reversed and in general for a bigger $c$ the movement will be faster. 
 
  \begin{theorem}
     Let $P(t,z)$ be a monic polynomial with degree $n$ satisfying the equation
 
      \begin{equation*} 
-        c\partial_z [P(t,z)] + cz  \partial_{zz}[P(t,z)] + \partial_t [P(t,z)] = 0.
+        c(m-n+1)\partial_z [P(t,z)] + cz  \partial_{zz}[P(t,z)] + \partial_t [P(t,z)] = 0.
      \end{equation*}
 
     Then its roots $\left(z_i(t)\right)_{i=1}^n$ satisfy the equation of motion
 
     \begin{equation*}
-        \d z_i= c \left( \sum_{k\neq i} \frac{z_i + z_k}{z_i - z_k}  + n\right){\d t}.
+        \d z_i= c \left( \sum_{k\neq i} \frac{z_i + z_k}{z_i - z_k}  + m\right){\d t}.
     \end{equation*}
 \end{theorem}
 
@@ -622,12 +626,12 @@ As a final part for this subsection, let us prove that if you have an arbitrary 
 
     \begin{align*}
         0 &= \partial_t [P(t,z_i(t))] = \partial_t [z_i(t)] \partial_z [P(t,z)]|_{z=z_i} + \partial_t [P(t,z)]|_{z=z_i}, \\ 
-        &= \partial_t [z_i(t)] \partial_z [P(t,z)]|_{z=z_i} - \left[c\partial_z [P(t,z)] - cz \partial_{zz}[P(t,z)]\right]_{z=z_i},
+        &= \partial_t [z_i(t)] \partial_z [P(t,z)]|_{z=z_i} - \left[c(m-n+1)\partial_z [P(t,z)] - cz \partial_{zz}[P(t,z)]\right]_{z=z_i},
         \intertext{now we use that $P(t,z)$ is monic and recall the derivatives of a monic polynomials evaluated at $z=z_i(t)$ from the proof of Corollary \ref{corollary:movement_roots_hermite}}
         \frac{\d}{\d t} z_i(t) &= c\left[\frac{\partial_z [P(t,z)] + z  \partial_{zz}[P(t,z)]}{\partial_z [P(t,z)]}\right]_{z=z_i} = c\left[ 1 +  \frac{2z_i\sum_{k\neq i}\prod_{j\neq i,j\neq k}(z_i - z_j)}{\prod_{j\neq i}(z_i - z_j)} \right],\\
-        &= c\left[ 1 + \sum_{k\neq i}\frac{2z_i}{z_i - z_k}\right],\\
-        &= c\left[ 1 + \sum_{k\neq i}\frac{2z_i}{z_i - z_k} - \sum_{k\neq i}\frac{z_i-z_k}{z_i - z_k} + \sum_{k\neq i}\frac{z_i-z_k}{z_i - z_k} \right],\\ 
-        &= c\left[ 1 + \sum_{k\neq i}\frac{2z_i-z_i + z_k}{z_i - z_k} + n-1 \right] = c\left[\sum_{k\neq i}\frac{z_i + z_k}{z_i - z_k} + n\right].
+        &= c\left[ m-n+1 + \sum_{k\neq i}\frac{2z_i}{z_i - z_k}\right],\\
+        &= c\left[ m-n+1 + \sum_{k\neq i}\frac{2z_i}{z_i - z_k} - \sum_{k\neq i}\frac{z_i-z_k}{z_i - z_k} + \sum_{k\neq i}\frac{z_i-z_k}{z_i - z_k} \right],\\ 
+        &= c\left[ m-n+1 + \sum_{k\neq i}\frac{2z_i-z_i + z_k}{z_i - z_k} + n-1 \right] = c\left[m + \sum_{k\neq i}\frac{z_i + z_k}{z_i - z_k} \right].
     \end{align*}
 \end{proof}
 
@@ -689,11 +693,11 @@ All the results in this section were analogous to the Hermite polynomials relati
 
 \subsection{Jacobi process}
 
-For the last process we study in this thesis, we will use a slightly different approach. Although some useful matrix models have been proposed for the Jacobi ensamble \cite{article:jacobi_matrix_model,article:edelman_sutton_jacobi}, we will make use of the definition of the Jacobi matrix in terms of Wishart matrices and what we already know about the Laguerre relationship to Wishart. As we will see, the Jacobi process is stationary, which makes it impossible to define something as the ``dynamical Jacobi polynomials'' (at least as we did with Hermite and Laguerre), however, it is possible to recover the deterministic dynamics when we have an initial law that does not make the process stationary. 
+For the last process we study in this thesis, we will use a slightly different approach. Although some useful matrix models have been proposed for the Jacobi ensamble \cite{article:jacobi_matrix_model,article:edelman_sutton_jacobi}, we will make use of the definition of the Jacobi matrix in terms of Wishart matrices and what we already know about the Laguerre relationship to Wishart. As we will see, the Jacobi process is stationary, which makes it impossible to define something as the ``dynamical Jacobi polynomials'' (at least in the way we did with Hermite and Laguerre), however, it is possible to recover the deterministic dynamics when we have an initial law that is non-stationary for thee process. 
 
 Before proceeding with the proper Jacobi process, let us find the expected characteristic polynomial of a static Jacobi matrix. This process is more challenging than the two previous processes, but the static case is greatly simplified by using the tools of Finite Free Probability theory. 
 
-Recall from Chapter \ref{ch:eigen_processes} that there are essentially two definitions for the Jacobi matrix, one coming from the Multivariate Analysis of Variance and the other coming from the upper left corner of a Haar unitary Brownian matrix. For the static case, we work with the MANOVA case. 
+Recall from Chapter \ref{ch:eigen_processes} that there are essentially two definitions for the Jacobi matrix, one coming from the Multivariate Analysis of Variance and the other coming from the upper left corner of a Haar unitary matrix. For the static case, we work with the MANOVA case. 
 
 \begin{theorem}
     Let $A,B$ be two $n\times n$ random matrices with i.i.d. standard Gaussian entries. Define the matrix $M$ as
@@ -758,6 +762,8 @@ Finally, we use \( p_{M}(z) = \frac{z^n}{p_{M^{-1}}(0)} p_{M^{-1}}(1/z) \) to ob
 This corresponds to the \(n\)-th Legendre polynomial evaluated at \( 1-2z \), which is precisely the desired expected characteristic polynomial.
 \end{proof}
 
+If we take $A,B$ to be rectangular matrices, then we can substitute the definition of the generalized Laguerre polynomials with $\alpha=m-n$ to find the corresponding Jacobi polynomial.
+
 Now we will approach the dynamical version. Let $N_1,N_2$ be two $n\times n$ random matrices with i.i.d standard Gaussian entries and $B_1, B_2$ be two independent Brownian motions in $\M_{n,n}(\R)$. 
 
 Notice that if we substitute these matrices in the first definition of the Jacobi matrix, we get
@@ -769,7 +775,7 @@ Notice that if we substitute these matrices in the first definition of the Jacob
     &=(\trans{N_1} N_1 + \trans{N_2} N_2)^{-1/2} \trans{N_1}N_1 (\trans{N_1} N_1 + \trans{N_2} N_2)^{-1/2}.
 \end{align*}
 
-Thus, in both definitions of the Jacobi matrix, if we substitute the Gaussian random variables with Brownian motions, we get the same distribution. This means that the matrix Jacobi process is stationary with the law of the zeroes of the associated Jacobi polynomial. Then the expected characteristic polynomial doest not depend on $t$ and we can not formulate something as the time dependent Jacobi polynomials or Jacobi polynomials with variance. We will see, however, that if we start the process with another distribution, we can recover the deterministic Jacobi dynamics. All of the following content is taken from \cite{article:marcus_finite_free_point_processes}, where the author manages to generalize the results we got in the previous subsections together with the Jacobi case. We will work with the Jacobi matrix definition in \cite{doumerc2005matrices} where the Jacobi process can be expressed by the following matrix
+Thus, in both definitions of the Jacobi matrix, if we substitute the Gaussian random variables with Brownian motions, we get the same distribution. This means that the matrix Jacobi process is stationary with the law of the zeroes of the associated Jacobi polynomial. Then the expected characteristic polynomial does not depend on $t$ and we can not formulate something as the time dependent Jacobi polynomials or Jacobi polynomials with variance. We will see, however, that if we start the process with another distribution, we can recover the deterministic Jacobi dynamics. All of the following content is taken from \cite{article:marcus_finite_free_point_processes}, where the author manages to generalize the results we got in the previous subsections together with the Jacobi case. We will work with the Jacobi matrix definition in \cite{doumerc2005matrices} where the Jacobi process can be expressed by the following matrix
 
 \begin{equation*}
     W = (\trans{M_1}M_1 + \trans{M_2}M_2)^{-1}\trans{M_1}M_1(\trans{M_1}M_1 + \trans{M_2}M_2)^{-1},
@@ -785,11 +791,11 @@ Thus, in both definitions of the Jacobi matrix, if we substitute the Gaussian ra
     &= \Delta\det\left[ (z-1)W_1 + zW_2 \right].
 \end{align*}
 
-Thus finding the expected characteristic polynomial (up to a normalization constant) can be done without the need to use the inverse of $W_1 + W_2$.
+Thus, finding the expected characteristic polynomial (up to a normalization constant) can be done without the need to use the inverse of $W_1 + W_2$.
 
 
 
-Replicating the procedure in \cite{article:marcus_finite_free_point_processes}, we will first replicate the former results of the static Wishart and Jacobi matrices with an operator that generalized characteristic polynomials, then we will show that the Wishart process can be built in the base of this operator by adding a time parameter. Finally, we will extend this same procedure to the Jacobi process. In the process of building these generalizations we will make extensive use of Finite Free Probability Theory.
+Following the procedure in \cite{article:marcus_finite_free_point_processes}, we will first replicate the former results of the static Wishart and Jacobi matrices with an operator that generalized characteristic polynomials, then we will show that the Wishart process can be built in the base of this operator by adding a time parameter. Finally, we will extend this same procedure to the Jacobi process. In the process of building these generalizations we will make extensive use of Finite Free Probability Theory.
 
 \begin{definition}[Generalized characteristic polynomial]
     Let $A, B$ be two random independent Gaussian matrices in $\mathcal M_{n_1,k}(\mathbb R)$ and $\mathcal M_{n_2,k}(\mathbb R)$ respectively. We define the generalized characteristic polynomial $p_{A,B}(x,y,z)$ as
@@ -798,15 +804,15 @@ Replicating the procedure in \cite{article:marcus_finite_free_point_processes}, 
         p_{A,B}(x,y,z) \coloneqq \det\left[ xI + y \trans{A}A + z \trans{B}B \right].
     \end{equation*}
 
-    Similarly, we define the reciprocal generalized reciprocal polynomial as $q_{A,B}(x,y,z) \coloneqq y^{n_1}z^{n_2}P_{A,B}(x,y,z)$.
+    Similarly, we define the reciprocal generalized reciprocal polynomial as $q_{A,B}(x,y,z) \coloneqq y^{n_1}z^{n_2}p_{A,B}(x,y^{-1},z^{-1})$.
 \end{definition}
 
-    Notice that this generalizes the characteristic polynomial of the (static and dynamical) Wishart and the static Jacobi cases. 
+    Notice that this generalizes the characteristic polynomial of the (static and dynamic) Wishart and the static Jacobi cases. 
 
     Similarly to the univariate cases (Theorem \ref{thm:multiplicative_operators}), we have a multiplicative theorem in terms of the operators that generate the new multivariate polynomials.
 
     \begin{theorem} \label{thm:multivariate_operators}
-        Let $F$ and $G$ be two-variable polynomials and $A,B \in \mathcal M_{k,n_1}, C,D \in \mathcal M_{k,n_2}$ such that $C$ and $D$ are invariant under product by signed permutation matrices. Suppose that
+        Let $F$ and $G$ be two-variable polynomials and $A,B \in \mathcal M_{k,n_1}(\R), C,D \in \mathcal M_{k,n_2}(\R)$ such that $C$ and $D$ are invariant under product by signed permutation matrices. Suppose that
 
          \begin{align*}
             \E{q_{A,B}(x,y,z)} &= F(\partial_x \partial_y,\partial_x\partial_z)[x^ky^{n_1}z^{n_2}],\\ 
@@ -817,7 +823,7 @@ Replicating the procedure in \cite{article:marcus_finite_free_point_processes}, 
     \end{theorem}
 
     \begin{proof}
-        If $F',G'$ are the linear differential operators (multivariate polynomials on $\partial_x\partial_y, \partial_x\partial_z$) generating $p_{A,B}$ and $p_{C,D}$ and they satisfy the former multiplicative property, then it can be extended to $F,G$ by linearity. Thus we prove for $F', G'$. 
+        If $P,Q$ are the linear differential operators (multivariate polynomials on $\partial_x\partial_y, \partial_x\partial_z$) generating $p_{A,B}$ and $p_{C,D}$ and they satisfy the former multiplicative property, then it can be extended to $F,G$ by linearity. Thus we prove for $F', G'$. 
 
 
         By definition, we have that 
@@ -836,7 +842,7 @@ Replicating the procedure in \cite{article:marcus_finite_free_point_processes}, 
         Applying Theorem \ref{thm:multiplicative_operators} we get to the desired result by considering the derivatives in $y,z$ as constant coefficients when evaluating in $x$.
     \end{proof}
 
-    With the next theorem we get a limit for the products of differential operators, similarly to what we did in Chapter \ref{ch:finite_free} when proving the finite free limit theorems. We will use this theorem to prove properties of the generalized characteristic polynomial of Gaussian matrices, by see these matrices as limits.
+    With the next theorem we get a limit for the products of differential operators, similarly to what we did in Chapter \ref{ch:finite_free} when proving the finite free limit theorems. We will use this theorem to prove properties of the generalized characteristic polynomial of Gaussian matrices, by seeing these matrices as limits.
 
     \begin{theorem} \label{thm:exp_operator}
         Let $\{A_i\}_{i=0}^\infty$ and $\{B_i\}_{i=0}^\infty$ be sequences of matrices invariant under transformation by signed permutation matrices such that
@@ -982,13 +988,14 @@ Replicating the procedure in \cite{article:marcus_finite_free_point_processes}, 
 
     \noindent which is exactly the associated Laguerre polynomial previously defined in Section \ref{sec:polynomials}. Thus, we have successfully replicated the result in Subsection \ref{subsec:wishart_laguerre}.
 
-    Keeping the unitary variances and replacing $x=0, y=(x-1), z=x$, we get the static Jacobi matrix, as shown previously, thus 
+    Keeping the unitary variances and replacing $x=0, y=(z-1)$, we get the static Jacobi matrix, as shown previously, thus 
 
     \begin{align*}
-        \E{\det[(x-1)W_1 + xW_2]} &= (1+x\partial_x)^{n_2} \left(1 + (x-1)\partial_x\right)^{n_1}[x^k]\\
-        &=\left\{ \left(\sum_{j=0}^{n_2} \binom {n_2}j x^j \partial_x^j \right) \left( \sum_{l=0}^{n_1} \binom {n_1}j x^l \partial_x^l \right) \right\}[x^k],\\
-        &= \sum_{j=0}^k \sum_{l\le n-j} \binom{n_2}{j}\binom{n_1}l x^j (x-1)^{n-l} \partial_x^{j+l}[x^k]\\
-        &= \sum_{l=0}^k \binom{n_2}{k-l} \binom{n_1}l x^{n-l}(x-1)^l \eqqcolon P_k^{n_2 - k, n_1-k}(2x-1).
+        \E{\det[(z-1)W_1 + zW_2]} &= \left.\left(1 + (z-1)\partial_x\right)^{n_1}(1+z\partial_x)^{n_2} [x^k]\right|_{x=0}\\
+        &=\left.\left\{\left( \sum_{l=0}^{n_1} \binom {n_1}l (z-1)^l \partial_x^l \right) \left(\sum_{j=0}^{n_2} \binom {n_2}j z^j \partial_x^j \right) \right\}[x^k]\right|_{x=0},\\
+        &= \left.\sum_{j=0}^k \sum_{l\le n-j} \binom{n_2}{j}\binom{n_1}l z^j (z-1)^{l} \partial_x^{j+l}[x^k]\right|_{x=0},\\
+        &= \left.\sum_{j=0}^k \sum_{l\le n-j} \binom{n_2}{j}\binom{n_1}l z^j (z-1)^{l} \frac{k!}{(j+l)!}x^{k-j-l}\right|_{x=0},\\
+        &= \sum_{l=0}^k \binom{n_2}{k-l} \binom{n_1}l z^{k-l}(z-1)^l \eqqcolon P_k^{n_2 - k, n_1-k}(2z-1).
     \end{align*}
     
     This is the standard Jacobi polynomial in \eqref{eq:jacobi_standard} with order $k$ and parameters $n_2 - k$, $n_1-k$ evaluated in $2x-1$. When we normalize to make it monic, we get the result appearing in \cite{edelman1988eigenvalues}.
@@ -996,10 +1003,10 @@ Replicating the procedure in \cite{article:marcus_finite_free_point_processes}, 
     Now let $\sigma_1= \sigma_2 = t$, then $A,B$ are equal in law to standard Brownian motions in $\M_{n_1,k}(\R)$ and $\M_{n_2,k}(\R)$, respectively. We should recover the expected characteristic polynomial of the Wishart and Jacobi processes. The Wishart case is evident by replacing $-1$ with $-t$ in \eqref{eq:wishart_finite_free} and comparing it to equation \eqref{eq:laguerre_with_variance}. For the Jacobi process with initial condition $p(z)$, we have
 
     \begin{equation} \label{eq:dynamic_jacobi}
-        \E{\det[(z-1)W_1(t) + zW_2(t)]} = (1+xt\partial_x)^{n_2} \left(1 + (x-1)t\partial_x\right)^{n_1}[p(z)].
+        \E{\det[(z-1)W_1(t) + zW_2(t)]} = \left.\left(1 + (z-1)t\partial_x\right)^{n_1}(1+zt\partial_x)^{n_2} [p(x)]\right|_{x=0}.
     \end{equation}
 
-    In analogy to what we found for the Dyson Brownian motion and the Wishart process, we need to verify if the roots of the polynomial defined in \eqref{eq:dynamic_jacobi} satisfy a differential equation given by the finite variation part of \eqref{eq:jacobi}. Let us work in full generality and define for polynomials of the form $x^i y^j z^l$, the operator
+    We need to verify that the roots of the polynomial defined in \eqref{eq:dynamic_jacobi} satisfy a differential equation given by the finite variation part of \eqref{eq:jacobi}. Let us work in full generality and define for polynomials of the form $x^i y^j z^l$, the operator
 
     \begin{equation*}
         Q_{n_1,n_2}^t [x^i y^j z^l] = (1+zt\partial_x)^{n_2-l} \left(1 + yt\partial_x\right)^{n_1 - j}[x^i y^j z^l],

@@ -112,11 +112,11 @@ Now that we know that the signed permutations ensemble is minor orthogonal, we c
 
 
 \begin{corollary}
-    An $m\times n$ random matrix sampled from the Haar measure on $\mathcal M_{n,m}(\C)$ is minor-orthogonal.
+    An $m\times n$ random matrix sampled from the left Haar measure on the Stiefel manifold of $\mathcal M_{n,m}(\C)$ is minor-orthogonal.
 \end{corollary}
 
 \begin{proof}
-    Let $R$ be a Haar distributed random $m\times n$ matrix with $m \le n$ and $Q$ a random signed permutation matrix. Any random signed permutation matrix is unitary, so $RQ$ is Haar distributed for fixed $Q$, and by Lemmas \ref{lemma:orth_trans_is_minorth} and \ref{lemma:singed_per_is_minorth} we have that it is also minor-orthogonal. Then, if $Q$ is uniformly sampled from the signed permutation matrices,
+    Let $R$ be a random $m\times n$ matrix sampled from the left Haar measure on the Stiefel manifold of $\mathcal M_{n,m}(\C)$ with $m \le n$ and $Q$ a random signed permutation matrix. Any random signed permutation matrix is unitary, so $RQ$ is Haar distributed for fixed $Q$, and by Lemmas \ref{lemma:orth_trans_is_minorth} and \ref{lemma:singed_per_is_minorth} we have that it is also minor-orthogonal. Then, if $Q$ is uniformly sampled from the signed permutation matrices,
 
     \begin{align*}
         \mathbb E_R\left[ \det[R]_{S,T}\det[\hermit{R}]_{U,V} \right] = \mathbb E_{R,Q}\left[ \det[RQ]_{S,T} \det[\hermit{(RQ)}]_{U,V}\right]. 
@@ -165,30 +165,30 @@ The following two lemmas will help us to find explicit coefficients for expected
 
 
 \begin{lemma}
-    Let $a > d$, $A$ an $a \times a$ random matrix and $Q$ a random $a \times d$ matrix sampled from the Haar measure on $\mathcal M_{a,d}(\C)$, then
+    Let $m > n$, $A$ an $m \times m$ random matrix and $Q$ a random $m \times n$ matrix sampled from the Haar measure on the Stiefel manifold of $\mathcal M_{m,n}(\C)$, then
 
     \begin{equation*}
-        \mathbb E_A \left[ \mathbb E_Q\left[ \chi_x \left( Q A \hermit{Q} \right) \right]\right] = \mathbb E_A \left[\frac{d!}{a!} \partial_x^{(a-d)} \chi_x(A) \right],
+        \mathbb E_A \left[ \mathbb E_Q\left[ \chi_x \left( Q A \hermit{Q} \right) \right]\right] = \mathbb E_A \left[\frac{n!}{m!} \partial_x^{(m-n)} \chi_x(A) \right],
     \end{equation*}
 
     \noindent where $\chi_z(\cdot)$ denotes the characteristic polynomial of $\cdot$ with $z$ as a variable.
 \end{lemma}
 
 \begin{proof}
-    Let $A$ be a fixed matrix and $Q$ a Haar unitary matrix on $\mathcal M_{a,b}(\C)$. The $k$th coefficient of the expected characteristic polynomial of $QA\hermit Q$ is 
+    Let $A$ be a fixed matrix and $Q$ a matrix sampled from the left Haar measure on the Stiefel manifold $\mathcal M_{m,n}(\C)$. The $k$th coefficient of the expected characteristic polynomial of $QA\hermit Q$ is 
 
     \begin{align*}
         \mathbb E_Q \left[ \sigma_k(QA\hermit{Q}) \right] &= \sum_{\abs{S} = k} \mathbb E_Q\left[ \det [QA\hermit Q]_{S,S} \right],\\ 
-        &= \sum_{\abs{S} = k} \frac{\sigma_k(A)}{\binom ak} = \frac{\binom{d}{k} \sigma_k(A)}{\binom{a}{k}}.
+        &= \sum_{\abs{S} = k} \frac{\sigma_k(A)}{\binom mk} = \frac{\binom{n}{k} \sigma_k(A)}{\binom{m}{k}}.
     \end{align*}
 
     Taking expectation with respect to $A$ in the last expression we find
 
     \begin{align*}
-        \mathbb E_A \left[\mathbb E_Q\left[ \chi_x \left( Q A \hermit{Q} \right) \right]\right] &= \mathbb E_A \left[ \frac{\binom{d}{k} \sigma_k(A)}{\binom{a}{k}} \right] = \frac{\binom{d}{k} \mathbb E_A[\sigma_k(A)]}{\binom{a}{k}},
+        \mathbb E_A \left[\mathbb E_Q\left[ \chi_x \left( Q A \hermit{Q} \right) \right]\right] &= \mathbb E_A \left[ \frac{\binom{n}{k} \sigma_k(A)}{\binom{m}{k}} \right] = \frac{\binom{n}{k} \mathbb E_A[\sigma_k(A)]}{\binom{m}{k}},
     \end{align*}
 
-    \noindent which is the $k$th coefficient of $\frac{d!}{a!} \frac{\d^{(a-d)}}{\d x} \mathbb E_A \left[\chi_x(A) \right]$.
+    \noindent which is the $k$th coefficient of $\frac{n!}{m!} \frac{\d^{(m-n)}}{\d x} \mathbb E_A \left[\chi_x(A) \right]$.
 \end{proof}
 
 With these results, now we are ready to prove the main theorems relating polynomial convolutions to the expected characteristic polynomials of sums and products of random matrices.
@@ -197,20 +197,34 @@ With these results, now we are ready to prove the main theorems relating polynom
 
 Until now, we have used minor orthogonality properties to find some expressions for expected characteristic polynomials. In this section, we will see that under suitable circumstances, those expressions are actually related to polynomial convolutions. We prove the relationship for the symmetric additive and symmetric multiplicative cases. An analogous for the asymmetric additive case can be found in \cite{article:finitefree}. %\todo{Hay que corregir la introducción de la sección (y capítulo) donde dije que estas relaciones sólo se probaban en el caso simétrico aditivo.}
 
-For both the additive and multiplicative cases, the results are written in two parts; one for the statement of the expected characteristic polynomial coefficients and another stating explicitly the convolution of expected characteristic polynomials. The relationship with Free Probability Theory will be more evident for the additive case in the next section where we introduce the $\mathcal R_n$ finite transform. For the multiplicative case a similar transform can be introduced, but it is not included in this work. 
+The relationship with Free Probability Theory will be more evident for the additive case in the next section where we introduce the $\mathcal R_n$ finite transform. For the multiplicative case a similar transform can be introduced, but it is not included in this work. 
 
-\begin{theorem} \label{thm:implies_symmad}
-    Let $A, B$ be $n\times n$ random matrices and $R$ a $n\times n$ minor-orthogonal matrix, such that $A, B, R$ are jointly independent, then we have
+\begin{theorem} \label{thm:symmad}
+    If $p(z)$ is the characteristic polynomial of $A$ and $q(z)$ is the characteristic polynomial of $B$, where $A$ and $B$ are $n\times n$ normal matrices with complex entries, then 
 
     \begin{equation*}
-        \mathbb E_{A,B,R}\left[ \sigma_k(A + RB\hermit R) \right] =  \sum_{i=0}^k \frac{\binom{n-i}{k-i}}{\binom{n}{k-i}}\mathbb E_{A} \left[\sigma_i(A)\right] \mathbb E_{A}\left[\sigma_{k-i}(B)\right],
+        p(z) \boxplus_n q(z) = \mathbb E_Q\left[\chi_z(A + Q B \hermit Q)\right],
     \end{equation*}
 
-    \noindent where $\sigma_j(X)$ represents the $j$th coefficient in the characteristic polynomial of the matrix $X$.
+    \noindent where $\chi_z(\cdot)$ denotes the characteristic polynomial of $\cdot$ with $z$ as a variable and $\mathbb E_Q$ denotes taking expectation over $Q$ where $Q$ is sampled from the Haar measure on the unitary complex $n\times n$ matrices.
 \end{theorem}
 
+% \begin{proof}
+%     It follows directly from Theorem \ref{thm:implies_symmad} and definition of the symmetric additive convolution.
+% \end{proof}
+
+% \begin{theorem} \label{thm:implies_symmad}
+%     Let $A, B$ be $n\times n$ random matrices and $R$ a $n\times n$ minor-orthogonal matrix, such that $A, B, R$ are jointly independent, then we have
+
+%     \begin{equation*}
+%         \mathbb E_{A,B,R}\left[ \sigma_k(A + RB\hermit R) \right] =  \sum_{i=0}^k \frac{\binom{n-i}{k-i}}{\binom{n}{k-i}}\mathbb E_{A} \left[\sigma_i(A)\right] \mathbb E_{A}\left[\sigma_{k-i}(B)\right],
+%     \end{equation*}
+
+%     \noindent where $\sigma_j(X)$ represents the $j$th coefficient in the characteristic polynomial of the matrix $X$.
+% \end{theorem}
+
 \begin{proof}
-    We use that
+    We will find the $k$th coefficient of the expected characteristic polynomial. We use that
 
     \begin{equation*}
         \sigma_k(A) = \sum_{\abs{S}=k} \det[A]_{S,S},
@@ -249,47 +263,16 @@ For both the additive and multiplicative cases, the results are written in two p
         \mathbb E_{A,B,R}\left[ \sigma_k(A + RB\hermit R) \right] =  \sum_{i=0}^k \frac{\binom{n-i}{k-i}}{\binom{n}{k-i}}\mathbb E_{A} \left[\sigma_i(A)\right] \mathbb E_{A}\left[\sigma_{k-i}(B)\right].
     \end{equation*}
 
+    Which is precisely the $k$th coefficient of the symmetric additive convolution between $\E{\chi_z(A)}$ and $\E{\chi_z(A)}$.
+
     %\todo{Hay que aclarar qué significa $U(S)$.}
 \end{proof}
 
 
-\begin{theorem} \label{thm:symmad}
-    If $p(z)$ is the characteristic polynomial of $A$ and $q(z)$ is the characteristic polynomial of $B$, where $A$ and $B$ are $n\times n$ normal matrices with complex entries, then 
-
-    \begin{equation*}
-        p(z) \boxplus_n q(z) = \mathbb E_Q\left[\chi_z(A + Q B \hermit Q)\right],
-    \end{equation*}
-
-    \noindent where $\chi_z(\cdot)$ denotes the characteristic polynomial of $\cdot$ with $z$ as a variable and $\mathbb E_Q$ denotes taking expectation over $Q$ where $Q$ is sampled from the Haar measure on the unitary complex $n\times n$ matrices.
-\end{theorem}
-
-\begin{proof}
-    It follows directly from Theorem \ref{thm:implies_symmad} and definition of the symmetric additive convolution.
-\end{proof}
 
 
-The next two theorems are the analogous of the previous ones for the symmetric multiplicative convolution. As it was stated previously, these convolutions can be seen as ``approximations'' to the free additive and free multiplicative convolutions.
 
-
-\begin{theorem} \label{thm:implies_symm_mult}
-    Let $A$ and $B$ be $n\times n$ random matrices and $R$ a minor-orthogonal $n\times n$ matrix, such that $A,B,R$ are jointly independent, then
-
-    \begin{equation*}
-        \mathbb E_{A,B,R} \left[\sigma_k(ARB\hermit{R})\right] = \frac{\mathbb E_A[\sigma_k(A)]\mathbb E_B[\sigma_k(B)]}{\binom{n}{k}}.
-    \end{equation*}
-\end{theorem}
-
-\begin{proof}
-By the Cauchy-Binet formula and independence
-    \begin{align*}
-        \mathbb E_{A,B,R} \left[\sigma_k(ARB\hermit{R})\right] &= \sum_{S \in \binom{[n]}{k}} \mathbb E_{A,B,R} \left[\det[ARB\hermit{R}]_{S,S}\right],\\ 
-        &= \sum_{S,T \in \binom{[n]}{k}} \mathbb E_A\left[ \det[A]_{S,T} \right] \mathbb E_{B,R} \left[ \det [RB\hermit{R}]_{T,S} \right],\\ 
-        \intertext{Now we use Lemma \ref{lemma:conjugate_minorth} to conclude}
-        \mathbb E_{A,B,R} \left[\sigma_k(ARB\hermit{R})\right] &= \sum_{S,T \in \binom{[n]}{k}} \mathbb E_A\left[\det[A]_{S,T} \right] \delta_{T,S}\frac{\mathbb E_B\left[ \sigma_k(B)\right]}{\binom{n}{k}},\\
-        &= \frac{\mathbb E_A[\sigma_k(A)]\mathbb E_B[\sigma_k(B)]}{\binom{n}{k}}.
-    \end{align*}
-\end{proof}
-
+The next theorem is the analogous of the previous one for the symmetric multiplicative convolution. As it was stated previously, these convolutions can be seen as ``approximations'' to the free additive and free multiplicative convolutions.
 
 \begin{theorem}
     Let $p(z)$ be the characteristic polynomial of $A$ and $q(z)$ be the characteristic polynomial of $B$ where $A$ and $B$ are $n\times n$ normal matrices with complex entries, then 
@@ -301,9 +284,33 @@ By the Cauchy-Binet formula and independence
     \noindent with $\chi_z$ and $\mathbb E_Q$ as in Theorem \ref{thm:symmad}.
 \end{theorem}
 
+% \begin{proof}
+%     It follows directly from Theorem \ref{thm:implies_symm_mult} and definition of the symmetric multiplicative convolution.
+% \end{proof}
+
+
+% \begin{theorem} \label{thm:implies_symm_mult}
+%     Let $A$ and $B$ be $n\times n$ random matrices and $R$ a minor-orthogonal $n\times n$ matrix, such that $A,B,R$ are jointly independent, then
+
+%     \begin{equation*}
+%         \mathbb E_{A,B,R} \left[\sigma_k(ARB\hermit{R})\right] = \frac{\mathbb E_A[\sigma_k(A)]\mathbb E_B[\sigma_k(B)]}{\binom{n}{k}}.
+%     \end{equation*}
+% \end{theorem}
+
 \begin{proof}
-    It follows directly from Theorem \ref{thm:implies_symm_mult} and definition of the symmetric multiplicative convolution.
+Again, we find the $k$th coefficient of the expected characteristic polynomial. By the Cauchy-Binet formula and independence
+    \begin{align*}
+        \mathbb E_{A,B,R} \left[\sigma_k(ARB\hermit{R})\right] &= \sum_{S \in \binom{[n]}{k}} \mathbb E_{A,B,R} \left[\det[ARB\hermit{R}]_{S,S}\right],\\ 
+        &= \sum_{S,T \in \binom{[n]}{k}} \mathbb E_A\left[ \det[A]_{S,T} \right] \mathbb E_{B,R} \left[ \det [RB\hermit{R}]_{T,S} \right],\\ 
+        \intertext{Now we use Lemma \ref{lemma:conjugate_minorth} to conclude}
+        \mathbb E_{A,B,R} \left[\sigma_k(ARB\hermit{R})\right] &= \sum_{S,T \in \binom{[n]}{k}} \mathbb E_A\left[\det[A]_{S,T} \right] \delta_{T,S}\frac{\mathbb E_B\left[ \sigma_k(B)\right]}{\binom{n}{k}},\\
+        &= \frac{\mathbb E_A[\sigma_k(A)]\mathbb E_B[\sigma_k(B)]}{\binom{n}{k}}.
+    \end{align*}
+    This is the desired result.
 \end{proof}
+
+
+
 
 With the results in this section we related polynomial convolutions to expected characteristic polynomials. In the following section we will be able to link the convolutions to Free Probability Theory by assigning an empirical measure to the roots of a polynomial in a similar fashion one can assign a measure to the eigenvalues of a matrix.
 
@@ -924,7 +931,7 @@ One of the central topics in Probability Theory is the convergence of sums of ra
         \sum_{j=1}^n r_{i,j} = 0, \qquad \frac1n \sum_{j=1}^n r^2_{i,j} = \sigma^2,
     \end{equation}
 
-    \noindent for all $i$. Define $q_i(x) = k^{-n/2}p_i(\sqrt{k}x)$, then 
+    \noindent for all $i$. Define $q_i(z) = k^{-n/2}p_i(\sqrt{k}z)$, then 
 
     % \begin{equation*}
     %     \lim_{n\to\infty} \left( q_1 \boxplus_d \cdots \boxplus_d q_n \right) = \left( \frac{d-1}{\sigma^2} \right)^{-d/2} H_d\left( x \sqrt{\frac{d-1}{\sigma^2}} \right),
@@ -934,7 +941,7 @@ One of the central topics in Probability Theory is the convergence of sums of ra
         \lim_{k\to\infty} \left( q_1 \boxplus_n \cdots \boxplus_n q_k \right) = H_n(z,\sigma^2/(n-1)).
     \end{equation*}
 
-    \noindent with $H_n(z,\sigma^2/(n-2))$ represents the $n$th Hermite polynomial with variance $\sigma^2/(n-1)$.
+    \noindent with $H_n(z,\sigma^2/(n-1))$ represents the $n$th Hermite polynomial with variance $\sigma^2/(n-1)$.
 \end{theorem}
 
 
